@@ -65,4 +65,20 @@ namespace Game
 		ActorsControlEventReleaseAll event;
 		NotifyChange(&event);
 	}
+	ActorProp* ActorsControl::GetMainActor(void) const
+	{
+		return LookupActor(1);
+	}
+	ActorProp* ActorsControl::LookupActor(int actorID) const
+	{
+		ActorMap::const_iterator it = m_actorMap.find(actorID);
+		if (m_actorMap.end() != it)
+		{
+			return it->second;
+		}
+		else
+		{
+			return NULL;
+		}
+	}
 }

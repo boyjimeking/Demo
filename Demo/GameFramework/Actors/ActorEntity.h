@@ -27,7 +27,22 @@ namespace Game
 		virtual void OnNotifyChange( const INotifier *notify, const INotifyEvent *event );
 
 	protected:
-	private:
+		enum ENDirection
+		{
+			enActorDirection_Down,
+			enActorDirection_Left,
+			enActorDirection_Right,
+			enActorDirection_Up,
+		};
+		enum ENActionTag
+		{
+			enNone,
+			enActorAction_PlayAnimation,
+			enActorAction_MoveTo,
+		};
+	protected:
+		void PlayAnimation(ENDirection direction);
+		void MoveTo(const cocos2d::CCPoint &worldPos);
 	};
 }
 

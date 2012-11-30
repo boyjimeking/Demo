@@ -9,9 +9,13 @@
 #include "Camera.h"
 #include "CameraObserver.h"
 #include "CameraNotifyEvents.h"
+#include "support/CCPointExtension.h"
+#include "CCDirector.h"
+
 namespace Game
 {
     Camera::Camera(void)
+        :m_position(-480, -240)
     {
 
     }
@@ -21,11 +25,23 @@ namespace Game
     	delete reinterpret_cast<CameraObserver*>(m_observer);
     }
 
-    void Camera::init(void)
+    void Camera::init(cocos2d::CCScene *scene)
     {
-    	CameraObserver *observer = new CameraObserver;
+        cocos2d::CCSize visiableSize = cocos2d::CCDirector::sharedDirector()->getVisibleSize();
+        m_position = ccp(-visiableSize.width / 2, -visiableSize.height / 2);
+    	CameraObserver *observer = new CameraObserver(scene);
     	this->AttachObserver(observer);
-        CameraInited initedEvent;
-        NotifyChange(&initedEvent);
+
+        CameraPosChanged event(m_position);
+        NotifyChange(&event);
+    }
+
+    cocos2d::CCPoint Camera::ConvertWorldPosToScreen(const cocos2d::CCPoint &worldPos)
+    {
+        return cocos2d::ccpSub(worldPos, m_position);
+    }
+    cocos2d::CCPoint Camera::ConvertScreenPosToWorld(const cocos2d::CCPoint &screenPos)
+    {
+        return cocos2d::ccpAdd(screenPos, m_position);
     }
 }

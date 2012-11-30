@@ -36,6 +36,9 @@ namespace GUI
 	void UILayer::ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent)
 	{
 		cocos2d::CCLayer::ccTouchesBegan(pTouches, pEvent);
+		cocos2d::CCTouch *touch = reinterpret_cast<cocos2d::CCTouch*>(*pTouches->begin());
+		cocos2d::CCPoint pos = touch->getLocation();
+		cocos2d::CCLog("UILayer: %f, %f", pos.x, pos.y);
 	}
 	void UILayer::registerWithTouchDispatcher()
 	{

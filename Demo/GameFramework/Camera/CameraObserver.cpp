@@ -9,10 +9,13 @@
 #include "CameraObserver.h"
 #include "CCCamera.h"
 #include "CameraNotifyEvents.h"
+#include "support/CCPointExtension.h"
+#include "layers_scenes_transitions_nodes/CCScene.h"
+
 namespace Game
 {
-    CameraObserver::CameraObserver(void)
-        :m_camera(NULL)
+    CameraObserver::CameraObserver(cocos2d::CCScene *scene)
+        :m_scene(scene)
     {
         
     }
@@ -28,10 +31,10 @@ namespace Game
         }
         switch (event->GetNotifyEventType())
         {
-            case ENCameraEvent::enCameraEvent_Inited:
+            case ENCameraEvent::enCameraEvent_PosChanged:
                 {
-                    m_camera = new cocos2d::CCCamera;
-                    m_camera->init();
+                    const CameraPosChanged *posChangedEvent = reinterpret_cast<const CameraPosChanged*>(event);
+                    m_scene->setPosition(cocos2d::ccpNeg(posChangedEvent->GetCameraPosition()));
                 }
                 break;
             default:

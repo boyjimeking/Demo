@@ -9,7 +9,8 @@
 #include "UI/UILayer.h"
 #include "UI/UIControl.h"
 #include "Camera/Camera.h"
-
+#include "CCDirector.h"
+#include "support/CCPointExtension.h"
 
 namespace Game
 {
@@ -45,7 +46,7 @@ namespace Game
         //摄像机
         {
             m_camera = new Camera;
-            m_camera->init();
+            m_camera->init(scene);
         }
 		//地形
 		{
@@ -79,5 +80,12 @@ namespace Game
 		}
 		return scene;
 	}
-
+	cocos2d::CCPoint WorldManager::WorldPosToScreen(const cocos2d::CCPoint &worldPos)
+	{
+		return Instance()->GetCamera()->ConvertWorldPosToScreen(worldPos);
+	}
+    cocos2d::CCPoint WorldManager::ScreenPosToWorld(const cocos2d::CCPoint &screenPos)
+    {
+    	return Instance()->GetCamera()->ConvertScreenPosToWorld(screenPos);
+    }
 }

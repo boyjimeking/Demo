@@ -1,9 +1,13 @@
-﻿#include "TerrainLayer.h"
+#include "TerrainLayer.h"
 #include "../Base/INotifier.h"
 #include "support/CCPointExtension.h"
 #include "sprite_nodes/CCSprite.h"
 #include "CCDirector.h"
 #include "TerrainEvent.h"
+#include "WorldManager.h"
+#include "Actors/ActorProp.h"
+#include "Actors/ActorsControl.h"
+#include "Camera/Camera.h"
 
 namespace Game
 {
@@ -12,6 +16,7 @@ namespace Game
 		TerrainLayer *pRet = new TerrainLayer();
 		if (pRet && pRet->init())
 		{
+			pRet->setTouchEnabled(true);
 			pRet->autorelease();
 			return pRet;
 		}
@@ -31,11 +36,6 @@ namespace Game
 
 	}
 
-	void TerrainLayer::Init( void )
-	{
-
-	}
-
 	void TerrainLayer::OnNotifyChange( const INotifier *notify, const INotifyEvent *event )
 	{
 		if (NULL == event)
@@ -49,4 +49,20 @@ namespace Game
 		}
 	}
 
+	void TerrainLayer::ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent)
+	{
+		cocos2d::CCLayer::ccTouchesBegan(pTouches, pEvent);
+		cocos2d::CCTouch *touch = reinterpret_cast<cocos2d::CCTouch*>(*pTouches->begin());
+		cocos2d::CCPoint pos = touch->getLocation();
+		cocos2d::CCLog("TerrainLayer: %f, %f", pos.x, pos.y);
+		//什么都没点到的时候，主角移动
+		ProcessMainActorMove(pos);
+	}
+	void TerrainLayer::ProcessMainActorMove(const cocos2d::CCPoint &screenPos)
+	{
+		ActorProp *mainActor = WorldManager::Instance()->GetActorsControl()->GetMainActor();
+		cocos2d::CCPoint worldPos = WorldManager::ScreenPosToWorld(screenPos);
+		mainActor->MoveTo(worldPos);
+	}
 }
+

@@ -1,4 +1,4 @@
-﻿//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 //
 //	文件名: 	E:/GitCode/SimpleGame/SourceCode/GameFramework/Terrain/TerrainLayer.h
 //	创建日期:	2012年11月22日
@@ -25,11 +25,11 @@ namespace Game
 		TerrainLayer(void);
 		virtual ~TerrainLayer(void);
 
-		void Init(void);
-
 		virtual void OnNotifyChange( const INotifier *notify, const INotifyEvent *event );
 
+    	virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
 	protected:
+		void ProcessMainActorMove(const cocos2d::CCPoint &screenPos);
 	private:
 	};
 }

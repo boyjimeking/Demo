@@ -13,7 +13,7 @@
 
 namespace cocos2d
 {
-    class CCCamera;
+    class CCScene;
 }
 
 namespace Game
@@ -22,11 +22,11 @@ namespace Game
         :public IObserver
     {
     public:
-        CameraObserver(void);
+        CameraObserver(cocos2d::CCScene *scene);
         virtual ~CameraObserver(void);
         virtual void OnNotifyChange(const INotifier *notify, const INotifyEvent *event);
     private:
-        cocos2d::CCCamera *m_camera;
+        cocos2d::CCScene *m_scene;
     };
 }
 

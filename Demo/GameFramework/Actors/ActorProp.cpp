@@ -29,4 +29,18 @@ namespace Game
 		ActorEventRelease event;
 		NotifyChange(&event);
 	}
+	void ActorProp::SetPosition(const cocos2d::CCPoint &pos)
+	{
+		if (m_position.equals(pos))
+		{
+			return;
+		}
+		m_position = pos;
+		ActorEventChangePos event(pos);
+		NotifyChange(&event);
+	}
+	void ActorProp::MoveTo(const cocos2d::CCPoint &pos)
+	{
+		SetPosition(pos);
+	}
 }

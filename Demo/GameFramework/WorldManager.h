@@ -1,4 +1,4 @@
-﻿//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 //
 //	文件名: 	E:\GitCode\SimpleGame\SourceCode\GameFramework\WorldManager.h
 //	创建日期:	2012年11月22日
@@ -7,6 +7,8 @@
 //////////////////////////////////////////////////////////////////////////
 #ifndef WorldManager_h__
 #define WorldManager_h__
+
+#include "cocoa/CCGeometry.h"
 
 namespace cocos2d
 {
@@ -37,6 +39,9 @@ namespace Game
 		ActorsControl * GetActorsControl(void) const { return m_ActorsControl; }
 		BuildingsControl * GetBuildingsControl(void) const { return m_buildingsControl; }
         Camera* GetCamera(void) const { return m_camera; }
+
+        static cocos2d::CCPoint WorldPosToScreen(const cocos2d::CCPoint &worldPos);
+        static cocos2d::CCPoint ScreenPosToWorld(const cocos2d::CCPoint &screenPos);
 	protected:
 		TerrainProp *m_terrain;
 		ActorsControl *m_ActorsControl;

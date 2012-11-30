@@ -27,6 +27,9 @@ namespace Game
 		bool CreateActor(int actorID);
 		void ReleaseActor(int actorID);
 		void ClearActor(void);
+
+		ActorProp* GetMainActor(void) const;
+		ActorProp* LookupActor(int actorID) const;
 	protected:
 	private:
 		typedef std::map<int, ActorProp*> ActorMap;
