@@ -206,7 +206,31 @@
 		D30D8FD61666EE8C000B95E1 /* CCTableViewCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D8FD51666EE8C000B95E1 /* CCTableViewCell.cpp */; };
 		D30D8FDA1666EE8C000B95E1 /* HttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D8FD91666EE8C000B95E1 /* HttpClient.cpp */; };
 		D30D8FE31666EE8C000B95E1 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D8FE21666EE8C000B95E1 /* AppDelegate.cpp */; };
-		D30D8FE61666EE8C000B95E1 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D8FE51666EE8C000B95E1 /* HelloWorldScene.cpp */; };
+		D30D90241666F3A9000B95E1 /* ActorEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D8FFA1666F3A9000B95E1 /* ActorEntity.cpp */; };
+		D30D90251666F3A9000B95E1 /* ActorProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D8FFC1666F3A9000B95E1 /* ActorProp.cpp */; };
+		D30D90261666F3A9000B95E1 /* ActorsControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D8FFE1666F3A9000B95E1 /* ActorsControl.cpp */; };
+		D30D90271666F3A9000B95E1 /* ActorsLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90001666F3A9000B95E1 /* ActorsLayer.cpp */; };
+		D30D90281666F3A9000B95E1 /* INotifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90031666F3A9000B95E1 /* INotifier.cpp */; };
+		D30D90291666F3A9000B95E1 /* INotifyEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90051666F3A9000B95E1 /* INotifyEvent.cpp */; };
+		D30D902A1666F3A9000B95E1 /* IObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90071666F3A9000B95E1 /* IObserver.cpp */; };
+		D30D902B1666F3A9000B95E1 /* BuildingEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D900A1666F3A9000B95E1 /* BuildingEntity.cpp */; };
+		D30D902C1666F3A9000B95E1 /* BuildingProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D900C1666F3A9000B95E1 /* BuildingProp.cpp */; };
+		D30D902D1666F3A9000B95E1 /* BuildingsControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D900E1666F3A9000B95E1 /* BuildingsControl.cpp */; };
+		D30D902E1666F3A9000B95E1 /* BuildingsLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90101666F3A9000B95E1 /* BuildingsLayer.cpp */; };
+		D30D902F1666F3A9000B95E1 /* TerrainEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90131666F3A9000B95E1 /* TerrainEvent.cpp */; };
+		D30D90301666F3A9000B95E1 /* TerrainLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90151666F3A9000B95E1 /* TerrainLayer.cpp */; };
+		D30D90311666F3A9000B95E1 /* TerrainProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90171666F3A9000B95E1 /* TerrainProp.cpp */; };
+		D30D90321666F3A9000B95E1 /* UIControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D901A1666F3A9000B95E1 /* UIControl.cpp */; };
+		D30D90331666F3A9000B95E1 /* UILayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D901C1666F3A9000B95E1 /* UILayer.cpp */; };
+		D30D90341666F3A9000B95E1 /* UIProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D901E1666F3A9000B95E1 /* UIProperty.cpp */; };
+		D30D90351666F3A9000B95E1 /* UIWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90201666F3A9000B95E1 /* UIWindow.cpp */; };
+		D30D90361666F3A9000B95E1 /* WorldManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90221666F3A9000B95E1 /* WorldManager.cpp */; };
+		D34839A31667120A008869A3 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D348399F1667120A008869A3 /* Camera.cpp */; };
+		D34839A41667120A008869A3 /* CameraObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839A11667120A008869A3 /* CameraObserver.cpp */; };
+		D34839A7166712C0008869A3 /* CameraNotifyEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839A6166712C0008869A3 /* CameraNotifyEvents.cpp */; };
+		D34839A916673054008869A3 /* actor.png in Resources */ = {isa = PBXBuildFile; fileRef = D34839A816673054008869A3 /* actor.png */; };
+		D34839AC16673409008869A3 /* ActorEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839AB16673409008869A3 /* ActorEvents.cpp */; };
+		D34839AF16673606008869A3 /* ActorsControlEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839AE16673605008869A3 /* ActorsControlEvents.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -648,8 +672,55 @@
 		D30D8FDF1666EE8C000B95E1 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		D30D8FE11666EE8C000B95E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		D30D8FE21666EE8C000B95E1 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
-		D30D8FE41666EE8C000B95E1 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		D30D8FE51666EE8C000B95E1 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		D30D8FFA1666F3A9000B95E1 /* ActorEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorEntity.cpp; sourceTree = "<group>"; };
+		D30D8FFB1666F3A9000B95E1 /* ActorEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActorEntity.h; sourceTree = "<group>"; };
+		D30D8FFC1666F3A9000B95E1 /* ActorProp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorProp.cpp; sourceTree = "<group>"; };
+		D30D8FFD1666F3A9000B95E1 /* ActorProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActorProp.h; sourceTree = "<group>"; };
+		D30D8FFE1666F3A9000B95E1 /* ActorsControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorsControl.cpp; sourceTree = "<group>"; };
+		D30D8FFF1666F3A9000B95E1 /* ActorsControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActorsControl.h; sourceTree = "<group>"; };
+		D30D90001666F3A9000B95E1 /* ActorsLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorsLayer.cpp; sourceTree = "<group>"; };
+		D30D90011666F3A9000B95E1 /* ActorsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActorsLayer.h; sourceTree = "<group>"; };
+		D30D90031666F3A9000B95E1 /* INotifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = INotifier.cpp; sourceTree = "<group>"; };
+		D30D90041666F3A9000B95E1 /* INotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INotifier.h; sourceTree = "<group>"; };
+		D30D90051666F3A9000B95E1 /* INotifyEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = INotifyEvent.cpp; sourceTree = "<group>"; };
+		D30D90061666F3A9000B95E1 /* INotifyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INotifyEvent.h; sourceTree = "<group>"; };
+		D30D90071666F3A9000B95E1 /* IObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IObserver.cpp; sourceTree = "<group>"; };
+		D30D90081666F3A9000B95E1 /* IObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IObserver.h; sourceTree = "<group>"; };
+		D30D900A1666F3A9000B95E1 /* BuildingEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingEntity.cpp; sourceTree = "<group>"; };
+		D30D900B1666F3A9000B95E1 /* BuildingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingEntity.h; sourceTree = "<group>"; };
+		D30D900C1666F3A9000B95E1 /* BuildingProp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingProp.cpp; sourceTree = "<group>"; };
+		D30D900D1666F3A9000B95E1 /* BuildingProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingProp.h; sourceTree = "<group>"; };
+		D30D900E1666F3A9000B95E1 /* BuildingsControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingsControl.cpp; sourceTree = "<group>"; };
+		D30D900F1666F3A9000B95E1 /* BuildingsControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingsControl.h; sourceTree = "<group>"; };
+		D30D90101666F3A9000B95E1 /* BuildingsLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingsLayer.cpp; sourceTree = "<group>"; };
+		D30D90111666F3A9000B95E1 /* BuildingsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingsLayer.h; sourceTree = "<group>"; };
+		D30D90131666F3A9000B95E1 /* TerrainEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TerrainEvent.cpp; sourceTree = "<group>"; };
+		D30D90141666F3A9000B95E1 /* TerrainEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerrainEvent.h; sourceTree = "<group>"; };
+		D30D90151666F3A9000B95E1 /* TerrainLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TerrainLayer.cpp; sourceTree = "<group>"; };
+		D30D90161666F3A9000B95E1 /* TerrainLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerrainLayer.h; sourceTree = "<group>"; };
+		D30D90171666F3A9000B95E1 /* TerrainProp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TerrainProp.cpp; sourceTree = "<group>"; };
+		D30D90181666F3A9000B95E1 /* TerrainProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerrainProp.h; sourceTree = "<group>"; };
+		D30D901A1666F3A9000B95E1 /* UIControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIControl.cpp; sourceTree = "<group>"; };
+		D30D901B1666F3A9000B95E1 /* UIControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIControl.h; sourceTree = "<group>"; };
+		D30D901C1666F3A9000B95E1 /* UILayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UILayer.cpp; sourceTree = "<group>"; };
+		D30D901D1666F3A9000B95E1 /* UILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILayer.h; sourceTree = "<group>"; };
+		D30D901E1666F3A9000B95E1 /* UIProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIProperty.cpp; sourceTree = "<group>"; };
+		D30D901F1666F3A9000B95E1 /* UIProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIProperty.h; sourceTree = "<group>"; };
+		D30D90201666F3A9000B95E1 /* UIWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIWindow.cpp; sourceTree = "<group>"; };
+		D30D90211666F3A9000B95E1 /* UIWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWindow.h; sourceTree = "<group>"; };
+		D30D90221666F3A9000B95E1 /* WorldManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldManager.cpp; sourceTree = "<group>"; };
+		D30D90231666F3A9000B95E1 /* WorldManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldManager.h; sourceTree = "<group>"; };
+		D348399F1667120A008869A3 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		D34839A01667120A008869A3 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		D34839A11667120A008869A3 /* CameraObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraObserver.cpp; sourceTree = "<group>"; };
+		D34839A21667120A008869A3 /* CameraObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraObserver.h; sourceTree = "<group>"; };
+		D34839A5166712A7008869A3 /* CameraNotifyEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraNotifyEvents.h; sourceTree = "<group>"; };
+		D34839A6166712C0008869A3 /* CameraNotifyEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraNotifyEvents.cpp; sourceTree = "<group>"; };
+		D34839A816673054008869A3 /* actor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = actor.png; path = Resources/actor.png; sourceTree = "<group>"; };
+		D34839AA166733F6008869A3 /* ActorEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActorEvents.h; sourceTree = "<group>"; };
+		D34839AB16673409008869A3 /* ActorEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorEvents.cpp; sourceTree = "<group>"; };
+		D34839AD166735F7008869A3 /* ActorsControlEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActorsControlEvents.h; sourceTree = "<group>"; };
+		D34839AE16673605008869A3 /* ActorsControlEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorsControlEvents.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -675,6 +746,7 @@
 		D30D8D241666EE89000B95E1 = {
 			isa = PBXGroup;
 			children = (
+				D30D8FF81666F3A9000B95E1 /* GameFramework */,
 				D30D8D431666EE89000B95E1 /* Demo */,
 				D30D8D321666EE89000B95E1 /* Frameworks */,
 				D30D8D301666EE89000B95E1 /* Products */,
@@ -719,6 +791,7 @@
 		D30D8D441666EE89000B95E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D34839A816673054008869A3 /* actor.png */,
 				D30D8D451666EE89000B95E1 /* CloseNormal.png */,
 				D30D8D471666EE89000B95E1 /* CloseSelected.png */,
 				D30D8D491666EE89000B95E1 /* Default.png */,
@@ -1552,10 +1625,112 @@
 			children = (
 				D30D8FE11666EE8C000B95E1 /* AppDelegate.h */,
 				D30D8FE21666EE8C000B95E1 /* AppDelegate.cpp */,
-				D30D8FE41666EE8C000B95E1 /* HelloWorldScene.h */,
-				D30D8FE51666EE8C000B95E1 /* HelloWorldScene.cpp */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		D30D8FF81666F3A9000B95E1 /* GameFramework */ = {
+			isa = PBXGroup;
+			children = (
+				D348399E1667120A008869A3 /* Camera */,
+				D30D8FF91666F3A9000B95E1 /* Actors */,
+				D30D90021666F3A9000B95E1 /* Base */,
+				D30D90091666F3A9000B95E1 /* Buildings */,
+				D30D90121666F3A9000B95E1 /* Terrain */,
+				D30D90191666F3A9000B95E1 /* UI */,
+				D30D90221666F3A9000B95E1 /* WorldManager.cpp */,
+				D30D90231666F3A9000B95E1 /* WorldManager.h */,
+			);
+			name = GameFramework;
+			path = Demo/GameFramework;
+			sourceTree = "<group>";
+		};
+		D30D8FF91666F3A9000B95E1 /* Actors */ = {
+			isa = PBXGroup;
+			children = (
+				D30D8FFA1666F3A9000B95E1 /* ActorEntity.cpp */,
+				D30D8FFB1666F3A9000B95E1 /* ActorEntity.h */,
+				D30D8FFC1666F3A9000B95E1 /* ActorProp.cpp */,
+				D30D8FFD1666F3A9000B95E1 /* ActorProp.h */,
+				D34839AA166733F6008869A3 /* ActorEvents.h */,
+				D34839AB16673409008869A3 /* ActorEvents.cpp */,
+				D34839AD166735F7008869A3 /* ActorsControlEvents.h */,
+				D34839AE16673605008869A3 /* ActorsControlEvents.cpp */,
+				D30D8FFE1666F3A9000B95E1 /* ActorsControl.cpp */,
+				D30D8FFF1666F3A9000B95E1 /* ActorsControl.h */,
+				D30D90001666F3A9000B95E1 /* ActorsLayer.cpp */,
+				D30D90011666F3A9000B95E1 /* ActorsLayer.h */,
+			);
+			path = Actors;
+			sourceTree = "<group>";
+		};
+		D30D90021666F3A9000B95E1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D30D90031666F3A9000B95E1 /* INotifier.cpp */,
+				D30D90041666F3A9000B95E1 /* INotifier.h */,
+				D30D90051666F3A9000B95E1 /* INotifyEvent.cpp */,
+				D30D90061666F3A9000B95E1 /* INotifyEvent.h */,
+				D30D90071666F3A9000B95E1 /* IObserver.cpp */,
+				D30D90081666F3A9000B95E1 /* IObserver.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D30D90091666F3A9000B95E1 /* Buildings */ = {
+			isa = PBXGroup;
+			children = (
+				D30D900A1666F3A9000B95E1 /* BuildingEntity.cpp */,
+				D30D900B1666F3A9000B95E1 /* BuildingEntity.h */,
+				D30D900C1666F3A9000B95E1 /* BuildingProp.cpp */,
+				D30D900D1666F3A9000B95E1 /* BuildingProp.h */,
+				D30D900E1666F3A9000B95E1 /* BuildingsControl.cpp */,
+				D30D900F1666F3A9000B95E1 /* BuildingsControl.h */,
+				D30D90101666F3A9000B95E1 /* BuildingsLayer.cpp */,
+				D30D90111666F3A9000B95E1 /* BuildingsLayer.h */,
+			);
+			path = Buildings;
+			sourceTree = "<group>";
+		};
+		D30D90121666F3A9000B95E1 /* Terrain */ = {
+			isa = PBXGroup;
+			children = (
+				D30D90131666F3A9000B95E1 /* TerrainEvent.cpp */,
+				D30D90141666F3A9000B95E1 /* TerrainEvent.h */,
+				D30D90151666F3A9000B95E1 /* TerrainLayer.cpp */,
+				D30D90161666F3A9000B95E1 /* TerrainLayer.h */,
+				D30D90171666F3A9000B95E1 /* TerrainProp.cpp */,
+				D30D90181666F3A9000B95E1 /* TerrainProp.h */,
+			);
+			path = Terrain;
+			sourceTree = "<group>";
+		};
+		D30D90191666F3A9000B95E1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D30D901A1666F3A9000B95E1 /* UIControl.cpp */,
+				D30D901B1666F3A9000B95E1 /* UIControl.h */,
+				D30D901C1666F3A9000B95E1 /* UILayer.cpp */,
+				D30D901D1666F3A9000B95E1 /* UILayer.h */,
+				D30D901E1666F3A9000B95E1 /* UIProperty.cpp */,
+				D30D901F1666F3A9000B95E1 /* UIProperty.h */,
+				D30D90201666F3A9000B95E1 /* UIWindow.cpp */,
+				D30D90211666F3A9000B95E1 /* UIWindow.h */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D348399E1667120A008869A3 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				D348399F1667120A008869A3 /* Camera.cpp */,
+				D34839A01667120A008869A3 /* Camera.h */,
+				D34839A11667120A008869A3 /* CameraObserver.cpp */,
+				D34839A21667120A008869A3 /* CameraObserver.h */,
+				D34839A5166712A7008869A3 /* CameraNotifyEvents.h */,
+				D34839A6166712C0008869A3 /* CameraNotifyEvents.cpp */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1620,6 +1795,7 @@
 				D30D8D581666EE89000B95E1 /* Icon@2x.png in Resources */,
 				D30D8D5A1666EE89000B95E1 /* iTunesArtwork in Resources */,
 				D30D8DEC1666EE8A000B95E1 /* ChangeLog in Resources */,
+				D34839A916673054008869A3 /* actor.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1808,7 +1984,30 @@
 				D30D8FD61666EE8C000B95E1 /* CCTableViewCell.cpp in Sources */,
 				D30D8FDA1666EE8C000B95E1 /* HttpClient.cpp in Sources */,
 				D30D8FE31666EE8C000B95E1 /* AppDelegate.cpp in Sources */,
-				D30D8FE61666EE8C000B95E1 /* HelloWorldScene.cpp in Sources */,
+				D30D90241666F3A9000B95E1 /* ActorEntity.cpp in Sources */,
+				D30D90251666F3A9000B95E1 /* ActorProp.cpp in Sources */,
+				D30D90261666F3A9000B95E1 /* ActorsControl.cpp in Sources */,
+				D30D90271666F3A9000B95E1 /* ActorsLayer.cpp in Sources */,
+				D30D90281666F3A9000B95E1 /* INotifier.cpp in Sources */,
+				D30D90291666F3A9000B95E1 /* INotifyEvent.cpp in Sources */,
+				D30D902A1666F3A9000B95E1 /* IObserver.cpp in Sources */,
+				D30D902B1666F3A9000B95E1 /* BuildingEntity.cpp in Sources */,
+				D30D902C1666F3A9000B95E1 /* BuildingProp.cpp in Sources */,
+				D30D902D1666F3A9000B95E1 /* BuildingsControl.cpp in Sources */,
+				D30D902E1666F3A9000B95E1 /* BuildingsLayer.cpp in Sources */,
+				D30D902F1666F3A9000B95E1 /* TerrainEvent.cpp in Sources */,
+				D30D90301666F3A9000B95E1 /* TerrainLayer.cpp in Sources */,
+				D30D90311666F3A9000B95E1 /* TerrainProp.cpp in Sources */,
+				D30D90321666F3A9000B95E1 /* UIControl.cpp in Sources */,
+				D30D90331666F3A9000B95E1 /* UILayer.cpp in Sources */,
+				D30D90341666F3A9000B95E1 /* UIProperty.cpp in Sources */,
+				D30D90351666F3A9000B95E1 /* UIWindow.cpp in Sources */,
+				D30D90361666F3A9000B95E1 /* WorldManager.cpp in Sources */,
+				D34839A31667120A008869A3 /* Camera.cpp in Sources */,
+				D34839A41667120A008869A3 /* CameraObserver.cpp in Sources */,
+				D34839A7166712C0008869A3 /* CameraNotifyEvents.cpp in Sources */,
+				D34839AC16673409008869A3 /* ActorEvents.cpp in Sources */,
+				D34839AF16673606008869A3 /* ActorsControlEvents.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1839,6 +2038,7 @@
 					"\"$(PROJECT_NAME)/libs/cocos2dx/include\"",
 					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
 					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
+					"\"$(PROJECT_NAME)/GameFramework\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
@@ -1866,6 +2066,7 @@
 					"\"$(PROJECT_NAME)/libs/cocos2dx/include\"",
 					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
 					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
+					"\"$(PROJECT_NAME)/GameFramework\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -1892,6 +2093,7 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1938,6 +2140,7 @@
 				D30D8FEB1666EE8C000B95E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

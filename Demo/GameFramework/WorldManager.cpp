@@ -1,0 +1,83 @@
+#include "WorldManager.h"
+#include "layers_scenes_transitions_nodes/CCScene.h"
+#include "Terrain/TerrainLayer.h"
+#include "Terrain/TerrainProp.h"
+#include "Actors/ActorsLayer.h"
+#include "Actors/ActorsControl.h"
+#include "Buildings/BuildingsLayer.h"
+#include "Buildings/BuildingsControl.h"
+#include "UI/UILayer.h"
+#include "UI/UIControl.h"
+#include "Camera/Camera.h"
+
+
+namespace Game
+{
+	WorldManager* WorldManager::Instance()
+	{
+		static WorldManager *_ins = new WorldManager;
+		return _ins;
+	}
+
+
+	WorldManager::WorldManager(void)
+		:m_terrain(NULL)
+		,m_ActorsControl(NULL)
+		,m_buildingsControl(NULL)
+		,m_uiControl(NULL)
+        ,m_camera(NULL)
+	{
+
+	}
+	WorldManager::~WorldManager(void)
+	{
+		delete m_camera;
+		delete m_uiControl;
+		delete m_buildingsControl;
+		delete m_ActorsControl;
+		delete m_terrain;
+	}
+
+	cocos2d::CCScene* WorldManager::CreateScene()
+	{
+		cocos2d::CCScene *scene = cocos2d::CCScene::create();
+		scene->init();
+        //摄像机
+        {
+            m_camera = new Camera;
+            m_camera->init();
+        }
+		//地形
+		{
+			TerrainLayer *terrainLayer = TerrainLayer::create();
+			m_terrain = new TerrainProp;
+			m_terrain->AttachObserver(terrainLayer);
+			scene->addChild(terrainLayer);
+		}
+		cocos2d::CCLayer *entityLayer = cocos2d::CCLayer::create();
+		//建筑
+		{
+			BuildingsLayer *buildingsLayer = new BuildingsLayer(entityLayer);
+			m_buildingsControl = new BuildingsControl;
+			m_buildingsControl->AttachObserver(buildingsLayer);
+		}
+		//角色
+		{
+			ActorsLayer *actorsLayer = new ActorsLayer(entityLayer);
+			m_ActorsControl = new ActorsControl;
+			m_ActorsControl->AttachObserver(actorsLayer);
+			//测试用角色
+			m_ActorsControl->CreateActor(1);
+		}
+		scene->addChild(entityLayer);
+		//UI
+		{
+			GUI::UILayer *uiLayer = GUI::UILayer::create();
+			m_uiControl = new GUI::UIControl;
+			m_uiControl->AttachObserver(uiLayer);
+			scene->addChild(uiLayer);
+		}
+		return scene;
+	}
+
+}

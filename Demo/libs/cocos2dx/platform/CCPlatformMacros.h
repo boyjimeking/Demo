@@ -27,6 +27,11 @@
 /**
  * define some platform specific macros
  */
+
+#ifndef TARGET_OS_IPHONE
+#define TARGET_OS_IPHONE
+#endif
+
 #include "ccConfig.h"
 #include "CCPlatformConfig.h"
 #include "CCPlatformDefine.h"
