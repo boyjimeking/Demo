@@ -9,6 +9,7 @@
 #define WorldManager_h__
 
 #include "cocoa/CCGeometry.h"
+#include "Box2D/Box2D.h"
 
 namespace cocos2d
 {
@@ -50,6 +51,8 @@ namespace Game
 		BuildingsControl *m_buildingsControl;
 		GUI::UIControl *m_uiControl;
         Camera *m_camera;
+
+        b2World *m_box2dWorld;
 	private:
 		WorldManager(void);
 		~WorldManager(void);

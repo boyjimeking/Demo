@@ -289,6 +289,8 @@
 		D3939DC7166C889100DA4F56 /* b2WheelJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3939D97166C889000DA4F56 /* b2WheelJoint.cpp */; };
 		D3939DC8166C889100DA4F56 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3939D9A166C889000DA4F56 /* b2Rope.cpp */; };
 		D3939DD7166C911A00DA4F56 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3939DD5166C911900DA4F56 /* MainScene.cpp */; };
+		D3939DDD166C9F0300DA4F56 /* IPropBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3939DDB166C9F0300DA4F56 /* IPropBase.cpp */; };
+		D3939DE0166CA08100DA4F56 /* IPropBaseEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3939DDE166CA08100DA4F56 /* IPropBaseEvents.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -888,6 +890,10 @@
 		D3939D9B166C889000DA4F56 /* b2Rope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2Rope.h; sourceTree = "<group>"; };
 		D3939DD5166C911900DA4F56 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
 		D3939DD6166C911900DA4F56 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
+		D3939DDB166C9F0300DA4F56 /* IPropBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPropBase.cpp; sourceTree = "<group>"; };
+		D3939DDC166C9F0300DA4F56 /* IPropBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPropBase.h; sourceTree = "<group>"; };
+		D3939DDE166CA08100DA4F56 /* IPropBaseEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPropBaseEvents.cpp; sourceTree = "<group>"; };
+		D3939DDF166CA08100DA4F56 /* IPropBaseEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPropBaseEvents.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1849,6 +1855,10 @@
 			children = (
 				D30D90031666F3A9000B95E1 /* INotifier.cpp */,
 				D30D90041666F3A9000B95E1 /* INotifier.h */,
+				D3939DDB166C9F0300DA4F56 /* IPropBase.cpp */,
+				D3939DDC166C9F0300DA4F56 /* IPropBase.h */,
+				D3939DDE166CA08100DA4F56 /* IPropBaseEvents.cpp */,
+				D3939DDF166CA08100DA4F56 /* IPropBaseEvents.h */,
 				D30D90051666F3A9000B95E1 /* INotifyEvent.cpp */,
 				D30D90061666F3A9000B95E1 /* INotifyEvent.h */,
 				D30D90071666F3A9000B95E1 /* IObserver.cpp */,
@@ -2407,6 +2417,8 @@
 				D3939DC7166C889100DA4F56 /* b2WheelJoint.cpp in Sources */,
 				D3939DC8166C889100DA4F56 /* b2Rope.cpp in Sources */,
 				D3939DD7166C911A00DA4F56 /* MainScene.cpp in Sources */,
+				D3939DDD166C9F0300DA4F56 /* IPropBase.cpp in Sources */,
+				D3939DE0166CA08100DA4F56 /* IPropBaseEvents.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

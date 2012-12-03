@@ -9,7 +9,7 @@
 #ifndef Demo_Camera_h
 #define Demo_Camera_h
 
-#include "Base/INotifier.h"
+#include "Base/IPropBase.h"
 #include "cocoa/CCGeometry.h"
 
 namespace cocos2d
@@ -21,7 +21,7 @@ namespace Game
 {
 	class CameraObserver;
     class Camera
-        :public INotifier
+        :public IPropBase
     {
     public:
         Camera(void);
@@ -32,10 +32,9 @@ namespace Game
         cocos2d::CCPoint ConvertWorldPosToScreen(const cocos2d::CCPoint &worldPos);
         cocos2d::CCPoint ConvertScreenPosToWorld(const cocos2d::CCPoint &screenPos);
 
-        void SetPosition(const cocos2d::CCPoint &newPosition);
+        virtual void SetPosition(const cocos2d::CCPoint &newPosition);
     protected:
     private:
-        cocos2d::CCPoint m_position;
         cocos2d::CCSize m_size;
 
     };

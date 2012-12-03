@@ -18,8 +18,6 @@ namespace Game
 	{
 	public:
 		static MainScene* create();
-		MainScene(void);
-		virtual ~MainScene();
 	
 		virtual void update(float dt);
 	private:

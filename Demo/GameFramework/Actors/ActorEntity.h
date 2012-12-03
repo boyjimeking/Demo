@@ -43,6 +43,7 @@ namespace Game
 	protected:
 		void PlayAnimation(ENDirection direction);
 		void MoveTo(const cocos2d::CCPoint &worldPos);
+		ENDirection CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos);
 	};
 }
 

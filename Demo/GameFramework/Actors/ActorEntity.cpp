@@ -9,6 +9,7 @@
 #include "CCDirector.h"
 #include "support/CCPointExtension.h"
 #include "ActorActions.h"
+#include "../Base/IPropBaseEvents.h"
 
 
 namespace Game
@@ -55,6 +56,13 @@ namespace Game
 					MoveTo(actorEvent->GetWorldPos());
 				}
 				break;
+			case ENIPropBaseEvent::enIPropBaseEvent_UpdatePosition:
+				{
+					const IPropBaseEvent *baseEvent = reinterpret_cast<const IPropBaseEvent*>(event);
+					PlayAnimation(CalDirection(baseEvent->GetPosition(), getPosition()));
+					setPosition(baseEvent->GetPosition());
+				}
+				break;
 			default:
 				break;
 		}
@@ -86,33 +94,37 @@ namespace Game
 	void ActorEntity::MoveTo(const cocos2d::CCPoint &worldPos)
 	{
 		this->stopActionByTag(enActorAction_MoveTo);
-		cocos2d::CCPoint disVec = cocos2d::ccpSub(worldPos, getPosition());
+		PlayAnimation(CalDirection(worldPos, getPosition()));
+		float distance = cocos2d::ccpDistance(worldPos, getPosition());
+		static const float speed = 480.0f;
+		cocos2d::CCAction *action = MainActor_Move::create(distance / speed, worldPos);
+		action->setTag(enActorAction_MoveTo);
+		this->runAction(action);
+	}
+	ActorEntity::ENDirection ActorEntity::CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos)
+	{
+		cocos2d::CCPoint disVec = cocos2d::ccpSub(targetPos, currentPos);
 		if (abs(disVec.x) > abs(disVec.y))
 		{
 			if (disVec.x > 0)
 			{
-				PlayAnimation(enActorDirection_Right);
+				return enActorDirection_Right;
 			}
 			else
 			{
-				PlayAnimation(enActorDirection_Left);
+				return enActorDirection_Left;
 			}
 		}
 		else
 		{
 			if (disVec.y > 0)
 			{
-				PlayAnimation(enActorDirection_Up);
+				return enActorDirection_Up;
 			}
 			else
 			{
-				PlayAnimation(enActorDirection_Down);
+				return enActorDirection_Down;
 			}
 		}
-		float distance = cocos2d::ccpLength(disVec);
-		static const float speed = 480.0f;
-		cocos2d::CCAction *action = MainActor_Move::create(distance / speed, worldPos);
-		action->setTag(enActorAction_MoveTo);
-		this->runAction(action);
 	}
 }
