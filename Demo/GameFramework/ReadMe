@@ -1,0 +1,13 @@
+逻辑基础架构为订阅者模式
+
+INotifier：发布者类，全部属性的基类，用于通知订阅者改变
+IObserver：订阅者类，全部实体的基类，用于响应发布者改变
+
+发布者：
+IPropBase：继承INotifier，属性基类，记录实体的各种属性信息，主要提供给box2d使用
+ActorProp：继承IPropBase，角色属性，记录并控制具体的角色实体
+ActorsControl：继承INotifier，角色控制类，存储并控制全部的角色属性
+
+订阅者：
+ActorEntity：继承IObserver，角色实体类，处理具体的角色位移等的变换
+ActorsLayer：继承IObserver，角色显示曾，所有ActorEntity节点的挂载点

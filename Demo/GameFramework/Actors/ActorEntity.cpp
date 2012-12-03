@@ -10,6 +10,8 @@
 #include "support/CCPointExtension.h"
 #include "ActorActions.h"
 #include "../Base/IPropBaseEvents.h"
+#include "WorldManager.h"
+#include "../Camera/Camera.h"
 
 
 namespace Game
@@ -61,6 +63,7 @@ namespace Game
 					const IPropBaseEvent *baseEvent = reinterpret_cast<const IPropBaseEvent*>(event);
 					PlayAnimation(CalDirection(baseEvent->GetPosition(), getPosition()));
 					setPosition(baseEvent->GetPosition());
+					WorldManager::Instance()->GetCamera()->SetPosition(getPosition());
 				}
 				break;
 			default:
