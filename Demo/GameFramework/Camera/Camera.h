@@ -31,9 +31,12 @@ namespace Game
         
         cocos2d::CCPoint ConvertWorldPosToScreen(const cocos2d::CCPoint &worldPos);
         cocos2d::CCPoint ConvertScreenPosToWorld(const cocos2d::CCPoint &screenPos);
+
+        void SetPosition(const cocos2d::CCPoint &newPosition);
     protected:
     private:
         cocos2d::CCPoint m_position;
+        cocos2d::CCSize m_size;
 
     };
 }

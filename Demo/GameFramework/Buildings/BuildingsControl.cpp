@@ -1,4 +1,4 @@
-﻿#include "BuildingsControl.h"
+#include "BuildingsControl.h"
 
 namespace Game
 {

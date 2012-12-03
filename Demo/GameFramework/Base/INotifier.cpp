@@ -1,4 +1,4 @@
-﻿#include "INotifier.h"
+#include "INotifier.h"
 #include "IObserver.h"
 
 INotifier::INotifier(void)

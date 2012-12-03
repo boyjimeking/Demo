@@ -16,6 +16,7 @@ namespace Game
 {
     Camera::Camera(void)
         :m_position(-480, -240)
+        ,m_size(960, 640)
     {
 
     }
@@ -27,8 +28,8 @@ namespace Game
 
     void Camera::init(cocos2d::CCScene *scene)
     {
-        cocos2d::CCSize visiableSize = cocos2d::CCDirector::sharedDirector()->getVisibleSize();
-        m_position = ccp(-visiableSize.width / 2, -visiableSize.height / 2);
+        m_size = cocos2d::CCDirector::sharedDirector()->getVisibleSize();
+        m_position = ccp(-m_size.width / 2, -m_size.height / 2);
     	CameraObserver *observer = new CameraObserver(scene);
     	this->AttachObserver(observer);
 
@@ -43,5 +44,14 @@ namespace Game
     cocos2d::CCPoint Camera::ConvertScreenPosToWorld(const cocos2d::CCPoint &screenPos)
     {
         return cocos2d::ccpAdd(screenPos, m_position);
+    }
+
+    void Camera::SetPosition(const cocos2d::CCPoint &newPosition)
+    {
+        m_position = newPosition;
+        m_position.x -= m_size.width / 2;
+        m_position.y -= m_size.height / 2;
+        CameraPosChanged event(m_position);
+        NotifyChange(&event);
     }
 }

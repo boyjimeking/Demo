@@ -8,6 +8,7 @@
 #include "actions/CCActionInterval.h"
 #include "CCDirector.h"
 #include "support/CCPointExtension.h"
+#include "ActorActions.h"
 
 
 namespace Game
@@ -110,7 +111,7 @@ namespace Game
 		}
 		float distance = cocos2d::ccpLength(disVec);
 		static const float speed = 480.0f;
-		cocos2d::CCAction *action = cocos2d::CCMoveTo::create(distance / speed, worldPos);
+		cocos2d::CCAction *action = MainActor_Move::create(distance / speed, worldPos);
 		action->setTag(enActorAction_MoveTo);
 		this->runAction(action);
 	}

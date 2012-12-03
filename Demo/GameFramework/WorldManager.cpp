@@ -1,5 +1,5 @@
 #include "WorldManager.h"
-#include "layers_scenes_transitions_nodes/CCScene.h"
+#include "MainScene.h"
 #include "Terrain/TerrainLayer.h"
 #include "Terrain/TerrainProp.h"
 #include "Actors/ActorsLayer.h"
@@ -11,6 +11,7 @@
 #include "Camera/Camera.h"
 #include "CCDirector.h"
 #include "support/CCPointExtension.h"
+#include "Box2D/Box2D.h"
 
 namespace Game
 {
@@ -41,8 +42,7 @@ namespace Game
 
 	cocos2d::CCScene* WorldManager::CreateScene()
 	{
-		cocos2d::CCScene *scene = cocos2d::CCScene::create();
-		scene->init();
+		MainScene *scene = MainScene::create();
         //摄像机
         {
             m_camera = new Camera;
@@ -54,6 +54,8 @@ namespace Game
 			m_terrain = new TerrainProp;
 			m_terrain->AttachObserver(terrainLayer);
 			scene->addChild(terrainLayer);
+			//测试地表
+			m_terrain->Load("TestTerrain", "terrain");
 		}
 		cocos2d::CCLayer *entityLayer = cocos2d::CCLayer::create();
 		//建筑
@@ -87,5 +89,9 @@ namespace Game
     cocos2d::CCPoint WorldManager::ScreenPosToWorld(const cocos2d::CCPoint &screenPos)
     {
     	return Instance()->GetCamera()->ConvertScreenPosToWorld(screenPos);
+    }
+    void WorldManager::update(float dt)
+    {
+
     }
 }

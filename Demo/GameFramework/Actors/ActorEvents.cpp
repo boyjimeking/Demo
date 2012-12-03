@@ -7,3 +7,8 @@
 //
 
 #include "ActorEvents.h"
+
+namespace Game
+{
+	
+}

@@ -1,4 +1,4 @@
-﻿#include "IObserver.h"
+#include "IObserver.h"
 
 IObserver::IObserver(void)
 {

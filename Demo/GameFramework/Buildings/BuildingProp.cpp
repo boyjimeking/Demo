@@ -1,4 +1,4 @@
-﻿#include "BuildingProp.h"
+#include "BuildingProp.h"
 
 namespace Game
 {

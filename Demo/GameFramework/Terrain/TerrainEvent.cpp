@@ -1,4 +1,4 @@
-﻿#include "TerrainEvent.h"
+#include "TerrainEvent.h"
 
 namespace Game
 {

@@ -42,6 +42,8 @@ namespace Game
 
         static cocos2d::CCPoint WorldPosToScreen(const cocos2d::CCPoint &worldPos);
         static cocos2d::CCPoint ScreenPosToWorld(const cocos2d::CCPoint &screenPos);
+
+        void update(float dt);
 	protected:
 		TerrainProp *m_terrain;
 		ActorsControl *m_ActorsControl;

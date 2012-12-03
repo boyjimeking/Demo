@@ -8,6 +8,7 @@
 #include "Actors/ActorProp.h"
 #include "Actors/ActorsControl.h"
 #include "Camera/Camera.h"
+#include "GridEntity.h"
 
 namespace Game
 {
@@ -44,8 +45,18 @@ namespace Game
 		}
 		switch (event->GetNotifyEventType())
 		{
-		default:
-			break;
+			case ENTerrainEventType::enTerrainEvent_LoadTerrain:
+				{
+					const TerrainEvent_LoadTerrain *loadEvent = reinterpret_cast<const TerrainEvent_LoadTerrain*>(event);
+					for (int index = 0; index < loadEvent->GetLength(); ++index)
+					{
+						GridEntity *entity = loadEvent->GetEntity(index);
+						this->addChild(entity);
+					}
+				}
+				break;
+			default:
+				break;
 		}
 	}
 

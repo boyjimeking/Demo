@@ -1,4 +1,4 @@
-﻿#include "INotifyEvent.h"
+#include "INotifyEvent.h"
 
 INotifyEvent::~INotifyEvent( void )
 {
