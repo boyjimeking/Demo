@@ -22,6 +22,7 @@ namespace Game
 			enActorEvent_Create,
 			enActorEvent_Release,
 			enActorEvent_ChangePos,
+			enActorEvent_UpdateDirection,
 		};
 	};
 
@@ -29,6 +30,12 @@ namespace Game
 		:public INotifyEvent
 	{
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enActorEvent_Create; }
+
+		ActorEventCreate(bool isMain) : m_isMain(isMain) {}
+
+		bool IsMain(void) const { return m_isMain; }
+	private:
+		bool m_isMain;
 	};
 
 	struct ActorEventRelease
@@ -42,6 +49,17 @@ namespace Game
 	{
 		ActorEventChangePos(const cocos2d::CCPoint &worldPos) : m_targetPos(worldPos) {}
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enActorEvent_ChangePos; }
+		const cocos2d::CCPoint& GetWorldPos(void) const { return m_targetPos; };
+	private:
+		cocos2d::CCPoint m_targetPos;
+	};
+
+	struct ActorEventUpdateDirection
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enActorEvent_UpdateDirection; }
+
+		ActorEventUpdateDirection(const cocos2d::CCPoint &targetPos) : m_targetPos(targetPos) {}
 		const cocos2d::CCPoint& GetWorldPos(void) const { return m_targetPos; };
 	private:
 		cocos2d::CCPoint m_targetPos;

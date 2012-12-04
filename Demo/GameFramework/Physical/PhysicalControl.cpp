@@ -15,6 +15,7 @@ namespace Game
 {
 	PhysicalControl::PhysicalControl(void)
 	:m_box2dWorld(new b2World(b2Vec2(0.0f, 0.0f)))
+	,m_ground(NULL)
 	{
 		m_box2dWorld->SetAllowSleeping(true);
 	}

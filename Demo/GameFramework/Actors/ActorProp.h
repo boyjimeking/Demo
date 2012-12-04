@@ -31,10 +31,14 @@ namespace Game
 		void MoveTo(const cocos2d::CCPoint &pos);
 
 		void SetPosition(const cocos2d::CCPoint &pos);
+
+		void SetIsMain(bool isMain) { m_isMain = isMain; }
+		bool IsMain(void) const { return m_isMain; }
 	protected:
 		PhysicalObj *m_physicalObj;
 		cocos2d::CCPoint m_position;
 	private:
+		bool m_isMain;
 	};
 }
 

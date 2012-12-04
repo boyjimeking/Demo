@@ -517,7 +517,6 @@
 		D3939927166C575300DA4F56 /* terrain_5.png in Resources */ = {isa = PBXBuildFile; fileRef = D3939923166C575300DA4F56 /* terrain_5.png */; };
 		D3939928166C575300DA4F56 /* terrain_6.png in Resources */ = {isa = PBXBuildFile; fileRef = D3939924166C575300DA4F56 /* terrain_6.png */; };
 		D3939929166C575300DA4F56 /* terrain_7.png in Resources */ = {isa = PBXBuildFile; fileRef = D3939925166C575300DA4F56 /* terrain_7.png */; };
-		D393992C166C781500DA4F56 /* ActorActions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D393992A166C781500DA4F56 /* ActorActions.cpp */; };
 		D3939D9C166C889100DA4F56 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3939D3C166C889000DA4F56 /* b2BroadPhase.cpp */; };
 		D3939D9D166C889100DA4F56 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3939D3E166C889000DA4F56 /* b2CollideCircle.cpp */; };
 		D3939D9E166C889100DA4F56 /* b2CollideEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3939D3F166C889000DA4F56 /* b2CollideEdge.cpp */; };
@@ -10085,8 +10084,6 @@
 		D3939923166C575300DA4F56 /* terrain_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_5.png; path = Resources/terrain_5.png; sourceTree = "<group>"; };
 		D3939924166C575300DA4F56 /* terrain_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_6.png; path = Resources/terrain_6.png; sourceTree = "<group>"; };
 		D3939925166C575300DA4F56 /* terrain_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_7.png; path = Resources/terrain_7.png; sourceTree = "<group>"; };
-		D393992A166C781500DA4F56 /* ActorActions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorActions.cpp; sourceTree = "<group>"; };
-		D393992B166C781500DA4F56 /* ActorActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActorActions.h; sourceTree = "<group>"; };
 		D3939D3A166C889000DA4F56 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
 		D3939D3C166C889000DA4F56 /* b2BroadPhase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2BroadPhase.cpp; sourceTree = "<group>"; };
 		D3939D3D166C889000DA4F56 /* b2BroadPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2BroadPhase.h; sourceTree = "<group>"; };
@@ -11134,8 +11131,6 @@
 				D30D8FFF1666F3A9000B95E1 /* ActorsControl.h */,
 				D30D90001666F3A9000B95E1 /* ActorsLayer.cpp */,
 				D30D90011666F3A9000B95E1 /* ActorsLayer.h */,
-				D393992A166C781500DA4F56 /* ActorActions.cpp */,
-				D393992B166C781500DA4F56 /* ActorActions.h */,
 			);
 			path = Actors;
 			sourceTree = "<group>";
@@ -27025,7 +27020,6 @@
 				D393991B166C3D4800DA4F56 /* GridProp.cpp in Sources */,
 				D393991E166C3D5B00DA4F56 /* GridEntity.cpp in Sources */,
 				D3939921166C45A300DA4F56 /* GridEvents.cpp in Sources */,
-				D393992C166C781500DA4F56 /* ActorActions.cpp in Sources */,
 				D3939D9C166C889100DA4F56 /* b2BroadPhase.cpp in Sources */,
 				D3939D9D166C889100DA4F56 /* b2CollideCircle.cpp in Sources */,
 				D3939D9E166C889100DA4F56 /* b2CollideEdge.cpp in Sources */,

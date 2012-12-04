@@ -12,27 +12,28 @@ namespace Game
 	{
 		ClearActor();
 	}
-	bool ActorsControl::CreateActor(int actorID)
+	ActorProp* ActorsControl::CreateActor(int actorID, bool isMain /* = false */)
 	{
 		ActorMap::iterator it = m_actorMap.find(actorID);
 		if (m_actorMap.end() != it)
 		{
 			//Already have.
-			return false;
+			return NULL;
 		}
 		ActorProp *actor = new ActorProp;
+		actor->SetIsMain(isMain);
 		ActorEntity *entity = actor->Create();
 		if (NULL == entity)
 		{
 			//Create error.
 			delete actor;
-			return false;
+			return NULL;
 		}
 		m_actorMap.insert(std::make_pair(actorID, actor));
 
 		ActorsControlEventCreateActor event(entity);
 		NotifyChange(&event);
-		return false;
+		return actor;
 	}
 	void ActorsControl::ReleaseActor(int actorID)
 	{

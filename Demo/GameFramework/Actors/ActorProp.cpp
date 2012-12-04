@@ -7,6 +7,7 @@ namespace Game
 {
 	ActorProp::ActorProp(void)
 	:m_physicalObj(NULL)
+	,m_isMain(false)
 	{
 
 	}
@@ -24,7 +25,7 @@ namespace Game
 		entity->init();
 		AttachObserver(entity);
 
-		ActorEventCreate event;
+		ActorEventCreate event(m_isMain);
 		NotifyChange(&event);
 		return entity;
 	}
@@ -36,13 +37,10 @@ namespace Game
 	}
 	void ActorProp::MoveTo(const cocos2d::CCPoint &pos)
 	{
-		// if (m_position.equals(pos))
-		// {
-		// 	return;
-		// }
-		// m_position = pos;
-		// ActorEventChangePos event(pos);
-		// NotifyChange(&event);
+		m_physicalObj->Move(m_position, pos);
+		
+		ActorEventUpdateDirection event(pos);
+		NotifyChange(&event);
 	}
 	void ActorProp::SetPosition(const cocos2d::CCPoint &pos)
 	{

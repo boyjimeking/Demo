@@ -10,6 +10,7 @@
 #define __Demo__PhysicalControl__
 
 class b2World;
+class b2Body;
 
 namespace Game
 {
@@ -26,6 +27,7 @@ namespace Game
 		b2World* GetBox2DWorld(void) const { return m_box2dWorld; }
 	private:
 		b2World *m_box2dWorld;
+		b2Body *m_ground;
 	};
 }
 

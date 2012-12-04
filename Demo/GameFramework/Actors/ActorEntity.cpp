@@ -8,7 +8,6 @@
 #include "actions/CCActionInterval.h"
 #include "CCDirector.h"
 #include "support/CCPointExtension.h"
-#include "ActorActions.h"
 #include "WorldManager.h"
 #include "../Camera/Camera.h"
 
@@ -24,6 +23,7 @@ namespace Game
 		};
 	ActorEntity::ActorEntity(void)
 	:m_currentDirection(enError)
+	,m_isMain(false)
 	{
 
 	}
@@ -42,9 +42,11 @@ namespace Game
 		{
 			case ENActorEvent::enActorEvent_Create:
 				{
+					const ActorEventCreate *actorEvent = reinterpret_cast<const ActorEventCreate*>(event);
 					PlayAnimation(enActorDirection_Down);
 					cocos2d::CCSize visibleSize = cocos2d::CCDirector::sharedDirector()->getVisibleSize();
 					this->setPosition(cocos2d::CCPointZero);
+					m_isMain = actorEvent->IsMain();
 				}
 				break;
 			case ENActorEvent::enActorEvent_Release:
@@ -55,9 +57,17 @@ namespace Game
 			case ENActorEvent::enActorEvent_ChangePos:
 				{
 					const ActorEventChangePos *actorEvent = reinterpret_cast<const ActorEventChangePos*>(event);
-					PlayAnimation(CalDirection(actorEvent->GetWorldPos(), getPosition()));
 					setPosition(actorEvent->GetWorldPos());
-					WorldManager::Instance()->GetCamera()->SetPosition(getPosition());
+					if (m_isMain)
+					{
+						WorldManager::Instance()->GetCamera()->SetPosition(getPosition());
+					}
+				}
+				break;
+			case ENActorEvent::enActorEvent_UpdateDirection:
+				{
+					const ActorEventUpdateDirection *actorEvent = reinterpret_cast<const ActorEventUpdateDirection*>(event);
+					PlayAnimation(CalDirection(actorEvent->GetWorldPos(), getPosition()));
 				}
 				break;
 			default:
@@ -70,6 +80,7 @@ namespace Game
 		{
 			return;
 		}
+		m_currentDirection = direction;
 		cocos2d::CCTexture2D *texture = cocos2d::CCTextureCache::sharedTextureCache()->addImage("actor.png");
 		cocos2d::CCArray *frameArray = cocos2d::CCArray::createWithCapacity(4);
 		//width:47 height:95
@@ -90,16 +101,6 @@ namespace Game
 		cocos2d::CCAction *action = cocos2d::CCRepeatForever::create(animate);
 		this->stopActionByTag(enActorAction_PlayAnimation);
 		action->setTag(enActorAction_PlayAnimation);
-		this->runAction(action);
-	}
-	void ActorEntity::MoveTo(const cocos2d::CCPoint &worldPos)
-	{
-		this->stopActionByTag(enActorAction_MoveTo);
-		PlayAnimation(CalDirection(worldPos, getPosition()));
-		float distance = cocos2d::ccpDistance(worldPos, getPosition());
-		static const float speed = 480.0f;
-		cocos2d::CCAction *action = MainActor_Move::create(distance / speed, worldPos);
-		action->setTag(enActorAction_MoveTo);
 		this->runAction(action);
 	}
 	ActorEntity::ENDirection ActorEntity::CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos)

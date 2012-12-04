@@ -68,6 +68,12 @@ namespace Game
 		cocos2d::CCLog("TerrainLayer: %f, %f", pos.x, pos.y);
 		//什么都没点到的时候，主角移动
 		ProcessMainActorMove(pos);
+		// static int actorCount = 1;
+		// for (int index = 0; index < 10; ++index)
+		// {
+		// 	cocos2d::CCLog("actorCount: %d", actorCount);
+		// 	WorldManager::Instance()->GetActorsControl()->CreateActor(++actorCount);
+		// }
 	}
 	void TerrainLayer::ProcessMainActorMove(const cocos2d::CCPoint &screenPos)
 	{

@@ -4,6 +4,7 @@
 #include "Terrain/TerrainProp.h"
 #include "Actors/ActorsLayer.h"
 #include "Actors/ActorsControl.h"
+#include "Actors/ActorProp.h"
 #include "Buildings/BuildingsLayer.h"
 #include "Buildings/BuildingsControl.h"
 #include "UI/UILayer.h"
@@ -77,7 +78,7 @@ namespace Game
 			m_ActorsControl = new ActorsControl;
 			m_ActorsControl->AttachObserver(actorsLayer);
 			//测试用角色
-			m_ActorsControl->CreateActor(1);
+			m_ActorsControl->CreateActor(1, true);
 		}
 		scene->addChild(entityLayer);
 		//UI
