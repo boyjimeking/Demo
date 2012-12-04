@@ -8,17 +8,18 @@
 #ifndef ActorProp_h__
 #define ActorProp_h__
 
-#include "../Base/IPropBase.h"
+#include "../Base/INotifier.h"
 #include "cocoa/CCGeometry.h"
 
 namespace Game
 {
 	class ActorEntity;
+	class PhysicalObj;
 	/*
 	 *	角色属性类，用于记录并控制角色的各项属性
 	 */
 	class ActorProp
-		:public IPropBase
+		:public INotifier
 	{
 	public:
 		ActorProp(void);
@@ -28,7 +29,11 @@ namespace Game
 		void Release(void);
 
 		void MoveTo(const cocos2d::CCPoint &pos);
+
+		void SetPosition(const cocos2d::CCPoint &pos);
 	protected:
+		PhysicalObj *m_physicalObj;
+		cocos2d::CCPoint m_position;
 	private:
 	};
 }

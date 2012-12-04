@@ -9,7 +9,6 @@
 #define WorldManager_h__
 
 #include "cocoa/CCGeometry.h"
-#include "Box2D/Box2D.h"
 
 namespace cocos2d
 {
@@ -27,6 +26,7 @@ namespace Game
 	class ActorsControl;
 	class BuildingsControl;
     class Camera;
+    class PhysicalControl;
 	/*
 	 *	世界主控
 	 */
@@ -40,6 +40,7 @@ namespace Game
 		ActorsControl * GetActorsControl(void) const { return m_ActorsControl; }
 		BuildingsControl * GetBuildingsControl(void) const { return m_buildingsControl; }
         Camera* GetCamera(void) const { return m_camera; }
+        PhysicalControl* GetPhysicalControl(void) const { return m_physicalControl; }
 
         static cocos2d::CCPoint WorldPosToScreen(const cocos2d::CCPoint &worldPos);
         static cocos2d::CCPoint ScreenPosToWorld(const cocos2d::CCPoint &screenPos);
@@ -51,8 +52,7 @@ namespace Game
 		BuildingsControl *m_buildingsControl;
 		GUI::UIControl *m_uiControl;
         Camera *m_camera;
-
-        b2World *m_box2dWorld;
+        PhysicalControl *m_physicalControl;
 	private:
 		WorldManager(void);
 		~WorldManager(void);

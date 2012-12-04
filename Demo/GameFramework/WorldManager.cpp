@@ -11,9 +11,8 @@
 #include "Camera/Camera.h"
 #include "CCDirector.h"
 #include "support/CCPointExtension.h"
-#include "Box2D/Box2D.h"
-#include "Base/IPropBaseEvents.h"
-#include "support/CCPointExtension.h"
+#include "Physical/PhysicalObj.h"
+#include "Physical/PhysicalControl.h"
 
 namespace Game
 {
@@ -30,13 +29,13 @@ namespace Game
 		,m_buildingsControl(NULL)
 		,m_uiControl(NULL)
         ,m_camera(NULL)
-        ,m_box2dWorld(NULL)
+        ,m_physicalControl(NULL)
 	{
 
 	}
 	WorldManager::~WorldManager(void)
 	{
-		delete m_box2dWorld;
+		delete m_physicalControl;
 		delete m_camera;
 		delete m_uiControl;
 		delete m_buildingsControl;
@@ -47,9 +46,9 @@ namespace Game
 	cocos2d::CCScene* WorldManager::CreateScene()
 	{
 		MainScene *scene = MainScene::create();
+		//Box2D
 		{
-			m_box2dWorld = new b2World(b2Vec2(0.0f, 0.0f));
-			m_box2dWorld->SetAllowSleeping(true);
+			m_physicalControl = new PhysicalControl;
 		}
         //摄像机
         {
@@ -100,19 +99,6 @@ namespace Game
     }
     void WorldManager::update(float dt)
     {
-    	if (NULL == m_box2dWorld)
-    	{
-    		return;
-    	}
-    	m_box2dWorld->Step(dt, 8, 8);
-    	for (b2Body *body = m_box2dWorld->GetBodyList(); NULL != body; body = body->GetNext())
-    	{
-    		if (NULL != body->GetUserData())
-    		{
-    			IPropBase *prop = (IPropBase*)(body->GetUserData());
-    			IPropBaseEvent event(ccp(body->GetPosition().x * PTM_RATIO, body->GetPosition().y * PTM_RATIO));
-    			prop->NotifyChange(&event);
-    		}
-    	}
+    	GetPhysicalControl()->Update(dt);
     }
 }

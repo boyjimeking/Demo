@@ -15,6 +15,7 @@ namespace Game
 		MainScene *pRet = new MainScene();
 	    if (pRet && pRet->init())
 	    {
+	    	pRet->scheduleUpdate();
 	        pRet->autorelease();
 	        return pRet;
 	    }

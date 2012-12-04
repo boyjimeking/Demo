@@ -9,7 +9,6 @@
 #include "CCDirector.h"
 #include "support/CCPointExtension.h"
 #include "ActorActions.h"
-#include "../Base/IPropBaseEvents.h"
 #include "WorldManager.h"
 #include "../Camera/Camera.h"
 
@@ -24,6 +23,7 @@ namespace Game
 			{ {0,285}, {47,285}, {94,285}, {141,285} }
 		};
 	ActorEntity::ActorEntity(void)
+	:m_currentDirection(enError)
 	{
 
 	}
@@ -55,14 +55,8 @@ namespace Game
 			case ENActorEvent::enActorEvent_ChangePos:
 				{
 					const ActorEventChangePos *actorEvent = reinterpret_cast<const ActorEventChangePos*>(event);
-					MoveTo(actorEvent->GetWorldPos());
-				}
-				break;
-			case ENIPropBaseEvent::enIPropBaseEvent_UpdatePosition:
-				{
-					const IPropBaseEvent *baseEvent = reinterpret_cast<const IPropBaseEvent*>(event);
-					PlayAnimation(CalDirection(baseEvent->GetPosition(), getPosition()));
-					setPosition(baseEvent->GetPosition());
+					PlayAnimation(CalDirection(actorEvent->GetWorldPos(), getPosition()));
+					setPosition(actorEvent->GetWorldPos());
 					WorldManager::Instance()->GetCamera()->SetPosition(getPosition());
 				}
 				break;
@@ -72,6 +66,10 @@ namespace Game
 	}
 	void ActorEntity::PlayAnimation(ENDirection direction)
 	{
+		if (m_currentDirection == direction)
+		{
+			return;
+		}
 		cocos2d::CCTexture2D *texture = cocos2d::CCTextureCache::sharedTextureCache()->addImage("actor.png");
 		cocos2d::CCArray *frameArray = cocos2d::CCArray::createWithCapacity(4);
 		//width:47 height:95
