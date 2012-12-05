@@ -564,6 +564,11 @@
 		D3939DC8166C889100DA4F56 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3939D9A166C889000DA4F56 /* b2Rope.cpp */; };
 		D3939DD7166C911A00DA4F56 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3939DD5166C911900DA4F56 /* MainScene.cpp */; };
 		D3939DE4166CAB6F00DA4F56 /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = D3939DE3166CAB6F00DA4F56 /* ReadMe */; };
+		D3FC5F57166EE02F00BDCF3B /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F55166EE02F00BDCF3B /* Server.cpp */; };
+		D3FC5F5B166EE07A00BDCF3B /* CSMessageDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */; };
+		D3FC5F5F166EE0D700BDCF3B /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F5D166EE0D700BDCF3B /* Client.cpp */; };
+		D3FC5F62166EE2B700BDCF3B /* CSMessageType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F60166EE2B700BDCF3B /* CSMessageType.cpp */; };
+		D3FC5F65166EE5D700BDCF3B /* CSPipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F63166EE5D700BDCF3B /* CSPipeline.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -10178,6 +10183,16 @@
 		D3939DD5166C911900DA4F56 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
 		D3939DD6166C911900DA4F56 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		D3939DE3166CAB6F00DA4F56 /* ReadMe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
+		D3FC5F55166EE02F00BDCF3B /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Server.cpp; path = VirtualServer/Server.cpp; sourceTree = "<group>"; };
+		D3FC5F56166EE02F00BDCF3B /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Server.h; path = VirtualServer/Server.h; sourceTree = "<group>"; };
+		D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSMessageDef.cpp; path = CSProtocol/CSMessageDef.cpp; sourceTree = "<group>"; };
+		D3FC5F5A166EE07A00BDCF3B /* CSMessageDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMessageDef.h; path = CSProtocol/CSMessageDef.h; sourceTree = "<group>"; };
+		D3FC5F5D166EE0D700BDCF3B /* Client.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Client.cpp; path = Client/Client.cpp; sourceTree = "<group>"; };
+		D3FC5F5E166EE0D700BDCF3B /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Client.h; path = Client/Client.h; sourceTree = "<group>"; };
+		D3FC5F60166EE2B700BDCF3B /* CSMessageType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSMessageType.cpp; path = CSProtocol/CSMessageType.cpp; sourceTree = "<group>"; };
+		D3FC5F61166EE2B700BDCF3B /* CSMessageType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMessageType.h; path = CSProtocol/CSMessageType.h; sourceTree = "<group>"; };
+		D3FC5F63166EE5D700BDCF3B /* CSPipeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSPipeline.cpp; path = CSProtocol/CSPipeline.cpp; sourceTree = "<group>"; };
+		D3FC5F64166EE5D700BDCF3B /* CSPipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSPipeline.h; path = CSProtocol/CSPipeline.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -10235,6 +10250,8 @@
 		D30D8D431666EE89000B95E1 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				D3FC5F58166EE03400BDCF3B /* CSProtocol */,
+				D3FC5F53166EDFE200BDCF3B /* VirtualServer */,
 				D30D8FF81666F3A9000B95E1 /* GameFramework */,
 				D30D8D441666EE89000B95E1 /* Resources */,
 				D30D8D5C1666EE89000B95E1 /* ios */,
@@ -11099,6 +11116,7 @@
 		D30D8FF81666F3A9000B95E1 /* GameFramework */ = {
 			isa = PBXGroup;
 			children = (
+				D3FC5F5C166EE09900BDCF3B /* Client */,
 				D3146141166D8E4E0011EDC7 /* Physical */,
 				D348399E1667120A008869A3 /* Camera */,
 				D30D8FF91666F3A9000B95E1 /* Actors */,
@@ -26459,6 +26477,37 @@
 			path = Rope;
 			sourceTree = "<group>";
 		};
+		D3FC5F53166EDFE200BDCF3B /* VirtualServer */ = {
+			isa = PBXGroup;
+			children = (
+				D3FC5F55166EE02F00BDCF3B /* Server.cpp */,
+				D3FC5F56166EE02F00BDCF3B /* Server.h */,
+			);
+			name = VirtualServer;
+			sourceTree = "<group>";
+		};
+		D3FC5F58166EE03400BDCF3B /* CSProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */,
+				D3FC5F5A166EE07A00BDCF3B /* CSMessageDef.h */,
+				D3FC5F60166EE2B700BDCF3B /* CSMessageType.cpp */,
+				D3FC5F61166EE2B700BDCF3B /* CSMessageType.h */,
+				D3FC5F63166EE5D700BDCF3B /* CSPipeline.cpp */,
+				D3FC5F64166EE5D700BDCF3B /* CSPipeline.h */,
+			);
+			name = CSProtocol;
+			sourceTree = "<group>";
+		};
+		D3FC5F5C166EE09900BDCF3B /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				D3FC5F5D166EE0D700BDCF3B /* Client.cpp */,
+				D3FC5F5E166EE0D700BDCF3B /* Client.h */,
+			);
+			name = Client;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -27067,6 +27116,11 @@
 				D3939DD7166C911A00DA4F56 /* MainScene.cpp in Sources */,
 				D3146145166D8EA30011EDC7 /* PhysicalControl.cpp in Sources */,
 				D3146148166D8EB80011EDC7 /* PhysicalObj.cpp in Sources */,
+				D3FC5F57166EE02F00BDCF3B /* Server.cpp in Sources */,
+				D3FC5F5B166EE07A00BDCF3B /* CSMessageDef.cpp in Sources */,
+				D3FC5F5F166EE0D700BDCF3B /* Client.cpp in Sources */,
+				D3FC5F62166EE2B700BDCF3B /* CSMessageType.cpp in Sources */,
+				D3FC5F65166EE5D700BDCF3B /* CSPipeline.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

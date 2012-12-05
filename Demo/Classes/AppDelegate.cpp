@@ -10,6 +10,7 @@
 
 #include "cocos2d.h"
 #include "WorldManager.h"
+#include "../CSProtocol/CSPipeline.h"
 
 USING_NS_CC;
 
@@ -42,6 +43,9 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     // run
     pDirector->runWithScene(pScene);
+
+    //模拟网络端的初始化数据
+    Net::CSPipeline::Instance()->Init();
 
     return true;
 }
