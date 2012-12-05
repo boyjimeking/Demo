@@ -19,6 +19,8 @@ namespace Net
     	void Send(IMessage *message);
 
     	void Init(void);
+
+    	void Tick(float dt);
     private:
     };
 }

@@ -28,6 +28,8 @@ namespace Net
 		void SendToClient(IMessage *message);
 
 		void Init(void);
+
+		void Tick(float dt);
 	
 	private:
 		Client *m_client;

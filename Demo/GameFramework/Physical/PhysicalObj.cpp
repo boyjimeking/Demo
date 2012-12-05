@@ -11,6 +11,7 @@
 #include "WorldManager.h"
 #include "PhysicalControl.h"
 #include "support/CCPointExtension.h"
+#include "platform/CCCommon.h"
 namespace Game
 {
 	PhysicalObj::PhysicalObj(void)
@@ -33,14 +34,25 @@ namespace Game
 		m_body->CreateFixture(&fixtureDef);
 
 		m_body->SetUserData(this);
+
+		m_body->SetAwake(false);
 	}
 	PhysicalObj::~PhysicalObj(void)
 	{
 		m_body = NULL;
 	}
 
+	void PhysicalObj::SetBodyPos(const cocos2d::CCPoint &pos)
+	{
+        cocos2d::CCLog("PhysicalObj::SetBodyPos: %f, %f", pos.x, pos.y);
+		m_body->SetTransform(b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO), m_body->GetAngle());
+	}
 	void PhysicalObj::SetPosition(const cocos2d::CCPoint &pos)
 	{
+		if (!m_body->IsAwake())
+		{
+			return;
+		}
 		if (cocos2d::ccpDistanceSQ(m_targetPosition, pos) <= cocos2d::ccpDistanceSQ(pos, m_prePosition) * 1.5f)
 		{
 			if (m_setPosition)
@@ -61,11 +73,16 @@ namespace Game
 	}
 	void PhysicalObj::Move(const cocos2d::CCPoint &from, const cocos2d::CCPoint &to)
 	{
+		if (cocos2d::ccpDistanceSQ(from, to) < 0.1f)
+		{
+			return;
+		}
 		m_body->SetAwake(false);
-		b2Vec2 impulse = b2Vec2(to.x - from.x, to.y - from.y);
+		b2Vec2 impulse = b2Vec2(to.x - from.x, to.y - from.y);//求方向，所以不对坐标进行缩放
 		impulse.Normalize();
 		impulse *= 100.0f;
 		m_body->ApplyLinearImpulse(impulse, m_body->GetWorldCenter());
 		m_targetPosition = to;
+		m_prePosition = from;
 	}
 }

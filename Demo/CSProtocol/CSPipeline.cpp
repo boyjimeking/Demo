@@ -45,4 +45,8 @@ namespace Net
 	{
 		m_server->Init();
 	}
+	void CSPipeline::Tick(float dt)
+	{
+		m_server->Tick(dt);
+	}
 }

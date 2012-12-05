@@ -8,6 +8,7 @@
 
 #include "MainScene.h"
 #include "WorldManager.h"
+#include "CSPipeline.h"
 namespace Game
 {
 	MainScene* MainScene::create(void)
@@ -29,5 +30,7 @@ namespace Game
 	void MainScene::update(float dt)
 	{
 		WorldManager::Instance()->update(dt);
+		//网络模拟部分
+		Net::CSPipeline::Instance()->Tick(dt);
 	}
 }

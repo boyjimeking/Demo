@@ -44,8 +44,6 @@ namespace Game
 				{
 					const ActorEventCreate *actorEvent = reinterpret_cast<const ActorEventCreate*>(event);
 					PlayAnimation(enActorDirection_Down);
-					cocos2d::CCSize visibleSize = cocos2d::CCDirector::sharedDirector()->getVisibleSize();
-					this->setPosition(cocos2d::CCPointZero);
 					m_isMain = actorEvent->IsMain();
 				}
 				break;

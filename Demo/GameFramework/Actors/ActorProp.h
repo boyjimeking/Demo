@@ -34,6 +34,8 @@ namespace Game
 
 		void SetIsMain(bool isMain) { m_isMain = isMain; }
 		bool IsMain(void) const { return m_isMain; }
+
+		PhysicalObj* GetPhysicalObj(void) const { return m_physicalObj; }
 	protected:
 		PhysicalObj *m_physicalObj;
 		cocos2d::CCPoint m_position;

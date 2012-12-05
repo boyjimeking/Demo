@@ -24,7 +24,7 @@ namespace Game
 		ActorsControl(void);
 		virtual ~ActorsControl(void);
 
-		ActorProp* CreateActor(int actorID, bool isMain = false);
+		ActorProp* CreateActor(int actorID, float x, float y, bool isMain = false);
 		void ReleaseActor(int actorID);
 		void ClearActor(void);
 

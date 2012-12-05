@@ -51,6 +51,6 @@ namespace Net
 	void Client::InitMainActor(IMessage *message)
 	{
     	CSInitMainActor_S2C *innerMessage = reinterpret_cast<CSInitMainActor_S2C*>(message);
-		Game::WorldManager::Instance()->GetActorsControl()->CreateActor(innerMessage->m_mainActorID, true);
+		Game::WorldManager::Instance()->GetActorsControl()->CreateActor(innerMessage->m_mainActorID, innerMessage->m_x, innerMessage->m_y, true);
 	}
 }

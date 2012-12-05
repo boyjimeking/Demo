@@ -1,6 +1,8 @@
 #include "ActorsControl.h"
 #include "ActorProp.h"
 #include "ActorsControlEvents.h"
+#include "support/CCPointExtension.h"
+#include "../Physical/PhysicalObj.h"
 
 namespace Game
 {
@@ -12,7 +14,7 @@ namespace Game
 	{
 		ClearActor();
 	}
-	ActorProp* ActorsControl::CreateActor(int actorID, bool isMain /* = false */)
+	ActorProp* ActorsControl::CreateActor(int actorID, float x, float y, bool isMain /* = false */)
 	{
 		ActorMap::iterator it = m_actorMap.find(actorID);
 		if (m_actorMap.end() != it)
@@ -29,6 +31,10 @@ namespace Game
 			delete actor;
 			return NULL;
 		}
+
+		actor->SetPosition(ccp(x, y));
+		actor->GetPhysicalObj()->SetBodyPos(ccp(x, y));
+		
 		m_actorMap.insert(std::make_pair(actorID, actor));
 
 		ActorsControlEventCreateActor event(entity);

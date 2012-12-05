@@ -38,6 +38,8 @@ namespace Net
         :public IMessage
     {
         int m_mainActorID;
+        float m_x;
+        float m_y;
     };
     struct CSSycActor_S2C
         :public IMessage

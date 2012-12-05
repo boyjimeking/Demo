@@ -34,8 +34,14 @@ namespace Net
         {
             CSInitMainActor_S2C message;
             message.m_mainActorID = 1;
+            message.m_x = -213.0f;
+            message.m_y = -160.0f;
             message.Build(GetMessageType(CSInitMainActor_S2C), 0, sizeof(CSInitMainActor_S2C));
             Send(&message);
         }
+    }
+    void Server::Tick(float dt)
+    {
+        
     }
 }

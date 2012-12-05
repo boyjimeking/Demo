@@ -14,7 +14,7 @@
 #include "cocoa/CCGeometry.h"
 
 #ifndef PTM_RATIO
-#define PTM_RATIO 32
+#define PTM_RATIO 32.0f
 #endif
 
 class b2Body;
@@ -28,6 +28,8 @@ namespace Game
 	public:
 		PhysicalObj(void);
 		~PhysicalObj(void);
+
+		void SetBodyPos(const cocos2d::CCPoint &pos);
 
 		void SetPosition(const cocos2d::CCPoint &pos);
 	
