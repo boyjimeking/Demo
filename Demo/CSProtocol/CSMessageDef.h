@@ -45,6 +45,8 @@ namespace Net
         :public IMessage
     {
         int m_actorID;
+        float m_x;
+        float m_y;
     };
 }
 

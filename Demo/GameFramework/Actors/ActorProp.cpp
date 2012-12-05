@@ -5,9 +5,10 @@
 
 namespace Game
 {
-	ActorProp::ActorProp(void)
+	ActorProp::ActorProp(int id)
 	:m_physicalObj(NULL)
 	,m_isMain(false)
+	,m_id(id)
 	{
 
 	}
@@ -18,10 +19,13 @@ namespace Game
 
 	ActorEntity* ActorProp::Create(void)
 	{
-		m_physicalObj = new PhysicalObj;
-		m_physicalObj->SetPositionFunc(boost::bind(&ActorProp::SetPosition, this, _1));
+		if (IsMain())
+		{
+			m_physicalObj = new PhysicalObj;
+			m_physicalObj->SetPositionFunc(boost::bind(&ActorProp::SetPosition, this, _1));
+		}
 
-		ActorEntity *entity = new ActorEntity;
+		ActorEntity *entity = new ActorEntity(this);
 		entity->init();
 		AttachObserver(entity);
 

@@ -569,6 +569,8 @@
 		D3FC5F5F166EE0D700BDCF3B /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F5D166EE0D700BDCF3B /* Client.cpp */; };
 		D3FC5F62166EE2B700BDCF3B /* CSMessageType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F60166EE2B700BDCF3B /* CSMessageType.cpp */; };
 		D3FC5F65166EE5D700BDCF3B /* CSPipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F63166EE5D700BDCF3B /* CSPipeline.cpp */; };
+		D3FC5F68166F19DC00BDCF3B /* ServerActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F66166F19DC00BDCF3B /* ServerActor.cpp */; };
+		D3FC5F6B166F24AF00BDCF3B /* MainActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F69166F24AF00BDCF3B /* MainActor.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -10193,6 +10195,10 @@
 		D3FC5F61166EE2B700BDCF3B /* CSMessageType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMessageType.h; path = CSProtocol/CSMessageType.h; sourceTree = "<group>"; };
 		D3FC5F63166EE5D700BDCF3B /* CSPipeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSPipeline.cpp; path = CSProtocol/CSPipeline.cpp; sourceTree = "<group>"; };
 		D3FC5F64166EE5D700BDCF3B /* CSPipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSPipeline.h; path = CSProtocol/CSPipeline.h; sourceTree = "<group>"; };
+		D3FC5F66166F19DC00BDCF3B /* ServerActor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ServerActor.cpp; path = VirtualServer/ServerActor.cpp; sourceTree = "<group>"; };
+		D3FC5F67166F19DC00BDCF3B /* ServerActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerActor.h; path = VirtualServer/ServerActor.h; sourceTree = "<group>"; };
+		D3FC5F69166F24AF00BDCF3B /* MainActor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainActor.cpp; path = VirtualServer/MainActor.cpp; sourceTree = "<group>"; };
+		D3FC5F6A166F24AF00BDCF3B /* MainActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainActor.h; path = VirtualServer/MainActor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26482,6 +26488,10 @@
 			children = (
 				D3FC5F55166EE02F00BDCF3B /* Server.cpp */,
 				D3FC5F56166EE02F00BDCF3B /* Server.h */,
+				D3FC5F66166F19DC00BDCF3B /* ServerActor.cpp */,
+				D3FC5F67166F19DC00BDCF3B /* ServerActor.h */,
+				D3FC5F69166F24AF00BDCF3B /* MainActor.cpp */,
+				D3FC5F6A166F24AF00BDCF3B /* MainActor.h */,
 			);
 			name = VirtualServer;
 			sourceTree = "<group>";
@@ -27121,6 +27131,8 @@
 				D3FC5F5F166EE0D700BDCF3B /* Client.cpp in Sources */,
 				D3FC5F62166EE2B700BDCF3B /* CSMessageType.cpp in Sources */,
 				D3FC5F65166EE5D700BDCF3B /* CSPipeline.cpp in Sources */,
+				D3FC5F68166F19DC00BDCF3B /* ServerActor.cpp in Sources */,
+				D3FC5F6B166F24AF00BDCF3B /* MainActor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

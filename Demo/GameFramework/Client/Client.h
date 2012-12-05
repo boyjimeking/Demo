@@ -26,6 +26,7 @@ namespace Net
     private:
     	void InitScene(IMessage *message);
     	void InitMainActor(IMessage *message);
+        void SycActor(IMessage *message);
     };
 }
 

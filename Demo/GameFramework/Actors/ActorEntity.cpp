@@ -10,6 +10,9 @@
 #include "support/CCPointExtension.h"
 #include "WorldManager.h"
 #include "../Camera/Camera.h"
+#include "CCDirector.h"
+#include "touch_dispatcher/CCTouchDispatcher.h"
+#include "ActorProp.h"
 
 
 namespace Game
@@ -21,9 +24,10 @@ namespace Game
 			{ {0,190}, {47,190}, {94,190}, {141,190} },
 			{ {0,285}, {47,285}, {94,285}, {141,285} }
 		};
-	ActorEntity::ActorEntity(void)
+	ActorEntity::ActorEntity(ActorProp *prop)
 	:m_currentDirection(enError)
 	,m_isMain(false)
+	,m_prop(prop)
 	{
 
 	}
@@ -45,6 +49,11 @@ namespace Game
 					const ActorEventCreate *actorEvent = reinterpret_cast<const ActorEventCreate*>(event);
 					PlayAnimation(enActorDirection_Down);
 					m_isMain = actorEvent->IsMain();
+					if (!m_isMain)
+					{
+						this->setContentSize(cocos2d::CCSizeMake(47, 95));
+						cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
+					}
 				}
 				break;
 			case ENActorEvent::enActorEvent_Release:
@@ -56,6 +65,14 @@ namespace Game
 				{
 					const ActorEventChangePos *actorEvent = reinterpret_cast<const ActorEventChangePos*>(event);
 					setPosition(actorEvent->GetWorldPos());
+					if (NULL != this->getParent())
+					{
+						this->getParent()->reorderChild(this, -getPosition().y);
+					}
+					else
+					{
+						_setZOrder(-getPosition().y);
+					}
 					if (m_isMain)
 					{
 						WorldManager::Instance()->GetCamera()->SetPosition(getPosition());
@@ -126,5 +143,23 @@ namespace Game
 				return enActorDirection_Down;
 			}
 		}
+	}
+	void ActorEntity::ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent)
+	{
+		cocos2d::CCLog("ActorEntity::ccTouchesBegan: %d", m_prop->GetID());
+	}
+	bool ActorEntity::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
+	{
+		cocos2d::CCPoint local = WorldManager::ScreenPosToWorld(pTouch->getLocation());
+		// cocos2d::CCPoint local = this->convertToNodeSpace(pTouch->getLocation());
+		cocos2d::CCRect rect = cocos2d::CCRectMake( m_tPosition.x - m_tContentSize.width * m_tAnchorPoint.x, 
+                      m_tPosition.y - m_tContentSize.height * m_tAnchorPoint.y,
+                      m_tContentSize.width, m_tContentSize.height);
+		if (rect.containsPoint(local))
+		{
+			cocos2d::CCLog("ActorEntity::ccTouchBegan: %d", m_prop->GetID());
+			return true;
+		}
+		return false;
 	}
 }

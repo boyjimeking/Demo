@@ -22,7 +22,7 @@ namespace Game
 		:public INotifier
 	{
 	public:
-		ActorProp(void);
+		ActorProp(int id);
 		virtual ~ActorProp(void);
 
 		ActorEntity* Create(void);
@@ -36,9 +36,12 @@ namespace Game
 		bool IsMain(void) const { return m_isMain; }
 
 		PhysicalObj* GetPhysicalObj(void) const { return m_physicalObj; }
+
+		int GetID(void) const { return m_id; }
 	protected:
 		PhysicalObj *m_physicalObj;
 		cocos2d::CCPoint m_position;
+		int m_id;
 	private:
 		bool m_isMain;
 	};

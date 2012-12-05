@@ -65,7 +65,6 @@ namespace Game
 		cocos2d::CCLayer::ccTouchesBegan(pTouches, pEvent);
 		cocos2d::CCTouch *touch = reinterpret_cast<cocos2d::CCTouch*>(*pTouches->begin());
 		cocos2d::CCPoint pos = touch->getLocation();
-		cocos2d::CCLog("TerrainLayer: %f, %f", pos.x, pos.y);
 		//什么都没点到的时候，主角移动
 		ProcessMainActorMove(pos);
 		// static int actorCount = 1;

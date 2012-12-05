@@ -26,7 +26,7 @@ namespace Net
 	}
 	CSPipeline::~CSPipeline()
 	{
-
+		delete m_server;
 	}
 
 	void CSPipeline::AttachClient(Client *client)

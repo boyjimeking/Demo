@@ -9,19 +9,35 @@
 #ifndef __Demo__Server__
 #define __Demo__Server__
 
+#include <map>
+#include "ServerActor.h"
+
 namespace Net
 {
 	struct IMessage;
+	class ServerActor;
     class Server
     {
     public:
+    	Server(void);
+    	~Server(void);
     	void Receive(IMessage *message);
-    	void Send(IMessage *message);
+    	void Send(IMessage *message) const;
 
     	void Init(void);
 
     	void Tick(float dt);
+    	
+    	static int RandX(void);
+    	static int RandY(void);
     private:
+    private:
+    	typedef std::map<int, ServerActor::Ptr> ServerActorMap;
+    	ServerActorMap m_serverActorMap;
+
+    public:
+    	static const int Width;
+    	static const int Height;
     };
 }
 

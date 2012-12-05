@@ -22,7 +22,7 @@ namespace Game
 			//Already have.
 			return NULL;
 		}
-		ActorProp *actor = new ActorProp;
+		ActorProp *actor = new ActorProp(actorID);
 		actor->SetIsMain(isMain);
 		ActorEntity *entity = actor->Create();
 		if (NULL == entity)
@@ -33,7 +33,10 @@ namespace Game
 		}
 
 		actor->SetPosition(ccp(x, y));
-		actor->GetPhysicalObj()->SetBodyPos(ccp(x, y));
+		if (NULL != actor->GetPhysicalObj())
+		{
+			actor->GetPhysicalObj()->SetBodyPos(ccp(x, y));
+		}
 		
 		m_actorMap.insert(std::make_pair(actorID, actor));
 
