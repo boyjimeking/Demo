@@ -62,7 +62,7 @@ namespace Game
 			m_terrain = new TerrainProp;
 			m_terrain->AttachObserver(terrainLayer);
 			scene->addChild(terrainLayer);
-			//测试地表
+			//用于测试的地表
 			m_terrain->Load("TestTerrain", "terrain");
 		}
 		cocos2d::CCLayer *entityLayer = cocos2d::CCLayer::create();
@@ -77,7 +77,7 @@ namespace Game
 			ActorsLayer *actorsLayer = new ActorsLayer(entityLayer);
 			m_ActorsControl = new ActorsControl;
 			m_ActorsControl->AttachObserver(actorsLayer);
-			//测试用角色
+			//用于测试的角色
 			m_ActorsControl->CreateActor(1, true);
 		}
 		scene->addChild(entityLayer);

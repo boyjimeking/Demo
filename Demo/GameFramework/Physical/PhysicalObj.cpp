@@ -41,7 +41,7 @@ namespace Game
 
 	void PhysicalObj::SetPosition(const cocos2d::CCPoint &pos)
 	{
-		if (cocos2d::ccpDistanceSQ(m_targetPosition, pos) <= cocos2d::ccpDistanceSQ(pos, m_prePosition))
+		if (cocos2d::ccpDistanceSQ(m_targetPosition, pos) <= cocos2d::ccpDistanceSQ(pos, m_prePosition) * 1.5f)
 		{
 			if (m_setPosition)
 			{
@@ -65,8 +65,6 @@ namespace Game
 		b2Vec2 impulse = b2Vec2(to.x - from.x, to.y - from.y);
 		impulse.Normalize();
 		impulse *= 100.0f;
-		// b2Vec2 current = m_body->GetLinearVelocity();
-		// impulse -= current;
 		m_body->ApplyLinearImpulse(impulse, m_body->GetWorldCenter());
 		m_targetPosition = to;
 	}

@@ -10203,7 +10203,6 @@
 		D30D8D241666EE89000B95E1 = {
 			isa = PBXGroup;
 			children = (
-				D30D8FF81666F3A9000B95E1 /* GameFramework */,
 				D30D8D431666EE89000B95E1 /* Demo */,
 				D30D8D321666EE89000B95E1 /* Frameworks */,
 				D30D8D301666EE89000B95E1 /* Products */,
@@ -10236,6 +10235,7 @@
 		D30D8D431666EE89000B95E1 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				D30D8FF81666F3A9000B95E1 /* GameFramework */,
 				D30D8D441666EE89000B95E1 /* Resources */,
 				D30D8D5C1666EE89000B95E1 /* ios */,
 				D30D8D651666EE89000B95E1 /* libs */,
@@ -11112,8 +11112,7 @@
 				D3939DD6166C911900DA4F56 /* MainScene.h */,
 				D3939DE3166CAB6F00DA4F56 /* ReadMe */,
 			);
-			name = GameFramework;
-			path = Demo/GameFramework;
+			path = GameFramework;
 			sourceTree = "<group>";
 		};
 		D30D8FF91666F3A9000B95E1 /* Actors */ = {
