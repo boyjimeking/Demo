@@ -24,7 +24,8 @@ namespace Net
     public:
 
     private:
-    	void Init(IMessage *message);
+    	void InitScene(IMessage *message);
+    	void InitMainActor(IMessage *message);
     };
 }
 

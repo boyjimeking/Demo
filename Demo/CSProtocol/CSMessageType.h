@@ -18,7 +18,9 @@ struct ENMessage
 	enum Type
 	{
 		enError,
-		DefType(CSInit_S2C),
+		DefType(CSInitScene_S2C),
+		DefType(CSInitMainActor_S2C),
+		DefType(CSSycActor_S2C),
 	};
 };
 

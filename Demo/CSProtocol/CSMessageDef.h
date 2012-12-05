@@ -29,11 +29,20 @@ namespace Net
     	int m_length;
     };
 
-    struct CSInit_S2C
+    struct CSInitScene_S2C
+        :public IMessage
+    {
+        int m_sceneID;
+    };
+    struct CSInitMainActor_S2C
         :public IMessage
     {
         int m_mainActorID;
-        int m_sceneID;
+    };
+    struct CSSycActor_S2C
+        :public IMessage
+    {
+        int m_actorID;
     };
 }
 

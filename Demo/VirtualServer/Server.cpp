@@ -25,10 +25,17 @@ namespace Net
     }
     void Server::Init(void)
     {
-    	CSInit_S2C message;
-        message.m_mainActorID = 1;
-        message.m_sceneID = 1;
-        message.Build(GetMessageType(CSInit_S2C), 0, sizeof(CSInit_S2C));
-        Send(&message);
+        {
+            CSInitScene_S2C message;
+            message.m_sceneID = 1;
+            message.Build(GetMessageType(CSInitScene_S2C), 0, sizeof(CSInitScene_S2C));
+            Send(&message);
+        }
+        {
+            CSInitMainActor_S2C message;
+            message.m_mainActorID = 1;
+            message.Build(GetMessageType(CSInitMainActor_S2C), 0, sizeof(CSInitMainActor_S2C));
+            Send(&message);
+        }
     }
 }

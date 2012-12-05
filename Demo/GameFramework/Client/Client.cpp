@@ -27,8 +27,11 @@ namespace Net
 	{
 		switch (message->GetType())
 		{
-			case GetMessageType(CSInit_S2C):
-				Init(message);
+			case GetMessageType(CSInitScene_S2C):
+				InitScene(message);
+				break;
+			case GetMessageType(CSInitMainActor_S2C):
+				InitMainActor(message);
 				break;
 			default:
 				//消息类型错误
@@ -40,10 +43,14 @@ namespace Net
     	CSPipeline::Instance()->SendToServer(message);
     }
 
-    void Client::Init(IMessage *message)
+    void Client::InitScene(IMessage *message)
     {
-    	CSInit_S2C *innerMessage = reinterpret_cast<CSInit_S2C*>(message);
-    	Game::WorldManager::Instance()->GetActorsControl()->CreateActor(innerMessage->m_mainActorID, true);
+    	CSInitScene_S2C *innerMessage = reinterpret_cast<CSInitScene_S2C*>(message);
     	Game::WorldManager::Instance()->GetTerrain()->Load("TestTerrain", "terrain");
     }
+	void Client::InitMainActor(IMessage *message)
+	{
+    	CSInitMainActor_S2C *innerMessage = reinterpret_cast<CSInitMainActor_S2C*>(message);
+		Game::WorldManager::Instance()->GetActorsControl()->CreateActor(innerMessage->m_mainActorID, true);
+	}
 }
