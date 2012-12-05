@@ -47,7 +47,7 @@ namespace Game
 			enActorAction_MoveTo,
 		};
 	protected:
-		void PlayAnimation(ENDirection direction);
+		void PlayMove(ENDirection direction);
 		ENDirection CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos);
 
 		ActorProp *m_prop;

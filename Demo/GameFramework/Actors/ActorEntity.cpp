@@ -17,13 +17,30 @@
 
 namespace Game
 {
-	const float AnimationData[4/*动作ID*/][4/*动作帧序列*/][2/*(x,y)*/] = 
+	struct FrameInfo
+	{
+		int x;
+		int y;
+		int width;
+		int height;
+	};
+	struct ImageInfo
+	{
+		int width;
+		int height;
+		int row;
+		int column;
+
+		const FrameInfo& GetFrameInfo(int index)
 		{
-			{ {0,0}, {47,0}, {94,0}, {141,0} },
-			{ {0,95}, {47,95}, {94,95}, {141,95} },
-			{ {0,190}, {47,190}, {94,190}, {141,190} },
-			{ {0,285}, {47,285}, {94,285}, {141,285} }
-		};
+			static FrameInfo info;
+			info.width = width / column;
+			info.height = height / row;
+			info.x = index % column * info.width;
+			info.y = index / column * info.height;
+			return info;
+		}
+	};
 	ActorEntity::ActorEntity(ActorProp *prop)
 	:m_currentDirection(enError)
 	,m_isMain(false)
@@ -47,7 +64,7 @@ namespace Game
 			case ENActorEvent::enActorEvent_Create:
 				{
 					const ActorEventCreate *actorEvent = reinterpret_cast<const ActorEventCreate*>(event);
-					PlayAnimation(enActorDirection_Down);
+					PlayMove(enActorDirection_Down);
 					m_isMain = actorEvent->IsMain();
 					if (!m_isMain)
 					{
@@ -82,32 +99,34 @@ namespace Game
 			case ENActorEvent::enActorEvent_UpdateDirection:
 				{
 					const ActorEventUpdateDirection *actorEvent = reinterpret_cast<const ActorEventUpdateDirection*>(event);
-					PlayAnimation(CalDirection(actorEvent->GetWorldPos(), getPosition()));
+					PlayMove(CalDirection(actorEvent->GetWorldPos(), getPosition()));
 				}
 				break;
 			default:
 				break;
 		}
 	}
-	void ActorEntity::PlayAnimation(ENDirection direction)
+	void ActorEntity::PlayMove(ENDirection direction)
 	{
 		if (m_currentDirection == direction)
 		{
 			return;
 		}
 		m_currentDirection = direction;
-		cocos2d::CCTexture2D *texture = cocos2d::CCTextureCache::sharedTextureCache()->addImage("actor.png");
+		cocos2d::CCTexture2D *texture = cocos2d::CCTextureCache::sharedTextureCache()->addImage("mn.png");
 		cocos2d::CCArray *frameArray = cocos2d::CCArray::createWithCapacity(4);
-		//width:47 height:95
-		static const int FrameWidth = 47;
-		static const int FrameHeight = 95;
+
+		ImageInfo info;
+		info.width = texture->getPixelsWide();
+		info.height = texture->getPixelsHigh();
+		info.row = 4;
+		info.column = 4;
+
 		for (int index = 0; index < 4; ++index)
 		{
+			const FrameInfo &frameInfo = info.GetFrameInfo(index + direction * info.column);
 			cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrame::createWithTexture(texture
-				, cocos2d::CCRectMake(AnimationData[direction][index][0]
-									, AnimationData[direction][index][1]
-									, FrameWidth
-									, FrameHeight));
+				, cocos2d::CCRectMake(frameInfo.x, frameInfo.y, frameInfo.width, frameInfo.height));
 			frameArray->addObject(frame);
 		}
 		this->initWithSpriteFrame(reinterpret_cast<cocos2d::CCSpriteFrame*>(frameArray->lastObject()));

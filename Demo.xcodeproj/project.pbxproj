@@ -571,6 +571,10 @@
 		D3FC5F65166EE5D700BDCF3B /* CSPipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F63166EE5D700BDCF3B /* CSPipeline.cpp */; };
 		D3FC5F68166F19DC00BDCF3B /* ServerActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F66166F19DC00BDCF3B /* ServerActor.cpp */; };
 		D3FC5F6B166F24AF00BDCF3B /* MainActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F69166F24AF00BDCF3B /* MainActor.cpp */; };
+		D3FC5F70166F49D700BDCF3B /* mn.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FC5F6C166F49D700BDCF3B /* mn.png */; };
+		D3FC5F71166F49D700BDCF3B /* mnattack.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FC5F6D166F49D700BDCF3B /* mnattack.png */; };
+		D3FC5F72166F49D700BDCF3B /* npc.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FC5F6E166F49D700BDCF3B /* npc.png */; };
+		D3FC5F73166F49D700BDCF3B /* npcattack.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FC5F6F166F49D700BDCF3B /* npcattack.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -10199,6 +10203,10 @@
 		D3FC5F67166F19DC00BDCF3B /* ServerActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerActor.h; path = VirtualServer/ServerActor.h; sourceTree = "<group>"; };
 		D3FC5F69166F24AF00BDCF3B /* MainActor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainActor.cpp; path = VirtualServer/MainActor.cpp; sourceTree = "<group>"; };
 		D3FC5F6A166F24AF00BDCF3B /* MainActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainActor.h; path = VirtualServer/MainActor.h; sourceTree = "<group>"; };
+		D3FC5F6C166F49D700BDCF3B /* mn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mn.png; path = Resources/mn.png; sourceTree = "<group>"; };
+		D3FC5F6D166F49D700BDCF3B /* mnattack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mnattack.png; path = Resources/mnattack.png; sourceTree = "<group>"; };
+		D3FC5F6E166F49D700BDCF3B /* npc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = npc.png; path = Resources/npc.png; sourceTree = "<group>"; };
+		D3FC5F6F166F49D700BDCF3B /* npcattack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = npcattack.png; path = Resources/npcattack.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -10271,6 +10279,10 @@
 		D30D8D441666EE89000B95E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D3FC5F6C166F49D700BDCF3B /* mn.png */,
+				D3FC5F6D166F49D700BDCF3B /* mnattack.png */,
+				D3FC5F6E166F49D700BDCF3B /* npc.png */,
+				D3FC5F6F166F49D700BDCF3B /* npcattack.png */,
 				D3939910166C3A6C00DA4F56 /* terrain_0.png */,
 				D3939911166C3A6C00DA4F56 /* terrain_1.png */,
 				D3939912166C3A6C00DA4F56 /* terrain_2.png */,
@@ -26863,6 +26875,10 @@
 				D314888F166DBD5D0011EDC7 /* vector in Resources */,
 				D3148890166DBD5D0011EDC7 /* basic_chset.ipp in Resources */,
 				D3148891166DBD5D0011EDC7 /* range_run.ipp in Resources */,
+				D3FC5F70166F49D700BDCF3B /* mn.png in Resources */,
+				D3FC5F71166F49D700BDCF3B /* mnattack.png in Resources */,
+				D3FC5F72166F49D700BDCF3B /* npc.png in Resources */,
+				D3FC5F73166F49D700BDCF3B /* npcattack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
