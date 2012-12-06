@@ -23,7 +23,7 @@ namespace Game
     {
         
     }
-    void CameraObserver::OnNotifyChange(const INotifier *notify, const INotifyEvent *event)
+    void CameraObserver::OnNotifyChange(INotifier *notify, const INotifyEvent *event)
     {
         if (NULL == event)
         {

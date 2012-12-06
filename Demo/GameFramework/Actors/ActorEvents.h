@@ -11,6 +11,7 @@
 
 #include "Base/INotifyEvent.h"
 #include "cocoa/CCGeometry.h"
+#include "Base/GlobalDef.h"
 
 namespace Game
 {
@@ -23,6 +24,9 @@ namespace Game
 			enActorEvent_Release,
 			enActorEvent_ChangePos,
 			enActorEvent_UpdateDirection,
+			enActorEvent_Stop,
+			enActorEvent_Attack,
+			enActorEvent_ChangeScaleX,
 		};
 	};
 
@@ -31,11 +35,10 @@ namespace Game
 	{
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enActorEvent_Create; }
 
-		ActorEventCreate(bool isMain) : m_isMain(isMain) {}
-
-		bool IsMain(void) const { return m_isMain; }
+		ActorEventCreate(ENActorType::Decl type) : m_type(type) {}
+		ENActorType::Decl GetType(void) const { return m_type; }
 	private:
-		bool m_isMain;
+		ENActorType::Decl m_type;
 	};
 
 	struct ActorEventRelease
@@ -63,6 +66,25 @@ namespace Game
 		const cocos2d::CCPoint& GetWorldPos(void) const { return m_targetPos; };
 	private:
 		cocos2d::CCPoint m_targetPos;
+	};
+	struct ActorEventStop
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enActorEvent_Stop; }
+	};
+	struct ActorEventPlayAttack
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enActorEvent_Attack; }
+	};
+	struct ActorEventChangeScaleX
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enActorEvent_ChangeScaleX; }
+		ActorEventChangeScaleX(int xScale) : m_xScale(xScale) {}
+		int GetXScale(void) const { return m_xScale; }
+	private:
+		int m_xScale;
 	};
 }
 

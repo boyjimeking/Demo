@@ -38,6 +38,9 @@ namespace Net
 			case GetMessageType(CSSycActor_S2C):
 				SycActor(message);
 				break;
+			case GetMessageType(CSChangeTarget_S2C):
+				MoveActor(message);
+				break;
 			default:
 				//消息类型错误
 				break;
@@ -59,7 +62,7 @@ namespace Net
     	Game::ActorProp *actor = Game::WorldManager::Instance()->GetActorsControl()->GetMainActor();
     	if (NULL == actor)
     	{
-    		Game::WorldManager::Instance()->GetActorsControl()->CreateActor(innerMessage->m_mainActorID, innerMessage->m_x, innerMessage->m_y, true);
+    		Game::WorldManager::Instance()->GetActorsControl()->CreateActor(ENActorType::enMain, innerMessage->m_mainActorID, innerMessage->m_x, innerMessage->m_y);
     	}
 		else
 		{
@@ -72,11 +75,20 @@ namespace Net
 		Game::ActorProp *actor = Game::WorldManager::Instance()->GetActorsControl()->LookupActor(innerMessage->m_actorID);
 		if (NULL == actor)
 		{
-			Game::WorldManager::Instance()->GetActorsControl()->CreateActor(innerMessage->m_actorID, innerMessage->m_x, innerMessage->m_y);
+			Game::WorldManager::Instance()->GetActorsControl()->CreateActor(ENActorType::enMonster, innerMessage->m_actorID, innerMessage->m_x, innerMessage->m_y);
 		}
 		else
 		{
 			actor->SetPosition(ccp(innerMessage->m_x, innerMessage->m_y));
+		}
+	}
+	void Client::MoveActor(IMessage *message)
+	{
+		CSChangeTarget_S2C *innerMessage = reinterpret_cast<CSChangeTarget_S2C*>(message);
+		Game::ActorProp *actor = Game::WorldManager::Instance()->GetActorsControl()->LookupActor(innerMessage->m_actorID);
+		if (NULL != actor)
+		{
+			actor->MoveTo(ccp(innerMessage->m_x, innerMessage->m_y));
 		}
 	}
 }

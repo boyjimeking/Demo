@@ -15,7 +15,7 @@ namespace Game
 
 	}
 
-	void ActorsLayer::OnNotifyChange( const INotifier *notify, const INotifyEvent *event )
+	void ActorsLayer::OnNotifyChange( INotifier *notify, const INotifyEvent *event )
 	{
 		if (NULL == event)
 		{

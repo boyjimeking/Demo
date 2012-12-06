@@ -15,6 +15,7 @@
 namespace Game
 {
 	class ActorProp;
+	class ITouch;
 	/*
 	 *	角色实体类，用于角色在场景当中的显示及在场景中的响应处理
 	 */
@@ -27,7 +28,7 @@ namespace Game
 		ActorEntity(ActorProp *prop);
 		virtual ~ActorEntity(void);
 
-		virtual void OnNotifyChange( const INotifier *notify, const INotifyEvent *event );
+		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
 
 		virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
 		virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
@@ -48,12 +49,12 @@ namespace Game
 		};
 	protected:
 		void PlayMove(ENDirection direction);
+		void PlayAttack(void);
 		ENDirection CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos);
-
-		ActorProp *m_prop;
 	private:
 		ENDirection m_currentDirection;
-		bool m_isMain;
+		ITouch *m_touchCallBack;
+		const char *m_imageName;
 	};
 }
 

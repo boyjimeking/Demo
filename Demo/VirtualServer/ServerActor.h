@@ -40,8 +40,12 @@ namespace Net
     	//向客户端同步位置
     	virtual void SycPosition(void);
     private:
+    	void ChangeTarget(void);
+    private:
     	float m_x;
     	float m_y;
+
+    	float m_totalTime;
 	private:
 		const int m_id;
 		static int Count;

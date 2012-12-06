@@ -10,11 +10,15 @@
 
 #include "../Base/INotifier.h"
 #include "cocoa/CCGeometry.h"
+#include "../Base/GlobalDef.h"
+#include <list>
+#include "ActorAction.h"
 
 namespace Game
 {
 	class ActorEntity;
 	class PhysicalObj;
+	class IAction;
 	/*
 	 *	角色属性类，用于记录并控制角色的各项属性
 	 */
@@ -22,28 +26,37 @@ namespace Game
 		:public INotifier
 	{
 	public:
-		ActorProp(int id);
+		ActorProp(ENActorType::Decl type, int id);
 		virtual ~ActorProp(void);
 
+		int GetID(void) const { return m_id; }
+		ENActorType::Decl GetType(void) const { return m_type; }
+		const cocos2d::CCPoint& GetPosition(void) const { return m_position; }
+		float GetSpeed(void) const { return m_speed; }
+
+		void Init(void);
 		ActorEntity* Create(void);
 		void Release(void);
 
 		void MoveTo(const cocos2d::CCPoint &pos);
+		void Stop(void);
+		void Attack(ActorProp *target);
 
 		void SetPosition(const cocos2d::CCPoint &pos);
 
-		void SetIsMain(bool isMain) { m_isMain = isMain; }
-		bool IsMain(void) const { return m_isMain; }
+		void Tick(float dt);
 
-		PhysicalObj* GetPhysicalObj(void) const { return m_physicalObj; }
-
-		int GetID(void) const { return m_id; }
+		void AddAction(IAction *action);
+		void AddFollowAction(IAction *action);
 	protected:
-		PhysicalObj *m_physicalObj;
 		cocos2d::CCPoint m_position;
 		int m_id;
+		ENActorType::Decl m_type;
+		float m_speed;
 	private:
-		bool m_isMain;
+		IAction *m_currentAction;
+		IAction *m_nextAction;
+		void SwitchNext(void);
 	};
 }
 

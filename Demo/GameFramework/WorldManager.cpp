@@ -96,6 +96,7 @@ namespace Game
     }
     void WorldManager::update(float dt)
     {
+    	GetActorsControl()->Tick(dt);
     	GetPhysicalControl()->Update(dt);
     }
 }

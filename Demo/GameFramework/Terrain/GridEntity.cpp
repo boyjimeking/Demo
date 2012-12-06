@@ -21,7 +21,7 @@ namespace Game
 
 	}
 
-	void GridEntity::OnNotifyChange( const INotifier *notify, const INotifyEvent *event )
+	void GridEntity::OnNotifyChange( INotifier *notify, const INotifyEvent *event )
 	{
 		if (NULL == event)
 		{

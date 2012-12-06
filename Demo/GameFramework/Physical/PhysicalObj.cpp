@@ -44,7 +44,6 @@ namespace Game
 
 	void PhysicalObj::SetBodyPos(const cocos2d::CCPoint &pos)
 	{
-        cocos2d::CCLog("PhysicalObj::SetBodyPos: %f, %f", pos.x, pos.y);
 		m_body->SetTransform(b2Vec2(pos.x / PTM_RATIO, pos.y / PTM_RATIO), m_body->GetAngle());
 	}
 	void PhysicalObj::SetPosition(const cocos2d::CCPoint &pos)
@@ -53,14 +52,17 @@ namespace Game
 		{
 			return;
 		}
-		if (cocos2d::ccpDistanceSQ(m_targetPosition, pos) <= cocos2d::ccpDistanceSQ(pos, m_prePosition) * 1.5f)
+		if (cocos2d::ccpDistanceSQ(m_targetPosition, m_prePosition) <= cocos2d::ccpDistanceSQ(pos, m_prePosition))
 		{
-			if (m_setPosition)
+			if (m_stopFunc)
+			{
+				m_stopFunc(m_targetPosition);
+			}
+			else if (m_setPosition)
 			{
 				m_setPosition(m_targetPosition);
 			}
 			m_body->SetAwake(false);
-			m_prePosition = m_targetPosition;
 		}
 		else
 		{
@@ -68,7 +70,6 @@ namespace Game
 			{
 				m_setPosition(pos);
 			}
-			m_prePosition = pos;
 		}
 	}
 	void PhysicalObj::Move(const cocos2d::CCPoint &from, const cocos2d::CCPoint &to)

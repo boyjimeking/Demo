@@ -1,4 +1,4 @@
-﻿#include "BuildingsLayer.h"
+#include "BuildingsLayer.h"
 #include "layers_scenes_transitions_nodes/CCLayer.h"
 
 namespace Game
@@ -13,7 +13,7 @@ namespace Game
 
 	}
 
-	void BuildingsLayer::OnNotifyChange( const INotifier *notify, const INotifyEvent *event )
+	void BuildingsLayer::OnNotifyChange( INotifier *notify, const INotifyEvent *event )
 	{
 	}
 

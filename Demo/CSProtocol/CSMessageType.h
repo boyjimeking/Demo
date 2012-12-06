@@ -21,6 +21,7 @@ struct ENMessage
 		DefType(CSInitScene_S2C),
 		DefType(CSInitMainActor_S2C),
 		DefType(CSSycActor_S2C),
+		DefType(CSChangeTarget_S2C),
 	};
 };
 

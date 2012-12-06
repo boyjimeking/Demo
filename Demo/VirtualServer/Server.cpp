@@ -66,7 +66,7 @@ namespace Net
 
             actor->SycPosition();
         }
-        for (int index = 0; index < 10; ++index)
+        for (int index = 0; index < 30; ++index)
         {
             ServerActor::Ptr actor = ServerActor::CreateObj();
             m_serverActorMap.insert(std::make_pair(actor->GetID(), actor));

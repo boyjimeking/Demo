@@ -16,7 +16,7 @@ class IObserver
 public:
 	IObserver(void);
 	virtual ~IObserver(void);
-	virtual void OnNotifyChange(const INotifier *notify, const INotifyEvent *event) = 0;
+	virtual void OnNotifyChange(INotifier *notify, const INotifyEvent *event) = 0;
 protected:
 private:
 };

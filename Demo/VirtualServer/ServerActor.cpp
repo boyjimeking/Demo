@@ -9,6 +9,7 @@
 #include "ServerActor.h"
 #include "../CSProtocol/CSMessageDef.h"
 #include "../CSProtocol/CSPipeline.h"
+#include "Server.h"
 
 namespace Net
 {
@@ -17,6 +18,7 @@ namespace Net
 	:m_id(++ServerActor::Count)
 	,m_x(0.0f)
 	,m_y(0.0f)
+    ,m_totalTime(0.0f)
 	{
 
 	}
@@ -44,7 +46,16 @@ namespace Net
     }
     void ServerActor::Tick(float dt)
     {
-
+        if (m_totalTime < 0.000001f)
+        {
+            ChangeTarget();
+            m_totalTime = 1;
+        }
+        m_totalTime += dt;
+        if (m_totalTime > 5.0f)
+        {
+            m_totalTime = 0;
+        }
     }
     void ServerActor::SycPosition(void)
     {
@@ -54,5 +65,14 @@ namespace Net
     	message.m_y = GetY();
     	message.Build(GetMessageType(CSSycActor_S2C), GetID(), sizeof(CSSycActor_S2C));
     	Send(&message);
+    }
+    void ServerActor::ChangeTarget(void)
+    {
+        CSChangeTarget_S2C message;
+        message.m_actorID = GetID();
+        message.m_x = Server::RandX();
+        message.m_y = Server::RandY();
+        message.Build(GetMessageType(CSChangeTarget_S2C), GetID(), sizeof(CSChangeTarget_S2C));
+        Send(&message);
     }
 }

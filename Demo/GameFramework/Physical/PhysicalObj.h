@@ -34,10 +34,12 @@ namespace Game
 		void SetPosition(const cocos2d::CCPoint &pos);
 	
 		void SetPositionFunc(const PositionFunc &func) { m_setPosition = func; }
+		void SetStopFunc(const PositionFunc &func) { m_stopFunc = func; }
 
 		void Move(const cocos2d::CCPoint &from, const cocos2d::CCPoint &to);
 	private:
 		PositionFunc m_setPosition;
+		PositionFunc m_stopFunc;
 		b2Body *m_body;
 
 	private:

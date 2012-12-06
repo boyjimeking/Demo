@@ -22,7 +22,7 @@ namespace Game
 		GridEntity(void);
 		virtual ~GridEntity(void);
 
-		virtual void OnNotifyChange( const INotifier *notify, const INotifyEvent *event );
+		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
 	
 	protected:
 		void Load(const char *imageName, int width, int height, int posX, int posY);

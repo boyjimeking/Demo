@@ -10,6 +10,7 @@
 
 #include "../Base/INotifier.h"
 #include <map>
+#include "../Base/GlobalDef.h"
 
 namespace Game
 {
@@ -24,12 +25,16 @@ namespace Game
 		ActorsControl(void);
 		virtual ~ActorsControl(void);
 
-		ActorProp* CreateActor(int actorID, float x, float y, bool isMain = false);
+		ActorProp* CreateActor(ENActorType::Decl type, int actorID, float x, float y);
 		void ReleaseActor(int actorID);
 		void ClearActor(void);
 
 		ActorProp* GetMainActor(void) const;
 		ActorProp* LookupActor(int actorID) const;
+
+		void Tick(float dt);
+
+		static float Distance(const ActorProp *firstActor, const ActorProp *secondActor);
 	protected:
 	private:
 		typedef std::map<int, ActorProp*> ActorMap;

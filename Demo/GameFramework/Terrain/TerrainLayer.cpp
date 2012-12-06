@@ -9,6 +9,7 @@
 #include "Actors/ActorsControl.h"
 #include "Camera/Camera.h"
 #include "GridEntity.h"
+#include "Actors/ActorAction.h"
 
 namespace Game
 {
@@ -37,7 +38,7 @@ namespace Game
 
 	}
 
-	void TerrainLayer::OnNotifyChange( const INotifier *notify, const INotifyEvent *event )
+	void TerrainLayer::OnNotifyChange( INotifier *notify, const INotifyEvent *event )
 	{
 		if (NULL == event)
 		{

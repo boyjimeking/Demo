@@ -2,7 +2,6 @@
 #include "ActorProp.h"
 #include "ActorsControlEvents.h"
 #include "support/CCPointExtension.h"
-#include "../Physical/PhysicalObj.h"
 
 namespace Game
 {
@@ -14,7 +13,7 @@ namespace Game
 	{
 		ClearActor();
 	}
-	ActorProp* ActorsControl::CreateActor(int actorID, float x, float y, bool isMain /* = false */)
+	ActorProp* ActorsControl::CreateActor(ENActorType::Decl type, int actorID, float x, float y)
 	{
 		ActorMap::iterator it = m_actorMap.find(actorID);
 		if (m_actorMap.end() != it)
@@ -22,8 +21,8 @@ namespace Game
 			//Already have.
 			return NULL;
 		}
-		ActorProp *actor = new ActorProp(actorID);
-		actor->SetIsMain(isMain);
+		ActorProp *actor = new ActorProp(type, actorID);
+		actor->Init();
 		ActorEntity *entity = actor->Create();
 		if (NULL == entity)
 		{
@@ -33,10 +32,6 @@ namespace Game
 		}
 
 		actor->SetPosition(ccp(x, y));
-		if (NULL != actor->GetPhysicalObj())
-		{
-			actor->GetPhysicalObj()->SetBodyPos(ccp(x, y));
-		}
 		
 		m_actorMap.insert(std::make_pair(actorID, actor));
 
@@ -66,7 +61,6 @@ namespace Game
 	{
 		for (ActorMap::iterator it = m_actorMap.begin(); m_actorMap.end() != it; ++it)
 		{
-			/* code */
 			it->second->Release();
 			delete it->second;
 		}
@@ -90,5 +84,16 @@ namespace Game
 		{
 			return NULL;
 		}
+	}
+	void ActorsControl::Tick(float dt)
+	{
+		for (ActorMap::iterator it = m_actorMap.begin(); it != m_actorMap.end(); ++it)
+		{
+			it->second->Tick(dt);
+		}
+	}
+	float ActorsControl::Distance(const ActorProp *firstActor, const ActorProp *secondActor)
+	{
+		return cocos2d::ccpDistance(firstActor->GetPosition(), secondActor->GetPosition());
 	}
 }

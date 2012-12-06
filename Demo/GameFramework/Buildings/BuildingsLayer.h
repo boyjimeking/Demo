@@ -27,7 +27,7 @@ namespace Game
 		BuildingsLayer(cocos2d::CCLayer *entityLayer);
 		~BuildingsLayer(void);
 
-		virtual void OnNotifyChange( const INotifier *notify, const INotifyEvent *event );
+		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
 
 	protected:
 	private:

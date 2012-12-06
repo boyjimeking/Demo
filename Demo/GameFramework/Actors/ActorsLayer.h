@@ -27,7 +27,7 @@ namespace Game
 		ActorsLayer(cocos2d::CCLayer *entityLayer);
 		virtual ~ActorsLayer(void);
 
-		virtual void OnNotifyChange( const INotifier *notify, const INotifyEvent *event );
+		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
 
 	protected:
 	private:

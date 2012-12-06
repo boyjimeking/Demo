@@ -24,7 +24,7 @@ namespace Game
     public:
         CameraObserver(cocos2d::CCScene *scene);
         virtual ~CameraObserver(void);
-        virtual void OnNotifyChange(const INotifier *notify, const INotifyEvent *event);
+        virtual void OnNotifyChange(INotifier *notify, const INotifyEvent *event);
     private:
         cocos2d::CCScene *m_scene;
     };

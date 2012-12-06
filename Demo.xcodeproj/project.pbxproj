@@ -500,6 +500,8 @@
 		D314888F166DBD5D0011EDC7 /* vector in Resources */ = {isa = PBXBuildFile; fileRef = D3148426166DBD590011EDC7 /* vector */; };
 		D3148890166DBD5D0011EDC7 /* basic_chset.ipp in Resources */ = {isa = PBXBuildFile; fileRef = D314874D166DBD5A0011EDC7 /* basic_chset.ipp */; };
 		D3148891166DBD5D0011EDC7 /* range_run.ipp in Resources */ = {isa = PBXBuildFile; fileRef = D3148750166DBD5A0011EDC7 /* range_run.ipp */; };
+		D320472A16703B210037C1E2 /* ActorTouch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D320472816703B210037C1E2 /* ActorTouch.cpp */; };
+		D320472F16704C670037C1E2 /* ActorAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D320472D16704C670037C1E2 /* ActorAction.cpp */; };
 		D34839A31667120A008869A3 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D348399F1667120A008869A3 /* Camera.cpp */; };
 		D34839A41667120A008869A3 /* CameraObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839A11667120A008869A3 /* CameraObserver.cpp */; };
 		D34839A7166712C0008869A3 /* CameraNotifyEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839A6166712C0008869A3 /* CameraNotifyEvents.cpp */; };
@@ -10070,6 +10072,11 @@
 		D3148771166DBD5A0011EDC7 /* xpressive_fwd.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = xpressive_fwd.hpp; sourceTree = "<group>"; };
 		D3148772166DBD5A0011EDC7 /* xpressive_static.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = xpressive_static.hpp; sourceTree = "<group>"; };
 		D3148773166DBD5A0011EDC7 /* xpressive_typeof.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = xpressive_typeof.hpp; sourceTree = "<group>"; };
+		D320472816703B210037C1E2 /* ActorTouch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorTouch.cpp; sourceTree = "<group>"; };
+		D320472916703B210037C1E2 /* ActorTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActorTouch.h; sourceTree = "<group>"; };
+		D320472C16703ECA0037C1E2 /* GlobalDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDef.h; sourceTree = "<group>"; };
+		D320472D16704C670037C1E2 /* ActorAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorAction.cpp; sourceTree = "<group>"; };
+		D320472E16704C670037C1E2 /* ActorAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActorAction.h; sourceTree = "<group>"; };
 		D348399F1667120A008869A3 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		D34839A01667120A008869A3 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		D34839A11667120A008869A3 /* CameraObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraObserver.cpp; sourceTree = "<group>"; };
@@ -11156,6 +11163,10 @@
 			children = (
 				D30D8FFA1666F3A9000B95E1 /* ActorEntity.cpp */,
 				D30D8FFB1666F3A9000B95E1 /* ActorEntity.h */,
+				D320472816703B210037C1E2 /* ActorTouch.cpp */,
+				D320472916703B210037C1E2 /* ActorTouch.h */,
+				D320472D16704C670037C1E2 /* ActorAction.cpp */,
+				D320472E16704C670037C1E2 /* ActorAction.h */,
 				D30D8FFC1666F3A9000B95E1 /* ActorProp.cpp */,
 				D30D8FFD1666F3A9000B95E1 /* ActorProp.h */,
 				D34839AA166733F6008869A3 /* ActorEvents.h */,
@@ -11179,6 +11190,7 @@
 				D30D90061666F3A9000B95E1 /* INotifyEvent.h */,
 				D30D90071666F3A9000B95E1 /* IObserver.cpp */,
 				D30D90081666F3A9000B95E1 /* IObserver.h */,
+				D320472C16703ECA0037C1E2 /* GlobalDef.h */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -27149,6 +27161,8 @@
 				D3FC5F65166EE5D700BDCF3B /* CSPipeline.cpp in Sources */,
 				D3FC5F68166F19DC00BDCF3B /* ServerActor.cpp in Sources */,
 				D3FC5F6B166F24AF00BDCF3B /* MainActor.cpp in Sources */,
+				D320472A16703B210037C1E2 /* ActorTouch.cpp in Sources */,
+				D320472F16704C670037C1E2 /* ActorAction.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

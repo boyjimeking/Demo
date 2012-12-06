@@ -22,7 +22,7 @@ namespace GUI
 		UILayer(void);
 		virtual ~UILayer(void);
 
-		virtual void OnNotifyChange( const INotifier *notify, const INotifyEvent *event );
+		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
 
 		virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
 

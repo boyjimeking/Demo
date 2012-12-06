@@ -24,8 +24,6 @@ namespace Game
 	}
 	void GridProp::Load(const char *gridName, int posX, int posY)
 	{
-		cocos2d::CCLog("GridProp::Load %s", gridName);
-
 		GridEvent_Load event(gridName, m_width, m_height, posX, posY);
 		NotifyChange(&event);
 	}

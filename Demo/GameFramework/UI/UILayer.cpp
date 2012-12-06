@@ -29,7 +29,7 @@ namespace GUI
 
 	}
 
-	void UILayer::OnNotifyChange( const INotifier *notify, const INotifyEvent *event )
+	void UILayer::OnNotifyChange( INotifier *notify, const INotifyEvent *event )
 	{
 	}
 

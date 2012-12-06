@@ -17,6 +17,7 @@ namespace Net
         :public ServerActor
     {
         virtual void SycPosition(void);
+        virtual void Tick(float dt){}
     };
 }
 

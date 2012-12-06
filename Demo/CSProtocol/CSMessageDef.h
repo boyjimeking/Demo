@@ -48,6 +48,13 @@ namespace Net
         float m_x;
         float m_y;
     };
+    struct CSChangeTarget_S2C
+        :public IMessage
+    {
+        int m_actorID;
+        float m_x;
+        float m_y;
+    };
 }
 
 #endif /* defined(__Demo__CSMessageDef__) */

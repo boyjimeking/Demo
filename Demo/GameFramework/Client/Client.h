@@ -27,6 +27,7 @@ namespace Net
     	void InitScene(IMessage *message);
     	void InitMainActor(IMessage *message);
         void SycActor(IMessage *message);
+        void MoveActor(IMessage *message);
     };
 }
 
