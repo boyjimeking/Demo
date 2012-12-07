@@ -21,6 +21,8 @@ namespace Game
 	public:
 		BuildingsControl(void);
 		virtual ~BuildingsControl(void);
+
+		void Load(const char *fileName);
 	protected:
 	private:
 	};

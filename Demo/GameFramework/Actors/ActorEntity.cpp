@@ -48,7 +48,7 @@ namespace Game
 	,m_touchCallBack(NULL)
 	,m_imageName(NULL)
 	{
-
+		setAnchorPoint(ccp(0.5f, 1.0f));
 	}
 	ActorEntity::~ActorEntity(void)
 	{

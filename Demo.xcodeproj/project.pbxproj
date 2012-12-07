@@ -502,6 +502,7 @@
 		D3148891166DBD5D0011EDC7 /* range_run.ipp in Resources */ = {isa = PBXBuildFile; fileRef = D3148750166DBD5A0011EDC7 /* range_run.ipp */; };
 		D320472A16703B210037C1E2 /* ActorTouch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D320472816703B210037C1E2 /* ActorTouch.cpp */; };
 		D320472F16704C670037C1E2 /* ActorAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D320472D16704C670037C1E2 /* ActorAction.cpp */; };
+		D327F9331671F1E400B52EA1 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D327F9311671F1E400B52EA1 /* Scene.cpp */; };
 		D34839A31667120A008869A3 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D348399F1667120A008869A3 /* Camera.cpp */; };
 		D34839A41667120A008869A3 /* CameraObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839A11667120A008869A3 /* CameraObserver.cpp */; };
 		D34839A7166712C0008869A3 /* CameraNotifyEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839A6166712C0008869A3 /* CameraNotifyEvents.cpp */; };
@@ -10077,6 +10078,8 @@
 		D320472C16703ECA0037C1E2 /* GlobalDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDef.h; sourceTree = "<group>"; };
 		D320472D16704C670037C1E2 /* ActorAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorAction.cpp; sourceTree = "<group>"; };
 		D320472E16704C670037C1E2 /* ActorAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActorAction.h; sourceTree = "<group>"; };
+		D327F9311671F1E400B52EA1 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		D327F9321671F1E400B52EA1 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
 		D348399F1667120A008869A3 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		D34839A01667120A008869A3 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		D34839A11667120A008869A3 /* CameraObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraObserver.cpp; sourceTree = "<group>"; };
@@ -11141,6 +11144,7 @@
 		D30D8FF81666F3A9000B95E1 /* GameFramework */ = {
 			isa = PBXGroup;
 			children = (
+				D327F9301671F1E400B52EA1 /* Tools */,
 				D3FC5F5C166EE09900BDCF3B /* Client */,
 				D3146141166D8E4E0011EDC7 /* Physical */,
 				D348399E1667120A008869A3 /* Camera */,
@@ -26339,6 +26343,15 @@
 			path = detail;
 			sourceTree = "<group>";
 		};
+		D327F9301671F1E400B52EA1 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D327F9311671F1E400B52EA1 /* Scene.cpp */,
+				D327F9321671F1E400B52EA1 /* Scene.h */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		D348399E1667120A008869A3 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -27163,6 +27176,7 @@
 				D3FC5F6B166F24AF00BDCF3B /* MainActor.cpp in Sources */,
 				D320472A16703B210037C1E2 /* ActorTouch.cpp in Sources */,
 				D320472F16704C670037C1E2 /* ActorAction.cpp in Sources */,
+				D327F9331671F1E400B52EA1 /* Scene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

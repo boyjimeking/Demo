@@ -10,4 +10,9 @@ namespace Game
 	{
 
 	}
+
+	void BuildingsControl::Load(const char *fileName)
+	{
+		
+	}
 }
