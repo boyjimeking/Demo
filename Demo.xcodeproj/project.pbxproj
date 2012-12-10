@@ -509,7 +509,6 @@
 		D34839A916673054008869A3 /* actor.png in Resources */ = {isa = PBXBuildFile; fileRef = D34839A816673054008869A3 /* actor.png */; };
 		D34839AC16673409008869A3 /* ActorEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839AB16673409008869A3 /* ActorEvents.cpp */; };
 		D34839AF16673606008869A3 /* ActorsControlEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839AE16673605008869A3 /* ActorsControlEvents.cpp */; };
-		D3939914166C3A6C00DA4F56 /* terrain_0.png in Resources */ = {isa = PBXBuildFile; fileRef = D3939910166C3A6C00DA4F56 /* terrain_0.png */; };
 		D3939915166C3A6C00DA4F56 /* terrain_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3939911166C3A6C00DA4F56 /* terrain_1.png */; };
 		D3939916166C3A6C00DA4F56 /* terrain_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3939912166C3A6C00DA4F56 /* terrain_2.png */; };
 		D3939917166C3A6C00DA4F56 /* terrain_3.png in Resources */ = {isa = PBXBuildFile; fileRef = D3939913166C3A6C00DA4F56 /* terrain_3.png */; };
@@ -567,6 +566,11 @@
 		D3939DC8166C889100DA4F56 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3939D9A166C889000DA4F56 /* b2Rope.cpp */; };
 		D3939DD7166C911A00DA4F56 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3939DD5166C911900DA4F56 /* MainScene.cpp */; };
 		D3939DE4166CAB6F00DA4F56 /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = D3939DE3166CAB6F00DA4F56 /* ReadMe */; };
+		D3EE8F7D16758305004C7332 /* terrain_8.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7816758305004C7332 /* terrain_8.png */; };
+		D3EE8F7E16758305004C7332 /* terrain_9.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7916758305004C7332 /* terrain_9.png */; };
+		D3EE8F7F16758305004C7332 /* terrain_10.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7A16758305004C7332 /* terrain_10.png */; };
+		D3EE8F8016758305004C7332 /* terrain_11.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7B16758305004C7332 /* terrain_11.png */; };
+		D3EE8F8116758305004C7332 /* terrain_12.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7C16758305004C7332 /* terrain_12.png */; };
 		D3FC5F57166EE02F00BDCF3B /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F55166EE02F00BDCF3B /* Server.cpp */; };
 		D3FC5F5B166EE07A00BDCF3B /* CSMessageDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */; };
 		D3FC5F5F166EE0D700BDCF3B /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F5D166EE0D700BDCF3B /* Client.cpp */; };
@@ -10091,7 +10095,6 @@
 		D34839AB16673409008869A3 /* ActorEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorEvents.cpp; sourceTree = "<group>"; };
 		D34839AD166735F7008869A3 /* ActorsControlEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActorsControlEvents.h; sourceTree = "<group>"; };
 		D34839AE16673605008869A3 /* ActorsControlEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorsControlEvents.cpp; sourceTree = "<group>"; };
-		D3939910166C3A6C00DA4F56 /* terrain_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_0.png; path = Resources/terrain_0.png; sourceTree = "<group>"; };
 		D3939911166C3A6C00DA4F56 /* terrain_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_1.png; path = Resources/terrain_1.png; sourceTree = "<group>"; };
 		D3939912166C3A6C00DA4F56 /* terrain_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_2.png; path = Resources/terrain_2.png; sourceTree = "<group>"; };
 		D3939913166C3A6C00DA4F56 /* terrain_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_3.png; path = Resources/terrain_3.png; sourceTree = "<group>"; };
@@ -10199,6 +10202,11 @@
 		D3939DD5166C911900DA4F56 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
 		D3939DD6166C911900DA4F56 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		D3939DE3166CAB6F00DA4F56 /* ReadMe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
+		D3EE8F7816758305004C7332 /* terrain_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_8.png; path = Resources/terrain_8.png; sourceTree = "<group>"; };
+		D3EE8F7916758305004C7332 /* terrain_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_9.png; path = Resources/terrain_9.png; sourceTree = "<group>"; };
+		D3EE8F7A16758305004C7332 /* terrain_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_10.png; path = Resources/terrain_10.png; sourceTree = "<group>"; };
+		D3EE8F7B16758305004C7332 /* terrain_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_11.png; path = Resources/terrain_11.png; sourceTree = "<group>"; };
+		D3EE8F7C16758305004C7332 /* terrain_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_12.png; path = Resources/terrain_12.png; sourceTree = "<group>"; };
 		D3FC5F55166EE02F00BDCF3B /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Server.cpp; path = VirtualServer/Server.cpp; sourceTree = "<group>"; };
 		D3FC5F56166EE02F00BDCF3B /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Server.h; path = VirtualServer/Server.h; sourceTree = "<group>"; };
 		D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSMessageDef.cpp; path = CSProtocol/CSMessageDef.cpp; sourceTree = "<group>"; };
@@ -10293,7 +10301,6 @@
 				D3FC5F6D166F49D700BDCF3B /* mnattack.png */,
 				D3FC5F6E166F49D700BDCF3B /* npc.png */,
 				D3FC5F6F166F49D700BDCF3B /* npcattack.png */,
-				D3939910166C3A6C00DA4F56 /* terrain_0.png */,
 				D3939911166C3A6C00DA4F56 /* terrain_1.png */,
 				D3939912166C3A6C00DA4F56 /* terrain_2.png */,
 				D3939913166C3A6C00DA4F56 /* terrain_3.png */,
@@ -10301,6 +10308,11 @@
 				D3939923166C575300DA4F56 /* terrain_5.png */,
 				D3939924166C575300DA4F56 /* terrain_6.png */,
 				D3939925166C575300DA4F56 /* terrain_7.png */,
+				D3EE8F7816758305004C7332 /* terrain_8.png */,
+				D3EE8F7916758305004C7332 /* terrain_9.png */,
+				D3EE8F7A16758305004C7332 /* terrain_10.png */,
+				D3EE8F7B16758305004C7332 /* terrain_11.png */,
+				D3EE8F7C16758305004C7332 /* terrain_12.png */,
 				D34839A816673054008869A3 /* actor.png */,
 				D30D8D451666EE89000B95E1 /* CloseNormal.png */,
 				D30D8D471666EE89000B95E1 /* CloseSelected.png */,
@@ -26618,7 +26630,6 @@
 				D30D8D5A1666EE89000B95E1 /* iTunesArtwork in Resources */,
 				D30D8DEC1666EE8A000B95E1 /* ChangeLog in Resources */,
 				D34839A916673054008869A3 /* actor.png in Resources */,
-				D3939914166C3A6C00DA4F56 /* terrain_0.png in Resources */,
 				D3939915166C3A6C00DA4F56 /* terrain_1.png in Resources */,
 				D3939916166C3A6C00DA4F56 /* terrain_2.png in Resources */,
 				D3939917166C3A6C00DA4F56 /* terrain_3.png in Resources */,
@@ -26904,6 +26915,11 @@
 				D3FC5F71166F49D700BDCF3B /* mnattack.png in Resources */,
 				D3FC5F72166F49D700BDCF3B /* npc.png in Resources */,
 				D3FC5F73166F49D700BDCF3B /* npcattack.png in Resources */,
+				D3EE8F7D16758305004C7332 /* terrain_8.png in Resources */,
+				D3EE8F7E16758305004C7332 /* terrain_9.png in Resources */,
+				D3EE8F7F16758305004C7332 /* terrain_10.png in Resources */,
+				D3EE8F8016758305004C7332 /* terrain_11.png in Resources */,
+				D3EE8F8116758305004C7332 /* terrain_12.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

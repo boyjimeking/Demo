@@ -8,7 +8,7 @@ namespace Game
 	TerrainProp::TerrainProp(void)
 	:m_gridList(NULL)
 	,m_width(4)
-	,m_height(2)
+	,m_height(3)
 	,m_terrainName(NULL)
 	{
 
@@ -41,8 +41,8 @@ namespace Game
 				m_gridList[currentIndex] = new GridProp;
 				entityArray[currentIndex] = new GridEntity;
 				m_gridList[currentIndex]->AttachObserver(entityArray[currentIndex]);
-				sprintf(temp, "terrain_%d.png", currentIndex);
-				m_gridList[currentIndex]->Load(temp, (index - 2) * 690 + 690 / 2, (1 - innerIndex) * 770 - 770 / 2);
+				sprintf(temp, "terrain_%d.png", currentIndex + 1);
+				m_gridList[currentIndex]->Load(temp, (index - 2) * 960 + 960 / 2, (1 - innerIndex) * 640 - 640 / 2);
 			}
 		}
 
