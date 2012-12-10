@@ -571,6 +571,8 @@
 		D3EE8F7F16758305004C7332 /* terrain_10.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7A16758305004C7332 /* terrain_10.png */; };
 		D3EE8F8016758305004C7332 /* terrain_11.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7B16758305004C7332 /* terrain_11.png */; };
 		D3EE8F8116758305004C7332 /* terrain_12.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7C16758305004C7332 /* terrain_12.png */; };
+		D3EE8F841675C692004C7332 /* StreamHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EE8F821675C692004C7332 /* StreamHelper.cpp */; };
+		D3EE8FAD1675D307004C7332 /* scene.bin in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8FAC1675D307004C7332 /* scene.bin */; };
 		D3FC5F57166EE02F00BDCF3B /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F55166EE02F00BDCF3B /* Server.cpp */; };
 		D3FC5F5B166EE07A00BDCF3B /* CSMessageDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */; };
 		D3FC5F5F166EE0D700BDCF3B /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F5D166EE0D700BDCF3B /* Client.cpp */; };
@@ -10207,6 +10209,9 @@
 		D3EE8F7A16758305004C7332 /* terrain_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_10.png; path = Resources/terrain_10.png; sourceTree = "<group>"; };
 		D3EE8F7B16758305004C7332 /* terrain_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_11.png; path = Resources/terrain_11.png; sourceTree = "<group>"; };
 		D3EE8F7C16758305004C7332 /* terrain_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_12.png; path = Resources/terrain_12.png; sourceTree = "<group>"; };
+		D3EE8F821675C692004C7332 /* StreamHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StreamHelper.cpp; sourceTree = "<group>"; };
+		D3EE8F831675C692004C7332 /* StreamHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamHelper.h; sourceTree = "<group>"; };
+		D3EE8FAC1675D307004C7332 /* scene.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = scene.bin; path = Resources/scene.bin; sourceTree = "<group>"; };
 		D3FC5F55166EE02F00BDCF3B /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Server.cpp; path = VirtualServer/Server.cpp; sourceTree = "<group>"; };
 		D3FC5F56166EE02F00BDCF3B /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Server.h; path = VirtualServer/Server.h; sourceTree = "<group>"; };
 		D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSMessageDef.cpp; path = CSProtocol/CSMessageDef.cpp; sourceTree = "<group>"; };
@@ -10297,6 +10302,7 @@
 		D30D8D441666EE89000B95E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D3EE8FAC1675D307004C7332 /* scene.bin */,
 				D3FC5F6C166F49D700BDCF3B /* mn.png */,
 				D3FC5F6D166F49D700BDCF3B /* mnattack.png */,
 				D3FC5F6E166F49D700BDCF3B /* npc.png */,
@@ -26360,6 +26366,8 @@
 			children = (
 				D327F9311671F1E400B52EA1 /* Scene.cpp */,
 				D327F9321671F1E400B52EA1 /* Scene.h */,
+				D3EE8F821675C692004C7332 /* StreamHelper.cpp */,
+				D3EE8F831675C692004C7332 /* StreamHelper.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -26920,6 +26928,7 @@
 				D3EE8F7F16758305004C7332 /* terrain_10.png in Resources */,
 				D3EE8F8016758305004C7332 /* terrain_11.png in Resources */,
 				D3EE8F8116758305004C7332 /* terrain_12.png in Resources */,
+				D3EE8FAD1675D307004C7332 /* scene.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -27193,6 +27202,7 @@
 				D320472A16703B210037C1E2 /* ActorTouch.cpp in Sources */,
 				D320472F16704C670037C1E2 /* ActorAction.cpp in Sources */,
 				D327F9331671F1E400B52EA1 /* Scene.cpp in Sources */,
+				D3EE8F841675C692004C7332 /* StreamHelper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

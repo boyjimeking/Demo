@@ -10,6 +10,11 @@
 
 #include "../Base/INotifier.h"
 
+namespace Tools
+{
+	class Scene;
+}
+
 namespace Game
 {
 	/*
@@ -25,6 +30,7 @@ namespace Game
 		void Load(const char *fileName);
 	protected:
 	private:
+		Tools::Scene *m_scene;
 	};
 }
 
