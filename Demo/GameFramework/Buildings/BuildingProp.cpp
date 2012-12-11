@@ -29,7 +29,7 @@ namespace Game
 		BuildingEntity *entity = BuildingEntity::Create();
 		AttachObserver(entity);
 
-		BuildingEventCreate event(m_imageName);
+		BuildingEventCreate event(m_imageName, m_position.x, m_position.y);
 		NotifyChange(&event);
 		return entity;
 	}

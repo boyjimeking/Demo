@@ -34,11 +34,11 @@ namespace Game
         SetPosition(cocos2d::CCPointZero);
     }
 
-    cocos2d::CCPoint Camera::ConvertWorldPosToScreen(const cocos2d::CCPoint &worldPos)
+    cocos2d::CCPoint Camera::ConvertWorldPosToDesign(const cocos2d::CCPoint &worldPos)
     {
         return cocos2d::ccpSub(worldPos, GetPosition());
     }
-    cocos2d::CCPoint Camera::ConvertScreenPosToWorld(const cocos2d::CCPoint &screenPos)
+    cocos2d::CCPoint Camera::ConvertDesignPosToWorld(const cocos2d::CCPoint &screenPos)
     {
         return cocos2d::ccpAdd(screenPos, GetPosition());
     }

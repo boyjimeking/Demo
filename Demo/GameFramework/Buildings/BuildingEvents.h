@@ -20,6 +20,7 @@ namespace Game
 		{
 			enNone,
 			enBuildingEvent_Create,
+			enBuildingEvent_InitLayer,
 		};
 	};
 
@@ -28,11 +29,28 @@ namespace Game
 	{
 		virtual int GetNotifyEventType(void) const { return ENBuildingEvent::enBuildingEvent_Create; }
 
-		BuildingEventCreate(const std::string &imageName) : m_imageName(imageName) {}
+		BuildingEventCreate(const std::string &imageName, float x, float y) : m_imageName(imageName), m_x(x), m_y(y) {}
 
-		const std::string& GetImageName(void) { return m_imageName; }
+		const std::string& GetImageName(void) const { return m_imageName; }
+		float GetX(void) const { return m_x; }
+		float GetY(void) const { return m_y; }
 	private:
 		const std::string &m_imageName;
+		float m_x;
+		float m_y;
+	};
+
+	class BuildingEntity;
+	struct BuildingEventInitLayer
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENBuildingEvent::enBuildingEvent_InitLayer; }
+
+		BuildingEventInitLayer(int size) : m_size(size), m_entity(new BuildingEntity*[size]) {}
+		~BuildingEventInitLayer(void) { delete[] m_entity; }
+
+		int m_size;
+		BuildingEntity **m_entity;
 	};
 }
 

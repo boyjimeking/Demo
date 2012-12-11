@@ -78,7 +78,7 @@ namespace Game
 	void TerrainLayer::ProcessMainActorMove(const cocos2d::CCPoint &screenPos)
 	{
 		ActorProp *mainActor = WorldManager::Instance()->GetActorsControl()->GetMainActor();
-		cocos2d::CCPoint worldPos = WorldManager::ScreenPosToWorld(screenPos);
+		cocos2d::CCPoint worldPos = WorldManager::DesignPosToWorld(screenPos);
 		mainActor->MoveTo(worldPos);
 	}
 }

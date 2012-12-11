@@ -29,8 +29,8 @@ namespace Game
 
         void init(cocos2d::CCScene *scene);
         
-        cocos2d::CCPoint ConvertWorldPosToScreen(const cocos2d::CCPoint &worldPos);
-        cocos2d::CCPoint ConvertScreenPosToWorld(const cocos2d::CCPoint &screenPos);
+        cocos2d::CCPoint ConvertWorldPosToDesign(const cocos2d::CCPoint &worldPos);
+        cocos2d::CCPoint ConvertDesignPosToWorld(const cocos2d::CCPoint &screenPos);
 
         void SetPosition(const cocos2d::CCPoint &newPosition);
         const cocos2d::CCPoint& GetPosition(void) const { return m_position; }

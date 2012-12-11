@@ -220,7 +220,7 @@ namespace Game
 	}
 	bool ActorEntity::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
 	{
-		cocos2d::CCPoint local = WorldManager::ScreenPosToWorld(pTouch->getLocation());
+		cocos2d::CCPoint local = WorldManager::DesignPosToWorld(pTouch->getLocation());
 		cocos2d::CCRect rect = cocos2d::CCRectMake( m_tPosition.x - m_tContentSize.width * m_tAnchorPoint.x, 
                       m_tPosition.y - m_tContentSize.height * m_tAnchorPoint.y,
                       m_tContentSize.width, m_tContentSize.height);

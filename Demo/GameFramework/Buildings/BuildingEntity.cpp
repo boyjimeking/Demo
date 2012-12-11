@@ -1,5 +1,6 @@
 #include "BuildingEntity.h"
 #include "BuildingEvents.h"
+#include "sprite_nodes/CCSpriteFrameCache.h"
 
 namespace Game
 {
@@ -28,7 +29,10 @@ namespace Game
 		{
 			case ENBuildingEvent::enBuildingEvent_Create:
 				{
-					
+					const BuildingEventCreate *createEvent = reinterpret_cast<const BuildingEventCreate*>(event);
+					setPosition(cocos2d::CCPointMake(createEvent->GetX(), createEvent->GetY()));
+					cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(createEvent->GetImageName().c_str());
+					setDisplayFrame(frame);
 				}
 				break;
 			default:

@@ -3,6 +3,8 @@
 #include "Tools/Scene.h"
 #include "platform/CCCommon.h"
 #include "BuildingProp.h"
+#include "BuildingEvents.h"
+#include "sprite_nodes/CCSpriteFrameCache.h"
 
 namespace Game
 {
@@ -14,7 +16,6 @@ namespace Game
 	,m_gridRow(0)
 	,m_grid(NULL)
 	,m_gridArrayLength(0)
-	,m_buildings(NULL)
 	{
 
 	}
@@ -24,6 +25,11 @@ namespace Game
 		{
 			delete m_grid;
 		}
+		for (int index = 0; index < m_buildings.size(); ++index)
+		{
+			delete m_buildings[index];
+		}
+		m_buildings.clear();
 	}
 
 	void SceneControl::Load(const char *fileName)
@@ -38,6 +44,8 @@ namespace Game
         
         cocos2d::CCLog("%s", scene.GetSceneName());
 
+        cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(scene.GetImageName());
+
         m_sceneName = scene.GetSceneName();
         m_width = scene.GetWidth();
         m_height = scene.GetHeight();
@@ -48,13 +56,15 @@ namespace Game
         m_grid = new char[m_gridArrayLength];
         memcpy(m_grid, scene.GetGrid(), m_gridArrayLength);
         const Tools::Scene::InfoList &list = scene.GetInfoList();
-        m_buildings = new BuildingProp*[list.size()];
+        m_buildings.resize(list.size());
+        BuildingEventInitLayer event(list.size());
         int index = 0;
         for (Tools::Scene::InfoList::const_iterator it = list.begin(); it != list.end() && index < m_gridArrayLength; ++it, ++index)
         {
         	m_buildings[index] = BuildingProp::Create(&(*it));
+        	event.m_entity[index] = m_buildings[index]->CreateEntity();
         }
-
+        NotifyChange(&event);
 	}
 	bool SceneControl::GetGrid(int x, int y)
 	{

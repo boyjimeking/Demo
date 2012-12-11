@@ -20,6 +20,11 @@ namespace GUI
 	class UIControl;
 }
 
+namespace Net
+{
+	class Client;
+}
+
 namespace Game
 {
 	class TerrainProp;
@@ -42,8 +47,8 @@ namespace Game
         Camera* GetCamera(void) const { return m_camera; }
         PhysicalControl* GetPhysicalControl(void) const { return m_physicalControl; }
 
-        static cocos2d::CCPoint WorldPosToScreen(const cocos2d::CCPoint &worldPos);
-        static cocos2d::CCPoint ScreenPosToWorld(const cocos2d::CCPoint &screenPos);
+        static cocos2d::CCPoint WorldPosToDesign(const cocos2d::CCPoint &worldPos);
+        static cocos2d::CCPoint DesignPosToWorld(const cocos2d::CCPoint &screenPos);
 
         void update(float dt);
 	protected:
@@ -53,6 +58,7 @@ namespace Game
 		GUI::UIControl *m_uiControl;
         Camera *m_camera;
         PhysicalControl *m_physicalControl;
+        Net::Client *m_client;
 	private:
 		WorldManager(void);
 		~WorldManager(void);

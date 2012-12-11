@@ -14,6 +14,7 @@
 #include "support/CCPointExtension.h"
 #include "Physical/PhysicalObj.h"
 #include "Physical/PhysicalControl.h"
+#include "Client/Client.h"
 
 namespace Game
 {
@@ -31,6 +32,7 @@ namespace Game
 		,m_uiControl(NULL)
         ,m_camera(NULL)
         ,m_physicalControl(NULL)
+        ,m_client(new Net::Client)
 	{
 
 	}
@@ -42,6 +44,7 @@ namespace Game
 		delete m_sceneControl;
 		delete m_actorsControl;
 		delete m_terrain;
+		delete m_client;
 	}
 
 	cocos2d::CCScene* WorldManager::CreateScene()
@@ -87,13 +90,13 @@ namespace Game
 		}
 		return scene;
 	}
-	cocos2d::CCPoint WorldManager::WorldPosToScreen(const cocos2d::CCPoint &worldPos)
+	cocos2d::CCPoint WorldManager::WorldPosToDesign(const cocos2d::CCPoint &worldPos)
 	{
-		return Instance()->GetCamera()->ConvertWorldPosToScreen(worldPos);
+		return Instance()->GetCamera()->ConvertWorldPosToDesign(worldPos);
 	}
-    cocos2d::CCPoint WorldManager::ScreenPosToWorld(const cocos2d::CCPoint &screenPos)
+    cocos2d::CCPoint WorldManager::DesignPosToWorld(const cocos2d::CCPoint &screenPos)
     {
-    	return Instance()->GetCamera()->ConvertScreenPosToWorld(screenPos);
+    	return Instance()->GetCamera()->ConvertDesignPosToWorld(screenPos);
     }
     void WorldManager::update(float dt)
     {

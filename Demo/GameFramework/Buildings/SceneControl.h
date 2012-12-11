@@ -10,6 +10,7 @@
 
 #include "../Base/INotifier.h"
 #include <string>
+#include <vector>
 
 namespace Game
 {
@@ -27,6 +28,15 @@ namespace Game
 		void Load(const char *fileName);
 
 		bool GetGrid(int x, int y);
+
+		int GetWidth(void) const { return m_width; }
+		int GetHeight(void) const { return m_height; }
+		int GetColumn(void) const { return m_gridColumn; }
+		int GetRow(void) const { return m_gridRow; }
+		int GetGridSize(void) const { return m_gridSize; }
+
+		int GetGridArrayLength(void) const { return m_gridArrayLength; }
+
 	protected:
 	private:
 		std::string m_sceneName;
@@ -37,7 +47,7 @@ namespace Game
 		int m_gridRow;
 		char *m_grid;
 		int m_gridArrayLength;
-		BuildingProp **m_buildings;
+		std::vector<BuildingProp*> m_buildings;
 	};
 }
 
