@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 //
-//	文件名: 	E:/GitCode/SimpleGame/SourceCode/GameFramework/ActorManager/ActorEntity.h
+//	文件名: 	/SourceCode/GameFramework/ActorManager/ActorEntity.h
 //	创建日期:	2012年11月26日
 //	创建者:		张明震
 //
@@ -36,10 +36,14 @@ namespace Game
 		enum ENDirection
 		{
 			enError = -1,
-			enActorDirection_Down,
-			enActorDirection_Left,
-			enActorDirection_Right,
-			enActorDirection_Up,
+			enDirection_East,		//→	0
+			enDirection_NorthEast,	//↗	π/4
+			enDirection_North,		//↑	π/2
+			enDirection_NorthWest,	//↖	3π/4
+			enDirection_West,		//←	π
+			enDirection_SouthWest,	//↙	-3π/4
+			enDirection_South,		//↓	-π/2
+			enDirection_SouthEast,	//↘	-π/4
 		};
 		enum ENActionTag
 		{
@@ -51,6 +55,7 @@ namespace Game
 		void PlayMove(ENDirection direction);
 		void PlayAttack(void);
 		ENDirection CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos);
+
 	private:
 		ENDirection m_currentDirection;
 		ITouch *m_touchCallBack;

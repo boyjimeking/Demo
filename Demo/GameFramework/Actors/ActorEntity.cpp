@@ -48,7 +48,7 @@ namespace Game
 	,m_touchCallBack(NULL)
 	,m_imageName(NULL)
 	{
-
+		setAnchorPoint(ccp(0.5f, 1.0f));
 	}
 	ActorEntity::~ActorEntity(void)
 	{
@@ -80,7 +80,7 @@ namespace Game
 							}
 							break;
 					}
-					PlayMove(enActorDirection_Down);
+					PlayMove(enDirection_South);
 				}
 				break;
 			case ENActorEvent::enActorEvent_Release:
@@ -114,7 +114,7 @@ namespace Game
                 break;
 			case ENActorEvent::enActorEvent_Stop:
 				{
-					PlayMove(enActorDirection_Down);
+					PlayMove(enDirection_South);
 				}
 				break;
 			case ENActorEvent::enActorEvent_Attack:
@@ -190,29 +190,43 @@ namespace Game
 	}
 	ActorEntity::ENDirection ActorEntity::CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos)
 	{
-		cocos2d::CCPoint disVec = cocos2d::ccpSub(targetPos, currentPos);
-		if (abs(disVec.x) > abs(disVec.y))
+		float angle = ccpToAngle(cocos2d::ccpSub(targetPos, currentPos));
+
+		static const float M_PI_8 = M_PI / 8.0f;
+
+		if (abs(angle) < M_PI_8)
 		{
-			if (disVec.x > 0)
-			{
-				return enActorDirection_Right;
-			}
-			else
-			{
-				return enActorDirection_Left;
-			}
+			return enDirection_East;
 		}
-		else
+		if (M_PI_8 < angle && angle < M_PI_8 * 3)
 		{
-			if (disVec.y > 0)
-			{
-				return enActorDirection_Up;
-			}
-			else
-			{
-				return enActorDirection_Down;
-			}
+			return enDirection_NorthEast;
 		}
+		if (M_PI_8 * 3 < angle && angle < M_PI_8 * 5)
+		{
+			return enDirection_North;
+		}
+		if (M_PI_8 * 5 < angle && angle < M_PI_8 * 7)
+		{
+			return enDirection_NorthWest;
+		}
+		if (abs(angle) > M_PI_8 * 7)
+		{
+			return enDirection_West;
+		}
+		if (M_PI_8 * -5 > angle && angle > M_PI_8 * -7)
+		{
+			return enDirection_SouthWest;
+		}
+		if (M_PI_8 * -3 > angle && angle > M_PI_8 * -5)
+		{
+			return enDirection_South;
+		}
+		if (-M_PI_8 > angle && angle > M_PI_8 * -3)
+		{
+			return enDirection_SouthEast;
+		}
+		return enDirection_East;
 	}
 	void ActorEntity::ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent)
 	{

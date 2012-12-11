@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 //
-//	文件名: 	E:/GitCode/SimpleGame/SourceCode/GameFramework/ActorManager/ActorProp.h
+//	文件名: 	/SourceCode/GameFramework/ActorManager/ActorProp.h
 //	创建日期:	2012年11月26日
 //	创建者:		张明震
 //
