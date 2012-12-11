@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 //
-//	文件名: 	E:/GitCode/SimpleGame/SourceCode/GameFramework/BuildingManager/BuildingProp.h
+//	文件名: 	/SourceCode/GameFramework/BuildingManager/BuildingProp.h
 //	创建日期:	2012年11月26日
 //	创建者:		张明震
 //
@@ -9,9 +9,17 @@
 #define BuildingProp_h__
 
 #include "../Base/INotifier.h"
+#include "cocoa/CCGeometry.h"
+#include <string>
+
+namespace Tools
+{
+	struct SceneInfo;
+}
 
 namespace Game
 {
+	class BuildingEntity;
 	/*
 	 *	建筑属性，用于记录建筑的各项信息及控制建筑的改变
 	 */
@@ -19,10 +27,16 @@ namespace Game
 		:public INotifier
 	{
 	public:
+		static BuildingProp* Create(const Tools::SceneInfo *sceneInfo);
 		BuildingProp(void);
 		virtual ~BuildingProp(void);
+		
+		void Init(const Tools::SceneInfo *sceneInfo);
+		BuildingEntity* CreateEntity(void);
 	protected:
 	private:
+		cocos2d::CCPoint m_position;
+		std::string m_imageName;
 	};
 }
 

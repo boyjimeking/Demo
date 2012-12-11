@@ -215,7 +215,7 @@
 		D30D902A1666F3A9000B95E1 /* IObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90071666F3A9000B95E1 /* IObserver.cpp */; };
 		D30D902B1666F3A9000B95E1 /* BuildingEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D900A1666F3A9000B95E1 /* BuildingEntity.cpp */; };
 		D30D902C1666F3A9000B95E1 /* BuildingProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D900C1666F3A9000B95E1 /* BuildingProp.cpp */; };
-		D30D902D1666F3A9000B95E1 /* BuildingsControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D900E1666F3A9000B95E1 /* BuildingsControl.cpp */; };
+		D30D902D1666F3A9000B95E1 /* SceneControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D900E1666F3A9000B95E1 /* SceneControl.cpp */; };
 		D30D902E1666F3A9000B95E1 /* BuildingsLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90101666F3A9000B95E1 /* BuildingsLayer.cpp */; };
 		D30D902F1666F3A9000B95E1 /* TerrainEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90131666F3A9000B95E1 /* TerrainEvent.cpp */; };
 		D30D90301666F3A9000B95E1 /* TerrainLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90151666F3A9000B95E1 /* TerrainLayer.cpp */; };
@@ -509,6 +509,9 @@
 		D34839A916673054008869A3 /* actor.png in Resources */ = {isa = PBXBuildFile; fileRef = D34839A816673054008869A3 /* actor.png */; };
 		D34839AC16673409008869A3 /* ActorEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839AB16673409008869A3 /* ActorEvents.cpp */; };
 		D34839AF16673606008869A3 /* ActorsControlEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839AE16673605008869A3 /* ActorsControlEvents.cpp */; };
+		D34919E01676D0D600C41573 /* BuildingEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34919DE1676D0D600C41573 /* BuildingEvents.cpp */; };
+		D34919E41676D81D00C41573 /* test1.plist in Resources */ = {isa = PBXBuildFile; fileRef = D34919E21676D81D00C41573 /* test1.plist */; };
+		D34919E51676D81D00C41573 /* test1.png in Resources */ = {isa = PBXBuildFile; fileRef = D34919E31676D81D00C41573 /* test1.png */; };
 		D3939915166C3A6C00DA4F56 /* terrain_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3939911166C3A6C00DA4F56 /* terrain_1.png */; };
 		D3939916166C3A6C00DA4F56 /* terrain_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3939912166C3A6C00DA4F56 /* terrain_2.png */; };
 		D3939917166C3A6C00DA4F56 /* terrain_3.png in Resources */ = {isa = PBXBuildFile; fileRef = D3939913166C3A6C00DA4F56 /* terrain_3.png */; };
@@ -1043,8 +1046,8 @@
 		D30D900B1666F3A9000B95E1 /* BuildingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingEntity.h; sourceTree = "<group>"; };
 		D30D900C1666F3A9000B95E1 /* BuildingProp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingProp.cpp; sourceTree = "<group>"; };
 		D30D900D1666F3A9000B95E1 /* BuildingProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingProp.h; sourceTree = "<group>"; };
-		D30D900E1666F3A9000B95E1 /* BuildingsControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingsControl.cpp; sourceTree = "<group>"; };
-		D30D900F1666F3A9000B95E1 /* BuildingsControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingsControl.h; sourceTree = "<group>"; };
+		D30D900E1666F3A9000B95E1 /* SceneControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneControl.cpp; sourceTree = "<group>"; };
+		D30D900F1666F3A9000B95E1 /* SceneControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneControl.h; sourceTree = "<group>"; };
 		D30D90101666F3A9000B95E1 /* BuildingsLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingsLayer.cpp; sourceTree = "<group>"; };
 		D30D90111666F3A9000B95E1 /* BuildingsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingsLayer.h; sourceTree = "<group>"; };
 		D30D90131666F3A9000B95E1 /* TerrainEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TerrainEvent.cpp; sourceTree = "<group>"; };
@@ -10097,6 +10100,10 @@
 		D34839AB16673409008869A3 /* ActorEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorEvents.cpp; sourceTree = "<group>"; };
 		D34839AD166735F7008869A3 /* ActorsControlEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActorsControlEvents.h; sourceTree = "<group>"; };
 		D34839AE16673605008869A3 /* ActorsControlEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorsControlEvents.cpp; sourceTree = "<group>"; };
+		D34919DE1676D0D600C41573 /* BuildingEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingEvents.cpp; sourceTree = "<group>"; };
+		D34919DF1676D0D600C41573 /* BuildingEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingEvents.h; sourceTree = "<group>"; };
+		D34919E21676D81D00C41573 /* test1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = test1.plist; path = Resources/test1.plist; sourceTree = "<group>"; };
+		D34919E31676D81D00C41573 /* test1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test1.png; path = Resources/test1.png; sourceTree = "<group>"; };
 		D3939911166C3A6C00DA4F56 /* terrain_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_1.png; path = Resources/terrain_1.png; sourceTree = "<group>"; };
 		D3939912166C3A6C00DA4F56 /* terrain_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_2.png; path = Resources/terrain_2.png; sourceTree = "<group>"; };
 		D3939913166C3A6C00DA4F56 /* terrain_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_3.png; path = Resources/terrain_3.png; sourceTree = "<group>"; };
@@ -10303,6 +10310,8 @@
 			isa = PBXGroup;
 			children = (
 				D3EE8FAC1675D307004C7332 /* scene.bin */,
+				D34919E21676D81D00C41573 /* test1.plist */,
+				D34919E31676D81D00C41573 /* test1.png */,
 				D3FC5F6C166F49D700BDCF3B /* mn.png */,
 				D3FC5F6D166F49D700BDCF3B /* mnattack.png */,
 				D3FC5F6E166F49D700BDCF3B /* npc.png */,
@@ -11224,8 +11233,10 @@
 				D30D900B1666F3A9000B95E1 /* BuildingEntity.h */,
 				D30D900C1666F3A9000B95E1 /* BuildingProp.cpp */,
 				D30D900D1666F3A9000B95E1 /* BuildingProp.h */,
-				D30D900E1666F3A9000B95E1 /* BuildingsControl.cpp */,
-				D30D900F1666F3A9000B95E1 /* BuildingsControl.h */,
+				D34919DE1676D0D600C41573 /* BuildingEvents.cpp */,
+				D34919DF1676D0D600C41573 /* BuildingEvents.h */,
+				D30D900E1666F3A9000B95E1 /* SceneControl.cpp */,
+				D30D900F1666F3A9000B95E1 /* SceneControl.h */,
 				D30D90101666F3A9000B95E1 /* BuildingsLayer.cpp */,
 				D30D90111666F3A9000B95E1 /* BuildingsLayer.h */,
 			);
@@ -26929,6 +26940,8 @@
 				D3EE8F8016758305004C7332 /* terrain_11.png in Resources */,
 				D3EE8F8116758305004C7332 /* terrain_12.png in Resources */,
 				D3EE8FAD1675D307004C7332 /* scene.bin in Resources */,
+				D34919E41676D81D00C41573 /* test1.plist in Resources */,
+				D34919E51676D81D00C41573 /* test1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -27126,7 +27139,7 @@
 				D30D902A1666F3A9000B95E1 /* IObserver.cpp in Sources */,
 				D30D902B1666F3A9000B95E1 /* BuildingEntity.cpp in Sources */,
 				D30D902C1666F3A9000B95E1 /* BuildingProp.cpp in Sources */,
-				D30D902D1666F3A9000B95E1 /* BuildingsControl.cpp in Sources */,
+				D30D902D1666F3A9000B95E1 /* SceneControl.cpp in Sources */,
 				D30D902E1666F3A9000B95E1 /* BuildingsLayer.cpp in Sources */,
 				D30D902F1666F3A9000B95E1 /* TerrainEvent.cpp in Sources */,
 				D30D90301666F3A9000B95E1 /* TerrainLayer.cpp in Sources */,
@@ -27203,6 +27216,7 @@
 				D320472F16704C670037C1E2 /* ActorAction.cpp in Sources */,
 				D327F9331671F1E400B52EA1 /* Scene.cpp in Sources */,
 				D3EE8F841675C692004C7332 /* StreamHelper.cpp in Sources */,
+				D34919E01676D0D600C41573 /* BuildingEvents.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

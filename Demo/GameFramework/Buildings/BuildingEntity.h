@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 //
-//	文件名: 	E:/GitCode/SimpleGame/SourceCode/GameFramework/BuildingManager/BuildingEntity.h
+//	文件名: 	/SourceCode/GameFramework/BuildingManager/BuildingEntity.h
 //	创建日期:	2012年11月26日
 //	创建者:		张明震
 //
@@ -21,8 +21,11 @@ namespace Game
 		,public IObserver
 	{
 	public:
+		static BuildingEntity* Create(void);
 		BuildingEntity(void);
 		virtual ~BuildingEntity(void);
+
+		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
 	protected:
 	private:
 	};

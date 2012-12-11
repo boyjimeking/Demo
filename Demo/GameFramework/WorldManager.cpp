@@ -6,7 +6,7 @@
 #include "Actors/ActorsControl.h"
 #include "Actors/ActorProp.h"
 #include "Buildings/BuildingsLayer.h"
-#include "Buildings/BuildingsControl.h"
+#include "Buildings/SceneControl.h"
 #include "UI/UILayer.h"
 #include "UI/UIControl.h"
 #include "Camera/Camera.h"
@@ -26,8 +26,8 @@ namespace Game
 
 	WorldManager::WorldManager(void)
 		:m_terrain(NULL)
-		,m_ActorsControl(NULL)
-		,m_buildingsControl(NULL)
+		,m_actorsControl(NULL)
+		,m_sceneControl(NULL)
 		,m_uiControl(NULL)
         ,m_camera(NULL)
         ,m_physicalControl(NULL)
@@ -39,8 +39,8 @@ namespace Game
 		delete m_physicalControl;
 		delete m_camera;
 		delete m_uiControl;
-		delete m_buildingsControl;
-		delete m_ActorsControl;
+		delete m_sceneControl;
+		delete m_actorsControl;
 		delete m_terrain;
 	}
 
@@ -67,15 +67,15 @@ namespace Game
 		//建筑
 		{
 			BuildingsLayer *buildingsLayer = new BuildingsLayer(entityLayer);
-			m_buildingsControl = new BuildingsControl;
-			m_buildingsControl->AttachObserver(buildingsLayer);
-            m_buildingsControl->Load("scene.bin");
+			m_sceneControl = new SceneControl;
+			m_sceneControl->AttachObserver(buildingsLayer);
+            m_sceneControl->Load("scene.bin");
 		}
 		//角色
 		{
 			ActorsLayer *actorsLayer = new ActorsLayer(entityLayer);
-			m_ActorsControl = new ActorsControl;
-			m_ActorsControl->AttachObserver(actorsLayer);
+			m_actorsControl = new ActorsControl;
+			m_actorsControl->AttachObserver(actorsLayer);
 		}
 		scene->addChild(entityLayer);
 		//UI

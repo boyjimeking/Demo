@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 //
-//	文件名: 	E:\GitCode\SimpleGame\SourceCode\GameFramework\WorldManager.h
+//	文件名: 	/SourceCode/GameFramework/WorldManager.h
 //	创建日期:	2012年11月22日
 //	创建者:		张明震
 //
@@ -24,7 +24,7 @@ namespace Game
 {
 	class TerrainProp;
 	class ActorsControl;
-	class BuildingsControl;
+	class SceneControl;
     class Camera;
     class PhysicalControl;
 	/*
@@ -37,8 +37,8 @@ namespace Game
 
 		cocos2d::CCScene* CreateScene();
 		TerrainProp* GetTerrain(void) const { return m_terrain; }
-		ActorsControl * GetActorsControl(void) const { return m_ActorsControl; }
-		BuildingsControl * GetBuildingsControl(void) const { return m_buildingsControl; }
+		ActorsControl * GetActorsControl(void) const { return m_actorsControl; }
+		SceneControl * GetSceneControl(void) const { return m_sceneControl; }
         Camera* GetCamera(void) const { return m_camera; }
         PhysicalControl* GetPhysicalControl(void) const { return m_physicalControl; }
 
@@ -48,8 +48,8 @@ namespace Game
         void update(float dt);
 	protected:
 		TerrainProp *m_terrain;
-		ActorsControl *m_ActorsControl;
-		BuildingsControl *m_buildingsControl;
+		ActorsControl *m_actorsControl;
+		SceneControl *m_sceneControl;
 		GUI::UIControl *m_uiControl;
         Camera *m_camera;
         PhysicalControl *m_physicalControl;

@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 //
-//	文件名: 	E:/GitCode/SimpleGame/SourceCode/GameFramework/Terrain/TerrainEvent.h
+//	文件名: 	/SourceCode/GameFramework/Terrain/TerrainEvent.h
 //	创建日期:	2012年11月22日
 //	创建者:		张明震
 //

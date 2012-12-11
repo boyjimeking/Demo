@@ -20,4 +20,12 @@ struct ENActorType
 	};
 };
 
+struct ENBuildingType
+{
+	enum Decl
+	{
+		enNone,
+	};
+};
+
 #endif

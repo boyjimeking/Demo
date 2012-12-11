@@ -34,7 +34,7 @@ namespace Game
 	ActorEntity* ActorProp::Create(void)
 	{
 		ActorEntity *entity = new ActorEntity(this);
-		entity->init();
+		entity->autorelease();
 		AttachObserver(entity);
 
 		ActorEventCreate event(GetType());
