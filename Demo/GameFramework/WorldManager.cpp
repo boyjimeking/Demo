@@ -50,6 +50,7 @@ namespace Game
 	cocos2d::CCScene* WorldManager::CreateScene()
 	{
 		MainScene *scene = MainScene::create();
+		scene->setAnchorPoint(ccp(0.0f, 0.0f));
 		//Box2D
 		{
 			m_physicalControl = new PhysicalControl;
@@ -62,17 +63,19 @@ namespace Game
 		//地形
 		{
 			TerrainLayer *terrainLayer = TerrainLayer::create();
+			terrainLayer->setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
 			m_terrain = new TerrainProp;
 			m_terrain->AttachObserver(terrainLayer);
 			scene->addChild(terrainLayer);
 		}
 		cocos2d::CCLayer *entityLayer = cocos2d::CCLayer::create();
+		entityLayer->setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
 		//建筑
 		{
 			BuildingsLayer *buildingsLayer = new BuildingsLayer(entityLayer);
 			m_sceneControl = new SceneControl;
 			m_sceneControl->AttachObserver(buildingsLayer);
-            m_sceneControl->Load("scene.bin");
+            // m_sceneControl->Load("scene.bin");
 		}
 		//角色
 		{

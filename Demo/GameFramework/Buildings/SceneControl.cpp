@@ -69,6 +69,19 @@ namespace Game
 		int pos = y * m_gridColumn + x;
 		int index = pos / sizeof(char);
 		int charPos = pos % sizeof(char);
-		return 0 != (m_grid[index] & (1 << charPos));
+		return 0 == (m_grid[index] & (1 << charPos));
+	}
+	bool SceneControl::IsPointCanStanc(const cocos2d::CCPoint &point)
+	{
+		int x = point.x / GetGridSize();
+		int y = point.y / GetGridSize();
+		if (GetGrid(x, y))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }

@@ -42,9 +42,11 @@ namespace Game
 
 	void GridEntity::Load(const char *imageName, int width, int height, int posX, int posY)
 	{
+		setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
         cocos2d::CCTexture2D *texture = cocos2d::CCTextureCache::sharedTextureCache()->addImage(imageName);
 		initWithTexture(texture);
 		setPositionX(posX);
 		setPositionY(posY);
+		cocos2d::CCLog("Grid: %d, %d", posX, posY);
 	}
 }

@@ -11,6 +11,7 @@
 #include "../Base/INotifier.h"
 #include <string>
 #include <vector>
+#include "cocoa/CCGeometry.h"
 
 namespace Game
 {
@@ -28,6 +29,7 @@ namespace Game
 		void Load(const char *fileName);
 
 		bool GetGrid(int x, int y);
+		bool IsPointCanStanc(const cocos2d::CCPoint &point);
 
 		int GetWidth(void) const { return m_width; }
 		int GetHeight(void) const { return m_height; }

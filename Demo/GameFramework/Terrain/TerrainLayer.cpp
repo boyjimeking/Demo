@@ -19,6 +19,7 @@ namespace Game
 		if (pRet && pRet->init())
 		{
 			pRet->setTouchEnabled(true);
+			pRet->setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
 			pRet->autorelease();
 			return pRet;
 		}
@@ -53,6 +54,7 @@ namespace Game
 					{
 						GridEntity *entity = loadEvent->GetEntity(index);
 						this->addChild(entity);
+						entity->setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
 					}
 				}
 				break;

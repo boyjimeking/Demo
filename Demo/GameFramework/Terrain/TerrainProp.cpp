@@ -2,6 +2,8 @@
 #include "TerrainEvent.h"
 #include "GridProp.h"
 #include "GridEntity.h"
+#include "WorldManager.h"
+#include "support/CCPointExtension.h"
 
 namespace Game
 {
@@ -42,7 +44,7 @@ namespace Game
 				entityArray[currentIndex] = new GridEntity;
 				m_gridList[currentIndex]->AttachObserver(entityArray[currentIndex]);
 				sprintf(temp, "terrain_%d.png", currentIndex + 1);
-				m_gridList[currentIndex]->Load(temp, (index - 2) * 960 + 960 / 2, (1 - innerIndex) * 640 - 640 / 2);
+				m_gridList[currentIndex]->Load(temp, index * 960, (m_height - innerIndex - 1) * 640 );
 			}
 		}
 
