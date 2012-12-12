@@ -18,6 +18,8 @@ namespace GUI
 	public:
 		UIControl(void);
 		virtual ~UIControl(void);
+
+		void Init(void);
 	protected:
 	private:
 	};

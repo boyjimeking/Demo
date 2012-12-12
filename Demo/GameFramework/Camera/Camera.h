@@ -27,7 +27,7 @@ namespace Game
         Camera(void);
         virtual ~Camera(void);
 
-        void init(cocos2d::CCScene *scene);
+        void init(IObserver *observer);
         
         cocos2d::CCPoint ConvertWorldPosToDesign(const cocos2d::CCPoint &worldPos);
         cocos2d::CCPoint ConvertDesignPosToWorld(const cocos2d::CCPoint &screenPos);
