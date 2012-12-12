@@ -16,6 +16,9 @@
 #include "Physical/PhysicalObj.h"
 #include "Physical/PhysicalControl.h"
 #include "Client/Client.h"
+#include "platform/CCFileUtils.h"
+#include "Tools/Scene.h"
+#include "sprite_nodes/CCSpriteFrameCache.h"
 
 namespace Game
 {
@@ -77,7 +80,6 @@ namespace Game
 			BuildingsLayer *buildingsLayer = new BuildingsLayer(entityLayer);
 			m_sceneControl = new SceneControl;
 			m_sceneControl->AttachObserver(buildingsLayer);
-            m_sceneControl->Load("scene.bin");
 		}
 		//角色
 		{
@@ -108,5 +110,19 @@ namespace Game
     {
     	GetActorsControl()->Tick(dt);
     	GetPhysicalControl()->Update(dt);
+    }
+    void WorldManager::Init(const char *sceneName)
+    {
+    	std::string fullPath;
+		fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(sceneName);
+		unsigned long size = 0;
+		unsigned char *buff = cocos2d::CCFileUtils::sharedFileUtils()->getFileData(fullPath.c_str(), "rb", &size);
+		Tools::Scene scene;
+		scene.Read(buff, size);
+		delete[] buff;
+
+        cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(scene.GetImageName());
+        this->GetTerrain()->Init(&scene);
+        this->GetSceneControl()->Init(&scene);
     }
 }

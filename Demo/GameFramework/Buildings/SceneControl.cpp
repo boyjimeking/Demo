@@ -32,18 +32,10 @@ namespace Game
 		m_buildings.clear();
 	}
 
-	void SceneControl::Load(const char *fileName)
+	void SceneControl::Init(const Tools::Scene *sceneFile)
 	{
-		std::string fullPath;
-		fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(fileName);
-		unsigned long size = 0;
-		unsigned char *buff = cocos2d::CCFileUtils::sharedFileUtils()->getFileData(fullPath.c_str(), "rb", &size);
-		Tools::Scene scene;
-		scene.Read(buff, size);
-		delete[] buff;
-
-        cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(scene.GetImageName());
-
+		const Tools::Scene &scene = *sceneFile;
+		
         m_sceneName = scene.GetSceneName();
         m_width = scene.GetWidth();
         m_height = scene.GetHeight();
@@ -57,7 +49,7 @@ namespace Game
         m_buildings.resize(list.size());
         BuildingEventInitLayer event(list.size());
         int index = 0;
-        for (Tools::Scene::InfoList::const_iterator it = list.begin(); it != list.end() && index < m_gridArrayLength; ++it, ++index)
+        for (Tools::Scene::InfoList::const_iterator it = list.begin(); it != list.end() && index < m_buildings.size(); ++it, ++index)
         {
         	m_buildings[index] = BuildingProp::Create(&(*it));
         	event.m_entity[index] = m_buildings[index]->CreateEntity();
@@ -73,8 +65,8 @@ namespace Game
 	}
 	bool SceneControl::IsPointCanStanc(const cocos2d::CCPoint &point)
 	{
-		int x = point.x / GetGridSize();
-		int y = point.y / GetGridSize();
+		int x = (point.x) / GetGridSize();
+		int y = (point.y + GetGridSize() / 2) / GetGridSize();
 		if (GetGrid(x, y))
 		{
 			return true;

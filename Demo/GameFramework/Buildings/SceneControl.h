@@ -13,6 +13,11 @@
 #include <vector>
 #include "cocoa/CCGeometry.h"
 
+namespace Tools
+{
+	class Scene;
+}
+
 namespace Game
 {
 	class BuildingProp;
@@ -26,7 +31,7 @@ namespace Game
 		SceneControl(void);
 		virtual ~SceneControl(void);
 
-		void Load(const char *fileName);
+		void Init(const Tools::Scene *sceneFile);
 
 		bool GetGrid(int x, int y);
 		bool IsPointCanStanc(const cocos2d::CCPoint &point);

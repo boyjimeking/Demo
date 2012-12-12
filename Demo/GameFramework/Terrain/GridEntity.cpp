@@ -47,6 +47,5 @@ namespace Game
 		initWithTexture(texture);
 		setPositionX(posX);
 		setPositionY(posY);
-		cocos2d::CCLog("Grid: %d, %d", posX, posY);
 	}
 }

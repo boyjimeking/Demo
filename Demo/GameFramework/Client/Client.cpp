@@ -53,8 +53,8 @@ namespace Net
 
     void Client::InitScene(IMessage *message)
     {
-    	//CSInitScene_S2C *innerMessage = reinterpret_cast<CSInitScene_S2C*>(message);
-    	Game::WorldManager::Instance()->GetTerrain()->Load("TestTerrain", "terrain");
+    	CSInitScene_S2C *innerMessage = reinterpret_cast<CSInitScene_S2C*>(message);
+    	Game::WorldManager::Instance()->Init(innerMessage->m_sceneName);
     }
 	void Client::InitMainActor(IMessage *message)
 	{

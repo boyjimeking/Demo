@@ -10,6 +10,11 @@
 
 #include "../Base/INotifier.h"
 
+namespace Tools
+{
+	class Scene;
+}
+
 namespace Game
 {
 	class GridProp;
@@ -23,13 +28,10 @@ namespace Game
 		TerrainProp(void);
 		virtual ~TerrainProp(void);
 
-		void Load(const char *mapName, const char *imageName);
+		void Init(const Tools::Scene *sceneFile);
 	protected:
 	private:
 		GridProp **m_gridList;
-		int m_width;
-		int m_height;
-		const char *m_terrainName;
 	};
 }
 

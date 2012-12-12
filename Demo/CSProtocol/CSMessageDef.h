@@ -33,6 +33,7 @@ namespace Net
         :public IMessage
     {
         int m_sceneID;
+        char m_sceneName[128];
     };
     struct CSInitMainActor_S2C
         :public IMessage

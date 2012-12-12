@@ -54,6 +54,7 @@ namespace Net
         {
             CSInitScene_S2C message;
             message.m_sceneID = 1;
+            strcpy(message.m_sceneName, "scene.bin");
             message.Build(GetMessageType(CSInitScene_S2C), 0, sizeof(CSInitScene_S2C));
             Send(&message);
         }

@@ -10,6 +10,9 @@
 #include "Camera/Camera.h"
 #include "GridEntity.h"
 #include "Actors/ActorAction.h"
+#include "Buildings/SceneControl.h"
+#include "CCDrawingPrimitives.h"
+#include "ccTypes.h"
 
 namespace Game
 {
@@ -83,5 +86,27 @@ namespace Game
 		cocos2d::CCPoint worldPos = WorldManager::DesignPosToWorld(screenPos);
 		mainActor->MoveTo(worldPos);
 	}
+#ifdef _ShowGrid_
+	void TerrainLayer::draw()
+	{
+		SceneControl *scene = WorldManager::Instance()->GetSceneControl();
+		for (int index = 0; index < scene->GetRow() ; ++index)
+		{
+			for (int innerIndex = 0; innerIndex < scene->GetColumn(); ++innerIndex)
+			{
+				if (scene->GetGrid(innerIndex, index))
+				{
+					cocos2d::ccDrawSolidRect(cocos2d::CCPointMake(innerIndex * scene->GetGridSize(), index * scene->GetGridSize())
+                                             , cocos2d::CCPointMake((innerIndex + 1) * scene->GetGridSize() - 1, (index + 1) * scene->GetGridSize() - 1), cocos2d::ccc4f(0.0f, 0.0f, 1.0f, 1.0f));
+				}
+                else
+                {
+                    cocos2d::ccDrawSolidRect(cocos2d::CCPointMake(innerIndex * scene->GetGridSize(), index * scene->GetGridSize())
+                                             , cocos2d::CCPointMake((innerIndex + 1) * scene->GetGridSize() - 1, (index + 1) * scene->GetGridSize() - 1), cocos2d::ccc4f(1.0f, 0.0f, 0.0f, 1.0f));
+                }
+			}
+		}
+	}
+#endif
 }
 

@@ -157,6 +157,7 @@ namespace Game
 			frameArray->addObject(frame);
 		}
 		this->initWithSpriteFrame(reinterpret_cast<cocos2d::CCSpriteFrame*>(frameArray->lastObject()));
+		setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.0f));
 		cocos2d::CCAnimation *animation = cocos2d::CCAnimation::createWithSpriteFrames(frameArray, 0.2f);
 		cocos2d::CCAnimate *animate = cocos2d::CCAnimate::create(animation);
 		cocos2d::CCAction *action = cocos2d::CCRepeatForever::create(animate);

@@ -41,6 +41,7 @@ namespace Game
 		static WorldManager* Instance();
 
 		cocos2d::CCScene* CreateScene();
+		void Init(const char *sceneName);
 		TerrainProp* GetTerrain(void) const { return m_terrain; }
 		ActorsControl * GetActorsControl(void) const { return m_actorsControl; }
 		SceneControl * GetSceneControl(void) const { return m_sceneControl; }

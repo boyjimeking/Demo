@@ -11,6 +11,10 @@
 #include "../Base/IObserver.h"
 #include "layers_scenes_transitions_nodes/CCLayer.h"
 
+// #ifndef _ShowGrid_
+// #define _ShowGrid_
+// #endif
+
 namespace Game
 {
 	/*
@@ -28,6 +32,9 @@ namespace Game
 		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
 
     	virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
+#ifdef _ShowGrid_
+    	virtual void draw();
+#endif
 	protected:
 		void ProcessMainActorMove(const cocos2d::CCPoint &screenPos);
 	private:
