@@ -31,7 +31,7 @@ namespace Game
     {
         this->AttachObserver(observer);
 
-        m_size = cocos2d::CCDirector::sharedDirector()->getVisibleSize();
+        m_size = cocos2d::CCDirector::sharedDirector()->getWinSize();
         SetPosition(cocos2d::CCPointZero);
     }
 

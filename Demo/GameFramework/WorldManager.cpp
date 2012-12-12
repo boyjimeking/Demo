@@ -77,7 +77,7 @@ namespace Game
 			BuildingsLayer *buildingsLayer = new BuildingsLayer(entityLayer);
 			m_sceneControl = new SceneControl;
 			m_sceneControl->AttachObserver(buildingsLayer);
-            // m_sceneControl->Load("scene.bin");
+            m_sceneControl->Load("scene.bin");
 		}
 		//角色
 		{

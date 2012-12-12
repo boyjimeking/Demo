@@ -29,6 +29,7 @@ namespace Game
 		{
 			case ENBuildingEvent::enBuildingEvent_Create:
 				{
+					this->setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
 					const BuildingEventCreate *createEvent = reinterpret_cast<const BuildingEventCreate*>(event);
 					setPosition(cocos2d::CCPointMake(createEvent->GetX(), createEvent->GetY()));
 					cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(createEvent->GetImageName().c_str());

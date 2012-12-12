@@ -65,6 +65,7 @@ namespace Game
 		{
 			case ENActorEvent::enActorEvent_Create:
 				{
+					setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
 					const ActorEventCreate *actorEvent = reinterpret_cast<const ActorEventCreate*>(event);
 					switch (actorEvent->GetType())
 					{
