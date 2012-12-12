@@ -10,6 +10,7 @@
 #define Demo_CameraObserver_h
 
 #include "Base/IObserver.h"
+#include "base_nodes/CCNode.h"
 
 namespace cocos2d
 {
@@ -20,13 +21,15 @@ namespace Game
 {
     class CameraObserver
         :public IObserver
+        ,public cocos2d::CCNode
     {
     public:
-        CameraObserver(cocos2d::CCScene *scene);
+        static CameraObserver* Create(void);
+        CameraObserver(void);
+        void Init(void);
         virtual ~CameraObserver(void);
         virtual void OnNotifyChange(INotifier *notify, const INotifyEvent *event);
     private:
-        cocos2d::CCScene *m_scene;
     };
 }
 

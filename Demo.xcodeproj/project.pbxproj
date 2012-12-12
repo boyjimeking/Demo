@@ -500,6 +500,7 @@
 		D314888F166DBD5D0011EDC7 /* vector in Resources */ = {isa = PBXBuildFile; fileRef = D3148426166DBD590011EDC7 /* vector */; };
 		D3148890166DBD5D0011EDC7 /* basic_chset.ipp in Resources */ = {isa = PBXBuildFile; fileRef = D314874D166DBD5A0011EDC7 /* basic_chset.ipp */; };
 		D3148891166DBD5D0011EDC7 /* range_run.ipp in Resources */ = {isa = PBXBuildFile; fileRef = D3148750166DBD5A0011EDC7 /* range_run.ipp */; };
+		D31EA19716782270002519CF /* UIControlEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31EA19516782270002519CF /* UIControlEvents.cpp */; };
 		D320472A16703B210037C1E2 /* ActorTouch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D320472816703B210037C1E2 /* ActorTouch.cpp */; };
 		D320472F16704C670037C1E2 /* ActorAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D320472D16704C670037C1E2 /* ActorAction.cpp */; };
 		D34839A31667120A008869A3 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D348399F1667120A008869A3 /* Camera.cpp */; };
@@ -10072,6 +10073,8 @@
 		D3148771166DBD5A0011EDC7 /* xpressive_fwd.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = xpressive_fwd.hpp; sourceTree = "<group>"; };
 		D3148772166DBD5A0011EDC7 /* xpressive_static.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = xpressive_static.hpp; sourceTree = "<group>"; };
 		D3148773166DBD5A0011EDC7 /* xpressive_typeof.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = xpressive_typeof.hpp; sourceTree = "<group>"; };
+		D31EA19516782270002519CF /* UIControlEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIControlEvents.cpp; sourceTree = "<group>"; };
+		D31EA19616782270002519CF /* UIControlEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIControlEvents.h; sourceTree = "<group>"; };
 		D320472816703B210037C1E2 /* ActorTouch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorTouch.cpp; sourceTree = "<group>"; };
 		D320472916703B210037C1E2 /* ActorTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActorTouch.h; sourceTree = "<group>"; };
 		D320472C16703ECA0037C1E2 /* GlobalDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDef.h; sourceTree = "<group>"; };
@@ -11240,6 +11243,8 @@
 				D30D901F1666F3A9000B95E1 /* UIProperty.h */,
 				D30D90201666F3A9000B95E1 /* UIWindow.cpp */,
 				D30D90211666F3A9000B95E1 /* UIWindow.h */,
+				D31EA19516782270002519CF /* UIControlEvents.cpp */,
+				D31EA19616782270002519CF /* UIControlEvents.h */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -27163,6 +27168,7 @@
 				D3FC5F6B166F24AF00BDCF3B /* MainActor.cpp in Sources */,
 				D320472A16703B210037C1E2 /* ActorTouch.cpp in Sources */,
 				D320472F16704C670037C1E2 /* ActorAction.cpp in Sources */,
+				D31EA19716782270002519CF /* UIControlEvents.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

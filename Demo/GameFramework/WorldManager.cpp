@@ -10,6 +10,7 @@
 #include "UI/UILayer.h"
 #include "UI/UIControl.h"
 #include "Camera/Camera.h"
+#include "Camera/CameraObserver.h"
 #include "CCDirector.h"
 #include "support/CCPointExtension.h"
 #include "Physical/PhysicalObj.h"
@@ -52,16 +53,17 @@ namespace Game
 			m_physicalControl = new PhysicalControl;
 		}
         //摄像机
-        {
-            m_camera = new Camera;
-            m_camera->init(scene);
-        }
+    	CameraObserver *cameraObj = CameraObserver::Create();
+    	scene->addChild(cameraObj);
+        m_camera = new Camera;
+        m_camera->init(cameraObj);
+        
 		//地形
 		{
 			TerrainLayer *terrainLayer = TerrainLayer::create();
 			m_terrain = new TerrainProp;
 			m_terrain->AttachObserver(terrainLayer);
-			scene->addChild(terrainLayer);
+			cameraObj->addChild(terrainLayer);
 		}
 		cocos2d::CCLayer *entityLayer = cocos2d::CCLayer::create();
 		//建筑
@@ -76,13 +78,14 @@ namespace Game
 			m_ActorsControl = new ActorsControl;
 			m_ActorsControl->AttachObserver(actorsLayer);
 		}
-		scene->addChild(entityLayer);
+		cameraObj->addChild(entityLayer);
 		//UI
 		{
 			GUI::UILayer *uiLayer = GUI::UILayer::create();
 			m_uiControl = new GUI::UIControl;
 			m_uiControl->AttachObserver(uiLayer);
 			scene->addChild(uiLayer);
+			m_uiControl->Init();
 		}
 		return scene;
 	}

@@ -11,6 +11,8 @@
 #include "CameraNotifyEvents.h"
 #include "support/CCPointExtension.h"
 #include "CCDirector.h"
+#include "Camera.h"
+#include "layers_scenes_transitions_nodes/CCScene.h"
 
 namespace Game
 {
@@ -25,9 +27,8 @@ namespace Game
     	delete reinterpret_cast<CameraObserver*>(m_observer);
     }
 
-    void Camera::init(cocos2d::CCScene *scene)
+    void Camera::init(IObserver *observer)
     {
-        CameraObserver *observer = new CameraObserver(scene);
         this->AttachObserver(observer);
 
         m_size = cocos2d::CCDirector::sharedDirector()->getVisibleSize();
