@@ -26,6 +26,14 @@ namespace Game
 					for (int index = 0; index < size; ++index)
 					{
 						m_entityLayer->addChild(entityList[index]);
+						if (NULL != entityList[index]->getParent())
+						{
+							entityList[index]->getParent()->reorderChild(entityList[index], -entityList[index]->getPosition().y);
+						}
+						else
+						{
+							entityList[index]->_setZOrder(-entityList[index]->getPosition().y);
+						}
 					}
 				}
 				break;

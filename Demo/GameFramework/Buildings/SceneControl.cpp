@@ -41,8 +41,6 @@ namespace Game
 		Tools::Scene scene;
 		scene.Read(buff, size);
 		delete[] buff;
-        
-        cocos2d::CCLog("%s", scene.GetSceneName());
 
         cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(scene.GetImageName());
 
