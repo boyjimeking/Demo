@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{97BF6BD2-10EE-4798-BC13-1BD60E59A4D4}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS_DEBUG;COCOS2D_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcocos2d.lib;libExtensions.lib;opengl32.lib;glew32.lib;libBox2d.lib;libCocosDenshion.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>Demo.h</HeaderFileName>
+      <InterfaceIdentifierFileName>Demo_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>Demo_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)/Demo.tlb</TypeLibraryName>
+      <DllDataFileName />
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <ExceptionHandling />
+      <DebugInformationFormat />
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGSNDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcocos2d.lib;libExtensions.lib;opengl32.lib;glew32.lib;libBox2d.lib;libCocosDenshion.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>Demo.h</HeaderFileName>
+      <InterfaceIdentifierFileName>Demo_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>Demo_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)/Demo.tlb</TypeLibraryName>
+      <DllDataFileName />
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Image Include="..\Resources\CloseNormal.png" />
+    <Image Include="..\Resources\CloseSelected.png" />
+    <Image Include="..\Resources\HelloWorld.png" />
+    <Image Include="res\Demo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Demo.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\CSProtocol\CSMessageDef.h" />
+    <ClInclude Include="..\CSProtocol\CSMessageType.h" />
+    <ClInclude Include="..\CSProtocol\CSPipeline.h" />
+    <ClInclude Include="..\GameFramework\Actors\ActorAction.h" />
+    <ClInclude Include="..\GameFramework\Actors\ActorEntity.h" />
+    <ClInclude Include="..\GameFramework\Actors\ActorEvents.h" />
+    <ClInclude Include="..\GameFramework\Actors\ActorProp.h" />
+    <ClInclude Include="..\GameFramework\Actors\ActorsControl.h" />
+    <ClInclude Include="..\GameFramework\Actors\ActorsControlEvents.h" />
+    <ClInclude Include="..\GameFramework\Actors\ActorsLayer.h" />
+    <ClInclude Include="..\GameFramework\Actors\ActorTouch.h" />
+    <ClInclude Include="..\GameFramework\Base\GlobalDef.h" />
+    <ClInclude Include="..\GameFramework\Base\INotifier.h" />
+    <ClInclude Include="..\GameFramework\Base\INotifyEvent.h" />
+    <ClInclude Include="..\GameFramework\Base\IObserver.h" />
+    <ClInclude Include="..\GameFramework\Buildings\BuildingEntity.h" />
+    <ClInclude Include="..\GameFramework\Buildings\BuildingEvents.h" />
+    <ClInclude Include="..\GameFramework\Buildings\BuildingProp.h" />
+    <ClInclude Include="..\GameFramework\Buildings\BuildingsLayer.h" />
+    <ClInclude Include="..\GameFramework\Buildings\SceneControl.h" />
+    <ClInclude Include="..\GameFramework\Camera\Camera.h" />
+    <ClInclude Include="..\GameFramework\Camera\CameraNotifyEvents.h" />
+    <ClInclude Include="..\GameFramework\Camera\CameraObserver.h" />
+    <ClInclude Include="..\GameFramework\Client\Client.h" />
+    <ClInclude Include="..\GameFramework\MainScene.h" />
+    <ClInclude Include="..\GameFramework\Physical\PhysicalControl.h" />
+    <ClInclude Include="..\GameFramework\Physical\PhysicalObj.h" />
+    <ClInclude Include="..\GameFramework\Terrain\GridEntity.h" />
+    <ClInclude Include="..\GameFramework\Terrain\GridEvents.h" />
+    <ClInclude Include="..\GameFramework\Terrain\GridProp.h" />
+    <ClInclude Include="..\GameFramework\Terrain\TerrainEvent.h" />
+    <ClInclude Include="..\GameFramework\Terrain\TerrainLayer.h" />
+    <ClInclude Include="..\GameFramework\Terrain\TerrainProp.h" />
+    <ClInclude Include="..\GameFramework\Tools\Scene.h" />
+    <ClInclude Include="..\GameFramework\Tools\StreamHelper.h" />
+    <ClInclude Include="..\GameFramework\UI\UIControl.h" />
+    <ClInclude Include="..\GameFramework\UI\UIControlEvents.h" />
+    <ClInclude Include="..\GameFramework\UI\UILayer.h" />
+    <ClInclude Include="..\GameFramework\UI\UIProperty.h" />
+    <ClInclude Include="..\GameFramework\UI\UIWindow.h" />
+    <ClInclude Include="..\GameFramework\WorldManager.h" />
+    <ClInclude Include="..\VirtualServer\MainActor.h" />
+    <ClInclude Include="..\VirtualServer\Server.h" />
+    <ClInclude Include="..\VirtualServer\ServerActor.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\CSProtocol\CSMessageDef.cpp" />
+    <ClCompile Include="..\CSProtocol\CSMessageType.cpp" />
+    <ClCompile Include="..\CSProtocol\CSPipeline.cpp" />
+    <ClCompile Include="..\GameFramework\Actors\ActorAction.cpp" />
+    <ClCompile Include="..\GameFramework\Actors\ActorEntity.cpp" />
+    <ClCompile Include="..\GameFramework\Actors\ActorEvents.cpp" />
+    <ClCompile Include="..\GameFramework\Actors\ActorProp.cpp" />
+    <ClCompile Include="..\GameFramework\Actors\ActorsControl.cpp" />
+    <ClCompile Include="..\GameFramework\Actors\ActorsControlEvents.cpp" />
+    <ClCompile Include="..\GameFramework\Actors\ActorsLayer.cpp" />
+    <ClCompile Include="..\GameFramework\Actors\ActorTouch.cpp" />
+    <ClCompile Include="..\GameFramework\Base\INotifier.cpp" />
+    <ClCompile Include="..\GameFramework\Base\INotifyEvent.cpp" />
+    <ClCompile Include="..\GameFramework\Base\IObserver.cpp" />
+    <ClCompile Include="..\GameFramework\Buildings\BuildingEntity.cpp" />
+    <ClCompile Include="..\GameFramework\Buildings\BuildingEvents.cpp" />
+    <ClCompile Include="..\GameFramework\Buildings\BuildingProp.cpp" />
+    <ClCompile Include="..\GameFramework\Buildings\BuildingsLayer.cpp" />
+    <ClCompile Include="..\GameFramework\Buildings\SceneControl.cpp" />
+    <ClCompile Include="..\GameFramework\Camera\Camera.cpp" />
+    <ClCompile Include="..\GameFramework\Camera\CameraNotifyEvents.cpp" />
+    <ClCompile Include="..\GameFramework\Camera\CameraObserver.cpp" />
+    <ClCompile Include="..\GameFramework\Client\Client.cpp" />
+    <ClCompile Include="..\GameFramework\MainScene.cpp" />
+    <ClCompile Include="..\GameFramework\Physical\PhysicalControl.cpp" />
+    <ClCompile Include="..\GameFramework\Physical\PhysicalObj.cpp" />
+    <ClCompile Include="..\GameFramework\Terrain\GridEntity.cpp" />
+    <ClCompile Include="..\GameFramework\Terrain\GridEvents.cpp" />
+    <ClCompile Include="..\GameFramework\Terrain\GridProp.cpp" />
+    <ClCompile Include="..\GameFramework\Terrain\TerrainEvent.cpp" />
+    <ClCompile Include="..\GameFramework\Terrain\TerrainLayer.cpp" />
+    <ClCompile Include="..\GameFramework\Terrain\TerrainProp.cpp" />
+    <ClCompile Include="..\GameFramework\Tools\Scene.cpp" />
+    <ClCompile Include="..\GameFramework\Tools\StreamHelper.cpp" />
+    <ClCompile Include="..\GameFramework\UI\UIControl.cpp" />
+    <ClCompile Include="..\GameFramework\UI\UIControlEvents.cpp" />
+    <ClCompile Include="..\GameFramework\UI\UILayer.cpp" />
+    <ClCompile Include="..\GameFramework\UI\UIProperty.cpp" />
+    <ClCompile Include="..\GameFramework\UI\UIWindow.cpp" />
+    <ClCompile Include="..\GameFramework\WorldManager.cpp" />
+    <ClCompile Include="..\VirtualServer\MainActor.cpp" />
+    <ClCompile Include="..\VirtualServer\Server.cpp" />
+    <ClCompile Include="..\VirtualServer\ServerActor.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
