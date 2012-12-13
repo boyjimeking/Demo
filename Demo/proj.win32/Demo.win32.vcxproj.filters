@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{83d8d64b-370d-4338-962d-9a0dbff3cc84}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{6669ba78-b0d1-432b-91dd-5012e5e74825}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;png;manifest</Extensions>
+    </Filter>
+    <Filter Include="CSProtocol">
+      <UniqueIdentifier>{bf7422a1-ebc1-4f11-983f-951b2fbc3442}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework">
+      <UniqueIdentifier>{9371e071-a6e1-4fac-a466-56f3ebc69519}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{208871ac-7ab6-4d7a-9945-d5ead142c5ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VirtualServer">
+      <UniqueIdentifier>{2aa73623-4165-43a2-ab04-2bb825a06352}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Actors">
+      <UniqueIdentifier>{4595f0df-5cf5-4174-afd1-2748a4f099b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Base">
+      <UniqueIdentifier>{1be72fec-a53c-4a36-9a48-563b4a465766}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Buildings">
+      <UniqueIdentifier>{d77123af-a938-4c48-9776-f69806f35b2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Camera">
+      <UniqueIdentifier>{2bf8573e-3c18-46bf-a355-34f07be7c115}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Client">
+      <UniqueIdentifier>{3f39f21e-8e00-4258-9590-206045911b44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Physical">
+      <UniqueIdentifier>{49692ef9-f0e9-459d-b91a-a4e5fd362fd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Terrain">
+      <UniqueIdentifier>{6e161dd9-0ac8-4e8e-ac02-e88de2be94ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Tools">
+      <UniqueIdentifier>{5ceac7ba-e33b-4afa-8fa6-1a14b6660711}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\UI">
+      <UniqueIdentifier>{41eaaad0-9418-476a-9005-e609b3920fba}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Demo.ico">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\CloseSelected.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\CloseNormal.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\HelloWorld.png">
+      <Filter>resource</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Demo.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VirtualServer\MainActor.h">
+      <Filter>VirtualServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VirtualServer\Server.h">
+      <Filter>VirtualServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VirtualServer\ServerActor.h">
+      <Filter>VirtualServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CSProtocol\CSMessageType.h">
+      <Filter>CSProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CSProtocol\CSPipeline.h">
+      <Filter>CSProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CSProtocol\CSMessageDef.h">
+      <Filter>CSProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\WorldManager.h">
+      <Filter>GameFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\MainScene.h">
+      <Filter>GameFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Actors\ActorProp.h">
+      <Filter>GameFramework\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Actors\ActorsControl.h">
+      <Filter>GameFramework\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Actors\ActorsControlEvents.h">
+      <Filter>GameFramework\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Actors\ActorsLayer.h">
+      <Filter>GameFramework\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Actors\ActorTouch.h">
+      <Filter>GameFramework\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Actors\ActorAction.h">
+      <Filter>GameFramework\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Actors\ActorEntity.h">
+      <Filter>GameFramework\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Actors\ActorEvents.h">
+      <Filter>GameFramework\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Base\INotifier.h">
+      <Filter>GameFramework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Base\INotifyEvent.h">
+      <Filter>GameFramework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Base\IObserver.h">
+      <Filter>GameFramework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Base\GlobalDef.h">
+      <Filter>GameFramework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Buildings\BuildingEvents.h">
+      <Filter>GameFramework\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Buildings\BuildingProp.h">
+      <Filter>GameFramework\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Buildings\BuildingsLayer.h">
+      <Filter>GameFramework\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Buildings\SceneControl.h">
+      <Filter>GameFramework\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Buildings\BuildingEntity.h">
+      <Filter>GameFramework\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Camera\Camera.h">
+      <Filter>GameFramework\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Camera\CameraNotifyEvents.h">
+      <Filter>GameFramework\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Camera\CameraObserver.h">
+      <Filter>GameFramework\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Client\Client.h">
+      <Filter>GameFramework\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Physical\PhysicalControl.h">
+      <Filter>GameFramework\Physical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Physical\PhysicalObj.h">
+      <Filter>GameFramework\Physical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Terrain\GridProp.h">
+      <Filter>GameFramework\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Terrain\TerrainEvent.h">
+      <Filter>GameFramework\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Terrain\TerrainLayer.h">
+      <Filter>GameFramework\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Terrain\TerrainProp.h">
+      <Filter>GameFramework\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Terrain\GridEntity.h">
+      <Filter>GameFramework\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Terrain\GridEvents.h">
+      <Filter>GameFramework\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Tools\Scene.h">
+      <Filter>GameFramework\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\Tools\StreamHelper.h">
+      <Filter>GameFramework\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\UI\UILayer.h">
+      <Filter>GameFramework\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\UI\UIProperty.h">
+      <Filter>GameFramework\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\UI\UIWindow.h">
+      <Filter>GameFramework\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\UI\UIControl.h">
+      <Filter>GameFramework\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameFramework\UI\UIControlEvents.h">
+      <Filter>GameFramework\UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VirtualServer\MainActor.cpp">
+      <Filter>VirtualServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VirtualServer\Server.cpp">
+      <Filter>VirtualServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VirtualServer\ServerActor.cpp">
+      <Filter>VirtualServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CSProtocol\CSMessageType.cpp">
+      <Filter>CSProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CSProtocol\CSPipeline.cpp">
+      <Filter>CSProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CSProtocol\CSMessageDef.cpp">
+      <Filter>CSProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\WorldManager.cpp">
+      <Filter>GameFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\MainScene.cpp">
+      <Filter>GameFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Actors\ActorsControl.cpp">
+      <Filter>GameFramework\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Actors\ActorsControlEvents.cpp">
+      <Filter>GameFramework\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Actors\ActorsLayer.cpp">
+      <Filter>GameFramework\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Actors\ActorTouch.cpp">
+      <Filter>GameFramework\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Actors\ActorAction.cpp">
+      <Filter>GameFramework\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Actors\ActorEntity.cpp">
+      <Filter>GameFramework\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Actors\ActorEvents.cpp">
+      <Filter>GameFramework\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Actors\ActorProp.cpp">
+      <Filter>GameFramework\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Base\INotifyEvent.cpp">
+      <Filter>GameFramework\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Base\IObserver.cpp">
+      <Filter>GameFramework\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Base\INotifier.cpp">
+      <Filter>GameFramework\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Buildings\BuildingEvents.cpp">
+      <Filter>GameFramework\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Buildings\BuildingProp.cpp">
+      <Filter>GameFramework\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Buildings\BuildingsLayer.cpp">
+      <Filter>GameFramework\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Buildings\SceneControl.cpp">
+      <Filter>GameFramework\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Buildings\BuildingEntity.cpp">
+      <Filter>GameFramework\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Camera\Camera.cpp">
+      <Filter>GameFramework\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Camera\CameraNotifyEvents.cpp">
+      <Filter>GameFramework\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Camera\CameraObserver.cpp">
+      <Filter>GameFramework\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Client\Client.cpp">
+      <Filter>GameFramework\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Physical\PhysicalObj.cpp">
+      <Filter>GameFramework\Physical</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Physical\PhysicalControl.cpp">
+      <Filter>GameFramework\Physical</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Terrain\TerrainEvent.cpp">
+      <Filter>GameFramework\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Terrain\TerrainLayer.cpp">
+      <Filter>GameFramework\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Terrain\TerrainProp.cpp">
+      <Filter>GameFramework\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Terrain\GridEntity.cpp">
+      <Filter>GameFramework\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Terrain\GridEvents.cpp">
+      <Filter>GameFramework\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Terrain\GridProp.cpp">
+      <Filter>GameFramework\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Tools\Scene.cpp">
+      <Filter>GameFramework\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Tools\StreamHelper.cpp">
+      <Filter>GameFramework\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\UI\UIProperty.cpp">
+      <Filter>GameFramework\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\UI\UIWindow.cpp">
+      <Filter>GameFramework\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\UI\UIControl.cpp">
+      <Filter>GameFramework\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\UI\UIControlEvents.cpp">
+      <Filter>GameFramework\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\UI\UILayer.cpp">
+      <Filter>GameFramework\UI</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
