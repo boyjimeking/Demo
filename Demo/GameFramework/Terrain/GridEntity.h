@@ -25,7 +25,7 @@ namespace Game
 		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
 	
 	protected:
-		void Load(const char *imageName, int width, int height, int posX, int posY);
+		void Load(const char *imageName, float posX, float posY);
 	};
 }
 

@@ -20,10 +20,11 @@ namespace Game
 		GridProp(void);
 		virtual ~GridProp(void);
 	
-		void Load(const char *gridName, int posX, int posY);
+		void Load(const char *gridName, float posX, float posY);
+		void Release(void);
 	private:
-		int m_width;
-		int m_height;
+		float m_x;
+		float m_y;
 	};
 }
 

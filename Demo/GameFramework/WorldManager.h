@@ -1,4 +1,4 @@
-﻿//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 //
 //	文件名: 	/SourceCode/GameFramework/WorldManager.h
 //	创建日期:	2012年11月22日
@@ -49,6 +49,7 @@ namespace Game
 
 		cocos2d::CCScene* CreateScene();
 		void Init(const char *sceneName);
+		void Init(Tools::Scene *scene);
 		TerrainProp* GetTerrain(void) const { return m_terrain; }
 		ActorsControl * GetActorsControl(void) const { return m_actorsControl; }
 		SceneControl * GetSceneControl(void) const { return m_sceneControl; }

@@ -13,8 +13,8 @@
 namespace Game
 {
 	GridProp::GridProp(void)
-	:m_width(690)
-	,m_height(770)
+		:m_x(0)
+		,m_y(0)
 	{
 
 	}
@@ -22,9 +22,19 @@ namespace Game
 	{
 
 	}
-	void GridProp::Load(const char *gridName, int posX, int posY)
+	void GridProp::Load(const char *gridName, float posX, float posY)
 	{
-		GridEvent_Load event(gridName, m_width, m_height, posX, posY);
+		m_x = posX;
+		m_y = posY;
+		GridEvent_Load event(gridName, posX, posY);
 		NotifyChange(&event);
 	}
+
+	void GridProp::Release( void )
+	{
+		GridEvent_Release event;
+		NotifyChange(&event);
+		delete this;
+	}
+
 }

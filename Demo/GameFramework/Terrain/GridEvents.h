@@ -19,6 +19,7 @@ namespace Game
 		{
 			enError,
 			enLoad,
+			enRelease,
 		};
 	};
 
@@ -27,19 +28,20 @@ namespace Game
 	{
 		virtual int GetNotifyEventType(void) const { return ENGridEventType::enLoad; }
 
-		GridEvent_Load(const char *imageName, int width, int height, int posX, int posY);
+		GridEvent_Load(const char *imageName, float posX, float posY);
 
 		const char* GetImageName(void) const { return m_imageName; }
-		int GetWidth(void) const { return m_width; }
-		int GetHeight(void) const { return m_height; }
-		int GetPosX(void) const { return m_posX; }
-		int GetPosY(void) const { return m_posY; }
+		float GetPosX(void) const { return m_posX; }
+		float GetPosY(void) const { return m_posY; }
 	private:
 		const char *m_imageName;
-		int m_width;
-		int m_height;
-		int m_posX;
-		int m_posY;
+		float m_posX;
+		float m_posY;
+	};
+	struct GridEvent_Release
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENGridEventType::enRelease; }
 	};
 }
 

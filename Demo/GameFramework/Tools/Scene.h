@@ -16,12 +16,15 @@ namespace Tools
 	class StreamHelper;
 	struct SceneInfo
 	{
+		int m_id;
 		float m_x;
 		float m_y;
 		char m_imageName[128];
 
 		void Read(StreamHelper *stream);
 		void Write(StreamHelper *stream);
+
+		SceneInfo(void);
 	};
     
     typedef SceneInfo TerrainInfo;
@@ -29,8 +32,8 @@ namespace Tools
 	class Scene
 	{
 	public:
-		typedef std::list<SceneInfo> InfoList;
-		typedef std::list<TerrainInfo> TerrainInfoList;
+		typedef std::list<SceneInfo*> InfoList;
+		typedef std::list<TerrainInfo*> TerrainInfoList;
 
 		Scene(void);
 		~Scene(void);

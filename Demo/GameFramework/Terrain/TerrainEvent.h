@@ -18,6 +18,7 @@ namespace Game
 		{
 			enError,
 			enLoadTerrain,
+			enAddTerrain,
 		};
 	};
 
@@ -27,13 +28,21 @@ namespace Game
 	{
 		virtual int GetNotifyEventType(void) const { return ENTerrainEventType::enLoadTerrain; }
 
-		TerrainEvent_LoadTerrain(GridEntity **entityArray, int length) : m_entityArray(entityArray), m_length(length) {}
+		TerrainEvent_LoadTerrain(int length) : m_entityArray(new GridEntity*[length]), m_length(length) {}
+		~TerrainEvent_LoadTerrain(void) { delete[] m_entityArray; }
 
 		GridEntity* GetEntity(int index) const { return m_entityArray[index]; }
 		int GetLength(void) const { return m_length; }
-	private:
+
 		GridEntity **m_entityArray;
 		int m_length;
+	};
+	struct TerrainEvent_AddTerrain
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENTerrainEventType::enAddTerrain; }
+		TerrainEvent_AddTerrain(GridEntity *entity) : m_eneity(entity){}
+		GridEntity *m_eneity;
 	};
 }
 

@@ -75,6 +75,7 @@ namespace Game
     	scaleLayer->addChild(cameraObj);
         m_camera = new Camera;
         m_camera->init(cameraObj);
+		m_camera->SetScale(0.2f);
         
 		//地形
 		{
@@ -135,8 +136,14 @@ namespace Game
 		scene.Read(buff, size);
 		delete[] buff;
 
-        cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(scene.GetImageName());
-        this->GetTerrain()->Init(&scene);
-        this->GetSceneControl()->Init(&scene);
+		Init(&scene);
     }
+
+	void WorldManager::Init( Tools::Scene *scene )
+	{
+		cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(scene->GetImageName());
+		this->GetTerrain()->Init(scene);
+		this->GetSceneControl()->Init(scene);
+	}
+
 }

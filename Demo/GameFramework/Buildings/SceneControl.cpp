@@ -51,7 +51,7 @@ namespace Game
         int index = 0;
         for (Tools::Scene::InfoList::const_iterator it = list.begin(); it != list.end() && index < m_buildings.size(); ++it, ++index)
         {
-        	m_buildings[index] = BuildingProp::Create(&(*it));
+        	m_buildings[index] = BuildingProp::Create(*it);
         	event.m_entity[index] = m_buildings[index]->CreateEntity();
         }
         NotifyChange(&event);
