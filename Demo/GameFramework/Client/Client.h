@@ -9,7 +9,7 @@
 #ifndef __Demo__Client__
 #define __Demo__Client__
 
-#include "CSMessageDef.h"
+#include "CSProtocol/CSMessageDef.h"
 
 namespace Net
 {
