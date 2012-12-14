@@ -17,7 +17,7 @@ namespace Game
 		enum
 		{
 			enError,
-			enTerrainEvent_LoadTerrain,
+			enLoadTerrain,
 		};
 	};
 
@@ -25,7 +25,7 @@ namespace Game
 	struct TerrainEvent_LoadTerrain
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENTerrainEventType::enTerrainEvent_LoadTerrain; }
+		virtual int GetNotifyEventType(void) const { return ENTerrainEventType::enLoadTerrain; }
 
 		TerrainEvent_LoadTerrain(GridEntity **entityArray, int length) : m_entityArray(entityArray), m_length(length) {}
 

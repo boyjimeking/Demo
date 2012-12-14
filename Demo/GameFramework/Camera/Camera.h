@@ -34,10 +34,14 @@ namespace Game
 
         void SetPosition(const cocos2d::CCPoint &newPosition);
         const cocos2d::CCPoint& GetPosition(void) const { return m_position; }
+
+		void SetScale(float scale);
+		float GetScale(void) const { return m_scale; }
     protected:
     private:
         cocos2d::CCSize m_size;
         cocos2d::CCPoint m_position;
+		float m_scale;
     };
 }
 

@@ -210,6 +210,9 @@
     <ClInclude Include="..\GameFramework\UI\UIControlEvents.h">
       <Filter>GameFramework\UI</Filter>
     </ClInclude>
+    <ClInclude Include="..\GameFramework\Tools\DebugLayer.h">
+      <Filter>GameFramework\Tools</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -346,6 +349,9 @@
     </ClCompile>
     <ClCompile Include="..\GameFramework\UI\UILayer.cpp">
       <Filter>GameFramework\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Tools\DebugLayer.cpp">
+      <Filter>GameFramework\Tools</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

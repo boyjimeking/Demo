@@ -23,7 +23,7 @@ namespace Game
 		}
 		switch (event->GetNotifyEventType())
 		{
-			case ENActorsControlEvents::enActorsControlEvent_CreateActor:
+			case ENActorsControlEvents::enCreateActor:
 				{
 					const ActorsControlEventCreateActor *createEvent = reinterpret_cast<const ActorsControlEventCreateActor*>(event);
 					ActorEntity *entity = createEvent->GetActorEntity();

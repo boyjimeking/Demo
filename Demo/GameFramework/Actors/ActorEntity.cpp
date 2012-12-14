@@ -63,7 +63,7 @@ namespace Game
 		}
 		switch (event->GetNotifyEventType())
 		{
-			case ENActorEvent::enActorEvent_Create:
+			case ENActorEvent::enCreate:
 				{
 					setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
 					const ActorEventCreate *actorEvent = reinterpret_cast<const ActorEventCreate*>(event);
@@ -84,12 +84,12 @@ namespace Game
 					PlayMove(enActorDirection_Down);
 				}
 				break;
-			case ENActorEvent::enActorEvent_Release:
+			case ENActorEvent::enRelease:
 				{
-
+					getParent()->removeChild(this, true);
 				}
 				break;
-			case ENActorEvent::enActorEvent_ChangePos:
+			case ENActorEvent::enChangePos:
 				{
 					const ActorEventChangePos *actorEvent = reinterpret_cast<const ActorEventChangePos*>(event);
 					setPosition(actorEvent->GetWorldPos());
@@ -107,23 +107,23 @@ namespace Game
 					}
 				}
 				break;
-			case ENActorEvent::enActorEvent_UpdateDirection:
+			case ENActorEvent::enUpdateDirection:
 				{
 					const ActorEventUpdateDirection *actorEvent = reinterpret_cast<const ActorEventUpdateDirection*>(event);
 					PlayMove(CalDirection(actorEvent->GetWorldPos(), getPosition()));
 				}
                 break;
-			case ENActorEvent::enActorEvent_Stop:
+			case ENActorEvent::enStop:
 				{
 					PlayMove(enActorDirection_Down);
 				}
 				break;
-			case ENActorEvent::enActorEvent_Attack:
+			case ENActorEvent::enAttack:
 				{
 					PlayAttack();
 				}
 				break;
-			case ENActorEvent::enActorEvent_ChangeScaleX:
+			case ENActorEvent::enChangeScaleX:
 				{
 					const ActorEventChangeScaleX *actorEvent = reinterpret_cast<const ActorEventChangeScaleX*>(event);
 					setScaleX(actorEvent->GetXScale());
@@ -192,6 +192,10 @@ namespace Game
 	}
 	ActorEntity::ENDirection ActorEntity::CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos)
 	{
+		if (targetPos.equals(currentPos))
+		{
+			return enActorDirection_Down;
+		}
 		cocos2d::CCPoint disVec = cocos2d::ccpSub(targetPos, currentPos);
 		if (abs(disVec.x) > abs(disVec.y))
 		{

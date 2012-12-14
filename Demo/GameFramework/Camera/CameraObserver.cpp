@@ -40,12 +40,18 @@ namespace Game
         }
         switch (event->GetNotifyEventType())
         {
-            case ENCameraEvent::enCameraEvent_PosChanged:
+            case ENCameraEvent::enPosChanged:
                 {
                     const CameraPosChanged *posChangedEvent = reinterpret_cast<const CameraPosChanged*>(event);
                     setPosition(cocos2d::ccpNeg(posChangedEvent->GetCameraPosition()));
                 }
                 break;
+			case ENCameraEvent::enScaleChanged:
+				{
+					const CameraScaleChanged *changedEvent = reinterpret_cast<const CameraScaleChanged*>(event);
+					getParent()->setScale(changedEvent->GetScale());
+				}
+				break;
             default:
                 break;
         }

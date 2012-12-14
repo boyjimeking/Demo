@@ -18,14 +18,14 @@ namespace Game
 		enum
 		{
 			enError,
-			enGridEvent_Load,
+			enLoad,
 		};
 	};
 
 	struct GridEvent_Load
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENGridEventType::enGridEvent_Load; }
+		virtual int GetNotifyEventType(void) const { return ENGridEventType::enLoad; }
 
 		GridEvent_Load(const char *imageName, int width, int height, int posX, int posY);
 

@@ -29,7 +29,7 @@ namespace Game
 		}
 		switch (event->GetNotifyEventType())
 		{
-			case ENGridEventType::enGridEvent_Load:
+			case ENGridEventType::enLoad:
 				{
 					const GridEvent_Load *loadEvent = reinterpret_cast<const GridEvent_Load*>(event);
 					Load(loadEvent->GetImageName(), loadEvent->GetWidth(), loadEvent->GetHeight(), loadEvent->GetPosX(), loadEvent->GetPosY());
