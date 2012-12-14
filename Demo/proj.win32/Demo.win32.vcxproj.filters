@@ -213,6 +213,9 @@
     <ClInclude Include="..\GameFramework\Tools\DebugLayer.h">
       <Filter>GameFramework\Tools</Filter>
     </ClInclude>
+    <ClInclude Include="..\GameFramework\Tools\EditSceneInfo.h">
+      <Filter>GameFramework\Tools</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -351,6 +354,9 @@
       <Filter>GameFramework\UI</Filter>
     </ClCompile>
     <ClCompile Include="..\GameFramework\Tools\DebugLayer.cpp">
+      <Filter>GameFramework\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameFramework\Tools\EditSceneInfo.cpp">
       <Filter>GameFramework\Tools</Filter>
     </ClCompile>
   </ItemGroup>

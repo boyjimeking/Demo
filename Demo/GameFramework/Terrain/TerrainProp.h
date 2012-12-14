@@ -9,6 +9,7 @@
 #define TerrainProp_h__
 
 #include "../Base/INotifier.h"
+#include <vector>
 
 namespace Tools
 {
@@ -29,9 +30,14 @@ namespace Game
 		virtual ~TerrainProp(void);
 
 		void Init(const Tools::Scene *sceneFile);
+
+		void Clear(void);
+		GridProp* AddGrid(void);
+		void RemoveGrid(GridProp *grid);
 	protected:
 	private:
-		GridProp **m_gridList;
+		typedef std::vector<GridProp*> GridList;
+		GridList m_gridList;
 	};
 }
 

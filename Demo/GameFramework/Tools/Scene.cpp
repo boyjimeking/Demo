@@ -29,6 +29,14 @@ namespace Tools
 		stream->Write(this->m_imageName, length);
 	}
 
+	SceneInfo::SceneInfo( void )
+		:m_x(0)
+		,m_y(0)
+		,m_id(0)
+	{
+		memset(m_imageName, 0, sizeof(m_imageName));
+	}
+
 	Scene::Scene(void)
 	:m_width(0)
 	,m_height(0)
@@ -49,6 +57,16 @@ namespace Tools
 		{
 			delete[] m_grid;
 		}
+		for (InfoList::iterator it = m_info.begin(); m_info.end() != it; ++it)
+		{
+			delete *it;
+		}
+		m_info.clear();
+		for (TerrainInfoList::iterator it = m_terrain.begin(); m_terrain.end() != it; ++it)
+		{
+			delete *it;
+		}
+		m_terrain.clear();
 	}
 
 	bool Scene::GetGrid(int x, int y)
@@ -89,13 +107,13 @@ namespace Tools
 		stream.Write(&listLength);
 		for (InfoList::iterator it = m_info.begin(); m_info.end() != it; ++it)
 		{
-			stream.WriteClass(&(*it));
+			stream.WriteClass(*it);
 		}
         int terrainLength = m_terrain.size();
 		stream.Write(&terrainLength);
 		for (TerrainInfoList::iterator it = m_terrain.begin(); m_terrain.end() != it; ++it)
 		{
-			stream.WriteClass(&(*it));
+			stream.WriteClass(*it);
 		}
 		return stream.Size();
 	}
@@ -134,16 +152,16 @@ namespace Tools
 			stream.Read(&listLength);
 			for (int index = 0; index < listLength; ++index)
 			{
-				SceneInfo info;
-				stream.ReadClass(&info);
+				SceneInfo *info = new SceneInfo;
+				stream.ReadClass(info);
 				m_info.push_back(info);
 			}
             int terrainLength = 0;
 			stream.Read(&terrainLength);
 			for (int index = 0; index < terrainLength; ++index)
 			{
-				TerrainInfo info;
-				stream.ReadClass(&info);
+				TerrainInfo *info = new TerrainInfo;
+				stream.ReadClass(info);
 				m_terrain.push_back(info);
 			}
 		}

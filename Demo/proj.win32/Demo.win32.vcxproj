@@ -162,6 +162,7 @@
     <ClInclude Include="..\GameFramework\Terrain\TerrainLayer.h" />
     <ClInclude Include="..\GameFramework\Terrain\TerrainProp.h" />
     <ClInclude Include="..\GameFramework\Tools\DebugLayer.h" />
+    <ClInclude Include="..\GameFramework\Tools\EditSceneInfo.h" />
     <ClInclude Include="..\GameFramework\Tools\Scene.h" />
     <ClInclude Include="..\GameFramework\Tools\StreamHelper.h" />
     <ClInclude Include="..\GameFramework\UI\UIControl.h" />
@@ -211,6 +212,7 @@
     <ClCompile Include="..\GameFramework\Terrain\TerrainLayer.cpp" />
     <ClCompile Include="..\GameFramework\Terrain\TerrainProp.cpp" />
     <ClCompile Include="..\GameFramework\Tools\DebugLayer.cpp" />
+    <ClCompile Include="..\GameFramework\Tools\EditSceneInfo.cpp" />
     <ClCompile Include="..\GameFramework\Tools\Scene.cpp" />
     <ClCompile Include="..\GameFramework\Tools\StreamHelper.cpp" />
     <ClCompile Include="..\GameFramework\UI\UIControl.cpp" />

@@ -9,40 +9,56 @@
 namespace Game
 {
 	TerrainProp::TerrainProp(void)
-	:m_gridList(NULL)
 	{
 
 	}
 	TerrainProp::~TerrainProp(void)
 	{
-		if (NULL != m_gridList)
-		{
-			delete[] m_gridList;
-		}
+		Clear();
 	}
 
 	void TerrainProp::Init(const Tools::Scene *sceneFile)
 	{
-		if (NULL != m_gridList)
-		{
-			delete[] m_gridList;
-		}
-
+		Clear();
 		const Tools::Scene::TerrainInfoList &list = sceneFile->GetTerrainList();
-		GridEntity **entityArray = new GridEntity*[list.size()];
-		m_gridList = new GridProp*[list.size()];
+		TerrainEvent_LoadTerrain event(list.size());
+		m_gridList.resize(list.size());
 		int currentIndex = 0;
 		for (Tools::Scene::TerrainInfoList::const_iterator it = list.begin(); it != list.end(); ++it, ++currentIndex)
         {
         	m_gridList[currentIndex] = new GridProp;
-			entityArray[currentIndex] = new GridEntity;
-			m_gridList[currentIndex]->AttachObserver(entityArray[currentIndex]);
-			m_gridList[currentIndex]->Load(it->m_imageName, it->m_x, it->m_y );
+			event.m_entityArray[currentIndex] = new GridEntity;
+			m_gridList[currentIndex]->AttachObserver(event.m_entityArray[currentIndex]);
+			m_gridList[currentIndex]->Load((*it)->m_imageName, (*it)->m_x, (*it)->m_y);
         }
 
-		TerrainEvent_LoadTerrain event(entityArray, list.size());
 		NotifyChange(&event);
-		delete[] entityArray;
+	}
+
+	void TerrainProp::Clear( void )
+	{
+		for (int index = 0; index < m_gridList.size() ; ++index)
+		{
+			delete m_gridList[index];
+		}
+		m_gridList.clear();
+	}
+
+	GridProp* TerrainProp::AddGrid( void )
+	{
+		m_gridList.push_back(new GridProp);
+		return m_gridList.back();
+	}
+
+	void TerrainProp::RemoveGrid( GridProp *grid )
+	{
+		for (GridList::iterator it = m_gridList.begin(); m_gridList.end() != it; ++it)
+		{
+			if (*it == grid)
+			{
+				
+			}
+		}
 	}
 
 }

@@ -32,7 +32,12 @@ namespace Game
 			case ENGridEventType::enLoad:
 				{
 					const GridEvent_Load *loadEvent = reinterpret_cast<const GridEvent_Load*>(event);
-					Load(loadEvent->GetImageName(), loadEvent->GetWidth(), loadEvent->GetHeight(), loadEvent->GetPosX(), loadEvent->GetPosY());
+					Load(loadEvent->GetImageName(), loadEvent->GetPosX(), loadEvent->GetPosY());
+				}
+				break;
+			case ENGridEventType::enRelease:
+				{
+					getParent()->removeChild(this, true);
 				}
 				break;
 			default:
@@ -40,7 +45,7 @@ namespace Game
 		}
 	}
 
-	void GridEntity::Load(const char *imageName, int width, int height, int posX, int posY)
+	void GridEntity::Load(const char *imageName, float posX, float posY)
 	{
 		setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
         cocos2d::CCTexture2D *texture = cocos2d::CCTextureCache::sharedTextureCache()->addImage(imageName);
