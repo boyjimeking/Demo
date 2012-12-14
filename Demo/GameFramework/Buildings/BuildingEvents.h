@@ -19,15 +19,15 @@ namespace Game
 		enum
 		{
 			enNone,
-			enBuildingEvent_Create,
-			enBuildingEvent_InitLayer,
+			enCreate,
+			enInitLayer,
 		};
 	};
 
 	struct BuildingEventCreate
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENBuildingEvent::enBuildingEvent_Create; }
+		virtual int GetNotifyEventType(void) const { return ENBuildingEvent::enCreate; }
 
 		BuildingEventCreate(const std::string &imageName, float x, float y) : m_imageName(imageName), m_x(x), m_y(y) {}
 
@@ -44,7 +44,7 @@ namespace Game
 	struct BuildingEventInitLayer
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENBuildingEvent::enBuildingEvent_InitLayer; }
+		virtual int GetNotifyEventType(void) const { return ENBuildingEvent::enInitLayer; }
 
 		BuildingEventInitLayer(int size) : m_size(size), m_entity(new BuildingEntity*[size]) {}
 		~BuildingEventInitLayer(void) { delete[] m_entity; }

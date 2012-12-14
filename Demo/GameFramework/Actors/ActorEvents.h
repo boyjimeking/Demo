@@ -20,20 +20,20 @@ namespace Game
 		enum
 		{
 			enNone,
-			enActorEvent_Create,
-			enActorEvent_Release,
-			enActorEvent_ChangePos,
-			enActorEvent_UpdateDirection,
-			enActorEvent_Stop,
-			enActorEvent_Attack,
-			enActorEvent_ChangeScaleX,
+			enCreate,
+			enRelease,
+			enChangePos,
+			enUpdateDirection,
+			enStop,
+			enAttack,
+			enChangeScaleX,
 		};
 	};
 
 	struct ActorEventCreate
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENActorEvent::enActorEvent_Create; }
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enCreate; }
 
 		ActorEventCreate(ENActorType::Decl type) : m_type(type) {}
 		ENActorType::Decl GetType(void) const { return m_type; }
@@ -44,14 +44,14 @@ namespace Game
 	struct ActorEventRelease
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENActorEvent::enActorEvent_Release; }
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enRelease; }
 	};
 
 	struct ActorEventChangePos
 		:public INotifyEvent
 	{
 		ActorEventChangePos(const cocos2d::CCPoint &worldPos) : m_targetPos(worldPos) {}
-		virtual int GetNotifyEventType(void) const { return ENActorEvent::enActorEvent_ChangePos; }
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enChangePos; }
 		const cocos2d::CCPoint& GetWorldPos(void) const { return m_targetPos; };
 	private:
 		cocos2d::CCPoint m_targetPos;
@@ -60,7 +60,7 @@ namespace Game
 	struct ActorEventUpdateDirection
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENActorEvent::enActorEvent_UpdateDirection; }
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enUpdateDirection; }
 
 		ActorEventUpdateDirection(const cocos2d::CCPoint &targetPos) : m_targetPos(targetPos) {}
 		const cocos2d::CCPoint& GetWorldPos(void) const { return m_targetPos; };
@@ -70,17 +70,17 @@ namespace Game
 	struct ActorEventStop
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENActorEvent::enActorEvent_Stop; }
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enStop; }
 	};
 	struct ActorEventPlayAttack
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENActorEvent::enActorEvent_Attack; }
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enAttack; }
 	};
 	struct ActorEventChangeScaleX
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENActorEvent::enActorEvent_ChangeScaleX; }
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enChangeScaleX; }
 		ActorEventChangeScaleX(int xScale) : m_xScale(xScale) {}
 		int GetXScale(void) const { return m_xScale; }
 	private:

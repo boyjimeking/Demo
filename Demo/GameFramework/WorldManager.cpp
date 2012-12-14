@@ -18,7 +18,11 @@
 #include "Client/Client.h"
 #include "platform/CCFileUtils.h"
 #include "Tools/Scene.h"
+#if COCOS2D_DEBUG
+#include "Tools/DebugLayer.h"
+#endif // COCOS2D_DEBUG
 #include "sprite_nodes/CCSpriteFrameCache.h"
+
 
 namespace Game
 {
@@ -37,6 +41,9 @@ namespace Game
         ,m_camera(NULL)
         ,m_physicalControl(NULL)
         ,m_client(new Net::Client)
+#if COCOS2D_DEBUG
+		,m_debugLayer(new Tools::DebugLayer)
+#endif // COCOS2D_DEBUG
 	{
 
 	}
@@ -49,19 +56,23 @@ namespace Game
 		delete m_actorsControl;
 		delete m_terrain;
 		delete m_client;
+#if COCOS2D_DEBUG
+		delete m_debugLayer;
+#endif
 	}
 
 	cocos2d::CCScene* WorldManager::CreateScene()
 	{
 		MainScene *scene = MainScene::create();
-		scene->setAnchorPoint(ccp(0.0f, 0.0f));
 		//Box2D
 		{
 			m_physicalControl = new PhysicalControl;
 		}
         //摄像机
+		cocos2d::CCLayer *scaleLayer = cocos2d::CCLayer::create();
+		scene->addChild(scaleLayer);
     	CameraObserver *cameraObj = CameraObserver::Create();
-    	scene->addChild(cameraObj);
+    	scaleLayer->addChild(cameraObj);
         m_camera = new Camera;
         m_camera->init(cameraObj);
         
@@ -96,6 +107,10 @@ namespace Game
 			scene->addChild(uiLayer);
 			m_uiControl->Init();
 		}
+#if COCOS2D_DEBUG
+		cameraObj->addChild(m_debugLayer);
+#endif // COCOS2D_DEBUG
+
 		return scene;
 	}
 	cocos2d::CCPoint WorldManager::WorldPosToDesign(const cocos2d::CCPoint &worldPos)
@@ -113,10 +128,9 @@ namespace Game
     }
     void WorldManager::Init(const char *sceneName)
     {
-    	std::string fullPath;
-		fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(sceneName);
+		const char *fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(sceneName);
 		unsigned long size = 0;
-		unsigned char *buff = cocos2d::CCFileUtils::sharedFileUtils()->getFileData(fullPath.c_str(), "rb", &size);
+		unsigned char *buff = cocos2d::CCFileUtils::sharedFileUtils()->getFileData(fullPath, "rb", &size);
 		Tools::Scene scene;
 		scene.Read(buff, size);
 		delete[] buff;

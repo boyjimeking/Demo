@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////////////
+﻿//////////////////////////////////////////////////////////////////////////
 //
 //	文件名: 	/SourceCode/GameFramework/WorldManager.h
 //	创建日期:	2012年11月22日
@@ -24,6 +24,13 @@ namespace Net
 {
 	class Client;
 }
+
+#if COCOS2D_DEBUG
+namespace Tools
+{
+	class DebugLayer;
+}
+#endif
 
 namespace Game
 {
@@ -52,6 +59,8 @@ namespace Game
         static cocos2d::CCPoint DesignPosToWorld(const cocos2d::CCPoint &screenPos);
 
         void update(float dt);
+
+		void SetSceneScale(float scale);
 	protected:
 		TerrainProp *m_terrain;
 		ActorsControl *m_actorsControl;
@@ -60,6 +69,10 @@ namespace Game
         Camera *m_camera;
         PhysicalControl *m_physicalControl;
         Net::Client *m_client;
+
+#if COCOS2D_DEBUG
+		Tools::DebugLayer *m_debugLayer;
+#endif
 	private:
 		WorldManager(void);
 		~WorldManager(void);

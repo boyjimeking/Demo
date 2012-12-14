@@ -27,7 +27,7 @@ namespace Game
 	{
 		switch (event->GetNotifyEventType())
 		{
-			case ENBuildingEvent::enBuildingEvent_Create:
+			case ENBuildingEvent::enCreate:
 				{
 					this->setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
 					const BuildingEventCreate *createEvent = reinterpret_cast<const BuildingEventCreate*>(event);

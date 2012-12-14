@@ -10,9 +10,6 @@
 #include "Camera/Camera.h"
 #include "GridEntity.h"
 #include "Actors/ActorAction.h"
-#include "Buildings/SceneControl.h"
-#include "CCDrawingPrimitives.h"
-#include "ccTypes.h"
 
 namespace Game
 {
@@ -22,7 +19,6 @@ namespace Game
 		if (pRet && pRet->init())
 		{
 			pRet->setTouchEnabled(true);
-			pRet->setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
 			pRet->autorelease();
 			return pRet;
 		}
@@ -50,7 +46,7 @@ namespace Game
 		}
 		switch (event->GetNotifyEventType())
 		{
-			case ENTerrainEventType::enTerrainEvent_LoadTerrain:
+			case ENTerrainEventType::enLoadTerrain:
 				{
 					const TerrainEvent_LoadTerrain *loadEvent = reinterpret_cast<const TerrainEvent_LoadTerrain*>(event);
 					for (int index = 0; index < loadEvent->GetLength(); ++index)
@@ -65,7 +61,6 @@ namespace Game
 				break;
 		}
 	}
-
 	void TerrainLayer::ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent)
 	{
 		cocos2d::CCLayer::ccTouchesBegan(pTouches, pEvent);
@@ -73,12 +68,6 @@ namespace Game
 		cocos2d::CCPoint pos = touch->getLocation();
 		//什么都没点到的时候，主角移动
 		ProcessMainActorMove(pos);
-		// static int actorCount = 1;
-		// for (int index = 0; index < 10; ++index)
-		// {
-		// 	cocos2d::CCLog("actorCount: %d", actorCount);
-		// 	WorldManager::Instance()->GetActorsControl()->CreateActor(++actorCount);
-		// }
 	}
 	void TerrainLayer::ProcessMainActorMove(const cocos2d::CCPoint &screenPos)
 	{
@@ -86,27 +75,6 @@ namespace Game
 		cocos2d::CCPoint worldPos = WorldManager::DesignPosToWorld(screenPos);
 		mainActor->MoveTo(worldPos);
 	}
-#ifdef _ShowGrid_
-	void TerrainLayer::draw()
-	{
-		SceneControl *scene = WorldManager::Instance()->GetSceneControl();
-		for (int index = 0; index < scene->GetRow() ; ++index)
-		{
-			for (int innerIndex = 0; innerIndex < scene->GetColumn(); ++innerIndex)
-			{
-				if (scene->GetGrid(innerIndex, index))
-				{
-					cocos2d::ccDrawSolidRect(cocos2d::CCPointMake(innerIndex * scene->GetGridSize(), index * scene->GetGridSize())
-                                             , cocos2d::CCPointMake((innerIndex + 1) * scene->GetGridSize() - 1, (index + 1) * scene->GetGridSize() - 1), cocos2d::ccc4f(0.0f, 0.0f, 1.0f, 1.0f));
-				}
-                else
-                {
-                    cocos2d::ccDrawSolidRect(cocos2d::CCPointMake(innerIndex * scene->GetGridSize(), index * scene->GetGridSize())
-                                             , cocos2d::CCPointMake((innerIndex + 1) * scene->GetGridSize() - 1, (index + 1) * scene->GetGridSize() - 1), cocos2d::ccc4f(1.0f, 0.0f, 0.0f, 1.0f));
-                }
-			}
-		}
-	}
-#endif
+
 }
 

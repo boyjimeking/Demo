@@ -19,7 +19,7 @@ namespace Game
 	{
 		switch (event->GetNotifyEventType())
 		{
-			case ENBuildingEvent::enBuildingEvent_InitLayer:
+			case ENBuildingEvent::enInitLayer:
 				{
 					int size = reinterpret_cast<const BuildingEventInitLayer*>(event)->m_size;
 					BuildingEntity **entityList = reinterpret_cast<const BuildingEventInitLayer*>(event)->m_entity;
