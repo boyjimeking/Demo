@@ -25,12 +25,13 @@ namespace Net
 	class Client;
 }
 
-#if COCOS2D_DEBUG
 namespace Tools
 {
+#if COCOS2D_DEBUG
 	class DebugLayer;
-}
 #endif
+	class Scene;
+}
 
 namespace Game
 {

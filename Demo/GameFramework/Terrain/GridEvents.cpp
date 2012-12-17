@@ -10,13 +10,12 @@
 
 namespace Game
 {
-	GridEvent_Load::GridEvent_Load(const char *imageName, int width, int height, int posX, int posY)
-	:m_imageName(imageName)
-	,m_width(width)
-	,m_height(height)
-	,m_posX(posX)
-	,m_posY(posY)
+	GridEvent_Load::GridEvent_Load( const char *imageName, float posX, float posY )
+		:m_imageName(imageName)
+		,m_posX(posX)
+		,m_posY(posY)
 	{
 
 	}
+
 }
