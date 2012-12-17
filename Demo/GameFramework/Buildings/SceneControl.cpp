@@ -35,7 +35,9 @@ namespace Game
 	void SceneControl::Init(const Tools::Scene *sceneFile)
 	{
 		const Tools::Scene &scene = *sceneFile;
-		
+
+		cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(scene.GetImageName());
+
         m_sceneName = scene.GetSceneName();
         m_width = scene.GetWidth();
         m_height = scene.GetHeight();

@@ -21,7 +21,6 @@
 #if COCOS2D_DEBUG
 #include "Tools/DebugLayer.h"
 #endif // COCOS2D_DEBUG
-#include "sprite_nodes/CCSpriteFrameCache.h"
 
 
 namespace Game
@@ -75,7 +74,6 @@ namespace Game
     	scaleLayer->addChild(cameraObj);
         m_camera = new Camera;
         m_camera->init(cameraObj);
-		m_camera->SetScale(0.2f);
         
 		//地形
 		{
@@ -141,7 +139,6 @@ namespace Game
 
 	void WorldManager::Init( Tools::Scene *scene )
 	{
-		cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(scene->GetImageName());
 		this->GetTerrain()->Init(scene);
 		this->GetSceneControl()->Init(scene);
 	}

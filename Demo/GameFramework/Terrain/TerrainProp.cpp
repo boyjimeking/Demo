@@ -5,6 +5,7 @@
 #include "WorldManager.h"
 #include "support/CCPointExtension.h"
 #include "Tools/Scene.h"
+#include "sprite_nodes/CCSpriteFrameCache.h"
 
 namespace Game
 {
