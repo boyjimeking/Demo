@@ -25,12 +25,23 @@
 
 namespace Game
 {
+	WorldManager * WorldManager::_ins;
 	WorldManager* WorldManager::Instance()
 	{
-		static WorldManager *_ins = new WorldManager;
+		if (NULL == _ins)
+		{
+			_ins = new WorldManager;
+		}
 		return _ins;
 	}
-
+	void WorldManager::ClearUp( void )
+	{
+		if (NULL != _ins)
+		{
+			delete _ins;
+			_ins = NULL;
+		}
+	}
 
 	WorldManager::WorldManager(void)
 		:m_terrain(NULL)

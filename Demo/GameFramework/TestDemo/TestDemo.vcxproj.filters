@@ -18,6 +18,9 @@
     <ClCompile Include="gtest_main.cc">
       <Filter>gtest</Filter>
     </ClCompile>
+    <ClCompile Include="AppTest.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="TestEditScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -25,6 +28,9 @@
   <ItemGroup>
     <ClInclude Include="gtest.h">
       <Filter>gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="AppTest.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

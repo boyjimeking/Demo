@@ -22,6 +22,9 @@ namespace Game
 	
 		void Load(const char *gridName, float posX, float posY);
 		void Release(void);
+
+		float GetX(void) const { return m_x; }
+		float GetY(void) const { return m_y; }
 	private:
 		float m_x;
 		float m_y;

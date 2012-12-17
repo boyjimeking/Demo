@@ -14,7 +14,7 @@
 
 namespace Tools
 {
-	struct SceneInfo;
+	struct ObjectInfo;
 }
 
 namespace Game
@@ -27,11 +27,11 @@ namespace Game
 		:public INotifier
 	{
 	public:
-		static BuildingProp* Create(const Tools::SceneInfo *sceneInfo);
+		static BuildingProp* Create(const Tools::ObjectInfo *sceneInfo);
 		BuildingProp(void);
 		virtual ~BuildingProp(void);
 		
-		void Init(const Tools::SceneInfo *sceneInfo);
+		void Init(const Tools::ObjectInfo *sceneInfo);
 		BuildingEntity* CreateEntity(void);
 	protected:
 	private:

@@ -5,7 +5,7 @@
 
 namespace Game
 {
-	BuildingProp* BuildingProp::Create(const Tools::SceneInfo *sceneInfo)
+	BuildingProp* BuildingProp::Create(const Tools::ObjectInfo *sceneInfo)
 	{
 		BuildingProp *prop = new BuildingProp();
 		prop->Init(sceneInfo);
@@ -19,7 +19,7 @@ namespace Game
 	{
 
 	}
-	void BuildingProp::Init(const Tools::SceneInfo *sceneInfo)
+	void BuildingProp::Init(const Tools::ObjectInfo *sceneInfo)
 	{
 		m_position = cocos2d::CCPointMake(sceneInfo->m_x, sceneInfo->m_y);
 		m_imageName = sceneInfo->m_imageName;

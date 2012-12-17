@@ -14,6 +14,7 @@ struct INotifyEvent;
 class INotifier
 {
 public:
+	static bool NotifyMode;
 	INotifier(void);
 	virtual ~INotifier(void);
 

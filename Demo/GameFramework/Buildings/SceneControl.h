@@ -33,7 +33,7 @@ namespace Game
 
 		void Init(const Tools::Scene *sceneFile);
 
-		bool GetGrid(int x, int y);
+		bool GetGridPass(int x, int y);
 		bool IsPointCanStanc(const cocos2d::CCPoint &point);
 
 		int GetWidth(void) const { return m_width; }
@@ -44,6 +44,8 @@ namespace Game
 
 		int GetGridArrayLength(void) const { return m_gridArrayLength; }
 
+		bool AddBuilding(BuildingProp *building);
+		void RemoveBuilding(BuildingProp *building);
 	protected:
 	private:
 		std::string m_sceneName;

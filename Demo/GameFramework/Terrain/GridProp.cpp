@@ -34,7 +34,6 @@ namespace Game
 	{
 		GridEvent_Release event;
 		NotifyChange(&event);
-		delete this;
 	}
 
 }

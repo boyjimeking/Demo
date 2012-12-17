@@ -35,6 +35,7 @@ struct __Pause_End__
 {
 	~__Pause_End__(void)
 	{
+		printf("Test Finished");
 		getchar();
 	}
 };
