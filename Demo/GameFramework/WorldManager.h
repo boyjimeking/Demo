@@ -56,6 +56,7 @@ namespace Game
 		SceneControl * GetSceneControl(void) const { return m_sceneControl; }
         Camera* GetCamera(void) const { return m_camera; }
         PhysicalControl* GetPhysicalControl(void) const { return m_physicalControl; }
+		cocos2d::CCNode* GetRoot(void) const;
 
         static cocos2d::CCPoint WorldPosToDesign(const cocos2d::CCPoint &worldPos);
         static cocos2d::CCPoint DesignPosToWorld(const cocos2d::CCPoint &screenPos);
@@ -71,6 +72,7 @@ namespace Game
         Camera *m_camera;
         PhysicalControl *m_physicalControl;
         Net::Client *m_client;
+		cocos2d::CCNode *m_root;
 
 #if COCOS2D_DEBUG
 		Tools::DebugLayer *m_debugLayer;

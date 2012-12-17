@@ -41,6 +41,7 @@ namespace Game
         ,m_camera(NULL)
         ,m_physicalControl(NULL)
         ,m_client(new Net::Client)
+		,m_root(NULL)
 #if COCOS2D_DEBUG
 		,m_debugLayer(new Tools::DebugLayer)
 #endif // COCOS2D_DEBUG
@@ -72,6 +73,7 @@ namespace Game
 		cocos2d::CCLayer *scaleLayer = cocos2d::CCLayer::create();
 		scene->addChild(scaleLayer);
     	CameraObserver *cameraObj = CameraObserver::Create();
+		m_root = cameraObj;
     	scaleLayer->addChild(cameraObj);
         m_camera = new Camera;
         m_camera->init(cameraObj);
@@ -143,6 +145,11 @@ namespace Game
 		cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(scene->GetImageName());
 		this->GetTerrain()->Init(scene);
 		this->GetSceneControl()->Init(scene);
+	}
+
+	cocos2d::CCNode* WorldManager::GetRoot( void ) const
+	{
+		return m_root;
 	}
 
 }
