@@ -10,6 +10,7 @@
 #define __SceneObjects__Scene__
 
 #include <list>
+#include <string>
 
 namespace Tools
 {
