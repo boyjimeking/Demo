@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\CSProtocol\CSMessageDef.cpp" />
+    <ClCompile Include="..\CSProtocol\CSMessageType.cpp" />
+    <ClCompile Include="..\CSProtocol\CSPipeline.cpp" />
+    <ClCompile Include="..\VirtualServer\MainActor.cpp" />
+    <ClCompile Include="..\VirtualServer\Server.cpp" />
+    <ClCompile Include="..\VirtualServer\ServerActor.cpp" />
+    <ClCompile Include="Actors\ActorAction.cpp" />
+    <ClCompile Include="Actors\ActorEntity.cpp" />
+    <ClCompile Include="Actors\ActorEvents.cpp" />
+    <ClCompile Include="Actors\ActorProp.cpp" />
+    <ClCompile Include="Actors\ActorsControl.cpp" />
+    <ClCompile Include="Actors\ActorsControlEvents.cpp" />
+    <ClCompile Include="Actors\ActorsLayer.cpp" />
+    <ClCompile Include="Actors\ActorTouch.cpp" />
+    <ClCompile Include="Base\INotifier.cpp" />
+    <ClCompile Include="Base\INotifyEvent.cpp" />
+    <ClCompile Include="Base\IObserver.cpp" />
+    <ClCompile Include="Buildings\BuildingEntity.cpp" />
+    <ClCompile Include="Buildings\BuildingEvents.cpp" />
+    <ClCompile Include="Buildings\BuildingProp.cpp" />
+    <ClCompile Include="Buildings\BuildingsLayer.cpp" />
+    <ClCompile Include="Buildings\SceneControl.cpp" />
+    <ClCompile Include="Camera\Camera.cpp" />
+    <ClCompile Include="Camera\CameraNotifyEvents.cpp" />
+    <ClCompile Include="Camera\CameraObserver.cpp" />
+    <ClCompile Include="Client\Client.cpp" />
+    <ClCompile Include="MainScene.cpp" />
+    <ClCompile Include="Physical\PhysicalControl.cpp" />
+    <ClCompile Include="Physical\PhysicalObj.cpp" />
+    <ClCompile Include="Terrain\GridEntity.cpp" />
+    <ClCompile Include="Terrain\GridEvents.cpp" />
+    <ClCompile Include="Terrain\GridProp.cpp" />
+    <ClCompile Include="Terrain\TerrainEvent.cpp" />
+    <ClCompile Include="Terrain\TerrainLayer.cpp" />
+    <ClCompile Include="Terrain\TerrainProp.cpp" />
+    <ClCompile Include="Tools\DebugLayer.cpp" />
+    <ClCompile Include="Tools\EditScene.cpp" />
+    <ClCompile Include="Tools\Scene.cpp" />
+    <ClCompile Include="Tools\StreamHelper.cpp" />
+    <ClCompile Include="UI\UIControl.cpp" />
+    <ClCompile Include="UI\UIControlEvents.cpp" />
+    <ClCompile Include="UI\UILayer.cpp" />
+    <ClCompile Include="UI\UIProperty.cpp" />
+    <ClCompile Include="UI\UIWindow.cpp" />
+    <ClCompile Include="WorldManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\CSProtocol\CSMessageDef.h" />
+    <ClInclude Include="..\CSProtocol\CSMessageType.h" />
+    <ClInclude Include="..\CSProtocol\CSPipeline.h" />
+    <ClInclude Include="..\VirtualServer\MainActor.h" />
+    <ClInclude Include="..\VirtualServer\Server.h" />
+    <ClInclude Include="..\VirtualServer\ServerActor.h" />
+    <ClInclude Include="Actors\ActorAction.h" />
+    <ClInclude Include="Actors\ActorEntity.h" />
+    <ClInclude Include="Actors\ActorEvents.h" />
+    <ClInclude Include="Actors\ActorProp.h" />
+    <ClInclude Include="Actors\ActorsControl.h" />
+    <ClInclude Include="Actors\ActorsControlEvents.h" />
+    <ClInclude Include="Actors\ActorsLayer.h" />
+    <ClInclude Include="Actors\ActorTouch.h" />
+    <ClInclude Include="Base\GlobalDef.h" />
+    <ClInclude Include="Base\INotifier.h" />
+    <ClInclude Include="Base\INotifyEvent.h" />
+    <ClInclude Include="Base\IObserver.h" />
+    <ClInclude Include="Buildings\BuildingEntity.h" />
+    <ClInclude Include="Buildings\BuildingEvents.h" />
+    <ClInclude Include="Buildings\BuildingProp.h" />
+    <ClInclude Include="Buildings\BuildingsLayer.h" />
+    <ClInclude Include="Buildings\SceneControl.h" />
+    <ClInclude Include="Camera\Camera.h" />
+    <ClInclude Include="Camera\CameraNotifyEvents.h" />
+    <ClInclude Include="Camera\CameraObserver.h" />
+    <ClInclude Include="Client\Client.h" />
+    <ClInclude Include="MainScene.h" />
+    <ClInclude Include="Physical\PhysicalControl.h" />
+    <ClInclude Include="Physical\PhysicalObj.h" />
+    <ClInclude Include="Terrain\GridEntity.h" />
+    <ClInclude Include="Terrain\GridEvents.h" />
+    <ClInclude Include="Terrain\GridProp.h" />
+    <ClInclude Include="Terrain\TerrainEvent.h" />
+    <ClInclude Include="Terrain\TerrainLayer.h" />
+    <ClInclude Include="Terrain\TerrainProp.h" />
+    <ClInclude Include="Tools\DebugLayer.h" />
+    <ClInclude Include="Tools\EditScene.h" />
+    <ClInclude Include="Tools\Scene.h" />
+    <ClInclude Include="Tools\StreamHelper.h" />
+    <ClInclude Include="UI\UIControl.h" />
+    <ClInclude Include="UI\UIControlEvents.h" />
+    <ClInclude Include="UI\UILayer.h" />
+    <ClInclude Include="UI\UIProperty.h" />
+    <ClInclude Include="UI\UIWindow.h" />
+    <ClInclude Include="WorldManager.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BB0D38D7-7018-42F6-9C74-1F5B74EE9C65}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GameFramework</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions);_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS_DEBUG;COCOS2D_DEBUG=1;</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions);_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGSNDEBUG;</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
