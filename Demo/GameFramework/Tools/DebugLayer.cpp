@@ -1,5 +1,5 @@
 #include "DebugLayer.h"
-#include "Buildings/SceneControl.h"
+#include "SceneObjects/SceneObjectsControl.h"
 #include "CCDrawingPrimitives.h"
 #include "ccTypes.h"
 #include "WorldManager.h"
@@ -18,7 +18,7 @@ namespace Tools
 
 	void DebugLayer::draw( void )
 	{
-		//Game::SceneControl *scene = Game::WorldManager::Instance()->GetSceneControl();
+		//Game::SceneObjectsControl *scene = Game::WorldManager::Instance()->GetSceneObjectsControl();
 		//for (int index = 0; index < scene->GetRow() ; ++index)
 		//{
 		//	for (int innerIndex = 0; innerIndex < scene->GetColumn(); ++innerIndex)

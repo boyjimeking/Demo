@@ -3,6 +3,11 @@
 
 namespace Tools
 {
+	struct EditObjectInfo
+		:public ObjectInfo
+	{
+
+	};
 	EditScene::EditScene(void)
 		:m_terrainCount(0)
 		,m_objectCount(0)
@@ -64,6 +69,13 @@ namespace Tools
 
 	void EditScene::AddObjectImage( const char *imageName )
 	{
+		for (ImageNameList::iterator it = m_imageName.begin(); m_imageName.end() != it; ++it)
+		{
+			if (0 == (*it).compare(imageName))
+			{
+				return;
+			}
+		}
 		m_imageName.push_back(std::string(imageName));
 	}
 

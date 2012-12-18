@@ -13,9 +13,6 @@
     <Filter Include="GameFramework\Base">
       <UniqueIdentifier>{5988d10a-f5d9-49b7-8fd2-b5d48f2c2a2a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameFramework\Buildings">
-      <UniqueIdentifier>{de78a17f-5c02-4023-853f-7c514005323e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameFramework\Camera">
       <UniqueIdentifier>{fc30d224-6cc9-4558-b6ba-40bb41f27fc6}</UniqueIdentifier>
     </Filter>
@@ -36,6 +33,9 @@
     </Filter>
     <Filter Include="VirtualServer">
       <UniqueIdentifier>{bbc48778-e85f-4d2f-9e01-7ba93f180d76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\SceneObjects">
+      <UniqueIdentifier>{de78a17f-5c02-4023-853f-7c514005323e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -86,21 +86,6 @@
     </ClCompile>
     <ClCompile Include="Base\IObserver.cpp">
       <Filter>GameFramework\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="Buildings\BuildingEntity.cpp">
-      <Filter>GameFramework\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Buildings\BuildingEvents.cpp">
-      <Filter>GameFramework\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Buildings\BuildingProp.cpp">
-      <Filter>GameFramework\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Buildings\BuildingsLayer.cpp">
-      <Filter>GameFramework\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Buildings\SceneControl.cpp">
-      <Filter>GameFramework\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Camera\Camera.cpp">
       <Filter>GameFramework\Camera</Filter>
@@ -174,6 +159,21 @@
     <ClCompile Include="Tools\EditScene.cpp">
       <Filter>GameFramework\Tools</Filter>
     </ClCompile>
+    <ClCompile Include="SceneObjects\SceneObjectProp.cpp">
+      <Filter>GameFramework\SceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObjects\SceneObjectsControl.cpp">
+      <Filter>GameFramework\SceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObjects\SceneObjectsLayer.cpp">
+      <Filter>GameFramework\SceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObjects\SceneObjectEntity.cpp">
+      <Filter>GameFramework\SceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObjects\SceneObjectEvents.cpp">
+      <Filter>GameFramework\SceneObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CSProtocol\CSMessageDef.h">
@@ -226,21 +226,6 @@
     </ClInclude>
     <ClInclude Include="Base\IObserver.h">
       <Filter>GameFramework\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="Buildings\BuildingEntity.h">
-      <Filter>GameFramework\Buildings</Filter>
-    </ClInclude>
-    <ClInclude Include="Buildings\BuildingEvents.h">
-      <Filter>GameFramework\Buildings</Filter>
-    </ClInclude>
-    <ClInclude Include="Buildings\BuildingProp.h">
-      <Filter>GameFramework\Buildings</Filter>
-    </ClInclude>
-    <ClInclude Include="Buildings\BuildingsLayer.h">
-      <Filter>GameFramework\Buildings</Filter>
-    </ClInclude>
-    <ClInclude Include="Buildings\SceneControl.h">
-      <Filter>GameFramework\Buildings</Filter>
     </ClInclude>
     <ClInclude Include="Camera\Camera.h">
       <Filter>GameFramework\Camera</Filter>
@@ -313,6 +298,21 @@
     </ClInclude>
     <ClInclude Include="Tools\EditScene.h">
       <Filter>GameFramework\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObjects\SceneObjectProp.h">
+      <Filter>GameFramework\SceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObjects\SceneObjectsControl.h">
+      <Filter>GameFramework\SceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObjects\SceneObjectsLayer.h">
+      <Filter>GameFramework\SceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObjects\SceneObjectEntity.h">
+      <Filter>GameFramework\SceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObjects\SceneObjectEvents.h">
+      <Filter>GameFramework\SceneObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

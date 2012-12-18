@@ -1,13 +1,13 @@
 //
 //  Scene.h
-//  Buildings
+//  SceneObjects
 //
 //  Created by Mingzhen.Zhang on 12-12-7.
 //  Copyright (c) 2012年 Mingzhen.Zhang. All rights reserved.
 //
 
-#ifndef __Buildings__Scene__
-#define __Buildings__Scene__
+#ifndef __SceneObjects__Scene__
+#define __SceneObjects__Scene__
 
 #include <list>
 
@@ -87,4 +87,4 @@ namespace Tools
 	};
 
 }
-#endif /* defined(__Buildings__Scene__) */
+#endif /* defined(__SceneObjects__Scene__) */

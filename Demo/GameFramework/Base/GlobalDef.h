@@ -20,7 +20,7 @@ struct ENActorType
 	};
 };
 
-struct ENBuildingType
+struct ENSceneObjectType
 {
 	enum Decl
 	{

@@ -37,7 +37,7 @@ namespace Game
 {
 	class TerrainProp;
 	class ActorsControl;
-	class SceneControl;
+	class SceneObjectsControl;
     class Camera;
     class PhysicalControl;
 	/*
@@ -54,7 +54,7 @@ namespace Game
 		void Init(Tools::Scene *scene);
 		TerrainProp* GetTerrain(void) const { return m_terrain; }
 		ActorsControl * GetActorsControl(void) const { return m_actorsControl; }
-		SceneControl * GetSceneControl(void) const { return m_sceneControl; }
+		SceneObjectsControl * GetSceneObjectsControl(void) const { return m_sceneObjectsControl; }
         Camera* GetCamera(void) const { return m_camera; }
         PhysicalControl* GetPhysicalControl(void) const { return m_physicalControl; }
 		cocos2d::CCNode* GetRoot(void) const;
@@ -68,7 +68,7 @@ namespace Game
 	protected:
 		TerrainProp *m_terrain;
 		ActorsControl *m_actorsControl;
-		SceneControl *m_sceneControl;
+		SceneObjectsControl *m_sceneObjectsControl;
 		GUI::UIControl *m_uiControl;
         Camera *m_camera;
         PhysicalControl *m_physicalControl;

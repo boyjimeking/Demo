@@ -1,6 +1,6 @@
 //
 //  Scene.cpp
-//  Buildings
+//  SceneObjects
 //
 //  Created by Mingzhen.Zhang on 12-12-7.
 //  Copyright (c) 2012年 Mingzhen.Zhang. All rights reserved.

@@ -5,8 +5,8 @@
 #include "Actors/ActorsLayer.h"
 #include "Actors/ActorsControl.h"
 #include "Actors/ActorProp.h"
-#include "Buildings/BuildingsLayer.h"
-#include "Buildings/SceneControl.h"
+#include "SceneObjects/SceneObjectsLayer.h"
+#include "SceneObjects/SceneObjectsControl.h"
 #include "UI/UILayer.h"
 #include "UI/UIControl.h"
 #include "Camera/Camera.h"
@@ -46,7 +46,7 @@ namespace Game
 	WorldManager::WorldManager(void)
 		:m_terrain(NULL)
 		,m_actorsControl(NULL)
-		,m_sceneControl(NULL)
+		,m_sceneObjectsControl(NULL)
 		,m_uiControl(NULL)
         ,m_camera(NULL)
         ,m_physicalControl(NULL)
@@ -63,7 +63,7 @@ namespace Game
 		delete m_physicalControl;
 		delete m_camera;
 		delete m_uiControl;
-		delete m_sceneControl;
+		delete m_sceneObjectsControl;
 		delete m_actorsControl;
 		delete m_terrain;
 		delete m_client;
@@ -100,9 +100,9 @@ namespace Game
 		entityLayer->setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
 		//建筑
 		{
-			BuildingsLayer *buildingsLayer = new BuildingsLayer(entityLayer);
-			m_sceneControl = new SceneControl;
-			m_sceneControl->AttachObserver(buildingsLayer);
+			SceneObjectsLayer *sceneObjectsLayer = new SceneObjectsLayer(entityLayer);
+			m_sceneObjectsControl = new SceneObjectsControl;
+			m_sceneObjectsControl->AttachObserver(sceneObjectsLayer);
 		}
 		//角色
 		{
@@ -153,7 +153,7 @@ namespace Game
 	void WorldManager::Init( Tools::Scene *scene )
 	{
 		this->GetTerrain()->Init(scene);
-		this->GetSceneControl()->Init(scene);
+		this->GetSceneObjectsControl()->Init(scene);
 	}
 
 	cocos2d::CCNode* WorldManager::GetRoot( void ) const

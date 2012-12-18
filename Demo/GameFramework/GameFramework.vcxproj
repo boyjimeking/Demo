@@ -28,11 +28,6 @@
     <ClCompile Include="Base\INotifier.cpp" />
     <ClCompile Include="Base\INotifyEvent.cpp" />
     <ClCompile Include="Base\IObserver.cpp" />
-    <ClCompile Include="Buildings\BuildingEntity.cpp" />
-    <ClCompile Include="Buildings\BuildingEvents.cpp" />
-    <ClCompile Include="Buildings\BuildingProp.cpp" />
-    <ClCompile Include="Buildings\BuildingsLayer.cpp" />
-    <ClCompile Include="Buildings\SceneControl.cpp" />
     <ClCompile Include="Camera\Camera.cpp" />
     <ClCompile Include="Camera\CameraNotifyEvents.cpp" />
     <ClCompile Include="Camera\CameraObserver.cpp" />
@@ -40,6 +35,11 @@
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="Physical\PhysicalControl.cpp" />
     <ClCompile Include="Physical\PhysicalObj.cpp" />
+    <ClCompile Include="SceneObjects\SceneObjectEntity.cpp" />
+    <ClCompile Include="SceneObjects\SceneObjectEvents.cpp" />
+    <ClCompile Include="SceneObjects\SceneObjectProp.cpp" />
+    <ClCompile Include="SceneObjects\SceneObjectsControl.cpp" />
+    <ClCompile Include="SceneObjects\SceneObjectsLayer.cpp" />
     <ClCompile Include="Terrain\GridEntity.cpp" />
     <ClCompile Include="Terrain\GridEvents.cpp" />
     <ClCompile Include="Terrain\GridProp.cpp" />
@@ -76,11 +76,6 @@
     <ClInclude Include="Base\INotifier.h" />
     <ClInclude Include="Base\INotifyEvent.h" />
     <ClInclude Include="Base\IObserver.h" />
-    <ClInclude Include="Buildings\BuildingEntity.h" />
-    <ClInclude Include="Buildings\BuildingEvents.h" />
-    <ClInclude Include="Buildings\BuildingProp.h" />
-    <ClInclude Include="Buildings\BuildingsLayer.h" />
-    <ClInclude Include="Buildings\SceneControl.h" />
     <ClInclude Include="Camera\Camera.h" />
     <ClInclude Include="Camera\CameraNotifyEvents.h" />
     <ClInclude Include="Camera\CameraObserver.h" />
@@ -88,6 +83,11 @@
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="Physical\PhysicalControl.h" />
     <ClInclude Include="Physical\PhysicalObj.h" />
+    <ClInclude Include="SceneObjects\SceneObjectEntity.h" />
+    <ClInclude Include="SceneObjects\SceneObjectEvents.h" />
+    <ClInclude Include="SceneObjects\SceneObjectProp.h" />
+    <ClInclude Include="SceneObjects\SceneObjectsControl.h" />
+    <ClInclude Include="SceneObjects\SceneObjectsLayer.h" />
     <ClInclude Include="Terrain\GridEntity.h" />
     <ClInclude Include="Terrain\GridEvents.h" />
     <ClInclude Include="Terrain\GridProp.h" />

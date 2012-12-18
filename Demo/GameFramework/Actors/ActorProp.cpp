@@ -2,7 +2,7 @@
 #include "ActorEvents.h"
 #include "ActorEntity.h"
 #include "WorldManager.h"
-#include "Buildings/SceneControl.h"
+#include "SceneObjects/SceneObjectsControl.h"
 
 namespace Game
 {
@@ -56,7 +56,7 @@ namespace Game
 	}
 	void ActorProp::SetPosition(const cocos2d::CCPoint &pos)
 	{
-		if (!WorldManager::Instance()->GetSceneControl()->IsPointCanStanc(pos))
+		if (!WorldManager::Instance()->GetSceneObjectsControl()->IsPointCanStanc(pos))
 		{
 			return;
 		}
