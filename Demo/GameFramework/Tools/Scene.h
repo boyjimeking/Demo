@@ -14,60 +14,67 @@
 namespace Tools
 {
 	class StreamHelper;
-	struct SceneInfo
+	struct ObjectInfo
 	{
 		int m_id;
 		float m_x;
 		float m_y;
+		float m_width;
+		float m_height;
 		char m_imageName[128];
 
 		void Read(StreamHelper *stream);
 		void Write(StreamHelper *stream);
 
-		SceneInfo(void);
+		ObjectInfo(void);
 	};
     
-    typedef SceneInfo TerrainInfo;
+    typedef ObjectInfo TerrainInfo;
 
 	class Scene
 	{
 	public:
-		typedef std::list<SceneInfo*> InfoList;
+		typedef std::list<ObjectInfo*> ObjectInfoList;
 		typedef std::list<TerrainInfo*> TerrainInfoList;
+		typedef std::list<std::string> ImageNameList;
 
 		Scene(void);
 		~Scene(void);
 
 		void Read(unsigned char *buff, unsigned int size);
-		unsigned int Write(unsigned char *buff);
+		unsigned int Write(unsigned char *buff, unsigned int size);
 
 		const char* GetSceneName(void) const { return m_sceneName; }
-		const char* GetImageName(void) const { return m_imageName; }
+		const ImageNameList& GetImageNameList(void) const { return m_imageName; }
 
-		int GetWidth(void) const { return m_width; }
-		int GetHeight(void) const { return m_height; }
+
+		float GetWidth(void) const { return m_width; }
+		float GetHeight(void) const { return m_height; }
 		int GetColumn(void) const { return m_gridColumn; }
 		int GetRow(void) const { return m_gridRow; }
-		int GetGridSize(void) const { return m_gridSize; }
+		float GetGridSize(void) const { return m_gridSize; }
+		//逻辑坐标与像素坐标的转换，point per meter
+		int GetTransScale(void) const { return m_transScale; }
 
-		bool GetGrid(int x, int y);
+		bool GetGridPass(int x, int y);
 
-		const char* GetGrid(void) const { return m_grid; }
+		const char* GetGrids(void) const { return m_grid; }
 		int GetGridArrayLength(void) const { return m_gridArrayLength; }
-		const InfoList& GetInfoList(void) const { return m_info; }
-		const TerrainInfoList& GetTerrainList(void) const { return m_terrain; }
+		const ObjectInfoList& GetObjectInfoList(void) const { return m_objectInfoList; }
+		const TerrainInfoList& GetTerrainList(void) const { return m_terrainInfoList; }
 	protected:
 		char m_sceneName[128];
-        char m_imageName[128];
-		int m_width;
-		int m_height;
-		int m_gridSize;
+		ImageNameList m_imageName;
+		float m_width;
+		float m_height;
+		float m_gridSize;
 		int m_gridColumn;
 		int m_gridRow;
+		int m_transScale;
 		char *m_grid;
 		int m_gridArrayLength;
-		InfoList m_info;
-        TerrainInfoList m_terrain;
+		ObjectInfoList m_objectInfoList;
+        TerrainInfoList m_terrainInfoList;
 
 		int m_readVersion;
 		int m_currentVersion;

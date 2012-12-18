@@ -5,6 +5,7 @@
 #include "WorldManager.h"
 #include "support/CCPointExtension.h"
 #include "Tools/Scene.h"
+#include "sprite_nodes/CCSpriteFrameCache.h"
 
 namespace Game
 {
@@ -44,10 +45,14 @@ namespace Game
 		m_gridList.clear();
 	}
 
-	GridProp* TerrainProp::AddGrid( void )
+	bool TerrainProp::AddGrid(GridProp *grid)
 	{
-		m_gridList.push_back(new GridProp);
-		return m_gridList.back();
+		if (m_gridList.end() != std::find(m_gridList.begin(), m_gridList.end(), grid))
+		{
+			return false;
+		}
+		m_gridList.push_back(grid);
+		return true;
 	}
 
 	void TerrainProp::RemoveGrid( GridProp *grid )
@@ -56,7 +61,10 @@ namespace Game
 		{
 			if (*it == grid)
 			{
-				
+				grid->Release();
+				delete *it;
+				m_gridList.erase(it);
+				break;
 			}
 		}
 	}

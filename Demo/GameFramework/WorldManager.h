@@ -46,7 +46,8 @@ namespace Game
 	class WorldManager
 	{
 	public:
-		static WorldManager* Instance();
+		static WorldManager* Instance(void);
+		static void ClearUp(void);
 
 		cocos2d::CCScene* CreateScene();
 		void Init(const char *sceneName);
@@ -80,6 +81,7 @@ namespace Game
 	private:
 		WorldManager(void);
 		~WorldManager(void);
+		static WorldManager *_ins;
 	};
 }
 

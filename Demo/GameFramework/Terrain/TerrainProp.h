@@ -32,7 +32,7 @@ namespace Game
 		void Init(const Tools::Scene *sceneFile);
 
 		void Clear(void);
-		GridProp* AddGrid(void);
+		bool AddGrid(GridProp *grid);
 		void RemoveGrid(GridProp *grid);
 	protected:
 	private:

@@ -4,7 +4,6 @@
 #include "platform/CCCommon.h"
 #include "BuildingProp.h"
 #include "BuildingEvents.h"
-#include "sprite_nodes/CCSpriteFrameCache.h"
 
 namespace Game
 {
@@ -35,7 +34,7 @@ namespace Game
 	void SceneControl::Init(const Tools::Scene *sceneFile)
 	{
 		const Tools::Scene &scene = *sceneFile;
-		
+
         m_sceneName = scene.GetSceneName();
         m_width = scene.GetWidth();
         m_height = scene.GetHeight();
@@ -43,31 +42,35 @@ namespace Game
         m_gridColumn = scene.GetColumn();
         m_gridRow = scene.GetRow();
         m_gridArrayLength = scene.GetGridArrayLength();
+		if (NULL != m_grid)
+		{
+			delete[] m_grid;
+		}
         m_grid = new char[m_gridArrayLength];
-        memcpy(m_grid, scene.GetGrid(), m_gridArrayLength);
-        const Tools::Scene::InfoList &list = scene.GetInfoList();
+        memcpy(m_grid, scene.GetGrids(), m_gridArrayLength);
+        const Tools::Scene::ObjectInfoList &list = scene.GetObjectInfoList();
         m_buildings.resize(list.size());
-        BuildingEventInitLayer event(list.size());
+        BuildingEventInitLayer event(scene.GetImageNameList(), list.size());
         int index = 0;
-        for (Tools::Scene::InfoList::const_iterator it = list.begin(); it != list.end() && index < m_buildings.size(); ++it, ++index)
+        for (Tools::Scene::ObjectInfoList::const_iterator it = list.begin(); it != list.end() && index < m_buildings.size(); ++it, ++index)
         {
         	m_buildings[index] = BuildingProp::Create(*it);
-        	event.m_entity[index] = m_buildings[index]->CreateEntity();
+        	event.m_entity[index] = m_buildings[index];
         }
         NotifyChange(&event);
 	}
-	bool SceneControl::GetGrid(int x, int y)
+	bool SceneControl::GetGridPass(int x, int y)
 	{
 		int pos = y * m_gridColumn + x;
-		int index = pos / sizeof(char);
-		int charPos = pos % sizeof(char);
+		int index = pos / 8;
+		int charPos = pos % 8;
 		return 0 == (m_grid[index] & (1 << charPos));
 	}
 	bool SceneControl::IsPointCanStanc(const cocos2d::CCPoint &point)
 	{
 		int x = (point.x) / GetGridSize();
 		int y = (point.y + GetGridSize() / 2) / GetGridSize();
-		if (GetGrid(x, y))
+		if (GetGridPass(x, y))
 		{
 			return true;
 		}
@@ -76,4 +79,15 @@ namespace Game
 			return false;
 		}
 	}
+
+	bool SceneControl::AddBuilding( BuildingProp *building )
+	{
+		return true;
+	}
+
+	void SceneControl::RemoveBuilding( BuildingProp *building )
+	{
+
+	}
+
 }

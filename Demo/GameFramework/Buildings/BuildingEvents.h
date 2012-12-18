@@ -11,6 +11,7 @@
 
 #include "Base/INotifyEvent.h"
 #include <string>
+#include "Tools/Scene.h"
 
 namespace Game
 {
@@ -40,17 +41,18 @@ namespace Game
 		float m_y;
 	};
 
-	class BuildingEntity;
+	class BuildingProp;
 	struct BuildingEventInitLayer
 		:public INotifyEvent
 	{
 		virtual int GetNotifyEventType(void) const { return ENBuildingEvent::enInitLayer; }
 
-		BuildingEventInitLayer(int size) : m_size(size), m_entity(new BuildingEntity*[size]) {}
+		BuildingEventInitLayer(const Tools::Scene::ImageNameList &imageName, int size) : m_imageNameList(imageName), m_size(size), m_entity(new BuildingProp*[size]) {}
 		~BuildingEventInitLayer(void) { delete[] m_entity; }
 
+		const Tools::Scene::ImageNameList &m_imageNameList;
 		int m_size;
-		BuildingEntity **m_entity;
+		BuildingProp **m_entity;
 	};
 }
 
