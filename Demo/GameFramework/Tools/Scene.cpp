@@ -13,6 +13,7 @@ namespace Tools
 {
 	void ObjectInfo::Read(StreamHelper *stream)
 	{
+		stream->Read(this->m_id);
 		stream->Read(this->m_x);
 		stream->Read(this->m_y);
 		stream->Read(this->m_width);
@@ -24,6 +25,7 @@ namespace Tools
 
 	void ObjectInfo::Write(StreamHelper *stream)
 	{
+		stream->Write(this->m_id);
 		stream->Write(this->m_x);
 		stream->Write(this->m_y);
 		stream->Write(this->m_width);

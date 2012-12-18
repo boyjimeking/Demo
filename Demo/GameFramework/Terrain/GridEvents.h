@@ -10,6 +10,8 @@
 #define __Demo__GridEvents__
 
 #include "../Base/INotifyEvent.h"
+#include <string>
+#include "cocoa/CCGeometry.h"
 
 namespace Game
 {
@@ -18,30 +20,26 @@ namespace Game
 		enum
 		{
 			enError,
-			enLoad,
-			enRelease,
+			enInitGrid,
+			enRemoveGrid,
 		};
 	};
 
-	struct GridEvent_Load
+	struct GridEventInit
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENGridEventType::enLoad; }
+		virtual int GetNotifyEventType( void ) const { return ENGridEventType::enInitGrid; }
+		GridEventInit(const std::string &imageName, const cocos2d::CCPoint &position, const cocos2d::CCSize &size);
 
-		GridEvent_Load(const char *imageName, float posX, float posY);
-
-		const char* GetImageName(void) const { return m_imageName; }
-		float GetPosX(void) const { return m_posX; }
-		float GetPosY(void) const { return m_posY; }
-	private:
-		const char *m_imageName;
-		float m_posX;
-		float m_posY;
+		const std::string &m_imageName;
+		const cocos2d::CCPoint &m_position;
+		const cocos2d::CCSize &m_size;
 	};
-	struct GridEvent_Release
+
+	struct GridEventRemove
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENGridEventType::enRelease; }
+		virtual int GetNotifyEventType( void ) const { return ENGridEventType::enRemoveGrid; }
 	};
 }
 

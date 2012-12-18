@@ -12,6 +12,7 @@
 #include <string>
 #include <vector>
 #include "cocoa/CCGeometry.h"
+#include <list>
 
 namespace Tools
 {
@@ -33,30 +34,20 @@ namespace Game
 
 		void Init(const Tools::Scene *sceneFile);
 
-		bool GetGridPass(int x, int y);
-		bool IsPointCanStanc(const cocos2d::CCPoint &point);
+		void AddObjectImage(const char *imageName);
+		void RemoveObjectImage(const char *imageName);
+		typedef std::list<std::string> ImageList;
+		const ImageList& GetImageList(void) const { return m_imageList; }
 
-		int GetWidth(void) const { return m_width; }
-		int GetHeight(void) const { return m_height; }
-		int GetColumn(void) const { return m_gridColumn; }
-		int GetRow(void) const { return m_gridRow; }
-		int GetGridSize(void) const { return m_gridSize; }
-
-		int GetGridArrayLength(void) const { return m_gridArrayLength; }
-
-		bool AddSceneObject(SceneObjectProp *SceneObject);
-		void RemoveSceneObject(SceneObjectProp *SceneObject);
+		void AddSceneObject(int id, const char *imageName, float x, float y, float width, float height);
+		void ChangeSceneObject(int id, const char *imageName, float x, float y, float width, float height);
+		void RemoveSceneObject(int id);
+		SceneObjectProp* LookupSceneObject(int id);
 	protected:
 	private:
-		std::string m_sceneName;
-		int m_width;
-		int m_height;
-		int m_gridSize;
-		int m_gridColumn;
-		int m_gridRow;
-		char *m_grid;
-		int m_gridArrayLength;
-		std::vector<SceneObjectProp*> m_SceneObjects;
+		typedef std::vector<SceneObjectProp*> SceneObjectList;
+		std::vector<SceneObjectProp*> m_sceneObjects;
+		ImageList m_imageList;
 	};
 }
 

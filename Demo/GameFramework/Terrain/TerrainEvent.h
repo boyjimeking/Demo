@@ -17,26 +17,11 @@ namespace Game
 		enum
 		{
 			enError,
-			enLoadTerrain,
 			enAddTerrain,
 		};
 	};
 
 	class GridEntity;
-	struct TerrainEvent_LoadTerrain
-		:public INotifyEvent
-	{
-		virtual int GetNotifyEventType(void) const { return ENTerrainEventType::enLoadTerrain; }
-
-		TerrainEvent_LoadTerrain(int length) : m_entityArray(new GridEntity*[length]), m_length(length) {}
-		~TerrainEvent_LoadTerrain(void) { delete[] m_entityArray; }
-
-		GridEntity* GetEntity(int index) const { return m_entityArray[index]; }
-		int GetLength(void) const { return m_length; }
-
-		GridEntity **m_entityArray;
-		int m_length;
-	};
 	struct TerrainEvent_AddTerrain
 		:public INotifyEvent
 	{

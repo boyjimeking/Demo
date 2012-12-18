@@ -12,6 +12,8 @@
 #include "Base/INotifyEvent.h"
 #include <string>
 #include "Tools/Scene.h"
+#include "cocoa/CCGeometry.h"
+#include "SceneObjectEntity.h"
 
 namespace Game
 {
@@ -20,40 +22,30 @@ namespace Game
 		enum
 		{
 			enNone,
-			enCreate,
-			enInitLayer,
+			enInitObject,
+			enRemoveObject,
 		};
 	};
 
-	struct SceneObjectEventCreate
-		:public INotifyEvent
-	{
-		virtual int GetNotifyEventType(void) const { return ENSceneObjectEvent::enCreate; }
-
-		SceneObjectEventCreate(const std::string &imageName, float x, float y) : m_imageName(imageName), m_x(x), m_y(y) {}
-
-		const std::string& GetImageName(void) const { return m_imageName; }
-		float GetX(void) const { return m_x; }
-		float GetY(void) const { return m_y; }
-	private:
-		const std::string &m_imageName;
-		float m_x;
-		float m_y;
-	};
-
 	class SceneObjectProp;
-	struct SceneObjectEventInitLayer
+	struct SceneObjectEventInit
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENSceneObjectEvent::enInitLayer; }
+		virtual int GetNotifyEventType(void) const { return ENSceneObjectEvent::enInitObject; }
 
-		SceneObjectEventInitLayer(const Tools::Scene::ImageNameList &imageName, int size) : m_imageNameList(imageName), m_size(size), m_entity(new SceneObjectProp*[size]) {}
-		~SceneObjectEventInitLayer(void) { delete[] m_entity; }
+		SceneObjectEventInit(const std::string &imageName, const cocos2d::CCPoint &position, const cocos2d::CCSize &size);
 
-		const Tools::Scene::ImageNameList &m_imageNameList;
-		int m_size;
-		SceneObjectProp **m_entity;
+		const std::string &m_imageName;
+		const cocos2d::CCPoint &m_position;
+		const cocos2d::CCSize &m_size;
 	};
+
+	struct SceneObjectEventRemove
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENSceneObjectEvent::enRemoveObject; }
+	};
+
 }
 
 #endif /* defined(__Demo__SceneObjectEvents__) */

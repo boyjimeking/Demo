@@ -27,16 +27,22 @@ namespace Game
 		:public INotifier
 	{
 	public:
-		static SceneObjectProp* Create(const Tools::ObjectInfo *sceneInfo);
 		SceneObjectProp(void);
 		virtual ~SceneObjectProp(void);
+		void Init(int id, const char *imageName, float x, float y, float width, float height);
+		void Remove(void);
 		
-		void Init(const Tools::ObjectInfo *sceneInfo);
-		SceneObjectEntity* CreateEntity(void);
+		int GetID(void) const { return m_id; }
+		const std::string& GetImageName(void) const { return m_imageName; }
+		const cocos2d::CCPoint& GetPosition(void) const { return m_position; }
+		const cocos2d::CCSize& GetSize(void) const { return m_size; }
+
 	protected:
 	private:
 		cocos2d::CCPoint m_position;
+		cocos2d::CCSize m_size;
 		std::string m_imageName;
+		int m_id;
 	};
 }
 

@@ -4,6 +4,7 @@
 #include "SceneObjectEntity.h"
 #include "SceneObjectProp.h"
 #include "sprite_nodes/CCSpriteFrameCache.h"
+#include "SceneObjectControlEvent.h"
 
 namespace Game
 {
@@ -21,28 +22,26 @@ namespace Game
 	{
 		switch (event->GetNotifyEventType())
 		{
-			case ENSceneObjectEvent::enInitLayer:
-				{
-					int size = reinterpret_cast<const SceneObjectEventInitLayer*>(event)->m_size;
-					cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(reinterpret_cast<const SceneObjectEventInitLayer*>(event)->m_imageNameList.back().c_str());
-					SceneObjectProp **entityList = reinterpret_cast<const SceneObjectEventInitLayer*>(event)->m_entity;
-					for (int index = 0; index < size; ++index)
-					{
-						SceneObjectEntity *entity = entityList[index]->CreateEntity();
-						m_entityLayer->addChild(entity);
-						if (NULL != entity->getParent())
-						{
-							entity->getParent()->reorderChild(entity, -entity->getPosition().y);
-						}
-						else
-						{
-							entity->_setZOrder(-entity->getPosition().y);
-						}
-					}
-				}
-				break;
-			default:
-				break;
+		case ENSceneObjectControl::enAddObject:
+			{
+				const SceneObjectControlEventAddObject *controlEvent = reinterpret_cast<const SceneObjectControlEventAddObject*>(event);
+				m_entityLayer->addChild(controlEvent->m_entity);
+			}
+			break;
+		case ENSceneObjectControl::enAddObjectImage:
+			{
+				const SceneObjectEventAddObjectImage *controlEvent = reinterpret_cast<const SceneObjectEventAddObjectImage*>(event);
+				cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(controlEvent->m_imageName.c_str());
+			}
+			break;
+		case ENSceneObjectControl::enRemoveObjectImage:
+			{
+				const SceneObjectEventRemoveObjectImage *controlEvent = reinterpret_cast<const SceneObjectEventRemoveObjectImage*>(event);
+				cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFramesFromFile(controlEvent->m_imageName.c_str());
+			}
+			break;
+		default:
+			break;
 		}
 	}
 

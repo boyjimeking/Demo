@@ -21,6 +21,7 @@
 #if COCOS2D_DEBUG
 #include "Tools/DebugLayer.h"
 #endif // COCOS2D_DEBUG
+#include "SceneInfo.h"
 
 
 namespace Game
@@ -44,7 +45,8 @@ namespace Game
 	}
 
 	WorldManager::WorldManager(void)
-		:m_terrain(NULL)
+		:m_sceneInfo(NULL)
+		,m_terrain(NULL)
 		,m_actorsControl(NULL)
 		,m_sceneObjectsControl(NULL)
 		,m_uiControl(NULL)
@@ -67,14 +69,16 @@ namespace Game
 		delete m_actorsControl;
 		delete m_terrain;
 		delete m_client;
+		delete m_sceneInfo;
 #if COCOS2D_DEBUG
 		delete m_debugLayer;
 #endif
 	}
 
-	cocos2d::CCScene* WorldManager::CreateScene()
+	cocos2d::CCScene* WorldManager::Init()
 	{
 		MainScene *scene = MainScene::create();
+		m_sceneInfo = new SceneInfo;
 		//Box2D
 		{
 			m_physicalControl = new PhysicalControl;
@@ -138,7 +142,7 @@ namespace Game
     	GetActorsControl()->Tick(dt);
     	GetPhysicalControl()->Update(dt);
     }
-    void WorldManager::Init(const char *sceneName)
+    void WorldManager::InitSceneByFile(const char *sceneName)
     {
 		const char *fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(sceneName);
 		unsigned long size = 0;
@@ -147,18 +151,14 @@ namespace Game
 		scene.Read(buff, size);
 		delete[] buff;
 
-		Init(&scene);
+		InitScene(&scene);
     }
 
-	void WorldManager::Init( Tools::Scene *scene )
+	void WorldManager::InitScene( const Tools::Scene *scene )
 	{
-		this->GetTerrain()->Init(scene);
-		this->GetSceneObjectsControl()->Init(scene);
-	}
-
-	cocos2d::CCNode* WorldManager::GetRoot( void ) const
-	{
-		return m_root;
+		GetSceneInfo()->Init(scene);
+		GetTerrainProp()->Init(scene);
+		GetSceneObjectsControl()->Init(scene);
 	}
 
 }

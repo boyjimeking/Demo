@@ -27,17 +27,31 @@ namespace Game
 	{
 		switch (event->GetNotifyEventType())
 		{
-			case ENSceneObjectEvent::enCreate:
+		case ENSceneObjectEvent::enInitObject:
+			{
+				const SceneObjectEventInit *objectEvent = reinterpret_cast<const SceneObjectEventInit*>(event);
+				cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(objectEvent->m_imageName.c_str());
+				setDisplayFrame(frame);
+				setPosition(objectEvent->m_position);
+				setContentSize(objectEvent->m_size);
+				setAnchorPoint(cocos2d::CCPointZero);
+				if (NULL != getParent())
 				{
-					this->setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
-					const SceneObjectEventCreate *createEvent = reinterpret_cast<const SceneObjectEventCreate*>(event);
-					setPosition(cocos2d::CCPointMake(createEvent->GetX(), createEvent->GetY()));
-					cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(createEvent->GetImageName().c_str());
-					setDisplayFrame(frame);
+					getParent()->reorderChild(this, -getPosition().y);
 				}
-				break;
-			default:
-				break;
+				else
+				{
+					_setZOrder(-getPosition().y);
+				}
+			}
+			break;
+		case ENSceneObjectEvent::enRemoveObject:
+			{
+				getParent()->removeChild(this, true);
+			}
+			break;
+		default:
+			break;
 		}
 	}
 }

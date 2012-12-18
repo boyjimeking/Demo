@@ -31,9 +31,10 @@ namespace Game
 
 		void Init(const Tools::Scene *sceneFile);
 
-		void Clear(void);
-		bool AddGrid(GridProp *grid);
-		void RemoveGrid(GridProp *grid);
+		void AddTerrainGrid(int id, const char *imageName, float x, float y, float width, float height);
+		void ChangeTerrainGrid(int id, const char *imageName, float x, float y, float width, float height);
+		void RemoveTerrainGrid(int id);
+		GridProp* LookupGrid(int id);
 	protected:
 	private:
 		typedef std::vector<GridProp*> GridList;

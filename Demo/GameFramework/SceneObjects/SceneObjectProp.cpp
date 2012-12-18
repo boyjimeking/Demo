@@ -5,12 +5,6 @@
 
 namespace Game
 {
-	SceneObjectProp* SceneObjectProp::Create(const Tools::ObjectInfo *sceneInfo)
-	{
-		SceneObjectProp *prop = new SceneObjectProp();
-		prop->Init(sceneInfo);
-		return prop;
-	}
 	SceneObjectProp::SceneObjectProp(void)
 	{
 
@@ -19,18 +13,21 @@ namespace Game
 	{
 
 	}
-	void SceneObjectProp::Init(const Tools::ObjectInfo *sceneInfo)
-	{
-		m_position = cocos2d::CCPointMake(sceneInfo->m_x, sceneInfo->m_y);
-		m_imageName = sceneInfo->m_imageName;
-	}
-	SceneObjectEntity* SceneObjectProp::CreateEntity(void)
-	{
-		SceneObjectEntity *entity = SceneObjectEntity::Create();
-		AttachObserver(entity);
 
-		SceneObjectEventCreate event(m_imageName, m_position.x, m_position.y);
+	void SceneObjectProp::Init( int id, const char *imageName, float x, float y, float width, float height )
+	{
+		m_id = id;
+		m_imageName = imageName;
+		m_position = cocos2d::CCPointMake(x, y);
+		m_size = cocos2d::CCSizeMake(width, height);
+		SceneObjectEventInit event(m_imageName, m_position, m_size);
 		NotifyChange(&event);
-		return entity;
 	}
+
+	void SceneObjectProp::Remove( void )
+	{
+		SceneObjectEventRemove event;
+		NotifyChange(&event);
+	}
+
 }

@@ -3,7 +3,7 @@
 
 AppTest::AppTest(void)
 {
-	Game::WorldManager::Instance()->CreateScene();
+	Game::WorldManager::Instance()->Init();
 }
 
 AppTest::~AppTest(void)

@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 //
-//	file path:	E:\Codes\Demo\Demo\GameFramework\Tools
+//	file path:	GameFramework/Tools
 //	created:	2012-12-17
 //	author:		Mingzhen Zhang
 //

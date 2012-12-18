@@ -46,19 +46,14 @@ namespace Game
 		}
 		switch (event->GetNotifyEventType())
 		{
-			case ENTerrainEventType::enLoadTerrain:
-				{
-					const TerrainEvent_LoadTerrain *loadEvent = reinterpret_cast<const TerrainEvent_LoadTerrain*>(event);
-					for (int index = 0; index < loadEvent->GetLength(); ++index)
-					{
-						GridEntity *entity = loadEvent->GetEntity(index);
-						this->addChild(entity);
-						entity->setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
-					}
-				}
-				break;
-			default:
-				break;
+		case ENTerrainEventType::enAddTerrain:
+			{
+				const TerrainEvent_AddTerrain *terrainEvent = reinterpret_cast<const TerrainEvent_AddTerrain*>(event);
+				addChild(terrainEvent->m_eneity);
+			}
+			break;
+		default:
+			break;
 		}
 	}
 	void TerrainLayer::ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent)

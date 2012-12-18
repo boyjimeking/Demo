@@ -1698,7 +1698,7 @@ inline bool operator!=(const GTEST_10_TUPLE_(T)& t,
 // Determine whether the compiler supports Microsoft's Structured Exception
 // Handling.  This is supported by several Windows compilers but generally
 // does not exist on any other system.
-//#define GTEST_HAS_SEH 0
+#define GTEST_HAS_SEH 0
 #ifndef GTEST_HAS_SEH
 // The user didn't tell us, so we need to figure it out.
 

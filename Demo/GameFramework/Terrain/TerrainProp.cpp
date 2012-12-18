@@ -15,58 +15,64 @@ namespace Game
 	}
 	TerrainProp::~TerrainProp(void)
 	{
-		Clear();
+		
 	}
 
 	void TerrainProp::Init(const Tools::Scene *sceneFile)
 	{
-		Clear();
-		const Tools::Scene::TerrainInfoList &list = sceneFile->GetTerrainList();
-		TerrainEvent_LoadTerrain event(list.size());
-		m_gridList.resize(list.size());
-		int currentIndex = 0;
-		for (Tools::Scene::TerrainInfoList::const_iterator it = list.begin(); it != list.end(); ++it, ++currentIndex)
-        {
-        	m_gridList[currentIndex] = new GridProp;
-			event.m_entityArray[currentIndex] = new GridEntity;
-			m_gridList[currentIndex]->AttachObserver(event.m_entityArray[currentIndex]);
-			m_gridList[currentIndex]->Load((*it)->m_imageName, (*it)->m_x, (*it)->m_y);
-        }
+		typedef Tools::Scene::TerrainInfoList InfoList;
+		const InfoList &list = sceneFile->GetTerrainList();
+		for (InfoList::const_iterator it = list.begin(); list.end() != it; ++it)
+		{
+			Tools::TerrainInfo *info = (*it);
+			AddTerrainGrid(info->m_id, info->m_imageName, info->m_x, info->m_y, info->m_width, info->m_height);
+		}
+	}
 
+	void TerrainProp::AddTerrainGrid( int id, const char *imageName, float x, float y, float width, float height )
+	{
+		GridProp *prop = new GridProp;
+		GridEntity *entity = new GridEntity;
+
+		TerrainEvent_AddTerrain event(entity);
 		NotifyChange(&event);
+
+		prop->AttachObserver(entity);
+		prop->Init(id, imageName, x, y, width, height);
+		m_gridList.push_back(prop);
 	}
 
-	void TerrainProp::Clear( void )
+	void TerrainProp::ChangeTerrainGrid( int id, const char *imageName, float x, float y, float width, float height )
 	{
-		for (int index = 0; index < m_gridList.size() ; ++index)
-		{
-			delete m_gridList[index];
-		}
-		m_gridList.clear();
+		GridProp *prop = LookupGrid(id);
+		prop->Init(id, imageName, x, y, width, height);
 	}
 
-	bool TerrainProp::AddGrid(GridProp *grid)
-	{
-		if (m_gridList.end() != std::find(m_gridList.begin(), m_gridList.end(), grid))
-		{
-			return false;
-		}
-		m_gridList.push_back(grid);
-		return true;
-	}
-
-	void TerrainProp::RemoveGrid( GridProp *grid )
+	void TerrainProp::RemoveTerrainGrid( int id )
 	{
 		for (GridList::iterator it = m_gridList.begin(); m_gridList.end() != it; ++it)
 		{
-			if (*it == grid)
+			if ((*it)->GetID() == id)
 			{
-				grid->Release();
-				delete *it;
+				GridProp *prop = *it;
 				m_gridList.erase(it);
+				prop->Remove();
+				delete prop;
 				break;
 			}
 		}
+	}
+
+	GridProp* TerrainProp::LookupGrid( int id )
+	{
+		for (GridList::iterator it = m_gridList.begin(); m_gridList.end() != it; ++it)
+		{
+			if ((*it)->GetID() == id)
+			{
+				return *it;
+			}
+		}
+		return NULL;
 	}
 
 }

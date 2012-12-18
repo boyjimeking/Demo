@@ -3,91 +3,113 @@
 #include "Tools/Scene.h"
 #include "platform/CCCommon.h"
 #include "SceneObjectProp.h"
-#include "SceneObjectEvents.h"
+#include "SceneObjectEntity.h"
+#include "SceneObjectControlEvent.h"
 
 namespace Game
 {
 	SceneObjectsControl::SceneObjectsControl(void)
-	:m_width(0)
-	,m_height(0)
-	,m_gridSize(0)
-	,m_gridColumn(0)
-	,m_gridRow(0)
-	,m_grid(NULL)
-	,m_gridArrayLength(0)
 	{
 
 	}
 	SceneObjectsControl::~SceneObjectsControl(void)
 	{
-		if (NULL != m_grid)
+		for (int index = 0; index < m_sceneObjects.size(); ++index)
 		{
-			delete m_grid;
+			delete m_sceneObjects[index];
 		}
-		for (int index = 0; index < m_SceneObjects.size(); ++index)
-		{
-			delete m_SceneObjects[index];
-		}
-		m_SceneObjects.clear();
+		m_sceneObjects.clear();
 	}
 
 	void SceneObjectsControl::Init(const Tools::Scene *sceneFile)
 	{
-		const Tools::Scene &scene = *sceneFile;
-
-        m_sceneName = scene.GetSceneName();
-        m_width = scene.GetWidth();
-        m_height = scene.GetHeight();
-        m_gridSize = scene.GetGridSize();
-        m_gridColumn = scene.GetColumn();
-        m_gridRow = scene.GetRow();
-        m_gridArrayLength = scene.GetGridArrayLength();
-		if (NULL != m_grid)
+		typedef Tools::Scene::ImageNameList ImageList;
+		const ImageList &imageList = sceneFile->GetImageNameList();
+		for (ImageList::const_iterator it = imageList.begin(); imageList.end() != it; ++it)
 		{
-			delete[] m_grid;
+			AddObjectImage(it->c_str());
 		}
-        m_grid = new char[m_gridArrayLength];
-        memcpy(m_grid, scene.GetGrids(), m_gridArrayLength);
-        const Tools::Scene::ObjectInfoList &list = scene.GetObjectInfoList();
-        m_SceneObjects.resize(list.size());
-        SceneObjectEventInitLayer event(scene.GetImageNameList(), list.size());
-        int index = 0;
-        for (Tools::Scene::ObjectInfoList::const_iterator it = list.begin(); it != list.end() && index < m_SceneObjects.size(); ++it, ++index)
-        {
-        	m_SceneObjects[index] = SceneObjectProp::Create(*it);
-        	event.m_entity[index] = m_SceneObjects[index];
-        }
-        NotifyChange(&event);
-	}
-	bool SceneObjectsControl::GetGridPass(int x, int y)
-	{
-		int pos = y * m_gridColumn + x;
-		int index = pos / 8;
-		int charPos = pos % 8;
-		return 0 == (m_grid[index] & (1 << charPos));
-	}
-	bool SceneObjectsControl::IsPointCanStanc(const cocos2d::CCPoint &point)
-	{
-		int x = (point.x) / GetGridSize();
-		int y = (point.y + GetGridSize() / 2) / GetGridSize();
-		if (GetGridPass(x, y))
+		typedef Tools::Scene::ObjectInfoList InfoList;
+        const InfoList &list = sceneFile->GetObjectInfoList();
+		for (InfoList::const_iterator it = list.begin(); list.end() != it; ++it)
 		{
-			return true;
-		}
-		else
-		{
-			return false;
+			Tools::ObjectInfo *info = *it;
+			AddSceneObject(info->m_id, info->m_imageName, info->m_x, info->m_y, info->m_width, info->m_height);
 		}
 	}
 
-	bool SceneObjectsControl::AddSceneObject( SceneObjectProp *SceneObject )
+	void SceneObjectsControl::AddSceneObject( int id, const char *imageName, float x, float y, float width, float height )
 	{
-		return true;
+		SceneObjectProp *prop = new SceneObjectProp;
+		SceneObjectEntity *entity = SceneObjectEntity::Create();
+
+		SceneObjectControlEventAddObject event(entity);
+		NotifyChange(&event);
+
+		prop->AttachObserver(entity);
+		prop->Init(id, imageName, x, y, width, height);
+		m_sceneObjects.push_back(prop);
+	}
+	void SceneObjectsControl::ChangeSceneObject( int id, const char *imageName, float x, float y, float width, float height )
+	{
+		SceneObjectProp *prop = LookupSceneObject(id);
+		prop->Init(id, imageName, x, y, width, height);
+	}
+	void SceneObjectsControl::RemoveSceneObject( int id )
+	{
+		for (SceneObjectList::iterator it = m_sceneObjects.begin(); m_sceneObjects.end() != it; ++it)
+		{
+			if ((*it)->GetID() == id)
+			{
+				SceneObjectProp *prop = *it;
+				m_sceneObjects.erase(it);
+				prop->Remove();
+				delete prop;
+				break;
+			}
+		}
 	}
 
-	void SceneObjectsControl::RemoveSceneObject( SceneObjectProp *SceneObject )
+	SceneObjectProp* SceneObjectsControl::LookupSceneObject( int id )
 	{
+		for (SceneObjectList::iterator it = m_sceneObjects.begin(); m_sceneObjects.end() != it; ++it)
+		{
+			if ((*it)->GetID() == id)
+			{
+				return *it;
+			}
+		}
+		return NULL;
+	}
 
+	void SceneObjectsControl::AddObjectImage( const char *imageName )
+	{
+		for (ImageList::iterator it = m_imageList.begin(); m_imageList.end() != it; ++it)
+		{
+			if (0 == it->compare(imageName))
+			{
+				return;
+			}
+		}
+		m_imageList.push_back(imageName);
+		SceneObjectEventAddObjectImage event(m_imageList.back());
+		NotifyChange(&event);
+	}
+
+	void SceneObjectsControl::RemoveObjectImage( const char *imageName )
+	{
+		std::string strName;
+		for (ImageList::iterator it = m_imageList.begin(); m_imageList.end() != it; ++it)
+		{
+			if (0 == it->compare(imageName))
+			{
+				strName = *it;
+				m_imageList.erase(it);
+				break;
+			}
+		}
+		SceneObjectEventRemoveObjectImage event(strName);
+		NotifyChange(&event);
 	}
 
 }

@@ -35,6 +35,7 @@ namespace Tools
 
 namespace Game
 {
+	class SceneInfo;
 	class TerrainProp;
 	class ActorsControl;
 	class SceneObjectsControl;
@@ -49,25 +50,34 @@ namespace Game
 		static WorldManager* Instance(void);
 		static void ClearUp(void);
 
-		cocos2d::CCScene* CreateScene();
-		void Init(const char *sceneName);
-		void Init(Tools::Scene *scene);
-		TerrainProp* GetTerrain(void) const { return m_terrain; }
+		cocos2d::CCScene* Init();
+
+		void InitSceneByFile(const char *sceneName);
+		void InitScene(const Tools::Scene *scene);
+		//获取当前场景信息
+		SceneInfo* GetSceneInfo(void) const { return m_sceneInfo; }
+		//获取角色控制器
 		ActorsControl * GetActorsControl(void) const { return m_actorsControl; }
-		SceneObjectsControl * GetSceneObjectsControl(void) const { return m_sceneObjectsControl; }
+		//获取地表属性
+		TerrainProp* GetTerrainProp(void) const { return m_terrain; }
+		//获取场景物件控制
+		SceneObjectsControl* GetSceneObjectsControl(void) const { return m_sceneObjectsControl; }
+		//获取摄像机
         Camera* GetCamera(void) const { return m_camera; }
+		//获取物理控制
         PhysicalControl* GetPhysicalControl(void) const { return m_physicalControl; }
-		cocos2d::CCNode* GetRoot(void) const;
+		//获取逻辑根节点
+		cocos2d::CCNode* GetRoot(void) const { return m_root; }
 
         static cocos2d::CCPoint WorldPosToDesign(const cocos2d::CCPoint &worldPos);
         static cocos2d::CCPoint DesignPosToWorld(const cocos2d::CCPoint &screenPos);
 
         void update(float dt);
 
-		void SetSceneScale(float scale);
 	protected:
-		TerrainProp *m_terrain;
+		SceneInfo *m_sceneInfo;
 		ActorsControl *m_actorsControl;
+		TerrainProp *m_terrain;
 		SceneObjectsControl *m_sceneObjectsControl;
 		GUI::UIControl *m_uiControl;
         Camera *m_camera;

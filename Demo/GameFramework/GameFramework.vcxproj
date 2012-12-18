@@ -35,6 +35,8 @@
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="Physical\PhysicalControl.cpp" />
     <ClCompile Include="Physical\PhysicalObj.cpp" />
+    <ClCompile Include="SceneInfo.cpp" />
+    <ClCompile Include="SceneObjects\SceneObjectControlEvent.cpp" />
     <ClCompile Include="SceneObjects\SceneObjectEntity.cpp" />
     <ClCompile Include="SceneObjects\SceneObjectEvents.cpp" />
     <ClCompile Include="SceneObjects\SceneObjectProp.cpp" />
@@ -83,6 +85,8 @@
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="Physical\PhysicalControl.h" />
     <ClInclude Include="Physical\PhysicalObj.h" />
+    <ClInclude Include="SceneInfo.h" />
+    <ClInclude Include="SceneObjects\SceneObjectControlEvent.h" />
     <ClInclude Include="SceneObjects\SceneObjectEntity.h" />
     <ClInclude Include="SceneObjects\SceneObjectEvents.h" />
     <ClInclude Include="SceneObjects\SceneObjectProp.h" />
