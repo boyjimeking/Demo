@@ -71,6 +71,8 @@ namespace Game
 
         static cocos2d::CCPoint WorldPosToDesign(const cocos2d::CCPoint &worldPos);
         static cocos2d::CCPoint DesignPosToWorld(const cocos2d::CCPoint &screenPos);
+		static float LogicToPoint(float size);
+		static float PointToLogic(float size);
 
         void update(float dt);
 

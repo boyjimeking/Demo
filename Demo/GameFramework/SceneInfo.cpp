@@ -65,4 +65,15 @@ namespace Game
 	{
 		m_sceneName = val;
 	}
+
+	float SceneInfo::LogicToPoint( float size )
+	{
+		return size * m_transScale;
+	}
+
+	float SceneInfo::PointToLogic( float size )
+	{
+		return size / m_transScale;
+	}
+
 }

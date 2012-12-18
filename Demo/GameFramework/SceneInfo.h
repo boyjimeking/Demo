@@ -29,8 +29,8 @@ namespace Game
 		bool GetGridPass(int x, int y);
 		bool IsPointCanStanc(const cocos2d::CCPoint &point);
 
-		int GetWidth(void) const { return m_width; }
-		int GetHeight(void) const { return m_height; }
+		float GetWidth(void) const { return m_width; }
+		float GetHeight(void) const { return m_height; }
 		int GetColumn(void) const { return m_gridColumn; }
 		int GetRow(void) const { return m_gridRow; }
 		int GetGridSize(void) const { return m_gridSize; }
@@ -40,17 +40,20 @@ namespace Game
 		const std::string& GetSceneName() const { return m_sceneName; }
 		void SetSceneName(const std::string &val);
 		void SetSceneScale(float scale);
-		int GetTransScale(void) const { return m_transScale; }
+		float GetTransScale(void) const { return m_transScale; }
+
+		float LogicToPoint(float size);
+		float PointToLogic(float size);
 	protected:
 		std::string m_sceneName;
-		int m_width;
-		int m_height;
+		float m_width;
+		float m_height;
 		int m_gridSize;
 		int m_gridColumn;
 		int m_gridRow;
 		char *m_grid;
 		int m_gridArrayLength;
-		int m_transScale;
+		float m_transScale;
 	private:
 
 	};

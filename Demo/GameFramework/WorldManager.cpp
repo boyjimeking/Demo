@@ -136,7 +136,16 @@ namespace Game
     cocos2d::CCPoint WorldManager::DesignPosToWorld(const cocos2d::CCPoint &screenPos)
     {
     	return Instance()->GetCamera()->ConvertDesignPosToWorld(screenPos);
-    }
+	}
+	float WorldManager::LogicToPoint( float size )
+	{
+		return Instance()->GetSceneInfo()->LogicToPoint(size);
+	}
+
+	float WorldManager::PointToLogic( float size )
+	{
+		return Instance()->GetSceneInfo()->PointToLogic(size);
+	}
     void WorldManager::update(float dt)
     {
     	GetActorsControl()->Tick(dt);
@@ -160,5 +169,6 @@ namespace Game
 		GetTerrainProp()->Init(scene);
 		GetSceneObjectsControl()->Init(scene);
 	}
+
 
 }
