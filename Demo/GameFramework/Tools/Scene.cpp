@@ -101,7 +101,8 @@ namespace Tools
 		stream.Write(imageNameSize);
 		for (ImageNameList::iterator it = m_imageName.begin(); m_imageName.end() != it; ++it)
 		{
-			unsigned int length = it->size();
+            std::string &str = *it;
+			unsigned int length = str.size();
 			stream.Write(&length);
 			stream.Write(it->c_str(), length);
 		}

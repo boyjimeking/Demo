@@ -7,7 +7,7 @@
 //
 
 #include "Client.h"
-#include "CSProtocol/CSPipeline.h"
+#include "../../CSProtocol/CSPipeline.h"
 #include "WorldManager.h"
 #include "Actors/ActorsControl.h"
 #include "Actors/ActorProp.h"

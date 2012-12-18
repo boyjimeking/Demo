@@ -8,7 +8,7 @@
 
 #include "MainScene.h"
 #include "WorldManager.h"
-#include "CSProtocol/CSPipeline.h"
+#include "../../CSProtocol/CSPipeline.h"
 namespace Game
 {
 	MainScene* MainScene::create(void)

@@ -213,10 +213,6 @@
 		D30D90281666F3A9000B95E1 /* INotifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90031666F3A9000B95E1 /* INotifier.cpp */; };
 		D30D90291666F3A9000B95E1 /* INotifyEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90051666F3A9000B95E1 /* INotifyEvent.cpp */; };
 		D30D902A1666F3A9000B95E1 /* IObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90071666F3A9000B95E1 /* IObserver.cpp */; };
-		D30D902B1666F3A9000B95E1 /* BuildingEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D900A1666F3A9000B95E1 /* BuildingEntity.cpp */; };
-		D30D902C1666F3A9000B95E1 /* BuildingProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D900C1666F3A9000B95E1 /* BuildingProp.cpp */; };
-		D30D902D1666F3A9000B95E1 /* SceneControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D900E1666F3A9000B95E1 /* SceneControl.cpp */; };
-		D30D902E1666F3A9000B95E1 /* BuildingsLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90101666F3A9000B95E1 /* BuildingsLayer.cpp */; };
 		D30D902F1666F3A9000B95E1 /* TerrainEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90131666F3A9000B95E1 /* TerrainEvent.cpp */; };
 		D30D90301666F3A9000B95E1 /* TerrainLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90151666F3A9000B95E1 /* TerrainLayer.cpp */; };
 		D30D90311666F3A9000B95E1 /* TerrainProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90171666F3A9000B95E1 /* TerrainProp.cpp */; };
@@ -510,7 +506,6 @@
 		D34839A916673054008869A3 /* actor.png in Resources */ = {isa = PBXBuildFile; fileRef = D34839A816673054008869A3 /* actor.png */; };
 		D34839AC16673409008869A3 /* ActorEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839AB16673409008869A3 /* ActorEvents.cpp */; };
 		D34839AF16673606008869A3 /* ActorsControlEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839AE16673605008869A3 /* ActorsControlEvents.cpp */; };
-		D34919E01676D0D600C41573 /* BuildingEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34919DE1676D0D600C41573 /* BuildingEvents.cpp */; };
 		D34919E41676D81D00C41573 /* test1.plist in Resources */ = {isa = PBXBuildFile; fileRef = D34919E21676D81D00C41573 /* test1.plist */; };
 		D34919E51676D81D00C41573 /* test1.png in Resources */ = {isa = PBXBuildFile; fileRef = D34919E31676D81D00C41573 /* test1.png */; };
 		D37B4F8E167711B1003DDC7E /* building.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37B4F8C167711B1003DDC7E /* building.plist */; };
@@ -572,6 +567,14 @@
 		D3939DC8166C889100DA4F56 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3939D9A166C889000DA4F56 /* b2Rope.cpp */; };
 		D3939DD7166C911A00DA4F56 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3939DD5166C911900DA4F56 /* MainScene.cpp */; };
 		D3939DE4166CAB6F00DA4F56 /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = D3939DE3166CAB6F00DA4F56 /* ReadMe */; };
+		D3E54D3516805E1C00FD52C2 /* SceneInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3E54D3316805E1C00FD52C2 /* SceneInfo.cpp */; };
+		D3E54D4316805E5A00FD52C2 /* SceneObjectControlEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3E54D3716805E5A00FD52C2 /* SceneObjectControlEvent.cpp */; };
+		D3E54D4416805E5A00FD52C2 /* SceneObjectEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3E54D3916805E5A00FD52C2 /* SceneObjectEntity.cpp */; };
+		D3E54D4516805E5A00FD52C2 /* SceneObjectEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3E54D3B16805E5A00FD52C2 /* SceneObjectEvents.cpp */; };
+		D3E54D4616805E5A00FD52C2 /* SceneObjectProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3E54D3D16805E5A00FD52C2 /* SceneObjectProp.cpp */; };
+		D3E54D4716805E5B00FD52C2 /* SceneObjectsControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3E54D3F16805E5A00FD52C2 /* SceneObjectsControl.cpp */; };
+		D3E54D4816805E5B00FD52C2 /* SceneObjectsLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3E54D4116805E5A00FD52C2 /* SceneObjectsLayer.cpp */; };
+		D3E54D4B16805E8C00FD52C2 /* DebugLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3E54D4916805E8C00FD52C2 /* DebugLayer.cpp */; };
 		D3EE8F7D16758305004C7332 /* terrain_8.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7816758305004C7332 /* terrain_8.png */; };
 		D3EE8F7E16758305004C7332 /* terrain_9.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7916758305004C7332 /* terrain_9.png */; };
 		D3EE8F7F16758305004C7332 /* terrain_10.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7A16758305004C7332 /* terrain_10.png */; };
@@ -1045,14 +1048,6 @@
 		D30D90061666F3A9000B95E1 /* INotifyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INotifyEvent.h; sourceTree = "<group>"; };
 		D30D90071666F3A9000B95E1 /* IObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IObserver.cpp; sourceTree = "<group>"; };
 		D30D90081666F3A9000B95E1 /* IObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IObserver.h; sourceTree = "<group>"; };
-		D30D900A1666F3A9000B95E1 /* BuildingEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingEntity.cpp; sourceTree = "<group>"; };
-		D30D900B1666F3A9000B95E1 /* BuildingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingEntity.h; sourceTree = "<group>"; };
-		D30D900C1666F3A9000B95E1 /* BuildingProp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingProp.cpp; sourceTree = "<group>"; };
-		D30D900D1666F3A9000B95E1 /* BuildingProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingProp.h; sourceTree = "<group>"; };
-		D30D900E1666F3A9000B95E1 /* SceneControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneControl.cpp; sourceTree = "<group>"; };
-		D30D900F1666F3A9000B95E1 /* SceneControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneControl.h; sourceTree = "<group>"; };
-		D30D90101666F3A9000B95E1 /* BuildingsLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingsLayer.cpp; sourceTree = "<group>"; };
-		D30D90111666F3A9000B95E1 /* BuildingsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingsLayer.h; sourceTree = "<group>"; };
 		D30D90131666F3A9000B95E1 /* TerrainEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TerrainEvent.cpp; sourceTree = "<group>"; };
 		D30D90141666F3A9000B95E1 /* TerrainEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerrainEvent.h; sourceTree = "<group>"; };
 		D30D90151666F3A9000B95E1 /* TerrainLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TerrainLayer.cpp; sourceTree = "<group>"; };
@@ -10105,8 +10100,6 @@
 		D34839AB16673409008869A3 /* ActorEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorEvents.cpp; sourceTree = "<group>"; };
 		D34839AD166735F7008869A3 /* ActorsControlEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActorsControlEvents.h; sourceTree = "<group>"; };
 		D34839AE16673605008869A3 /* ActorsControlEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorsControlEvents.cpp; sourceTree = "<group>"; };
-		D34919DE1676D0D600C41573 /* BuildingEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingEvents.cpp; sourceTree = "<group>"; };
-		D34919DF1676D0D600C41573 /* BuildingEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingEvents.h; sourceTree = "<group>"; };
 		D34919E21676D81D00C41573 /* test1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = test1.plist; path = Resources/test1.plist; sourceTree = "<group>"; };
 		D34919E31676D81D00C41573 /* test1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test1.png; path = Resources/test1.png; sourceTree = "<group>"; };
 		D37B4F8C167711B1003DDC7E /* building.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = building.plist; path = Resources/building.plist; sourceTree = "<group>"; };
@@ -10218,6 +10211,22 @@
 		D3939DD5166C911900DA4F56 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
 		D3939DD6166C911900DA4F56 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		D3939DE3166CAB6F00DA4F56 /* ReadMe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
+		D3E54D3316805E1C00FD52C2 /* SceneInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneInfo.cpp; sourceTree = "<group>"; };
+		D3E54D3416805E1C00FD52C2 /* SceneInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneInfo.h; sourceTree = "<group>"; };
+		D3E54D3716805E5A00FD52C2 /* SceneObjectControlEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneObjectControlEvent.cpp; path = Demo/GameFramework/SceneObjects/SceneObjectControlEvent.cpp; sourceTree = SOURCE_ROOT; };
+		D3E54D3816805E5A00FD52C2 /* SceneObjectControlEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneObjectControlEvent.h; path = Demo/GameFramework/SceneObjects/SceneObjectControlEvent.h; sourceTree = SOURCE_ROOT; };
+		D3E54D3916805E5A00FD52C2 /* SceneObjectEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneObjectEntity.cpp; path = Demo/GameFramework/SceneObjects/SceneObjectEntity.cpp; sourceTree = SOURCE_ROOT; };
+		D3E54D3A16805E5A00FD52C2 /* SceneObjectEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneObjectEntity.h; path = Demo/GameFramework/SceneObjects/SceneObjectEntity.h; sourceTree = SOURCE_ROOT; };
+		D3E54D3B16805E5A00FD52C2 /* SceneObjectEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneObjectEvents.cpp; path = Demo/GameFramework/SceneObjects/SceneObjectEvents.cpp; sourceTree = SOURCE_ROOT; };
+		D3E54D3C16805E5A00FD52C2 /* SceneObjectEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneObjectEvents.h; path = Demo/GameFramework/SceneObjects/SceneObjectEvents.h; sourceTree = SOURCE_ROOT; };
+		D3E54D3D16805E5A00FD52C2 /* SceneObjectProp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneObjectProp.cpp; path = Demo/GameFramework/SceneObjects/SceneObjectProp.cpp; sourceTree = SOURCE_ROOT; };
+		D3E54D3E16805E5A00FD52C2 /* SceneObjectProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneObjectProp.h; path = Demo/GameFramework/SceneObjects/SceneObjectProp.h; sourceTree = SOURCE_ROOT; };
+		D3E54D3F16805E5A00FD52C2 /* SceneObjectsControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneObjectsControl.cpp; path = Demo/GameFramework/SceneObjects/SceneObjectsControl.cpp; sourceTree = SOURCE_ROOT; };
+		D3E54D4016805E5A00FD52C2 /* SceneObjectsControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneObjectsControl.h; path = Demo/GameFramework/SceneObjects/SceneObjectsControl.h; sourceTree = SOURCE_ROOT; };
+		D3E54D4116805E5A00FD52C2 /* SceneObjectsLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneObjectsLayer.cpp; path = Demo/GameFramework/SceneObjects/SceneObjectsLayer.cpp; sourceTree = SOURCE_ROOT; };
+		D3E54D4216805E5A00FD52C2 /* SceneObjectsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneObjectsLayer.h; path = Demo/GameFramework/SceneObjects/SceneObjectsLayer.h; sourceTree = SOURCE_ROOT; };
+		D3E54D4916805E8C00FD52C2 /* DebugLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebugLayer.cpp; sourceTree = "<group>"; };
+		D3E54D4A16805E8C00FD52C2 /* DebugLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugLayer.h; sourceTree = "<group>"; };
 		D3EE8F7816758305004C7332 /* terrain_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_8.png; path = Resources/terrain_8.png; sourceTree = "<group>"; };
 		D3EE8F7916758305004C7332 /* terrain_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_9.png; path = Resources/terrain_9.png; sourceTree = "<group>"; };
 		D3EE8F7A16758305004C7332 /* terrain_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_10.png; path = Resources/terrain_10.png; sourceTree = "<group>"; };
@@ -11186,13 +11195,15 @@
 				D348399E1667120A008869A3 /* Camera */,
 				D30D8FF91666F3A9000B95E1 /* Actors */,
 				D30D90021666F3A9000B95E1 /* Base */,
-				D30D90091666F3A9000B95E1 /* Buildings */,
+				D30D90091666F3A9000B95E1 /* SceneObjects */,
 				D30D90121666F3A9000B95E1 /* Terrain */,
 				D30D90191666F3A9000B95E1 /* UI */,
 				D30D90221666F3A9000B95E1 /* WorldManager.cpp */,
 				D30D90231666F3A9000B95E1 /* WorldManager.h */,
 				D3939DD5166C911900DA4F56 /* MainScene.cpp */,
 				D3939DD6166C911900DA4F56 /* MainScene.h */,
+				D3E54D3316805E1C00FD52C2 /* SceneInfo.cpp */,
+				D3E54D3416805E1C00FD52C2 /* SceneInfo.h */,
 				D3939DE3166CAB6F00DA4F56 /* ReadMe */,
 			);
 			path = GameFramework;
@@ -11235,20 +11246,23 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		D30D90091666F3A9000B95E1 /* Buildings */ = {
+		D30D90091666F3A9000B95E1 /* SceneObjects */ = {
 			isa = PBXGroup;
 			children = (
-				D30D900A1666F3A9000B95E1 /* BuildingEntity.cpp */,
-				D30D900B1666F3A9000B95E1 /* BuildingEntity.h */,
-				D30D900C1666F3A9000B95E1 /* BuildingProp.cpp */,
-				D30D900D1666F3A9000B95E1 /* BuildingProp.h */,
-				D34919DE1676D0D600C41573 /* BuildingEvents.cpp */,
-				D34919DF1676D0D600C41573 /* BuildingEvents.h */,
-				D30D900E1666F3A9000B95E1 /* SceneControl.cpp */,
-				D30D900F1666F3A9000B95E1 /* SceneControl.h */,
-				D30D90101666F3A9000B95E1 /* BuildingsLayer.cpp */,
-				D30D90111666F3A9000B95E1 /* BuildingsLayer.h */,
+				D3E54D3716805E5A00FD52C2 /* SceneObjectControlEvent.cpp */,
+				D3E54D3816805E5A00FD52C2 /* SceneObjectControlEvent.h */,
+				D3E54D3916805E5A00FD52C2 /* SceneObjectEntity.cpp */,
+				D3E54D3A16805E5A00FD52C2 /* SceneObjectEntity.h */,
+				D3E54D3B16805E5A00FD52C2 /* SceneObjectEvents.cpp */,
+				D3E54D3C16805E5A00FD52C2 /* SceneObjectEvents.h */,
+				D3E54D3D16805E5A00FD52C2 /* SceneObjectProp.cpp */,
+				D3E54D3E16805E5A00FD52C2 /* SceneObjectProp.h */,
+				D3E54D3F16805E5A00FD52C2 /* SceneObjectsControl.cpp */,
+				D3E54D4016805E5A00FD52C2 /* SceneObjectsControl.h */,
+				D3E54D4116805E5A00FD52C2 /* SceneObjectsLayer.cpp */,
+				D3E54D4216805E5A00FD52C2 /* SceneObjectsLayer.h */,
 			);
+			name = SceneObjects;
 			path = Buildings;
 			sourceTree = "<group>";
 		};
@@ -26386,6 +26400,8 @@
 		D327F9301671F1E400B52EA1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D3E54D4916805E8C00FD52C2 /* DebugLayer.cpp */,
+				D3E54D4A16805E8C00FD52C2 /* DebugLayer.h */,
 				D327F9311671F1E400B52EA1 /* Scene.cpp */,
 				D327F9321671F1E400B52EA1 /* Scene.h */,
 				D3EE8F821675C692004C7332 /* StreamHelper.cpp */,
@@ -27150,10 +27166,6 @@
 				D30D90281666F3A9000B95E1 /* INotifier.cpp in Sources */,
 				D30D90291666F3A9000B95E1 /* INotifyEvent.cpp in Sources */,
 				D30D902A1666F3A9000B95E1 /* IObserver.cpp in Sources */,
-				D30D902B1666F3A9000B95E1 /* BuildingEntity.cpp in Sources */,
-				D30D902C1666F3A9000B95E1 /* BuildingProp.cpp in Sources */,
-				D30D902D1666F3A9000B95E1 /* SceneControl.cpp in Sources */,
-				D30D902E1666F3A9000B95E1 /* BuildingsLayer.cpp in Sources */,
 				D30D902F1666F3A9000B95E1 /* TerrainEvent.cpp in Sources */,
 				D30D90301666F3A9000B95E1 /* TerrainLayer.cpp in Sources */,
 				D30D90311666F3A9000B95E1 /* TerrainProp.cpp in Sources */,
@@ -27229,8 +27241,15 @@
 				D320472F16704C670037C1E2 /* ActorAction.cpp in Sources */,
 				D327F9331671F1E400B52EA1 /* Scene.cpp in Sources */,
 				D3EE8F841675C692004C7332 /* StreamHelper.cpp in Sources */,
-				D34919E01676D0D600C41573 /* BuildingEvents.cpp in Sources */,
 				D31EA19716782270002519CF /* UIControlEvents.cpp in Sources */,
+				D3E54D3516805E1C00FD52C2 /* SceneInfo.cpp in Sources */,
+				D3E54D4316805E5A00FD52C2 /* SceneObjectControlEvent.cpp in Sources */,
+				D3E54D4416805E5A00FD52C2 /* SceneObjectEntity.cpp in Sources */,
+				D3E54D4516805E5A00FD52C2 /* SceneObjectEvents.cpp in Sources */,
+				D3E54D4616805E5A00FD52C2 /* SceneObjectProp.cpp in Sources */,
+				D3E54D4716805E5B00FD52C2 /* SceneObjectsControl.cpp in Sources */,
+				D3E54D4816805E5B00FD52C2 /* SceneObjectsLayer.cpp in Sources */,
+				D3E54D4B16805E8C00FD52C2 /* DebugLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -27305,11 +27324,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Demo/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(PROJECT_NAME)/libs/cocos2dx/kazmath/include\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
+					"\"$(PROJECT_NAME)/libs/CocosDenshion/include\"",
+					"\"$(SDKROOT)/usr/include/libxml2\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/include\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
+					"\"$(PROJECT_NAME)/GameFramework\"",
+				);
 				INFOPLIST_FILE = Demo/Resources/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -27330,10 +27361,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Demo/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(PROJECT_NAME)/libs/cocos2dx/kazmath/include\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
+					"\"$(PROJECT_NAME)/libs/CocosDenshion/include\"",
+					"\"$(SDKROOT)/usr/include/libxml2\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/include\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
+					"\"$(PROJECT_NAME)/GameFramework\"",
+				);
 				INFOPLIST_FILE = Demo/Resources/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
