@@ -503,11 +503,8 @@
 		D34839A31667120A008869A3 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D348399F1667120A008869A3 /* Camera.cpp */; };
 		D34839A41667120A008869A3 /* CameraObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839A11667120A008869A3 /* CameraObserver.cpp */; };
 		D34839A7166712C0008869A3 /* CameraNotifyEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839A6166712C0008869A3 /* CameraNotifyEvents.cpp */; };
-		D34839A916673054008869A3 /* actor.png in Resources */ = {isa = PBXBuildFile; fileRef = D34839A816673054008869A3 /* actor.png */; };
 		D34839AC16673409008869A3 /* ActorEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839AB16673409008869A3 /* ActorEvents.cpp */; };
 		D34839AF16673606008869A3 /* ActorsControlEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839AE16673605008869A3 /* ActorsControlEvents.cpp */; };
-		D34919E41676D81D00C41573 /* test1.plist in Resources */ = {isa = PBXBuildFile; fileRef = D34919E21676D81D00C41573 /* test1.plist */; };
-		D34919E51676D81D00C41573 /* test1.png in Resources */ = {isa = PBXBuildFile; fileRef = D34919E31676D81D00C41573 /* test1.png */; };
 		D37B4F8E167711B1003DDC7E /* building.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37B4F8C167711B1003DDC7E /* building.plist */; };
 		D37B4F8F167711B1003DDC7E /* building.png in Resources */ = {isa = PBXBuildFile; fileRef = D37B4F8D167711B1003DDC7E /* building.png */; };
 		D3939915166C3A6C00DA4F56 /* terrain_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3939911166C3A6C00DA4F56 /* terrain_1.png */; };
@@ -582,6 +579,10 @@
 		D3EE8F8116758305004C7332 /* terrain_12.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7C16758305004C7332 /* terrain_12.png */; };
 		D3EE8F841675C692004C7332 /* StreamHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EE8F821675C692004C7332 /* StreamHelper.cpp */; };
 		D3EE8FAD1675D307004C7332 /* scene.bin in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8FAC1675D307004C7332 /* scene.bin */; };
+		D3F6D3A7168193D000BF2A87 /* MainRun.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3F6D3A3168193D000BF2A87 /* MainRun.plist */; };
+		D3F6D3A8168193D000BF2A87 /* MainRun.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F6D3A4168193D000BF2A87 /* MainRun.png */; };
+		D3F6D3A9168193D100BF2A87 /* NPCRun.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3F6D3A5168193D000BF2A87 /* NPCRun.plist */; };
+		D3F6D3AA168193D100BF2A87 /* NPCRun.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F6D3A6168193D000BF2A87 /* NPCRun.png */; };
 		D3FC5F57166EE02F00BDCF3B /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F55166EE02F00BDCF3B /* Server.cpp */; };
 		D3FC5F5B166EE07A00BDCF3B /* CSMessageDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */; };
 		D3FC5F5F166EE0D700BDCF3B /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F5D166EE0D700BDCF3B /* Client.cpp */; };
@@ -589,10 +590,6 @@
 		D3FC5F65166EE5D700BDCF3B /* CSPipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F63166EE5D700BDCF3B /* CSPipeline.cpp */; };
 		D3FC5F68166F19DC00BDCF3B /* ServerActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F66166F19DC00BDCF3B /* ServerActor.cpp */; };
 		D3FC5F6B166F24AF00BDCF3B /* MainActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F69166F24AF00BDCF3B /* MainActor.cpp */; };
-		D3FC5F70166F49D700BDCF3B /* mn.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FC5F6C166F49D700BDCF3B /* mn.png */; };
-		D3FC5F71166F49D700BDCF3B /* mnattack.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FC5F6D166F49D700BDCF3B /* mnattack.png */; };
-		D3FC5F72166F49D700BDCF3B /* npc.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FC5F6E166F49D700BDCF3B /* npc.png */; };
-		D3FC5F73166F49D700BDCF3B /* npcattack.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FC5F6F166F49D700BDCF3B /* npcattack.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -10095,13 +10092,10 @@
 		D34839A21667120A008869A3 /* CameraObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraObserver.h; sourceTree = "<group>"; };
 		D34839A5166712A7008869A3 /* CameraNotifyEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraNotifyEvents.h; sourceTree = "<group>"; };
 		D34839A6166712C0008869A3 /* CameraNotifyEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraNotifyEvents.cpp; sourceTree = "<group>"; };
-		D34839A816673054008869A3 /* actor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = actor.png; path = Resources/actor.png; sourceTree = "<group>"; };
 		D34839AA166733F6008869A3 /* ActorEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActorEvents.h; sourceTree = "<group>"; };
 		D34839AB16673409008869A3 /* ActorEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorEvents.cpp; sourceTree = "<group>"; };
 		D34839AD166735F7008869A3 /* ActorsControlEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActorsControlEvents.h; sourceTree = "<group>"; };
 		D34839AE16673605008869A3 /* ActorsControlEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorsControlEvents.cpp; sourceTree = "<group>"; };
-		D34919E21676D81D00C41573 /* test1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = test1.plist; path = Resources/test1.plist; sourceTree = "<group>"; };
-		D34919E31676D81D00C41573 /* test1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test1.png; path = Resources/test1.png; sourceTree = "<group>"; };
 		D37B4F8C167711B1003DDC7E /* building.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = building.plist; path = Resources/building.plist; sourceTree = "<group>"; };
 		D37B4F8D167711B1003DDC7E /* building.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = building.png; path = Resources/building.png; sourceTree = "<group>"; };
 		D3939911166C3A6C00DA4F56 /* terrain_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_1.png; path = Resources/terrain_1.png; sourceTree = "<group>"; };
@@ -10235,6 +10229,10 @@
 		D3EE8F821675C692004C7332 /* StreamHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StreamHelper.cpp; sourceTree = "<group>"; };
 		D3EE8F831675C692004C7332 /* StreamHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamHelper.h; sourceTree = "<group>"; };
 		D3EE8FAC1675D307004C7332 /* scene.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = scene.bin; path = Resources/scene.bin; sourceTree = "<group>"; };
+		D3F6D3A3168193D000BF2A87 /* MainRun.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = MainRun.plist; path = Resources/MainRun.plist; sourceTree = "<group>"; };
+		D3F6D3A4168193D000BF2A87 /* MainRun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MainRun.png; path = Resources/MainRun.png; sourceTree = "<group>"; };
+		D3F6D3A5168193D000BF2A87 /* NPCRun.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NPCRun.plist; path = Resources/NPCRun.plist; sourceTree = "<group>"; };
+		D3F6D3A6168193D000BF2A87 /* NPCRun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NPCRun.png; path = Resources/NPCRun.png; sourceTree = "<group>"; };
 		D3FC5F55166EE02F00BDCF3B /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Server.cpp; path = VirtualServer/Server.cpp; sourceTree = "<group>"; };
 		D3FC5F56166EE02F00BDCF3B /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Server.h; path = VirtualServer/Server.h; sourceTree = "<group>"; };
 		D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSMessageDef.cpp; path = CSProtocol/CSMessageDef.cpp; sourceTree = "<group>"; };
@@ -10249,10 +10247,6 @@
 		D3FC5F67166F19DC00BDCF3B /* ServerActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerActor.h; path = VirtualServer/ServerActor.h; sourceTree = "<group>"; };
 		D3FC5F69166F24AF00BDCF3B /* MainActor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainActor.cpp; path = VirtualServer/MainActor.cpp; sourceTree = "<group>"; };
 		D3FC5F6A166F24AF00BDCF3B /* MainActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainActor.h; path = VirtualServer/MainActor.h; sourceTree = "<group>"; };
-		D3FC5F6C166F49D700BDCF3B /* mn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mn.png; path = Resources/mn.png; sourceTree = "<group>"; };
-		D3FC5F6D166F49D700BDCF3B /* mnattack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mnattack.png; path = Resources/mnattack.png; sourceTree = "<group>"; };
-		D3FC5F6E166F49D700BDCF3B /* npc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = npc.png; path = Resources/npc.png; sourceTree = "<group>"; };
-		D3FC5F6F166F49D700BDCF3B /* npcattack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = npcattack.png; path = Resources/npcattack.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -10325,15 +10319,13 @@
 		D30D8D441666EE89000B95E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D3F6D3A3168193D000BF2A87 /* MainRun.plist */,
+				D3F6D3A4168193D000BF2A87 /* MainRun.png */,
+				D3F6D3A5168193D000BF2A87 /* NPCRun.plist */,
+				D3F6D3A6168193D000BF2A87 /* NPCRun.png */,
 				D37B4F8C167711B1003DDC7E /* building.plist */,
 				D37B4F8D167711B1003DDC7E /* building.png */,
 				D3EE8FAC1675D307004C7332 /* scene.bin */,
-				D34919E21676D81D00C41573 /* test1.plist */,
-				D34919E31676D81D00C41573 /* test1.png */,
-				D3FC5F6C166F49D700BDCF3B /* mn.png */,
-				D3FC5F6D166F49D700BDCF3B /* mnattack.png */,
-				D3FC5F6E166F49D700BDCF3B /* npc.png */,
-				D3FC5F6F166F49D700BDCF3B /* npcattack.png */,
 				D3939911166C3A6C00DA4F56 /* terrain_1.png */,
 				D3939912166C3A6C00DA4F56 /* terrain_2.png */,
 				D3939913166C3A6C00DA4F56 /* terrain_3.png */,
@@ -10346,7 +10338,6 @@
 				D3EE8F7A16758305004C7332 /* terrain_10.png */,
 				D3EE8F7B16758305004C7332 /* terrain_11.png */,
 				D3EE8F7C16758305004C7332 /* terrain_12.png */,
-				D34839A816673054008869A3 /* actor.png */,
 				D30D8D451666EE89000B95E1 /* CloseNormal.png */,
 				D30D8D471666EE89000B95E1 /* CloseSelected.png */,
 				D30D8D491666EE89000B95E1 /* Default.png */,
@@ -26675,7 +26666,6 @@
 				D30D8D581666EE89000B95E1 /* Icon@2x.png in Resources */,
 				D30D8D5A1666EE89000B95E1 /* iTunesArtwork in Resources */,
 				D30D8DEC1666EE8A000B95E1 /* ChangeLog in Resources */,
-				D34839A916673054008869A3 /* actor.png in Resources */,
 				D3939915166C3A6C00DA4F56 /* terrain_1.png in Resources */,
 				D3939916166C3A6C00DA4F56 /* terrain_2.png in Resources */,
 				D3939917166C3A6C00DA4F56 /* terrain_3.png in Resources */,
@@ -26957,20 +26947,18 @@
 				D314888F166DBD5D0011EDC7 /* vector in Resources */,
 				D3148890166DBD5D0011EDC7 /* basic_chset.ipp in Resources */,
 				D3148891166DBD5D0011EDC7 /* range_run.ipp in Resources */,
-				D3FC5F70166F49D700BDCF3B /* mn.png in Resources */,
-				D3FC5F71166F49D700BDCF3B /* mnattack.png in Resources */,
-				D3FC5F72166F49D700BDCF3B /* npc.png in Resources */,
-				D3FC5F73166F49D700BDCF3B /* npcattack.png in Resources */,
 				D3EE8F7D16758305004C7332 /* terrain_8.png in Resources */,
 				D3EE8F7E16758305004C7332 /* terrain_9.png in Resources */,
 				D3EE8F7F16758305004C7332 /* terrain_10.png in Resources */,
 				D3EE8F8016758305004C7332 /* terrain_11.png in Resources */,
 				D3EE8F8116758305004C7332 /* terrain_12.png in Resources */,
 				D3EE8FAD1675D307004C7332 /* scene.bin in Resources */,
-				D34919E41676D81D00C41573 /* test1.plist in Resources */,
-				D34919E51676D81D00C41573 /* test1.png in Resources */,
 				D37B4F8E167711B1003DDC7E /* building.plist in Resources */,
 				D37B4F8F167711B1003DDC7E /* building.png in Resources */,
+				D3F6D3A7168193D000BF2A87 /* MainRun.plist in Resources */,
+				D3F6D3A8168193D000BF2A87 /* MainRun.png in Resources */,
+				D3F6D3A9168193D100BF2A87 /* NPCRun.plist in Resources */,
+				D3F6D3AA168193D100BF2A87 /* NPCRun.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
