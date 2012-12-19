@@ -10,18 +10,27 @@
 #include "CCCamera.h"
 #include "CameraNotifyEvents.h"
 #include "support/CCPointExtension.h"
-#include "layers_scenes_transitions_nodes/CCScene.h"
 
 namespace Game
 {
-    CameraObserver::CameraObserver(cocos2d::CCScene *scene)
-        :m_scene(scene)
+    CameraObserver* CameraObserver::Create(void)
+    {
+        CameraObserver *camera = new CameraObserver();
+        camera->Init();
+        camera->autorelease();
+        return camera;
+    }
+    CameraObserver::CameraObserver(void)
     {
         
     }
     CameraObserver::~CameraObserver(void)
     {
         
+    }
+    void CameraObserver::Init(void)
+    {
+
     }
     void CameraObserver::OnNotifyChange(INotifier *notify, const INotifyEvent *event)
     {
@@ -31,12 +40,18 @@ namespace Game
         }
         switch (event->GetNotifyEventType())
         {
-            case ENCameraEvent::enCameraEvent_PosChanged:
+            case ENCameraEvent::enPosChanged:
                 {
                     const CameraPosChanged *posChangedEvent = reinterpret_cast<const CameraPosChanged*>(event);
-                    m_scene->setPosition(cocos2d::ccpNeg(posChangedEvent->GetCameraPosition()));
+                    setPosition(cocos2d::ccpNeg(posChangedEvent->GetCameraPosition()));
                 }
                 break;
+			case ENCameraEvent::enScaleChanged:
+				{
+					const CameraScaleChanged *changedEvent = reinterpret_cast<const CameraScaleChanged*>(event);
+					getParent()->setScale(changedEvent->GetScale());
+				}
+				break;
             default:
                 break;
         }

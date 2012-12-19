@@ -13,8 +13,7 @@
 namespace Game
 {
 	GridProp::GridProp(void)
-	:m_width(690)
-	,m_height(770)
+		:m_id(0)
 	{
 
 	}
@@ -22,9 +21,23 @@ namespace Game
 	{
 
 	}
-	void GridProp::Load(const char *gridName, int posX, int posY)
+
+	void GridProp::Init( int id, const char *imageName, float x, float y, float width, float height )
 	{
-		GridEvent_Load event(gridName, m_width, m_height, posX, posY);
+		m_id = id;
+		m_imageName = imageName;
+		m_position = cocos2d::CCPointMake(x, y);
+		m_size = cocos2d::CCSizeMake(width, height);
+
+		GridEventInit event(m_imageName, m_position, m_size);
 		NotifyChange(&event);
 	}
+
+	void GridProp::Remove( void )
+	{
+		GridEventRemove event;
+		NotifyChange(&event);
+	}
+
+
 }

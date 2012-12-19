@@ -11,44 +11,64 @@
 #include "CameraNotifyEvents.h"
 #include "support/CCPointExtension.h"
 #include "CCDirector.h"
+#include "Camera.h"
+#include "layers_scenes_transitions_nodes/CCScene.h"
 
 namespace Game
 {
     Camera::Camera(void)
         :m_size(960, 640)
+		,m_scale(1.0f)
     {
 
     }
     Camera::~Camera(void)
     {
-    	//只有Camera类知道CameraObserver，所以在释放的时候要把observer释放掉
-    	delete reinterpret_cast<CameraObserver*>(m_observer);
+    	
     }
 
-    void Camera::init(cocos2d::CCScene *scene)
+    void Camera::init(IObserver *observer)
     {
-        CameraObserver *observer = new CameraObserver(scene);
         this->AttachObserver(observer);
 
-        m_size = cocos2d::CCDirector::sharedDirector()->getVisibleSize();
+        m_size = cocos2d::CCDirector::sharedDirector()->getWinSize();
         SetPosition(cocos2d::CCPointZero);
     }
 
-    cocos2d::CCPoint Camera::ConvertWorldPosToScreen(const cocos2d::CCPoint &worldPos)
+    cocos2d::CCPoint Camera::ConvertWorldPosToDesign(const cocos2d::CCPoint &worldPos)
     {
-        return cocos2d::ccpSub(worldPos, GetPosition());
+		cocos2d::CCPoint newPos = cocos2d::ccpSub(worldPos, GetPosition());
+		newPos.x *= m_scale;
+		newPos.y *= m_scale;
+		newPos.x += m_size.width / 2;
+		newPos.y += m_size.height / 2;
+        return newPos;
     }
-    cocos2d::CCPoint Camera::ConvertScreenPosToWorld(const cocos2d::CCPoint &screenPos)
+    cocos2d::CCPoint Camera::ConvertDesignPosToWorld(const cocos2d::CCPoint &screenPos)
     {
-        return cocos2d::ccpAdd(screenPos, GetPosition());
+		cocos2d::CCPoint newPos = screenPos;
+		newPos.x -= m_size.width / 2;
+		newPos.y -= m_size.height / 2;
+		newPos.x /= m_scale;
+		newPos.y /= m_scale;
+        return cocos2d::ccpAdd(newPos, GetPosition());
     }
 
     void Camera::SetPosition(const cocos2d::CCPoint &newPosition)
     {
         m_position = newPosition;
-        m_position.x -= m_size.width / 2;
-        m_position.y -= m_size.height / 2;
-        CameraPosChanged event(m_position);
+		cocos2d::CCPoint entityPos = m_position;
+        entityPos.x -= m_size.width / 2;
+        entityPos.y -= m_size.height / 2;
+        CameraPosChanged event(entityPos);
         NotifyChange(&event);
     }
+
+	void Camera::SetScale( float scale )
+	{
+		m_scale = scale;
+		CameraScaleChanged event(m_scale);
+		NotifyChange(&event);
+	}
+
 }

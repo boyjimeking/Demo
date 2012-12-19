@@ -10,6 +10,8 @@
 #define __Demo__GridProp__
 
 #include "../Base/INotifier.h"
+#include <string>
+#include "cocoa/CCGeometry.h"
 
 namespace Game
 {
@@ -19,11 +21,19 @@ namespace Game
 	public:
 		GridProp(void);
 		virtual ~GridProp(void);
-	
-		void Load(const char *gridName, int posX, int posY);
+
+		void Init(int id, const char *imageName, float x, float y, float width, float height);
+		void Remove(void);;
+
+		int GetID(void) const { return m_id; }
+		const std::string& GetImageName(void) const { return m_imageName; }
+		const cocos2d::CCPoint& GetPosition(void) const { return m_position; }
+		const cocos2d::CCSize& GetSize(void) const { return m_size; }
 	private:
-		int m_width;
-		int m_height;
+		int m_id;
+		std::string m_imageName;
+		cocos2d::CCPoint m_position;
+		cocos2d::CCSize m_size;
 	};
 }
 

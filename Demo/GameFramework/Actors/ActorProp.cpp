@@ -1,13 +1,15 @@
 #include "ActorProp.h"
 #include "ActorEvents.h"
 #include "ActorEntity.h"
+#include "WorldManager.h"
+#include "SceneInfo.h"
 
 namespace Game
 {
 	ActorProp::ActorProp(ENActorType::Decl type, int id)
 	:m_id(id)
 	,m_type(type)
-	,m_speed(100.0f)
+	,m_speed(500.0f)
 	,m_currentAction(NULL)
 	,m_nextAction(NULL)
 	{
@@ -34,6 +36,7 @@ namespace Game
 	ActorEntity* ActorProp::Create(void)
 	{
 		ActorEntity *entity = new ActorEntity(this);
+		entity->setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.0f));
 		entity->autorelease();
 		AttachObserver(entity);
 
@@ -53,6 +56,10 @@ namespace Game
 	}
 	void ActorProp::SetPosition(const cocos2d::CCPoint &pos)
 	{
+		if (!WorldManager::Instance()->GetSceneInfo()->IsPointCanStanc(pos))
+		{
+			return;
+		}
 		if (m_position.equals(pos))
 		{
 			return;

@@ -29,22 +29,24 @@ namespace Game
 		}
 		switch (event->GetNotifyEventType())
 		{
-			case ENGridEventType::enGridEvent_Load:
-				{
-					const GridEvent_Load *loadEvent = reinterpret_cast<const GridEvent_Load*>(event);
-					Load(loadEvent->GetImageName(), loadEvent->GetWidth(), loadEvent->GetHeight(), loadEvent->GetPosX(), loadEvent->GetPosY());
-				}
-				break;
-			default:
-				break;
+		case ENGridEventType::enInitGrid:
+			{
+				const GridEventInit *gridEvent = reinterpret_cast<const GridEventInit*>(event);
+				cocos2d::CCTexture2D *texture = cocos2d::CCTextureCache::sharedTextureCache()->addImage(gridEvent->m_imageName.c_str());
+				initWithTexture(texture);
+				setPosition(gridEvent->m_position);
+				setContentSize(gridEvent->m_size);
+				setAnchorPoint(cocos2d::CCPointZero);
+			}
+			break;
+		case ENGridEventType::enRemoveGrid:
+			{
+				getParent()->removeChild(this, true);
+			}
+			break;
+		default:
+			break;
 		}
 	}
 
-	void GridEntity::Load(const char *imageName, int width, int height, int posX, int posY)
-	{
-        cocos2d::CCTexture2D *texture = cocos2d::CCTextureCache::sharedTextureCache()->addImage(imageName);
-		initWithTexture(texture);
-		setPositionX(posX);
-		setPositionY(posY);
-	}
 }

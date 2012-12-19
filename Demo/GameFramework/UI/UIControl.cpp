@@ -1,4 +1,5 @@
 #include "UIControl.h"
+#include "UIControlEvents.h"
 
 namespace GUI
 {
@@ -9,5 +10,10 @@ namespace GUI
 	UIControl::~UIControl(void)
 	{
 
+	}
+	void UIControl::Init(void)
+	{
+		UIControlEventInit event;
+		NotifyChange(&event);
 	}
 }

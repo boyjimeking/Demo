@@ -54,6 +54,7 @@ namespace Net
         {
             CSInitScene_S2C message;
             message.m_sceneID = 1;
+            strcpy(message.m_sceneName, "scene.bin");
             message.Build(GetMessageType(CSInitScene_S2C), 0, sizeof(CSInitScene_S2C));
             Send(&message);
         }
@@ -61,12 +62,12 @@ namespace Net
             ServerActor::Ptr actor = ServerActor::Ptr(new MainActor);
             m_serverActorMap.insert(std::make_pair(actor->GetID(), actor));
 
-            actor->SetX(RandX());
-            actor->SetY(RandY());
+            actor->SetX(0);
+            actor->SetY(0);
 
             actor->SycPosition();
         }
-        for (int index = 0; index < 30; ++index)
+        for (int index = 0; index < 0; ++index)
         {
             ServerActor::Ptr actor = ServerActor::CreateObj();
             m_serverActorMap.insert(std::make_pair(actor->GetID(), actor));
@@ -86,10 +87,10 @@ namespace Net
     }
     int Server::RandX(void)
     {
-        return (float)rand() / (float)RAND_MAX * Width - Width / 2;
+        return (float)rand() / (float)RAND_MAX * Width;
     }
     int Server::RandY(void)
     {
-        return (float)rand() / (float)RAND_MAX * Height - Height / 2;
+        return (float)rand() / (float)RAND_MAX * Height;
     }
 }

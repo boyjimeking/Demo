@@ -48,7 +48,7 @@ namespace Game
 	,m_touchCallBack(NULL)
 	,m_imageName(NULL)
 	{
-		setAnchorPoint(ccp(0.5f, 1.0f));
+		
 	}
 	ActorEntity::~ActorEntity(void)
 	{
@@ -63,8 +63,9 @@ namespace Game
 		}
 		switch (event->GetNotifyEventType())
 		{
-			case ENActorEvent::enActorEvent_Create:
+			case ENActorEvent::enCreate:
 				{
+					setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
 					const ActorEventCreate *actorEvent = reinterpret_cast<const ActorEventCreate*>(event);
 					switch (actorEvent->GetType())
 					{
@@ -83,12 +84,12 @@ namespace Game
 					PlayMove(enDirection_South);
 				}
 				break;
-			case ENActorEvent::enActorEvent_Release:
+			case ENActorEvent::enRelease:
 				{
-
+					getParent()->removeChild(this, true);
 				}
 				break;
-			case ENActorEvent::enActorEvent_ChangePos:
+			case ENActorEvent::enChangePos:
 				{
 					const ActorEventChangePos *actorEvent = reinterpret_cast<const ActorEventChangePos*>(event);
 					setPosition(actorEvent->GetWorldPos());
@@ -106,23 +107,23 @@ namespace Game
 					}
 				}
 				break;
-			case ENActorEvent::enActorEvent_UpdateDirection:
+			case ENActorEvent::enUpdateDirection:
 				{
 					const ActorEventUpdateDirection *actorEvent = reinterpret_cast<const ActorEventUpdateDirection*>(event);
 					PlayMove(CalDirection(actorEvent->GetWorldPos(), getPosition()));
 				}
                 break;
-			case ENActorEvent::enActorEvent_Stop:
+			case ENActorEvent::enStop:
 				{
 					PlayMove(enDirection_South);
 				}
 				break;
-			case ENActorEvent::enActorEvent_Attack:
+			case ENActorEvent::enAttack:
 				{
 					PlayAttack();
 				}
 				break;
-			case ENActorEvent::enActorEvent_ChangeScaleX:
+			case ENActorEvent::enChangeScaleX:
 				{
 					const ActorEventChangeScaleX *actorEvent = reinterpret_cast<const ActorEventChangeScaleX*>(event);
 					setScaleX(actorEvent->GetXScale());
@@ -156,6 +157,7 @@ namespace Game
 			frameArray->addObject(frame);
 		}
 		this->initWithSpriteFrame(reinterpret_cast<cocos2d::CCSpriteFrame*>(frameArray->lastObject()));
+		setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.0f));
 		cocos2d::CCAnimation *animation = cocos2d::CCAnimation::createWithSpriteFrames(frameArray, 0.2f);
 		cocos2d::CCAnimate *animate = cocos2d::CCAnimate::create(animation);
 		cocos2d::CCAction *action = cocos2d::CCRepeatForever::create(animate);
@@ -234,7 +236,7 @@ namespace Game
 	}
 	bool ActorEntity::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
 	{
-		cocos2d::CCPoint local = WorldManager::ScreenPosToWorld(pTouch->getLocation());
+		cocos2d::CCPoint local = WorldManager::DesignPosToWorld(pTouch->getLocation());
 		cocos2d::CCRect rect = cocos2d::CCRectMake( m_tPosition.x - m_tContentSize.width * m_tAnchorPoint.x, 
                       m_tPosition.y - m_tContentSize.height * m_tAnchorPoint.y,
                       m_tContentSize.width, m_tContentSize.height);

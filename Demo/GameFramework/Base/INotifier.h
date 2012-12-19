@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 //
-//	文件名: 	E:/GitCode/SimpleGame/SourceCode/GameFramework/Base/INotifier.h
+//	文件名: 	/SourceCode/GameFramework/Base/INotifier.h
 //	创建日期:	2012年11月22日
 //	创建者:		张明震
 //
@@ -14,6 +14,7 @@ struct INotifyEvent;
 class INotifier
 {
 public:
+	static bool NotifyMode;
 	INotifier(void);
 	virtual ~INotifier(void);
 

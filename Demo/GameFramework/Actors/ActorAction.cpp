@@ -54,6 +54,10 @@ namespace Game
 	void MoveAction::OnEnter(ActorProp *prop)
 	{
 		m_startPos = prop->GetPosition();
+		if (m_pos.equals(m_startPos))
+		{
+			return;
+		}
 		m_direction = cocos2d::ccpNormalize(cocos2d::ccpSub(m_pos, m_startPos));
 		ActorEventUpdateDirection event(m_pos);
 		prop->NotifyChange(&event);
@@ -71,6 +75,10 @@ namespace Game
 	}
 	bool MoveAction::Tick(float dt, ActorProp *prop)
 	{
+		if (m_direction.equals(cocos2d::CCPointZero))
+		{
+			return true;
+		}
 		cocos2d::CCPoint newPos = cocos2d::ccpAdd(prop->GetPosition(), cocos2d::ccpMult(m_direction, dt * prop->GetSpeed()));
 		if (cocos2d::ccpDistanceSQ(m_pos, m_startPos) <= cocos2d::ccpDistanceSQ(newPos, m_startPos))
 		{

@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 //
-//	文件名: 	E:/GitCode/SimpleGame/SourceCode/GameFramework/UI/UILayer.h
+//	文件名: 	/SourceCode/GameFramework/UI/UILayer.h
 //	创建日期:	2012年11月26日
 //	创建者:		张明震
 //

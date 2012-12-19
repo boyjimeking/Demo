@@ -20,4 +20,12 @@ struct ENActorType
 	};
 };
 
+struct ENSceneObjectType
+{
+	enum Decl
+	{
+		enNone,
+	};
+};
+
 #endif

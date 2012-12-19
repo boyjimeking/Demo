@@ -19,9 +19,9 @@ namespace Game
 		enum
 		{
 			enNone,
-			enActorsControlEvent_CreateActor,
-			enActorsControlEvent_ReleaseActor,
-			enActorsControlEvent_ReleaseAll,
+			enCreateActor,
+			enReleaseActor,
+			enReleaseAll,
 		};
 	};
 
@@ -31,7 +31,7 @@ namespace Game
 	{
 		ActorsControlEventCreateActor(ActorEntity *entity);
 		/* data */
-		virtual int GetNotifyEventType(void) const { return ENActorsControlEvents::enActorsControlEvent_CreateActor; }
+		virtual int GetNotifyEventType(void) const { return ENActorsControlEvents::enCreateActor; }
 		ActorEntity* GetActorEntity(void) const { return m_entity; }
 	private:
 		ActorEntity *m_entity;
@@ -40,13 +40,13 @@ namespace Game
 	struct ActorsControlEventReleaseActor
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENActorsControlEvents::enActorsControlEvent_ReleaseActor; }
+		virtual int GetNotifyEventType(void) const { return ENActorsControlEvents::enReleaseActor; }
 	};
 
 	struct ActorsControlEventReleaseAll
 		:public INotifyEvent
 	{
-		virtual int GetNotifyEventType(void) const { return ENActorsControlEvents::enActorsControlEvent_ReleaseAll; }
+		virtual int GetNotifyEventType(void) const { return ENActorsControlEvents::enReleaseAll; }
 	};
 }
 

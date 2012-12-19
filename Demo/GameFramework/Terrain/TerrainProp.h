@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 //
-//	文件名: 	E:/GitCode/SimpleGame/SourceCode/GameFramework/Terrain/TerrainProp.h
+//	文件名: 	/SourceCode/GameFramework/Terrain/TerrainProp.h
 //	创建日期:	2012年11月22日
 //	创建者:		张明震
 //
@@ -9,6 +9,12 @@
 #define TerrainProp_h__
 
 #include "../Base/INotifier.h"
+#include <vector>
+
+namespace Tools
+{
+	class Scene;
+}
 
 namespace Game
 {
@@ -23,13 +29,16 @@ namespace Game
 		TerrainProp(void);
 		virtual ~TerrainProp(void);
 
-		void Load(const char *mapName, const char *imageName);
+		void Init(const Tools::Scene *sceneFile);
+
+		void AddTerrainGrid(int id, const char *imageName, float x, float y, float width, float height);
+		void ChangeTerrainGrid(int id, const char *imageName, float x, float y, float width, float height);
+		void RemoveTerrainGrid(int id);
+		GridProp* LookupGrid(int id);
 	protected:
 	private:
-		GridProp **m_gridList;
-		int m_width;
-		int m_height;
-		const char *m_terrainName;
+		typedef std::vector<GridProp*> GridList;
+		GridList m_gridList;
 	};
 }
 

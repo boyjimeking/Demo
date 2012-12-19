@@ -7,7 +7,7 @@
 //
 
 #include "Client.h"
-#include "CSPipeline.h"
+#include "../../CSProtocol/CSPipeline.h"
 #include "WorldManager.h"
 #include "Actors/ActorsControl.h"
 #include "Actors/ActorProp.h"
@@ -53,8 +53,8 @@ namespace Net
 
     void Client::InitScene(IMessage *message)
     {
-    	//CSInitScene_S2C *innerMessage = reinterpret_cast<CSInitScene_S2C*>(message);
-    	Game::WorldManager::Instance()->GetTerrain()->Load("TestTerrain", "terrain");
+    	CSInitScene_S2C *innerMessage = reinterpret_cast<CSInitScene_S2C*>(message);
+    	Game::WorldManager::Instance()->InitSceneByFile(innerMessage->m_sceneName);
     }
 	void Client::InitMainActor(IMessage *message)
 	{

@@ -2,53 +2,77 @@
 #include "TerrainEvent.h"
 #include "GridProp.h"
 #include "GridEntity.h"
+#include "WorldManager.h"
+#include "support/CCPointExtension.h"
+#include "Tools/Scene.h"
+#include "sprite_nodes/CCSpriteFrameCache.h"
 
 namespace Game
 {
 	TerrainProp::TerrainProp(void)
-	:m_gridList(NULL)
-	,m_width(4)
-	,m_height(2)
-	,m_terrainName(NULL)
 	{
 
 	}
 	TerrainProp::~TerrainProp(void)
 	{
-		if (NULL != m_gridList)
+		
+	}
+
+	void TerrainProp::Init(const Tools::Scene *sceneFile)
+	{
+		typedef Tools::Scene::TerrainInfoList InfoList;
+		const InfoList &list = sceneFile->GetTerrainList();
+		for (InfoList::const_iterator it = list.begin(); list.end() != it; ++it)
 		{
-			delete[] m_gridList;
+			Tools::TerrainInfo *info = (*it);
+			AddTerrainGrid(info->m_id, info->m_imageName, info->m_x, info->m_y, info->m_width, info->m_height);
 		}
 	}
 
-	void TerrainProp::Load(const char *mapName, const char *imageName)
+	void TerrainProp::AddTerrainGrid( int id, const char *imageName, float x, float y, float width, float height )
 	{
-		if (NULL != m_gridList)
-		{
-			delete[] m_gridList;
-		}
-		m_terrainName = mapName;
+		GridProp *prop = new GridProp;
+		GridEntity *entity = new GridEntity;
 
-		//测试用地图，之后需要替换为正式地图及其加载方式
-		GridEntity **entityArray = new GridEntity*[m_width * m_height];
-		m_gridList = new GridProp*[m_width * m_height];
-		char temp[32] = {0};
-		for (int index = 0; index < m_width; ++index)
+		TerrainEvent_AddTerrain event(entity);
+		NotifyChange(&event);
+
+		prop->AttachObserver(entity);
+		prop->Init(id, imageName, x, y, width, height);
+		m_gridList.push_back(prop);
+	}
+
+	void TerrainProp::ChangeTerrainGrid( int id, const char *imageName, float x, float y, float width, float height )
+	{
+		GridProp *prop = LookupGrid(id);
+		prop->Init(id, imageName, x, y, width, height);
+	}
+
+	void TerrainProp::RemoveTerrainGrid( int id )
+	{
+		for (GridList::iterator it = m_gridList.begin(); m_gridList.end() != it; ++it)
 		{
-			for (int innerIndex = 0; innerIndex < m_height; ++innerIndex)
+			if ((*it)->GetID() == id)
 			{
-				int currentIndex = index + innerIndex * m_width;
-				m_gridList[currentIndex] = new GridProp;
-				entityArray[currentIndex] = new GridEntity;
-				m_gridList[currentIndex]->AttachObserver(entityArray[currentIndex]);
-				sprintf(temp, "terrain_%d.png", currentIndex);
-				m_gridList[currentIndex]->Load(temp, (index - 2) * 690 + 690 / 2, (1 - innerIndex) * 770 - 770 / 2);
+				GridProp *prop = *it;
+				m_gridList.erase(it);
+				prop->Remove();
+				delete prop;
+				break;
 			}
 		}
+	}
 
-		TerrainEvent_LoadTerrain event(entityArray, m_width * m_height);
-		NotifyChange(&event);
-		delete[] entityArray;
+	GridProp* TerrainProp::LookupGrid( int id )
+	{
+		for (GridList::iterator it = m_gridList.begin(); m_gridList.end() != it; ++it)
+		{
+			if ((*it)->GetID() == id)
+			{
+				return *it;
+			}
+		}
+		return NULL;
 	}
 
 }
