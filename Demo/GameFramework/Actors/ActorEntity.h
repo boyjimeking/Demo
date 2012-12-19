@@ -45,21 +45,32 @@ namespace Game
 			enDirection_South,		//↓	-π/2
 			enDirection_SouthEast,	//↘	-π/4
 		};
-		enum ENActionTag
+		struct ENAction
+		{
+			enum Type
+			{
+				enIdle,
+				enMove,
+				enAttack,
+
+				Count,
+			};
+		};
+		enum ENCocos2dActionTag
 		{
 			enNone,
 			enActorAction_PlayAnimation,
 			enActorAction_MoveTo,
 		};
 	protected:
-		void PlayMove(ENDirection direction);
-		void PlayAttack(void);
+		void PlayAnimation(ENAction::Type type, ENDirection direction);
 		ENDirection CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos);
 
 	private:
 		ENDirection m_currentDirection;
+		ENAction::Type m_currentAction;
+		char *m_actionTable[ENAction::Count];
 		ITouch *m_touchCallBack;
-		const char *m_imageName;
 	};
 }
 

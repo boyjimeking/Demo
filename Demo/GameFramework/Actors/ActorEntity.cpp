@@ -14,39 +14,27 @@
 #include "touch_dispatcher/CCTouchDispatcher.h"
 #include "ActorProp.h"
 #include "ActorTouch.h"
+#include "sprite_nodes/CCSpriteFrameCache.h"
 
 
 namespace Game
 {
-	struct FrameInfo
+	char* strDirection[] = 
 	{
-		int x;
-		int y;
-		int width;
-		int height;
+		"e",
+		"en",
+		"n",
+		"wn",
+		"w",
+		"ws",
+		"s",
+		"es"
 	};
-	struct ImageInfo
-	{
-		int width;
-		int height;
-		int row;
-		int column;
 
-		const FrameInfo& GetFrameInfo(int index)
-		{
-			info.width = width / column;
-			info.height = height / row;
-			info.x = index % column * info.width;
-			info.y = index / column * info.height;
-			return info;
-		}
-	private:
-		FrameInfo info;
-	};
 	ActorEntity::ActorEntity(ActorProp *prop)
 	:m_currentDirection(enError)
 	,m_touchCallBack(NULL)
-	,m_imageName(NULL)
+	,m_currentAction(ENAction::enIdle)
 	{
 		
 	}
@@ -69,19 +57,25 @@ namespace Game
 					const ActorEventCreate *actorEvent = reinterpret_cast<const ActorEventCreate*>(event);
 					switch (actorEvent->GetType())
 					{
-						case ENActorType::enMain:
-							m_imageName = "mn.png";
-							break;
-						default:
-							{
-								this->setContentSize(cocos2d::CCSizeMake(47, 95));
-								cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
-								m_touchCallBack = new TouchMonster(reinterpret_cast<ActorProp*>(notify));
-								m_imageName = "npc.png";
-							}
-							break;
+					case ENActorType::enMain:
+						cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("MainRun.plist");
+						m_actionTable[ENAction::enIdle] = "1_0_w_0_0_idle_0_%s_%d.png";
+						m_actionTable[ENAction::enMove] = "1_0_w_0_0_run_0_%s_%d.png";
+						m_actionTable[ENAction::enAttack] = "1_0_w_0_0_attack_0_%s_%d.png";
+						break;
+					default:
+						{
+							this->setContentSize(cocos2d::CCSizeMake(47, 95));
+							cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
+							m_touchCallBack = new TouchMonster(reinterpret_cast<ActorProp*>(notify));
+							cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("NPCRun.plist");
+							m_actionTable[ENAction::enIdle] = "2_yuanhun_w_idle_0_%s_%d.png";
+							m_actionTable[ENAction::enMove] = "2_yuanhun_w_run_0_%s_%d.png";
+							m_actionTable[ENAction::enAttack] = "2_yuanhun_w_attack_0_%s_%d.png";
+						}
+						break;
 					}
-					PlayMove(enDirection_South);
+					PlayAnimation(ENAction::enIdle, enDirection_South);
 				}
 				break;
 			case ENActorEvent::enRelease:
@@ -92,6 +86,7 @@ namespace Game
 			case ENActorEvent::enChangePos:
 				{
 					const ActorEventChangePos *actorEvent = reinterpret_cast<const ActorEventChangePos*>(event);
+					PlayAnimation(ENAction::enMove, CalDirection(actorEvent->GetWorldPos(), getPosition()));
 					setPosition(actorEvent->GetWorldPos());
 					if (NULL != this->getParent())
 					{
@@ -107,94 +102,26 @@ namespace Game
 					}
 				}
 				break;
-			case ENActorEvent::enUpdateDirection:
-				{
-					const ActorEventUpdateDirection *actorEvent = reinterpret_cast<const ActorEventUpdateDirection*>(event);
-					PlayMove(CalDirection(actorEvent->GetWorldPos(), getPosition()));
-				}
-                break;
 			case ENActorEvent::enStop:
 				{
-					PlayMove(enDirection_South);
+					PlayAnimation(ENAction::enIdle, m_currentDirection);
 				}
 				break;
 			case ENActorEvent::enAttack:
 				{
-					PlayAttack();
-				}
-				break;
-			case ENActorEvent::enChangeScaleX:
-				{
-					const ActorEventChangeScaleX *actorEvent = reinterpret_cast<const ActorEventChangeScaleX*>(event);
-					setScaleX(actorEvent->GetXScale());
+					PlayAnimation(ENAction::enAttack, m_currentDirection);
+					cocos2d::CCLog("%d", m_currentDirection);
 				}
 				break;
 			default:
 				break;
 		}
 	}
-	void ActorEntity::PlayMove(ENDirection direction)
-	{
-		if (m_currentDirection == direction)
-		{
-			return;
-		}
-		m_currentDirection = direction;
-		cocos2d::CCTexture2D *texture = cocos2d::CCTextureCache::sharedTextureCache()->addImage(m_imageName);
-		cocos2d::CCArray *frameArray = cocos2d::CCArray::createWithCapacity(4);
-
-		ImageInfo info;
-		info.width = texture->getPixelsWide();
-		info.height = texture->getPixelsHigh();
-		info.row = 4;
-		info.column = 4;
-
-		for (int index = 0; index < 4; ++index)
-		{
-			const FrameInfo &frameInfo = info.GetFrameInfo(index + direction * info.column);
-			cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrame::createWithTexture(texture
-				, cocos2d::CCRectMake(frameInfo.x, frameInfo.y, frameInfo.width, frameInfo.height));
-			frameArray->addObject(frame);
-		}
-		this->initWithSpriteFrame(reinterpret_cast<cocos2d::CCSpriteFrame*>(frameArray->lastObject()));
-		setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.0f));
-		cocos2d::CCAnimation *animation = cocos2d::CCAnimation::createWithSpriteFrames(frameArray, 0.2f);
-		cocos2d::CCAnimate *animate = cocos2d::CCAnimate::create(animation);
-		cocos2d::CCAction *action = cocos2d::CCRepeatForever::create(animate);
-		this->stopActionByTag(enActorAction_PlayAnimation);
-		action->setTag(enActorAction_PlayAnimation);
-		this->runAction(action);
-	}
-	void ActorEntity::PlayAttack(void)
-	{
-		cocos2d::CCTexture2D *texture = cocos2d::CCTextureCache::sharedTextureCache()->addImage("mnattack.png");
-		cocos2d::CCArray *frameArray = cocos2d::CCArray::createWithCapacity(8);
-
-		ImageInfo info;
-		info.width = texture->getPixelsWide();
-		info.height = texture->getPixelsHigh();
-		info.row = 3;
-		info.column = 5;
-
-		for (int index = 0; index < 8; ++index)
-		{
-			const FrameInfo &frameInfo = info.GetFrameInfo(index);
-			cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrame::createWithTexture(texture
-				, cocos2d::CCRectMake(frameInfo.x, frameInfo.y, frameInfo.width, frameInfo.height));
-			frameArray->addObject(frame);
-		}
-		this->initWithSpriteFrame(reinterpret_cast<cocos2d::CCSpriteFrame*>(frameArray->lastObject()));
-		cocos2d::CCAnimation *animation = cocos2d::CCAnimation::createWithSpriteFrames(frameArray, 0.2f);
-		cocos2d::CCAnimate *animate = cocos2d::CCAnimate::create(animation);
-		this->stopActionByTag(enActorAction_PlayAnimation);
-		animate->setTag(enActorAction_PlayAnimation);
-		this->runAction(animate);
-	}
 	ActorEntity::ENDirection ActorEntity::CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos)
 	{
 		float angle = ccpToAngle(cocos2d::ccpSub(targetPos, currentPos));
 
-		static const float M_PI_8 = M_PI / 8.0f;
+		static const float M_PI_8 = (float)M_PI / 8.0f;
 
 		if (abs(angle) < M_PI_8)
 		{
@@ -249,4 +176,32 @@ namespace Game
 			return false;
 		}
 	}
+
+	void ActorEntity::PlayAnimation( ENAction::Type type, ENDirection direction )
+	{
+		if (m_currentDirection == direction && m_currentAction == type)
+		{
+			return;
+		}
+		m_currentDirection = direction;
+		m_currentAction = type;
+		cocos2d::CCArray *frameArray = cocos2d::CCArray::createWithCapacity(4);
+
+		for (int index = 0; index < 4; ++index)
+		{
+			char buff[64];
+			sprintf(buff, m_actionTable[type], strDirection[direction], index + 1);
+			cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(buff);
+			frameArray->addObject(frame);
+		}
+		this->initWithSpriteFrame(reinterpret_cast<cocos2d::CCSpriteFrame*>(frameArray->lastObject()));
+		setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.3f));
+		cocos2d::CCAnimation *animation = cocos2d::CCAnimation::createWithSpriteFrames(frameArray, 0.2f);
+		cocos2d::CCAnimate *animate = cocos2d::CCAnimate::create(animation);
+		cocos2d::CCAction *action = cocos2d::CCRepeatForever::create(animate);
+		this->stopActionByTag(enActorAction_PlayAnimation);
+		action->setTag(enActorAction_PlayAnimation);
+		this->runAction(action);
+	}
+
 }

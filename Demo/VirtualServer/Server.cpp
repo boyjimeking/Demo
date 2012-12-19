@@ -13,8 +13,8 @@
 
 namespace Net
 {
-    const int Server::Width = 2760 / 2;
-    const int Server::Height = 1540 / 2;
+    const int Server::Width = 3840;
+    const int Server::Height = 1920;
 
     Server::Server(void)
     {
@@ -67,7 +67,7 @@ namespace Net
 
             actor->SycPosition();
         }
-        for (int index = 0; index < 0; ++index)
+        for (int index = 0; index < 20; ++index)
         {
             ServerActor::Ptr actor = ServerActor::CreateObj();
             m_serverActorMap.insert(std::make_pair(actor->GetID(), actor));

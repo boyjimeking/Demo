@@ -59,13 +59,10 @@ namespace Game
 			return;
 		}
 		m_direction = cocos2d::ccpNormalize(cocos2d::ccpSub(m_pos, m_startPos));
-		ActorEventUpdateDirection event(m_pos);
-		prop->NotifyChange(&event);
 	}
 	void MoveAction::OnInterrupt(ActorProp *prop)
 	{
-		ActorEventStop event;
-		prop->NotifyChange(&event);
+		
 	}
 	void MoveAction::OnExit(ActorProp *prop)
 	{
@@ -103,13 +100,11 @@ namespace Game
 	}
 	void AttackAction::OnExit(ActorProp *prop)
 	{
-		ActorEventChangeScaleX scaleEvent(1);
-		prop->NotifyChange(&scaleEvent);
+
 	}
 	void AttackAction::OnInterrupt(ActorProp *prop)
 	{
-		ActorEventChangeScaleX scaleEvent(1);
-		prop->NotifyChange(&scaleEvent);
+
 	}
 	bool AttackAction::Tick(float dt, ActorProp *prop)
 	{
@@ -122,9 +117,6 @@ namespace Game
 		OnEnter(prop);
 		if (!m_fired && ActorsControl::Distance(target, prop) > 48.0f)
 		{
-			ActorEventChangeScaleX scaleEvent(1);
-			prop->NotifyChange(&scaleEvent);
-
 			m_fired = false;
 			m_fireTime = 0.0f;
 			MoveAction::Tick(dt, prop);
@@ -138,9 +130,6 @@ namespace Game
 				prop->NotifyChange(&event);
 
 				m_direction = cocos2d::ccpNormalize(cocos2d::ccpSub(m_pos, m_startPos));
-				ActorEventChangeScaleX scaleEvent(m_direction.x > 0.0f ? -1 : 1);
-				prop->NotifyChange(&scaleEvent);
-
 				m_fired = true;
 				return false;
 			}

@@ -23,10 +23,8 @@ namespace Game
 			enCreate,
 			enRelease,
 			enChangePos,
-			enUpdateDirection,
 			enStop,
 			enAttack,
-			enChangeScaleX,
 		};
 	};
 
@@ -57,16 +55,6 @@ namespace Game
 		cocos2d::CCPoint m_targetPos;
 	};
 
-	struct ActorEventUpdateDirection
-		:public INotifyEvent
-	{
-		virtual int GetNotifyEventType(void) const { return ENActorEvent::enUpdateDirection; }
-
-		ActorEventUpdateDirection(const cocos2d::CCPoint &targetPos) : m_targetPos(targetPos) {}
-		const cocos2d::CCPoint& GetWorldPos(void) const { return m_targetPos; };
-	private:
-		cocos2d::CCPoint m_targetPos;
-	};
 	struct ActorEventStop
 		:public INotifyEvent
 	{
@@ -77,15 +65,7 @@ namespace Game
 	{
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enAttack; }
 	};
-	struct ActorEventChangeScaleX
-		:public INotifyEvent
-	{
-		virtual int GetNotifyEventType(void) const { return ENActorEvent::enChangeScaleX; }
-		ActorEventChangeScaleX(int xScale) : m_xScale(xScale) {}
-		int GetXScale(void) const { return m_xScale; }
-	private:
-		int m_xScale;
-	};
+
 }
 
 
