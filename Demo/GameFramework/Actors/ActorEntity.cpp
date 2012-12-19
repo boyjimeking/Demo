@@ -1,4 +1,4 @@
-#include "ActorEntity.h"
+﻿#include "ActorEntity.h"
 #include "ActorEvents.h"
 #include "textures/CCTextureCache.h"
 #include "sprite_nodes/CCSpriteFrame.h"
@@ -110,7 +110,6 @@ namespace Game
 			case ENActorEvent::enAttack:
 				{
 					PlayAnimation(ENAction::enAttack, m_currentDirection);
-					cocos2d::CCLog("%d", m_currentDirection);
 				}
 				break;
 			default:
