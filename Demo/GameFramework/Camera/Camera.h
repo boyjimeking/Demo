@@ -32,16 +32,27 @@ namespace Game
         cocos2d::CCPoint ConvertWorldPosToDesign(const cocos2d::CCPoint &worldPos);
         cocos2d::CCPoint ConvertDesignPosToWorld(const cocos2d::CCPoint &screenPos);
 
+		float LogicToPoint(float size);
+		float PointToLogic(float size);
+		cocos2d::CCPoint LogicToPoint(const cocos2d::CCPoint &pos);
+		cocos2d::CCPoint PointToLogic(const cocos2d::CCPoint &pos);
+		cocos2d::CCSize LogicToPoint(const cocos2d::CCSize &pos);
+		cocos2d::CCSize PointToLogic(const cocos2d::CCSize &pos);
+
         void SetPosition(const cocos2d::CCPoint &newPosition);
         const cocos2d::CCPoint& GetPosition(void) const { return m_position; }
 
 		void SetScale(float scale);
 		float GetScale(void) const { return m_scale; }
+
+		void SetTransScale(float transScale);
+		float GetTransScale(void) const { return m_transScale; }
     protected:
     private:
         cocos2d::CCSize m_size;
         cocos2d::CCPoint m_position;
 		float m_scale;
+		float m_transScale;
     };
 }
 

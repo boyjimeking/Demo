@@ -13,8 +13,10 @@
 
 namespace Net
 {
-    const int Server::Width = 3840;
-    const int Server::Height = 1920;
+	const float Server::Width = 384.0f;
+	const float Server::Height = 192.0f;
+	const float Server::GridSize = 0.5f;
+	const float Server::TranScale = 10.0f;//一米多少点
 
     Server::Server(void)
     {
@@ -93,4 +95,5 @@ namespace Net
     {
         return (float)rand() / (float)RAND_MAX * Height;
     }
+
 }

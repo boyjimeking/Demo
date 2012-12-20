@@ -59,7 +59,7 @@ namespace Game
 					{
 					case ENActorType::enMain:
 						cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("MainRun.plist");
-						m_actionTable[ENAction::enIdle] = "1_0_w_0_0_idle_0_%s_%d.png";
+						m_actionTable[ENAction::enIdle] = "1_0_w_0_0_standby_0_%s_%d.png";
 						m_actionTable[ENAction::enMove] = "1_0_w_0_0_run_0_%s_%d.png";
 						m_actionTable[ENAction::enAttack] = "1_0_w_0_0_attack_0_%s_%d.png";
 						break;
@@ -86,8 +86,9 @@ namespace Game
 			case ENActorEvent::enChangePos:
 				{
 					const ActorEventChangePos *actorEvent = reinterpret_cast<const ActorEventChangePos*>(event);
-					PlayAnimation(ENAction::enMove, CalDirection(actorEvent->GetWorldPos(), getPosition()));
-					setPosition(actorEvent->GetWorldPos());
+					cocos2d::CCPoint newPos = WorldManager::LogicToPoint(actorEvent->GetLogicPos());
+					PlayAnimation(ENAction::enMove, CalDirection(newPos, getPosition()));
+					setPosition(newPos);
 					if (NULL != this->getParent())
 					{
 						this->getParent()->reorderChild(this, -getPosition().y);
@@ -98,7 +99,7 @@ namespace Game
 					}
 					if (ENActorType::enMain == reinterpret_cast<const ActorProp*>(notify)->GetType())
 					{
-						WorldManager::Instance()->GetCamera()->SetPosition(getPosition());
+						WorldManager::Instance()->GetCamera()->SetPosition(actorEvent->GetLogicPos());
 					}
 				}
 				break;

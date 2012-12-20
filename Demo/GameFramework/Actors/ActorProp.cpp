@@ -9,7 +9,7 @@ namespace Game
 	ActorProp::ActorProp(ENActorType::Decl type, int id)
 	:m_id(id)
 	,m_type(type)
-	,m_speed(500.0f)
+	,m_speed(50.0f)
 	,m_currentAction(NULL)
 	,m_nextAction(NULL)
 	{

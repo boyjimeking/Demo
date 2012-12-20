@@ -10,6 +10,7 @@
 #include "CCCamera.h"
 #include "CameraNotifyEvents.h"
 #include "support/CCPointExtension.h"
+#include "WorldManager.h"
 
 namespace Game
 {
@@ -43,7 +44,7 @@ namespace Game
             case ENCameraEvent::enPosChanged:
                 {
                     const CameraPosChanged *posChangedEvent = reinterpret_cast<const CameraPosChanged*>(event);
-                    setPosition(cocos2d::ccpNeg(posChangedEvent->GetCameraPosition()));
+                    setPosition(WorldManager::LogicToPoint(cocos2d::ccpNeg(posChangedEvent->GetCameraPosition())));
                 }
                 break;
 			case ENCameraEvent::enScaleChanged:

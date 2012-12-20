@@ -73,6 +73,10 @@ namespace Game
         static cocos2d::CCPoint DesignPosToWorld(const cocos2d::CCPoint &screenPos);
 		static float LogicToPoint(float size);
 		static float PointToLogic(float size);
+		static cocos2d::CCPoint LogicToPoint(const cocos2d::CCPoint &pos);
+		static cocos2d::CCPoint PointToLogic(const cocos2d::CCPoint &pos);
+		static cocos2d::CCSize LogicToPoint(const cocos2d::CCSize &pos);
+		static cocos2d::CCSize PointToLogic(const cocos2d::CCSize &pos);
 
         void update(float dt);
 

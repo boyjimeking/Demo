@@ -50,7 +50,7 @@ namespace Game
 	{
 		ActorEventChangePos(const cocos2d::CCPoint &worldPos) : m_targetPos(worldPos) {}
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enChangePos; }
-		const cocos2d::CCPoint& GetWorldPos(void) const { return m_targetPos; };
+		const cocos2d::CCPoint& GetLogicPos(void) const { return m_targetPos; };
 	private:
 		cocos2d::CCPoint m_targetPos;
 	};

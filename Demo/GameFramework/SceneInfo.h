@@ -33,27 +33,22 @@ namespace Game
 		float GetHeight(void) const { return m_height; }
 		int GetColumn(void) const { return m_gridColumn; }
 		int GetRow(void) const { return m_gridRow; }
-		int GetGridSize(void) const { return m_gridSize; }
+		float GetGridSize(void) const { return m_gridSize; }
 
 		int GetGridArrayLength(void) const { return m_gridArrayLength; }
 
 		const std::string& GetSceneName() const { return m_sceneName; }
-		void SetSceneName(const std::string &val);
-		void SetSceneScale(float scale);
-		float GetTransScale(void) const { return m_transScale; }
+		void SetSceneName(const std::string &val) { m_sceneName = val; }
 
-		float LogicToPoint(float size);
-		float PointToLogic(float size);
 	protected:
 		std::string m_sceneName;
 		float m_width;
 		float m_height;
-		int m_gridSize;
+		float m_gridSize;
 		int m_gridColumn;
 		int m_gridRow;
 		char *m_grid;
 		int m_gridArrayLength;
-		float m_transScale;
 	private:
 
 	};
