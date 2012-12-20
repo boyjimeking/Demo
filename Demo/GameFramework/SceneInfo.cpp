@@ -43,6 +43,10 @@ namespace Game
 	}
 	bool SceneInfo::GetGridPass(int x, int y)
 	{
+		if (x < 0 || x >= m_gridColumn || y < 0 || y >= m_gridRow)
+		{
+			return false;
+		}
 		int pos = y * m_gridColumn + x;
 		int index = pos / 8;
 		int charPos = pos % 8;

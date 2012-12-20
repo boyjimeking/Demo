@@ -1,4 +1,4 @@
-﻿#include "ActorEntity.h"
+#include "ActorEntity.h"
 #include "ActorEvents.h"
 #include "textures/CCTextureCache.h"
 #include "sprite_nodes/CCSpriteFrame.h"
