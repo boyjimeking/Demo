@@ -48,7 +48,7 @@ namespace Game
 		int pos = y * m_gridColumn + x;
 		int index = pos / 8;
 		int charPos = pos % 8;
-		return 0 == (m_grid[index] & (1 << charPos));
+		return 0 != (m_grid[index] & (1 << charPos));
 	}
 	bool SceneInfo::IsPointCanStanc(const cocos2d::CCPoint &point)
 	{

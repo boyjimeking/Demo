@@ -10,13 +10,15 @@
 #include "../CSProtocol/CSMessageDef.h"
 #include "../CSProtocol/CSPipeline.h"
 #include "MainActor.h"
+#include "../CCFileUtils.h"
+#include "Tools/Scene.h"
 
 namespace Net
 {
-	const float Server::Width = 384.0f;
-	const float Server::Height = 192.0f;
-	const float Server::GridSize = 0.5f;
-	const float Server::TranScale = 10.0f;//一米多少点
+	float Server::Width = 384.0f;
+	float Server::Height = 192.0f;
+	float Server::GridSize = 0.5f;
+	float Server::TranScale = 10.0f;//一米多少点
 
     Server::Server(void)
     {
@@ -53,6 +55,17 @@ namespace Net
     }
     void Server::Init(void)
     {
+		const char *fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath("scene.bin");
+		unsigned long size = 0;
+		unsigned char *buff = cocos2d::CCFileUtils::sharedFileUtils()->getFileData(fullPath, "rb", &size);
+		Tools::Scene scene;
+		scene.Read(buff, size);
+		delete[] buff;
+		Width = scene.GetWidth();
+		Height = scene.GetHeight();
+		GridSize = scene.GetGridSize();
+		TranScale = scene.GetTransScale();
+
         {
             CSInitScene_S2C message;
             message.m_sceneID = 1;
