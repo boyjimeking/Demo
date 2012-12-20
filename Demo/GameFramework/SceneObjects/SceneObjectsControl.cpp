@@ -14,15 +14,12 @@ namespace Game
 	}
 	SceneObjectsControl::~SceneObjectsControl(void)
 	{
-		for (int index = 0; index < m_sceneObjects.size(); ++index)
-		{
-			delete m_sceneObjects[index];
-		}
-		m_sceneObjects.clear();
+		Clear();
 	}
 
 	void SceneObjectsControl::Init(const Tools::Scene *sceneFile)
 	{
+		Clear();
 		typedef Tools::Scene::ImageNameList ImageList;
 		const ImageList &imageList = sceneFile->GetImageNameList();
 		for (ImageList::const_iterator it = imageList.begin(); imageList.end() != it; ++it)
@@ -110,6 +107,26 @@ namespace Game
 		}
 		SceneObjectEventRemoveObjectImage event(strName);
 		NotifyChange(&event);
+	}
+
+	void SceneObjectsControl::Clear( void )
+	{
+		for (SceneObjectList::iterator it = m_sceneObjects.begin(); m_sceneObjects.end() != it; ++it)
+		{
+			SceneObjectProp *prop = *it;
+			m_sceneObjects.erase(it);
+			prop->Remove();
+			delete prop;
+		}
+		m_sceneObjects.clear();
+
+		for (ImageList::iterator it = m_imageList.begin(); m_imageList.end() != it; ++it)
+		{
+			SceneObjectEventRemoveObjectImage event(*it);
+			NotifyChange(&event);
+			m_imageList.erase(it);
+		}
+		m_imageList.clear();
 	}
 
 }

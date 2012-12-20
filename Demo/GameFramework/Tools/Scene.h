@@ -40,7 +40,7 @@ namespace Tools
 		typedef std::list<std::string> ImageNameList;
 
 		Scene(void);
-		~Scene(void);
+		virtual ~Scene(void);
 
 		void Read(unsigned char *buff, unsigned int size);
 		unsigned int Write(unsigned char *buff, unsigned int size);

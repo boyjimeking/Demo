@@ -15,11 +15,12 @@ namespace Game
 	}
 	TerrainProp::~TerrainProp(void)
 	{
-		
+		Clear();
 	}
 
 	void TerrainProp::Init(const Tools::Scene *sceneFile)
 	{
+		Clear();
 		typedef Tools::Scene::TerrainInfoList InfoList;
 		const InfoList &list = sceneFile->GetTerrainList();
 		for (InfoList::const_iterator it = list.begin(); list.end() != it; ++it)
@@ -73,6 +74,18 @@ namespace Game
 			}
 		}
 		return NULL;
+	}
+
+	void TerrainProp::Clear( void )
+	{
+		for (GridList::iterator it = m_gridList.begin(); m_gridList.end() != it; ++it)
+		{
+			GridProp *prop = *it;
+			m_gridList.erase(it);
+			prop->Remove();
+			delete prop;
+		}
+		m_gridList.clear();
 	}
 
 }

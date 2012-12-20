@@ -35,6 +35,8 @@ namespace Game
 		void ChangeTerrainGrid(int id, const char *imageName, float x, float y, float width, float height);
 		void RemoveTerrainGrid(int id);
 		GridProp* LookupGrid(int id);
+
+		void Clear(void);
 	protected:
 	private:
 		typedef std::vector<GridProp*> GridList;

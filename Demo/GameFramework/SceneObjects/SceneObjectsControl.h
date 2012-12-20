@@ -43,6 +43,8 @@ namespace Game
 		void ChangeSceneObject(int id, const char *imageName, float x, float y, float width, float height);
 		void RemoveSceneObject(int id);
 		SceneObjectProp* LookupSceneObject(int id);
+
+		void Clear(void);
 	protected:
 	private:
 		typedef std::vector<SceneObjectProp*> SceneObjectList;
