@@ -11,6 +11,7 @@
 
 #include <list>
 #include <string>
+#include <vector>
 
 namespace Tools
 {
@@ -37,7 +38,7 @@ namespace Tools
 	public:
 		typedef std::list<ObjectInfo*> ObjectInfoList;
 		typedef std::list<TerrainInfo*> TerrainInfoList;
-		typedef std::list<std::string> ImageNameList;
+		typedef std::vector<std::string> ImageNameList;
 
 		Scene(void);
 		virtual ~Scene(void);

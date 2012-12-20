@@ -64,6 +64,8 @@ namespace Tools
 		if (NULL != m_grid)
 		{
 			delete[] m_grid;
+			m_grid = NULL;
+			m_gridArrayLength = 0;
 		}
 		for (ObjectInfoList::iterator it = m_objectInfoList.begin(); m_objectInfoList.end() != it; ++it)
 		{
@@ -152,13 +154,13 @@ namespace Tools
             //图片名称
 			unsigned int imageNameSize = 0;
 			stream.Read(&imageNameSize);
+			m_imageName.resize(imageNameSize);
 			for (unsigned int index = 0; index < imageNameSize; ++index)
 			{
 				unsigned int length = 0;
 				stream.Read(&length);
-				m_imageName.push_back(std::string());
-				m_imageName.back().resize(length);
-				stream.Read(&m_imageName.back()[0], length);
+				m_imageName[index].resize(length);
+				stream.Read(&m_imageName[index][0], length);
 			}
 			//读取场景基本信息
 			stream.Read(&m_width);

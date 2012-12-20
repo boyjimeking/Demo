@@ -22,17 +22,37 @@ namespace Tools
 
 	EditScene::~EditScene(void)
 	{
-
+		Clear();
+		if (NULL != m_grid)
+		{
+			delete[] m_grid;
+			m_grid = NULL;
+			m_gridArrayLength = 0;
+		}
 	}
 
 	void EditScene::Load( unsigned char *data, int dataLength )
 	{
+		Clear();
 		Read(data, dataLength);
+		m_objectCount = 0;
+		m_terrainCount = 0;
+		for (ObjectInfoList::iterator it = m_objectInfoList.begin(); m_objectInfoList.end() != it; ++it)
+		{
+			ObjectInfo *info = (*it);
+			m_objectCount = max(info->m_id, m_objectCount);
+		}
+		for (ObjectInfoList::iterator it = m_terrainInfoList.begin(); m_terrainInfoList.end() != it; ++it)
+		{
+			TerrainInfo *info = (*it);
+			m_terrainCount = max(info->m_id, m_terrainCount);
+		}
 		Game::WorldManager::Instance()->InitScene(this);
 	}
 
 	void EditScene::Create(float width, float height, float gridSize, int transScale)
 	{
+		Clear();
 		m_width = width;
 		m_height = height;
 		m_gridSize = gridSize;
@@ -198,4 +218,29 @@ namespace Tools
 			}
 		}
 	}
+
+	void EditScene::Clear( void )
+	{
+		memset(m_grid, 0, m_gridArrayLength);
+		for (ObjectInfoList::iterator it = m_objectInfoList.begin(); m_objectInfoList.end() != it; ++it)
+		{
+			ObjectInfo *info = (*it);
+			Game::WorldManager::Instance()->GetSceneObjectsControl()->RemoveSceneObject(info->m_id);
+			delete info;
+		}
+		m_objectInfoList.clear();
+		for (ObjectInfoList::iterator it = m_terrainInfoList.begin(); m_terrainInfoList.end() != it; ++it)
+		{
+			TerrainInfo *info = (*it);
+			Game::WorldManager::Instance()->GetTerrainProp()->RemoveTerrainGrid(info->m_id);
+			delete info;
+		}
+		m_terrainInfoList.clear();
+		for (ImageNameList::iterator it = m_imageName.begin(); m_imageName.end() != it; ++it)
+		{
+			Game::WorldManager::Instance()->GetSceneObjectsControl()->RemoveObjectImage((*it).c_str());
+		}
+		m_imageName.clear();
+	}
+
 }

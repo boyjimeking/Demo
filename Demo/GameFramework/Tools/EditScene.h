@@ -36,6 +36,8 @@ namespace Tools
 		int AddTerrain(const char *image, float x, float y, float width, float height);
 		void ChangeTerrain(int id, const char *image, float x, float y, float width, float height);
 		void RemoveTerrain(int id);
+
+		void Clear(void);
 	protected:
 
 	private:
