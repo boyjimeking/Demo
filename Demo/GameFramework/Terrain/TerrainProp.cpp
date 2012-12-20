@@ -81,7 +81,6 @@ namespace Game
 		for (GridList::iterator it = m_gridList.begin(); m_gridList.end() != it; ++it)
 		{
 			GridProp *prop = *it;
-			m_gridList.erase(it);
 			prop->Remove();
 			delete prop;
 		}

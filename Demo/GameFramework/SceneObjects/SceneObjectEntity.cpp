@@ -1,11 +1,16 @@
 #include "SceneObjectEntity.h"
 #include "SceneObjectEvents.h"
 #include "sprite_nodes/CCSpriteFrameCache.h"
+#include "Base/INotifier.h"
 
 namespace Game
 {
 	SceneObjectEntity* SceneObjectEntity::Create(void)
 	{
+		if (!INotifier::NotifyMode)
+		{
+			return NULL;
+		}
 		SceneObjectEntity *entity = new SceneObjectEntity();
 	    if (entity && entity->init())
 	    {

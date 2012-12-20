@@ -114,7 +114,6 @@ namespace Game
 		for (SceneObjectList::iterator it = m_sceneObjects.begin(); m_sceneObjects.end() != it; ++it)
 		{
 			SceneObjectProp *prop = *it;
-			m_sceneObjects.erase(it);
 			prop->Remove();
 			delete prop;
 		}
@@ -124,7 +123,6 @@ namespace Game
 		{
 			SceneObjectEventRemoveObjectImage event(*it);
 			NotifyChange(&event);
-			m_imageList.erase(it);
 		}
 		m_imageList.clear();
 	}
