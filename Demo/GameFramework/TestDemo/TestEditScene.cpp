@@ -14,6 +14,7 @@
 #include "Terrain/GridProp.h"
 #include "Terrain/TerrainProp.h"
 #include "SceneInfo.h"
+#include "Camera/Camera.h"
 
 class TestEditScene
 	:public testing::Test
@@ -49,7 +50,7 @@ TEST_F(TestEditScene, Create)
 	EXPECT_EQ(500, Game::WorldManager::Instance()->GetSceneInfo()->GetWidth());
 	EXPECT_EQ(400, Game::WorldManager::Instance()->GetSceneInfo()->GetHeight());
 	EXPECT_EQ(5, Game::WorldManager::Instance()->GetSceneInfo()->GetGridSize());
-	EXPECT_EQ(32, Game::WorldManager::Instance()->GetSceneInfo()->GetTransScale());
+	EXPECT_EQ(32, Game::WorldManager::Instance()->GetCamera()->GetTransScale());
 	EXPECT_EQ(100, Game::WorldManager::Instance()->GetSceneInfo()->GetColumn());
 	EXPECT_EQ(80, Game::WorldManager::Instance()->GetSceneInfo()->GetRow());
 }

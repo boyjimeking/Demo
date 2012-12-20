@@ -11,7 +11,6 @@ namespace Game
 		,m_gridRow(0)
 		,m_grid(NULL)
 		,m_gridArrayLength(0)
-		,m_transScale(1)
 	{
 
 	}
@@ -39,7 +38,6 @@ namespace Game
 		}
 		m_grid = new char[m_gridArrayLength];
 		memcpy(m_grid, sceneFile->GetGrids(), m_gridArrayLength);
-		m_transScale = sceneFile->GetTransScale();
 	}
 	bool SceneInfo::GetGridPass(int x, int y)
 	{
@@ -64,20 +62,6 @@ namespace Game
 		{
 			return false;
 		}
-	}
-	void SceneInfo::SetSceneName( const std::string &val )
-	{
-		m_sceneName = val;
-	}
-
-	float SceneInfo::LogicToPoint( float size )
-	{
-		return size * m_transScale;
-	}
-
-	float SceneInfo::PointToLogic( float size )
-	{
-		return size / m_transScale;
 	}
 
 }

@@ -36,8 +36,10 @@ namespace Net
     	ServerActorMap m_serverActorMap;
 
     public:
-    	static const int Width;
-    	static const int Height;
+		static const float Width;
+		static const float Height;
+		static const float GridSize;
+		static const float TranScale;//一米多少点
     };
 }
 

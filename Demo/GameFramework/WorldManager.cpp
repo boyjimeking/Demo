@@ -139,13 +139,34 @@ namespace Game
 	}
 	float WorldManager::LogicToPoint( float size )
 	{
-		return Instance()->GetSceneInfo()->LogicToPoint(size);
+		return Instance()->GetCamera()->LogicToPoint(size);
+	}
+
+	cocos2d::CCPoint WorldManager::LogicToPoint( const cocos2d::CCPoint &pos )
+	{
+		return Instance()->GetCamera()->LogicToPoint(pos);
+	}
+
+	cocos2d::CCSize WorldManager::LogicToPoint( const cocos2d::CCSize &pos )
+	{
+		return Instance()->GetCamera()->LogicToPoint(pos);
 	}
 
 	float WorldManager::PointToLogic( float size )
 	{
-		return Instance()->GetSceneInfo()->PointToLogic(size);
+		return Instance()->GetCamera()->PointToLogic(size);
 	}
+
+	cocos2d::CCPoint WorldManager::PointToLogic( const cocos2d::CCPoint &pos )
+	{
+		return Instance()->GetCamera()->PointToLogic(pos);
+	}
+
+	cocos2d::CCSize WorldManager::PointToLogic( const cocos2d::CCSize &pos )
+	{
+		return Instance()->GetCamera()->PointToLogic(pos);
+	}
+
     void WorldManager::update(float dt)
     {
     	GetActorsControl()->Tick(dt);
@@ -166,6 +187,7 @@ namespace Game
 	void WorldManager::InitScene( const Tools::Scene *scene )
 	{
 		GetSceneInfo()->Init(scene);
+		GetCamera()->SetTransScale(scene->GetTransScale());
 		GetTerrainProp()->Init(scene);
 		GetSceneObjectsControl()->Init(scene);
 	}

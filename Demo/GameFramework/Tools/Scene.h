@@ -55,7 +55,7 @@ namespace Tools
 		int GetRow(void) const { return m_gridRow; }
 		float GetGridSize(void) const { return m_gridSize; }
 		//逻辑坐标与像素坐标的转换，point per meter
-		int GetTransScale(void) const { return m_transScale; }
+		float GetTransScale(void) const { return m_transScale; }
 
 		bool GetGridPass(int x, int y);
 
@@ -71,7 +71,7 @@ namespace Tools
 		float m_gridSize;
 		int m_gridColumn;
 		int m_gridRow;
-		int m_transScale;
+		float m_transScale;
 		char *m_grid;
 		int m_gridArrayLength;
 		ObjectInfoList m_objectInfoList;

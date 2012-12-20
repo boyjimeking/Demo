@@ -39,6 +39,8 @@ namespace Tools
 		:m_x(0)
 		,m_y(0)
 		,m_id(0)
+		,m_width(0)
+		,m_height(0)
 	{
 		memset(m_imageName, 0, sizeof(m_imageName));
 	}

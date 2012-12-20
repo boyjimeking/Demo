@@ -19,6 +19,7 @@ namespace Game
     Camera::Camera(void)
         :m_size(960, 640)
 		,m_scale(1.0f)
+		,m_transScale(1.0f)
     {
 
     }
@@ -31,7 +32,7 @@ namespace Game
     {
         this->AttachObserver(observer);
 
-        m_size = cocos2d::CCDirector::sharedDirector()->getWinSize();
+		SetTransScale(1.0f);
         SetPosition(cocos2d::CCPointZero);
     }
 
@@ -42,17 +43,46 @@ namespace Game
 		newPos.y *= m_scale;
 		newPos.x += m_size.width / 2;
 		newPos.y += m_size.height / 2;
-        return newPos;
+        return LogicToPoint(newPos);
     }
     cocos2d::CCPoint Camera::ConvertDesignPosToWorld(const cocos2d::CCPoint &screenPos)
     {
-		cocos2d::CCPoint newPos = screenPos;
+		cocos2d::CCPoint newPos = PointToLogic(screenPos);
 		newPos.x -= m_size.width / 2;
 		newPos.y -= m_size.height / 2;
 		newPos.x /= m_scale;
 		newPos.y /= m_scale;
         return cocos2d::ccpAdd(newPos, GetPosition());
     }
+	float Camera::LogicToPoint( float size )
+	{
+		return size * m_transScale;
+	}
+
+	cocos2d::CCPoint Camera::LogicToPoint( const cocos2d::CCPoint &pos )
+	{
+		return ccpMult(pos, m_transScale);
+	}
+
+	cocos2d::CCSize Camera::LogicToPoint( const cocos2d::CCSize &pos )
+	{
+		return cocos2d::CCSizeMake(pos.width * m_transScale, pos.height * m_transScale);
+	}
+
+	float Camera::PointToLogic( float size )
+	{
+		return size / m_transScale;
+	}
+
+	cocos2d::CCPoint Camera::PointToLogic( const cocos2d::CCPoint &pos )
+	{
+		return ccpMult(pos, 1.0f / m_transScale);
+	}
+
+	cocos2d::CCSize Camera::PointToLogic( const cocos2d::CCSize &pos )
+	{
+		return cocos2d::CCSizeMake(pos.width / m_transScale, pos.height / m_transScale);
+	}
 
     void Camera::SetPosition(const cocos2d::CCPoint &newPosition)
     {
@@ -69,6 +99,14 @@ namespace Game
 		m_scale = scale;
 		CameraScaleChanged event(m_scale);
 		NotifyChange(&event);
+	}
+
+	void Camera::SetTransScale( float transScale )
+	{
+		m_transScale = transScale;
+		m_size = cocos2d::CCDirector::sharedDirector()->getWinSize();
+		m_size.width = PointToLogic(m_size.width);
+		m_size.height = PointToLogic(m_size.height);
 	}
 
 }
