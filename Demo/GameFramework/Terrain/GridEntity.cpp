@@ -10,6 +10,7 @@
 #include "GridEvents.h"
 #include "textures/CCTextureCache.h"
 #include "WorldManager.h"
+#include "Camera/Camera.h"
 
 namespace Game
 {
@@ -32,11 +33,11 @@ namespace Game
 		{
 		case ENGridEventType::enInitGrid:
 			{
+				setScale(WorldManager::Instance()->GetCamera()->GetObjectScale());
 				const GridEventInit *gridEvent = reinterpret_cast<const GridEventInit*>(event);
 				cocos2d::CCTexture2D *texture = cocos2d::CCTextureCache::sharedTextureCache()->addImage(gridEvent->m_imageName.c_str());
 				initWithTexture(texture);
-				setPosition(WorldManager::LogicToPoint(gridEvent->m_position));
-				setContentSize(WorldManager::LogicToPoint(gridEvent->m_size));
+				setPosition(gridEvent->m_position);
 				setAnchorPoint(cocos2d::CCPointZero);
 			}
 			break;

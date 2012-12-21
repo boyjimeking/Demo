@@ -53,6 +53,7 @@ namespace Game
 		{
 			case ENActorEvent::enCreate:
 				{
+					setScale(WorldManager::Instance()->GetCamera()->GetObjectScale());
 					setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
 					const ActorEventCreate *actorEvent = reinterpret_cast<const ActorEventCreate*>(event);
 					switch (actorEvent->GetType())

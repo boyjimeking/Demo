@@ -47,6 +47,7 @@ namespace Game
 
 		void SetTransScale(float transScale);
 		float GetTransScale(void) const { return m_transScale; }
+		float GetObjectScale(void) const { return 1 / m_transScale; }
     protected:
     private:
         cocos2d::CCSize m_size;

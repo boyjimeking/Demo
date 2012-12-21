@@ -107,6 +107,7 @@ namespace Game
 		m_size = cocos2d::CCDirector::sharedDirector()->getWinSize();
 		m_size.width = PointToLogic(m_size.width);
 		m_size.height = PointToLogic(m_size.height);
+		SetScale(transScale);
 	}
 
 }
