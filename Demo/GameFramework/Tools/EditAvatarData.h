@@ -9,6 +9,7 @@
 #define EditAvatarData_h__
 
 #include "AvatarData.h"
+#include "Base/GlobalDef.h"
 
 namespace Tools
 {
@@ -22,6 +23,8 @@ namespace Tools
 		void Create(const char *plistFile);
 		void Load(unsigned char *data, int dataLength);
 		int Save(unsigned char *data, int dataLength);
+
+		void AddAnimation(ENDirection::Decl direction);
 	protected:
 
 	private:

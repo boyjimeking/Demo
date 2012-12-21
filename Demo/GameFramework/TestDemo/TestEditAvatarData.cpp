@@ -5,10 +5,11 @@
 //	author:		Mingzhen Zhang
 //
 //////////////////////////////////////////////////////////////////////////
-//#define __TestEditAvatarData_Test__
+#define __TestEditAvatarData_Test__
 #ifdef __TestEditAvatarData_Test__
 
 #include "gtest.h"
+#include "Tools\EditAvatarData.h"
 
 class TestEditAvatarData
 	:public testing::Test
@@ -16,16 +17,23 @@ class TestEditAvatarData
 public:
 	virtual void SetUp()
 	{
-		
+		m_writeData = new Tools::EditAvatarData;
+		m_readData = new Tools::AvatarData;
 	}
 	virtual void TearDown()
 	{
-		
+		delete m_readData;
+		delete m_writeData;
 	}
 
-private:
-
+public:
+	Tools::EditAvatarData *m_writeData;
+	Tools::AvatarData *m_readData;
 };
 
+TEST_F(TestEditAvatarData, )
+{
+	
+}
 
 #endif // __TestEditAvatarData_Test__

@@ -5,7 +5,7 @@
 //	author:		Mingzhen Zhang
 //
 //////////////////////////////////////////////////////////////////////////
-#define __TestAnimationData_Test__
+//#define __TestAnimationData_Test__
 #ifdef __TestAnimationData_Test__
 
 #include "gtest.h"

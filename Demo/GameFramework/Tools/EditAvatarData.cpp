@@ -27,4 +27,11 @@ namespace Tools
 		return Write(data, dataLength);
 	}
 
+	void EditAvatarData::Create( const char *plistFile )
+	{
+		Clear();
+		m_plist = plistFile;
+		m_animationTable.resize(ENDirection::Count);
+	}
+
 }

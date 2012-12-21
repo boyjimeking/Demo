@@ -41,6 +41,8 @@ struct ENDirection
 		enSouthWest,	//↙	-3π/4
 		enSouth,		//↓	-π/2
 		enSouthEast,	//↘	-π/4
+
+		Count,
 	};
 };
 #endif
