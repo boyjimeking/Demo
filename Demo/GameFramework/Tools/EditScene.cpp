@@ -50,7 +50,7 @@ namespace Tools
 		Game::WorldManager::Instance()->InitScene(this);
 	}
 
-	void EditScene::Create(float width, float height, float gridSize, int transScale)
+	void EditScene::Create(float width, float height, float gridSize, float transScale)
 	{
 		Clear();
 		m_width = width;

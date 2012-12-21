@@ -20,7 +20,7 @@ namespace Tools
 		virtual ~EditScene(void);
 
 		void Load(unsigned char *data, int dataLength);
-		void Create(float width, float height, float gridSize, int transScale/* point per meter */);
+		void Create(float width, float height, float gridSize, float transScale/* point per meter */);
 		int Save(unsigned char *data, int dataLength);
 
 		void SetSceneName(const char *sceneName);
