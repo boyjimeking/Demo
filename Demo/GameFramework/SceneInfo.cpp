@@ -64,4 +64,19 @@ namespace Game
 		}
 	}
 
+	void SceneInfo::SetGridPass( int x, int y, bool isPass )
+	{
+		int pos = y * m_gridColumn + x;
+		int index = pos / 8;
+		int charPos = pos % 8;
+		if (isPass)
+		{
+			m_grid[index] |= (1 << charPos);
+		}
+		else
+		{
+			m_grid[index] &= (1 << charPos);
+		}
+	}
+
 }

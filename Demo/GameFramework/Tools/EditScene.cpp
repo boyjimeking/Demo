@@ -94,6 +94,7 @@ namespace Tools
 		{
 			m_grid[index] &= (1 << charPos);
 		}
+		Game::WorldManager::Instance()->GetSceneInfo()->SetGridPass(x, y, isPass);
 	}
 
 	void EditScene::AddObjectImage( const char *imageName )

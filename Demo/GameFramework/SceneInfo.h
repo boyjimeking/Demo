@@ -40,6 +40,7 @@ namespace Game
 		const std::string& GetSceneName() const { return m_sceneName; }
 		void SetSceneName(const std::string &val) { m_sceneName = val; }
 
+		void SetGridPass(int x, int y, bool isPass);
 	protected:
 		std::string m_sceneName;
 		float m_width;
