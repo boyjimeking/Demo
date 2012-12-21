@@ -1,4 +1,5 @@
 #include "EditAvatarData.h"
+#include "AnimationData.h"
 
 namespace Tools
 {
@@ -18,7 +19,7 @@ namespace Tools
 		Read(data, dataLength);
 		for (int index = 0; index < m_animationTable.size(); ++index)
 		{
-			m_animationCount = max(m_animationTable[index], m_animationCount);
+			m_animationCount = std::max(m_animationTable[index]->GetID(), m_animationCount);
 		}
 	}
 
@@ -32,6 +33,12 @@ namespace Tools
 		Clear();
 		m_plist = plistFile;
 		m_animationTable.resize(ENDirection::Count);
+	}
+
+	AnimationData* EditAvatarData::GetAnimation( ENDirection::Decl direction )
+	{
+		m_animationTable[direction] = new AnimationData;
+		return m_animationTable[direction];
 	}
 
 }

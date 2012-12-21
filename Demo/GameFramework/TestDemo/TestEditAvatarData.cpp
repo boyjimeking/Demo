@@ -19,6 +19,8 @@ public:
 	{
 		m_writeData = new Tools::EditAvatarData;
 		m_readData = new Tools::AvatarData;
+
+		Tools::AnimationData *data = m_writeData->AddAnimation(ENDirection::enEast);
 	}
 	virtual void TearDown()
 	{
@@ -31,7 +33,7 @@ public:
 	Tools::AvatarData *m_readData;
 };
 
-TEST_F(TestEditAvatarData, )
+TEST_F(TestEditAvatarData, AddAnimation)
 {
 	
 }

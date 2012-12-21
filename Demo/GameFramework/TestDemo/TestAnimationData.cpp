@@ -37,7 +37,6 @@ TEST_F(TestAnimationData, Data)
 	Tools::StreamHelper stream(buff, 4096);
 	Tools::StreamHelper readStream(buff, 4096);
 
-	m_data->SetID(1);
 	m_data->SetDelay(0.2f);
 	m_data->SetDirection(ENDirection::enEast);
 	m_data->AddFrame("frame1");
@@ -46,7 +45,6 @@ TEST_F(TestAnimationData, Data)
 	m_data->Write(&stream);
 
 	m_readData->Read(&readStream);
-	EXPECT_EQ(m_data->GetID(), m_readData->GetID());
 	EXPECT_EQ(m_data->GetDelay(), m_readData->GetDelay());
 	EXPECT_EQ(m_data->GetDirection(), m_readData->GetDirection());
 	EXPECT_EQ(m_data->GetFrames(), m_readData->GetFrames());

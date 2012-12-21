@@ -4,8 +4,7 @@
 namespace Tools
 {
 	AnimationData::AnimationData(void)
-		:m_id(0)
-		,m_delay(0.0f)
+		:m_delay(0.0f)
 		,m_direction(ENDirection::enError)
 	{
 
@@ -23,7 +22,6 @@ namespace Tools
 
 	void AnimationData::Read(StreamHelper *stream)
 	{
-		stream->Read(m_id);
 		stream->Read(m_delay);
 		stream->Read(m_direction);
 		unsigned int frameSize = 0;
@@ -37,7 +35,6 @@ namespace Tools
 
 	void AnimationData::Write(StreamHelper *stream)
 	{
-		stream->Write(m_id);
 		stream->Write(m_delay);
 		stream->Write(m_direction);
 		unsigned int frameSize = m_frame.size();

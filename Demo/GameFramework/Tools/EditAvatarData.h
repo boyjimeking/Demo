@@ -13,6 +13,7 @@
 
 namespace Tools
 {
+	class AnimationData;
 	class EditAvatarData
 		:public AvatarData
 	{
@@ -24,7 +25,7 @@ namespace Tools
 		void Load(unsigned char *data, int dataLength);
 		int Save(unsigned char *data, int dataLength);
 
-		void AddAnimation(ENDirection::Decl direction);
+		AnimationData* GetAnimation(ENDirection::Decl direction);
 	protected:
 
 	private:

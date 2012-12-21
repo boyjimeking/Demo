@@ -99,7 +99,6 @@
     <ClCompile Include="gtest-all.cc" />
     <ClCompile Include="gtest_main.cc" />
     <ClCompile Include="TestAnimationData.cpp" />
-    <ClCompile Include="TestAvatarData.cpp" />
     <ClCompile Include="TestEditAvatarData.cpp" />
     <ClCompile Include="TestEditScene.cpp" />
   </ItemGroup>

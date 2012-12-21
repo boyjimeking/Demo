@@ -23,10 +23,6 @@ namespace Tools
 		AnimationData(void);
 		virtual ~AnimationData(void);
 
-		//ID
-		int GetID() const { return m_id; }
-		void SetID(int val) { m_id = val; }
-
 		//每帧时间
 		float GetDelay(void) const { return m_delay; }
 		void SetDelay(float delay) { m_delay = delay; }
@@ -46,8 +42,6 @@ namespace Tools
 		void Write(StreamHelper *stream);
 	protected:
 
-	private:
-		int m_id;
 		float m_delay;
 		ENDirection::Decl m_direction;
 		FrameList m_frame;
