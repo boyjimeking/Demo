@@ -80,6 +80,9 @@ namespace Game
 
         void update(float dt);
 
+		//设置碰撞是否生效
+		void SetCollidable(bool isCollide);
+
 	protected:
 		SceneInfo *m_sceneInfo;
 		ActorsControl *m_actorsControl;

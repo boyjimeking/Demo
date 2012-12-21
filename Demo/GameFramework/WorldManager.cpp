@@ -192,5 +192,10 @@ namespace Game
 		GetSceneObjectsControl()->Init(scene);
 	}
 
+	void WorldManager::SetCollidable( bool isCollide )
+	{
+		GetSceneInfo()->SetCollidable(isCollide);
+	}
+
 
 }

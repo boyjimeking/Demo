@@ -11,6 +11,7 @@ namespace Game
 		,m_gridRow(0)
 		,m_grid(NULL)
 		,m_gridArrayLength(0)
+		,m_isCollidable(true)
 	{
 
 	}
@@ -45,6 +46,10 @@ namespace Game
 		{
 			return false;
 		}
+		if (!m_isCollidable)
+		{
+			return true;
+		}
 		int pos = y * m_gridColumn + x;
 		int index = pos / 8;
 		int charPos = pos % 8;
@@ -77,6 +82,11 @@ namespace Game
 		{
 			m_grid[index] &= (1 << charPos);
 		}
+	}
+
+	void SceneInfo::SetCollidable( bool isCollide )
+	{
+		m_isCollidable = isCollide;
 	}
 
 }

@@ -41,6 +41,9 @@ namespace Game
 		void SetSceneName(const std::string &val) { m_sceneName = val; }
 
 		void SetGridPass(int x, int y, bool isPass);
+
+		//设置碰撞是否生效
+		void SetCollidable(bool isCollide);
 	protected:
 		std::string m_sceneName;
 		float m_width;
@@ -51,7 +54,7 @@ namespace Game
 		char *m_grid;
 		int m_gridArrayLength;
 	private:
-
+		bool m_isCollidable;
 	};
 }
 

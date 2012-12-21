@@ -2,6 +2,8 @@
 #include "SceneObjectEvents.h"
 #include "sprite_nodes/CCSpriteFrameCache.h"
 #include "Base/INotifier.h"
+#include "WorldManager.h"
+#include "Camera/Camera.h"
 
 namespace Game
 {
@@ -48,6 +50,7 @@ namespace Game
 				{
 					_setZOrder(-getPosition().y);
 				}
+				setScale(WorldManager::Instance()->GetCamera()->GetObjectScale());
 			}
 			break;
 		case ENSceneObjectEvent::enRemoveObject:
