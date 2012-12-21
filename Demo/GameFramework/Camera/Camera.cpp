@@ -17,8 +17,7 @@
 namespace Game
 {
     Camera::Camera(void)
-        :m_size(960, 640)
-		,m_scale(1.0f)
+        :m_size(0.0f, 0.0f)
 		,m_transScale(1.0f)
     {
 
@@ -33,25 +32,21 @@ namespace Game
         this->AttachObserver(observer);
 
 		SetTransScale(1.0f);
-        SetPosition(cocos2d::CCPointZero);
+		SetPosition(cocos2d::CCPointZero);
     }
 
     cocos2d::CCPoint Camera::ConvertWorldPosToDesign(const cocos2d::CCPoint &worldPos)
     {
 		cocos2d::CCPoint newPos = cocos2d::ccpSub(worldPos, GetPosition());
-		newPos.x *= m_scale;
-		newPos.y *= m_scale;
-		newPos.x += m_size.width / 2;
-		newPos.y += m_size.height / 2;
+		newPos.x += PointToLogic(m_size.width) / 2;
+		newPos.y += PointToLogic(m_size.height) / 2;
         return LogicToPoint(newPos);
     }
     cocos2d::CCPoint Camera::ConvertDesignPosToWorld(const cocos2d::CCPoint &screenPos)
     {
 		cocos2d::CCPoint newPos = PointToLogic(screenPos);
-		newPos.x -= m_size.width / 2;
-		newPos.y -= m_size.height / 2;
-		newPos.x /= m_scale;
-		newPos.y /= m_scale;
+		newPos.x -= PointToLogic(m_size.width) / 2;
+		newPos.y -= PointToLogic(m_size.height) / 2;
         return cocos2d::ccpAdd(newPos, GetPosition());
     }
 	float Camera::LogicToPoint( float size )
@@ -94,10 +89,9 @@ namespace Game
         NotifyChange(&event);
     }
 
-	void Camera::SetScale( float scale )
+	void Camera::SetRootScale( float scale )
 	{
-		m_scale = scale;
-		CameraScaleChanged event(m_scale);
+		CameraScaleChanged event(scale);
 		NotifyChange(&event);
 	}
 
@@ -105,9 +99,7 @@ namespace Game
 	{
 		m_transScale = transScale;
 		m_size = cocos2d::CCDirector::sharedDirector()->getWinSize();
-		m_size.width = PointToLogic(m_size.width);
-		m_size.height = PointToLogic(m_size.height);
-		SetScale(transScale);
+		SetRootScale(transScale);
 	}
 
 }

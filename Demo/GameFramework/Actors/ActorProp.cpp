@@ -56,10 +56,10 @@ namespace Game
 	}
 	void ActorProp::SetPosition(const cocos2d::CCPoint &pos)
 	{
-		if (!WorldManager::Instance()->GetSceneInfo()->IsPointCanStanc(pos))
-		{
-			return;
-		}
+		//if (!WorldManager::Instance()->GetSceneInfo()->IsPointCanStanc(pos))
+		//{
+		//	return;
+		//}
 		if (m_position.equals(pos))
 		{
 			return;

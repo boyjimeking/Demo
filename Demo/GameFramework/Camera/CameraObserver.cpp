@@ -44,7 +44,7 @@ namespace Game
             case ENCameraEvent::enPosChanged:
                 {
                     const CameraPosChanged *posChangedEvent = reinterpret_cast<const CameraPosChanged*>(event);
-                    setPosition(WorldManager::LogicToPoint(cocos2d::ccpNeg(posChangedEvent->GetCameraPosition())));
+                    setPosition(cocos2d::ccpNeg(posChangedEvent->GetCameraPosition()));
                 }
                 break;
 			case ENCameraEvent::enScaleChanged:

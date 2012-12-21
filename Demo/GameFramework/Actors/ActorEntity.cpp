@@ -87,7 +87,7 @@ namespace Game
 			case ENActorEvent::enChangePos:
 				{
 					const ActorEventChangePos *actorEvent = reinterpret_cast<const ActorEventChangePos*>(event);
-					cocos2d::CCPoint newPos = WorldManager::LogicToPoint(actorEvent->GetLogicPos());
+					cocos2d::CCPoint newPos = actorEvent->GetLogicPos();
 					PlayAnimation(ENAction::enMove, CalDirection(newPos, getPosition()));
 					setPosition(newPos);
 					if (NULL != this->getParent())
@@ -100,7 +100,7 @@ namespace Game
 					}
 					if (ENActorType::enMain == reinterpret_cast<const ActorProp*>(notify)->GetType())
 					{
-						WorldManager::Instance()->GetCamera()->SetPosition(actorEvent->GetLogicPos());
+						WorldManager::Instance()->GetCamera()->SetPosition(getPosition());
 					}
 				}
 				break;
