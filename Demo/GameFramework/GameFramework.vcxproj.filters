@@ -180,6 +180,15 @@
     <ClCompile Include="SceneObjects\SceneObjectControlEvent.cpp">
       <Filter>GameFramework\SceneObjects</Filter>
     </ClCompile>
+    <ClCompile Include="Tools\EditAvatarData.cpp">
+      <Filter>GameFramework\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\AvatarData.cpp">
+      <Filter>GameFramework\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\AnimationData.cpp">
+      <Filter>GameFramework\Tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CSProtocol\CSMessageDef.h">
@@ -325,6 +334,15 @@
     </ClInclude>
     <ClInclude Include="SceneObjects\SceneObjectControlEvent.h">
       <Filter>GameFramework\SceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\EditAvatarData.h">
+      <Filter>GameFramework\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\AvatarData.h">
+      <Filter>GameFramework\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\AnimationData.h">
+      <Filter>GameFramework\Tools</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

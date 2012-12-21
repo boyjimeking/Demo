@@ -48,7 +48,10 @@
     <ClCompile Include="Terrain\TerrainEvent.cpp" />
     <ClCompile Include="Terrain\TerrainLayer.cpp" />
     <ClCompile Include="Terrain\TerrainProp.cpp" />
+    <ClCompile Include="Tools\AnimationData.cpp" />
+    <ClCompile Include="Tools\AvatarData.cpp" />
     <ClCompile Include="Tools\DebugLayer.cpp" />
+    <ClCompile Include="Tools\EditAvatarData.cpp" />
     <ClCompile Include="Tools\EditScene.cpp" />
     <ClCompile Include="Tools\Scene.cpp" />
     <ClCompile Include="Tools\StreamHelper.cpp" />
@@ -98,7 +101,10 @@
     <ClInclude Include="Terrain\TerrainEvent.h" />
     <ClInclude Include="Terrain\TerrainLayer.h" />
     <ClInclude Include="Terrain\TerrainProp.h" />
+    <ClInclude Include="Tools\AnimationData.h" />
+    <ClInclude Include="Tools\AvatarData.h" />
     <ClInclude Include="Tools\DebugLayer.h" />
+    <ClInclude Include="Tools\EditAvatarData.h" />
     <ClInclude Include="Tools\EditScene.h" />
     <ClInclude Include="Tools\Scene.h" />
     <ClInclude Include="Tools\StreamHelper.h" />

@@ -24,6 +24,15 @@
     <ClCompile Include="TestEditScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="TestEditAvatarData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="TestAnimationData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="TestAvatarData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gtest.h">
