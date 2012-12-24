@@ -92,7 +92,7 @@ namespace Tools
 		}
 		else
 		{
-			m_grid[index] &= (1 << charPos);
+			m_grid[index] &= ~(1 << charPos);
 		}
 		Game::WorldManager::Instance()->GetSceneInfo()->SetGridPass(x, y, isPass);
 	}
