@@ -196,4 +196,28 @@ namespace Tools
 		}
 	}
 
+	ObjectInfo* Scene::LookupObject( int id ) const
+	{
+		for (ObjectInfoList::const_iterator it = m_objectInfoList.begin(); m_objectInfoList.end() != it; ++it)
+		{
+			if ((*it)->m_id == id)
+			{
+				return *it;
+			}
+		}
+		return NULL;
+	}
+
+	TerrainInfo* Scene::LookupTerrain( int id ) const
+	{
+		for (TerrainInfoList::const_iterator it = m_terrainInfoList.begin(); m_terrainInfoList.end() != it; ++it)
+		{
+			if ((*it)->m_id == id)
+			{
+				return *it;
+			}
+		}
+		return NULL;
+	}
+
 }

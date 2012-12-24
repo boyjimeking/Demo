@@ -1,4 +1,4 @@
-//
+﻿//
 //  Scene.h
 //  SceneObjects
 //
@@ -64,6 +64,9 @@ namespace Tools
 		int GetGridArrayLength(void) const { return m_gridArrayLength; }
 		const ObjectInfoList& GetObjectInfoList(void) const { return m_objectInfoList; }
 		const TerrainInfoList& GetTerrainList(void) const { return m_terrainInfoList; }
+
+		ObjectInfo* LookupObject(int id) const;
+		TerrainInfo* LookupTerrain(int id) const;
 	protected:
 		char m_sceneName[128];
 		ImageNameList m_imageName;
