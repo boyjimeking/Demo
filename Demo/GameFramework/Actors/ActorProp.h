@@ -14,6 +14,11 @@
 #include <list>
 #include "ActorAction.h"
 
+namespace Tools
+{
+	class AvatarData;
+}
+
 namespace Game
 {
 	class ActorEntity;
@@ -41,6 +46,7 @@ namespace Game
 		void MoveTo(const cocos2d::CCPoint &pos);
 		void Stop(void);
 		void Attack(ActorProp *target);
+		void ChangeAvatar(Tools::AvatarData *avatar);
 
 		void SetPosition(const cocos2d::CCPoint &pos);
 

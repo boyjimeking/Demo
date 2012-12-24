@@ -7,3 +7,6 @@ RemoveBom
 cd ..
 cd VirtualServer
 RemoveBom
+cd ..
+cd Tools
+RemoveBom

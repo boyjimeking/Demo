@@ -18,19 +18,22 @@
     <ClCompile Include="gtest_main.cc">
       <Filter>gtest</Filter>
     </ClCompile>
-    <ClCompile Include="AppTest.cpp">
+    <ClCompile Include="TestEditScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="TestEditScene.cpp">
+    <ClCompile Include="TestEditAvatarData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="TestAnimationData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="TestAnimationGroup.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gtest.h">
       <Filter>gtest</Filter>
-    </ClInclude>
-    <ClInclude Include="AppTest.h">
-      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

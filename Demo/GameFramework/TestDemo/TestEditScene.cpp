@@ -5,6 +5,8 @@
 //	author:		Mingzhen Zhang
 //
 //////////////////////////////////////////////////////////////////////////
+//#define __TestEditScene__
+#ifdef __TestEditScene__
 #include "gtest.h"
 #include "Tools/EditScene.h"
 #include "Base/INotifier.h"
@@ -15,6 +17,8 @@
 #include "Terrain/TerrainProp.h"
 #include "SceneInfo.h"
 #include "Camera/Camera.h"
+
+#pragma comment(lib, "GameFramework.lib")
 
 class TestEditScene
 	:public testing::Test
@@ -243,3 +247,6 @@ TEST_F(TestEditScene, SaveLoad)
 	EXPECT_FLOAT_EQ(16.0f, terrainInfo->m_width);
 	EXPECT_FLOAT_EQ(15.0f, terrainInfo->m_height);
 }
+
+
+#endif

@@ -9,6 +9,8 @@
 #ifndef Demo_GlobalDef_h
 #define Demo_GlobalDef_h
 
+#include "Tools/ENDirection.h"
+
 struct ENActorType
 {
 	enum Decl
@@ -28,4 +30,18 @@ struct ENSceneObjectType
 	};
 };
 
+typedef Tools::ENDirection ENDirection;
+
+struct ENAnimation
+{
+	enum Decl
+	{
+		enError = -1,
+		enIdle,
+		enMove,
+		enAttack,
+
+		Count,
+	};
+};
 #endif

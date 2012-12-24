@@ -10,5 +10,26 @@
 
 namespace Game
 {
-	
+
+	ActorEventCreate::ActorEventCreate( ENActorType::Decl type )
+		: m_type(type)
+	{
+
+	}
+
+
+	ActorEventChangePos::ActorEventChangePos( const cocos2d::CCPoint &worldPos )
+		: m_targetPos(worldPos)
+	{
+
+	}
+
+
+
+	ActorEventChangeAvatar::ActorEventChangeAvatar( Tools::AvatarData *avatar )
+		: m_avatar(avatar)
+	{
+
+	}
+
 }
