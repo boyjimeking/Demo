@@ -161,10 +161,7 @@ namespace Game
 	bool ActorEntity::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
 	{
 		cocos2d::CCPoint local = WorldManager::DesignPosToWorld(pTouch->getLocation());
-		cocos2d::CCRect rect = cocos2d::CCRectMake( m_tPosition.x - m_tContentSize.width * m_tAnchorPoint.x, 
-                      m_tPosition.y - m_tContentSize.height * m_tAnchorPoint.y,
-                      m_tContentSize.width, m_tContentSize.height);
-		if (rect.containsPoint(local))
+		if (boundingBox().containsPoint(local))
 		{
 			return m_touchCallBack->OnTouch(local);
 		}
@@ -208,18 +205,13 @@ namespace Game
 			frameArray->addObject(frame);
 		}
 		this->initWithSpriteFrame(reinterpret_cast<cocos2d::CCSpriteFrame*>(frameArray->lastObject()));
-		setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.0f));
+		setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.3f));
 		cocos2d::CCAnimation *animation = cocos2d::CCAnimation::createWithSpriteFrames(frameArray, animData->GetDelay());
 		cocos2d::CCAnimate *animate = cocos2d::CCAnimate::create(animation);
 		cocos2d::CCAction *action = cocos2d::CCRepeatForever::create(animate);
 		this->stopActionByTag(enActorAction_PlayAnimation);
 		action->setTag(enActorAction_PlayAnimation);
 		this->runAction(action);
-	}
-
-	void ActorEntity::setTextureRect( const cocos2d::CCRect& rect, bool rotated, const cocos2d::CCSize& untrimmedSize )
-	{
-		cocos2d::CCSprite::setTextureRect(rect, rotated, WorldManager::PointToLogic(untrimmedSize));
 	}
 
 	void ActorEntity::LoadAvatarFromFile( const char *file )

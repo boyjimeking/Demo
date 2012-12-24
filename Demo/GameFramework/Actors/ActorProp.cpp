@@ -36,7 +36,6 @@ namespace Game
 	ActorEntity* ActorProp::Create(void)
 	{
 		ActorEntity *entity = new ActorEntity(this);
-		entity->setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.0f));
 		entity->autorelease();
 		AttachObserver(entity);
 
