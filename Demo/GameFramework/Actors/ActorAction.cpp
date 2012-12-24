@@ -115,7 +115,7 @@ namespace Game
 		}
         m_pos = target->GetPosition();
 		OnEnter(prop);
-		if (!m_fired && ActorsControl::Distance(target, prop) > 48.0f)
+		if (!m_fired && ActorsControl::Distance(target, prop) > 0.5f)
 		{
 			m_fired = false;
 			m_fireTime = 0.0f;

@@ -32,6 +32,9 @@ namespace Game
 
 		virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
 		virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+
+
+		virtual void setTextureRect(const cocos2d::CCRect& rect, bool rotated, const cocos2d::CCSize& untrimmedSize);
 	protected:
 		enum ENDirection
 		{

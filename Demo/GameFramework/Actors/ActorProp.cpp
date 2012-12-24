@@ -9,7 +9,7 @@ namespace Game
 	ActorProp::ActorProp(ENActorType::Decl type, int id)
 	:m_id(id)
 	,m_type(type)
-	,m_speed(5.0f)
+	,m_speed(3.0f)
 	,m_currentAction(NULL)
 	,m_nextAction(NULL)
 	{
@@ -36,7 +36,7 @@ namespace Game
 	ActorEntity* ActorProp::Create(void)
 	{
 		ActorEntity *entity = new ActorEntity(this);
-		entity->setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.3f));
+		entity->setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.0f));
 		entity->autorelease();
 		AttachObserver(entity);
 

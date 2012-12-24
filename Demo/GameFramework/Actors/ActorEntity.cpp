@@ -66,7 +66,7 @@ namespace Game
 						break;
 					default:
 						{
-							this->setContentSize(cocos2d::CCSizeMake(47, 95));
+							this->setContentSize(cocos2d::CCSizeMake(0.7f, 1.8f));
 							cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
 							m_touchCallBack = new TouchMonster(reinterpret_cast<ActorProp*>(notify));
 							cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("NPCRun.plist");
@@ -196,13 +196,18 @@ namespace Game
 			frameArray->addObject(frame);
 		}
 		this->initWithSpriteFrame(reinterpret_cast<cocos2d::CCSpriteFrame*>(frameArray->lastObject()));
-		setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.3f));
+		setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.0f));
 		cocos2d::CCAnimation *animation = cocos2d::CCAnimation::createWithSpriteFrames(frameArray, 0.2f);
 		cocos2d::CCAnimate *animate = cocos2d::CCAnimate::create(animation);
 		cocos2d::CCAction *action = cocos2d::CCRepeatForever::create(animate);
 		this->stopActionByTag(enActorAction_PlayAnimation);
 		action->setTag(enActorAction_PlayAnimation);
 		this->runAction(action);
+	}
+
+	void ActorEntity::setTextureRect( const cocos2d::CCRect& rect, bool rotated, const cocos2d::CCSize& untrimmedSize )
+	{
+		cocos2d::CCSprite::setTextureRect(rect, rotated, WorldManager::PointToLogic(untrimmedSize));
 	}
 
 }
