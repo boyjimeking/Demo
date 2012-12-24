@@ -1,7 +1,4 @@
 cd Demo
-cd Classes
-AddBom
-cd ..
 cd CSProtocol
 AddBom
 cd ..
