@@ -13,6 +13,11 @@
 #include "cocoa/CCGeometry.h"
 #include "Base/GlobalDef.h"
 
+namespace Tools
+{
+	class AvatarData;
+}
+
 namespace Game
 {
 	struct ENActorEvent
@@ -25,6 +30,7 @@ namespace Game
 			enChangePos,
 			enStop,
 			enAttack,
+			enChangeAvatar,
 		};
 	};
 
@@ -33,7 +39,7 @@ namespace Game
 	{
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enCreate; }
 
-		ActorEventCreate(ENActorType::Decl type) : m_type(type) {}
+		ActorEventCreate(ENActorType::Decl type);
 		ENActorType::Decl GetType(void) const { return m_type; }
 	private:
 		ENActorType::Decl m_type;
@@ -48,8 +54,8 @@ namespace Game
 	struct ActorEventChangePos
 		:public INotifyEvent
 	{
-		ActorEventChangePos(const cocos2d::CCPoint &worldPos) : m_targetPos(worldPos) {}
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enChangePos; }
+		ActorEventChangePos(const cocos2d::CCPoint &worldPos);
 		const cocos2d::CCPoint& GetLogicPos(void) const { return m_targetPos; };
 	private:
 		cocos2d::CCPoint m_targetPos;
@@ -66,6 +72,13 @@ namespace Game
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enAttack; }
 	};
 
+	struct ActorEventChangeAvatar
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enChangeAvatar; }
+		ActorEventChangeAvatar(Tools::AvatarData *avatar);
+		Tools::AvatarData *m_avatar;
+	};
 }
 
 

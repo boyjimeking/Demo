@@ -1,6 +1,6 @@
 #include "AvatarData.h"
 #include "StreamHelper.h"
-#include "AnimationData.h"
+#include "AnimationGroup.h"
 
 namespace Tools
 {
@@ -19,23 +19,25 @@ namespace Tools
 		m_plist.clear();
 		for (AnimationTable::iterator it = m_animationTable.begin(); m_animationTable.end() != it; ++it)
 		{
-			delete *it;
+			delete it->second;
 		}
 		m_animationTable.clear();
 	}
 
 	void AvatarData::Read( unsigned char *buff, unsigned int size )
 	{
+		Clear();
 		StreamHelper stream(buff, size);
 		stream.Read(m_plist);
 		unsigned int tableSize = 0;
 		stream.Read(tableSize);
-		m_animationTable.resize(tableSize);
-		for (int index = 0; index < tableSize ; ++index)
+		for (unsigned int index = 0; index < tableSize ; ++index)
 		{
-			AnimationData *data = new AnimationData;
-			stream.Read(data);
-			m_animationTable[index] = data;
+			int type = 0;
+			stream.Read(type);
+			AnimationGroup *data = new AnimationGroup;
+			stream.ReadClass(data);
+			m_animationTable.insert(std::make_pair(type, data));
 		}
 	}
 
@@ -47,21 +49,27 @@ namespace Tools
 		stream.Write(tableSize);
 		for (AnimationTable::iterator it = m_animationTable.begin(); m_animationTable.end() != it; ++it)
 		{
-			stream.WriteClass(*it);
+			if (NULL == it->second)
+			{
+				continue;
+			}
+			stream.Write(it->first);
+			stream.WriteClass(it->second);
 		}
 		return stream.Size();
 	}
 
-	AnimationData* AvatarData::LookupAnimation( int id )
+	AnimationGroup* AvatarData::Lookup( int animationID ) const
 	{
-		for (int index = 0; index < m_animationTable.size(); ++index)
+		AnimationTable::const_iterator it = m_animationTable.find(animationID);
+		if (m_animationTable.end() == it)
 		{
-			if (m_animationTable[index]->GetID() == id)
-			{
-				return m_animationTable[index];
-			}
+			return NULL;
 		}
-		return NULL;
+		else
+		{
+			return it->second;
+		}
 	}
 
 }

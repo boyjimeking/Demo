@@ -1,10 +1,13 @@
 #include "EditAvatarData.h"
-#include "AnimationData.h"
+#include "Tools/AnimationData.h"
+#include "WorldManager.h"
+#include "Actors/ActorsControl.h"
+#include "Actors/ActorProp.h"
+#include "Tools/AnimationGroup.h"
 
 namespace Tools
 {
 	EditAvatarData::EditAvatarData(void)
-		:m_animationCount(0)
 	{
 
 	}
@@ -17,10 +20,6 @@ namespace Tools
 	void EditAvatarData::Load( unsigned char *data, int dataLength )
 	{
 		Read(data, dataLength);
-		for (int index = 0; index < m_animationTable.size(); ++index)
-		{
-			m_animationCount = std::max(m_animationTable[index]->GetID(), m_animationCount);
-		}
 	}
 
 	int EditAvatarData::Save( unsigned char *data, int dataLength )
@@ -32,13 +31,40 @@ namespace Tools
 	{
 		Clear();
 		m_plist = plistFile;
-		m_animationTable.resize(ENDirection::Count);
 	}
 
-	AnimationData* EditAvatarData::GetAnimation( ENDirection::Decl direction )
+	void EditAvatarData::Apply( void )
 	{
-		m_animationTable[direction] = new AnimationData;
-		return m_animationTable[direction];
+		Game::WorldManager::Instance()->GetActorsControl()->GetMainActor()->ChangeAvatar(this);
+	}
+
+	AnimationGroup* EditAvatarData::AddAnimationGroup( int type )
+	{
+		AnimationGroup *animGroup = Lookup(type);
+		if (NULL != animGroup)
+		{
+			return animGroup;
+		}
+		else
+		{
+			animGroup = new AnimationGroup;
+			m_animationTable.insert(std::make_pair(type, animGroup));
+			return animGroup;
+		}
+	}
+
+	void EditAvatarData::RemoveAnimationGroup( int type )
+	{
+		AnimationTable::const_iterator it = m_animationTable.find(type);
+		if (m_animationTable.end() == it)
+		{
+			return;
+		}
+		else
+		{
+			delete it->second;
+			m_animationTable.erase(it);
+		}
 	}
 
 }

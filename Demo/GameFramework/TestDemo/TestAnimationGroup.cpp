@@ -1,42 +1,41 @@
 //////////////////////////////////////////////////////////////////////////
 //
 //	file path:	E:\Codes\Demo\Demo\GameFramework\TestDemo
-//	created:	2012-12-21
+//	created:	2012-12-24
 //	author:		Mingzhen Zhang
 //
 //////////////////////////////////////////////////////////////////////////
-//#define __TestEditAvatarData_Test__
-#ifdef __TestEditAvatarData_Test__
+#define __TestAnimationGroup_Test__
+#ifdef __TestAnimationGroup_Test__
 
 #include "gtest.h"
-#include "Tools\EditAvatarData.h"
+#include "Tools\AnimationGroup.h"
 
 #pragma comment(lib, "Tools.lib")
 #pragma comment(lib, "GameFramework.lib")
 
-class TestEditAvatarData
+class TestAnimationGroup
 	:public testing::Test
 {
 public:
 	virtual void SetUp()
 	{
-		m_writeData = new Tools::EditAvatarData;
-		m_readData = new Tools::AvatarData;
+		m_writeGroup = new Tools::AnimationGroup;
+		m_group = new Tools::AnimationGroup;
 	}
 	virtual void TearDown()
 	{
-		delete m_readData;
-		delete m_writeData;
+		delete m_group;
+		delete m_writeGroup;
 	}
 
 public:
-	Tools::EditAvatarData *m_writeData;
-	Tools::AvatarData *m_readData;
+	Tools::AnimationGroup *m_group;
+	Tools::AnimationGroup *m_writeGroup;
 };
-
-TEST_F(TestEditAvatarData, AddAnimation)
+TEST_F(TestAnimationGroup, AnimationGroup)
 {
 	
 }
 
-#endif // __TestEditAvatarData_Test__
+#endif // __TestAnimationGroup_Test__

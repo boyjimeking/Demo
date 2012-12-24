@@ -20,9 +20,9 @@ namespace Game
 		enum Type
 		{
 			enNone,
-			enAction_Move,
-			enAction_Attack,
-			enAction_Stop,
+			enMove,
+			enAttack,
+			enStop,
 			Count,
 		};
 	};
@@ -60,7 +60,7 @@ namespace Game
 		:public IAction
 	{
 	public:
-		virtual ENAction::Type GetType(void) const { return ENAction::enAction_Move; }
+		virtual ENAction::Type GetType(void) const { return ENAction::enMove; }
 
 		MoveAction(const cocos2d::CCPoint &pos);
 		virtual void OnEnter(ActorProp *prop);
@@ -78,7 +78,7 @@ namespace Game
 		:public MoveAction
 	{
 	public:
-		virtual ENAction::Type GetType(void) const { return ENAction::enAction_Attack; }
+		virtual ENAction::Type GetType(void) const { return ENAction::enAttack; }
 
 		AttackAction(ActorProp *prop);
 		
@@ -95,7 +95,7 @@ namespace Game
 	class StopAction
 		:public IAction
 	{
-		virtual ENAction::Type GetType(void) const { return ENAction::enAction_Stop; }
+		virtual ENAction::Type GetType(void) const { return ENAction::enStop; }
 		virtual void OnEnter(ActorProp *prop);
 	};
 }

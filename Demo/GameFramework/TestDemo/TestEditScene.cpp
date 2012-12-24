@@ -5,7 +5,7 @@
 //	author:		Mingzhen Zhang
 //
 //////////////////////////////////////////////////////////////////////////
-#define __TestEditScene__
+//#define __TestEditScene__
 #ifdef __TestEditScene__
 #include "gtest.h"
 #include "Tools/EditScene.h"
@@ -17,6 +17,8 @@
 #include "Terrain/TerrainProp.h"
 #include "SceneInfo.h"
 #include "Camera/Camera.h"
+
+#pragma comment(lib, "GameFramework.lib")
 
 class TestEditScene
 	:public testing::Test

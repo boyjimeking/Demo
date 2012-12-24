@@ -55,7 +55,7 @@ namespace Net
     }
     void Server::Init(void)
     {
-		const char *fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath("scene.bin");
+		const char *fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath("scene.pkm");
 		unsigned long size = 0;
 		unsigned char *buff = cocos2d::CCFileUtils::sharedFileUtils()->getFileData(fullPath, "rb", &size);
 		Tools::Scene scene;
@@ -69,7 +69,7 @@ namespace Net
         {
             CSInitScene_S2C message;
             message.m_sceneID = 1;
-            strcpy(message.m_sceneName, "scene.bin");
+            strcpy(message.m_sceneName, "scene.pkm");
             message.Build(GetMessageType(CSInitScene_S2C), 0, sizeof(CSInitScene_S2C));
             Send(&message);
         }
@@ -82,7 +82,7 @@ namespace Net
 
             actor->SycPosition();
         }
-        for (int index = 0; index < 20; ++index)
+        for (int index = 0; index < 0; ++index)
         {
             ServerActor::Ptr actor = ServerActor::CreateObj();
             m_serverActorMap.insert(std::make_pair(actor->GetID(), actor));

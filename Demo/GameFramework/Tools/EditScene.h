@@ -8,7 +8,7 @@
 #ifndef EditScene_h__
 #define EditScene_h__
 
-#include "Scene.h"
+#include "Tools/Scene.h"
 
 namespace Tools
 {

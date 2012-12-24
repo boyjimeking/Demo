@@ -126,12 +126,6 @@
     <ClCompile Include="Tools\DebugLayer.cpp">
       <Filter>GameFramework\Tools</Filter>
     </ClCompile>
-    <ClCompile Include="Tools\Scene.cpp">
-      <Filter>GameFramework\Tools</Filter>
-    </ClCompile>
-    <ClCompile Include="Tools\StreamHelper.cpp">
-      <Filter>GameFramework\Tools</Filter>
-    </ClCompile>
     <ClCompile Include="UI\UIControl.cpp">
       <Filter>GameFramework\UI</Filter>
     </ClCompile>
@@ -181,12 +175,6 @@
       <Filter>GameFramework\SceneObjects</Filter>
     </ClCompile>
     <ClCompile Include="Tools\EditAvatarData.cpp">
-      <Filter>GameFramework\Tools</Filter>
-    </ClCompile>
-    <ClCompile Include="Tools\AvatarData.cpp">
-      <Filter>GameFramework\Tools</Filter>
-    </ClCompile>
-    <ClCompile Include="Tools\AnimationData.cpp">
       <Filter>GameFramework\Tools</Filter>
     </ClCompile>
   </ItemGroup>
@@ -281,12 +269,6 @@
     <ClInclude Include="Tools\DebugLayer.h">
       <Filter>GameFramework\Tools</Filter>
     </ClInclude>
-    <ClInclude Include="Tools\Scene.h">
-      <Filter>GameFramework\Tools</Filter>
-    </ClInclude>
-    <ClInclude Include="Tools\StreamHelper.h">
-      <Filter>GameFramework\Tools</Filter>
-    </ClInclude>
     <ClInclude Include="UI\UIControl.h">
       <Filter>GameFramework\UI</Filter>
     </ClInclude>
@@ -336,12 +318,6 @@
       <Filter>GameFramework\SceneObjects</Filter>
     </ClInclude>
     <ClInclude Include="Tools\EditAvatarData.h">
-      <Filter>GameFramework\Tools</Filter>
-    </ClInclude>
-    <ClInclude Include="Tools\AvatarData.h">
-      <Filter>GameFramework\Tools</Filter>
-    </ClInclude>
-    <ClInclude Include="Tools\AnimationData.h">
       <Filter>GameFramework\Tools</Filter>
     </ClInclude>
   </ItemGroup>

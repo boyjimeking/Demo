@@ -8,12 +8,10 @@
 #ifndef EditAvatarData_h__
 #define EditAvatarData_h__
 
-#include "AvatarData.h"
-#include "Base/GlobalDef.h"
+#include "Tools/AvatarData.h"
 
 namespace Tools
 {
-	class AnimationData;
 	class EditAvatarData
 		:public AvatarData
 	{
@@ -25,11 +23,13 @@ namespace Tools
 		void Load(unsigned char *data, int dataLength);
 		int Save(unsigned char *data, int dataLength);
 
-		AnimationData* GetAnimation(ENDirection::Decl direction);
+		void Apply(void);
+
+		AnimationGroup* AddAnimationGroup(int type);
+		void RemoveAnimationGroup(int type);
 	protected:
 
 	private:
-		int m_animationCount;
 	};
 }
 

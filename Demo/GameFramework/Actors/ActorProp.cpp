@@ -170,4 +170,11 @@ namespace Game
 				break;
 		}
 	}
+
+	void ActorProp::ChangeAvatar( Tools::AvatarData *avatar )
+	{
+		ActorEventChangeAvatar event(avatar);
+		NotifyChange(&event);
+	}
+
 }

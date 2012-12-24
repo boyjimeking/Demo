@@ -5,12 +5,14 @@
 //	author:		Mingzhen Zhang
 //
 //////////////////////////////////////////////////////////////////////////
-//#define __TestAnimationData_Test__
+#define __TestAnimationData_Test__
 #ifdef __TestAnimationData_Test__
 
 #include "gtest.h"
 #include "Tools\AnimationData.h"
 #include "Tools\StreamHelper.h"
+
+#pragma comment(lib, "Tools.lib")
 
 class TestAnimationData
 	:public testing::Test
@@ -38,7 +40,6 @@ TEST_F(TestAnimationData, Data)
 	Tools::StreamHelper readStream(buff, 4096);
 
 	m_data->SetDelay(0.2f);
-	m_data->SetDirection(ENDirection::enEast);
 	m_data->AddFrame("frame1");
 	m_data->AddFrame("frame2");
 	m_data->AddFrame("frame3");
@@ -46,7 +47,6 @@ TEST_F(TestAnimationData, Data)
 
 	m_readData->Read(&readStream);
 	EXPECT_EQ(m_data->GetDelay(), m_readData->GetDelay());
-	EXPECT_EQ(m_data->GetDirection(), m_readData->GetDirection());
 	EXPECT_EQ(m_data->GetFrames(), m_readData->GetFrames());
 }
 

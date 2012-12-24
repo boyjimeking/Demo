@@ -10,3 +10,6 @@ AddBom
 cd ..
 cd VirtualServer
 AddBom
+cd ..
+cd Tools
+AddBom
