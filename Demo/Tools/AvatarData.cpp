@@ -5,6 +5,7 @@
 namespace Tools
 {
 	AvatarData::AvatarData(void)
+		:m_transScale(1.0f)
 	{
 
 	}
@@ -16,6 +17,7 @@ namespace Tools
 
 	void AvatarData::Clear( void )
 	{
+		m_transScale = 1.0f;
 		m_plist.clear();
 		for (AnimationTable::iterator it = m_animationTable.begin(); m_animationTable.end() != it; ++it)
 		{
@@ -28,6 +30,7 @@ namespace Tools
 	{
 		Clear();
 		StreamHelper stream(buff, size);
+		stream.Read(m_transScale);
 		stream.Read(m_plist);
 		unsigned int tableSize = 0;
 		stream.Read(tableSize);
@@ -44,6 +47,7 @@ namespace Tools
 	unsigned int AvatarData::Write( unsigned char *buff, unsigned int size )
 	{
 		StreamHelper stream(buff, size);
+		stream.Write(m_transScale);
 		stream.Write(m_plist);
 		unsigned int tableSize = m_animationTable.size();
 		stream.Write(tableSize);

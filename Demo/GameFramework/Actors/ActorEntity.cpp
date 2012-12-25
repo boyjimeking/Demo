@@ -47,14 +47,16 @@ namespace Game
 		{
 			case ENActorEvent::enCreate:
 				{
-					setScale(WorldManager::Instance()->GetCamera()->GetObjectScale());
 					setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
 					const ActorEventCreate *actorEvent = reinterpret_cast<const ActorEventCreate*>(event);
 					switch (actorEvent->GetType())
 					{
 					case ENActorType::enMain:
-						LoadAvatarFromFile("MainActor.anim");
-						cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(GetAvatar()->GetPList());
+						{
+							LoadAvatarFromFile("MainActor.anim");
+							setScale(GetAvatar()->GetTransScale());
+							cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(GetAvatar()->GetPList());
+						}
 						break;
 					default:
 						{
@@ -62,6 +64,7 @@ namespace Game
 							cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
 							m_touchCallBack = new TouchMonster(reinterpret_cast<ActorProp*>(notify));
 							LoadAvatarFromFile("NPCActor.anim");
+							setScale(GetAvatar()->GetTransScale());
 							cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(GetAvatar()->GetPList());
 						}
 						break;

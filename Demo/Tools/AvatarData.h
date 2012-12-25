@@ -28,11 +28,15 @@ namespace Tools
 		const char* GetPList(void) const { return m_plist.c_str(); }
 		AnimationGroup* Lookup(int animationID) const;
 		const AnimationTable& GetAnimationTable(void) const { return m_animationTable; }
+		const float& GetTransScale() const { return m_transScale; }
+		void SetTransScale(const float &val) { m_transScale = val; }
 	protected:
 		//plist
 		std::string m_plist;
 		//动画列表
 		AnimationTable m_animationTable;
+		//缩放比率
+		float m_transScale;
 	private:
 	};
 }
