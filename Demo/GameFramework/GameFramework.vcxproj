@@ -25,6 +25,7 @@
     <ClCompile Include="Actors\ActorsControlEvents.cpp" />
     <ClCompile Include="Actors\ActorsLayer.cpp" />
     <ClCompile Include="Actors\ActorTouch.cpp" />
+    <ClCompile Include="Actors\EquipObject.cpp" />
     <ClCompile Include="Base\INotifier.cpp" />
     <ClCompile Include="Base\INotifyEvent.cpp" />
     <ClCompile Include="Base\IObserver.cpp" />
@@ -73,6 +74,7 @@
     <ClInclude Include="Actors\ActorsControlEvents.h" />
     <ClInclude Include="Actors\ActorsLayer.h" />
     <ClInclude Include="Actors\ActorTouch.h" />
+    <ClInclude Include="Actors\EquipObject.h" />
     <ClInclude Include="Base\GlobalDef.h" />
     <ClInclude Include="Base\INotifier.h" />
     <ClInclude Include="Base\INotifyEvent.h" />

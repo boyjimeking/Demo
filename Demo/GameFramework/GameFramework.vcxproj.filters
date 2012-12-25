@@ -177,6 +177,9 @@
     <ClCompile Include="Tools\EditAvatarData.cpp">
       <Filter>GameFramework\Tools</Filter>
     </ClCompile>
+    <ClCompile Include="Actors\EquipObject.cpp">
+      <Filter>GameFramework\Actors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CSProtocol\CSMessageDef.h">
@@ -319,6 +322,9 @@
     </ClInclude>
     <ClInclude Include="Tools\EditAvatarData.h">
       <Filter>GameFramework\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Actors\EquipObject.h">
+      <Filter>GameFramework\Actors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -19,6 +19,7 @@
 #include "Tools/AvatarData.h"
 #include "Tools/AnimationData.h"
 #include "../CCFileUtils.h"
+#include "EquipObject.h"
 
 
 namespace Game
@@ -108,6 +109,12 @@ namespace Game
 					const ActorEventChangeAvatar *actorEvent = reinterpret_cast<const ActorEventChangeAvatar*>(event);
 					SetAvatar(m_avatar);
 					PlayAnimation(m_currentAnimation, m_currentDirection);
+				}
+				break;
+			case ENActorEvent::enChangeEquip:
+				{
+					const ActorEventChangeEquip *actorEvent = reinterpret_cast<const ActorEventChangeEquip*>(event);
+
 				}
 				break;
 			default:
@@ -212,6 +219,10 @@ namespace Game
 		this->stopActionByTag(enActorAction_PlayAnimation);
 		action->setTag(enActorAction_PlayAnimation);
 		this->runAction(action);
+		for (int index = 0; index < m_equipList.size() ; ++index)
+		{
+			m_equipList[index]->PlayAnimation(type, direction);
+		}
 	}
 
 	void ActorEntity::LoadAvatarFromFile( const char *file )

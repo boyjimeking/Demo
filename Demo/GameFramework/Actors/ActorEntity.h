@@ -22,6 +22,7 @@ namespace Game
 {
 	class ActorProp;
 	class ITouch;
+	class EquipObject;
 	/*
 	 *	角色实体类，用于角色在场景当中的显示及在场景中的响应处理
 	 */
@@ -55,6 +56,7 @@ namespace Game
 		void LoadAvatar(unsigned char *data, unsigned int size);
 		void SetAvatar(Tools::AvatarData *avatar);
 		Tools::AvatarData* GetAvatar(void) const { return m_avatar; }
+
 	private:
 		ENDirection::Decl m_currentDirection;
 		ENAnimation::Decl m_currentAnimation;

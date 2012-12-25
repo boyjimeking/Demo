@@ -176,4 +176,10 @@ namespace Game
 		NotifyChange(&event);
 	}
 
+	void ActorProp::ChangeEquip( ENEquipType::Decl type, const char *avatarFile )
+	{
+		ActorEventChangeEquip event(type, avatarFile);
+		NotifyChange(&event);
+	}
+
 }

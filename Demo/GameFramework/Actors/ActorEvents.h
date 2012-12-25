@@ -31,6 +31,7 @@ namespace Game
 			enStop,
 			enAttack,
 			enChangeAvatar,
+			enChangeEquip,
 		};
 	};
 
@@ -78,6 +79,14 @@ namespace Game
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enChangeAvatar; }
 		ActorEventChangeAvatar(Tools::AvatarData *avatar);
 		Tools::AvatarData *m_avatar;
+	};
+	struct ActorEventChangeEquip
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enChangeEquip; }
+		ActorEventChangeEquip(ENEquipType::Decl type, const char *equipFile) : m_type(type), m_equipFile(equipFile) {}
+		ENEquipType::Decl m_type;
+		const char *m_equipFile;
 	};
 }
 

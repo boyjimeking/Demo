@@ -48,6 +48,8 @@ namespace Game
 		void Attack(ActorProp *target);
 		void ChangeAvatar(Tools::AvatarData *avatar);
 
+		void ChangeEquip(ENEquipType::Decl type, const char *avatarFile);
+
 		void SetPosition(const cocos2d::CCPoint &pos);
 
 		void Tick(float dt);
