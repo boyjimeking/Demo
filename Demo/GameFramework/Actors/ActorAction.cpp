@@ -13,6 +13,7 @@
 #include "ActorEvents.h"
 #include "support/CCPointExtension.h"
 #include "platform/CCCommon.h"
+#include "Camera/Camera.h"
 
 namespace Game
 {
@@ -128,7 +129,10 @@ namespace Game
 			{
 				ActorEventPlayAttack event;
 				prop->NotifyChange(&event);
-
+				if (/*prop->GetType() == ENActorType::enMain && */rand() % 2 == 0)
+				{
+					WorldManager::Instance()->GetCamera()->Shake();
+				}
 				m_direction = cocos2d::ccpNormalize(cocos2d::ccpSub(m_pos, m_startPos));
 				m_fired = true;
 				return false;

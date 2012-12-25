@@ -40,8 +40,6 @@ namespace Game
 		virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
 		virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
 
-	protected:
-		
 		enum ENCocos2dActionTag
 		{
 			enNone,
@@ -49,7 +47,10 @@ namespace Game
 			enActorAction_MoveTo,
 		};
 	protected:
+		
+	protected:
 		void PlayAnimation(ENAnimation::Decl type, ENDirection::Decl direction);
+		void RePlayAnimation(void);
 		ENDirection::Decl CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos);
 
 		void LoadAvatarFromFile(const char *file);

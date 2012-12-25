@@ -13,6 +13,7 @@
 #include "Actors/ActorProp.h"
 #include "Terrain/TerrainProp.h"
 #include "support/CCPointExtension.h"
+#include "CSProtocol/CSMessageType.h"
 
 
 namespace Net
@@ -40,6 +41,12 @@ namespace Net
 				break;
 			case GetMessageType(CSChangeTarget_S2C):
 				MoveActor(message);
+				break;
+			case GetMessageType(CSChangeActorEquip_S2C):
+				ChangeActorEquip(message);
+				break;
+			case GetMessageType(CSAttackTarget_S2C):
+				ProcessCSAttackTarget_S2C(message);
 				break;
 			default:
 				//消息类型错误
@@ -91,4 +98,36 @@ namespace Net
 			actor->MoveTo(ccp(innerMessage->m_x, innerMessage->m_y));
 		}
 	}
+
+	void Client::ChangeActorEquip( IMessage *message )
+	{
+		CSChangeActorEquip_S2C *innerMessage = reinterpret_cast<CSChangeActorEquip_S2C*>(message);
+		Game::ActorProp *actor = Game::WorldManager::Instance()->GetActorsControl()->LookupActor(innerMessage->m_actorID);
+		if (NULL != actor)
+		{
+			actor->ChangeEquip((ENEquipType::Decl)innerMessage->m_equipType, innerMessage->m_equipName);
+		}
+	}
+
+	void Client::Attack( int targetID )
+	{
+		CSAttackTarget_C2S message;
+		message.m_actorID = Game::WorldManager::Instance()->GetActorsControl()->GetMainActor()->GetID();
+		message.m_targetID = targetID;
+		message.Build(GetMessageType(CSAttackTarget_C2S), message.m_actorID, sizeof(CSAttackTarget_C2S));
+		Send(&message);
+	}
+
+	void Client::ProcessCSAttackTarget_S2C( IMessage *message )
+	{
+		CSAttackTarget_S2C *innerMessage = reinterpret_cast<CSAttackTarget_S2C*>(message);
+		Game::ActorProp *actor = Game::WorldManager::Instance()->GetActorsControl()->LookupActor(innerMessage->m_actorID);
+		Game::ActorProp *target = Game::WorldManager::Instance()->GetActorsControl()->LookupActor(innerMessage->m_targetID);
+		if (NULL == actor || NULL == target)
+		{
+			return;
+		}
+		actor->Attack(target);
+	}
+
 }

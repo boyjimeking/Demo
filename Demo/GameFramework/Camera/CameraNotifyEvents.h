@@ -21,6 +21,7 @@ namespace Game
 			enNone,
 			enPosChanged,
 			enScaleChanged,
+			enShake,
 		};
 	};
 
@@ -42,6 +43,11 @@ namespace Game
 		float GetScale(void) const { return m_scale; }
 	private:
 		float m_scale;
+	};
+	struct CameraShake
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENCameraEvent::enShake; }
 	};
 }
 

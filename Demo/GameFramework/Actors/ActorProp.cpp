@@ -3,6 +3,7 @@
 #include "ActorEntity.h"
 #include "WorldManager.h"
 #include "SceneInfo.h"
+#include "Client\Client.h"
 
 namespace Game
 {
@@ -55,10 +56,10 @@ namespace Game
 	}
 	void ActorProp::SetPosition(const cocos2d::CCPoint &pos)
 	{
-		//if (!WorldManager::Instance()->GetSceneInfo()->IsPointCanStanc(pos))
-		//{
-		//	return;
-		//}
+		if (!WorldManager::Instance()->GetSceneInfo()->IsPointCanStanc(pos))
+		{
+			return;
+		}
 		if (m_position.equals(pos))
 		{
 			return;

@@ -30,7 +30,7 @@ namespace Game
 	,m_currentAnimation(ENAnimation::enIdle)
 	,m_avatar(NULL)
 	{
-		
+		m_sBlendFunc.src=GL_SRC_ALPHA;
 	}
 	ActorEntity::~ActorEntity(void)
 	{
@@ -47,23 +47,22 @@ namespace Game
 		{
 			case ENActorEvent::enCreate:
 				{
-					setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
+					setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.3f));
 					const ActorEventCreate *actorEvent = reinterpret_cast<const ActorEventCreate*>(event);
 					switch (actorEvent->GetType())
 					{
 					case ENActorType::enMain:
 						{
-							LoadAvatarFromFile("MainActor.anim");
+							LoadAvatarFromFile("MainActor.ava");
 							setScale(GetAvatar()->GetTransScale());
 							cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(GetAvatar()->GetPList());
 						}
 						break;
 					default:
 						{
-							this->setContentSize(cocos2d::CCSizeMake(0.7f, 1.8f));
 							cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
 							m_touchCallBack = new TouchMonster(reinterpret_cast<ActorProp*>(notify));
-							LoadAvatarFromFile("NPCActor.anim");
+							LoadAvatarFromFile("NPCActor.ava");
 							setScale(GetAvatar()->GetTransScale());
 							cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(GetAvatar()->GetPList());
 						}
@@ -111,13 +110,46 @@ namespace Game
 				{
 					const ActorEventChangeAvatar *actorEvent = reinterpret_cast<const ActorEventChangeAvatar*>(event);
 					SetAvatar(m_avatar);
-					PlayAnimation(m_currentAnimation, m_currentDirection);
+					RePlayAnimation();
 				}
 				break;
 			case ENActorEvent::enChangeEquip:
 				{
 					const ActorEventChangeEquip *actorEvent = reinterpret_cast<const ActorEventChangeEquip*>(event);
-
+					cocos2d::CCArray *childArray = getChildren();
+					CCObject* pObj = NULL;
+					EquipObject* child = NULL;
+					CCARRAY_FOREACH(childArray,pObj)
+					{
+						child = (EquipObject*)pObj;
+						if (child->GetType() == actorEvent->m_type)
+						{
+							break;
+						}
+						else
+						{
+							child = NULL;
+						}
+					}
+					if (NULL == actorEvent->m_equipFile)
+					{
+						if (NULL != child)
+						{
+							removeChild(child, true);
+						}
+					}
+					else
+					{
+						if (NULL == child)
+						{
+							child = EquipObject::Create();
+							child->SetType(actorEvent->m_type);
+							addChild(child);
+							child->setPosition(cocos2d::CCPointZero);
+						}
+						child->LoadAvatarFromFile(actorEvent->m_equipFile);
+						RePlayAnimation();
+					}
 				}
 				break;
 			default:
@@ -170,10 +202,11 @@ namespace Game
 	}
 	bool ActorEntity::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
 	{
-		cocos2d::CCPoint local = WorldManager::DesignPosToWorld(pTouch->getLocation());
-		if (boundingBox().containsPoint(local))
+		cocos2d::CCPoint localTouch = convertTouchToNodeSpace(pTouch);
+		cocos2d::CCRect rect = cocos2d::CCRectMake(getContentSize().width / 3.0f, getContentSize().height / 3.0f, getContentSize().width / 3.0f, getContentSize().height / 3.0f);
+		if (rect.containsPoint(localTouch))
 		{
-			return m_touchCallBack->OnTouch(local);
+			return m_touchCallBack->OnTouch(localTouch);
 		}
 		else
 		{
@@ -222,9 +255,13 @@ namespace Game
 		this->stopActionByTag(enActorAction_PlayAnimation);
 		action->setTag(enActorAction_PlayAnimation);
 		this->runAction(action);
-		for (int index = 0; index < m_equipList.size() ; ++index)
+
+		cocos2d::CCArray *childArray = getChildren();
+		CCObject* pObj = NULL;
+		CCARRAY_FOREACH(childArray,pObj)
 		{
-			m_equipList[index]->PlayAnimation(type, direction);
+			EquipObject* child = (EquipObject*)pObj;
+			child->PlayAnimation(type, direction);
 		}
 	}
 
@@ -261,6 +298,15 @@ namespace Game
 			delete m_avatar;
 		}
 		m_avatar = avatar;
+	}
+
+	void ActorEntity::RePlayAnimation( void )
+	{
+		ENAnimation::Decl type = m_currentAnimation;
+		ENDirection::Decl direction = m_currentDirection;
+		m_currentAnimation = ENAnimation::enError;
+		m_currentDirection = ENDirection::enError;
+		PlayAnimation(type, direction);
 	}
 
 }

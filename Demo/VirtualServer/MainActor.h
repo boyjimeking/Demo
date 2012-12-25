@@ -16,9 +16,14 @@ namespace Net
     class MainActor
         :public ServerActor
     {
+	public:
         virtual void SycPosition(void);
         virtual void Tick(float dt){}
-    };
+
+		virtual void Receive( IMessage *message );
+	private:
+		void ProcessCSAttackTarget_C2S(IMessage *message);
+	};
 }
 
 #endif /* defined(__Demo__MainActor__) */

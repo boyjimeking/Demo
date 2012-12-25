@@ -83,6 +83,7 @@ namespace Game
 		//设置碰撞是否生效
 		void SetCollidable(bool isCollide);
 
+		Net::Client* GetClient() const { return m_client; }
 	protected:
 		SceneInfo *m_sceneInfo;
 		ActorsControl *m_actorsControl;

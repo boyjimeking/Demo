@@ -54,8 +54,10 @@ namespace Net
     	CSPipeline::Instance()->SendToClient(message);
     }
     void Server::Init(void)
-    {
-		const char *fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath("scene.pkm");
+	{
+		srand((unsigned int)this);
+
+		const char *fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath("Demo.pkm");
 		unsigned long size = 0;
 		unsigned char *buff = cocos2d::CCFileUtils::sharedFileUtils()->getFileData(fullPath, "rb", &size);
 		Tools::Scene scene;
@@ -69,22 +71,25 @@ namespace Net
         {
             CSInitScene_S2C message;
             message.m_sceneID = 1;
-            strcpy(message.m_sceneName, "scene.pkm");
+            strcpy(message.m_sceneName, "Demo.pkm");
             message.Build(GetMessageType(CSInitScene_S2C), 0, sizeof(CSInitScene_S2C));
             Send(&message);
         }
         {
             ServerActor::Ptr actor = ServerActor::Ptr(new MainActor);
+			actor->SetServer(this);
             m_serverActorMap.insert(std::make_pair(actor->GetID(), actor));
 
             actor->SetX(0);
             actor->SetY(0);
 
             actor->SycPosition();
+			actor->ChangeEquip();
         }
-        for (int index = 0; index < 0; ++index)
+        for (int index = 0; index < 30; ++index)
         {
-            ServerActor::Ptr actor = ServerActor::CreateObj();
+			ServerActor::Ptr actor = ServerActor::CreateObj();
+			actor->SetServer(this);
             m_serverActorMap.insert(std::make_pair(actor->GetID(), actor));
 
             actor->SetX(RandX());
@@ -108,5 +113,18 @@ namespace Net
     {
         return (float)rand() / (float)RAND_MAX * Height;
     }
+
+	ServerActor::Ptr Server::LookupActor( int id )
+	{
+		ServerActorMap::iterator it = m_serverActorMap.find(id);
+		if (m_serverActorMap.end() != it)
+		{
+			return it->second;
+		}
+		else
+		{
+			return ServerActor::Ptr();
+		}
+	}
 
 }

@@ -42,6 +42,13 @@ namespace Net
         float m_x;
         float m_y;
     };
+	struct CSChangeActorEquip_S2C
+		:public IMessage
+	{
+		int m_actorID;
+		int m_equipType;
+		char m_equipName[128];
+	};
     struct CSSycActor_S2C
         :public IMessage
     {
@@ -56,6 +63,18 @@ namespace Net
         float m_x;
         float m_y;
     };
+	struct CSAttackTarget_C2S
+		:public IMessage
+	{
+		int m_actorID;
+		int m_targetID;
+	};
+	struct CSAttackTarget_S2C
+		:public IMessage
+	{
+		int m_actorID;
+		int m_targetID;
+	};
 }
 
 #endif /* defined(__Demo__CSMessageDef__) */

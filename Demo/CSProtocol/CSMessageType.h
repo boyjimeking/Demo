@@ -18,10 +18,23 @@ struct ENMessage
 	enum Type
 	{
 		enError,
+		//////////////////////////////////////////////////////////////////////////
+		//Server to Client
+		enServerMessageStart,
 		DefType(CSInitScene_S2C),
 		DefType(CSInitMainActor_S2C),
 		DefType(CSSycActor_S2C),
 		DefType(CSChangeTarget_S2C),
+		DefType(CSChangeActorEquip_S2C),
+		DefType(CSAttackTarget_S2C),
+
+		S2CMax = 4096,
+		//////////////////////////////////////////////////////////////////////////
+		//Client to Server
+		enClientMessageStart,
+		DefType(CSAttackTarget_C2S),
+
+		C2SMax = 8192,
 	};
 };
 

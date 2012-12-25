@@ -11,6 +11,9 @@
 #include "CameraNotifyEvents.h"
 #include "support/CCPointExtension.h"
 #include "WorldManager.h"
+#include "actions/CCActionInterval.h"
+#include "Actors/ActorProp.h"
+#include "Actors/ActorsControl.h"
 
 namespace Game
 {
@@ -33,6 +36,29 @@ namespace Game
     {
 
     }
+
+	class ShakeAction
+		:public cocos2d::CCActionInterval
+	{
+	public:
+		ShakeAction(float scale) : m_srcScale(scale) {}
+
+		virtual void update( float time ) 
+		{
+			//float scale = (float)rand() / (float)RAND_MAX * 0.1f * m_srcScale - 0.05f * m_srcScale + m_srcScale;
+			//this->m_pTarget->setScale(scale);
+			cocos2d::CCPoint pos = WorldManager::Instance()->GetActorsControl()->GetMainActor()->GetPosition();
+			this->m_pTarget->setPosition(pos.x + (float)rand() / (float)RAND_MAX * 10.0f - 5.0f, pos.y + (float)rand() / (float)RAND_MAX * 10.0f - 5.0f);
+		}
+
+		virtual void stop( void ) 
+		{
+			this->m_pTarget->setPosition(WorldManager::Instance()->GetActorsControl()->GetMainActor()->GetPosition());
+		}
+
+	private:
+		float m_srcScale;
+	};
     void CameraObserver::OnNotifyChange(INotifier *notify, const INotifyEvent *event)
     {
         if (NULL == event)
@@ -53,6 +79,13 @@ namespace Game
 					getParent()->setScale(changedEvent->GetScale());
 				}
 				break;
+			case ENCameraEvent::enShake:
+				{
+					ShakeAction *action = new ShakeAction(getParent()->getScale());
+					action->initWithDuration(0.3f);
+					action->autorelease();
+					getParent()->runAction(action);
+				}
             default:
                 break;
         }

@@ -21,4 +21,24 @@ namespace Net
         message.Build(GetMessageType(CSInitMainActor_S2C), GetID(), sizeof(CSInitMainActor_S2C));
         Send(&message);
     }
+
+	void MainActor::Receive( IMessage *message )
+	{
+		switch (message->GetType())
+		{
+		case GetMessageType(CSAttackTarget_C2S):
+			ProcessCSAttackTarget_C2S(message);
+			break;
+		default:
+			ServerActor::Receive(message);
+			break;
+		}
+	}
+
+	void MainActor::ProcessCSAttackTarget_C2S( IMessage *message )
+	{
+		CSAttackTarget_C2S *innerMessage = reinterpret_cast<CSAttackTarget_C2S*>(message);
+		Attack(innerMessage->m_targetID);
+	}
+
 }

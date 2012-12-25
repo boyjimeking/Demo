@@ -11,6 +11,7 @@
 #include "ActorsControl.h"
 #include "ActorProp.h"
 #include "ActorAction.h"
+#include "Client/Client.h"
 
 namespace Game
 {
@@ -22,6 +23,7 @@ namespace Game
 	bool TouchMonster::OnTouch(const cocos2d::CCPoint &pos)
 	{
 		WorldManager::Instance()->GetActorsControl()->GetMainActor()->Attack(m_prop);
+		WorldManager::Instance()->GetClient()->Attack(m_prop->GetID());
 		return true;
 	}
 }

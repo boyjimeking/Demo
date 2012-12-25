@@ -30,6 +30,8 @@ namespace Net
     	
     	static int RandX(void);
     	static int RandY(void);
+
+		ServerActor::Ptr LookupActor(int id);
     private:
     private:
     	typedef std::map<int, ServerActor::Ptr> ServerActorMap;

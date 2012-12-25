@@ -102,4 +102,10 @@ namespace Game
 		SetRootScale(transScale);
 	}
 
+	void Camera::Shake( void )
+	{
+		CameraShake event;
+		NotifyChange(&event);
+	}
+
 }

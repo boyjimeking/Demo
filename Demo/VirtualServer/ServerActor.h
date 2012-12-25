@@ -14,6 +14,7 @@
 namespace Net
 {
 	struct IMessage;
+	class Server;
 	class ServerActor
 	{
 	public:
@@ -24,7 +25,7 @@ namespace Net
 	
 		int GetID(void) const { return m_id; }
 
-		void Receive(IMessage *message);
+		virtual void Receive(IMessage *message);
     	void Send(IMessage *message);
 
     	static Ptr CreateObj(void);
@@ -38,14 +39,26 @@ namespace Net
     	virtual void Tick(float dt);
 
     	//向客户端同步位置
-    	virtual void SycPosition(void);
+		virtual void SycPosition(void);
+		//更换装备
+		virtual void ChangeEquip(void);
+		//攻击
+		virtual void Attack(int targetID);
+
+		void SetAttacking(bool isTrue);
+
+		void SetServer(Server *server) { m_server = server; }
+		Server* GetServer(void) const { return m_server; }
     private:
     	void ChangeTarget(void);
+	protected:
     private:
+		Server *m_server;
     	float m_x;
     	float m_y;
 
     	float m_totalTime;
+		bool m_isAttacking;
 	private:
 		const int m_id;
 		static int Count;

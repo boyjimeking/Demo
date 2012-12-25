@@ -46,6 +46,8 @@ namespace Game
 		void SetTransScale(float transScale);
 		float GetTransScale(void) const { return m_transScale; }
 		float GetObjectScale(void) const { return 1 / m_transScale; }
+
+		void Shake(void);
 	protected:
 		void SetRootScale(float scale);
     private:
