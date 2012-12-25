@@ -1,4 +1,4 @@
-﻿//
+//
 //  Scene.h
 //  SceneObjects
 //
