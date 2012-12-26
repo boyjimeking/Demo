@@ -11,7 +11,7 @@
 
 #include "Base/INotifyEvent.h"
 #include <string>
-#include "Tools/Scene.h"
+#include "../Tools/Scene.h"
 #include "cocoa/CCGeometry.h"
 #include "SceneObjectEntity.h"
 

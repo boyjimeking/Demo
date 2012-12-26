@@ -8,7 +8,7 @@
 #ifndef EditAvatarData_h__
 #define EditAvatarData_h__
 
-#include "Tools/AvatarData.h"
+#include "../Tools/AvatarData.h"
 
 namespace Tools
 {

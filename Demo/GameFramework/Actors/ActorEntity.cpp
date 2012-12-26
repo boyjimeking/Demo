@@ -15,9 +15,9 @@
 #include "ActorProp.h"
 #include "ActorTouch.h"
 #include "sprite_nodes/CCSpriteFrameCache.h"
-#include "Tools/AnimationGroup.h"
-#include "Tools/AvatarData.h"
-#include "Tools/AnimationData.h"
+#include "../Tools/AnimationGroup.h"
+#include "../Tools/AvatarData.h"
+#include "../Tools/AnimationData.h"
 #include "../CCFileUtils.h"
 #include "EquipObject.h"
 

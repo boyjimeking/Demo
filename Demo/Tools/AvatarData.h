@@ -9,6 +9,7 @@
 #define AvatarData_h__
 
 #include <map>
+#include <string>
 
 namespace Tools
 {

@@ -11,7 +11,7 @@
 #include "../CSProtocol/CSPipeline.h"
 #include "MainActor.h"
 #include "../CCFileUtils.h"
-#include "Tools/Scene.h"
+#include "../Tools/Scene.h"
 
 namespace Net
 {

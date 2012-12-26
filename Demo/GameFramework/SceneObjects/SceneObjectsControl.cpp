@@ -1,6 +1,6 @@
 #include "SceneObjectsControl.h"
 #include "platform/CCFileUtils.h"
-#include "Tools/Scene.h"
+#include "../Tools/Scene.h"
 #include "platform/CCCommon.h"
 #include "SceneObjectProp.h"
 #include "SceneObjectEntity.h"

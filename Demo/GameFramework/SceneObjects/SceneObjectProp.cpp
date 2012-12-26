@@ -1,6 +1,6 @@
 #include "SceneObjectProp.h"
 #include "SceneObjectEntity.h"
-#include "Tools/Scene.h"
+#include "../Tools/Scene.h"
 #include "SceneObjectEvents.h"
 
 namespace Game

@@ -17,7 +17,7 @@
 #include "Physical/PhysicalControl.h"
 #include "Client/Client.h"
 #include "platform/CCFileUtils.h"
-#include "Tools/Scene.h"
+#include "../Tools/Scene.h"
 #if COCOS2D_DEBUG
 #include "Tools/DebugLayer.h"
 #endif // COCOS2D_DEBUG

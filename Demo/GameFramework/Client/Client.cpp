@@ -13,7 +13,7 @@
 #include "Actors/ActorProp.h"
 #include "Terrain/TerrainProp.h"
 #include "support/CCPointExtension.h"
-#include "CSProtocol/CSMessageType.h"
+#include "../CSProtocol/CSMessageType.h"
 
 
 namespace Net

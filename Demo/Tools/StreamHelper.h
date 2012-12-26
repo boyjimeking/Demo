@@ -29,8 +29,8 @@ namespace Tools
 			memcpy(&value, &m_buff[m_index], sizeof(T));
 			m_index += sizeof(T);
 		}
-		template<>
-		void Read<std::string>(std::string &value)
+		
+		void Read(std::string &value)
 		{
 			if (m_index + sizeof(unsigned int) > m_size)
 			{
@@ -82,8 +82,8 @@ namespace Tools
 			memcpy(&m_buff[m_index], &value, sizeof(T));
 			m_index += sizeof(T);
 		}
-		template<>
-		void Write<std::string>(std::string &value)
+		
+		void Write(std::string &value)
 		{
 			if (m_index + sizeof(unsigned int) > m_size)
 			{

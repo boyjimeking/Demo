@@ -1,9 +1,10 @@
 #include "EditAvatarData.h"
-#include "Tools/AnimationData.h"
+#include "../Tools/AnimationData.h"
 #include "WorldManager.h"
 #include "Actors/ActorsControl.h"
 #include "Actors/ActorProp.h"
-#include "Tools/AnimationGroup.h"
+#include "../Tools/AnimationGroup.h"
+#include <map>
 
 namespace Tools
 {
@@ -55,7 +56,7 @@ namespace Tools
 
 	void EditAvatarData::RemoveAnimationGroup( int type )
 	{
-		AnimationTable::const_iterator it = m_animationTable.find(type);
+		AnimationTable::iterator it = m_animationTable.find(type);
 		if (m_animationTable.end() == it)
 		{
 			return;

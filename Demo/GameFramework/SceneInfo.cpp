@@ -1,5 +1,5 @@
 #include "SceneInfo.h"
-#include "Tools/Scene.h"
+#include "../Tools/Scene.h"
 
 namespace Game
 {
