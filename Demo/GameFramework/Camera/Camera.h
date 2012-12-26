@@ -9,7 +9,7 @@
 #ifndef Demo_Camera_h
 #define Demo_Camera_h
 
-#include "Base/INotifier.h"
+#include "../Base/INotifier.h"
 #include "cocoa/CCGeometry.h"
 
 namespace cocos2d

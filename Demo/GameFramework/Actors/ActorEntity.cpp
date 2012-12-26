@@ -84,11 +84,11 @@ namespace Game
 					setPosition(newPos);
 					if (NULL != this->getParent())
 					{
-						this->getParent()->reorderChild(this, -getPosition().y);
+						this->getParent()->reorderChild(this, -getPosition().y * 1000);
 					}
 					else
 					{
-						_setZOrder(-getPosition().y);
+						_setZOrder(-getPosition().y * 1000);
 					}
 					if (ENActorType::enMain == reinterpret_cast<const ActorProp*>(notify)->GetType())
 					{

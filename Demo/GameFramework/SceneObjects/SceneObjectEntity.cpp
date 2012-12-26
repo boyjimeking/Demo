@@ -49,11 +49,11 @@ namespace Game
 				setAnchorPoint(cocos2d::CCPointZero);
 				if (NULL != getParent())
 				{
-					getParent()->reorderChild(this, -getPosition().y);
+					getParent()->reorderChild(this, -getPosition().y * 1000);
 				}
 				else
 				{
-					_setZOrder(-getPosition().y);
+					_setZOrder(-getPosition().y * 1000);
 				}
 				setScale(WorldManager::Instance()->GetCamera()->GetObjectScale());
 			}

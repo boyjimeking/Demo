@@ -9,7 +9,7 @@
 #ifndef Demo_GlobalDef_h
 #define Demo_GlobalDef_h
 
-#include "Tools/ENDirection.h"
+#include "../../Tools/ENDirection.h"
 
 struct ENActorType
 {
