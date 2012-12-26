@@ -127,7 +127,7 @@ namespace Game
 		{
 			if (!m_fired)
 			{
-				ActorEventPlayAttack event;
+				ActorEventPlayAttack event(target, prop);
 				prop->NotifyChange(&event);
 				if (/*prop->GetType() == ENActorType::enMain && */rand() % 2 == 0)
 				{

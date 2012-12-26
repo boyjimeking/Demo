@@ -38,6 +38,11 @@ namespace Game
 			{
 				const SceneObjectEventInit *objectEvent = reinterpret_cast<const SceneObjectEventInit*>(event);
 				cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(objectEvent->m_imageName.c_str());
+				if (NULL == frame)
+				{
+					cocos2d::CCLog("Frame Not Found : ", objectEvent->m_imageName.c_str());
+					break;
+				}
 				setDisplayFrame(frame);
 				setPosition(objectEvent->m_position);
 				setContentSize(objectEvent->m_size);

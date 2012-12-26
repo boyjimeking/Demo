@@ -67,10 +67,14 @@ namespace Game
 	{
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enStop; }
 	};
+	class ActorProp;
 	struct ActorEventPlayAttack
 		:public INotifyEvent
 	{
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enAttack; }
+		ActorEventPlayAttack(ActorProp *target, ActorProp *src) : m_target(target), m_src(src) {}
+		ActorProp *m_target;
+		ActorProp *m_src;
 	};
 
 	struct ActorEventChangeAvatar

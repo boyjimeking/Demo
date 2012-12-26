@@ -103,7 +103,8 @@ namespace Game
 				break;
 			case ENActorEvent::enAttack:
 				{
-					PlayAnimation(ENAnimation::enAttack, m_currentDirection);
+					const ActorEventPlayAttack *actorEvent = reinterpret_cast<const ActorEventPlayAttack*>(event);
+					PlayAnimation(ENAnimation::enAttack, CalDirection(actorEvent->m_target->GetPosition(), actorEvent->m_src->GetPosition()));
 				}
 				break;
 			case ENActorEvent::enChangeAvatar:

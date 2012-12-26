@@ -9,7 +9,6 @@
 #ifndef __SceneObjects__Scene__
 #define __SceneObjects__Scene__
 
-#include <list>
 #include <string>
 #include <vector>
 
@@ -36,8 +35,8 @@ namespace Tools
 	class Scene
 	{
 	public:
-		typedef std::list<ObjectInfo*> ObjectInfoList;
-		typedef std::list<TerrainInfo*> TerrainInfoList;
+		typedef std::vector<ObjectInfo*> ObjectInfoList;
+		typedef std::vector<TerrainInfo*> TerrainInfoList;
 		typedef std::vector<std::string> ImageNameList;
 
 		Scene(void);
