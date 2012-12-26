@@ -588,6 +588,8 @@
 		D3EA3979168A983300B71B82 /* scene.pkm in Resources */ = {isa = PBXBuildFile; fileRef = D3EA3970168A983300B71B82 /* scene.pkm */; };
 		D3EA397A168A983300B71B82 /* trees.pblist in Resources */ = {isa = PBXBuildFile; fileRef = D3EA3971168A983300B71B82 /* trees.pblist */; };
 		D3EA397B168A983300B71B82 /* trees.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EA3972168A983300B71B82 /* trees.png */; };
+		D3EA3986168AA45C00B71B82 /* DemoTree_0.pblist in Resources */ = {isa = PBXBuildFile; fileRef = D3EA3984168AA45C00B71B82 /* DemoTree_0.pblist */; };
+		D3EA3987168AA45C00B71B82 /* DemoTree_0.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EA3985168AA45C00B71B82 /* DemoTree_0.png */; };
 		D3EE8F7D16758305004C7332 /* terrain_8.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7816758305004C7332 /* terrain_8.png */; };
 		D3EE8F7E16758305004C7332 /* terrain_9.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7916758305004C7332 /* terrain_9.png */; };
 		D3EE8F7F16758305004C7332 /* terrain_10.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE8F7A16758305004C7332 /* terrain_10.png */; };
@@ -10259,6 +10261,8 @@
 		D3EA3970168A983300B71B82 /* scene.pkm */ = {isa = PBXFileReference; lastKnownFileType = file; name = scene.pkm; path = Resources/scene.pkm; sourceTree = "<group>"; };
 		D3EA3971168A983300B71B82 /* trees.pblist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = trees.pblist; path = Resources/trees.pblist; sourceTree = "<group>"; };
 		D3EA3972168A983300B71B82 /* trees.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trees.png; path = Resources/trees.png; sourceTree = "<group>"; };
+		D3EA3984168AA45C00B71B82 /* DemoTree_0.pblist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = DemoTree_0.pblist; path = Resources/DemoTree_0.pblist; sourceTree = "<group>"; };
+		D3EA3985168AA45C00B71B82 /* DemoTree_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DemoTree_0.png; path = Resources/DemoTree_0.png; sourceTree = "<group>"; };
 		D3EE8F7816758305004C7332 /* terrain_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_8.png; path = Resources/terrain_8.png; sourceTree = "<group>"; };
 		D3EE8F7916758305004C7332 /* terrain_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_9.png; path = Resources/terrain_9.png; sourceTree = "<group>"; };
 		D3EE8F7A16758305004C7332 /* terrain_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_10.png; path = Resources/terrain_10.png; sourceTree = "<group>"; };
@@ -10355,6 +10359,8 @@
 		D30D8D441666EE89000B95E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D3EA3984168AA45C00B71B82 /* DemoTree_0.pblist */,
+				D3EA3985168AA45C00B71B82 /* DemoTree_0.png */,
 				D3EA396A168A983300B71B82 /* Demo.pkm */,
 				D3EA396B168A983300B71B82 /* MainActor.ava */,
 				D3EA396C168A983300B71B82 /* MainWeapon.ava */,
@@ -27031,6 +27037,8 @@
 				D3EA3979168A983300B71B82 /* scene.pkm in Resources */,
 				D3EA397A168A983300B71B82 /* trees.pblist in Resources */,
 				D3EA397B168A983300B71B82 /* trees.png in Resources */,
+				D3EA3986168AA45C00B71B82 /* DemoTree_0.pblist in Resources */,
+				D3EA3987168AA45C00B71B82 /* DemoTree_0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
