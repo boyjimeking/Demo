@@ -1,0 +1,55 @@
+#include "IActor.h"
+#include "CSProtocol/CSMessageDef.h"
+#include "Base/GlobalDef.h"
+
+namespace Server
+{
+	_Def_Simulate(IActor);
+
+	IActor::IActor(void)
+		:m_x(0.0f)
+		,m_y(0.0f)
+	{
+
+	}
+
+	IActor::~IActor(void)
+	{
+
+	}
+
+	void IActor::Process( IMessage *message )
+	{
+		switch (message->GetType())
+		{
+		default:
+			ISimulateObject::Process(message);
+			break;
+		}
+	}
+
+	void IActor::SycPosition(void)
+	{
+		CSSycActor_S2C message;
+		message.m_actorID = GetID();
+		message.m_x = GetX();
+		message.m_y = GetY();
+		message.Build(GetMessageType(CSSycActor_S2C), GetID(), sizeof(CSSycActor_S2C));
+		Send(&message);
+	}
+	void IActor::ChangeEquip( void )
+	{
+		CSChangeActorEquip_S2C message;
+		message.m_actorID = GetID();
+		message.m_equipType = ENEquipType::enWeapon;
+		strcpy(message.m_equipName, "MainWeapon.ava");
+		message.Build(GetMessageType(CSChangeActorEquip_S2C), GetID(), sizeof(CSChangeActorEquip_S2C));
+		Send(&message);
+	}
+
+	void IActor::Attack( int targetID )
+	{
+
+	}
+
+}

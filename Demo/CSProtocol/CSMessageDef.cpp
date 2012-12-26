@@ -7,23 +7,21 @@
 //
 
 #include "CSMessageDef.h"
-namespace Net
+
+IMessage::IMessage(void)
+	:m_type(ENMessage::enError)
+	,m_senderID(0)
+	,m_length(0)
 {
-    IMessage::IMessage(void)
-    :m_type(ENMessage::enError)
-    ,m_senderID(0)
-    ,m_length(0)
-    {
 
-    }
-    IMessage::~IMessage(void)
-    {
+}
+IMessage::~IMessage(void)
+{
 
-    }
-    void IMessage::Build(ENMessage::Type type, int senderID, int length)
-    {
-    	m_type = type;
-    	m_senderID = senderID;
-    	m_length = length;
-    }
+}
+void IMessage::Build(ENMessage::Type type, int senderID, int length)
+{
+	m_type = type;
+	m_senderID = senderID;
+	m_length = length;
 }

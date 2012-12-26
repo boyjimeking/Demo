@@ -11,70 +11,67 @@
 
 #include "CSMessageType.h"
 
-namespace Net
+struct IMessage
 {
-    struct IMessage
-    {
-    	IMessage(void);
-    	virtual ~IMessage(void);
+	IMessage(void);
+	virtual ~IMessage(void);
 
-    	void Build(ENMessage::Type type, int senderID, int length);
+	void Build(ENMessage::Type type, int senderID, int length);
 
-    	inline ENMessage::Type GetType(void) const { return m_type; }
-    	inline int GetSenderID(void) const { return m_senderID; }
-    	inline int GetLength(void) const { return m_length; }
-    private:
-    	ENMessage::Type m_type;
-    	int m_senderID;
-    	int m_length;
-    };
+	inline ENMessage::Type GetType(void) const { return m_type; }
+	inline int GetSenderID(void) const { return m_senderID; }
+	inline int GetLength(void) const { return m_length; }
+private:
+	ENMessage::Type m_type;
+	int m_senderID;
+	int m_length;
+};
 
-    struct CSInitScene_S2C
-        :public IMessage
-    {
-        int m_sceneID;
-        char m_sceneName[128];
-    };
-    struct CSInitMainActor_S2C
-        :public IMessage
-    {
-        int m_mainActorID;
-        float m_x;
-        float m_y;
-    };
-	struct CSChangeActorEquip_S2C
-		:public IMessage
-	{
-		int m_actorID;
-		int m_equipType;
-		char m_equipName[128];
-	};
-    struct CSSycActor_S2C
-        :public IMessage
-    {
-        int m_actorID;
-        float m_x;
-        float m_y;
-    };
-    struct CSChangeTarget_S2C
-        :public IMessage
-    {
-        int m_actorID;
-        float m_x;
-        float m_y;
-    };
-	struct CSAttackTarget_C2S
-		:public IMessage
-	{
-		int m_actorID;
-		int m_targetID;
-	};
-	struct CSAttackTarget_S2C
-		:public IMessage
-	{
-		int m_actorID;
-		int m_targetID;
-	};
-}
+struct CSInitScene_S2C
+	:public IMessage
+{
+	int m_sceneID;
+	char m_sceneName[128];
+};
+struct CSInitMainActor_S2C
+	:public IMessage
+{
+	int m_mainActorID;
+	float m_x;
+	float m_y;
+};
+struct CSChangeActorEquip_S2C
+	:public IMessage
+{
+	int m_actorID;
+	int m_equipType;
+	char m_equipName[128];
+};
+struct CSSycActor_S2C
+	:public IMessage
+{
+	int m_actorID;
+	float m_x;
+	float m_y;
+};
+struct CSChangeTarget_S2C
+	:public IMessage
+{
+	int m_actorID;
+	float m_x;
+	float m_y;
+};
+struct CSAttackTarget_C2S
+	:public IMessage
+{
+	int m_actorID;
+	int m_targetID;
+};
+struct CSAttackTarget_S2C
+	:public IMessage
+{
+	int m_actorID;
+	int m_targetID;
+};
 
 #endif /* defined(__Demo__CSMessageDef__) */
