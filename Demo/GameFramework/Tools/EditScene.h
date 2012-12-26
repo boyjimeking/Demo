@@ -28,6 +28,8 @@ namespace Tools
 
 		void AddObjectImage(const char *imageName);
 		void RemoveObjectImage(const char *imageName);
+		unsigned int GetImageCount(void) const { return m_imageName.size(); }
+		const char* GetImage(int index) const { return m_imageName[index].c_str(); }
 
 		int AddObject(const char *image, float x, float y, float width, float height);
 		void ChangeObject(int id, const char *image, float x, float y, float width, float height);

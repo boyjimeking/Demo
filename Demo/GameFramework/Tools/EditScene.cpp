@@ -1,10 +1,17 @@
 #include "EditScene.h"
-#include <stddef.h>
 #include "WorldManager.h"
 #include "SceneObjects/SceneObjectsControl.h"
 #include "sprite_nodes/CCSpriteFrameCache.h"
 #include "Terrain/TerrainProp.h"
 #include "SceneInfo.h"
+
+#ifndef max
+#define max(a,b)    (((a) > (b)) ? (a) : (b))
+#endif // !max
+#ifndef min
+#define min(a,b)    (((a) < (b)) ? (a) : (b))
+#endif // !min
+
 
 namespace Tools
 {
@@ -40,12 +47,12 @@ namespace Tools
 		for (ObjectInfoList::iterator it = m_objectInfoList.begin(); m_objectInfoList.end() != it; ++it)
 		{
 			ObjectInfo *info = (*it);
-			m_objectCount = std::max(info->m_id, m_objectCount);
+			m_objectCount = max(info->m_id, m_objectCount);
 		}
 		for (ObjectInfoList::iterator it = m_terrainInfoList.begin(); m_terrainInfoList.end() != it; ++it)
 		{
 			TerrainInfo *info = (*it);
-			m_terrainCount = std::max(info->m_id, m_terrainCount);
+			m_terrainCount = max(info->m_id, m_terrainCount);
 		}
 		Game::WorldManager::Instance()->InitScene(this);
 	}
