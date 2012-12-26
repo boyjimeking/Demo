@@ -12,21 +12,29 @@
 
 namespace Server
 {
+	class AIControl;
 	class NPC
 		:public IActor
 	{
 	public:
-		_Decl_Simulate(NPC);
+		_Decl_Simulate(NPC, IActor);
 		NPC(void);
 		virtual ~NPC(void);
 
 		virtual void Tick( float dt );
-		void ChangeTarget(void);
+
+		virtual void SycInfo( void );
+		//死亡
+		virtual void Dead(void);
+
+		AIControl * GetControl(void) const { return m_control; }
+		int GetTarget(void) const { return m_target; }
+		void SetTarget(int val) { m_target = val; }
 	protected:
 
-		float m_totalTime;
+		AIControl *m_control;
 	private:
-
+		int m_target;
 	};
 }
 

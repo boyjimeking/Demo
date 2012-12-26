@@ -33,13 +33,36 @@ struct CSInitScene_S2C
 	int m_sceneID;
 	char m_sceneName[128];
 };
-struct CSInitMainActor_S2C
+struct CSInitPlayer_S2C 
 	:public IMessage
 {
-	int m_mainActorID;
+	enum
+	{
+		PlayerNameLength = 32,
+		DataMaxLength = 1024,
+	};
+	int m_actorID;
+	char m_playerName[PlayerNameLength];
 	float m_x;
 	float m_y;
+	unsigned int m_dataLength;
+	unsigned char m_data[DataMaxLength];
 };
+struct CSInitNPC_S2C
+	:public IMessage
+{
+	enum
+	{
+		DataMaxLength = 1024,
+	};
+	int m_actorID;
+	int m_npcStaticID;
+	float m_x;
+	float m_y;
+	unsigned int m_dataLength;
+	unsigned char m_data[DataMaxLength];
+};
+
 struct CSChangeActorEquip_S2C
 	:public IMessage
 {
@@ -54,7 +77,7 @@ struct CSSycActor_S2C
 	float m_x;
 	float m_y;
 };
-struct CSChangeTarget_S2C
+struct CSMoveTo_S2C
 	:public IMessage
 {
 	int m_actorID;
@@ -72,6 +95,11 @@ struct CSAttackTarget_S2C
 {
 	int m_actorID;
 	int m_targetID;
+};
+struct CSDead_S2C
+	:public IMessage
+{
+	int m_actorID;
 };
 
 #endif /* defined(__Demo__CSMessageDef__) */

@@ -55,6 +55,20 @@ namespace Game
 		static std::set<IAction*> m_record;
 	};
 
+	class ActionControl
+	{
+	public:
+		ActionControl(void);
+		void Tick(ActorProp *prop, float dt);
+
+		void AddAction(ActorProp *prop, IAction *action);
+		void AddFollowAction(IAction *action);
+	private:
+		IAction *m_currentAction;
+		IAction *m_nextAction;
+		void SwitchNext(ActorProp *prop);
+	};
+
 	//移动
 	class MoveAction
 		:public IAction

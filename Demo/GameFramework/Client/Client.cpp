@@ -14,6 +14,8 @@
 #include "Terrain/TerrainProp.h"
 #include "support/CCPointExtension.h"
 #include "../CSProtocol/CSMessageType.h"
+#include "Tools/StreamHelper.h"
+#include "CSProtocol/ActorBattleInfo.h"
 
 
 namespace Net
@@ -33,13 +35,16 @@ namespace Net
 			case GetMessageType(CSInitScene_S2C):
 				InitScene(message);
 				break;
-			case GetMessageType(CSInitMainActor_S2C):
-				InitMainActor(message);
+			case GetMessageType(CSInitPlayer_S2C):
+				ProcessCSInitPlayer_S2C(message);
+				break;
+			case GetMessageType(CSInitNPC_S2C):
+				ProcessCSInitNPC_S2C(message);
 				break;
 			case GetMessageType(CSSycActor_S2C):
 				SycActor(message);
 				break;
-			case GetMessageType(CSChangeTarget_S2C):
+			case GetMessageType(CSMoveTo_S2C):
 				MoveActor(message);
 				break;
 			case GetMessageType(CSChangeActorEquip_S2C):
@@ -47,6 +52,9 @@ namespace Net
 				break;
 			case GetMessageType(CSAttackTarget_S2C):
 				ProcessCSAttackTarget_S2C(message);
+				break;
+			case GetMessageType(CSDead_S2C):
+				ProcessCSDead_S2C(message);
 				break;
 			default:
 				//消息类型错误
@@ -62,18 +70,20 @@ namespace Net
     {
     	CSInitScene_S2C *innerMessage = reinterpret_cast<CSInitScene_S2C*>(message);
     	Game::WorldManager::Instance()->InitSceneByFile(innerMessage->m_sceneName);
-    }
-	void Client::InitMainActor(IMessage *message)
+	}
+	void Client::ProcessCSInitPlayer_S2C( IMessage *message )
 	{
-    	CSInitMainActor_S2C *innerMessage = reinterpret_cast<CSInitMainActor_S2C*>(message);
-    	Game::ActorProp *actor = Game::WorldManager::Instance()->GetActorsControl()->GetMainActor();
-    	if (NULL == actor)
-    	{
-    		Game::WorldManager::Instance()->GetActorsControl()->CreateActor(ENActorType::enMain, innerMessage->m_mainActorID, innerMessage->m_x, innerMessage->m_y);
-    	}
+		CSInitPlayer_S2C *innerMessage = reinterpret_cast<CSInitPlayer_S2C*>(message);
+		Game::ActorProp *actor = Game::WorldManager::Instance()->GetActorsControl()->GetMainActor();
+		if (NULL == actor)
+		{
+			actor = Game::WorldManager::Instance()->GetActorsControl()->CreateActor(ENActorType::enMain, innerMessage->m_actorID, innerMessage->m_x, innerMessage->m_y);
+			Tools::StreamHelper stream(innerMessage->m_data, innerMessage->m_dataLength);
+			actor->GetBattleInfo()->Read(&stream);
+		}
 		else
 		{
-			actor->SetPosition(ccp(innerMessage->m_x, innerMessage->m_y));
+			//error
 		}
 	}
 	void Client::SycActor(IMessage *message)
@@ -91,7 +101,7 @@ namespace Net
 	}
 	void Client::MoveActor(IMessage *message)
 	{
-		CSChangeTarget_S2C *innerMessage = reinterpret_cast<CSChangeTarget_S2C*>(message);
+		CSMoveTo_S2C *innerMessage = reinterpret_cast<CSMoveTo_S2C*>(message);
 		Game::ActorProp *actor = Game::WorldManager::Instance()->GetActorsControl()->LookupActor(innerMessage->m_actorID);
 		if (NULL != actor)
 		{
@@ -127,7 +137,35 @@ namespace Net
 		{
 			return;
 		}
-		actor->Attack(target);
+		actor->StartAttack(target);
 	}
+
+	void Client::ProcessCSInitNPC_S2C( IMessage *message )
+	{
+		CSInitNPC_S2C *innerMessage = reinterpret_cast<CSInitNPC_S2C*>(message);
+		Game::ActorProp *actor = Game::WorldManager::Instance()->GetActorsControl()->LookupActor(innerMessage->m_actorID);
+		if (NULL == actor)
+		{
+			actor = Game::WorldManager::Instance()->GetActorsControl()->CreateActor(ENActorType::enMonster, innerMessage->m_actorID, innerMessage->m_x, innerMessage->m_y);
+			Tools::StreamHelper stream(innerMessage->m_data, innerMessage->m_dataLength);
+			actor->GetBattleInfo()->Read(&stream);
+		}
+		else
+		{
+			//error
+		}
+	}
+
+	void Client::ProcessCSDead_S2C( IMessage *message )
+	{
+		CSDead_S2C *innerMessage = reinterpret_cast<CSDead_S2C*>(message);
+		Game::ActorProp *actor = Game::WorldManager::Instance()->GetActorsControl()->LookupActor(innerMessage->m_actorID);
+		if (NULL == actor)
+		{
+			return;
+		}
+		actor->Stop();
+	}
+
 
 }

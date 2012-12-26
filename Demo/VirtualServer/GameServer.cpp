@@ -67,10 +67,10 @@ namespace Server
 			actor->SetX(0);
 			actor->SetY(0);
 
-			actor->SycPosition();
+			actor->SycInfo();
 			actor->ChangeEquip();
 		}
-		for (int index = 0; index < 30; ++index)
+		for (int index = 0; index < 10; ++index)
 		{
 			IActor::Ptr actor = NPC::CreateObject();
 			PushObject(actor);
@@ -78,7 +78,7 @@ namespace Server
 			actor->SetX(RandX());
 			actor->SetY(RandY());
 
-			actor->SycPosition();
+			actor->SycInfo();
 		}
 	}
 

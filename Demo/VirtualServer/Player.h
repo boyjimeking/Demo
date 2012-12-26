@@ -16,13 +16,14 @@ namespace Server
 		:public IActor
 	{
 	public:
-		_Decl_Simulate(Player);
+		_Decl_Simulate(Player, IActor);
 		Player(void);
 		virtual ~Player(void);
 
-		virtual void SycPosition(void);
+		virtual void Process(IMessage *message);
+		virtual void SycInfo( void );
 	protected:
-
+		void ProcessCSAttackTarget_C2S(IMessage *message);
 	private:
 
 	};

@@ -46,6 +46,106 @@ namespace Game
 		}
 		m_record.erase(this);
 	}
+	ActionControl::ActionControl(void)
+		:m_currentAction(NULL)
+		,m_nextAction(NULL)
+	{
+
+	}
+	void ActionControl::Tick(ActorProp *prop, float dt)
+	{
+		if (NULL == m_currentAction)
+		{
+			SwitchNext(prop);
+		}
+		if (NULL == m_currentAction)
+		{
+			return;
+		}
+		if (m_currentAction->Tick(dt, prop))
+		{
+			m_currentAction->OnExit(prop);
+			delete m_currentAction;
+			m_currentAction = NULL;
+		}
+	}
+	void ActionControl::SwitchNext(ActorProp *prop)
+	{
+		if (NULL != m_nextAction)
+		{
+			m_nextAction->OnEnter(prop);
+			m_currentAction = m_nextAction;
+			m_nextAction = NULL;
+		}
+	}
+	void ActionControl::AddAction(ActorProp *prop, IAction *action)
+	{
+		if (NULL == m_currentAction)
+		{
+			AddFollowAction(action);
+			return;
+		}
+		switch (ENInterrupt::Check(m_currentAction->GetType(), action->GetType()))
+		{
+		case ENInterrupt::enFollow:
+			{
+				AddFollowAction(action);
+			}
+			break;
+		case ENInterrupt::enInterupt:
+			{
+				m_currentAction->OnInterrupt(prop);
+				delete m_currentAction;
+				m_currentAction = NULL;
+				AddFollowAction(action);
+			}
+			break;
+		case ENInterrupt::enInsert:
+			{
+				if (NULL != m_nextAction)
+				{
+					delete m_nextAction;
+					m_nextAction = m_currentAction;
+				}
+				m_currentAction = action;
+			}
+			break;
+		default:
+			delete action;
+			break;
+		}
+	}
+	void ActionControl::AddFollowAction(IAction *action)
+	{
+		if (NULL == m_nextAction)
+		{
+			m_nextAction = action;
+			return;
+		}
+		switch (ENInterrupt::Check(m_nextAction->GetType(), action->GetType()))
+		{
+		case ENInterrupt::enFollow:
+			{
+				delete action;
+			}
+			break;
+		case ENInterrupt::enInterupt:
+			{
+				delete m_nextAction;
+				m_nextAction = action;
+			}
+			break;
+		case ENInterrupt::enInsert:
+			{
+				delete m_nextAction;
+				m_nextAction = action;
+			}
+			break;
+		default:
+			delete action;
+			break;
+		}
+	}
 	//移动
 	MoveAction::MoveAction(const cocos2d::CCPoint &pos)
 	:m_pos(pos)
@@ -129,9 +229,13 @@ namespace Game
 			{
 				ActorEventPlayAttack event(target, prop);
 				prop->NotifyChange(&event);
-				if (/*prop->GetType() == ENActorType::enMain && */rand() % 2 == 0)
+				if (rand() % 2 == 0)
 				{
 					WorldManager::Instance()->GetCamera()->Shake();
+				}
+				if (prop->GetType() == ENActorType::enMain)
+				{
+					prop->SendAttack(m_targetID);
 				}
 				m_direction = cocos2d::ccpNormalize(cocos2d::ccpSub(m_pos, m_startPos));
 				m_fired = true;

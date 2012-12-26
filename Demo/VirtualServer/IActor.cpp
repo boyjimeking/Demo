@@ -1,6 +1,7 @@
 #include "IActor.h"
 #include "CSProtocol/CSMessageDef.h"
 #include "Base/GlobalDef.h"
+#include "CSProtocol/ActorBattleInfo.h"
 
 namespace Server
 {
@@ -9,13 +10,14 @@ namespace Server
 	IActor::IActor(void)
 		:m_x(0.0f)
 		,m_y(0.0f)
+		,m_battleInfo(new ActorBattleInfo)
 	{
 
 	}
 
 	IActor::~IActor(void)
 	{
-
+		delete m_battleInfo;
 	}
 
 	void IActor::Process( IMessage *message )
@@ -50,6 +52,26 @@ namespace Server
 	void IActor::Attack( int targetID )
 	{
 
+	}
+
+	void IActor::SycBattleInfo( void )
+	{
+		
+	}
+
+	void IActor::SycInfo( void )
+	{
+		
+	}
+
+	void IActor::Dead( void )
+	{
+		GetBattleInfo()->SetAlive(false);
+	}
+
+	void IActor::Tick( float dt )
+	{
+		
 	}
 
 }

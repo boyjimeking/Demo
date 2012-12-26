@@ -189,6 +189,15 @@
     <ClCompile Include="..\VirtualServer\NPC.cpp">
       <Filter>VirtualServer</Filter>
     </ClCompile>
+    <ClCompile Include="..\CSProtocol\ActorBattleInfo.cpp">
+      <Filter>CSProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VirtualServer\AIState.cpp">
+      <Filter>VirtualServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VirtualServer\AIControl.cpp">
+      <Filter>VirtualServer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CSProtocol\CSMessageDef.h">
@@ -345,6 +354,15 @@
       <Filter>VirtualServer</Filter>
     </ClInclude>
     <ClInclude Include="..\VirtualServer\NPC.h">
+      <Filter>VirtualServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CSProtocol\ActorBattleInfo.h">
+      <Filter>CSProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VirtualServer\AIControl.h">
+      <Filter>VirtualServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VirtualServer\AIState.h">
       <Filter>VirtualServer</Filter>
     </ClInclude>
   </ItemGroup>

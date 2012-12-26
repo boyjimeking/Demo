@@ -1,11 +1,16 @@
 #include "NPC.h"
 #include "CSProtocol/CSMessageDef.h"
 #include "GameServer.h"
+#include "Tools/StreamHelper.h"
+#include "CSProtocol/ActorBattleInfo.h"
+#include "AIControl.h"
 
 namespace Server
 {
 	_Def_Simulate(NPC);
 	NPC::NPC(void)
+		:m_control(new AIControl)
+		,m_target(0)
 	{
 
 	}
@@ -17,25 +22,28 @@ namespace Server
 
 	void NPC::Tick( float dt )
 	{
-		float changedTime = 5.0f;
-		if (m_totalTime < 0.000001f)
-		{
-			ChangeTarget();
-			m_totalTime = 1;
-		}
-		m_totalTime += dt;
-		if (m_totalTime > changedTime)
-		{
-			m_totalTime = rand() / RAND_MAX * changedTime;
-		}
+		m_control->Tick(boost::static_pointer_cast<NPC>(shared_from_this()), dt);
 	}
-	void NPC::ChangeTarget(void)
+
+
+	void NPC::SycInfo( void )
 	{
-		CSChangeTarget_S2C message;
+		CSInitNPC_S2C message;
 		message.m_actorID = GetID();
-		message.m_x = GameServer::RandX();
-		message.m_y = GameServer::RandY();
-		message.Build(GetMessageType(CSChangeTarget_S2C), GetID(), sizeof(CSChangeTarget_S2C));
+		message.m_npcStaticID = 0;
+		message.m_x = GetX();
+		message.m_y = GetY();
+		Tools::StreamHelper stream(message.m_data, CSInitPlayer_S2C::DataMaxLength);
+		GetBattleInfo()->Write(&stream);
+		message.m_dataLength = stream.Size();
+		message.Build(GetMessageType(CSInitNPC_S2C), GetID(), sizeof(CSInitNPC_S2C));
 		Send(&message);
 	}
+
+	void NPC::Dead( void )
+	{
+		IActor::Dead();
+		GetControl()->ChangeState(boost::static_pointer_cast<NPC>(shared_from_this()), ENNPCAIState::enDead);
+	}
+
 }

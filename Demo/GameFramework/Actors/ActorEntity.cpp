@@ -153,6 +153,11 @@ namespace Game
 					}
 				}
 				break;
+			case ENActorEvent::enDead:
+				{
+					PlayAnimation(ENAnimation::enIdle, m_currentDirection);
+				}
+				break;
 			default:
 				break;
 		}

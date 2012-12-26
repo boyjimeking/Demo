@@ -22,11 +22,13 @@ struct ENMessage
 		//Server to Client
 		enServerMessageStart,
 		DefType(CSInitScene_S2C),
-		DefType(CSInitMainActor_S2C),
+		DefType(CSInitPlayer_S2C),
+		DefType(CSInitNPC_S2C),
 		DefType(CSSycActor_S2C),
-		DefType(CSChangeTarget_S2C),
+		DefType(CSMoveTo_S2C),
 		DefType(CSChangeActorEquip_S2C),
 		DefType(CSAttackTarget_S2C),
+		DefType(CSDead_S2C),
 
 		S2CMax = 4096,
 		//////////////////////////////////////////////////////////////////////////

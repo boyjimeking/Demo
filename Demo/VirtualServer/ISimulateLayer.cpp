@@ -19,6 +19,7 @@ namespace Server
 		{
 			return;
 		}
+		obj->SetID(m_objList.size() + 1);
 		obj->OnPush(this);
 		m_objList.push_back(obj);
 	}

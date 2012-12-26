@@ -18,7 +18,7 @@ namespace Tools
 {
 	class AvatarData;
 }
-
+class ActorBattleInfo;
 namespace Game
 {
 	class ActorEntity;
@@ -45,26 +45,26 @@ namespace Game
 
 		void MoveTo(const cocos2d::CCPoint &pos);
 		void Stop(void);
-		void Attack(ActorProp *target);
+		void Dead(void);
+		void StartAttack(ActorProp *target);
 		void ChangeAvatar(Tools::AvatarData *avatar);
-
 		void ChangeEquip(ENEquipType::Decl type, const char *avatarFile);
+		void SendAttack(int targetID);
 
 		void SetPosition(const cocos2d::CCPoint &pos);
 
 		void Tick(float dt);
 
-		void AddAction(IAction *action);
-		void AddFollowAction(IAction *action);
+		ActorBattleInfo* GetBattleInfo(void) const { return m_battleInfo; }
 	protected:
 		cocos2d::CCPoint m_position;
 		int m_id;
 		ENActorType::Decl m_type;
 		float m_speed;
+		ActorBattleInfo *m_battleInfo;
+		ActionControl *m_actionControl;
 	private:
-		IAction *m_currentAction;
-		IAction *m_nextAction;
-		void SwitchNext(void);
+		bool m_isAlive;
 	};
 }
 

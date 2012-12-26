@@ -11,9 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\CSProtocol\ActorBattleInfo.cpp" />
     <ClCompile Include="..\CSProtocol\CSMessageDef.cpp" />
     <ClCompile Include="..\CSProtocol\CSMessageType.cpp" />
     <ClCompile Include="..\CSProtocol\CSPipeline.cpp" />
+    <ClCompile Include="..\VirtualServer\AIControl.cpp" />
+    <ClCompile Include="..\VirtualServer\AIState.cpp" />
     <ClCompile Include="..\VirtualServer\GameServer.cpp" />
     <ClCompile Include="..\VirtualServer\IActor.cpp" />
     <ClCompile Include="..\VirtualServer\ISimulateLayer.cpp" />
@@ -63,9 +66,12 @@
     <ClCompile Include="WorldManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\CSProtocol\ActorBattleInfo.h" />
     <ClInclude Include="..\CSProtocol\CSMessageDef.h" />
     <ClInclude Include="..\CSProtocol\CSMessageType.h" />
     <ClInclude Include="..\CSProtocol\CSPipeline.h" />
+    <ClInclude Include="..\VirtualServer\AIControl.h" />
+    <ClInclude Include="..\VirtualServer\AIState.h" />
     <ClInclude Include="..\VirtualServer\GameServer.h" />
     <ClInclude Include="..\VirtualServer\IActor.h" />
     <ClInclude Include="..\VirtualServer\ISimulateLayer.h" />

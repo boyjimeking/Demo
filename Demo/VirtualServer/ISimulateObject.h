@@ -17,10 +17,12 @@ namespace Server
 {
 	class ISimulateLayer;
 	class ISimulateObject
+		:public boost::enable_shared_from_this<ISimulateObject>
 	{
 	public:
 		typedef boost::shared_ptr<ISimulateObject> Ptr;
 		virtual ENSimulateType::Decl GetType() const { return ENSimulateType::enError; }
+		virtual bool IsKindof(ENSimulateType::Decl type) const { return false; }
 
 		ISimulateObject(void);
 		virtual ~ISimulateObject(void);
@@ -43,9 +45,10 @@ namespace Server
 		ISimulateLayer *m_simulate;
 	};
 
-#define _Decl_Simulate(className)\
+#define _Decl_Simulate(className, parentName)\
 	typedef boost::shared_ptr<className> Ptr;\
 	virtual ENSimulateType::Decl GetType() const { return _Get_SimulateType(className); }\
+	virtual bool IsKindof(ENSimulateType::Decl type) const { return _Get_SimulateType(className) == type ? true : parentName::IsKindof(type); }\
 	static Ptr CreateObject(void);
 
 #define _Def_Simulate(className)\

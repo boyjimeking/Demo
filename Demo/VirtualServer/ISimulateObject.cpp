@@ -23,7 +23,7 @@ namespace Server
 
 	void ISimulateObject::OnPop( ISimulateLayer *layer )
 	{
-		
+		m_simulate = NULL;
 	}
 
 	void ISimulateObject::Process( IMessage *message )

@@ -22,8 +22,7 @@ namespace Game
 	}
 	bool TouchMonster::OnTouch(const cocos2d::CCPoint &pos)
 	{
-		WorldManager::Instance()->GetActorsControl()->GetMainActor()->Attack(m_prop);
-		WorldManager::Instance()->GetClient()->Attack(m_prop->GetID());
+		WorldManager::Instance()->GetActorsControl()->GetMainActor()->StartAttack(m_prop);
 		return true;
 	}
 }

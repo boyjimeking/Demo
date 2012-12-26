@@ -1,0 +1,49 @@
+#include "ActorBattleInfo.h"
+#include "Tools/StreamHelper.h"
+
+ActorBattleInfo::ActorBattleInfo(void)
+	:m_dirtyMark(0)
+	,m_isAlive(true)
+	,m_HP(5)
+{
+	
+}
+
+ActorBattleInfo::~ActorBattleInfo(void)
+{
+	
+}
+
+void ActorBattleInfo::Read( Tools::StreamHelper *stream )
+{
+	stream->Read(m_isAlive);
+	stream->Read(m_HP);
+}
+
+void ActorBattleInfo::Write( Tools::StreamHelper *stream )
+{
+	stream->Write(m_isAlive);
+	stream->Write(m_HP);
+}
+
+void ActorBattleInfo::SetHP( int hp )
+{
+	m_HP = hp;
+	SetDirty(ENBattlePropType::enHP);
+}
+
+void ActorBattleInfo::SetDirty( ENBattlePropType::Decl type )
+{
+	m_dirtyMark |= type;
+}
+
+bool ActorBattleInfo::GetDirty( ENBattlePropType::Decl type ) const
+{
+	return 0 != (m_dirtyMark & type);
+}
+
+void ActorBattleInfo::SetAlive( bool isAlive )
+{
+	m_isAlive = isAlive;
+	SetDirty(ENBattlePropType::enAlive);
+}
