@@ -168,7 +168,7 @@ namespace Game
 
 		static const float M_PI_8 = (float)M_PI / 8.0f;
 
-		if (abs(angle) < M_PI_8)
+		if (fabs(angle) < M_PI_8)
 		{
 			return ENDirection::enEast;
 		}
@@ -184,7 +184,7 @@ namespace Game
 		{
 			return ENDirection::enNorthWest;
 		}
-		if (abs(angle) > M_PI_8 * 7)
+		if (fabs(angle) > M_PI_8 * 7)
 		{
 			return ENDirection::enWest;
 		}
