@@ -27487,6 +27487,7 @@
 					"\"$(PROJECT_NAME)/GameFramework\"",
 				);
 				INFOPLIST_FILE = Demo/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Demo/libs/cocos2dx/platform/third_party/ios/libraries\"",
@@ -27528,6 +27529,7 @@
 					"\"$(PROJECT_NAME)/GameFramework\"",
 				);
 				INFOPLIST_FILE = Demo/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Demo/libs/cocos2dx/platform/third_party/ios/libraries\"",
