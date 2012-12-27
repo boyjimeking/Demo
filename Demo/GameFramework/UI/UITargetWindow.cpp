@@ -28,7 +28,7 @@ namespace GUI
 				m_slider->setTouchEnabled(false);
 				m_slider->setScaleX(5.0f);
 				const cocos2d::CCSize &size = Game::WorldManager::Instance()->GetUIControl()->GetSize();
-				m_slider->setPosition(cocos2d::CCPointMake(size.width / 2.0f, size.height - 10.0f));
+				m_slider->setPosition(cocos2d::CCPointMake(size.width / 2.0f, size.height - 30.0f));
 			}
 			break;
 		case ENUIEvent::enAttachActor:
