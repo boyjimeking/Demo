@@ -14,7 +14,6 @@ namespace Game
 	,m_speed(3.0f)
 	,m_battleInfo(new ActorBattleInfo)
 	,m_actionControl(new ActionControl)
-	,m_isAlive(true)
 	{
 
 	}
@@ -55,7 +54,7 @@ namespace Game
 	}
 	void ActorProp::MoveTo(const cocos2d::CCPoint &pos)
 	{
-		if (!m_isAlive)
+		if (!GetBattleInfo()->IsAlive())
 		{
 			return;
 		}
@@ -77,7 +76,7 @@ namespace Game
 	}
 	void ActorProp::Stop(void)
 	{
-		if (!m_isAlive)
+		if (!GetBattleInfo()->IsAlive())
 		{
 			return;
 		}
@@ -85,7 +84,7 @@ namespace Game
 	}
 	void ActorProp::StartAttack(ActorProp *target)
 	{
-		if (!m_isAlive)
+		if (!GetBattleInfo()->IsAlive())
 		{
 			return;
 		}
@@ -116,9 +115,8 @@ namespace Game
 
 	void ActorProp::Dead( void )
 	{
-		m_isAlive = false;
-		ActorEventDead event;
-		NotifyChange(&event);
+		GetBattleInfo()->SetAlive(false);
+		m_actionControl->AddAction(this, new DeadAction);
 	}
 
 }

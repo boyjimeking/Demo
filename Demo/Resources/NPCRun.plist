@@ -7,11 +7,11 @@
             <key>2_langren_m_attack_0_e_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{600,416},{134,146}}</string>
+                <string>{{274,604},{134,146}}</string>
                 <key>offset</key>
                 <string>{-9,-16}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{74,93},{134,146}}</string>
                 <key>sourceSize</key>
@@ -20,11 +20,11 @@
             <key>2_langren_m_attack_0_e_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,138},{150,146}}</string>
+                <string>{{84,780},{150,146}}</string>
                 <key>offset</key>
                 <string>{10,-16}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{85,93},{150,146}}</string>
                 <key>sourceSize</key>
@@ -33,11 +33,11 @@
             <key>2_langren_m_attack_0_e_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{626,2},{134,152}}</string>
+                <string>{{2,626},{134,152}}</string>
                 <key>offset</key>
                 <string>{0,-13}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{83,87},{134,152}}</string>
                 <key>sourceSize</key>
@@ -46,11 +46,11 @@
             <key>2_langren_m_attack_0_e_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{444,682},{142,136}}</string>
+                <string>{{278,1672},{142,136}}</string>
                 <key>offset</key>
                 <string>{18,-21}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{97,103},{142,136}}</string>
                 <key>sourceSize</key>
@@ -59,11 +59,11 @@
             <key>2_langren_m_attack_0_en_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{288,1090},{134,138}}</string>
+                <string>{{546,442},{134,138}}</string>
                 <key>offset</key>
                 <string>{1,-20}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{84,101},{134,138}}</string>
                 <key>sourceSize</key>
@@ -72,11 +72,11 @@
             <key>2_langren_m_attack_0_en_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{594,552},{134,144}}</string>
+                <string>{{142,1680},{134,144}}</string>
                 <key>offset</key>
                 <string>{8,-17}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,95},{134,144}}</string>
                 <key>sourceSize</key>
@@ -85,11 +85,11 @@
             <key>2_langren_m_attack_0_en_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{758,150},{134,148}}</string>
+                <string>{{2,1236},{134,148}}</string>
                 <key>offset</key>
                 <string>{8,-15}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,91},{134,148}}</string>
                 <key>sourceSize</key>
@@ -98,11 +98,11 @@
             <key>2_langren_m_attack_0_en_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{432,956},{134,138}}</string>
+                <string>{{692,1888},{134,138}}</string>
                 <key>offset</key>
                 <string>{18,-20}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{101,101},{134,138}}</string>
                 <key>sourceSize</key>
@@ -111,11 +111,11 @@
             <key>2_langren_m_attack_0_es_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{154,138},{144,150}}</string>
+                <string>{{138,2},{144,150}}</string>
                 <key>offset</key>
                 <string>{-10,-14}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{68,89},{144,150}}</string>
                 <key>sourceSize</key>
@@ -124,11 +124,11 @@
             <key>2_langren_m_attack_0_es_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{452,410},{134,146}}</string>
+                <string>{{420,2},{134,146}}</string>
                 <key>offset</key>
                 <string>{1,-16}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{84,93},{134,146}}</string>
                 <key>sourceSize</key>
@@ -137,11 +137,11 @@
             <key>2_langren_m_attack_0_es_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{316,2},{134,154}}</string>
+                <string>{{2,316},{134,154}}</string>
                 <key>offset</key>
                 <string>{8,-12}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,85},{134,154}}</string>
                 <key>sourceSize</key>
@@ -150,7 +150,7 @@
             <key>2_langren_m_attack_0_es_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{278,1634},{134,134}}</string>
+                <string>{{954,414},{134,134}}</string>
                 <key>offset</key>
                 <string>{0,-22}</string>
                 <key>rotated</key>
@@ -163,7 +163,7 @@
             <key>2_langren_m_attack_0_n_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{418,1500},{134,134}}</string>
+                <string>{{1100,1812},{134,134}}</string>
                 <key>offset</key>
                 <string>{14,-22}</string>
                 <key>rotated</key>
@@ -176,11 +176,11 @@
             <key>2_langren_m_attack_0_n_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,422},{134,146}}</string>
+                <string>{{410,152},{134,146}}</string>
                 <key>offset</key>
                 <string>{8,-16}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,93},{134,146}}</string>
                 <key>sourceSize</key>
@@ -189,11 +189,11 @@
             <key>2_langren_m_attack_0_n_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{608,138},{134,148}}</string>
+                <string>{{2,1086},{134,148}}</string>
                 <key>offset</key>
                 <string>{8,-15}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,91},{134,148}}</string>
                 <key>sourceSize</key>
@@ -202,11 +202,11 @@
             <key>2_langren_m_attack_0_n_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{294,818},{134,142}}</string>
+                <string>{{280,1368},{134,142}}</string>
                 <key>offset</key>
                 <string>{8,-18}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,97},{134,142}}</string>
                 <key>sourceSize</key>
@@ -215,11 +215,11 @@
             <key>2_langren_m_attack_0_s_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{458,138},{134,148}}</string>
+                <string>{{138,608},{134,148}}</string>
                 <key>offset</key>
                 <string>{-3,-15}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{80,91},{134,148}}</string>
                 <key>sourceSize</key>
@@ -228,11 +228,11 @@
             <key>2_langren_m_attack_0_s_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{152,420},{134,146}}</string>
+                <string>{{404,304},{134,146}}</string>
                 <key>offset</key>
                 <string>{0,-16}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{83,93},{134,146}}</string>
                 <key>sourceSize</key>
@@ -245,7 +245,7 @@
                 <key>offset</key>
                 <string>{-1,-11}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{82,83},{134,156}}</string>
                 <key>sourceSize</key>
@@ -254,7 +254,7 @@
             <key>2_langren_m_attack_0_s_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{558,1368},{134,134}}</string>
+                <string>{{1044,1676},{134,134}}</string>
                 <key>offset</key>
                 <string>{-1,-22}</string>
                 <key>rotated</key>
@@ -267,11 +267,11 @@
             <key>2_langren_m_attack_0_w_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{290,954},{134,140}}</string>
+                <string>{{546,150},{134,140}}</string>
                 <key>offset</key>
                 <string>{20,-19}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{103,99},{134,140}}</string>
                 <key>sourceSize</key>
@@ -280,11 +280,11 @@
             <key>2_langren_m_attack_0_w_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{780,2},{150,146}}</string>
+                <string>{{2,934},{150,146}}</string>
                 <key>offset</key>
                 <string>{-10,-16}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{65,93},{150,146}}</string>
                 <key>sourceSize</key>
@@ -293,11 +293,11 @@
             <key>2_langren_m_attack_0_w_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{472,2},{134,152}}</string>
+                <string>{{2,472},{134,152}}</string>
                 <key>offset</key>
                 <string>{1,-13}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{84,87},{134,152}}</string>
                 <key>sourceSize</key>
@@ -306,11 +306,11 @@
             <key>2_langren_m_attack_0_w_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,558},{144,138}}</string>
+                <string>{{2,1682},{144,138}}</string>
                 <key>offset</key>
                 <string>{-15,-20}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{63,101},{144,138}}</string>
                 <key>sourceSize</key>
@@ -319,11 +319,11 @@
             <key>2_langren_m_attack_0_wn_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{580,824},{138,134}}</string>
+                <string>{{676,292},{138,134}}</string>
                 <key>offset</key>
                 <string>{11,-22}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{92,105},{138,134}}</string>
                 <key>sourceSize</key>
@@ -332,11 +332,11 @@
             <key>2_langren_m_attack_0_wn_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{304,410},{134,146}}</string>
+                <string>{{274,456},{134,146}}</string>
                 <key>offset</key>
                 <string>{8,-16}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,93},{134,146}}</string>
                 <key>sourceSize</key>
@@ -345,11 +345,11 @@
             <key>2_langren_m_attack_0_wn_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{306,138},{134,150}}</string>
+                <string>{{138,154},{134,150}}</string>
                 <key>offset</key>
                 <string>{8,-14}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,89},{134,150}}</string>
                 <key>sourceSize</key>
@@ -358,11 +358,11 @@
             <key>2_langren_m_attack_0_wn_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{438,820},{134,140}}</string>
+                <string>{{540,300},{134,140}}</string>
                 <key>offset</key>
                 <string>{0,-19}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{83,99},{134,140}}</string>
                 <key>sourceSize</key>
@@ -371,11 +371,11 @@
             <key>2_langren_m_attack_0_ws_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{754,286},{134,146}}</string>
+                <string>{{232,758},{134,146}}</string>
                 <key>offset</key>
                 <string>{8,-16}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,93},{134,146}}</string>
                 <key>sourceSize</key>
@@ -384,11 +384,11 @@
             <key>2_langren_m_attack_0_ws_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{448,546},{134,144}}</string>
+                <string>{{138,1828},{134,144}}</string>
                 <key>offset</key>
                 <string>{-2,-17}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{81,95},{134,144}}</string>
                 <key>sourceSize</key>
@@ -397,11 +397,11 @@
             <key>2_langren_m_attack_0_ws_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{160,2},{134,154}}</string>
+                <string>{{2,160},{134,154}}</string>
                 <key>offset</key>
                 <string>{-2,-12}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{81,85},{134,154}}</string>
                 <key>sourceSize</key>
@@ -410,7 +410,7 @@
             <key>2_langren_m_attack_0_ws_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{700,1238},{134,134}}</string>
+                <string>{{990,1540},{134,134}}</string>
                 <key>offset</key>
                 <string>{-10,-22}</string>
                 <key>rotated</key>
@@ -420,14 +420,846 @@
                 <key>sourceSize</key>
                 <string>{300,300}</string>
             </dict>
+            <key>2_langren_m_attacked_0_e_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1182,686},{134,130}}</string>
+                <key>offset</key>
+                <string>{-4,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{79,109},{134,130}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_e_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{688,1288},{134,136}}</string>
+                <key>offset</key>
+                <string>{-4,-21}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{79,103},{134,136}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_e_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1222,410},{134,126}}</string>
+                <key>offset</key>
+                <string>{-3,-26}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{80,113},{134,126}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_e_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1100,822},{134,130}}</string>
+                <key>offset</key>
+                <string>{-5,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{78,109},{134,130}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_en_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,1534},{146,132}}</string>
+                <key>offset</key>
+                <string>{2,-23}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{79,107},{146,132}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_en_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{414,1512},{142,134}}</string>
+                <key>offset</key>
+                <string>{2,-22}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{81,105},{142,134}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_en_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{138,306},{150,128}}</string>
+                <key>offset</key>
+                <string>{0,-25}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{75,111},{150,128}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_en_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{682,142},{138,132}}</string>
+                <key>offset</key>
+                <string>{-1,-23}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{80,107},{138,132}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_es_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1088,964},{134,130}}</string>
+                <key>offset</key>
+                <string>{-4,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{79,109},{134,130}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_es_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{684,1748},{134,138}}</string>
+                <key>offset</key>
+                <string>{-7,-20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{76,101},{134,138}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_es_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1222,138},{134,130}}</string>
+                <key>offset</key>
+                <string>{-5,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{78,109},{134,130}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_es_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1218,274},{134,130}}</string>
+                <key>offset</key>
+                <string>{-6,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{77,109},{134,130}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_n_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{958,1404},{134,134}}</string>
+                <key>offset</key>
+                <string>{8,-22}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{91,105},{134,134}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_n_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{824,1268},{134,134}}</string>
+                <key>offset</key>
+                <string>{8,-22}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{91,105},{134,134}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_n_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1048,686},{134,132}}</string>
+                <key>offset</key>
+                <string>{8,-23}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{91,107},{134,132}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_n_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{818,1132},{134,134}}</string>
+                <key>offset</key>
+                <string>{8,-22}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{91,105},{134,134}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_s_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{966,828},{134,132}}</string>
+                <key>offset</key>
+                <string>{2,-23}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{85,107},{134,132}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_s_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{410,452},{134,140}}</string>
+                <key>offset</key>
+                <string>{2,-19}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{85,99},{134,140}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_s_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{960,1254},{134,132}}</string>
+                <key>offset</key>
+                <string>{-2,-23}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{81,107},{134,132}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_s_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{954,1118},{134,132}}</string>
+                <key>offset</key>
+                <string>{1,-23}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{84,107},{134,132}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_w_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{682,1150},{134,136}}</string>
+                <key>offset</key>
+                <string>{8,-21}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{91,103},{134,136}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_w_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{776,708},{134,136}}</string>
+                <key>offset</key>
+                <string>{8,-21}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{91,103},{134,136}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_w_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{954,982},{134,132}}</string>
+                <key>offset</key>
+                <string>{8,-23}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{91,107},{134,132}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_w_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{694,858},{134,136}}</string>
+                <key>offset</key>
+                <string>{8,-21}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{91,103},{134,136}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_wn_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{682,1012},{134,136}}</string>
+                <key>offset</key>
+                <string>{11,-21}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{94,103},{134,136}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_wn_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{912,692},{134,134}}</string>
+                <key>offset</key>
+                <string>{8,-22}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{91,105},{134,134}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_wn_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{954,550},{134,132}}</string>
+                <key>offset</key>
+                <string>{12,-23}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{95,107},{134,132}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_wn_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{682,570},{134,136}}</string>
+                <key>offset</key>
+                <string>{8,-21}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{91,103},{134,136}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_ws_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{830,846},{134,134}}</string>
+                <key>offset</key>
+                <string>{8,-22}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{91,105},{134,134}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_ws_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{630,1608},{134,138}}</string>
+                <key>offset</key>
+                <string>{8,-20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{91,101},{134,138}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_ws_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1220,2},{134,132}}</string>
+                <key>offset</key>
+                <string>{5,-23}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{88,107},{134,132}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_attacked_0_ws_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{830,846},{134,134}}</string>
+                <key>offset</key>
+                <string>{8,-22}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{91,105},{134,134}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_e_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1090,412},{134,130}}</string>
+                <key>offset</key>
+                <string>{-17,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{66,109},{134,130}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_e_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1368,1508},{134,112}}</string>
+                <key>offset</key>
+                <string>{-44,-33}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{39,127},{134,112}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_e_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{956,1702},{136,86}}</string>
+                <key>offset</key>
+                <string>{-57,-49}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{25,156},{136,86}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_e_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1508,1916},{134,76}}</string>
+                <key>offset</key>
+                <string>{-58,-54}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{25,166},{134,76}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_en_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1220,548},{134,126}}</string>
+                <key>offset</key>
+                <string>{1,-26}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{84,113},{134,126}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_en_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{556,1940},{134,106}}</string>
+                <key>offset</key>
+                <string>{-29,-36}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{54,133},{134,106}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_en_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1236,1916},{134,90}}</string>
+                <key>offset</key>
+                <string>{-56,-62}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{27,167},{134,90}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_en_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1500,1638},{134,76}}</string>
+                <key>offset</key>
+                <string>{-42,-69}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{41,181},{134,76}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_es_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1088,138},{134,132}}</string>
+                <key>offset</key>
+                <string>{-14,-23}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{69,107},{134,132}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_es_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1338,1094},{134,120}}</string>
+                <key>offset</key>
+                <string>{-11,-29}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{72,119},{134,120}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_es_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{902,1564},{136,86}}</string>
+                <key>offset</key>
+                <string>{-33,-41}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{49,148},{136,86}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_es_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{416,1656},{142,76}}</string>
+                <key>offset</key>
+                <string>{-39,-48}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{40,160},{142,76}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_n_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1088,550},{134,130}}</string>
+                <key>offset</key>
+                <string>{14,-24}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{97,109},{134,130}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_n_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1300,1644},{134,112}}</string>
+                <key>offset</key>
+                <string>{7,-38}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{90,132},{134,112}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_n_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1458,1366},{134,90}}</string>
+                <key>offset</key>
+                <string>{5,-75}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{88,180},{134,90}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_n_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1414,1644},{134,84}}</string>
+                <key>offset</key>
+                <string>{3,-73}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{86,181},{134,84}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_s_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{818,996},{134,134}}</string>
+                <key>offset</key>
+                <string>{-3,-22}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{80,105},{134,134}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_s_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1338,1372},{134,118}}</string>
+                <key>offset</key>
+                <string>{6,-26}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{89,117},{134,118}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_s_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1482,1502},{134,80}}</string>
+                <key>offset</key>
+                <string>{8,-39}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{91,149},{134,80}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_s_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1444,1780},{134,76}}</string>
+                <key>offset</key>
+                <string>{8,-51}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{91,163},{134,76}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_w_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{818,556},{134,134}}</string>
+                <key>offset</key>
+                <string>{25,-22}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{108,105},{134,134}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_w_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{556,2},{140,118}}</string>
+                <key>offset</key>
+                <string>{45,-30}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{125,121},{140,118}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_w_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1354,1780},{134,88}}</string>
+                <key>offset</key>
+                <string>{63,-51}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{146,157},{134,88}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_w_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{274,1970},{142,76}}</string>
+                <key>offset</key>
+                <string>{61,-61}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{140,173},{142,76}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_wn_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1084,276},{134,132}}</string>
+                <key>offset</key>
+                <string>{20,-23}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{103,107},{134,132}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_wn_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1220,1236},{134,120}}</string>
+                <key>offset</key>
+                <string>{23,-37}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{106,127},{134,120}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_wn_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{418,1960},{136,86}}</string>
+                <key>offset</key>
+                <string>{43,-64}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{125,171},{136,86}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_wn_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,780},{152,80}}</string>
+                <key>offset</key>
+                <string>{46,-67}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{120,177},{152,80}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_ws_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{948,2},{134,136}}</string>
+                <key>offset</key>
+                <string>{8,-21}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{91,103},{134,136}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_ws_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1094,1236},{134,124}}</string>
+                <key>offset</key>
+                <string>{29,-27}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{112,115},{134,124}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_ws_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1100,1948},{134,94}}</string>
+                <key>offset</key>
+                <string>{41,-42}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{124,145},{134,94}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
+            <key>2_langren_m_dead_0_ws_4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1372,1916},{134,76}}</string>
+                <key>offset</key>
+                <string>{38,-51}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{121,163},{134,76}}</string>
+                <key>sourceSize</key>
+                <string>{300,300}</string>
+            </dict>
             <key>2_langren_m_run_0_e_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,698},{140,142}}</string>
+                <string>{{272,1528},{140,142}}</string>
                 <key>offset</key>
                 <string>{5,-18}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{85,97},{140,142}}</string>
                 <key>sourceSize</key>
@@ -436,7 +1268,7 @@
             <key>2_langren_m_run_0_e_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1912},{134,118}}</string>
+                <string>{{1248,1508},{134,118}}</string>
                 <key>offset</key>
                 <string>{8,-30}</string>
                 <key>rotated</key>
@@ -449,11 +1281,11 @@
             <key>2_langren_m_run_0_e_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{606,274},{140,146}}</string>
+                <string>{{2,1386},{140,146}}</string>
                 <key>offset</key>
                 <string>{5,-16}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{85,93},{140,146}}</string>
                 <key>sourceSize</key>
@@ -462,11 +1294,11 @@
             <key>2_langren_m_run_0_e_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1792},{134,118}}</string>
+                <string>{{1180,1644},{134,118}}</string>
                 <key>offset</key>
                 <string>{8,-30}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{91,121},{134,118}}</string>
                 <key>sourceSize</key>
@@ -475,7 +1307,7 @@
             <key>2_langren_m_run_0_en_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{886,558},{136,142}}</string>
+                <string>{{274,1826},{136,142}}</string>
                 <key>offset</key>
                 <string>{7,-18}</string>
                 <key>rotated</key>
@@ -488,11 +1320,11 @@
             <key>2_langren_m_run_0_en_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{550,1640},{134,120}}</string>
+                <string>{{1216,1372},{134,120}}</string>
                 <key>offset</key>
                 <string>{8,-29}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{91,119},{134,120}}</string>
                 <key>sourceSize</key>
@@ -501,11 +1333,11 @@
             <key>2_langren_m_run_0_en_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{150,556},{134,146}}</string>
+                <string>{{150,932},{134,146}}</string>
                 <key>offset</key>
                 <string>{8,-16}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,93},{134,146}}</string>
                 <key>sourceSize</key>
@@ -514,11 +1346,11 @@
             <key>2_langren_m_run_0_en_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{690,1632},{134,120}}</string>
+                <string>{{1126,1508},{134,120}}</string>
                 <key>offset</key>
                 <string>{8,-29}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{91,119},{134,120}}</string>
                 <key>sourceSize</key>
@@ -527,11 +1359,11 @@
             <key>2_langren_m_run_0_es_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{148,692},{134,144}}</string>
+                <string>{{2,1828},{134,144}}</string>
                 <key>offset</key>
                 <string>{8,-17}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,95},{134,144}}</string>
                 <key>sourceSize</key>
@@ -540,11 +1372,11 @@
             <key>2_langren_m_run_0_es_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{138,1780},{134,118}}</string>
+                <string>{{1436,682},{134,118}}</string>
                 <key>offset</key>
                 <string>{8,-30}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{91,121},{134,118}}</string>
                 <key>sourceSize</key>
@@ -553,11 +1385,11 @@
             <key>2_langren_m_run_0_es_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{300,546},{134,146}}</string>
+                <string>{{138,1234},{134,146}}</string>
                 <key>offset</key>
                 <string>{8,-16}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,93},{134,146}}</string>
                 <key>sourceSize</key>
@@ -566,7 +1398,7 @@
             <key>2_langren_m_run_0_es_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{240,1900},{134,116}}</string>
+                <string>{{1236,1780},{134,116}}</string>
                 <key>offset</key>
                 <string>{8,-31}</string>
                 <key>rotated</key>
@@ -579,11 +1411,11 @@
             <key>2_langren_m_run_0_n_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{298,682},{134,144}}</string>
+                <string>{{144,1382},{134,144}}</string>
                 <key>offset</key>
                 <string>{8,-17}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,95},{134,144}}</string>
                 <key>sourceSize</key>
@@ -592,7 +1424,7 @@
             <key>2_langren_m_run_0_n_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{896,422},{134,124}}</string>
+                <string>{{1088,1100},{134,124}}</string>
                 <key>offset</key>
                 <string>{8,-27}</string>
                 <key>rotated</key>
@@ -605,11 +1437,11 @@
             <key>2_langren_m_run_0_n_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{456,274},{134,148}}</string>
+                <string>{{284,2},{134,148}}</string>
                 <key>offset</key>
                 <string>{8,-15}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,91},{134,148}}</string>
                 <key>sourceSize</key>
@@ -618,11 +1450,11 @@
             <key>2_langren_m_run_0_n_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{830,1506},{134,122}}</string>
+                <string>{{1232,822},{134,122}}</string>
                 <key>offset</key>
                 <string>{8,-28}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{91,117},{134,122}}</string>
                 <key>sourceSize</key>
@@ -631,11 +1463,11 @@
             <key>2_langren_m_run_0_s_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{740,558},{134,144}}</string>
+                <string>{{136,1534},{134,144}}</string>
                 <key>offset</key>
                 <string>{8,-17}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,95},{134,144}}</string>
                 <key>sourceSize</key>
@@ -644,11 +1476,11 @@
             <key>2_langren_m_run_0_s_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{826,1630},{134,120}}</string>
+                <string>{{1094,1372},{134,120}}</string>
                 <key>offset</key>
                 <string>{8,-29}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{91,119},{134,120}}</string>
                 <key>sourceSize</key>
@@ -657,11 +1489,11 @@
             <key>2_langren_m_run_0_s_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,286},{134,148}}</string>
+                <string>{{274,154},{134,148}}</string>
                 <key>offset</key>
                 <string>{8,-15}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,91},{134,148}}</string>
                 <key>sourceSize</key>
@@ -670,7 +1502,7 @@
             <key>2_langren_m_run_0_s_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{122,1912},{134,116}}</string>
+                <string>{{1342,1230},{134,116}}</string>
                 <key>offset</key>
                 <string>{8,-31}</string>
                 <key>rotated</key>
@@ -683,11 +1515,11 @@
             <key>2_langren_m_run_0_w_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{588,688},{134,142}}</string>
+                <string>{{274,1224},{134,142}}</string>
                 <key>offset</key>
                 <string>{8,-18}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,97},{134,142}}</string>
                 <key>sourceSize</key>
@@ -696,11 +1528,11 @@
             <key>2_langren_m_run_0_w_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{276,1770},{134,118}}</string>
+                <string>{{1356,820},{134,118}}</string>
                 <key>offset</key>
                 <string>{8,-30}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{91,121},{134,118}}</string>
                 <key>sourceSize</key>
@@ -709,11 +1541,11 @@
             <key>2_langren_m_run_0_w_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{748,422},{134,146}}</string>
+                <string>{{138,1086},{134,146}}</string>
                 <key>offset</key>
                 <string>{8,-16}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,93},{134,146}}</string>
                 <key>sourceSize</key>
@@ -722,11 +1554,11 @@
             <key>2_langren_m_run_0_w_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{690,1510},{134,120}}</string>
+                <string>{{1348,546},{134,120}}</string>
                 <key>offset</key>
                 <string>{8,-29}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{91,119},{134,120}}</string>
                 <key>sourceSize</key>
@@ -735,11 +1567,11 @@
             <key>2_langren_m_run_0_wn_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,840},{134,142}}</string>
+                <string>{{274,1080},{134,142}}</string>
                 <key>offset</key>
                 <string>{8,-18}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,97},{134,142}}</string>
                 <key>sourceSize</key>
@@ -748,11 +1580,11 @@
             <key>2_langren_m_run_0_wn_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{830,1382},{134,122}}</string>
+                <string>{{1220,958},{134,122}}</string>
                 <key>offset</key>
                 <string>{8,-28}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{91,117},{134,122}}</string>
                 <key>sourceSize</key>
@@ -761,11 +1593,11 @@
             <key>2_langren_m_run_0_wn_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{154,284},{134,148}}</string>
+                <string>{{268,306},{134,148}}</string>
                 <key>offset</key>
                 <string>{8,-15}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,91},{134,148}}</string>
                 <key>sourceSize</key>
@@ -774,11 +1606,11 @@
             <key>2_langren_m_run_0_wn_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{414,1636},{134,122}}</string>
+                <string>{{1214,1100},{134,122}}</string>
                 <key>offset</key>
                 <string>{8,-28}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{91,117},{134,122}}</string>
                 <key>sourceSize</key>
@@ -787,11 +1619,11 @@
             <key>2_langren_m_run_0_ws_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{146,828},{134,142}}</string>
+                <string>{{412,1816},{134,142}}</string>
                 <key>offset</key>
                 <string>{8,-18}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,97},{134,142}}</string>
                 <key>sourceSize</key>
@@ -800,7 +1632,7 @@
             <key>2_langren_m_run_0_ws_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{902,286},{134,120}}</string>
+                <string>{{1314,684},{134,120}}</string>
                 <key>offset</key>
                 <string>{8,-29}</string>
                 <key>rotated</key>
@@ -813,11 +1645,11 @@
             <key>2_langren_m_run_0_ws_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{306,274},{134,148}}</string>
+                <string>{{138,458},{134,148}}</string>
                 <key>offset</key>
                 <string>{8,-15}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,91},{134,148}}</string>
                 <key>sourceSize</key>
@@ -826,11 +1658,11 @@
             <key>2_langren_m_run_0_ws_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{414,1760},{134,118}}</string>
+                <string>{{1344,958},{134,118}}</string>
                 <key>offset</key>
                 <string>{8,-30}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{91,121},{134,118}}</string>
                 <key>sourceSize</key>
@@ -839,11 +1671,11 @@
             <key>2_langren_m_standby_0_e_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1248},{134,138}}</string>
+                <string>{{550,1468},{134,138}}</string>
                 <key>offset</key>
                 <string>{8,-20}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,101},{134,138}}</string>
                 <key>sourceSize</key>
@@ -852,11 +1684,11 @@
             <key>2_langren_m_standby_0_e_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{844,1110},{134,136}}</string>
+                <string>{{816,140},{134,136}}</string>
                 <key>offset</key>
                 <string>{8,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,103},{134,136}}</string>
                 <key>sourceSize</key>
@@ -865,11 +1697,11 @@
             <key>2_langren_m_standby_0_e_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{860,838},{136,134}}</string>
+                <string>{{822,1426},{136,134}}</string>
                 <key>offset</key>
                 <string>{7,-22}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{89,105},{136,134}}</string>
                 <key>sourceSize</key>
@@ -878,11 +1710,11 @@
             <key>2_langren_m_standby_0_e_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1520},{134,136}}</string>
+                <string>{{812,282},{134,136}}</string>
                 <key>offset</key>
                 <string>{8,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,103},{134,136}}</string>
                 <key>sourceSize</key>
@@ -891,11 +1723,11 @@
             <key>2_langren_m_standby_0_en_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{142,1236},{134,138}}</string>
+                <string>{{416,1328},{134,138}}</string>
                 <key>offset</key>
                 <string>{8,-20}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,101},{134,138}}</string>
                 <key>sourceSize</key>
@@ -904,11 +1736,11 @@
             <key>2_langren_m_standby_0_en_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{140,1508},{134,136}}</string>
+                <string>{{682,432},{134,136}}</string>
                 <key>offset</key>
                 <string>{8,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,103},{134,136}}</string>
                 <key>sourceSize</key>
@@ -917,7 +1749,7 @@
             <key>2_langren_m_standby_0_en_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{554,1504},{134,134}}</string>
+                <string>{{1084,2},{134,134}}</string>
                 <key>offset</key>
                 <string>{8,-22}</string>
                 <key>rotated</key>
@@ -930,11 +1762,11 @@
             <key>2_langren_m_standby_0_en_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{280,1498},{134,136}}</string>
+                <string>{{828,1862},{134,136}}</string>
                 <key>offset</key>
                 <string>{8,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,103},{134,136}}</string>
                 <key>sourceSize</key>
@@ -943,11 +1775,11 @@
             <key>2_langren_m_standby_0_es_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{284,1226},{134,138}}</string>
+                <string>{{410,1188},{134,138}}</string>
                 <key>offset</key>
                 <string>{8,-20}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,101},{134,138}}</string>
                 <key>sourceSize</key>
@@ -956,7 +1788,7 @@
             <key>2_langren_m_standby_0_es_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{694,1374},{134,134}}</string>
+                <string>{{952,140},{134,134}}</string>
                 <key>offset</key>
                 <string>{8,-22}</string>
                 <key>rotated</key>
@@ -969,7 +1801,7 @@
             <key>2_langren_m_standby_0_es_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{836,1246},{134,134}}</string>
+                <string>{{948,278},{134,134}}</string>
                 <key>offset</key>
                 <string>{8,-22}</string>
                 <key>rotated</key>
@@ -982,11 +1814,11 @@
             <key>2_langren_m_standby_0_es_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{420,1364},{134,136}}</string>
+                <string>{{820,1724},{134,136}}</string>
                 <key>offset</key>
                 <string>{8,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,103},{134,136}}</string>
                 <key>sourceSize</key>
@@ -995,11 +1827,11 @@
             <key>2_langren_m_standby_0_n_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{874,702},{134,140}}</string>
+                <string>{{368,752},{134,140}}</string>
                 <key>offset</key>
                 <string>{8,-19}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,99},{134,140}}</string>
                 <key>sourceSize</key>
@@ -1008,11 +1840,11 @@
             <key>2_langren_m_standby_0_n_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{428,1092},{134,138}}</string>
+                <string>{{504,734},{134,138}}</string>
                 <key>offset</key>
                 <string>{8,-20}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,101},{134,138}}</string>
                 <key>sourceSize</key>
@@ -1021,11 +1853,11 @@
             <key>2_langren_m_standby_0_n_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{562,1232},{134,136}}</string>
+                <string>{{766,1586},{134,136}}</string>
                 <key>offset</key>
                 <string>{8,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,103},{134,136}}</string>
                 <key>sourceSize</key>
@@ -1034,11 +1866,11 @@
             <key>2_langren_m_standby_0_n_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{572,960},{134,138}}</string>
+                <string>{{422,894},{134,138}}</string>
                 <key>offset</key>
                 <string>{8,-20}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,101},{134,138}}</string>
                 <key>sourceSize</key>
@@ -1047,11 +1879,11 @@
             <key>2_langren_m_standby_0_s_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{732,694},{134,140}}</string>
+                <string>{{286,906},{134,140}}</string>
                 <key>offset</key>
                 <string>{8,-19}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,99},{134,140}}</string>
                 <key>sourceSize</key>
@@ -1060,11 +1892,11 @@
             <key>2_langren_m_standby_0_s_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{706,1102},{134,136}}</string>
+                <string>{{640,720},{134,136}}</string>
                 <key>offset</key>
                 <string>{8,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,103},{134,136}}</string>
                 <key>sourceSize</key>
@@ -1073,7 +1905,7 @@
             <key>2_langren_m_standby_0_s_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1656},{134,134}}</string>
+                <string>{{818,420},{134,134}}</string>
                 <key>offset</key>
                 <string>{8,-22}</string>
                 <key>rotated</key>
@@ -1086,11 +1918,11 @@
             <key>2_langren_m_standby_0_s_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{850,974},{134,136}}</string>
+                <string>{{558,874},{134,136}}</string>
                 <key>offset</key>
                 <string>{8,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,103},{134,136}}</string>
                 <key>sourceSize</key>
@@ -1099,11 +1931,11 @@
             <key>2_langren_m_standby_0_w_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,976},{134,140}}</string>
+                <string>{{548,1798},{134,140}}</string>
                 <key>offset</key>
                 <string>{8,-19}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,99},{134,140}}</string>
                 <key>sourceSize</key>
@@ -1112,11 +1944,11 @@
             <key>2_langren_m_standby_0_w_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1384},{134,136}}</string>
+                <string>{{686,1448},{134,136}}</string>
                 <key>offset</key>
                 <string>{8,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,103},{134,136}}</string>
                 <key>sourceSize</key>
@@ -1125,11 +1957,11 @@
             <key>2_langren_m_standby_0_w_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{142,1372},{134,136}}</string>
+                <string>{{552,1310},{134,136}}</string>
                 <key>offset</key>
                 <string>{8,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,103},{134,136}}</string>
                 <key>sourceSize</key>
@@ -1138,11 +1970,11 @@
             <key>2_langren_m_standby_0_w_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{720,830},{134,138}}</string>
+                <string>{{410,1048},{134,138}}</string>
                 <key>offset</key>
                 <string>{8,-20}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,101},{134,138}}</string>
                 <key>sourceSize</key>
@@ -1151,11 +1983,11 @@
             <key>2_langren_m_standby_0_wn_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{146,964},{134,140}}</string>
+                <string>{{494,1656},{134,140}}</string>
                 <key>offset</key>
                 <string>{8,-19}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,99},{134,140}}</string>
                 <key>sourceSize</key>
@@ -1164,11 +1996,11 @@
             <key>2_langren_m_standby_0_wn_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{282,1362},{134,136}}</string>
+                <string>{{546,1172},{134,136}}</string>
                 <key>offset</key>
                 <string>{8,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,103},{134,136}}</string>
                 <key>sourceSize</key>
@@ -1177,11 +2009,11 @@
             <key>2_langren_m_standby_0_wn_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{424,1228},{134,136}}</string>
+                <string>{{546,1034},{134,136}}</string>
                 <key>offset</key>
                 <string>{8,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,103},{134,136}}</string>
                 <key>sourceSize</key>
@@ -1190,11 +2022,11 @@
             <key>2_langren_m_standby_0_wn_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1112},{134,138}}</string>
+                <string>{{410,594},{134,138}}</string>
                 <key>offset</key>
                 <string>{8,-20}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,101},{134,138}}</string>
                 <key>sourceSize</key>
@@ -1203,11 +2035,11 @@
             <key>2_langren_m_standby_0_ws_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{144,1100},{134,138}}</string>
+                <string>{{676,2},{134,138}}</string>
                 <key>offset</key>
                 <string>{8,-20}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,101},{134,138}}</string>
                 <key>sourceSize</key>
@@ -1216,11 +2048,11 @@
             <key>2_langren_m_standby_0_ws_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{568,1096},{134,136}}</string>
+                <string>{{546,582},{134,136}}</string>
                 <key>offset</key>
                 <string>{8,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,103},{134,136}}</string>
                 <key>sourceSize</key>
@@ -1229,7 +2061,7 @@
             <key>2_langren_m_standby_0_ws_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{140,1644},{134,134}}</string>
+                <string>{{964,1840},{134,134}}</string>
                 <key>offset</key>
                 <string>{8,-22}</string>
                 <key>rotated</key>
@@ -1242,11 +2074,11 @@
             <key>2_langren_m_standby_0_ws_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{712,966},{134,136}}</string>
+                <string>{{812,2},{134,136}}</string>
                 <key>offset</key>
                 <string>{8,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{91,103},{134,136}}</string>
                 <key>sourceSize</key>
@@ -1260,9 +2092,9 @@
             <key>realTextureFileName</key>
             <string>NPCRun.png</string>
             <key>size</key>
-            <string>{1024,2048}</string>
+            <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:3cb6ea2f6ed7c4e4f5df75e49a86fc7b$</string>
+            <string>$TexturePacker:SmartUpdate:14fdf0cc29356c20d687c16e6de0a75c$</string>
             <key>textureFileName</key>
             <string>NPCRun.png</string>
         </dict>

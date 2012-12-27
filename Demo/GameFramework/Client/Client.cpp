@@ -164,7 +164,7 @@ namespace Net
 		{
 			return;
 		}
-		actor->Stop();
+		actor->Dead();
 	}
 
 

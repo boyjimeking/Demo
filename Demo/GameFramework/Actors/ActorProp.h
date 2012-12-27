@@ -64,7 +64,6 @@ namespace Game
 		ActorBattleInfo *m_battleInfo;
 		ActionControl *m_actionControl;
 	private:
-		bool m_isAlive;
 	};
 }
 

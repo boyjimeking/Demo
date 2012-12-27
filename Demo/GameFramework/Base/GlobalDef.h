@@ -40,6 +40,8 @@ struct ENAnimation
 		enIdle,
 		enMove,
 		enAttack,
+		enAttacked,
+		enDead,
 
 		Count,
 	};

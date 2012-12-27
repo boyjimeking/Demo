@@ -23,6 +23,7 @@ namespace Game
 			enMove,
 			enAttack,
 			enStop,
+			enDead,
 			Count,
 		};
 	};
@@ -34,6 +35,7 @@ namespace Game
 			enFollow,	//正常添加到后面，当前执行完毕再执行
 			enInterupt,	//打断当前动作，添加新动作
 			enInsert,	//插入新动作，当前动作延后
+			enForbid,	//禁止执行新动作
 		};
 		static const Type Interrupt[ENAction::Count/*原动作*/][ENAction::Count/*新加入动作*/];
 
@@ -95,9 +97,8 @@ namespace Game
 		virtual ENAction::Type GetType(void) const { return ENAction::enAttack; }
 
 		AttackAction(ActorProp *prop);
-		
+
 		virtual void OnExit(ActorProp *prop);
-		virtual void OnInterrupt(ActorProp *prop);
 		virtual bool Tick(float dt, ActorProp *prop);
 	protected:
 		int m_targetID;
@@ -110,6 +111,14 @@ namespace Game
 		:public IAction
 	{
 		virtual ENAction::Type GetType(void) const { return ENAction::enStop; }
+		virtual void OnEnter(ActorProp *prop);
+	};
+
+	//死亡
+	class DeadAction
+		:public IAction
+	{
+		virtual ENAction::Type GetType(void) const { return ENAction::enDead; }
 		virtual void OnEnter(ActorProp *prop);
 	};
 }
