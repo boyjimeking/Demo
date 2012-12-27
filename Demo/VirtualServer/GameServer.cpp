@@ -64,13 +64,13 @@ namespace Server
 			IActor::Ptr actor = Player::CreateObject();
 			PushObject(actor);
 
-			actor->SetX(0);
-			actor->SetY(0);
+			actor->SetX(21.8f);
+			actor->SetY(10.97f);
 
 			actor->SycInfo();
 			actor->ChangeEquip();
 		}
-		for (int index = 0; index < 10; ++index)
+		for (int index = 0; index < 0; ++index)
 		{
 			IActor::Ptr actor = NPC::CreateObject();
 			PushObject(actor);

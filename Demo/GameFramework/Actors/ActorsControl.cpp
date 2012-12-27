@@ -32,6 +32,7 @@ namespace Game
 		}
 
 		actor->SetPosition(ccp(x, y));
+		actor->Stop();
 		
 		m_actorMap.insert(std::make_pair(actorID, actor));
 

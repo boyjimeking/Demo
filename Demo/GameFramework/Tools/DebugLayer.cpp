@@ -1,6 +1,5 @@
 #include "DebugLayer.h"
 #include "SceneObjects/SceneObjectsControl.h"
-#include "CCDrawingPrimitives.h"
 #include "ccTypes.h"
 #include "WorldManager.h"
 
