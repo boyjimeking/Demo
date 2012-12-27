@@ -14,19 +14,22 @@
 #include "support/CCPointExtension.h"
 #include "platform/CCCommon.h"
 #include "Camera/Camera.h"
+#include "CSProtocol/ActorBattleInfo.h"
 
 namespace Game
 {
-	// enNothing,	//正常添加到后面，当前执行完毕再执行
-	// enInterupt,	//打断当前动作，添加新动作
-	// enFobbid,	//新动作无法添加
+	//	enFollow,	//正常添加到后面，当前执行完毕再执行
+	//	enInterupt,	//打断当前动作，添加新动作
+	//	enInsert,	//插入新动作，当前动作延后
+	//	enForbid,	//禁止执行新动作
 	const ENInterrupt::Type ENInterrupt::Interrupt[ENAction::Count/*原动作*/][ENAction::Count/*新加入动作*/] = 
 	{
-		//enNone,		enAction_Move,	enAction_Attack,	enAction_Stop	<- 新加入动作
-		{ enFollow,		enFollow,		enFollow,			enFollow },	//enNone
-		{ enFollow,		enInterupt,		enInterupt,			enInterupt },	//enAction_Move
-		{ enFollow,		enInterupt,		enInterupt,			enInterupt },	//enAction_Attack
-		{ enFollow,		enInterupt,		enInterupt,			enInterupt },	//enAction_Stop
+		//enNone,	enMove,		enAttack,	enStop,		enDead	<- 新加入动作
+		{ enFollow,	enFollow,	enFollow,	enFollow,	enInterupt	},	//enNone
+		{ enFollow,	enInterupt,	enInterupt,	enInterupt,	enInterupt	},	//enAction_Move
+		{ enFollow,	enInterupt,	enInterupt,	enInterupt,	enInterupt	},	//enAction_Attack
+		{ enFollow,	enInterupt,	enInterupt,	enInterupt,	enInterupt	},	//enAction_Stop
+		{ enForbid,	enForbid,	enForbid,	enForbid,	enForbid	},	//enDead
 	};
 	ENInterrupt::Type ENInterrupt::Check(ENAction::Type oldAction, ENAction::Type newAction)
 	{
@@ -45,6 +48,116 @@ namespace Game
 			cocos2d::CCLog("Warning!!!");
 		}
 		m_record.erase(this);
+	}
+	ActionControl::ActionControl(void)
+		:m_currentAction(NULL)
+		,m_nextAction(NULL)
+	{
+
+	}
+	void ActionControl::Tick(ActorProp *prop, float dt)
+	{
+		if (NULL == m_currentAction)
+		{
+			SwitchNext(prop);
+		}
+		if (NULL == m_currentAction)
+		{
+			return;
+		}
+		if (m_currentAction->Tick(dt, prop))
+		{
+			m_currentAction->OnExit(prop);
+			delete m_currentAction;
+			m_currentAction = NULL;
+		}
+	}
+	void ActionControl::SwitchNext(ActorProp *prop)
+	{
+		if (NULL != m_nextAction)
+		{
+			m_nextAction->OnEnter(prop);
+			m_currentAction = m_nextAction;
+			m_nextAction = NULL;
+		}
+	}
+	void ActionControl::AddAction(ActorProp *prop, IAction *action)
+	{
+		if (NULL == m_currentAction)
+		{
+			AddFollowAction(action);
+			return;
+		}
+		switch (ENInterrupt::Check(m_currentAction->GetType(), action->GetType()))
+		{
+		case ENInterrupt::enFollow:
+			{
+				AddFollowAction(action);
+			}
+			break;
+		case ENInterrupt::enInterupt:
+			{
+				m_currentAction->OnInterrupt(prop);
+				delete m_currentAction;
+				m_currentAction = NULL;
+				AddFollowAction(action);
+			}
+			break;
+		case ENInterrupt::enInsert:
+			{
+				if (NULL != m_nextAction)
+				{
+					delete m_nextAction;
+					m_nextAction = m_currentAction;
+				}
+				m_currentAction = action;
+			}
+			break;
+		case ENInterrupt::enForbid:
+			{
+				delete action;
+			}
+			break;
+		default:
+			delete action;
+			break;
+		}
+	}
+	void ActionControl::AddFollowAction(IAction *action)
+	{
+		if (NULL == m_nextAction)
+		{
+			m_nextAction = action;
+			return;
+		}
+		switch (ENInterrupt::Check(m_nextAction->GetType(), action->GetType()))
+		{
+		case ENInterrupt::enFollow:
+			{
+				delete action;
+			}
+			break;
+		case ENInterrupt::enInterupt:
+			{
+				delete m_nextAction;
+				m_nextAction = action;
+			}
+			break;
+		case ENInterrupt::enInsert:
+			{
+				delete m_nextAction;
+				m_nextAction = action;
+			}
+			break;
+		case ENInterrupt::enForbid:
+			{
+				delete action;
+			}
+			break;
+		default:
+			delete action;
+			break;
+		}
 	}
 	//移动
 	MoveAction::MoveAction(const cocos2d::CCPoint &pos)
@@ -101,11 +214,8 @@ namespace Game
 	}
 	void AttackAction::OnExit(ActorProp *prop)
 	{
-
-	}
-	void AttackAction::OnInterrupt(ActorProp *prop)
-	{
-
+		ActorEventStop event;
+		prop->NotifyChange(&event);
 	}
 	bool AttackAction::Tick(float dt, ActorProp *prop)
 	{
@@ -127,11 +237,19 @@ namespace Game
 		{
 			if (!m_fired)
 			{
+				if (!target->GetBattleInfo()->IsAlive())
+				{
+					return true;
+				}
 				ActorEventPlayAttack event(target, prop);
 				prop->NotifyChange(&event);
-				if (/*prop->GetType() == ENActorType::enMain && */rand() % 2 == 0)
+				if (rand() % 2 == 0)
 				{
 					WorldManager::Instance()->GetCamera()->Shake();
+				}
+				if (prop->GetType() == ENActorType::enMain)
+				{
+					prop->SendAttack(m_targetID);
 				}
 				m_direction = cocos2d::ccpNormalize(cocos2d::ccpSub(m_pos, m_startPos));
 				m_fired = true;
@@ -140,7 +258,7 @@ namespace Game
 			else
 			{
 				m_fireTime += dt;
-				if (m_fireTime > 1.6f)
+				if (m_fireTime > 0.8f)
 				{
 					m_fired = false;
 					m_fireTime = 0.0f;
@@ -159,4 +277,11 @@ namespace Game
 		ActorEventStop event;
 		prop->NotifyChange(&event);
 	}
+
+	void DeadAction::OnEnter( ActorProp *prop )
+	{
+		ActorEventDead event;
+		prop->NotifyChange(&event);
+	}
+
 }

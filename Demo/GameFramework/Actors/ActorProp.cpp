@@ -4,6 +4,7 @@
 #include "WorldManager.h"
 #include "SceneInfo.h"
 #include "Client/Client.h"
+#include "CSProtocol/ActorBattleInfo.h"
 
 namespace Game
 {
@@ -11,14 +12,15 @@ namespace Game
 	:m_id(id)
 	,m_type(type)
 	,m_speed(3.0f)
-	,m_currentAction(NULL)
-	,m_nextAction(NULL)
+	,m_battleInfo(new ActorBattleInfo)
+	,m_actionControl(new ActionControl)
 	{
 
 	}
 	ActorProp::~ActorProp(void)
 	{
-
+		delete m_battleInfo;
+		delete m_actionControl;
 	}
 
 	void ActorProp::Init(void)
@@ -52,7 +54,11 @@ namespace Game
 	}
 	void ActorProp::MoveTo(const cocos2d::CCPoint &pos)
 	{
-		AddAction(new MoveAction(pos));
+		if (!GetBattleInfo()->IsAlive())
+		{
+			return;
+		}
+		m_actionControl->AddAction(this, new MoveAction(pos));
 	}
 	void ActorProp::SetPosition(const cocos2d::CCPoint &pos)
 	{
@@ -70,105 +76,19 @@ namespace Game
 	}
 	void ActorProp::Stop(void)
 	{
-		AddAction(new StopAction);
-	}
-	void ActorProp::Attack(ActorProp *target)
-	{
-		AddAction(new AttackAction(target));
-	}
-	void ActorProp::Tick(float dt)
-	{
-		if (NULL == m_currentAction)
-		{
-			SwitchNext();
-		}
-		if (NULL == m_currentAction)
+		if (!GetBattleInfo()->IsAlive())
 		{
 			return;
 		}
-		if (m_currentAction->Tick(dt, this))
-		{
-			m_currentAction->OnExit(this);
-			delete m_currentAction;
-			m_currentAction = NULL;
-		}
+		m_actionControl->AddAction(this, new StopAction);
 	}
-	void ActorProp::SwitchNext(void)
+	void ActorProp::StartAttack(ActorProp *target)
 	{
-		if (NULL != m_nextAction)
+		if (!GetBattleInfo()->IsAlive())
 		{
-			m_nextAction->OnEnter(this);
-			m_currentAction = m_nextAction;
-			m_nextAction = NULL;
-		}
-	}
-	void ActorProp::AddAction(IAction *action)
-	{
-		if (NULL == m_currentAction)
-		{
-			AddFollowAction(action);
 			return;
 		}
-		switch (ENInterrupt::Check(m_currentAction->GetType(), action->GetType()))
-		{
-			case ENInterrupt::enFollow:
-				{
-					AddFollowAction(action);
-				}
-				break;
-			case ENInterrupt::enInterupt:
-				{
-					m_currentAction->OnInterrupt(this);
-					delete m_currentAction;
-					m_currentAction = NULL;
-					AddFollowAction(action);
-				}
-				break;
-			case ENInterrupt::enInsert:
-				{
-					if (NULL != m_nextAction)
-					{
-						delete m_nextAction;
-						m_nextAction = m_currentAction;
-					}
-					m_currentAction = action;
-				}
-				break;
-			default:
-				delete action;
-				break;
-		}
-	}
-	void ActorProp::AddFollowAction(IAction *action)
-	{
-		if (NULL == m_nextAction)
-		{
-			m_nextAction = action;
-			return;
-		}
-		switch (ENInterrupt::Check(m_nextAction->GetType(), action->GetType()))
-		{
-			case ENInterrupt::enFollow:
-				{
-					delete action;
-				}
-				break;
-			case ENInterrupt::enInterupt:
-				{
-					delete m_nextAction;
-					m_nextAction = action;
-				}
-				break;
-			case ENInterrupt::enInsert:
-				{
-					delete m_nextAction;
-					m_nextAction = action;
-				}
-				break;
-			default:
-				delete action;
-				break;
-		}
+		m_actionControl->AddAction(this, new AttackAction(target));
 	}
 
 	void ActorProp::ChangeAvatar( Tools::AvatarData *avatar )
@@ -181,6 +101,22 @@ namespace Game
 	{
 		ActorEventChangeEquip event(type, avatarFile);
 		NotifyChange(&event);
+	}
+
+	void ActorProp::Tick( float dt )
+	{
+		m_actionControl->Tick(this, dt);
+	}
+
+	void ActorProp::SendAttack( int targetID )
+	{
+		WorldManager::Instance()->GetClient()->Attack(targetID);
+	}
+
+	void ActorProp::Dead( void )
+	{
+		GetBattleInfo()->SetAlive(false);
+		m_actionControl->AddAction(this, new DeadAction);
 	}
 
 }

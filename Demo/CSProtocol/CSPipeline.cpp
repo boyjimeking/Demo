@@ -8,8 +8,8 @@
 
 #include "CSPipeline.h"
 #include "stddef.h"
-#include "../VirtualServer/Server.h"
 #include "../GameFramework/Client/Client.h"
+#include "VirtualServer/GameServer.h"
 
 namespace Net
 {
@@ -20,7 +20,7 @@ namespace Net
 	}
 	CSPipeline::CSPipeline(void)
 	:m_client(NULL)
-	,m_server(new Server)
+	,m_server(new Server::GameServer)
 	{
 
 	}

@@ -24,12 +24,14 @@ namespace Net
     public:
 		void Attack(int targetID);
     private:
-    	void InitScene(IMessage *message);
-    	void InitMainActor(IMessage *message);
+		void InitScene(IMessage *message);
+		void ProcessCSInitPlayer_S2C(IMessage *message);
+		void ProcessCSInitNPC_S2C(IMessage *message);
         void SycActor(IMessage *message);
         void MoveActor(IMessage *message);
 		void ChangeActorEquip(IMessage *message);
 		void ProcessCSAttackTarget_S2C(IMessage *message);
+		void ProcessCSDead_S2C(IMessage *message);
     };
 }
 

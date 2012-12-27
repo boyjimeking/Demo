@@ -32,6 +32,7 @@ namespace Game
 			enAttack,
 			enChangeAvatar,
 			enChangeEquip,
+			enDead,
 		};
 	};
 
@@ -91,6 +92,11 @@ namespace Game
 		ActorEventChangeEquip(ENEquipType::Decl type, const char *equipFile) : m_type(type), m_equipFile(equipFile) {}
 		ENEquipType::Decl m_type;
 		const char *m_equipFile;
+	};
+	struct ActorEventDead
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enDead; }
 	};
 }
 

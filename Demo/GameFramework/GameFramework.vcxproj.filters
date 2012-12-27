@@ -141,15 +141,6 @@
     <ClCompile Include="UI\UIWindow.cpp">
       <Filter>GameFramework\UI</Filter>
     </ClCompile>
-    <ClCompile Include="..\VirtualServer\MainActor.cpp">
-      <Filter>VirtualServer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\VirtualServer\Server.cpp">
-      <Filter>VirtualServer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\VirtualServer\ServerActor.cpp">
-      <Filter>VirtualServer</Filter>
-    </ClCompile>
     <ClCompile Include="Tools\EditScene.cpp">
       <Filter>GameFramework\Tools</Filter>
     </ClCompile>
@@ -179,6 +170,33 @@
     </ClCompile>
     <ClCompile Include="Actors\EquipObject.cpp">
       <Filter>GameFramework\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VirtualServer\ISimulateObject.cpp">
+      <Filter>VirtualServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VirtualServer\ISimulateLayer.cpp">
+      <Filter>VirtualServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VirtualServer\GameServer.cpp">
+      <Filter>VirtualServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VirtualServer\IActor.cpp">
+      <Filter>VirtualServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VirtualServer\Player.cpp">
+      <Filter>VirtualServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VirtualServer\NPC.cpp">
+      <Filter>VirtualServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CSProtocol\ActorBattleInfo.cpp">
+      <Filter>CSProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VirtualServer\AIState.cpp">
+      <Filter>VirtualServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VirtualServer\AIControl.cpp">
+      <Filter>VirtualServer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -287,15 +305,6 @@
     <ClInclude Include="UI\UIWindow.h">
       <Filter>GameFramework\UI</Filter>
     </ClInclude>
-    <ClInclude Include="..\VirtualServer\MainActor.h">
-      <Filter>VirtualServer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\VirtualServer\Server.h">
-      <Filter>VirtualServer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\VirtualServer\ServerActor.h">
-      <Filter>VirtualServer</Filter>
-    </ClInclude>
     <ClInclude Include="Tools\EditScene.h">
       <Filter>GameFramework\Tools</Filter>
     </ClInclude>
@@ -325,6 +334,36 @@
     </ClInclude>
     <ClInclude Include="Actors\EquipObject.h">
       <Filter>GameFramework\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VirtualServer\ISimulateObject.h">
+      <Filter>VirtualServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VirtualServer\ISimulateLayer.h">
+      <Filter>VirtualServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VirtualServer\GameServer.h">
+      <Filter>VirtualServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VirtualServer\IActor.h">
+      <Filter>VirtualServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VirtualServer\SimulateType.h">
+      <Filter>VirtualServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VirtualServer\Player.h">
+      <Filter>VirtualServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VirtualServer\NPC.h">
+      <Filter>VirtualServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CSProtocol\ActorBattleInfo.h">
+      <Filter>CSProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VirtualServer\AIControl.h">
+      <Filter>VirtualServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VirtualServer\AIState.h">
+      <Filter>VirtualServer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -153,6 +153,11 @@ namespace Game
 					}
 				}
 				break;
+			case ENActorEvent::enDead:
+				{
+					PlayAnimation(ENAnimation::enDead, m_currentDirection, false);
+				}
+				break;
 			default:
 				break;
 		}
@@ -163,7 +168,7 @@ namespace Game
 
 		static const float M_PI_8 = (float)M_PI / 8.0f;
 
-		if (abs(angle) < M_PI_8)
+		if (fabs(angle) < M_PI_8)
 		{
 			return ENDirection::enEast;
 		}
@@ -179,7 +184,7 @@ namespace Game
 		{
 			return ENDirection::enNorthWest;
 		}
-		if (abs(angle) > M_PI_8 * 7)
+		if (fabs(angle) > M_PI_8 * 7)
 		{
 			return ENDirection::enWest;
 		}
@@ -215,7 +220,7 @@ namespace Game
 		}
 	}
 
-	void ActorEntity::PlayAnimation(ENAnimation::Decl type, ENDirection::Decl direction)
+	void ActorEntity::PlayAnimation(ENAnimation::Decl type, ENDirection::Decl direction, bool isLoop /* = true; */)
 	{
 		if (m_currentDirection == direction && m_currentAnimation == type)
 		{
@@ -252,7 +257,7 @@ namespace Game
 		setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.3f));
 		cocos2d::CCAnimation *animation = cocos2d::CCAnimation::createWithSpriteFrames(frameArray, animData->GetDelay());
 		cocos2d::CCAnimate *animate = cocos2d::CCAnimate::create(animation);
-		cocos2d::CCAction *action = cocos2d::CCRepeatForever::create(animate);
+		cocos2d::CCAction *action = isLoop ? (cocos2d::CCAction*)cocos2d::CCRepeatForever::create(animate) : (cocos2d::CCAction*)animate;
 		this->stopActionByTag(enActorAction_PlayAnimation);
 		action->setTag(enActorAction_PlayAnimation);
 		this->runAction(action);

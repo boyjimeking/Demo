@@ -9,11 +9,15 @@
 #ifndef __Demo__CSPipeline__
 #define __Demo__CSPipeline__
 
+namespace Server
+{
+	class GameServer;
+}
+
+struct IMessage;
 namespace Net
 {
 	class Client;
-	class Server;
-	struct IMessage;
 
 	class CSPipeline
 	{
@@ -33,7 +37,7 @@ namespace Net
 	
 	private:
 		Client *m_client;
-		Server *m_server;
+		Server::GameServer *m_server;
 	};
 }
 
