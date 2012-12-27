@@ -4,7 +4,7 @@
 #include "WorldManager.h"
 #include "SceneInfo.h"
 #include "Client/Client.h"
-#include "CSProtocol/ActorBattleInfo.h"
+#include "../CSProtocol/ActorBattleInfo.h"
 
 namespace Game
 {

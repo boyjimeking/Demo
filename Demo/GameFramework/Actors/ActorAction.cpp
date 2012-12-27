@@ -14,7 +14,7 @@
 #include "support/CCPointExtension.h"
 #include "platform/CCCommon.h"
 #include "Camera/Camera.h"
-#include "CSProtocol/ActorBattleInfo.h"
+#include "../CSProtocol/ActorBattleInfo.h"
 
 namespace Game
 {

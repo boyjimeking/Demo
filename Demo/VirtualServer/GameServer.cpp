@@ -1,9 +1,9 @@
 #include "GameServer.h"
-#include "CSProtocol/CSPipeline.h"
-#include "CSProtocol/CSMessageDef.h"
+#include "../CSProtocol/CSPipeline.h"
+#include "../CSProtocol/CSMessageDef.h"
 #include "IActor.h"
 #include "../CCFileUtils.h"
-#include "Tools/Scene.h"
+#include "../Tools/Scene.h"
 #include "Player.h"
 #include "NPC.h"
 

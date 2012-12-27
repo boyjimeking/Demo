@@ -14,8 +14,8 @@
 #include "Terrain/TerrainProp.h"
 #include "support/CCPointExtension.h"
 #include "../CSProtocol/CSMessageType.h"
-#include "Tools/StreamHelper.h"
-#include "CSProtocol/ActorBattleInfo.h"
+#include "../Tools/StreamHelper.h"
+#include "../CSProtocol/ActorBattleInfo.h"
 
 
 namespace Net

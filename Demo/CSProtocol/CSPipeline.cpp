@@ -9,7 +9,7 @@
 #include "CSPipeline.h"
 #include "stddef.h"
 #include "../GameFramework/Client/Client.h"
-#include "VirtualServer/GameServer.h"
+#include "../VirtualServer/GameServer.h"
 
 namespace Net
 {

@@ -1,5 +1,5 @@
 #include "ActorBattleInfo.h"
-#include "Tools/StreamHelper.h"
+#include "../Tools/StreamHelper.h"
 
 ActorBattleInfo::ActorBattleInfo(void)
 	:m_dirtyMark(0)

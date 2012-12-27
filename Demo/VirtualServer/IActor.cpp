@@ -1,7 +1,7 @@
 #include "IActor.h"
-#include "CSProtocol/CSMessageDef.h"
+#include "../CSProtocol/CSMessageDef.h"
 #include "Base/GlobalDef.h"
-#include "CSProtocol/ActorBattleInfo.h"
+#include "../CSProtocol/ActorBattleInfo.h"
 
 namespace Server
 {

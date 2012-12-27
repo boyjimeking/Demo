@@ -506,6 +506,15 @@
 		D34839AF16673606008869A3 /* ActorsControlEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839AE16673605008869A3 /* ActorsControlEvents.cpp */; };
 		D37B4F8E167711B1003DDC7E /* building.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37B4F8C167711B1003DDC7E /* building.plist */; };
 		D37B4F8F167711B1003DDC7E /* building.png in Resources */ = {isa = PBXBuildFile; fileRef = D37B4F8D167711B1003DDC7E /* building.png */; };
+		D3920611168BE86000CEFA69 /* AIControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920600168BE86000CEFA69 /* AIControl.cpp */; };
+		D3920612168BE86000CEFA69 /* AIState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920602168BE86000CEFA69 /* AIState.cpp */; };
+		D3920613168BE86000CEFA69 /* GameServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920604168BE86000CEFA69 /* GameServer.cpp */; };
+		D3920614168BE86000CEFA69 /* IActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920606168BE86000CEFA69 /* IActor.cpp */; };
+		D3920615168BE86000CEFA69 /* ISimulateLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920608168BE86000CEFA69 /* ISimulateLayer.cpp */; };
+		D3920616168BE86000CEFA69 /* ISimulateObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D392060A168BE86000CEFA69 /* ISimulateObject.cpp */; };
+		D3920617168BE86000CEFA69 /* NPC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D392060C168BE86000CEFA69 /* NPC.cpp */; };
+		D3920618168BE86000CEFA69 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D392060E168BE86000CEFA69 /* Player.cpp */; };
+		D392061B168BE87200CEFA69 /* ActorBattleInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920619168BE87200CEFA69 /* ActorBattleInfo.cpp */; };
 		D3939915166C3A6C00DA4F56 /* terrain_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3939911166C3A6C00DA4F56 /* terrain_1.png */; };
 		D3939916166C3A6C00DA4F56 /* terrain_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3939912166C3A6C00DA4F56 /* terrain_2.png */; };
 		D3939917166C3A6C00DA4F56 /* terrain_3.png in Resources */ = {isa = PBXBuildFile; fileRef = D3939913166C3A6C00DA4F56 /* terrain_3.png */; };
@@ -599,13 +608,10 @@
 		D3F6D3A8168193D000BF2A87 /* MainRun.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F6D3A4168193D000BF2A87 /* MainRun.png */; };
 		D3F6D3A9168193D100BF2A87 /* NPCRun.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3F6D3A5168193D000BF2A87 /* NPCRun.plist */; };
 		D3F6D3AA168193D100BF2A87 /* NPCRun.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F6D3A6168193D000BF2A87 /* NPCRun.png */; };
-		D3FC5F57166EE02F00BDCF3B /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F55166EE02F00BDCF3B /* Server.cpp */; };
 		D3FC5F5B166EE07A00BDCF3B /* CSMessageDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */; };
 		D3FC5F5F166EE0D700BDCF3B /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F5D166EE0D700BDCF3B /* Client.cpp */; };
 		D3FC5F62166EE2B700BDCF3B /* CSMessageType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F60166EE2B700BDCF3B /* CSMessageType.cpp */; };
 		D3FC5F65166EE5D700BDCF3B /* CSPipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F63166EE5D700BDCF3B /* CSPipeline.cpp */; };
-		D3FC5F68166F19DC00BDCF3B /* ServerActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F66166F19DC00BDCF3B /* ServerActor.cpp */; };
-		D3FC5F6B166F24AF00BDCF3B /* MainActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F69166F24AF00BDCF3B /* MainActor.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -10112,6 +10118,25 @@
 		D34839AE16673605008869A3 /* ActorsControlEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorsControlEvents.cpp; sourceTree = "<group>"; };
 		D37B4F8C167711B1003DDC7E /* building.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = building.plist; path = Resources/building.plist; sourceTree = "<group>"; };
 		D37B4F8D167711B1003DDC7E /* building.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = building.png; path = Resources/building.png; sourceTree = "<group>"; };
+		D3920600168BE86000CEFA69 /* AIControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AIControl.cpp; path = VirtualServer/AIControl.cpp; sourceTree = "<group>"; };
+		D3920601168BE86000CEFA69 /* AIControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIControl.h; path = VirtualServer/AIControl.h; sourceTree = "<group>"; };
+		D3920602168BE86000CEFA69 /* AIState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AIState.cpp; path = VirtualServer/AIState.cpp; sourceTree = "<group>"; };
+		D3920603168BE86000CEFA69 /* AIState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIState.h; path = VirtualServer/AIState.h; sourceTree = "<group>"; };
+		D3920604168BE86000CEFA69 /* GameServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameServer.cpp; path = VirtualServer/GameServer.cpp; sourceTree = "<group>"; };
+		D3920605168BE86000CEFA69 /* GameServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameServer.h; path = VirtualServer/GameServer.h; sourceTree = "<group>"; };
+		D3920606168BE86000CEFA69 /* IActor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IActor.cpp; path = VirtualServer/IActor.cpp; sourceTree = "<group>"; };
+		D3920607168BE86000CEFA69 /* IActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IActor.h; path = VirtualServer/IActor.h; sourceTree = "<group>"; };
+		D3920608168BE86000CEFA69 /* ISimulateLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ISimulateLayer.cpp; path = VirtualServer/ISimulateLayer.cpp; sourceTree = "<group>"; };
+		D3920609168BE86000CEFA69 /* ISimulateLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISimulateLayer.h; path = VirtualServer/ISimulateLayer.h; sourceTree = "<group>"; };
+		D392060A168BE86000CEFA69 /* ISimulateObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ISimulateObject.cpp; path = VirtualServer/ISimulateObject.cpp; sourceTree = "<group>"; };
+		D392060B168BE86000CEFA69 /* ISimulateObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISimulateObject.h; path = VirtualServer/ISimulateObject.h; sourceTree = "<group>"; };
+		D392060C168BE86000CEFA69 /* NPC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NPC.cpp; path = VirtualServer/NPC.cpp; sourceTree = "<group>"; };
+		D392060D168BE86000CEFA69 /* NPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NPC.h; path = VirtualServer/NPC.h; sourceTree = "<group>"; };
+		D392060E168BE86000CEFA69 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = VirtualServer/Player.cpp; sourceTree = "<group>"; };
+		D392060F168BE86000CEFA69 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = VirtualServer/Player.h; sourceTree = "<group>"; };
+		D3920610168BE86000CEFA69 /* SimulateType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimulateType.h; path = VirtualServer/SimulateType.h; sourceTree = "<group>"; };
+		D3920619168BE87200CEFA69 /* ActorBattleInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ActorBattleInfo.cpp; path = CSProtocol/ActorBattleInfo.cpp; sourceTree = "<group>"; };
+		D392061A168BE87200CEFA69 /* ActorBattleInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActorBattleInfo.h; path = CSProtocol/ActorBattleInfo.h; sourceTree = "<group>"; };
 		D3939911166C3A6C00DA4F56 /* terrain_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_1.png; path = Resources/terrain_1.png; sourceTree = "<group>"; };
 		D3939912166C3A6C00DA4F56 /* terrain_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_2.png; path = Resources/terrain_2.png; sourceTree = "<group>"; };
 		D3939913166C3A6C00DA4F56 /* terrain_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_3.png; path = Resources/terrain_3.png; sourceTree = "<group>"; };
@@ -10272,8 +10297,6 @@
 		D3F6D3A4168193D000BF2A87 /* MainRun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MainRun.png; path = Resources/MainRun.png; sourceTree = "<group>"; };
 		D3F6D3A5168193D000BF2A87 /* NPCRun.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NPCRun.plist; path = Resources/NPCRun.plist; sourceTree = "<group>"; };
 		D3F6D3A6168193D000BF2A87 /* NPCRun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NPCRun.png; path = Resources/NPCRun.png; sourceTree = "<group>"; };
-		D3FC5F55166EE02F00BDCF3B /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Server.cpp; path = VirtualServer/Server.cpp; sourceTree = "<group>"; };
-		D3FC5F56166EE02F00BDCF3B /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Server.h; path = VirtualServer/Server.h; sourceTree = "<group>"; };
 		D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSMessageDef.cpp; path = CSProtocol/CSMessageDef.cpp; sourceTree = "<group>"; };
 		D3FC5F5A166EE07A00BDCF3B /* CSMessageDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMessageDef.h; path = CSProtocol/CSMessageDef.h; sourceTree = "<group>"; };
 		D3FC5F5D166EE0D700BDCF3B /* Client.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Client.cpp; path = Client/Client.cpp; sourceTree = "<group>"; };
@@ -10282,10 +10305,6 @@
 		D3FC5F61166EE2B700BDCF3B /* CSMessageType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMessageType.h; path = CSProtocol/CSMessageType.h; sourceTree = "<group>"; };
 		D3FC5F63166EE5D700BDCF3B /* CSPipeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSPipeline.cpp; path = CSProtocol/CSPipeline.cpp; sourceTree = "<group>"; };
 		D3FC5F64166EE5D700BDCF3B /* CSPipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSPipeline.h; path = CSProtocol/CSPipeline.h; sourceTree = "<group>"; };
-		D3FC5F66166F19DC00BDCF3B /* ServerActor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ServerActor.cpp; path = VirtualServer/ServerActor.cpp; sourceTree = "<group>"; };
-		D3FC5F67166F19DC00BDCF3B /* ServerActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerActor.h; path = VirtualServer/ServerActor.h; sourceTree = "<group>"; };
-		D3FC5F69166F24AF00BDCF3B /* MainActor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainActor.cpp; path = VirtualServer/MainActor.cpp; sourceTree = "<group>"; };
-		D3FC5F6A166F24AF00BDCF3B /* MainActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainActor.h; path = VirtualServer/MainActor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26642,12 +26661,23 @@
 		D3FC5F53166EDFE200BDCF3B /* VirtualServer */ = {
 			isa = PBXGroup;
 			children = (
-				D3FC5F55166EE02F00BDCF3B /* Server.cpp */,
-				D3FC5F56166EE02F00BDCF3B /* Server.h */,
-				D3FC5F66166F19DC00BDCF3B /* ServerActor.cpp */,
-				D3FC5F67166F19DC00BDCF3B /* ServerActor.h */,
-				D3FC5F69166F24AF00BDCF3B /* MainActor.cpp */,
-				D3FC5F6A166F24AF00BDCF3B /* MainActor.h */,
+				D3920600168BE86000CEFA69 /* AIControl.cpp */,
+				D3920601168BE86000CEFA69 /* AIControl.h */,
+				D3920602168BE86000CEFA69 /* AIState.cpp */,
+				D3920603168BE86000CEFA69 /* AIState.h */,
+				D3920604168BE86000CEFA69 /* GameServer.cpp */,
+				D3920605168BE86000CEFA69 /* GameServer.h */,
+				D3920606168BE86000CEFA69 /* IActor.cpp */,
+				D3920607168BE86000CEFA69 /* IActor.h */,
+				D3920608168BE86000CEFA69 /* ISimulateLayer.cpp */,
+				D3920609168BE86000CEFA69 /* ISimulateLayer.h */,
+				D392060A168BE86000CEFA69 /* ISimulateObject.cpp */,
+				D392060B168BE86000CEFA69 /* ISimulateObject.h */,
+				D392060C168BE86000CEFA69 /* NPC.cpp */,
+				D392060D168BE86000CEFA69 /* NPC.h */,
+				D392060E168BE86000CEFA69 /* Player.cpp */,
+				D392060F168BE86000CEFA69 /* Player.h */,
+				D3920610168BE86000CEFA69 /* SimulateType.h */,
 			);
 			name = VirtualServer;
 			sourceTree = "<group>";
@@ -26655,6 +26685,8 @@
 		D3FC5F58166EE03400BDCF3B /* CSProtocol */ = {
 			isa = PBXGroup;
 			children = (
+				D3920619168BE87200CEFA69 /* ActorBattleInfo.cpp */,
+				D392061A168BE87200CEFA69 /* ActorBattleInfo.h */,
 				D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */,
 				D3FC5F5A166EE07A00BDCF3B /* CSMessageDef.h */,
 				D3FC5F60166EE2B700BDCF3B /* CSMessageType.cpp */,
@@ -27298,13 +27330,10 @@
 				D3939DD7166C911A00DA4F56 /* MainScene.cpp in Sources */,
 				D3146145166D8EA30011EDC7 /* PhysicalControl.cpp in Sources */,
 				D3146148166D8EB80011EDC7 /* PhysicalObj.cpp in Sources */,
-				D3FC5F57166EE02F00BDCF3B /* Server.cpp in Sources */,
 				D3FC5F5B166EE07A00BDCF3B /* CSMessageDef.cpp in Sources */,
 				D3FC5F5F166EE0D700BDCF3B /* Client.cpp in Sources */,
 				D3FC5F62166EE2B700BDCF3B /* CSMessageType.cpp in Sources */,
 				D3FC5F65166EE5D700BDCF3B /* CSPipeline.cpp in Sources */,
-				D3FC5F68166F19DC00BDCF3B /* ServerActor.cpp in Sources */,
-				D3FC5F6B166F24AF00BDCF3B /* MainActor.cpp in Sources */,
 				D320472A16703B210037C1E2 /* ActorTouch.cpp in Sources */,
 				D320472F16704C670037C1E2 /* ActorAction.cpp in Sources */,
 				D31EA19716782270002519CF /* UIControlEvents.cpp in Sources */,
@@ -27324,6 +27353,15 @@
 				D3EA3967168A976E00B71B82 /* AvatarData.cpp in Sources */,
 				D3EA3968168A976E00B71B82 /* Scene.cpp in Sources */,
 				D3EA3969168A976E00B71B82 /* StreamHelper.cpp in Sources */,
+				D3920611168BE86000CEFA69 /* AIControl.cpp in Sources */,
+				D3920612168BE86000CEFA69 /* AIState.cpp in Sources */,
+				D3920613168BE86000CEFA69 /* GameServer.cpp in Sources */,
+				D3920614168BE86000CEFA69 /* IActor.cpp in Sources */,
+				D3920615168BE86000CEFA69 /* ISimulateLayer.cpp in Sources */,
+				D3920616168BE86000CEFA69 /* ISimulateObject.cpp in Sources */,
+				D3920617168BE86000CEFA69 /* NPC.cpp in Sources */,
+				D3920618168BE86000CEFA69 /* Player.cpp in Sources */,
+				D392061B168BE87200CEFA69 /* ActorBattleInfo.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

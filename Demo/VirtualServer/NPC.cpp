@@ -1,8 +1,8 @@
 #include "NPC.h"
-#include "CSProtocol/CSMessageDef.h"
+#include "../CSProtocol/CSMessageDef.h"
 #include "GameServer.h"
-#include "Tools/StreamHelper.h"
-#include "CSProtocol/ActorBattleInfo.h"
+#include "../Tools/StreamHelper.h"
+#include "../CSProtocol/ActorBattleInfo.h"
 #include "AIControl.h"
 
 namespace Server

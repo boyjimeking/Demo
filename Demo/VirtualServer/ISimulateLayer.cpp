@@ -1,5 +1,5 @@
 #include "ISimulateLayer.h"
-#include "CSProtocol/CSMessageDef.h"
+#include "../CSProtocol/CSMessageDef.h"
 
 namespace Server
 {

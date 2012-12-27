@@ -1,6 +1,6 @@
 #include "AIState.h"
 #include <stdlib.h>
-#include "CSProtocol\CSMessageDef.h"
+#include "../CSProtocol/CSMessageDef.h"
 #include "NPC.h"
 #include "GameServer.h"
 
