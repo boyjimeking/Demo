@@ -3,7 +3,7 @@
 #include "Actors/ActorEvents.h"
 #include "UIEvents.h"
 #include "Actors/ActorProp.h"
-#include "CSProtocol/ActorBattleInfo.h"
+#include "../CSProtocol/ActorBattleInfo.h"
 
 namespace GUI
 {

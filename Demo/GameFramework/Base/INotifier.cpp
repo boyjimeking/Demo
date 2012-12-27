@@ -3,6 +3,7 @@
 //#include <typeinfo>
 //#include "platform/CCCommon.h"
 //#include "INotifyEvent.h"
+#include <algorithm>
 
 INotifier::INotifier(void)
 {

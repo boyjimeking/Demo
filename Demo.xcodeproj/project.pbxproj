@@ -328,8 +328,12 @@
 		D34839A7166712C0008869A3 /* CameraNotifyEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839A6166712C0008869A3 /* CameraNotifyEvents.cpp */; };
 		D34839AC16673409008869A3 /* ActorEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839AB16673409008869A3 /* ActorEvents.cpp */; };
 		D34839AF16673606008869A3 /* ActorsControlEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34839AE16673605008869A3 /* ActorsControlEvents.cpp */; };
-		D37B4F8E167711B1003DDC7E /* building.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37B4F8C167711B1003DDC7E /* building.plist */; };
-		D37B4F8F167711B1003DDC7E /* building.png in Resources */ = {isa = PBXBuildFile; fileRef = D37B4F8D167711B1003DDC7E /* building.png */; };
+		D38A6559168C490500D00227 /* UIEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38A6553168C490500D00227 /* UIEvents.cpp */; };
+		D38A655A168C490500D00227 /* UITargetProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38A6555168C490500D00227 /* UITargetProp.cpp */; };
+		D38A655B168C490500D00227 /* UITargetWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38A6557168C490500D00227 /* UITargetWindow.cpp */; };
+		D38A6560168C492100D00227 /* Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = D38A655D168C492100D00227 /* Empty.png */; };
+		D38A6561168C492100D00227 /* LifeBack.png in Resources */ = {isa = PBXBuildFile; fileRef = D38A655E168C492100D00227 /* LifeBack.png */; };
+		D38A6562168C492100D00227 /* LifeFront.png in Resources */ = {isa = PBXBuildFile; fileRef = D38A655F168C492100D00227 /* LifeFront.png */; };
 		D3920611168BE86000CEFA69 /* AIControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920600168BE86000CEFA69 /* AIControl.cpp */; };
 		D3920612168BE86000CEFA69 /* AIState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920602168BE86000CEFA69 /* AIState.cpp */; };
 		D3920613168BE86000CEFA69 /* GameServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920604168BE86000CEFA69 /* GameServer.cpp */; };
@@ -594,7 +598,6 @@
 		D3EA3976168A983300B71B82 /* MainWeapon.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3EA396D168A983300B71B82 /* MainWeapon.plist */; };
 		D3EA3977168A983300B71B82 /* MainWeapon.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EA396E168A983300B71B82 /* MainWeapon.png */; };
 		D3EA3978168A983300B71B82 /* NPCActor.ava in Resources */ = {isa = PBXBuildFile; fileRef = D3EA396F168A983300B71B82 /* NPCActor.ava */; };
-		D3EA3979168A983300B71B82 /* scene.pkm in Resources */ = {isa = PBXBuildFile; fileRef = D3EA3970168A983300B71B82 /* scene.pkm */; };
 		D3EA397A168A983300B71B82 /* trees.pblist in Resources */ = {isa = PBXBuildFile; fileRef = D3EA3971168A983300B71B82 /* trees.pblist */; };
 		D3EA397B168A983300B71B82 /* trees.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EA3972168A983300B71B82 /* trees.png */; };
 		D3EA3986168AA45C00B71B82 /* DemoTree_0.pblist in Resources */ = {isa = PBXBuildFile; fileRef = D3EA3984168AA45C00B71B82 /* DemoTree_0.pblist */; };
@@ -9707,8 +9710,15 @@
 		D34839AB16673409008869A3 /* ActorEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorEvents.cpp; sourceTree = "<group>"; };
 		D34839AD166735F7008869A3 /* ActorsControlEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActorsControlEvents.h; sourceTree = "<group>"; };
 		D34839AE16673605008869A3 /* ActorsControlEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorsControlEvents.cpp; sourceTree = "<group>"; };
-		D37B4F8C167711B1003DDC7E /* building.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = building.plist; path = Resources/building.plist; sourceTree = "<group>"; };
-		D37B4F8D167711B1003DDC7E /* building.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = building.png; path = Resources/building.png; sourceTree = "<group>"; };
+		D38A6553168C490500D00227 /* UIEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIEvents.cpp; sourceTree = "<group>"; };
+		D38A6554168C490500D00227 /* UIEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEvents.h; sourceTree = "<group>"; };
+		D38A6555168C490500D00227 /* UITargetProp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UITargetProp.cpp; sourceTree = "<group>"; };
+		D38A6556168C490500D00227 /* UITargetProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITargetProp.h; sourceTree = "<group>"; };
+		D38A6557168C490500D00227 /* UITargetWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UITargetWindow.cpp; sourceTree = "<group>"; };
+		D38A6558168C490500D00227 /* UITargetWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITargetWindow.h; sourceTree = "<group>"; };
+		D38A655D168C492100D00227 /* Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Empty.png; path = Resources/Empty.png; sourceTree = "<group>"; };
+		D38A655E168C492100D00227 /* LifeBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LifeBack.png; path = Resources/LifeBack.png; sourceTree = "<group>"; };
+		D38A655F168C492100D00227 /* LifeFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LifeFront.png; path = Resources/LifeFront.png; sourceTree = "<group>"; };
 		D3920600168BE86000CEFA69 /* AIControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AIControl.cpp; path = VirtualServer/AIControl.cpp; sourceTree = "<group>"; };
 		D3920601168BE86000CEFA69 /* AIControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIControl.h; path = VirtualServer/AIControl.h; sourceTree = "<group>"; };
 		D3920602168BE86000CEFA69 /* AIState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AIState.cpp; path = VirtualServer/AIState.cpp; sourceTree = "<group>"; };
@@ -10282,7 +10292,6 @@
 		D3EA396D168A983300B71B82 /* MainWeapon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = MainWeapon.plist; path = Resources/MainWeapon.plist; sourceTree = "<group>"; };
 		D3EA396E168A983300B71B82 /* MainWeapon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MainWeapon.png; path = Resources/MainWeapon.png; sourceTree = "<group>"; };
 		D3EA396F168A983300B71B82 /* NPCActor.ava */ = {isa = PBXFileReference; lastKnownFileType = file; name = NPCActor.ava; path = Resources/NPCActor.ava; sourceTree = "<group>"; };
-		D3EA3970168A983300B71B82 /* scene.pkm */ = {isa = PBXFileReference; lastKnownFileType = file; name = scene.pkm; path = Resources/scene.pkm; sourceTree = "<group>"; };
 		D3EA3971168A983300B71B82 /* trees.pblist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = trees.pblist; path = Resources/trees.pblist; sourceTree = "<group>"; };
 		D3EA3972168A983300B71B82 /* trees.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trees.png; path = Resources/trees.png; sourceTree = "<group>"; };
 		D3EA3984168AA45C00B71B82 /* DemoTree_0.pblist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = DemoTree_0.pblist; path = Resources/DemoTree_0.pblist; sourceTree = "<group>"; };
@@ -10377,6 +10386,9 @@
 		D30D8D441666EE89000B95E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D38A655D168C492100D00227 /* Empty.png */,
+				D38A655E168C492100D00227 /* LifeBack.png */,
+				D38A655F168C492100D00227 /* LifeFront.png */,
 				D3EA3984168AA45C00B71B82 /* DemoTree_0.pblist */,
 				D3EA3985168AA45C00B71B82 /* DemoTree_0.png */,
 				D3EA396A168A983300B71B82 /* Demo.pkm */,
@@ -10385,15 +10397,12 @@
 				D3EA396D168A983300B71B82 /* MainWeapon.plist */,
 				D3EA396E168A983300B71B82 /* MainWeapon.png */,
 				D3EA396F168A983300B71B82 /* NPCActor.ava */,
-				D3EA3970168A983300B71B82 /* scene.pkm */,
 				D3EA3971168A983300B71B82 /* trees.pblist */,
 				D3EA3972168A983300B71B82 /* trees.png */,
 				D3F6D3A3168193D000BF2A87 /* MainRun.plist */,
 				D3F6D3A4168193D000BF2A87 /* MainRun.png */,
 				D3F6D3A5168193D000BF2A87 /* NPCRun.plist */,
 				D3F6D3A6168193D000BF2A87 /* NPCRun.png */,
-				D37B4F8C167711B1003DDC7E /* building.plist */,
-				D37B4F8D167711B1003DDC7E /* building.png */,
 				D3939911166C3A6C00DA4F56 /* terrain_1.png */,
 				D3939912166C3A6C00DA4F56 /* terrain_2.png */,
 				D3939913166C3A6C00DA4F56 /* terrain_3.png */,
@@ -10567,6 +10576,12 @@
 		D30D90191666F3A9000B95E1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D38A6553168C490500D00227 /* UIEvents.cpp */,
+				D38A6554168C490500D00227 /* UIEvents.h */,
+				D38A6555168C490500D00227 /* UITargetProp.cpp */,
+				D38A6556168C490500D00227 /* UITargetProp.h */,
+				D38A6557168C490500D00227 /* UITargetWindow.cpp */,
+				D38A6558168C490500D00227 /* UITargetWindow.h */,
 				D30D901A1666F3A9000B95E1 /* UIControl.cpp */,
 				D30D901B1666F3A9000B95E1 /* UIControl.h */,
 				D30D901C1666F3A9000B95E1 /* UILayer.cpp */,
@@ -27062,8 +27077,6 @@
 				D3EE8F7F16758305004C7332 /* terrain_10.png in Resources */,
 				D3EE8F8016758305004C7332 /* terrain_11.png in Resources */,
 				D3EE8F8116758305004C7332 /* terrain_12.png in Resources */,
-				D37B4F8E167711B1003DDC7E /* building.plist in Resources */,
-				D37B4F8F167711B1003DDC7E /* building.png in Resources */,
 				D3F6D3A7168193D000BF2A87 /* MainRun.plist in Resources */,
 				D3F6D3A8168193D000BF2A87 /* MainRun.png in Resources */,
 				D3F6D3A9168193D100BF2A87 /* NPCRun.plist in Resources */,
@@ -27074,13 +27087,15 @@
 				D3EA3976168A983300B71B82 /* MainWeapon.plist in Resources */,
 				D3EA3977168A983300B71B82 /* MainWeapon.png in Resources */,
 				D3EA3978168A983300B71B82 /* NPCActor.ava in Resources */,
-				D3EA3979168A983300B71B82 /* scene.pkm in Resources */,
 				D3EA397A168A983300B71B82 /* trees.pblist in Resources */,
 				D3EA397B168A983300B71B82 /* trees.png in Resources */,
 				D3EA3986168AA45C00B71B82 /* DemoTree_0.pblist in Resources */,
 				D3EA3987168AA45C00B71B82 /* DemoTree_0.png in Resources */,
 				D3920807168BECD300CEFA69 /* ChangeLog in Resources */,
 				D3920808168BECD300CEFA69 /* CMakeLists.txt in Resources */,
+				D38A6560168C492100D00227 /* Empty.png in Resources */,
+				D38A6561168C492100D00227 /* LifeBack.png in Resources */,
+				D38A6562168C492100D00227 /* LifeFront.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -27371,6 +27386,9 @@
 				D3920891168BECD300CEFA69 /* HttpClient.cpp in Sources */,
 				D3920892168BECD300CEFA69 /* CCPhysicsDebugNode.cpp in Sources */,
 				D3920893168BECD300CEFA69 /* CCPhysicsSprite.cpp in Sources */,
+				D38A6559168C490500D00227 /* UIEvents.cpp in Sources */,
+				D38A655A168C490500D00227 /* UITargetProp.cpp in Sources */,
+				D38A655B168C490500D00227 /* UITargetWindow.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
