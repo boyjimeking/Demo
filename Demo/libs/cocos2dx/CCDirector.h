@@ -160,7 +160,11 @@ public:
     CCNode* getNotificationNode();
     void setNotificationNode(CCNode *node);
     
-    bool enableRetinaDisplay(bool bEnabelRetina);
+    /** CCDirector delegate. It shall implemente the CCDirectorDelegate protocol
+     @since v0.99.5
+     */
+    CCDirectorDelegate* getDelegate() const;
+    void setDelegate(CCDirectorDelegate* pDelegate);
 
     // window size
 
@@ -182,11 +186,8 @@ public:
      */
     CCPoint getVisibleOrigin();
 
-    /** changes the projection size */
-    void reshapeProjection(const CCSize& newWindowSize);
-
     /** converts a UIKit coordinate to an OpenGL coordinate
-     Useful to convert (multi) touches coordinates to the current layout (portrait or landscape)
+     Useful to convert (multi) touch coordinates to the current layout (portrait or landscape)
      */
     CCPoint convertToGL(const CCPoint& obPoint);
 
@@ -330,8 +331,6 @@ protected:
     void purgeDirector();
     bool m_bPurgeDirecotorInNextLoop; // this flag will be set to true in end()
     
-    void updateContentScaleFactor(void);
-
     void setNextScene(void);
     
     void showStats();
@@ -393,9 +392,6 @@ protected:
 
     /* window size in points */
     CCSize    m_obWinSizeInPoints;
-
-    /* window size in pixels */
-    CCSize m_obWinSizeInPixels;
     
     /* content scale factor */
     float    m_fContentScaleFactor;
@@ -408,9 +404,6 @@ protected:
 
     /* Projection protocol delegate */
     CCDirectorDelegate *m_pProjectionDelegate;
-
-    /* contentScaleFactor could be simulated */
-    bool m_bIsContentScaleSupported;
     
     // CCEGLViewProtocol will recreate stats labels to fit visible rect
     friend class CCEGLViewProtocol;

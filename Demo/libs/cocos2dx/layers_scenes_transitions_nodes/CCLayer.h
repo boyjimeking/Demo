@@ -36,6 +36,11 @@ THE SOFTWARE.
 
 NS_CC_BEGIN
 
+typedef enum {
+	kCCTouchesAllAtOnce,
+	kCCTouchesOneByOne,
+} ccTouchesMode;
+
 /**
  * @addtogroup layer
  * @{
@@ -57,7 +62,7 @@ class CC_DLL CCLayer : public CCNode, public CCTouchDelegate, public CCAccelerom
 public:
     CCLayer();
     virtual ~CCLayer();
-    bool init();
+    virtual bool init();
 
     // @deprecated: This interface will be deprecated sooner or later.
     CC_DEPRECATED_ATTRIBUTE static CCLayer *node(void);
@@ -80,7 +85,9 @@ public:
     virtual void ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent);
     virtual void ccTouchesCancelled(CCSet *pTouches, CCEvent *pEvent);
     
-    virtual void didAccelerate(CCAcceleration* pAccelerationValue) {CC_UNUSED_PARAM(pAccelerationValue);}
+    virtual void didAccelerate(CCAcceleration* pAccelerationValue);
+    void registerScriptAccelerateHandler(int nHandler);
+    void unregisterScriptAccelerateHandler(void);
 
     /** If isTouchEnabled, this method is called onEnter. Override it to change the
     way CCLayer receives touch events.
@@ -95,39 +102,65 @@ public:
     virtual void registerWithTouchDispatcher(void);
     
     /** Register script touch events handler */
-    void registerScriptTouchHandler(int nHandler, bool bIsMultiTouches = false, int nPriority = INT_MIN, bool bSwallowsTouches = false);
+    virtual void registerScriptTouchHandler(int nHandler, bool bIsMultiTouches = false, int nPriority = INT_MIN, bool bSwallowsTouches = false);
     /** Unregister script touch events handler */
-    void unregisterScriptTouchHandler(void);
+    virtual void unregisterScriptTouchHandler(void);
 
     /** whether or not it will receive Touch events.
     You can enable / disable touch events with this property.
     Only the touches of this node will be affected. This "method" is not propagated to it's children.
     @since v0.8.1
     */
-    bool isTouchEnabled();
-    void setTouchEnabled(bool value);
+    virtual bool isTouchEnabled();
+    virtual void setTouchEnabled(bool value);
+    
+    virtual void setTouchMode(ccTouchesMode mode);
+    virtual int getTouchMode();
+    
+    /** priority of the touch events. Default is 0 */
+    virtual void setTouchPriority(int priority);
+    virtual int getTouchPriority();
+
     /** whether or not it will receive Accelerometer events
     You can enable / disable accelerometer events with this property.
     @since v0.8.1
     */
-    bool isAccelerometerEnabled();
-    void setAccelerometerEnabled(bool value);
+    virtual bool isAccelerometerEnabled();
+    virtual void setAccelerometerEnabled(bool value);
+    virtual void setAccelerometerInterval(double interval);
+
     /** whether or not it will receive keypad events
     You can enable / disable accelerometer events with this property.
     it's new in cocos2d-x
     */
-    bool isKeypadEnabled();
-    void setKeypadEnabled(bool value);
+    virtual bool isKeypadEnabled();
+    virtual void setKeypadEnabled(bool value);
+
+    /** Register keypad events handler */
+    void registerScriptKeypadHandler(int nHandler);
+    /** Unregister keypad events handler */
+    void unregisterScriptKeypadHandler(void);
+
+    virtual void keyBackClicked(void);
+    virtual void keyMenuClicked(void);
     
-    inline CCTouchScriptHandlerEntry* getScriptHandlerEntry() { return m_pScriptHandlerEntry; };
+    inline CCTouchScriptHandlerEntry* getScriptTouchHandlerEntry() { return m_pScriptTouchHandlerEntry; };
+    inline CCScriptHandlerEntry* getScriptKeypadHandlerEntry() { return m_pScriptKeypadHandlerEntry; };
+    inline CCScriptHandlerEntry* getScriptAccelerateHandlerEntry() { return m_pScriptAccelerateHandlerEntry; };
 protected:   
-    bool m_bIsTouchEnabled;
-    bool m_bIsAccelerometerEnabled;
-    bool m_bIsKeypadEnabled;
+    bool m_bTouchEnabled;
+    bool m_bAccelerometerEnabled;
+    bool m_bKeypadEnabled;
     
 private:
     // Script touch events handler
-    CCTouchScriptHandlerEntry* m_pScriptHandlerEntry;
+    CCTouchScriptHandlerEntry* m_pScriptTouchHandlerEntry;
+    CCScriptHandlerEntry* m_pScriptKeypadHandlerEntry;
+    CCScriptHandlerEntry* m_pScriptAccelerateHandlerEntry;
+    
+    int m_nTouchPriority;
+    ccTouchesMode m_eTouchMode;
+    
     int  excuteScriptTouchHandler(int nEventType, CCTouch *pTouch);
     int  excuteScriptTouchHandler(int nEventType, CCSet *pTouches);
 };
@@ -163,6 +196,11 @@ public:
     */
     CC_DEPRECATED_ATTRIBUTE static CCLayerColor * layerWithColor(const ccColor4B& color);
 
+    //@deprecated: This interface will be deprecated sooner or later.
+    static CCLayerColor* node();
+    
+    static CCLayerColor* create();
+    
     /** creates a CCLayer with color, width and height in Points */
     static CCLayerColor * create(const ccColor4B& color, GLfloat width, GLfloat height);
     /** creates a CCLayer with color. Width and height are the window size. */
@@ -192,19 +230,15 @@ public:
 
     virtual void setOpacityModifyRGB(bool bValue) {CC_UNUSED_PARAM(bValue);}
     virtual bool isOpacityModifyRGB(void) { return false;}
-    //@deprecated: This interface will be deprecated sooner or later.
-    CREATE_FUNC(CCLayerColor)
-    NODE_FUNC(CCLayerColor)
+
 protected:
     virtual void updateColor();
 };
 
-
 //
 // CCLayerGradient
 //
-/** CCLayerGradient is a subclass of CCLayerColor that draws gradients across
-the background.
+/** @brief CCLayerGradient is a subclass of CCLayerColor that draws gradients across the background.
 
 All features from CCLayerColor are valid, plus the following new features:
 - direction
@@ -243,6 +277,7 @@ public:
     /** Creates a full-screen CCLayer with a gradient between start and end in the direction of v. */
     static CCLayerGradient* create(const ccColor4B& start, const ccColor4B& end, const CCPoint& v);
 
+    virtual bool init();
     /** Initializes the CCLayer with a gradient between start and end. */
     virtual bool initWithColor(const ccColor4B& start, const ccColor4B& end);
 
@@ -264,9 +299,11 @@ public:
     virtual void setCompressedInterpolation(bool bCompressedInterpolation);
     virtual bool isCompressedInterpolation();
 
-    // @deprecated: This interface will be deprecated sooner or later.
-    NODE_FUNC(CCLayerGradient)
-    CREATE_FUNC(CCLayerGradient)
+    //@deprecated: This interface will be deprecated sooner or later.
+    static CCLayerGradient* node();
+    
+    static CCLayerGradient* create();
+
 protected:
     virtual void updateColor();
 };
@@ -314,6 +351,12 @@ public:
     /** switches to a certain layer indexed by n. 
     The current (old) layer will be removed from it's parent with 'cleanup:YES'.
     */
+
+    /** initializes a CCMultiplexLayer with an array of layers
+    @since v2.1
+    */
+    bool initWithArray(CCArray* arrayOfLayers);
+
     void switchTo(unsigned int n);
     /** release the current layer and switches to another layer indexed by n.
     The current (old) layer will be removed from it's parent with 'cleanup:YES'.
@@ -321,9 +364,13 @@ public:
     void switchToAndReleaseMe(unsigned int n);
     
     //@deprecated: This interface will be deprecated sooner or later.
-    NODE_FUNC(CCLayerMultiplex)
-
-    CREATE_FUNC(CCLayerMultiplex)
+    static CCLayerMultiplex* node();
+    
+    static CCLayerMultiplex* create();
+    /** creates a CCMultiplexLayer with an array of layers.
+    @since v2.1
+    */
+    static CCLayerMultiplex* createWithArray(CCArray* arrayOfLayers);
 };
 
 

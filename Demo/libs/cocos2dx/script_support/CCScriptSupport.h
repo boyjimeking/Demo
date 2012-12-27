@@ -26,8 +26,10 @@
 #define __SCRIPT_SUPPORT_H__
 
 #include "platform/CCCommon.h"
+#include "CCAccelerometer.h"
 #include "touch_dispatcher/CCTouch.h"
 #include "cocoa/CCSet.h"
+#include "CCAccelerometer.h"
 #include <map>
 #include <string>
 #include <list>
@@ -41,6 +43,7 @@ class CCLayer;
 class CCMenuItem;
 class CCNotificationCenter;
 class CCCallFunc;
+class CCAcceleration;
 
 enum ccScriptType {
     kScriptTypeNone = 0,
@@ -220,9 +223,15 @@ public:
     /** execute a schedule function */
     virtual int executeSchedule(CCTimer* pTimer, float dt, CCNode* pNode = NULL) = 0;
     
-    /** functions for execute touch event */
+    /** functions for executing touch event */
     virtual int executeLayerTouchesEvent(CCLayer* pLayer, int eventType, CCSet *pTouches) = 0;
     virtual int executeLayerTouchEvent(CCLayer* pLayer, int eventType, CCTouch *pTouch) = 0;
+
+    /** functions for keypad event */
+    virtual int executeLayerKeypadEvent(CCLayer* pLayer, int eventType) = 0;
+
+    /** execute a accelerometer event */
+    virtual int executeAccelerometerEvent(CCLayer* pLayer, CCAcceleration* pAccelerationValue) = 0;
 };
 
 /**
