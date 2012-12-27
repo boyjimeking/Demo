@@ -90,7 +90,7 @@ namespace Game
 					{
 						_setZOrder(-getPosition().y * 1000);
 					}
-					if (ENActorType::enMain == reinterpret_cast<const ActorProp*>(notify)->GetType())
+					if (ENActorType::enMain == reinterpret_cast<const ActorProp*>(notify)->GetActorType())
 					{
 						WorldManager::Instance()->GetCamera()->SetPosition(getPosition());
 					}

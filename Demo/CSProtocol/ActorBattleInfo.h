@@ -20,6 +20,7 @@ struct ENBattlePropType
 		enError = -1,
 		enHP = 1 << 0,
 		enAlive = 1 << 1,
+		enMaxHp = 1 << 1,
 	};
 };
 
@@ -35,6 +36,8 @@ public:
 	//Hp
 	int GetHP(void) const { return m_HP; }
 	void SetHP(int hp);
+	int GetMaxHP(void) const { return m_maxHP; }
+	void SetMaxHP(int val);
 	//是否存活
 	bool IsAlive(void) const { return m_isAlive; }
 	void SetAlive(bool isAlive);
@@ -47,6 +50,7 @@ private:
 	int m_dirtyMark;
 	//生命
 	int m_HP;
+	int m_maxHP;
 	//是否存活
 	bool m_isAlive;
 };

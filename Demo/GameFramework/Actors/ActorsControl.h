@@ -22,6 +22,7 @@ namespace Game
 		:public INotifier
 	{
 	public:
+		_Decl_Notifier(ActorsControl);
 		ActorsControl(void);
 		virtual ~ActorsControl(void);
 

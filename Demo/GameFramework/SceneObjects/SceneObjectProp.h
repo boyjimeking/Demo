@@ -27,6 +27,7 @@ namespace Game
 		:public INotifier
 	{
 	public:
+		_Decl_Notifier(SceneObjectProp);
 		SceneObjectProp(void);
 		virtual ~SceneObjectProp(void);
 		void Init(int id, const char *imageName, float x, float y, float width, float height);

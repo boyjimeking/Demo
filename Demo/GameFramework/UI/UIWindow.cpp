@@ -11,7 +11,7 @@ namespace GUI
 
 	}
 
-	void UIWindow::OnNotifyChange( const INotifier *notify, const INotifyEvent *event )
+	void UIWindow::OnNotifyChange( INotifier *notify, const INotifyEvent *event )
 	{
 		
 	}

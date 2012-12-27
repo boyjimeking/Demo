@@ -56,6 +56,9 @@ namespace Net
 			case GetMessageType(CSDead_S2C):
 				ProcessCSDead_S2C(message);
 				break;
+			case GetMessageType(CSBeAttack_S2C):
+				ProcessCSBeAttack_S2C(message);
+				break;
 			default:
 				//消息类型错误
 				break;
@@ -166,6 +169,18 @@ namespace Net
 		}
 		actor->Dead();
 	}
+
+	void Client::ProcessCSBeAttack_S2C( IMessage *message )
+	{
+		CSBeAttack_S2C *innerMessage = reinterpret_cast<CSBeAttack_S2C*>(message);
+		Game::ActorProp *actor = Game::WorldManager::Instance()->GetActorsControl()->LookupActor(innerMessage->m_actorID);
+		if (NULL == actor)
+		{
+			return;
+		}
+		actor->BeAttacked(innerMessage->m_hpChanged);
+	}
+
 
 
 }

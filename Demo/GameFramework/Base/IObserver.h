@@ -17,8 +17,13 @@ public:
 	IObserver(void);
 	virtual ~IObserver(void);
 	virtual void OnNotifyChange(INotifier *notify, const INotifyEvent *event) = 0;
+
+	void Detach(void);
+	INotifier* GetNotifier(void) const { return m_notifier; }
+	void SetNotifier(INotifier *val) { m_notifier = val; }
 protected:
 private:
+	INotifier *m_notifier;
 };
 
 #endif // IObserver_h__

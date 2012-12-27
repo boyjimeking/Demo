@@ -33,6 +33,8 @@ namespace Game
 			enChangeAvatar,
 			enChangeEquip,
 			enDead,
+			enBeAttacked,
+			enAttachUI,
 		};
 	};
 
@@ -97,6 +99,20 @@ namespace Game
 		:public INotifyEvent
 	{
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enDead; }
+	};
+	struct ActorEventBeAttacked
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enBeAttacked; }
+		ActorEventBeAttacked(int hpChanged) : m_hpChanged(hpChanged) {}
+		int m_hpChanged;
+	};
+	struct ActorEventAttachUI
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enAttachUI; }
+		ActorEventAttachUI(ActorProp *prop) : m_prop(prop) {}
+		ActorProp* m_prop;
 	};
 }
 

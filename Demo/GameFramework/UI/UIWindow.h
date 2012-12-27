@@ -9,6 +9,7 @@
 #define UIWindow_h__
 
 #include "../Base/IObserver.h"
+#include "base_nodes/CCNode.h"
 
 namespace GUI
 {
@@ -19,8 +20,8 @@ namespace GUI
 		UIWindow(void);
 		~UIWindow(void);
 
-		virtual void OnNotifyChange( const INotifier *notify, const INotifyEvent *event );
-
+		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
+		virtual cocos2d::CCNode* GetWindow(void) const = 0;
 	protected:
 	private:
 	};

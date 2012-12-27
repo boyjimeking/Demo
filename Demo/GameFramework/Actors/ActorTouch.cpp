@@ -12,6 +12,9 @@
 #include "ActorProp.h"
 #include "ActorAction.h"
 #include "Client/Client.h"
+#include "UI/UIControl.h"
+#include "UI/UITargetProp.h"
+#include "UI/UITargetWindow.h"
 
 namespace Game
 {
@@ -23,6 +26,12 @@ namespace Game
 	bool TouchMonster::OnTouch(const cocos2d::CCPoint &pos)
 	{
 		WorldManager::Instance()->GetActorsControl()->GetMainActor()->StartAttack(m_prop);
+		GUI::UIProperty *uiProp = WorldManager::Instance()->GetUIControl()->GetWindow("Target");
+		if (NULL == uiProp)
+		{
+			uiProp = WorldManager::Instance()->GetUIControl()->CreateUI<GUI::UITargetProp, GUI::UITargetWindow>("Target");
+		}
+		m_prop->AttachUI(uiProp);
 		return true;
 	}
 }

@@ -32,6 +32,7 @@ namespace Net
 		void ChangeActorEquip(IMessage *message);
 		void ProcessCSAttackTarget_S2C(IMessage *message);
 		void ProcessCSDead_S2C(IMessage *message);
+		void ProcessCSBeAttack_S2C(IMessage *message);
     };
 }
 

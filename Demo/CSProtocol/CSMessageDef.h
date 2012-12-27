@@ -101,5 +101,11 @@ struct CSDead_S2C
 {
 	int m_actorID;
 };
+struct CSBeAttack_S2C
+	:public IMessage
+{
+	int m_actorID;
+	int m_hpChanged;
+};
 
 #endif /* defined(__Demo__CSMessageDef__) */

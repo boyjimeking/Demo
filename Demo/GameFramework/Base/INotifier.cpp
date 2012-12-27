@@ -17,7 +17,10 @@ void INotifier::NotifyChange( const INotifyEvent *event )
 {
 	if (INotifier::NotifyMode)
 	{
-		m_observer->OnNotifyChange(this, event);
+		for (int index = 0; index < m_observerList.size(); ++index)
+		{
+			m_observerList[index]->OnNotifyChange(this, event);
+		}
 	}
 	else
 	{
@@ -27,7 +30,24 @@ void INotifier::NotifyChange( const INotifyEvent *event )
 
 void INotifier::AttachObserver( IObserver *observer )
 {
-	m_observer = observer;
+	ObserverList::iterator it = std::find(m_observerList.begin(), m_observerList.end(), observer);
+	if (m_observerList.end() != it)
+	{
+		return;
+	}
+	m_observerList.push_back(observer);
+	observer->SetNotifier(this);
+}
+
+void INotifier::DetachObserver( IObserver *observer )
+{
+	ObserverList::iterator it = std::find(m_observerList.begin(), m_observerList.end(), observer);
+	if (m_observerList.end() == it)
+	{
+		return;
+	}
+	m_observerList.erase(it);
+	observer->SetNotifier(NULL);
 }
 
 bool INotifier::NotifyMode = true;

@@ -198,6 +198,15 @@
     <ClCompile Include="..\VirtualServer\AIControl.cpp">
       <Filter>VirtualServer</Filter>
     </ClCompile>
+    <ClCompile Include="UI\UIEvents.cpp">
+      <Filter>GameFramework\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\UITargetWindow.cpp">
+      <Filter>GameFramework\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\UITargetProp.cpp">
+      <Filter>GameFramework\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CSProtocol\CSMessageDef.h">
@@ -364,6 +373,18 @@
     </ClInclude>
     <ClInclude Include="..\VirtualServer\AIState.h">
       <Filter>VirtualServer</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UIEvents.h">
+      <Filter>GameFramework\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UITargetWindow.h">
+      <Filter>GameFramework\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UITargetProp.h">
+      <Filter>GameFramework\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\INotifierType.h">
+      <Filter>GameFramework\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -60,8 +60,11 @@
     <ClCompile Include="Tools\EditScene.cpp" />
     <ClCompile Include="UI\UIControl.cpp" />
     <ClCompile Include="UI\UIControlEvents.cpp" />
+    <ClCompile Include="UI\UIEvents.cpp" />
     <ClCompile Include="UI\UILayer.cpp" />
     <ClCompile Include="UI\UIProperty.cpp" />
+    <ClCompile Include="UI\UITargetProp.cpp" />
+    <ClCompile Include="UI\UITargetWindow.cpp" />
     <ClCompile Include="UI\UIWindow.cpp" />
     <ClCompile Include="WorldManager.cpp" />
   </ItemGroup>
@@ -90,6 +93,7 @@
     <ClInclude Include="Actors\EquipObject.h" />
     <ClInclude Include="Base\GlobalDef.h" />
     <ClInclude Include="Base\INotifier.h" />
+    <ClInclude Include="Base\INotifierType.h" />
     <ClInclude Include="Base\INotifyEvent.h" />
     <ClInclude Include="Base\IObserver.h" />
     <ClInclude Include="Camera\Camera.h" />
@@ -117,8 +121,11 @@
     <ClInclude Include="Tools\EditScene.h" />
     <ClInclude Include="UI\UIControl.h" />
     <ClInclude Include="UI\UIControlEvents.h" />
+    <ClInclude Include="UI\UIEvents.h" />
     <ClInclude Include="UI\UILayer.h" />
     <ClInclude Include="UI\UIProperty.h" />
+    <ClInclude Include="UI\UITargetProp.h" />
+    <ClInclude Include="UI\UITargetWindow.h" />
     <ClInclude Include="UI\UIWindow.h" />
     <ClInclude Include="WorldManager.h" />
   </ItemGroup>
@@ -166,7 +173,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions);_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS_DEBUG;COCOS2D_DEBUG=1;</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;$(ProjectDir)../libs/extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -183,7 +190,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions);_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGSNDEBUG;</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;$(ProjectDir)../libs/extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>

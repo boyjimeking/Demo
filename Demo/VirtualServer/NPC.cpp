@@ -46,4 +46,14 @@ namespace Server
 		GetControl()->ChangeState(boost::static_pointer_cast<NPC>(shared_from_this()), ENNPCAIState::enDead);
 	}
 
+	void NPC::BeAttacked( int targetID )
+	{
+		IActor::BeAttacked(targetID);
+		if (this->GetBattleInfo()->IsAlive())
+		{
+			this->SetTarget(targetID);
+			this->GetControl()->ChangeState(boost::static_pointer_cast<NPC>(this->shared_from_this()), ENNPCAIState::enAttack);
+		}
+	}
+
 }

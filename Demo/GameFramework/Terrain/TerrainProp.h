@@ -26,6 +26,7 @@ namespace Game
 		:public INotifier
 	{
 	public:
+		_Decl_Notifier(TerrainProp);
 		TerrainProp(void);
 		virtual ~TerrainProp(void);
 

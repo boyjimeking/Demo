@@ -54,20 +54,7 @@ namespace Server
 			return;
 		}
 		IActor::Ptr target = boost::static_pointer_cast<IActor>(obj);
-		target->GetBattleInfo()->SetHP(target->GetBattleInfo()->GetHP() - 1);
-		if (target->GetBattleInfo()->GetHP() <= 0)
-		{
-			target->Dead();
-		}
-		if (target->GetBattleInfo()->IsAlive())
-		{
-			if (target->IsKindof(_Get_SimulateType(NPC)))
-			{
-				NPC::Ptr npc = boost::static_pointer_cast<NPC>(obj);
-				npc->SetTarget(GetID());
-				npc->GetControl()->ChangeState(npc, ENNPCAIState::enAttack);
-			}
-		}
+		target->BeAttacked(GetID());
 	}
 
 

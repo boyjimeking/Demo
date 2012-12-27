@@ -21,9 +21,10 @@ namespace Game
 {
 	class CameraObserver;
     class Camera
-        :public INotifier
-    {
-    public:
+		:public INotifier
+	{
+	public:
+		_Decl_Notifier(Camera);
         Camera(void);
         virtual ~Camera(void);
 

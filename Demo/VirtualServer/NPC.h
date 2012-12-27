@@ -30,6 +30,9 @@ namespace Server
 		AIControl * GetControl(void) const { return m_control; }
 		int GetTarget(void) const { return m_target; }
 		void SetTarget(int val) { m_target = val; }
+
+		virtual void BeAttacked( int targetID );
+
 	protected:
 
 		AIControl *m_control;

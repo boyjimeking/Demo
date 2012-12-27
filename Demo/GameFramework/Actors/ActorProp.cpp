@@ -5,6 +5,7 @@
 #include "SceneInfo.h"
 #include "Client/Client.h"
 #include "../CSProtocol/ActorBattleInfo.h"
+#include "UI/UIProperty.h"
 
 namespace Game
 {
@@ -25,7 +26,7 @@ namespace Game
 
 	void ActorProp::Init(void)
 	{
-		switch (GetType())
+		switch (GetActorType())
 		{
 			case ENActorType::enMain:
 				{
@@ -42,7 +43,7 @@ namespace Game
 		entity->autorelease();
 		AttachObserver(entity);
 
-		ActorEventCreate event(GetType());
+		ActorEventCreate event(GetActorType());
 		NotifyChange(&event);
 		return entity;
 	}
@@ -117,6 +118,21 @@ namespace Game
 	{
 		GetBattleInfo()->SetAlive(false);
 		m_actionControl->AddAction(this, new DeadAction);
+	}
+
+	void ActorProp::BeAttacked( int hpChanged )
+	{
+		GetBattleInfo()->SetHP(GetBattleInfo()->GetHP() + hpChanged);
+		ActorEventBeAttacked event(hpChanged);
+		NotifyChange(&event);
+	}
+
+	void ActorProp::AttachUI( GUI::UIProperty *uiProp )
+	{
+		uiProp->Detach();
+		AttachObserver(uiProp);
+		ActorEventAttachUI event(this);
+		NotifyChange(&event);
 	}
 
 }

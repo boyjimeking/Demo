@@ -19,6 +19,7 @@ namespace Game
 		:public INotifier
 	{
 	public:
+		_Decl_Notifier(GridProp);
 		GridProp(void);
 		virtual ~GridProp(void);
 

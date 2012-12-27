@@ -7,6 +7,8 @@
 //////////////////////////////////////////////////////////////////////////
 #ifndef INotifier_h__
 #define INotifier_h__
+#include <vector>
+#include "INotifierType.h"
 
 class IObserver;
 struct INotifyEvent;
@@ -14,15 +16,22 @@ struct INotifyEvent;
 class INotifier
 {
 public:
+	virtual ENNotifierType::Decl GetType(void) const = 0;
+
 	static bool NotifyMode;
 	INotifier(void);
 	virtual ~INotifier(void);
 
 	void NotifyChange(const INotifyEvent *event);
 	void AttachObserver(IObserver *observer);
+	void DetachObserver(IObserver *observer);
 protected:
-	IObserver *m_observer;
+	typedef std::vector<IObserver*> ObserverList;
+	ObserverList m_observerList;
 private:
 };
+
+#define _Decl_Notifier(className)\
+	virtual ENNotifierType::Decl GetType(void) const { return GetNotifierType(className); };
 
 #endif // INotifier_h__

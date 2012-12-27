@@ -1,4 +1,5 @@
 #include "UIProperty.h"
+#include "UIEvents.h"
 
 namespace GUI
 {
@@ -10,4 +11,12 @@ namespace GUI
 	{
 
 	}
+
+	void UIProperty::Init(const std::string &windowName)
+	{
+		m_windowName = windowName;
+		UIEventInit event;
+		NotifyChange(&event);
+	}
+
 }

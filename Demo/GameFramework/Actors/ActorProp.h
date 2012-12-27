@@ -18,6 +18,10 @@ namespace Tools
 {
 	class AvatarData;
 }
+namespace GUI
+{
+	class UIProperty;
+}
 class ActorBattleInfo;
 namespace Game
 {
@@ -31,11 +35,13 @@ namespace Game
 		:public INotifier
 	{
 	public:
+		_Decl_Notifier(ActorProp);
+
 		ActorProp(ENActorType::Decl type, int id);
 		virtual ~ActorProp(void);
 
 		int GetID(void) const { return m_id; }
-		ENActorType::Decl GetType(void) const { return m_type; }
+		ENActorType::Decl GetActorType(void) const { return m_type; }
 		const cocos2d::CCPoint& GetPosition(void) const { return m_position; }
 		float GetSpeed(void) const { return m_speed; }
 
@@ -50,6 +56,9 @@ namespace Game
 		void ChangeAvatar(Tools::AvatarData *avatar);
 		void ChangeEquip(ENEquipType::Decl type, const char *avatarFile);
 		void SendAttack(int targetID);
+		void BeAttacked(int hpChanged);
+
+		void AttachUI(GUI::UIProperty *uiProp);
 
 		void SetPosition(const cocos2d::CCPoint &pos);
 

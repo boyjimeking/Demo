@@ -3,6 +3,7 @@
 #include "CCDirector.h"
 #include "UIControlEvents.h"
 #include "platform/CCFileUtils.h"
+#include "UIWindow.h"
 
 namespace GUI
 {
@@ -41,6 +42,12 @@ namespace GUI
 					cocos2d::CCSprite *sprite = cocos2d::CCSprite::create(filePath);
 					this->addChild(sprite);
 					sprite->setPosition(cocos2d::CCPointMake(getContentSize().width - 32.0f, 32.0f));
+				}
+				break;
+			case ENUIControlEvent::enCreateWindow:
+				{
+					cocos2d::CCNode *node = reinterpret_cast<const UIControlEventCreateWindow*>(event)->m_window->GetWindow();
+					this->addChild(node);
 				}
 				break;
 			default:

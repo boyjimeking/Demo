@@ -19,6 +19,7 @@ namespace GUI
 		{
 			enNone,
 			enInit,
+			enCreateWindow,
 		};
 	};
 
@@ -26,6 +27,15 @@ namespace GUI
 		:public INotifyEvent
 	{
 		virtual int GetNotifyEventType(void) const { return ENUIControlEvent::enInit; }
+	};
+
+	class UIWindow;
+	struct UIControlEventCreateWindow
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENUIControlEvent::enCreateWindow; }
+		UIControlEventCreateWindow(UIWindow *window) : m_window(window) {}
+		UIWindow *m_window;
 	};
 }
 

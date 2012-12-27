@@ -74,4 +74,19 @@ namespace Server
 		
 	}
 
+	void IActor::BeAttacked( int targetID )
+	{
+		this->GetBattleInfo()->SetHP(this->GetBattleInfo()->GetHP() - 1);
+		CSBeAttack_S2C message;
+		message.m_actorID = GetID();
+		message.m_hpChanged = -1;
+		message.Build(GetMessageType(CSBeAttack_S2C), GetID(), sizeof(CSBeAttack_S2C));
+		Send(&message);
+
+		if (this->GetBattleInfo()->GetHP() <= 0)
+		{
+			this->Dead();
+		}
+	}
+
 }

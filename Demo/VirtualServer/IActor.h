@@ -40,6 +40,8 @@ namespace Server
 		virtual void Attack(int targetID);
 		//同步战斗属性信息
 		void SycBattleInfo(void);
+		//被打
+		virtual void BeAttacked(int targetID);
 		//死亡
 		virtual void Dead(void);
 

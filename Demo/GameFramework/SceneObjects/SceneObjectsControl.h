@@ -29,6 +29,7 @@ namespace Game
 		:public INotifier
 	{
 	public:
+		_Decl_Notifier(SceneObjectsControl);
 		SceneObjectsControl(void);
 		virtual ~SceneObjectsControl(void);
 

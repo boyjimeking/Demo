@@ -247,7 +247,7 @@ namespace Game
 				{
 					WorldManager::Instance()->GetCamera()->Shake();
 				}
-				if (prop->GetType() == ENActorType::enMain)
+				if (prop->GetActorType() == ENActorType::enMain)
 				{
 					prop->SendAttack(m_targetID);
 				}

@@ -29,6 +29,7 @@ struct ENMessage
 		DefType(CSChangeActorEquip_S2C),
 		DefType(CSAttackTarget_S2C),
 		DefType(CSDead_S2C),
+		DefType(CSBeAttack_S2C),
 
 		S2CMax = 4096,
 		//////////////////////////////////////////////////////////////////////////

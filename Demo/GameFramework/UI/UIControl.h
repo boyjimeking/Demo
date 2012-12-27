@@ -9,19 +9,46 @@
 #define UIControl_h__
 
 #include "../Base/INotifier.h"
-
+#include <map>
+#include <string>
+#include "UIControlEvents.h"
+#include "cocoa/CCGeometry.h"
 namespace GUI
 {
+	class UIProperty;
 	class UIControl
 		:public INotifier
 	{
 	public:
+		_Decl_Notifier(UIControl);
 		UIControl(void);
 		virtual ~UIControl(void);
 
 		void Init(void);
+
+		template<typename Prop, typename Win>
+		Prop* CreateUI(const std::string &windowName)
+		{
+			Prop *uiProp = new Prop;
+			Win *window = new Win;
+			uiProp->AttachObserver(window);
+			uiProp->Init(windowName);
+
+			UIControlEventCreateWindow event(window);
+			NotifyChange(&event);
+
+			m_uiMap.insert(std::make_pair(windowName, uiProp));
+			return uiProp;
+		}
+
+		UIProperty* GetWindow(const std::string &windowName);
+
+		const cocos2d::CCSize& GetSize(void) const { return m_size; }
 	protected:
 	private:
+		typedef std::map<std::string, UIProperty*> UIMap;
+		UIMap m_uiMap;
+		cocos2d::CCSize m_size;
 	};
 }
 
