@@ -1,5 +1,6 @@
 #include "IObserver.h"
 #include "INotifier.h"
+#include <stddef.h>
 
 IObserver::IObserver(void)
 	:m_notifier(NULL)

@@ -9,6 +9,8 @@
 #ifndef __Demo__PhysicalObj__
 #define __Demo__PhysicalObj__
 
+//#define BOOST_NO_EXCEPTIONS
+
 #include <boost/function.hpp>
 #include "boost/bind.hpp"
 #include "cocoa/CCGeometry.h"

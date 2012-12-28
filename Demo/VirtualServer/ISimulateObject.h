@@ -8,6 +8,8 @@
 #ifndef ISimulateObject_h__
 #define ISimulateObject_h__
 
+//#define BOOST_NO_EXCEPTIONS
+
 #include "boost/smart_ptr.hpp"
 #include "SimulateType.h"
 

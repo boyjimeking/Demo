@@ -87,3 +87,8 @@ namespace Game
 		m_prePosition = from;
 	}
 }
+
+namespace boost
+{
+	void throw_exception(std::exception const&) {}
+}

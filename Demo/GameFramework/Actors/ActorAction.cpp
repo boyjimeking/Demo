@@ -15,6 +15,7 @@
 #include "platform/CCCommon.h"
 #include "Camera/Camera.h"
 #include "../CSProtocol/ActorBattleInfo.h"
+#include <stdlib.h>
 
 namespace Game
 {
