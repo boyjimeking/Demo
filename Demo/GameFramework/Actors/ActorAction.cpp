@@ -16,6 +16,7 @@
 #include "Camera/Camera.h"
 #include "../CSProtocol/ActorBattleInfo.h"
 #include <stdlib.h>
+#include "SceneInfo.h"
 
 namespace Game
 {
@@ -27,9 +28,9 @@ namespace Game
 	{
 		//enNone,	enMove,		enAttack,	enStop,		enDead	<- 新加入动作
 		{ enFollow,	enFollow,	enFollow,	enFollow,	enInterupt	},	//enNone
-		{ enFollow,	enInterupt,	enInterupt,	enInterupt,	enInterupt	},	//enAction_Move
-		{ enFollow,	enInterupt,	enInterupt,	enInterupt,	enInterupt	},	//enAction_Attack
-		{ enFollow,	enInterupt,	enInterupt,	enInterupt,	enInterupt	},	//enAction_Stop
+		{ enFollow,	enInterupt,	enInterupt,	enInterupt,	enInterupt	},	//enMove
+		{ enFollow,	enInterupt,	enInterupt,	enInterupt,	enInterupt	},	//enAttack
+		{ enFollow,	enInterupt,	enInterupt,	enInterupt,	enInterupt	},	//enStop
 		{ enForbid,	enForbid,	enForbid,	enForbid,	enForbid	},	//enDead
 	};
 	ENInterrupt::Type ENInterrupt::Check(ENAction::Type oldAction, ENAction::Type newAction)
@@ -181,7 +182,6 @@ namespace Game
 	}
 	void MoveAction::OnExit(ActorProp *prop)
 	{
-		prop->SetPosition(m_pos);
 		ActorEventStop event;
 		prop->NotifyChange(&event);
 	}
@@ -191,7 +191,26 @@ namespace Game
 		{
 			return true;
 		}
-		cocos2d::CCPoint newPos = cocos2d::ccpAdd(prop->GetPosition(), cocos2d::ccpMult(m_direction, dt * prop->GetSpeed()));
+		cocos2d::CCPoint changed = cocos2d::ccpMult(m_direction, dt * prop->GetSpeed());
+		cocos2d::CCPoint newPos = cocos2d::ccpAdd(prop->GetPosition(), changed);
+		if (!WorldManager::Instance()->GetSceneInfo()->IsPointCanStanc(newPos))
+		{
+			changed.x = dt * prop->GetSpeed();
+			changed.x *= m_direction.x > 0 ? 1 : -1;
+			changed.y = 0.0f;
+			newPos = cocos2d::ccpAdd(prop->GetPosition(), changed);
+			if (!WorldManager::Instance()->GetSceneInfo()->IsPointCanStanc(newPos))
+			{
+				changed.y = m_direction.y * dt * prop->GetSpeed();
+				changed.y *= m_direction.y > 0 ? 1 : -1;
+				changed.x = 0.0f;
+				newPos = cocos2d::ccpAdd(prop->GetPosition(), changed);
+				if (!WorldManager::Instance()->GetSceneInfo()->IsPointCanStanc(newPos))
+				{
+					return true;
+				}
+			}
+		}
 		if (cocos2d::ccpDistanceSQ(m_pos, m_startPos) <= cocos2d::ccpDistanceSQ(newPos, m_startPos))
 		{
 			prop->SetPosition(m_pos);

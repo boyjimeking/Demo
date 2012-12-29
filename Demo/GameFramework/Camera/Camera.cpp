@@ -13,6 +13,8 @@
 #include "CCDirector.h"
 #include "Camera.h"
 #include "layers_scenes_transitions_nodes/CCScene.h"
+#include "SceneInfo.h"
+#include "WorldManager.h"
 
 namespace Game
 {
@@ -81,7 +83,24 @@ namespace Game
 
     void Camera::SetPosition(const cocos2d::CCPoint &newPosition)
     {
-        m_position = newPosition;
+		if (m_position.equals(newPosition))
+		{
+			return;
+		}
+		cocos2d::CCPoint innerPos = newPosition;
+		if (newPosition.x < 4.8f || newPosition.x > WorldManager::Instance()->GetSceneInfo()->GetWidth() - 9.6f)
+		{
+			innerPos.x = m_position.x;
+		}
+		if (newPosition.y < 3.2f || newPosition.y > WorldManager::Instance()->GetSceneInfo()->GetHeight() - 4.8f)
+		{
+			innerPos.y = m_position.y;
+		}
+		if (m_position.equals(innerPos))
+		{
+			return;
+		}
+        m_position = innerPos;
 		cocos2d::CCPoint entityPos = m_position;
         entityPos.x -= m_size.width / 2;
         entityPos.y -= m_size.height / 2;
