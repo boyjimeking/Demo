@@ -29,7 +29,7 @@ namespace Game
 	{
 		virtual int GetNotifyEventType( void ) const { return ENSceneObjectControl::enAddObject; }
 
-		SceneObjectControlEventAddObject(SceneObjectEntity *entity) :m_entity(entity) {}
+		SceneObjectControlEventAddObject(SceneObjectEntity *entity);
 
 		SceneObjectEntity *m_entity;
 	};
@@ -39,7 +39,7 @@ namespace Game
 	{
 		virtual int GetNotifyEventType(void) const { return ENSceneObjectControl::enAddObjectImage; }
 
-		SceneObjectEventAddObjectImage(const std::string &imageName) : m_imageName(imageName) {}
+		SceneObjectEventAddObjectImage(const std::string &imageName);
 
 		const std::string &m_imageName;
 	};
@@ -49,7 +49,7 @@ namespace Game
 	{
 		virtual int GetNotifyEventType(void) const { return ENSceneObjectControl::enRemoveObjectImage; }
 
-		SceneObjectEventRemoveObjectImage(const std::string &imageName) : m_imageName(imageName) {}
+		SceneObjectEventRemoveObjectImage(const std::string &imageName);
 
 		const std::string &m_imageName;
 	};

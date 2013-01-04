@@ -7,3 +7,18 @@
 //
 
 #include "CameraNotifyEvents.h"
+namespace Game
+{
+	CameraPosChanged::CameraPosChanged( const cocos2d::CCPoint &pos )
+		:m_pos(pos)
+	{
+
+	}
+
+	CameraScaleChanged::CameraScaleChanged( float scale )
+		:m_scale(scale)
+	{
+
+	}
+
+}

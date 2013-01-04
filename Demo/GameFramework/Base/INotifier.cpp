@@ -18,7 +18,7 @@ void INotifier::NotifyChange( const INotifyEvent *event )
 {
 	if (INotifier::NotifyMode)
 	{
-		for (int index = 0; index < m_observerList.size(); ++index)
+		for (unsigned int index = 0; index < m_observerList.size(); ++index)
 		{
 			m_observerList[index]->OnNotifyChange(this, event);
 		}

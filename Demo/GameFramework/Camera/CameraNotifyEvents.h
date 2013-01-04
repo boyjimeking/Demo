@@ -30,7 +30,7 @@ namespace Game
 	{
 		virtual int GetNotifyEventType(void) const { return ENCameraEvent::enPosChanged; }
 
-		CameraPosChanged(const cocos2d::CCPoint &pos) : m_pos(pos) {}
+		CameraPosChanged(const cocos2d::CCPoint &pos);
 		const cocos2d::CCPoint& GetCameraPosition(void) const { return m_pos; }
 	private:
 		const cocos2d::CCPoint &m_pos;
@@ -39,7 +39,7 @@ namespace Game
 		:public INotifyEvent
 	{
 		virtual int GetNotifyEventType(void) const { return ENCameraEvent::enScaleChanged; }
-		CameraScaleChanged(float scale) : m_scale(scale) {}
+		CameraScaleChanged(float scale);
 		float GetScale(void) const { return m_scale; }
 	private:
 		float m_scale;
