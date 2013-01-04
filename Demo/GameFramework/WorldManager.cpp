@@ -22,6 +22,7 @@
 #include "Tools/DebugLayer.h"
 #endif // COCOS2D_DEBUG
 #include "SceneInfo.h"
+#include "Animation/SkeletonCocos2D.h"
 
 
 namespace Game
@@ -54,6 +55,7 @@ namespace Game
         ,m_physicalControl(NULL)
         ,m_client(new Net::Client)
 		,m_root(NULL)
+		,m_sample(NULL)
 #if COCOS2D_DEBUG
 		,m_debugLayer(new Tools::DebugLayer)
 #endif // COCOS2D_DEBUG
@@ -70,6 +72,7 @@ namespace Game
 		delete m_terrain;
 		delete m_client;
 		delete m_sceneInfo;
+		delete m_sample;
 #if COCOS2D_DEBUG
 		delete m_debugLayer;
 #endif
@@ -122,6 +125,15 @@ namespace Game
 			m_uiControl->AttachObserver(uiLayer);
 			scene->addChild(uiLayer);
 			m_uiControl->Init();
+		}
+		//bone
+		{
+			m_sample = new SkeletonCocos2D;
+			m_sample->Load("skeletonbone.xml","texture.xml","texture.png","RobotBiped");
+			scene->addChild(m_sample);
+			m_sample->m_skeleton->PlayAnimation("run",1.0f,-1,2);
+			CCSize size = CCDirector::sharedDirector()->getWinSize();
+			m_sample->setPosition(cocos2d::CCPointMake(size.width/2, 150));
 		}
 #if COCOS2D_DEBUG
 		cameraObj->addChild(m_debugLayer);

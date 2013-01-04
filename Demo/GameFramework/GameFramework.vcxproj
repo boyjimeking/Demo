@@ -32,6 +32,10 @@
     <ClCompile Include="Actors\ActorsLayer.cpp" />
     <ClCompile Include="Actors\ActorTouch.cpp" />
     <ClCompile Include="Actors\EquipObject.cpp" />
+    <ClCompile Include="Animation\Skeleton2D.cpp" />
+    <ClCompile Include="Animation\Skeleton2DResource.cpp" />
+    <ClCompile Include="Animation\SkeletonAnimation2DRes.cpp" />
+    <ClCompile Include="Animation\SkeletonCocos2D.cpp" />
     <ClCompile Include="Base\INotifier.cpp" />
     <ClCompile Include="Base\INotifyEvent.cpp" />
     <ClCompile Include="Base\IObserver.cpp" />
@@ -91,6 +95,12 @@
     <ClInclude Include="Actors\ActorsLayer.h" />
     <ClInclude Include="Actors\ActorTouch.h" />
     <ClInclude Include="Actors\EquipObject.h" />
+    <ClInclude Include="Animation\Skeleton2D.h" />
+    <ClInclude Include="Animation\Skeleton2DResource.h" />
+    <ClInclude Include="Animation\Skeleton2DXmlDef.h" />
+    <ClInclude Include="Animation\SkeletonAnimation2DRes.h" />
+    <ClInclude Include="Animation\SkeletonCocos2D.h" />
+    <ClInclude Include="Animation\SkeletonDef.h" />
     <ClInclude Include="Base\GlobalDef.h" />
     <ClInclude Include="Base\INotifier.h" />
     <ClInclude Include="Base\INotifierType.h" />

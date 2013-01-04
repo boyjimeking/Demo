@@ -1,0 +1,9 @@
+<TextureAtlas name="Plant" width="128" height="128">
+ <SubTexture name="Blover_folder/Blover_head2" pX="0" pY="0" width="34" height="29" x="0" y="83"/>
+ <SubTexture name="Blover_folder/Blover_head" pX="0" pY="0" width="34" height="29" x="36" y="83"/>
+ <SubTexture name="Blover_folder/Tween 1" pX="48.1" pY="42.9" width="95" height="81" x="0" y="0"/>
+ <SubTexture name="Blover_folder/Blover_dirt_front" pX="0" pY="0" width="12" height="4" x="113" y="19"/>
+ <SubTexture name="Blover_folder/Blover_stem1" pX="0" pY="0" width="18" height="17" x="97" y="0"/>
+ <SubTexture name="Blover_folder/Blover_stem2" pX="0" pY="0" width="14" height="17" x="97" y="19"/>
+ <SubTexture name="Blover_folder/Blober_dirt_back" pX="0" pY="0" width="10" height="5" x="113" y="25"/>
+</TextureAtlas>

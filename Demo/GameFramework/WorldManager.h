@@ -33,6 +33,8 @@ namespace Tools
 	class Scene;
 }
 
+class SkeletonCocos2D;
+
 namespace Game
 {
 	class SceneInfo;
@@ -100,6 +102,7 @@ namespace Game
 #if COCOS2D_DEBUG
 		Tools::DebugLayer *m_debugLayer;
 #endif
+		SkeletonCocos2D *m_sample;
 	private:
 		WorldManager(void);
 		~WorldManager(void);

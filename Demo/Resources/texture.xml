@@ -1,0 +1,16 @@
+<TextureAtlas name="bone" width="512" height="64">
+ <SubTexture name="RobotBiped_f/右前臂" pX="5" pY="4" width="10" height="19" x="208" y="0"/>
+ <SubTexture name="RobotBiped_f/右手" pX="3" pY="0" width="7" height="9" x="252" y="0"/>
+ <SubTexture name="RobotBiped_f/右臂" pX="7" pY="5" width="14" height="19" x="180" y="0"/>
+ <SubTexture name="RobotBiped_f/武器" pX="17" pY="11" width="80" height="16" x="0" y="0"/>
+ <SubTexture name="RobotBiped_f/右大腿" pX="7" pY="5" width="14" height="28" x="132" y="0"/>
+ <SubTexture name="RobotBiped_f/头" pX="20" pY="18" width="32" height="18" x="98" y="0"/>
+ <SubTexture name="RobotBiped_f/胸" pX="6" pY="7" width="18" height="9" x="220" y="0"/>
+ <SubTexture name="RobotBiped_f/胯" pX="2" pY="2" width="4" height="4" x="270" y="0"/>
+ <SubTexture name="RobotBiped_f/身体" pX="3" pY="14" width="10" height="16" x="240" y="0"/>
+ <SubTexture name="RobotBiped_f/小腿" pX="7" pY="6" width="14" height="42" x="82" y="0"/>
+ <SubTexture name="RobotBiped_f/左大腿" pX="7" pY="5" width="14" height="28" x="148" y="0"/>
+ <SubTexture name="RobotBiped_f/左臂" pX="7" pY="5" width="14" height="19" x="164" y="0"/>
+ <SubTexture name="RobotBiped_f/左前臂" pX="5" pY="4" width="10" height="19" x="196" y="0"/>
+ <SubTexture name="RobotBiped_f/左手" pX="3" pY="0" width="7" height="9" x="261" y="0"/>
+</TextureAtlas>

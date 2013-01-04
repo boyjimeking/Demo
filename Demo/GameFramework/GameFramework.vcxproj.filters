@@ -37,6 +37,9 @@
     <Filter Include="GameFramework\SceneObjects">
       <UniqueIdentifier>{de78a17f-5c02-4023-853f-7c514005323e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework\Animation">
+      <UniqueIdentifier>{0198c6a8-669b-4bb6-961e-a310aacfdf02}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\CSProtocol\CSMessageDef.cpp">
@@ -201,11 +204,23 @@
     <ClCompile Include="UI\UIEvents.cpp">
       <Filter>GameFramework\UI</Filter>
     </ClCompile>
+    <ClCompile Include="UI\UITargetProp.cpp">
+      <Filter>GameFramework\UI</Filter>
+    </ClCompile>
     <ClCompile Include="UI\UITargetWindow.cpp">
       <Filter>GameFramework\UI</Filter>
     </ClCompile>
-    <ClCompile Include="UI\UITargetProp.cpp">
-      <Filter>GameFramework\UI</Filter>
+    <ClCompile Include="Animation\SkeletonAnimation2DRes.cpp">
+      <Filter>GameFramework\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation\SkeletonCocos2D.cpp">
+      <Filter>GameFramework\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation\Skeleton2D.cpp">
+      <Filter>GameFramework\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation\Skeleton2DResource.cpp">
+      <Filter>GameFramework\Animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -377,14 +392,32 @@
     <ClInclude Include="UI\UIEvents.h">
       <Filter>GameFramework\UI</Filter>
     </ClInclude>
-    <ClInclude Include="UI\UITargetWindow.h">
-      <Filter>GameFramework\UI</Filter>
+    <ClInclude Include="Base\INotifierType.h">
+      <Filter>GameFramework\Base</Filter>
     </ClInclude>
     <ClInclude Include="UI\UITargetProp.h">
       <Filter>GameFramework\UI</Filter>
     </ClInclude>
-    <ClInclude Include="Base\INotifierType.h">
-      <Filter>GameFramework\Base</Filter>
+    <ClInclude Include="UI\UITargetWindow.h">
+      <Filter>GameFramework\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation\SkeletonAnimation2DRes.h">
+      <Filter>GameFramework\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation\SkeletonCocos2D.h">
+      <Filter>GameFramework\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation\SkeletonDef.h">
+      <Filter>GameFramework\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation\Skeleton2D.h">
+      <Filter>GameFramework\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation\Skeleton2DResource.h">
+      <Filter>GameFramework\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation\Skeleton2DXmlDef.h">
+      <Filter>GameFramework\Animation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,0 +1,170 @@
+<skeleton name="Plant" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="Blover">
+   <b name="Blover_dirt_back" x="37.4" y="65.3" kX="0" kY="0" cX="1" cY="1" z="0">
+    <d name="Blover_folder/Blober_dirt_back"/>
+   </b>
+   <b name="Blover_stem2" x="30.55" y="52.25" kX="0" kY="0" cX="1" cY="1" z="1">
+    <d name="Blover_folder/Blover_stem2"/>
+   </b>
+   <b name="Blover_stem1" x="29.1" y="38" kX="0" kY="0" cX="1" cY="1" z="2">
+    <d name="Blover_folder/Blover_stem1"/>
+   </b>
+   <b name="Blover_dirt_front" x="36.3" y="67.7" kX="0" kY="0" cX="1" cY="1" z="3">
+    <d name="Blover_folder/Blover_dirt_front"/>
+   </b>
+   <b name="Blover_petals" x="39.1" y="28.45" kX="0" kY="0" cX="1" cY="1" z="4">
+    <d name="Blover_folder/Tween 1"/>
+   </b>
+   <b name="Blover_head" x="21.9" y="15.25" kX="0" kY="0" cX="1" cY="1" z="5">
+    <d name="Blover_folder/Blover_head"/>
+    <d name="Blover_folder/Blover_head2"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="Blover">
+   <mov name="anim_idle" dr="33" to="6" drTW="33" lp="1" twE="NaN">
+    <b name="Blover_dirt_back" sc="1" dl="0">
+     <f x="37.4" y="65.3" kX="0" kY="0" cX="1" cY="1" z="0" dI="0" twE="0" dr="4"/>
+     <f x="37.7" y="64.85" kX="0" kY="0" cX="0.94" cY="1.11" z="0" dI="0" twE="0" dr="4"/>
+     <f x="37.4" y="65.3" kX="0" kY="0" cX="1" cY="1" z="0" dI="0" twE="0" dr="4"/>
+     <f x="37.7" y="64.85" kX="0" kY="0" cX="0.94" cY="1.11" z="0" dI="0" twE="0" dr="4"/>
+     <f x="37.4" y="65.45" kX="0" kY="0" cX="1" cY="1" z="0" dI="0" twE="0" dr="4"/>
+     <f x="37.7" y="64.85" kX="0" kY="0" cX="0.94" cY="1.11" z="0" dI="0" twE="0" dr="4"/>
+     <f x="37.4" y="65.45" kX="0" kY="0" cX="1" cY="1" z="0" dI="0" twE="0" dr="4"/>
+     <f x="37.7" y="64.7" kX="0" kY="0" cX="0.94" cY="1.11" z="0" dI="0" twE="0" dr="4"/>
+     <f x="37.4" y="65.3" kX="0" kY="0" cX="1" cY="1" z="0" dI="0" twE="0" dr="1"/>
+    </b>
+    <b name="Blover_stem2" sc="1" dl="0">
+     <f x="30.55" y="52.25" kX="0" kY="0" cX="1" cY="1" z="1" dI="0" twE="0" dr="4"/>
+     <f x="24.6" y="46.65" kX="-15.15" kY="-6.23" cX="1" cY="1.47" z="1" dI="0" twE="0" dr="4"/>
+     <f x="21.75" y="55.7" kX="-28.62" kY="-19.69" cX="1" cY="1.22" z="1" dI="0" twE="0" dr="4"/>
+     <f x="24.5" y="46.7" kX="-15.15" kY="-6.23" cX="1" cY="1.5" z="1" dI="0" twE="0" dr="4"/>
+     <f x="30.55" y="52.25" kX="0" kY="0" cX="1" cY="1" z="1" dI="0" twE="0" dr="4"/>
+     <f x="42.05" y="42.15" kX="25.27" kY="25.27" cX="1" cY="1.52" z="1" dI="0" twE="0" dr="4"/>
+     <f x="45.75" y="48.95" kX="45.58" kY="45.58" cX="0.99" cY="0.99" z="1" dI="0" twE="0" dr="4"/>
+     <f x="40.45" y="43.35" kX="23.95" kY="23.95" cX="1" cY="1.39" z="1" dI="0" twE="0" dr="4"/>
+     <f x="30.55" y="52.25" kX="0" kY="0" cX="1" cY="1" z="1" dI="0" twE="0" dr="1"/>
+    </b>
+    <b name="Blover_stem1" sc="1" dl="0">
+     <f x="29.1" y="38" kX="0" kY="0" cX="1" cY="1" z="2" dI="0" twE="0" dr="4"/>
+     <f x="19.55" y="31.6" kX="-13.72" kY="-11.93" cX="1.01" cY="1.29" z="2" dI="0" twE="0" dr="4"/>
+     <f x="12.2" y="42.65" kX="-29.65" kY="-12.92" cX="1.05" cY="1.11" z="2" dI="0" twE="0" dr="4"/>
+     <f x="19.5" y="33.2" kX="-13.72" kY="-11.93" cX="1.01" cY="1.12" z="2" dI="0" twE="0" dr="4"/>
+     <f x="29.1" y="38" kX="0" kY="0" cX="1" cY="1" z="2" dI="0" twE="0" dr="4"/>
+     <f x="43.8" y="28.55" kX="17.01" kY="4.05" cX="1.08" cY="1.28" z="2" dI="0" twE="0" dr="4"/>
+     <f x="50.25" y="39.05" kX="34.18" kY="16.73" cX="1.04" cY="1.2" z="2" dI="0" twE="0" dr="4"/>
+     <f x="43.95" y="28.45" kX="20.83" kY="7.87" cX="1.08" cY="1.27" z="2" dI="0" twE="0" dr="4"/>
+     <f x="29.1" y="38" kX="0" kY="0" cX="1" cY="1" z="2" dI="0" twE="0" dr="1"/>
+    </b>
+    <b name="Blover_dirt_front" sc="1" dl="0">
+     <f x="36.3" y="67.7" kX="0" kY="0" cX="1" cY="1" z="3" dI="0" twE="0" dr="4"/>
+     <f x="36.7" y="67.35" kX="0" kY="0" cX="0.94" cY="1.11" z="3" dI="0" twE="0" dr="4"/>
+     <f x="36.3" y="67.7" kX="0" kY="0" cX="1" cY="1" z="3" dI="0" twE="0" dr="4"/>
+     <f x="36.7" y="67.35" kX="0" kY="0" cX="0.94" cY="1.11" z="3" dI="0" twE="0" dr="4"/>
+     <f x="36.3" y="67.7" kX="0" kY="0" cX="1" cY="1" z="3" dI="0" twE="0" dr="4"/>
+     <f x="36.7" y="67.35" kX="0" kY="0" cX="0.94" cY="1.11" z="3" dI="0" twE="0" dr="4"/>
+     <f x="36.3" y="67.7" kX="0" kY="0" cX="1" cY="1" z="3" dI="0" twE="0" dr="4"/>
+     <f x="36.7" y="67.35" kX="0" kY="0" cX="0.94" cY="1.11" z="3" dI="0" twE="0" dr="4"/>
+     <f x="36.3" y="67.7" kX="0" kY="0" cX="1" cY="1" z="3" dI="0" twE="0" dr="1"/>
+    </b>
+    <b name="Blover_petals" sc="1" dl="0">
+     <f x="39.1" y="28.45" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="33.4" y="27.55" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="27.7" y="21.85" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="24.85" y="24.55" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="22" y="32.05" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="24.85" y="30.55" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="27.7" y="21.85" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="33.4" y="23.35" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="39.1" y="28.45" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="45.7" y="27.55" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="52.3" y="20.65" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="54.4" y="24.85" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="56.5" y="32.65" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="54.4" y="29.95" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="52.3" y="20.65" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="45.7" y="21.85" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="39.1" y="28.45" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="1"/>
+    </b>
+    <b name="Blover_head" sc="1" dl="0">
+     <f x="21.9" y="15.25" kX="0" kY="0" cX="1" cY="1" z="5" dI="0" twE="0" dr="4"/>
+     <f x="9.95" y="9.8" kX="0" kY="0" cX="1" cY="1" z="5" dI="0" twE="0" dr="4"/>
+     <f x="4.8" y="18.55" kX="0" kY="0" cX="1" cY="1" z="5" dI="0" twE="0" dr="4"/>
+     <f x="9.95" y="9.8" kX="0" kY="0" cX="1" cY="1" z="5" dI="0" twE="0" dr="4"/>
+     <f x="21.9" y="15.25" kX="0" kY="0" cX="1" cY="1" z="5" dI="0" twE="0" dr="4"/>
+     <f x="34.65" y="8.35" kX="0" kY="0" cX="1" cY="1" z="5" dI="0" twE="0" dr="4"/>
+     <f x="40.35" y="19.7" kX="0" kY="0" cX="1" cY="1" z="5" dI="0" twE="0" dr="4"/>
+     <f x="34.65" y="8.35" kX="0" kY="0" cX="1" cY="1" z="5" dI="0" twE="0" dr="4"/>
+     <f x="21.9" y="15.25" kX="0" kY="0" cX="1" cY="1" z="5" dI="0" twE="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="anim_blow" dr="19" to="6" drTW="19" lp="1" twE="NaN">
+    <b name="Blover_dirt_back" sc="1" dl="0">
+     <f x="37.4" y="65.3" kX="0" kY="0" cX="1" cY="1" z="0" dI="0" twE="0" dr="6"/>
+     <f x="36.65" y="65.3" kX="-7.63" kY="0" cX="1" cY="1.01" z="0" dI="0" twE="0" dr="4"/>
+     <f x="38.55" y="65.3" kX="12.12" kY="0" cX="1" cY="1.02" z="0" dI="0" twE="0" dr="9"/>
+    </b>
+    <b name="Blover_stem2" sc="1" dl="0">
+     <f x="30.55" y="52.25" kX="0" kY="0" cX="1" cY="1" z="1" dI="0" twE="0" dr="6"/>
+     <f x="22.15" y="63.15" kX="-42.92" kY="-36.85" cX="1" cY="1.02" z="1" dI="0" twE="0" dr="2"/>
+     <f x="32.1" y="51.2" kX="4.86" kY="7.87" cX="1" cY="1.08" z="1" dI="0" twE="0" dr="2"/>
+     <f x="43.55" y="44.75" kX="33.79" kY="33.79" cX="1" cY="1.26" z="1" dI="0" twE="0" dr="9"/>
+    </b>
+    <b name="Blover_stem1" sc="1" dl="0">
+     <f x="29.1" y="38" kX="0" kY="0" cX="1" cY="1" z="2" dI="0" twE="0" dr="6"/>
+     <f x="14.25" y="46.6" kX="-25.65" kY="-8.99" cX="0.93" cY="1.07" z="2" dI="0" twE="0" dr="2"/>
+     <f x="31.3" y="38.25" kX="2.08" kY="1.01" cX="0.97" cY="1.15" z="2" dI="0" twE="0" dr="2"/>
+     <f x="50.05" y="27.55" kX="25.88" kY="17.46" cX="1.01" cY="1.49" z="2" dI="0" twE="0" dr="9"/>
+    </b>
+    <b name="Blover_dirt_front" sc="1" dl="0">
+     <f x="36.3" y="67.7" kX="0" kY="0" cX="1" cY="1" z="3" dI="0" twE="0" dr="6"/>
+     <f x="35.85" y="67.55" kX="-7.63" kY="0" cX="1" cY="1.01" z="3" dI="0" twE="0" dr="4"/>
+     <f x="36.95" y="67.55" kX="12.12" kY="0" cX="1" cY="1.02" z="3" dI="0" twE="0" dr="9"/>
+    </b>
+    <b name="Blover_petals" sc="1" dl="0">
+     <f x="39.1" y="28.45" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="6"/>
+     <f x="24.3" y="36.6" kX="0" kY="0" cX="0.95" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="39.15" y="27.6" kX="0" kY="0" cX="0.96" cY="1" z="4" dI="0" twE="0" dr="2"/>
+     <f x="56.9" y="24.05" kX="0" kY="0" cX="1" cY="1" z="4" dI="0" twE="0" dr="3"/>
+     <f x="55.8" y="26.45" kX="120" kY="120" cX="1.3" cY="1.3" z="4" dI="0" twE="0" dr="3"/>
+     <f x="55.7" y="25.45" kX="-120" kY="-120" cX="1.4" cY="1.4" z="4" dI="0" twE="0" dr="3"/>
+    </b>
+    <b name="Blover_head" sc="1" dl="0">
+     <f x="21.9" y="15.25" kX="0" kY="0" cX="1" cY="1" z="5" dI="0" twE="0" dr="6"/>
+     <f x="7.7" y="23.35" kX="0" kY="0" cX="1" cY="1" z="5" dI="0" twE="0" dr="4"/>
+     <f x="40.3" y="10.15" kX="0" kY="0" cX="1" cY="1" z="5" dI="1" twE="0" dr="3"/>
+     <f x="37" y="7.25" kX="0" kY="0" cX="1.2" cY="1.2" z="5" dI="1" twE="0" dr="3"/>
+     <f x="36.6" y="7.85" kX="0" kY="0" cX="1.2" cY="1.2" z="5" dI="1" twE="0" dr="3"/>
+    </b>
+   </mov>
+   <mov name="anim_loop" dr="10" to="6" drTW="10" lp="1" twE="NaN">
+    <b name="Blover_dirt_back" sc="1" dl="0">
+     <f x="38.55" y="65.3" kX="12.12" kY="0" cX="1" cY="1.02" z="0" dI="0" twE="0" dr="10"/>
+    </b>
+    <b name="Blover_stem2" sc="1" dl="0">
+     <f x="43.55" y="44.75" kX="33.79" kY="33.79" cX="1" cY="1.26" z="1" dI="0" twE="0" dr="10"/>
+    </b>
+    <b name="Blover_stem1" sc="1" dl="0">
+     <f x="50.05" y="27.55" kX="25.88" kY="17.46" cX="1.01" cY="1.49" z="2" dI="0" twE="0" dr="10"/>
+    </b>
+    <b name="Blover_dirt_front" sc="1" dl="0">
+     <f x="36.95" y="67.55" kX="12.12" kY="0" cX="1" cY="1.02" z="3" dI="0" twE="0" dr="10"/>
+    </b>
+    <b name="Blover_petals" sc="1" dl="0">
+     <f x="55.8" y="26.45" kX="0" kY="0" cX="1.3" cY="1.3" z="4" dI="0" twE="0" dr="3"/>
+     <f x="55.7" y="25.45" kX="120" kY="120" cX="1.4" cY="1.4" z="4" dI="0" twE="0" dr="3"/>
+     <f x="55.7" y="25.45" kX="-120" kY="-120" cX="1.4" cY="1.4" z="4" dI="0" twE="0" dr="3"/>
+     <f x="55.8" y="26.45" kX="0" kY="0" cX="1.3" cY="1.3" z="4" dI="0" twE="0" dr="1"/>
+    </b>
+    <b name="Blover_head" sc="1" dl="0">
+     <f x="37" y="7.25" kX="0" kY="0" cX="1.2" cY="1.2" z="5" dI="1" twE="0" dr="3"/>
+     <f x="36.6" y="7.85" kX="0" kY="0" cX="1.2" cY="1.2" z="5" dI="1" twE="0" dr="3"/>
+     <f x="36.6" y="7.85" kX="0" kY="0" cX="1.2" cY="1.2" z="5" dI="1" twE="0" dr="3"/>
+     <f x="37" y="7.25" kX="0" kY="0" cX="1.2" cY="1.2" z="5" dI="1" twE="0" dr="1"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+</skeleton>
