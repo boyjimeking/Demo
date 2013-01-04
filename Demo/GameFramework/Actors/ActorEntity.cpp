@@ -20,7 +20,13 @@
 #include "../Tools/AnimationData.h"
 #include "../CCFileUtils.h"
 #include "EquipObject.h"
-
+#include "boost/algorithm/string.hpp"
+#include "boost/function.hpp"
+#include "boost/bind.hpp"
+#include "Tools/BoneAvatarData.h"
+#include "Animation/SkeletonCocos2D.h"
+#include "Tools/BoneAnimationGroup.h"
+#include "Tools/BoneAnimationData.h"
 
 namespace Game
 {
@@ -29,6 +35,8 @@ namespace Game
 	,m_touchCallBack(NULL)
 	,m_currentAnimation(ENAnimation::enIdle)
 	,m_avatar(NULL)
+	,m_boneAvatar(NULL)
+	,m_bone(NULL)
 	{
 		m_sBlendFunc.src=GL_SRC_ALPHA;
 	}
@@ -47,19 +55,19 @@ namespace Game
 		{
 			case ENActorEvent::enCreate:
 				{
-					setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.3f));
 					const ActorEventCreate *actorEvent = reinterpret_cast<const ActorEventCreate*>(event);
 					switch (actorEvent->GetType())
 					{
 					case ENActorType::enMain:
 						{
-							LoadAvatarFromFile("MainActor.ava");
-							setScale(GetAvatar()->GetTransScale());
-							cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(GetAvatar()->GetPList());
+							LoadAvatarFromFile("MainActor.bva");
+							setScale(GetBoneAvatar()->GetTransScale());
+							init();
 						}
 						break;
 					default:
 						{
+							setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.3f));
 							cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
 							m_touchCallBack = new TouchMonster(reinterpret_cast<ActorProp*>(notify));
 							LoadAvatarFromFile("NPCActor.ava");
@@ -116,6 +124,7 @@ namespace Game
 				break;
 			case ENActorEvent::enChangeEquip:
 				{
+					return;
 					const ActorEventChangeEquip *actorEvent = reinterpret_cast<const ActorEventChangeEquip*>(event);
 					cocos2d::CCArray *childArray = getChildren();
 					CCObject* pObj = NULL;
@@ -231,6 +240,7 @@ namespace Game
 
 		if (NULL == GetAvatar())
 		{
+			PlayBoneAnimation(type, direction);
 			return;
 		}
 		Tools::AnimationGroup *animGroup = GetAvatar()->Lookup(type);
@@ -271,12 +281,25 @@ namespace Game
 		}
 	}
 
-	void ActorEntity::LoadAvatarFromFile( const char *file )
+	void ActorEntity::LoadAvatarFromFile(const char *fileName)
 	{
-		const char *fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(file);
+		boost::function<void(unsigned char*, unsigned int)> func;
+		if (boost::algorithm::ends_with(fileName, ".ava"))
+		{
+			func = boost::bind(&ActorEntity::LoadAvatar, this, _1, _2);
+		}
+		else if (boost::algorithm::ends_with(fileName, ".bva"))
+		{
+			func = boost::bind(&ActorEntity::LoadBoneAvatar, this, _1, _2);
+		}
+		else
+		{
+			return;
+		}
+		const char *fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(fileName);
 		unsigned long size = 0;
 		unsigned char *buff = cocos2d::CCFileUtils::sharedFileUtils()->getFileData(fullPath, "rb", &size);
-		LoadAvatar(buff, size);
+		func(buff, size);
 		delete[] buff;
 	}
 
@@ -313,6 +336,42 @@ namespace Game
 		m_currentAnimation = ENAnimation::enError;
 		m_currentDirection = ENDirection::enError;
 		PlayAnimation(type, direction);
+	}
+
+	void ActorEntity::LoadBoneAvatar( unsigned char *data, unsigned int size )
+	{
+		if (0 == size)
+		{
+			return;
+		}
+		if (NULL == m_boneAvatar)
+		{
+			m_boneAvatar = new Tools::BoneAvatarData;
+		}
+		m_boneAvatar->Read(data, size);
+		m_bone = new SkeletonCocos2D;
+		m_bone->Load("skeletonbone.xml","texture.xml","texture.png","RobotBiped");
+		CCNode::addChild(m_bone, m_bone->getZOrder(), m_bone->getTag());
+		m_bone->m_skeleton->PlayAnimation("run",1.0f,-1,2);
+	}
+
+	void ActorEntity::PlayBoneAnimation(ENAnimation::Decl type, ENDirection::Decl direction)
+	{
+		if (NULL == GetBoneAvatar())
+		{
+			return;
+		}
+		Tools::BoneAnimationGroup *animGroup = GetBoneAvatar()->Lookup(type);
+		if (NULL == animGroup)
+		{
+			return;
+		}
+		Tools::BoneAnimationData *animData = animGroup->LookupAnimation(direction);
+		if (NULL == animData)
+		{
+			return;
+		}
+		m_bone->m_skeleton->PlayAnimation(animData->GetAnimationName(), animData->GetSpeed(), -1, animData->IsLoop());
 	}
 
 }

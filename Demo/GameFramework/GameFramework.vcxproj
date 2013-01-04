@@ -61,6 +61,7 @@
     <ClCompile Include="Terrain\TerrainProp.cpp" />
     <ClCompile Include="Tools\DebugLayer.cpp" />
     <ClCompile Include="Tools\EditAvatarData.cpp" />
+    <ClCompile Include="Tools\EditBoneAvatarData.cpp" />
     <ClCompile Include="Tools\EditScene.cpp" />
     <ClCompile Include="UI\UIControl.cpp" />
     <ClCompile Include="UI\UIControlEvents.cpp" />
@@ -128,6 +129,7 @@
     <ClInclude Include="Terrain\TerrainProp.h" />
     <ClInclude Include="Tools\DebugLayer.h" />
     <ClInclude Include="Tools\EditAvatarData.h" />
+    <ClInclude Include="Tools\EditBoneAvatarData.h" />
     <ClInclude Include="Tools\EditScene.h" />
     <ClInclude Include="UI\UIControl.h" />
     <ClInclude Include="UI\UIControlEvents.h" />

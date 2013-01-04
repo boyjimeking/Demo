@@ -54,6 +54,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)../libs/external</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -69,6 +70,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)../libs/external</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -84,6 +86,9 @@
     <ClCompile Include="AnimationData.cpp" />
     <ClCompile Include="AnimationGroup.cpp" />
     <ClCompile Include="AvatarData.cpp" />
+    <ClCompile Include="BoneAnimationData.cpp" />
+    <ClCompile Include="BoneAnimationGroup.cpp" />
+    <ClCompile Include="BoneAvatarData.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="StreamHelper.cpp" />
     <ClCompile Include="tinystr.cpp" />
@@ -95,6 +100,9 @@
     <ClInclude Include="AnimationData.h" />
     <ClInclude Include="AnimationGroup.h" />
     <ClInclude Include="AvatarData.h" />
+    <ClInclude Include="BoneAnimationData.h" />
+    <ClInclude Include="BoneAnimationGroup.h" />
+    <ClInclude Include="BoneAvatarData.h" />
     <ClInclude Include="ENDirection.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Singleton.h" />

@@ -222,6 +222,9 @@
     <ClCompile Include="Animation\Skeleton2DResource.cpp">
       <Filter>GameFramework\Animation</Filter>
     </ClCompile>
+    <ClCompile Include="Tools\EditBoneAvatarData.cpp">
+      <Filter>GameFramework\Tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CSProtocol\CSMessageDef.h">
@@ -418,6 +421,9 @@
     </ClInclude>
     <ClInclude Include="Animation\Skeleton2DXmlDef.h">
       <Filter>GameFramework\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\EditBoneAvatarData.h">
+      <Filter>GameFramework\Tools</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

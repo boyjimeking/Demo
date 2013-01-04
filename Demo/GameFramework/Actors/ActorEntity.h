@@ -16,8 +16,9 @@
 namespace Tools
 {
 	class AvatarData;
+	class BoneAvatarData;
 }
-
+class SkeletonCocos2D;
 namespace Game
 {
 	class ActorProp;
@@ -50,19 +51,24 @@ namespace Game
 		
 	protected:
 		void PlayAnimation(ENAnimation::Decl type, ENDirection::Decl direction, bool isLoop = true);
+		void PlayBoneAnimation(ENAnimation::Decl type, ENDirection::Decl direction);
 		void RePlayAnimation(void);
 		ENDirection::Decl CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos);
 
-		void LoadAvatarFromFile(const char *file);
+		void LoadAvatarFromFile(const char *fileName);
 		void LoadAvatar(unsigned char *data, unsigned int size);
+		void LoadBoneAvatar(unsigned char *data, unsigned int size);
 		void SetAvatar(Tools::AvatarData *avatar);
 		Tools::AvatarData* GetAvatar(void) const { return m_avatar; }
+		Tools::BoneAvatarData *GetBoneAvatar(void) const { return m_boneAvatar; }
 
 	private:
 		ENDirection::Decl m_currentDirection;
 		ENAnimation::Decl m_currentAnimation;
 		ITouch *m_touchCallBack;
 		Tools::AvatarData *m_avatar;
+		Tools::BoneAvatarData *m_boneAvatar;
+		SkeletonCocos2D *m_bone;
 	};
 }
 
