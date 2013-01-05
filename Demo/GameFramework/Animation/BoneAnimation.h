@@ -24,7 +24,7 @@ public:
 	virtual ~BoneAnimation(void);
 
 	void LoadAvatarFromFile(const char *fileName);
-	void PlayAnimation(ENAnimation::Decl type, ENDirection::Decl direction, bool isLoop = true);
+	void PlayAnimation(ENAnimation::Decl type, ENDirection::Decl direction, bool isLoop);
 
 	float GetTransScale(void) const;
 protected:

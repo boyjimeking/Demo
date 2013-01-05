@@ -116,40 +116,7 @@ namespace Game
 			case ENActorEvent::enChangeEquip:
 				{
 					//const ActorEventChangeEquip *actorEvent = reinterpret_cast<const ActorEventChangeEquip*>(event);
-					//cocos2d::CCArray *childArray = getChildren();
-					//CCObject* pObj = NULL;
-					//EquipObject* child = NULL;
-					//CCARRAY_FOREACH(childArray,pObj)
-					//{
-					//	child = (EquipObject*)pObj;
-					//	if (child->GetType() == actorEvent->m_type)
-					//	{
-					//		break;
-					//	}
-					//	else
-					//	{
-					//		child = NULL;
-					//	}
-					//}
-					//if (NULL == actorEvent->m_equipFile)
-					//{
-					//	if (NULL != child)
-					//	{
-					//		removeChild(child, true);
-					//	}
-					//}
-					//else
-					//{
-					//	if (NULL == child)
-					//	{
-					//		child = EquipObject::Create();
-					//		child->SetType(actorEvent->m_type);
-					//		addChild(child);
-					//		child->setPosition(cocos2d::CCPointZero);
-					//	}
-					//	child->LoadAvatarFromFile(actorEvent->m_equipFile);
-					//	RePlayAnimation();
-					//}
+					
 				}
 				break;
 			case ENActorEvent::enDead:
@@ -227,7 +194,7 @@ namespace Game
 		}
 		else if (NULL != m_boneAnimation)
 		{
-			m_boneAnimation->PlayAnimation(type, direction);
+			m_boneAnimation->PlayAnimation(type, direction, isLoop);
 		}
 		else
 		{

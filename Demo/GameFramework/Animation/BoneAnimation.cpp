@@ -25,7 +25,7 @@ void BoneAnimation::LoadAvatarFromFile( const char *fileName )
 	delete[] buff;
 }
 
-void BoneAnimation::PlayAnimation( ENAnimation::Decl type, ENDirection::Decl direction, bool isLoop /*= true*/ )
+void BoneAnimation::PlayAnimation( ENAnimation::Decl type, ENDirection::Decl direction, bool isLoop )
 {
 	if (m_currentDirection == direction && m_currentAnimation == type)
 	{
@@ -60,7 +60,7 @@ void BoneAnimation::PlayAnimation( ENAnimation::Decl type, ENDirection::Decl dir
 	{
 		return;
 	}
-	GetSkeleton()->PlayAnimation(animData->GetAnimationName(), animData->GetSpeed(), -1, animData->IsLoop());
+	GetSkeleton()->PlayAnimation(animData->GetAnimationName(), animData->GetSpeed(), -1, isLoop && animData->IsLoop());
 }
 
 void BoneAnimation::LoadBoneAvatar( unsigned char *data, unsigned int size )
