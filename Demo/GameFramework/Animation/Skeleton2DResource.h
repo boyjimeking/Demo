@@ -177,6 +177,14 @@ public:
 	//ͼƬ��С(δ֪Ϊ��Ҫ������)
 	float m_width;
 	float m_height;
+
+	Skeleton2DBoneResource(void)
+		: m_boneID(-1)
+		, m_parentBoneID(-1)
+		, m_defaultImageID(-1)
+	{
+
+	}
 };
 
 class Skeleton2DResourceAvatar;

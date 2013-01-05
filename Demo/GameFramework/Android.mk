@@ -44,9 +44,6 @@ LOCAL_SRC_FILES :=	Actors/ActorAction.cpp \
 					Terrain/TerrainLayer.cpp \
 					Terrain/TerrainProp.cpp \
 					Tools/DebugLayer.cpp \
-					Tools/EditAvatarData.cpp \
-					Tools/EditBoneAvatarData.cpp \
-					Tools/EditScene.cpp \
 					UI/UIControl.cpp \
 					UI/UIControlEvents.cpp \
 					UI/UIEvents.cpp \
@@ -68,14 +65,19 @@ LOCAL_SRC_FILES :=	Actors/ActorAction.cpp \
 					../VirtualServer/ISimulateObject.cpp\
 					../VirtualServer/NPC.cpp\
 					../VirtualServer/Player.cpp\
-					../Tools/AnimationData.cpp\
-					../Tools/AnimationGroup.cpp\
-					../Tools/AvatarData.cpp\
-					../Tools/BoneAnimationData.cpp\
-					../Tools/BoneAnimationGroup.cpp\
-					../Tools/BoneAvatarData.cpp\
-					../Tools/Scene.cpp\
-					../Tools/StreamHelper.cpp
+					../Tools/AnimationData.cpp \
+					../Tools/AnimationGroup.cpp \
+					../Tools/AvatarData.cpp \
+					../Tools/BoneAnimationData.cpp \
+					../Tools/BoneAnimationGroup.cpp \
+					../Tools/BoneAvatarData.cpp \
+					../Tools/Scene.cpp \
+					../Tools/StreamHelper.cpp \
+					../Tools/tinystr.cpp \
+					../Tools/tinyxml.cpp \
+					../Tools/tinyxmlerror.cpp \
+					../Tools/tinyxmlparser.cpp 
+
 
 
 
