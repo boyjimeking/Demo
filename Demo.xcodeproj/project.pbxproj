@@ -333,6 +333,24 @@
 		D31C95511698045600B7C441 /* Skeleton2DResource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C95461698045600B7C441 /* Skeleton2DResource.cpp */; };
 		D31C95521698045600B7C441 /* SkeletonAnimation2DRes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C95491698045600B7C441 /* SkeletonAnimation2DRes.cpp */; };
 		D31C95531698045600B7C441 /* SkeletonCocos2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C954B1698045600B7C441 /* SkeletonCocos2D.cpp */; };
+		D31C956216980AE700B7C441 /* knight.plist in Resources */ = {isa = PBXBuildFile; fileRef = D31C955416980AE700B7C441 /* knight.plist */; };
+		D31C956316980AE700B7C441 /* knight.png in Resources */ = {isa = PBXBuildFile; fileRef = D31C955516980AE700B7C441 /* knight.png */; };
+		D31C956416980AE700B7C441 /* MainActor.bva in Resources */ = {isa = PBXBuildFile; fileRef = D31C955616980AE700B7C441 /* MainActor.bva */; };
+		D31C956516980AE700B7C441 /* plant.png in Resources */ = {isa = PBXBuildFile; fileRef = D31C955716980AE700B7C441 /* plant.png */; };
+		D31C956616980AE700B7C441 /* plant.xml in Resources */ = {isa = PBXBuildFile; fileRef = D31C955816980AE700B7C441 /* plant.xml */; };
+		D31C956716980AE700B7C441 /* robotbiped.plist in Resources */ = {isa = PBXBuildFile; fileRef = D31C955916980AE700B7C441 /* robotbiped.plist */; };
+		D31C956816980AE700B7C441 /* robotbiped.png in Resources */ = {isa = PBXBuildFile; fileRef = D31C955A16980AE700B7C441 /* robotbiped.png */; };
+		D31C956916980AE700B7C441 /* skeleton.xml in Resources */ = {isa = PBXBuildFile; fileRef = D31C955B16980AE700B7C441 /* skeleton.xml */; };
+		D31C956A16980AE700B7C441 /* skeletonbone.xml in Resources */ = {isa = PBXBuildFile; fileRef = D31C955C16980AE700B7C441 /* skeletonbone.xml */; };
+		D31C956B16980AE700B7C441 /* texplant.xml in Resources */ = {isa = PBXBuildFile; fileRef = D31C955D16980AE700B7C441 /* texplant.xml */; };
+		D31C956C16980AE700B7C441 /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = D31C955E16980AE700B7C441 /* texture.png */; };
+		D31C956D16980AE700B7C441 /* texture.xml in Resources */ = {isa = PBXBuildFile; fileRef = D31C955F16980AE700B7C441 /* texture.xml */; };
+		D31C956E16980AE700B7C441 /* Zombie.plist in Resources */ = {isa = PBXBuildFile; fileRef = D31C956016980AE700B7C441 /* Zombie.plist */; };
+		D31C956F16980AE700B7C441 /* Zombie.png in Resources */ = {isa = PBXBuildFile; fileRef = D31C956116980AE700B7C441 /* Zombie.png */; };
+		D31C957416980DCE00B7C441 /* ExportTool_skeleton.xml in Resources */ = {isa = PBXBuildFile; fileRef = D31C957016980DCE00B7C441 /* ExportTool_skeleton.xml */; };
+		D31C957516980DCE00B7C441 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = D31C957116980DCE00B7C441 /* fps_images-hd.png */; };
+		D31C957616980DCE00B7C441 /* fps_images-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = D31C957216980DCE00B7C441 /* fps_images-ipadhd.png */; };
+		D31C957716980DCE00B7C441 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = D31C957316980DCE00B7C441 /* fps_images.png */; };
 		D31EA19716782270002519CF /* UIControlEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31EA19516782270002519CF /* UIControlEvents.cpp */; };
 		D320472A16703B210037C1E2 /* ActorTouch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D320472816703B210037C1E2 /* ActorTouch.cpp */; };
 		D320472F16704C670037C1E2 /* ActorAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D320472D16704C670037C1E2 /* ActorAction.cpp */; };
@@ -9733,6 +9751,24 @@
 		D31C954B1698045600B7C441 /* SkeletonCocos2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SkeletonCocos2D.cpp; path = Animation/SkeletonCocos2D.cpp; sourceTree = "<group>"; };
 		D31C954C1698045600B7C441 /* SkeletonCocos2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkeletonCocos2D.h; path = Animation/SkeletonCocos2D.h; sourceTree = "<group>"; };
 		D31C954D1698045600B7C441 /* SkeletonDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkeletonDef.h; path = Animation/SkeletonDef.h; sourceTree = "<group>"; };
+		D31C955416980AE700B7C441 /* knight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = knight.plist; path = Resources/knight.plist; sourceTree = "<group>"; };
+		D31C955516980AE700B7C441 /* knight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = knight.png; path = Resources/knight.png; sourceTree = "<group>"; };
+		D31C955616980AE700B7C441 /* MainActor.bva */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainActor.bva; path = Resources/MainActor.bva; sourceTree = "<group>"; };
+		D31C955716980AE700B7C441 /* plant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plant.png; path = Resources/plant.png; sourceTree = "<group>"; };
+		D31C955816980AE700B7C441 /* plant.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = plant.xml; path = Resources/plant.xml; sourceTree = "<group>"; };
+		D31C955916980AE700B7C441 /* robotbiped.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = robotbiped.plist; path = Resources/robotbiped.plist; sourceTree = "<group>"; };
+		D31C955A16980AE700B7C441 /* robotbiped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = robotbiped.png; path = Resources/robotbiped.png; sourceTree = "<group>"; };
+		D31C955B16980AE700B7C441 /* skeleton.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = skeleton.xml; path = Resources/skeleton.xml; sourceTree = "<group>"; };
+		D31C955C16980AE700B7C441 /* skeletonbone.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = skeletonbone.xml; path = Resources/skeletonbone.xml; sourceTree = "<group>"; };
+		D31C955D16980AE700B7C441 /* texplant.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = texplant.xml; path = Resources/texplant.xml; sourceTree = "<group>"; };
+		D31C955E16980AE700B7C441 /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = texture.png; path = Resources/texture.png; sourceTree = "<group>"; };
+		D31C955F16980AE700B7C441 /* texture.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = texture.xml; path = Resources/texture.xml; sourceTree = "<group>"; };
+		D31C956016980AE700B7C441 /* Zombie.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Zombie.plist; path = Resources/Zombie.plist; sourceTree = "<group>"; };
+		D31C956116980AE700B7C441 /* Zombie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Zombie.png; path = Resources/Zombie.png; sourceTree = "<group>"; };
+		D31C957016980DCE00B7C441 /* ExportTool_skeleton.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ExportTool_skeleton.xml; path = Resources/ExportTool_skeleton.xml; sourceTree = "<group>"; };
+		D31C957116980DCE00B7C441 /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fps_images-hd.png"; path = "Resources/fps_images-hd.png"; sourceTree = "<group>"; };
+		D31C957216980DCE00B7C441 /* fps_images-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fps_images-ipadhd.png"; path = "Resources/fps_images-ipadhd.png"; sourceTree = "<group>"; };
+		D31C957316980DCE00B7C441 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = Resources/fps_images.png; sourceTree = "<group>"; };
 		D31EA19516782270002519CF /* UIControlEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIControlEvents.cpp; sourceTree = "<group>"; };
 		D31EA19616782270002519CF /* UIControlEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIControlEvents.h; sourceTree = "<group>"; };
 		D320472816703B210037C1E2 /* ActorTouch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorTouch.cpp; sourceTree = "<group>"; };
@@ -10426,6 +10462,24 @@
 		D30D8D441666EE89000B95E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D31C957016980DCE00B7C441 /* ExportTool_skeleton.xml */,
+				D31C957116980DCE00B7C441 /* fps_images-hd.png */,
+				D31C957216980DCE00B7C441 /* fps_images-ipadhd.png */,
+				D31C957316980DCE00B7C441 /* fps_images.png */,
+				D31C955416980AE700B7C441 /* knight.plist */,
+				D31C955516980AE700B7C441 /* knight.png */,
+				D31C955616980AE700B7C441 /* MainActor.bva */,
+				D31C955716980AE700B7C441 /* plant.png */,
+				D31C955816980AE700B7C441 /* plant.xml */,
+				D31C955916980AE700B7C441 /* robotbiped.plist */,
+				D31C955A16980AE700B7C441 /* robotbiped.png */,
+				D31C955B16980AE700B7C441 /* skeleton.xml */,
+				D31C955C16980AE700B7C441 /* skeletonbone.xml */,
+				D31C955D16980AE700B7C441 /* texplant.xml */,
+				D31C955E16980AE700B7C441 /* texture.png */,
+				D31C955F16980AE700B7C441 /* texture.xml */,
+				D31C956016980AE700B7C441 /* Zombie.plist */,
+				D31C956116980AE700B7C441 /* Zombie.png */,
 				D38A655D168C492100D00227 /* Empty.png */,
 				D38A655E168C492100D00227 /* LifeBack.png */,
 				D38A655F168C492100D00227 /* LifeFront.png */,
@@ -27171,6 +27225,24 @@
 				D38A6560168C492100D00227 /* Empty.png in Resources */,
 				D38A6561168C492100D00227 /* LifeBack.png in Resources */,
 				D38A6562168C492100D00227 /* LifeFront.png in Resources */,
+				D31C956216980AE700B7C441 /* knight.plist in Resources */,
+				D31C956316980AE700B7C441 /* knight.png in Resources */,
+				D31C956416980AE700B7C441 /* MainActor.bva in Resources */,
+				D31C956516980AE700B7C441 /* plant.png in Resources */,
+				D31C956616980AE700B7C441 /* plant.xml in Resources */,
+				D31C956716980AE700B7C441 /* robotbiped.plist in Resources */,
+				D31C956816980AE700B7C441 /* robotbiped.png in Resources */,
+				D31C956916980AE700B7C441 /* skeleton.xml in Resources */,
+				D31C956A16980AE700B7C441 /* skeletonbone.xml in Resources */,
+				D31C956B16980AE700B7C441 /* texplant.xml in Resources */,
+				D31C956C16980AE700B7C441 /* texture.png in Resources */,
+				D31C956D16980AE700B7C441 /* texture.xml in Resources */,
+				D31C956E16980AE700B7C441 /* Zombie.plist in Resources */,
+				D31C956F16980AE700B7C441 /* Zombie.png in Resources */,
+				D31C957416980DCE00B7C441 /* ExportTool_skeleton.xml in Resources */,
+				D31C957516980DCE00B7C441 /* fps_images-hd.png in Resources */,
+				D31C957616980DCE00B7C441 /* fps_images-ipadhd.png in Resources */,
+				D31C957716980DCE00B7C441 /* fps_images.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

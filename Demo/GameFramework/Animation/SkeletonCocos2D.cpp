@@ -136,18 +136,18 @@ void SkeletonCocos2D::Load(const char* skelFilename, const char* texFilenameDesc
 {
 	//////////////////////////////////////////////////////////////////////////
 	unsigned long	_size=0;
-	char			*_pFileContent = (char*)CCFileUtils::sharedFileUtils()->getFileData(skelFilename , "r", &_size);
+	char *_pFileContent = (char*)CCFileUtils::sharedFileUtils()->getFileData(CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(skelFilename) , "r", &_size);
 	TiXmlDocument	_document;
 	_document.Parse(_pFileContent, 0, TIXML_ENCODING_UTF8);
 	m_resource=new Skeleton2DResourceAvatar;
 	m_resource->LoadAll(_document.RootElement());
 	m_skeleton->AttachResource(m_resource->GetSkeleton(useSkeletonName));
 	//////////////////////////////////////////////////////////////////////////
-	char			*texDescContent = (char*)CCFileUtils::sharedFileUtils()->getFileData(texFilenameDesc , "r", &_size);
+	char *texDescContent = (char*)CCFileUtils::sharedFileUtils()->getFileData(CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(texFilenameDesc) , "r", &_size);
 	TiXmlDocument	xmlTexDesc;
 	xmlTexDesc.Parse(texDescContent, 0, TIXML_ENCODING_UTF8);
 	m_textureDesc = m_resource->AddTextureResource(xmlTexDesc.RootElement());
-	CCTexture2D *texture = CCTextureCache::sharedTextureCache()->addImage(texFilename);
+	CCTexture2D *texture = CCTextureCache::sharedTextureCache()->addImage(CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(texFilename));
 	for (Skeleton2DResourceTexture::Name2SubTexture::iterator it = m_textureDesc->m_subTexs.begin()
 		;it != m_textureDesc->m_subTexs.end();++it)
 	{
