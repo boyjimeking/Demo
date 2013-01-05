@@ -37,7 +37,7 @@ namespace Tools
 
 	}
 
-	BoneAnimationGroup* EditBoneAvatarData::AddAnimationGroup( int type )
+	BoneAnimationGroup* EditBoneAvatarData::AddAnimationGroup(const std::string &type)
 	{
 		BoneAnimationGroup *animGroup = Lookup(type);
 		if (NULL != animGroup)
@@ -52,7 +52,7 @@ namespace Tools
 		}
 	}
 
-	void EditBoneAvatarData::RemoveAnimationGroup( int type )
+	void EditBoneAvatarData::RemoveAnimationGroup(const std::string &type)
 	{
 		AnimationTable::const_iterator it = m_animationTable.find(type);
 		if (m_animationTable.end() == it)

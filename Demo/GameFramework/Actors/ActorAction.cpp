@@ -17,6 +17,8 @@
 #include "../CSProtocol/ActorBattleInfo.h"
 #include <stdlib.h>
 #include "SceneInfo.h"
+#include <algorithm>
+#include "boost/bind.hpp"
 
 namespace Game
 {
@@ -174,7 +176,7 @@ namespace Game
 		{
 			return;
 		}
-		m_direction = cocos2d::ccpNormalize(cocos2d::ccpSub(m_pos, m_startPos));
+		m_direction = cocos2d::ccpNormalize(cocos2d::ccpSub(m_pos, prop->GetPosition()));
 	}
 	void MoveAction::OnInterrupt(ActorProp *prop)
 	{
@@ -187,6 +189,7 @@ namespace Game
 	}
 	bool MoveAction::Tick(float dt, ActorProp *prop)
 	{
+		m_direction = cocos2d::ccpNormalize(cocos2d::ccpSub(m_pos, prop->GetPosition()));
 		if (m_direction.equals(cocos2d::CCPointZero))
 		{
 			return true;
@@ -209,9 +212,26 @@ namespace Game
 				{
 					return true;
 				}
+				else
+				{
+
+				}
+			}
+			else
+			{
+
 			}
 		}
-		if (cocos2d::ccpDistanceSQ(m_pos, m_startPos) <= cocos2d::ccpDistanceSQ(newPos, m_startPos))
+		else
+		{
+
+		}
+		if (m_used.end() != std::find_if(m_used.begin(), m_used.end(), boost::bind(&cocos2d::CCPoint::CCPointEqualToPoint, newPos, _1)))
+		{
+			return true;
+		}
+		m_used.push_back(newPos);
+		if (cocos2d::ccpDistanceSQ(m_pos, newPos) <= cocos2d::ccpLengthSQ(changed))
 		{
 			prop->SetPosition(m_pos);
 			return true;
@@ -231,11 +251,6 @@ namespace Game
 	,m_fireTime(0.0f)
 	{
 
-	}
-	void AttackAction::OnExit(ActorProp *prop)
-	{
-		ActorEventStop event;
-		prop->NotifyChange(&event);
 	}
 	bool AttackAction::Tick(float dt, ActorProp *prop)
 	{

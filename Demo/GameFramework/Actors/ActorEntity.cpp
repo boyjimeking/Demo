@@ -1,44 +1,20 @@
 #include "ActorEntity.h"
 #include "ActorEvents.h"
-#include "textures/CCTextureCache.h"
-#include "sprite_nodes/CCSpriteFrame.h"
-#include "sprite_nodes/CCAnimation.h"
-#include "cocoa/CCGeometry.h"
-#include "cocoa/CCArray.h"
-#include "actions/CCActionInterval.h"
-#include "CCDirector.h"
-#include "support/CCPointExtension.h"
-#include "WorldManager.h"
-#include "../Camera/Camera.h"
-#include "CCDirector.h"
-#include "touch_dispatcher/CCTouchDispatcher.h"
-#include "ActorProp.h"
+#include "Animation/FrameAnimation.h"
+#include "Animation/BoneAnimation.h"
 #include "ActorTouch.h"
-#include "sprite_nodes/CCSpriteFrameCache.h"
-#include "../Tools/AnimationGroup.h"
-#include "../Tools/AvatarData.h"
-#include "../Tools/AnimationData.h"
-#include "../CCFileUtils.h"
-#include "EquipObject.h"
-#include "boost/algorithm/string.hpp"
-#include "boost/function.hpp"
-#include "boost/bind.hpp"
-#include "Tools/BoneAvatarData.h"
-#include "Animation/SkeletonCocos2D.h"
-#include "Tools/BoneAnimationGroup.h"
-#include "Tools/BoneAnimationData.h"
+#include "ActorProp.h"
+#include "WorldManager.h"
+#include "Camera/Camera.h"
 
 namespace Game
 {
 	ActorEntity::ActorEntity(ActorProp *prop)
-	:m_currentDirection(ENDirection::enError)
-	,m_touchCallBack(NULL)
-	,m_currentAnimation(ENAnimation::enIdle)
-	,m_avatar(NULL)
-	,m_boneAvatar(NULL)
-	,m_bone(NULL)
+	:m_touchCallBack(NULL)
+	,m_frameAnimation(NULL)
+	,m_boneAnimation(NULL)
 	{
-		m_sBlendFunc.src=GL_SRC_ALPHA;
+
 	}
 	ActorEntity::~ActorEntity(void)
 	{
@@ -60,19 +36,34 @@ namespace Game
 					{
 					case ENActorType::enMain:
 						{
-							LoadAvatarFromFile("MainActor.bva");
-							setScale(GetBoneAvatar()->GetTransScale());
-							init();
+							if (NULL == m_boneAnimation)
+							{
+								m_boneAnimation = new BoneAnimation;
+							}
+							m_boneAnimation->LoadAvatarFromFile("MainActor.bva");
+							addChild(m_boneAnimation);
+							setScale(m_boneAnimation->GetTransScale());
 						}
 						break;
 					default:
 						{
-							setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.3f));
-							cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
-							m_touchCallBack = new TouchMonster(reinterpret_cast<ActorProp*>(notify));
-							LoadAvatarFromFile("NPCActor.ava");
-							setScale(GetAvatar()->GetTransScale());
-							cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(GetAvatar()->GetPList());
+							//性能测试
+							if (NULL == m_boneAnimation)
+							{
+								m_boneAnimation = new BoneAnimation;
+							}
+							m_boneAnimation->LoadAvatarFromFile("MainActor.bva");
+							addChild(m_boneAnimation);
+							setScale(m_boneAnimation->GetTransScale());
+							//if (NULL == m_frameAnimation)
+							//{
+							//	m_frameAnimation = new FrameAnimation;
+							//}
+							//m_frameAnimation->LoadAvatarFromFile("NPCActor.ava");
+							//setScale(m_frameAnimation->GetTransScale());
+							//addChild(m_frameAnimation);
+							//cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
+							//m_touchCallBack = new TouchMonster(reinterpret_cast<ActorProp*>(notify));
 						}
 						break;
 					}
@@ -106,7 +97,7 @@ namespace Game
 				break;
 			case ENActorEvent::enStop:
 				{
-					PlayAnimation(ENAnimation::enIdle, m_currentDirection);
+					PlayAnimation(ENAnimation::enIdle, ENDirection::enError);
 				}
 				break;
 			case ENActorEvent::enAttack:
@@ -117,54 +108,53 @@ namespace Game
 				break;
 			case ENActorEvent::enChangeAvatar:
 				{
-					const ActorEventChangeAvatar *actorEvent = reinterpret_cast<const ActorEventChangeAvatar*>(event);
-					SetAvatar(m_avatar);
-					RePlayAnimation();
+					//const ActorEventChangeAvatar *actorEvent = reinterpret_cast<const ActorEventChangeAvatar*>(event);
+					//SetAvatar(m_avatar);
+					//RePlayAnimation();
 				}
 				break;
 			case ENActorEvent::enChangeEquip:
 				{
-					return;
-					const ActorEventChangeEquip *actorEvent = reinterpret_cast<const ActorEventChangeEquip*>(event);
-					cocos2d::CCArray *childArray = getChildren();
-					CCObject* pObj = NULL;
-					EquipObject* child = NULL;
-					CCARRAY_FOREACH(childArray,pObj)
-					{
-						child = (EquipObject*)pObj;
-						if (child->GetType() == actorEvent->m_type)
-						{
-							break;
-						}
-						else
-						{
-							child = NULL;
-						}
-					}
-					if (NULL == actorEvent->m_equipFile)
-					{
-						if (NULL != child)
-						{
-							removeChild(child, true);
-						}
-					}
-					else
-					{
-						if (NULL == child)
-						{
-							child = EquipObject::Create();
-							child->SetType(actorEvent->m_type);
-							addChild(child);
-							child->setPosition(cocos2d::CCPointZero);
-						}
-						child->LoadAvatarFromFile(actorEvent->m_equipFile);
-						RePlayAnimation();
-					}
+					//const ActorEventChangeEquip *actorEvent = reinterpret_cast<const ActorEventChangeEquip*>(event);
+					//cocos2d::CCArray *childArray = getChildren();
+					//CCObject* pObj = NULL;
+					//EquipObject* child = NULL;
+					//CCARRAY_FOREACH(childArray,pObj)
+					//{
+					//	child = (EquipObject*)pObj;
+					//	if (child->GetType() == actorEvent->m_type)
+					//	{
+					//		break;
+					//	}
+					//	else
+					//	{
+					//		child = NULL;
+					//	}
+					//}
+					//if (NULL == actorEvent->m_equipFile)
+					//{
+					//	if (NULL != child)
+					//	{
+					//		removeChild(child, true);
+					//	}
+					//}
+					//else
+					//{
+					//	if (NULL == child)
+					//	{
+					//		child = EquipObject::Create();
+					//		child->SetType(actorEvent->m_type);
+					//		addChild(child);
+					//		child->setPosition(cocos2d::CCPointZero);
+					//	}
+					//	child->LoadAvatarFromFile(actorEvent->m_equipFile);
+					//	RePlayAnimation();
+					//}
 				}
 				break;
 			case ENActorEvent::enDead:
 				{
-					PlayAnimation(ENAnimation::enDead, m_currentDirection, false);
+					PlayAnimation(ENAnimation::enDead, ENDirection::enError, false);
 				}
 				break;
 			default:
@@ -231,147 +221,23 @@ namespace Game
 
 	void ActorEntity::PlayAnimation(ENAnimation::Decl type, ENDirection::Decl direction, bool isLoop /* = true; */)
 	{
-		if (m_currentDirection == direction && m_currentAnimation == type)
+		if (NULL != m_frameAnimation)
 		{
-			return;
+			m_frameAnimation->PlayAnimation(type, direction, isLoop);
 		}
-		m_currentDirection = direction;
-		m_currentAnimation = type;
-
-		if (NULL == GetAvatar())
+		else if (NULL != m_boneAnimation)
 		{
-			PlayBoneAnimation(type, direction);
-			return;
-		}
-		Tools::AnimationGroup *animGroup = GetAvatar()->Lookup(type);
-		if (NULL == animGroup)
-		{
-			return;
-		}
-		Tools::AnimationData *animData = animGroup->LookupAnimation(direction);
-		if (NULL == animData)
-		{
-			return;
-		}
-		cocos2d::CCArray *frameArray = cocos2d::CCArray::createWithCapacity(animData->GetFrameCount());
-		for (unsigned int index = 0; index < animData->GetFrameCount(); ++index)
-		{
-			cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(animData->GetFrame(index));
-			if (NULL == frame)
-			{
-				continue;
-			}
-			frameArray->addObject(frame);
-		}
-		this->initWithSpriteFrame(reinterpret_cast<cocos2d::CCSpriteFrame*>(frameArray->lastObject()));
-		setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.3f));
-		cocos2d::CCAnimation *animation = cocos2d::CCAnimation::createWithSpriteFrames(frameArray, animData->GetDelay());
-		cocos2d::CCAnimate *animate = cocos2d::CCAnimate::create(animation);
-		cocos2d::CCAction *action = isLoop ? (cocos2d::CCAction*)cocos2d::CCRepeatForever::create(animate) : (cocos2d::CCAction*)animate;
-		this->stopActionByTag(enActorAction_PlayAnimation);
-		action->setTag(enActorAction_PlayAnimation);
-		this->runAction(action);
-
-		cocos2d::CCArray *childArray = getChildren();
-		CCObject* pObj = NULL;
-		CCARRAY_FOREACH(childArray,pObj)
-		{
-			EquipObject* child = (EquipObject*)pObj;
-			child->PlayAnimation(type, direction);
-		}
-	}
-
-	void ActorEntity::LoadAvatarFromFile(const char *fileName)
-	{
-		boost::function<void(unsigned char*, unsigned int)> func;
-		if (boost::algorithm::ends_with(fileName, ".ava"))
-		{
-			func = boost::bind(&ActorEntity::LoadAvatar, this, _1, _2);
-		}
-		else if (boost::algorithm::ends_with(fileName, ".bva"))
-		{
-			func = boost::bind(&ActorEntity::LoadBoneAvatar, this, _1, _2);
+			m_boneAnimation->PlayAnimation(type, direction);
 		}
 		else
 		{
-			return;
+			//
 		}
-		const char *fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(fileName);
-		unsigned long size = 0;
-		unsigned char *buff = cocos2d::CCFileUtils::sharedFileUtils()->getFileData(fullPath, "rb", &size);
-		func(buff, size);
-		delete[] buff;
-	}
-
-	void ActorEntity::LoadAvatar( unsigned char *data, unsigned int size )
-	{
-		if (0 == size)
-		{
-			return;
-		}
-		if (NULL == m_avatar)
-		{
-			m_avatar = new Tools::AvatarData;
-		}
-		m_avatar->Read(data, size);
-	}
-
-	void ActorEntity::SetAvatar( Tools::AvatarData *avatar )
-	{
-		if (m_avatar == avatar)
-		{
-			return;
-		}
-		if (NULL != m_avatar)
-		{
-			delete m_avatar;
-		}
-		m_avatar = avatar;
 	}
 
 	void ActorEntity::RePlayAnimation( void )
 	{
-		ENAnimation::Decl type = m_currentAnimation;
-		ENDirection::Decl direction = m_currentDirection;
-		m_currentAnimation = ENAnimation::enError;
-		m_currentDirection = ENDirection::enError;
-		PlayAnimation(type, direction);
-	}
-
-	void ActorEntity::LoadBoneAvatar( unsigned char *data, unsigned int size )
-	{
-		if (0 == size)
-		{
-			return;
-		}
-		if (NULL == m_boneAvatar)
-		{
-			m_boneAvatar = new Tools::BoneAvatarData;
-		}
-		m_boneAvatar->Read(data, size);
-		m_bone = new SkeletonCocos2D;
-		m_bone->Load("skeletonbone.xml","texture.xml","texture.png","RobotBiped");
-		CCNode::addChild(m_bone, m_bone->getZOrder(), m_bone->getTag());
-		m_bone->m_skeleton->PlayAnimation("run",1.0f,-1,2);
-	}
-
-	void ActorEntity::PlayBoneAnimation(ENAnimation::Decl type, ENDirection::Decl direction)
-	{
-		if (NULL == GetBoneAvatar())
-		{
-			return;
-		}
-		Tools::BoneAnimationGroup *animGroup = GetBoneAvatar()->Lookup(type);
-		if (NULL == animGroup)
-		{
-			return;
-		}
-		Tools::BoneAnimationData *animData = animGroup->LookupAnimation(direction);
-		if (NULL == animData)
-		{
-			return;
-		}
-		m_bone->m_skeleton->PlayAnimation(animData->GetAnimationName(), animData->GetSpeed(), -1, animData->IsLoop());
+		PlayAnimation(ENAnimation::enError, ENDirection::enError);
 	}
 
 }

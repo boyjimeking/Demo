@@ -1,6 +1,5 @@
 #include "SkeletonCocos2D.h"
 
-int SkeletonCocos2D::g_tm_type=1;
 #if CC_SPRITEBATCHNODE_RENDER_SUBPIXEL
 #define RENDER_IN_SUBPIXEL
 #else
@@ -123,9 +122,9 @@ Skeleton2D_BoneDisplay* Skeleton2D_BoneDisplay::createWithSpriteFrameName(const 
 
 
 SkeletonCocos2D::SkeletonCocos2D(void)
-	:m_skeleton(0)
+	:m_skeleton(new Skeleton2D)
 {
-	m_skeleton=new Skeleton2D;
+	
 }
 SkeletonCocos2D::~SkeletonCocos2D(void)
 {
@@ -133,8 +132,7 @@ SkeletonCocos2D::~SkeletonCocos2D(void)
 }
 
 
-void SkeletonCocos2D::Load(const char* skelFilename,const char* texFilenameDesc
-	,const char* texFilename,const char* useSkeletonName)
+void SkeletonCocos2D::Load(const char* skelFilename, const char* texFilenameDesc, const char* texFilename, const char* useSkeletonName)
 {
 	//////////////////////////////////////////////////////////////////////////
 	unsigned long	_size=0;
@@ -150,7 +148,7 @@ void SkeletonCocos2D::Load(const char* skelFilename,const char* texFilenameDesc
 	xmlTexDesc.Parse(texDescContent, 0, TIXML_ENCODING_UTF8);
 	m_textureDesc = m_resource->AddTextureResource(xmlTexDesc.RootElement());
 	CCTexture2D *texture = CCTextureCache::sharedTextureCache()->addImage(texFilename);
-	for (std::map<RString,Skeleton2DResourceSubTexture>::iterator it = m_textureDesc->m_subTexs.begin()
+	for (Skeleton2DResourceTexture::Name2SubTexture::iterator it = m_textureDesc->m_subTexs.begin()
 		;it != m_textureDesc->m_subTexs.end();++it)
 	{
 		const RString& subTexName=it->first;
@@ -183,7 +181,7 @@ void SkeletonCocos2D::update(float dt)
 		{
 			continue;
 		}
-		BoneDisplayInfo&	displayInfo = m_boneSprites[i];
+		BoneDisplayInfo& displayInfo = m_boneSprites[i];
 		int imgID = bone->GetImageID();
 		if (imgID != displayInfo.m_imgID)
 		{
@@ -216,7 +214,7 @@ void SkeletonCocos2D::UpdateBoneImages(void)
 		{
 			continue;
 		}
-		BoneDisplayInfo&	displayInfo = m_boneSprites[i];
+		BoneDisplayInfo& displayInfo = m_boneSprites[i];
 		int imgID = bone->GetImageID();
 		if (imgID != displayInfo.m_imgID)
 		{

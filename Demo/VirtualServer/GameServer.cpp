@@ -70,7 +70,7 @@ namespace Server
 			actor->SycInfo();
 			actor->ChangeEquip();
 		}
-		for (int index = 0; index < 50; ++index)
+		for (int index = 0; index < 100; ++index)
 		{
 			IActor::Ptr actor = NPC::CreateObject();
 			PushObject(actor);
@@ -84,11 +84,11 @@ namespace Server
 
 	int GameServer::RandX(void)
 	{
-		return (float)rand() / (float)RAND_MAX * Width;
+		return (float)rand() / (float)RAND_MAX * 5.0f - 2.5f + 21.8f;
 	}
 	int GameServer::RandY(void)
 	{
-		return (float)rand() / (float)RAND_MAX * Height;
+		return (float)rand() / (float)RAND_MAX * 5.0f - 2.5f + 10.9f;
 	}
 
 }

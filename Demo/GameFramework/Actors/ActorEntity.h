@@ -19,6 +19,8 @@ namespace Tools
 	class BoneAvatarData;
 }
 class SkeletonCocos2D;
+class FrameAnimation;
+class BoneAnimation;
 namespace Game
 {
 	class ActorProp;
@@ -28,7 +30,7 @@ namespace Game
 	 *	角色实体类，用于角色在场景当中的显示及在场景中的响应处理
 	 */
 	class ActorEntity
-		:public cocos2d::CCSprite
+		:public cocos2d::CCNode
 		,public IObserver
 		,public cocos2d::CCTouchDelegate
 	{
@@ -41,34 +43,18 @@ namespace Game
 		virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
 		virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
 
-		enum ENCocos2dActionTag
-		{
-			enNone,
-			enActorAction_PlayAnimation,
-			enActorAction_MoveTo,
-		};
+
 	protected:
-		
+
 	protected:
 		void PlayAnimation(ENAnimation::Decl type, ENDirection::Decl direction, bool isLoop = true);
-		void PlayBoneAnimation(ENAnimation::Decl type, ENDirection::Decl direction);
 		void RePlayAnimation(void);
 		ENDirection::Decl CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos);
 
-		void LoadAvatarFromFile(const char *fileName);
-		void LoadAvatar(unsigned char *data, unsigned int size);
-		void LoadBoneAvatar(unsigned char *data, unsigned int size);
-		void SetAvatar(Tools::AvatarData *avatar);
-		Tools::AvatarData* GetAvatar(void) const { return m_avatar; }
-		Tools::BoneAvatarData *GetBoneAvatar(void) const { return m_boneAvatar; }
-
 	private:
-		ENDirection::Decl m_currentDirection;
-		ENAnimation::Decl m_currentAnimation;
 		ITouch *m_touchCallBack;
-		Tools::AvatarData *m_avatar;
-		Tools::BoneAvatarData *m_boneAvatar;
-		SkeletonCocos2D *m_bone;
+		FrameAnimation *m_frameAnimation;
+		BoneAnimation *m_boneAnimation;
 	};
 }
 

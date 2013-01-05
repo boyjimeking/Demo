@@ -17,7 +17,7 @@ namespace Tools
 	class BoneAvatarData
 	{
 	public:
-		typedef std::map<int, BoneAnimationGroup*> AnimationTable;
+		typedef std::map<std::string, BoneAnimationGroup*> AnimationTable;
 
 		BoneAvatarData(void);
 		virtual ~BoneAvatarData(void);
@@ -26,7 +26,7 @@ namespace Tools
 		unsigned int Write(unsigned char *buff, unsigned int size);
 		void Clear(void);
 
-		BoneAnimationGroup* Lookup(int animationID) const;
+		BoneAnimationGroup* Lookup(const std::string &type) const;
 		//缩放比率
 		const float& GetTransScale() const { return m_transScale; }
 		void SetTransScale(const float &val) { m_transScale = val; }

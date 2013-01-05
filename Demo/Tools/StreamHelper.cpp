@@ -26,4 +26,54 @@ namespace Tools
 			delete[] m_buff;
 		}
 	}
+
+	void StreamHelper::Write( const std::string &value )
+	{
+		if (m_index + sizeof(unsigned int) > m_size)
+		{
+			return;
+		}
+		unsigned int size = value.size();
+		Write(size);
+		if (m_index + size > m_size)
+		{
+			return;
+		}
+		memcpy(&m_buff[m_index], &value[0], size);
+		m_index += size;
+	}
+
+	void StreamHelper::Write( std::string &value )
+	{
+		if (m_index + sizeof(unsigned int) > m_size)
+		{
+			return;
+		}
+		unsigned int size = value.size();
+		Write(size);
+		if (m_index + size > m_size)
+		{
+			return;
+		}
+		memcpy(&m_buff[m_index], &value[0], size);
+		m_index += size;
+	}
+
+	void StreamHelper::Read( std::string &value )
+	{
+		if (m_index + sizeof(unsigned int) > m_size)
+		{
+			return;
+		}
+		unsigned int size = 0;
+		Read(size);
+		if (m_index + size > m_size)
+		{
+			return;
+		}
+		value.resize(size);
+		memcpy(&value[0], &m_buff[m_index], size);
+		m_index += size;
+	}
+
 }

@@ -29,19 +29,18 @@ class SkeletonCocos2D
 	:public CCNode
 {
 public:
-	static int g_tm_type;
 	SkeletonCocos2D(void);
 	~SkeletonCocos2D(void);
 
-	void Load(const char* skelFilename,const char* texFilenameDesc
-		,const char* texFilename
-		,const char* useSkeletonName);
+	void Load(const char* skelFilename, const char* texFilenameDesc, const char* texFilename, const char* useSkeletonName);
 	void UpdateBoneImages(void);
 	virtual void update(float dt);
 
+	Skeleton2D* GetSkeleton(void) const { return m_skeleton; }
+private:
 	Skeleton2D*	m_skeleton;
-	class Skeleton2DResourceAvatar* m_resource;
-	class Skeleton2DResourceTexture*m_textureDesc;
+	class Skeleton2DResourceAvatar *m_resource;
+	class Skeleton2DResourceTexture *m_textureDesc;
 	//////////////////////////////////////////////////////////////////////////
 	CCSpriteBatchNode*	m_batchSprite;
 	struct BoneDisplayInfo 

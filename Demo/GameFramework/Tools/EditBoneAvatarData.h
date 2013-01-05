@@ -25,8 +25,8 @@ namespace Tools
 
 		void Apply(void);
 
-		BoneAnimationGroup* AddAnimationGroup(int type);
-		void RemoveAnimationGroup(int type);
+		BoneAnimationGroup* AddAnimationGroup(const std::string &type);
+		void RemoveAnimationGroup(const std::string &type);
 	protected:
 
 	private:

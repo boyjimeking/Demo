@@ -264,7 +264,7 @@ public:
 	void Load(TiXmlElement* xml);
 	Skeleton2DResourceSubTexture* LookupSubTexture(const RString& name);
 	typedef std::map<RString,Skeleton2DResourceSubTexture> Name2SubTexture;
-	std::map<RString,Skeleton2DResourceSubTexture>	m_subTexs;
+	Name2SubTexture	m_subTexs;
 	RString	m_name;
 	unsigned int m_width;
 	unsigned int m_height;

@@ -19,6 +19,7 @@ namespace Tools
 		StreamHelper(unsigned int size);
 		~StreamHelper(void);
 
+		void Read(std::string &value);
 		template<typename T>
 		void Read(T &value)
 		{
@@ -28,23 +29,6 @@ namespace Tools
 			}
 			memcpy(&value, &m_buff[m_index], sizeof(T));
 			m_index += sizeof(T);
-		}
-		
-		void Read(std::string &value)
-		{
-			if (m_index + sizeof(unsigned int) > m_size)
-			{
-				return;
-			}
-			unsigned int size = 0;
-			Read(size);
-			if (m_index + size > m_size)
-			{
-				return;
-			}
-			value.resize(size);
-			memcpy(&value[0], &m_buff[m_index], size);
-			m_index += size;
 		}
 		template<typename T>
 		void Read(T *value)
@@ -72,6 +56,8 @@ namespace Tools
 			value->Read(this);
 		}
 
+		void Write(const std::string &value);
+		void Write(std::string &value);
 		template<typename T>
 		void Write(T &value)
 		{
@@ -81,22 +67,6 @@ namespace Tools
 			}
 			memcpy(&m_buff[m_index], &value, sizeof(T));
 			m_index += sizeof(T);
-		}
-		
-		void Write(std::string &value)
-		{
-			if (m_index + sizeof(unsigned int) > m_size)
-			{
-				return;
-			}
-			unsigned int size = value.size();
-			Write(size);
-			if (m_index + size > m_size)
-			{
-				return;
-			}
-			memcpy(&m_buff[m_index], &value[0], size);
-			m_index += size;
 		}
 		template<typename T>
 		void Write(T *value)

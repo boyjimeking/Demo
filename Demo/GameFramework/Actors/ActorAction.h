@@ -11,6 +11,7 @@
 
 #include "cocoa/CCGeometry.h"
 #include <set>
+#include <vector>
 
 namespace Game
 {
@@ -87,6 +88,7 @@ namespace Game
 		cocos2d::CCPoint m_pos;
 		cocos2d::CCPoint m_startPos;
 		cocos2d::CCPoint m_direction;
+		std::vector<cocos2d::CCPoint> m_used;
 	};
 
 	//攻击
@@ -98,7 +100,6 @@ namespace Game
 
 		AttackAction(ActorProp *prop);
 
-		virtual void OnExit(ActorProp *prop);
 		virtual bool Tick(float dt, ActorProp *prop);
 	protected:
 		int m_targetID;

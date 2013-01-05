@@ -225,6 +225,12 @@
     <ClCompile Include="Tools\EditBoneAvatarData.cpp">
       <Filter>GameFramework\Tools</Filter>
     </ClCompile>
+    <ClCompile Include="Animation\FrameAnimation.cpp">
+      <Filter>GameFramework\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation\BoneAnimation.cpp">
+      <Filter>GameFramework\Animation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CSProtocol\CSMessageDef.h">
@@ -424,6 +430,12 @@
     </ClInclude>
     <ClInclude Include="Tools\EditBoneAvatarData.h">
       <Filter>GameFramework\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation\FrameAnimation.h">
+      <Filter>GameFramework\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation\BoneAnimation.h">
+      <Filter>GameFramework\Animation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
