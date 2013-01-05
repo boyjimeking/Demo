@@ -115,7 +115,9 @@ protected:
 	//!提供给外部控制的控制点
 	Skeleton2DTransform	m_controlPoint;
 };
-
+#ifndef FLT_MAX
+#define FLT_MAX __FLT_MAX__
+#endif
 #define _Tween_NaN_ FLT_MAX
 
 //!骨架

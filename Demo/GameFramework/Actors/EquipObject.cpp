@@ -1,5 +1,5 @@
 #include "EquipObject.h"
-#include "Tools/AvatarData.h"
+#include "../Tools/AvatarData.h"
 
 namespace Game
 {

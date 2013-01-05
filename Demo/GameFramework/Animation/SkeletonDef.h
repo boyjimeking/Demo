@@ -2,10 +2,11 @@
 #ifndef _16112012_SkeletonDef
 #define _16112012_SkeletonDef
 
-#include "Tools/tinyxml.h"
+#include "../Tools/tinyxml.h"
 #include <vector>
 #include <map>
 #include <string>
+#include <math.h>
 
 
 template<class TV>

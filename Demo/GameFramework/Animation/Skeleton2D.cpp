@@ -270,7 +270,7 @@ void Skeleton2DBone::Update(float deltaDuration)
 	}
 	if (m_isInInsertDuration)
 	{
-		m_insertCurNormalizeTime+=abs(deltaDuration)/m_durationInsert;
+		m_insertCurNormalizeTime+=fabs(deltaDuration)/m_durationInsert;
 		if (m_insertCurNormalizeTime>1.0f)
 		{
 			m_isInInsertDuration=false;

@@ -320,6 +320,19 @@
 		D314888F166DBD5D0011EDC7 /* vector in Resources */ = {isa = PBXBuildFile; fileRef = D3148426166DBD590011EDC7 /* vector */; };
 		D3148890166DBD5D0011EDC7 /* basic_chset.ipp in Resources */ = {isa = PBXBuildFile; fileRef = D314874D166DBD5A0011EDC7 /* basic_chset.ipp */; };
 		D3148891166DBD5D0011EDC7 /* range_run.ipp in Resources */ = {isa = PBXBuildFile; fileRef = D3148750166DBD5A0011EDC7 /* range_run.ipp */; };
+		D31C95371698040D00B7C441 /* BoneAnimationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C952A1698040D00B7C441 /* BoneAnimationData.cpp */; };
+		D31C95381698040D00B7C441 /* BoneAnimationGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C952C1698040D00B7C441 /* BoneAnimationGroup.cpp */; };
+		D31C95391698040D00B7C441 /* BoneAvatarData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C952E1698040D00B7C441 /* BoneAvatarData.cpp */; };
+		D31C953A1698040D00B7C441 /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C95311698040D00B7C441 /* tinystr.cpp */; };
+		D31C953B1698040D00B7C441 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C95331698040D00B7C441 /* tinyxml.cpp */; };
+		D31C953C1698040D00B7C441 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C95351698040D00B7C441 /* tinyxmlerror.cpp */; };
+		D31C953D1698040D00B7C441 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C95361698040D00B7C441 /* tinyxmlparser.cpp */; };
+		D31C954E1698045600B7C441 /* BoneAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C95401698045600B7C441 /* BoneAnimation.cpp */; };
+		D31C954F1698045600B7C441 /* FrameAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C95421698045600B7C441 /* FrameAnimation.cpp */; };
+		D31C95501698045600B7C441 /* Skeleton2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C95441698045600B7C441 /* Skeleton2D.cpp */; };
+		D31C95511698045600B7C441 /* Skeleton2DResource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C95461698045600B7C441 /* Skeleton2DResource.cpp */; };
+		D31C95521698045600B7C441 /* SkeletonAnimation2DRes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C95491698045600B7C441 /* SkeletonAnimation2DRes.cpp */; };
+		D31C95531698045600B7C441 /* SkeletonCocos2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31C954B1698045600B7C441 /* SkeletonCocos2D.cpp */; };
 		D31EA19716782270002519CF /* UIControlEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D31EA19516782270002519CF /* UIControlEvents.cpp */; };
 		D320472A16703B210037C1E2 /* ActorTouch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D320472816703B210037C1E2 /* ActorTouch.cpp */; };
 		D320472F16704C670037C1E2 /* ActorAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D320472D16704C670037C1E2 /* ActorAction.cpp */; };
@@ -9693,6 +9706,33 @@
 		D3148771166DBD5A0011EDC7 /* xpressive_fwd.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = xpressive_fwd.hpp; sourceTree = "<group>"; };
 		D3148772166DBD5A0011EDC7 /* xpressive_static.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = xpressive_static.hpp; sourceTree = "<group>"; };
 		D3148773166DBD5A0011EDC7 /* xpressive_typeof.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = xpressive_typeof.hpp; sourceTree = "<group>"; };
+		D31C952A1698040D00B7C441 /* BoneAnimationData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoneAnimationData.cpp; path = Tools/BoneAnimationData.cpp; sourceTree = "<group>"; };
+		D31C952B1698040D00B7C441 /* BoneAnimationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoneAnimationData.h; path = Tools/BoneAnimationData.h; sourceTree = "<group>"; };
+		D31C952C1698040D00B7C441 /* BoneAnimationGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoneAnimationGroup.cpp; path = Tools/BoneAnimationGroup.cpp; sourceTree = "<group>"; };
+		D31C952D1698040D00B7C441 /* BoneAnimationGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoneAnimationGroup.h; path = Tools/BoneAnimationGroup.h; sourceTree = "<group>"; };
+		D31C952E1698040D00B7C441 /* BoneAvatarData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoneAvatarData.cpp; path = Tools/BoneAvatarData.cpp; sourceTree = "<group>"; };
+		D31C952F1698040D00B7C441 /* BoneAvatarData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoneAvatarData.h; path = Tools/BoneAvatarData.h; sourceTree = "<group>"; };
+		D31C95301698040D00B7C441 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = Tools/Singleton.h; sourceTree = "<group>"; };
+		D31C95311698040D00B7C441 /* tinystr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinystr.cpp; path = Tools/tinystr.cpp; sourceTree = "<group>"; };
+		D31C95321698040D00B7C441 /* tinystr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinystr.h; path = Tools/tinystr.h; sourceTree = "<group>"; };
+		D31C95331698040D00B7C441 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxml.cpp; path = Tools/tinyxml.cpp; sourceTree = "<group>"; };
+		D31C95341698040D00B7C441 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinyxml.h; path = Tools/tinyxml.h; sourceTree = "<group>"; };
+		D31C95351698040D00B7C441 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxmlerror.cpp; path = Tools/tinyxmlerror.cpp; sourceTree = "<group>"; };
+		D31C95361698040D00B7C441 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxmlparser.cpp; path = Tools/tinyxmlparser.cpp; sourceTree = "<group>"; };
+		D31C95401698045600B7C441 /* BoneAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoneAnimation.cpp; path = Animation/BoneAnimation.cpp; sourceTree = "<group>"; };
+		D31C95411698045600B7C441 /* BoneAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoneAnimation.h; path = Animation/BoneAnimation.h; sourceTree = "<group>"; };
+		D31C95421698045600B7C441 /* FrameAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FrameAnimation.cpp; path = Animation/FrameAnimation.cpp; sourceTree = "<group>"; };
+		D31C95431698045600B7C441 /* FrameAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FrameAnimation.h; path = Animation/FrameAnimation.h; sourceTree = "<group>"; };
+		D31C95441698045600B7C441 /* Skeleton2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Skeleton2D.cpp; path = Animation/Skeleton2D.cpp; sourceTree = "<group>"; };
+		D31C95451698045600B7C441 /* Skeleton2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Skeleton2D.h; path = Animation/Skeleton2D.h; sourceTree = "<group>"; };
+		D31C95461698045600B7C441 /* Skeleton2DResource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Skeleton2DResource.cpp; path = Animation/Skeleton2DResource.cpp; sourceTree = "<group>"; };
+		D31C95471698045600B7C441 /* Skeleton2DResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Skeleton2DResource.h; path = Animation/Skeleton2DResource.h; sourceTree = "<group>"; };
+		D31C95481698045600B7C441 /* Skeleton2DXmlDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Skeleton2DXmlDef.h; path = Animation/Skeleton2DXmlDef.h; sourceTree = "<group>"; };
+		D31C95491698045600B7C441 /* SkeletonAnimation2DRes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SkeletonAnimation2DRes.cpp; path = Animation/SkeletonAnimation2DRes.cpp; sourceTree = "<group>"; };
+		D31C954A1698045600B7C441 /* SkeletonAnimation2DRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkeletonAnimation2DRes.h; path = Animation/SkeletonAnimation2DRes.h; sourceTree = "<group>"; };
+		D31C954B1698045600B7C441 /* SkeletonCocos2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SkeletonCocos2D.cpp; path = Animation/SkeletonCocos2D.cpp; sourceTree = "<group>"; };
+		D31C954C1698045600B7C441 /* SkeletonCocos2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkeletonCocos2D.h; path = Animation/SkeletonCocos2D.h; sourceTree = "<group>"; };
+		D31C954D1698045600B7C441 /* SkeletonDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkeletonDef.h; path = Animation/SkeletonDef.h; sourceTree = "<group>"; };
 		D31EA19516782270002519CF /* UIControlEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIControlEvents.cpp; sourceTree = "<group>"; };
 		D31EA19616782270002519CF /* UIControlEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIControlEvents.h; sourceTree = "<group>"; };
 		D320472816703B210037C1E2 /* ActorTouch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorTouch.cpp; sourceTree = "<group>"; };
@@ -10475,6 +10515,7 @@
 		D30D8FF81666F3A9000B95E1 /* GameFramework */ = {
 			isa = PBXGroup;
 			children = (
+				D31C953F1698044800B7C441 /* Animation */,
 				D327F9301671F1E400B52EA1 /* Tools */,
 				D3FC5F5C166EE09900BDCF3B /* Client */,
 				D3146141166D8E4E0011EDC7 /* Physical */,
@@ -25691,6 +25732,27 @@
 			path = detail;
 			sourceTree = "<group>";
 		};
+		D31C953F1698044800B7C441 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				D31C95401698045600B7C441 /* BoneAnimation.cpp */,
+				D31C95411698045600B7C441 /* BoneAnimation.h */,
+				D31C95421698045600B7C441 /* FrameAnimation.cpp */,
+				D31C95431698045600B7C441 /* FrameAnimation.h */,
+				D31C95441698045600B7C441 /* Skeleton2D.cpp */,
+				D31C95451698045600B7C441 /* Skeleton2D.h */,
+				D31C95461698045600B7C441 /* Skeleton2DResource.cpp */,
+				D31C95471698045600B7C441 /* Skeleton2DResource.h */,
+				D31C95481698045600B7C441 /* Skeleton2DXmlDef.h */,
+				D31C95491698045600B7C441 /* SkeletonAnimation2DRes.cpp */,
+				D31C954A1698045600B7C441 /* SkeletonAnimation2DRes.h */,
+				D31C954B1698045600B7C441 /* SkeletonCocos2D.cpp */,
+				D31C954C1698045600B7C441 /* SkeletonCocos2D.h */,
+				D31C954D1698045600B7C441 /* SkeletonDef.h */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
 		D327F9301671F1E400B52EA1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -26667,6 +26729,19 @@
 		D3EA3959168A975100B71B82 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D31C952A1698040D00B7C441 /* BoneAnimationData.cpp */,
+				D31C952B1698040D00B7C441 /* BoneAnimationData.h */,
+				D31C952C1698040D00B7C441 /* BoneAnimationGroup.cpp */,
+				D31C952D1698040D00B7C441 /* BoneAnimationGroup.h */,
+				D31C952E1698040D00B7C441 /* BoneAvatarData.cpp */,
+				D31C952F1698040D00B7C441 /* BoneAvatarData.h */,
+				D31C95301698040D00B7C441 /* Singleton.h */,
+				D31C95311698040D00B7C441 /* tinystr.cpp */,
+				D31C95321698040D00B7C441 /* tinystr.h */,
+				D31C95331698040D00B7C441 /* tinyxml.cpp */,
+				D31C95341698040D00B7C441 /* tinyxml.h */,
+				D31C95351698040D00B7C441 /* tinyxmlerror.cpp */,
+				D31C95361698040D00B7C441 /* tinyxmlparser.cpp */,
 				D3EA395A168A976E00B71B82 /* AnimationData.cpp */,
 				D3EA395B168A976E00B71B82 /* AnimationData.h */,
 				D3EA395C168A976E00B71B82 /* AnimationGroup.cpp */,
@@ -27389,6 +27464,19 @@
 				D38A6559168C490500D00227 /* UIEvents.cpp in Sources */,
 				D38A655A168C490500D00227 /* UITargetProp.cpp in Sources */,
 				D38A655B168C490500D00227 /* UITargetWindow.cpp in Sources */,
+				D31C95371698040D00B7C441 /* BoneAnimationData.cpp in Sources */,
+				D31C95381698040D00B7C441 /* BoneAnimationGroup.cpp in Sources */,
+				D31C95391698040D00B7C441 /* BoneAvatarData.cpp in Sources */,
+				D31C953A1698040D00B7C441 /* tinystr.cpp in Sources */,
+				D31C953B1698040D00B7C441 /* tinyxml.cpp in Sources */,
+				D31C953C1698040D00B7C441 /* tinyxmlerror.cpp in Sources */,
+				D31C953D1698040D00B7C441 /* tinyxmlparser.cpp in Sources */,
+				D31C954E1698045600B7C441 /* BoneAnimation.cpp in Sources */,
+				D31C954F1698045600B7C441 /* FrameAnimation.cpp in Sources */,
+				D31C95501698045600B7C441 /* Skeleton2D.cpp in Sources */,
+				D31C95511698045600B7C441 /* Skeleton2DResource.cpp in Sources */,
+				D31C95521698045600B7C441 /* SkeletonAnimation2DRes.cpp in Sources */,
+				D31C95531698045600B7C441 /* SkeletonCocos2D.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

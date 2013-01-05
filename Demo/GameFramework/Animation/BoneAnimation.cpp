@@ -1,7 +1,7 @@
 #include "BoneAnimation.h"
-#include "Tools\BoneAvatarData.h"
-#include "Tools\BoneAnimationGroup.h"
-#include "Tools\BoneAnimationData.h"
+#include "../Tools/BoneAvatarData.h"
+#include "../Tools/BoneAnimationGroup.h"
+#include "../Tools/BoneAnimationData.h"
 
 BoneAnimation::BoneAnimation(void)
 	:m_boneAvatar(NULL)
