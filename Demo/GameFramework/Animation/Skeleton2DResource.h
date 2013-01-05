@@ -125,7 +125,7 @@ public:
 	//!����ʱ��=m_duration*����ÿ֡,��������,��ȡ������֡�������
 	int GetDurationTotal(void){return m_duration;}
 	//!�Ƿ��ӳ�
-	bool HaveDelay(void){return abs(m_delay)>0.0001f;}
+	bool HaveDelay(void){return fabs(m_delay)>0.0001f;}
 	Skeleton2DTrasform_Bone* GetBoneKey(int idx){
 		if (idx<m_keyCount){
 			return &m_keyList[idx];}
