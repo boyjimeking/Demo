@@ -1,14 +1,15 @@
 #include "Skeleton2DResource.h"
 #include "Skeleton2DXmlDef.h"
 #include <algorithm>
+#include "boost/algorithm/string.hpp"
 
 TiXmlElement* getElementByAttribute(TiXmlElement* node,const char* childNodeName,const char* attribName,const char* value)
 {
 	for(TiXmlElement* nodeChild = node->FirstChildElement(childNodeName);nodeChild
 		;nodeChild = nodeChild->NextSiblingElement(childNodeName))
 	{
-		const char* cmpValue=nodeChild->Attribute(attribName);
-		if (cmpValue&&stricmp(value,cmpValue)==0) 
+		const char* cmpValue = nodeChild->Attribute(attribName);
+		if (cmpValue && boost::algorithm::iequals(value, cmpValue)) 
 		{
 			return nodeChild;
 		}

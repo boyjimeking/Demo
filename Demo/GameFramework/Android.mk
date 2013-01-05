@@ -5,50 +5,57 @@ LOCAL_MODULE := gameframework_static
 
 LOCAL_MODULE_FILENAME := libGameFramework
 
-LOCAL_SRC_FILES :=	Actors/ActorAction.cpp\
-					Actors/ActorEntity.cpp\
-					Actors/ActorEvents.cpp\
-					Actors/ActorProp.cpp\
-					Actors/ActorsControl.cpp\
-					Actors/ActorsControlEvents.cpp\
-					Actors/ActorsLayer.cpp\
-					Actors/ActorTouch.cpp\
-					Actors/EquipObject.cpp\
-					Base/INotifier.cpp\
-					Base/INotifyEvent.cpp\
-					Base/IObserver.cpp\
-					Camera/Camera.cpp\
-					Camera/CameraNotifyEvents.cpp\
-					Camera/CameraObserver.cpp\
-					Client/Client.cpp\
-					MainScene.cpp\
-					Physical/PhysicalControl.cpp\
-					Physical/PhysicalObj.cpp\
-					SceneInfo.cpp\
-					SceneObjects/SceneObjectControlEvent.cpp\
-					SceneObjects/SceneObjectEntity.cpp\
-					SceneObjects/SceneObjectEvents.cpp\
-					SceneObjects/SceneObjectProp.cpp\
-					SceneObjects/SceneObjectsControl.cpp\
-					SceneObjects/SceneObjectsLayer.cpp\
-					Terrain/GridEntity.cpp\
-					Terrain/GridEvents.cpp\
-					Terrain/GridProp.cpp\
-					Terrain/TerrainEvent.cpp\
-					Terrain/TerrainLayer.cpp\
-					Terrain/TerrainProp.cpp\
-					Tools/DebugLayer.cpp\
-					Tools/EditAvatarData.cpp\
-					Tools/EditScene.cpp\
-					UI/UIControl.cpp\
-					UI/UIControlEvents.cpp\
-					UI/UIEvents.cpp\
-					UI/UILayer.cpp\
-					UI/UIProperty.cpp\
-					UI/UITargetProp.cpp\
-					UI/UITargetWindow.cpp\
-					UI/UIWindow.cpp\
-					WorldManager.cpp\
+LOCAL_SRC_FILES :=	Actors/ActorAction.cpp \
+					Actors/ActorEntity.cpp \
+					Actors/ActorEvents.cpp \
+					Actors/ActorProp.cpp \
+					Actors/ActorsControl.cpp \
+					Actors/ActorsControlEvents.cpp \
+					Actors/ActorsLayer.cpp \
+					Actors/ActorTouch.cpp \
+					Actors/EquipObject.cpp \
+					Animation/BoneAnimation.cpp \
+					Animation/FrameAnimation.cpp \
+					Animation/Skeleton2D.cpp \
+					Animation/Skeleton2DResource.cpp \
+					Animation/SkeletonAnimation2DRes.cpp \
+					Animation/SkeletonCocos2D.cpp \
+					Base/INotifier.cpp \
+					Base/INotifyEvent.cpp \
+					Base/IObserver.cpp \
+					Camera/Camera.cpp \
+					Camera/CameraNotifyEvents.cpp \
+					Camera/CameraObserver.cpp \
+					Client/Client.cpp \
+					MainScene.cpp \
+					Physical/PhysicalControl.cpp \
+					Physical/PhysicalObj.cpp \
+					SceneInfo.cpp \
+					SceneObjects/SceneObjectControlEvent.cpp \
+					SceneObjects/SceneObjectEntity.cpp \
+					SceneObjects/SceneObjectEvents.cpp \
+					SceneObjects/SceneObjectProp.cpp \
+					SceneObjects/SceneObjectsControl.cpp \
+					SceneObjects/SceneObjectsLayer.cpp \
+					Terrain/GridEntity.cpp \
+					Terrain/GridEvents.cpp \
+					Terrain/GridProp.cpp \
+					Terrain/TerrainEvent.cpp \
+					Terrain/TerrainLayer.cpp \
+					Terrain/TerrainProp.cpp \
+					Tools/DebugLayer.cpp \
+					Tools/EditAvatarData.cpp \
+					Tools/EditBoneAvatarData.cpp \
+					Tools/EditScene.cpp \
+					UI/UIControl.cpp \
+					UI/UIControlEvents.cpp \
+					UI/UIEvents.cpp \
+					UI/UILayer.cpp \
+					UI/UIProperty.cpp \
+					UI/UITargetProp.cpp \
+					UI/UITargetWindow.cpp \
+					UI/UIWindow.cpp \
+					WorldManager.cpp \
 					../CSProtocol/ActorBattleInfo.cpp\
 					../CSProtocol/CSMessageDef.cpp\
 					../CSProtocol/CSMessageType.cpp\
@@ -64,6 +71,9 @@ LOCAL_SRC_FILES :=	Actors/ActorAction.cpp\
 					../Tools/AnimationData.cpp\
 					../Tools/AnimationGroup.cpp\
 					../Tools/AvatarData.cpp\
+					../Tools/BoneAnimationData.cpp\
+					../Tools/BoneAnimationGroup.cpp\
+					../Tools/BoneAvatarData.cpp\
 					../Tools/Scene.cpp\
 					../Tools/StreamHelper.cpp
 
