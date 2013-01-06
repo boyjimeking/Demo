@@ -89,6 +89,7 @@
     <ClCompile Include="BoneAnimationData.cpp" />
     <ClCompile Include="BoneAnimationGroup.cpp" />
     <ClCompile Include="BoneAvatarData.cpp" />
+    <ClCompile Include="ENDirection.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="StreamHelper.cpp" />
     <ClCompile Include="tinystr.cpp" />

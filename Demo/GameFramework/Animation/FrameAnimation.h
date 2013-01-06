@@ -24,11 +24,13 @@ public:
 	virtual ~FrameAnimation(void);
 
 	void LoadAvatarFromFile(const char *fileName);
-	void PlayAnimation(ENAnimation::Decl type, ENDirection::Decl direction, bool isLoop = true);
+	void LoadAvatar(unsigned char *data, unsigned int size);
+	void PlayAnimation(const char *type, ENDirection::Decl direction, bool isLoop = true);
+
+	void ChangeEquip(ENEquipType::Decl type, const char *equipFile);
 
 	float GetTransScale(void) const;
 protected:
-	void LoadAvatar(unsigned char *data, unsigned int size);
 	Tools::AvatarData * GetAvatar(void) const { return m_avatar; }
 	Tools::AvatarData *m_avatar;
 private:
@@ -39,7 +41,7 @@ private:
 		enActorAction_MoveTo,
 	};
 	ENDirection::Decl m_currentDirection;
-	ENAnimation::Decl m_currentAnimation;
+	const char *m_currentAnimation;
 };
 
 #endif // FrameAnimation_h__

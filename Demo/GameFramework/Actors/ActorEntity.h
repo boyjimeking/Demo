@@ -48,7 +48,7 @@ namespace Game
 	protected:
 
 	protected:
-		void PlayAnimation(ENAnimation::Decl type, ENDirection::Decl direction, bool isLoop = true);
+		void PlayAnimation(const char *type, ENDirection::Decl direction, bool isLoop = true);
 		void RePlayAnimation(void);
 		ENDirection::Decl CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos);
 

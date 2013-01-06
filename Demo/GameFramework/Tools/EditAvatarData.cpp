@@ -39,7 +39,7 @@ namespace Tools
 		Game::WorldManager::Instance()->GetActorsControl()->GetMainActor()->ChangeAvatar(this);
 	}
 
-	AnimationGroup* EditAvatarData::AddAnimationGroup( int type )
+	AnimationGroup* EditAvatarData::AddAnimationGroup(const char* type)
 	{
 		AnimationGroup *animGroup = Lookup(type);
 		if (NULL != animGroup)
@@ -54,7 +54,7 @@ namespace Tools
 		}
 	}
 
-	void EditAvatarData::RemoveAnimationGroup( int type )
+	void EditAvatarData::RemoveAnimationGroup(const char* type)
 	{
 		AnimationTable::iterator it = m_animationTable.find(type);
 		if (m_animationTable.end() == it)

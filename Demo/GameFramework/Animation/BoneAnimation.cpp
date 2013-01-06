@@ -6,7 +6,7 @@
 BoneAnimation::BoneAnimation(void)
 	:m_boneAvatar(NULL)
 	,m_currentDirection(ENDirection::enError)
-	,m_currentAnimation(ENAnimation::enError)
+	,m_currentAnimation(ENAnimation::Error)
 {
 	
 }
@@ -25,13 +25,13 @@ void BoneAnimation::LoadAvatarFromFile( const char *fileName )
 	delete[] buff;
 }
 
-void BoneAnimation::PlayAnimation( ENAnimation::Decl type, ENDirection::Decl direction, bool isLoop )
+void BoneAnimation::PlayAnimation(const char *type, ENDirection::Decl direction, bool isLoop)
 {
 	if (m_currentDirection == direction && m_currentAnimation == type)
 	{
 		return;
 	}
-	if (ENAnimation::enError == type)
+	if (ENAnimation::Error == type)
 	{
 		//使用当前
 		type = m_currentAnimation;
@@ -48,9 +48,7 @@ void BoneAnimation::PlayAnimation( ENAnimation::Decl type, ENDirection::Decl dir
 	{
 		return;
 	}
-	char buff[16];
-	sprintf(buff, "%d", type);
-	Tools::BoneAnimationGroup *animGroup = m_boneAvatar->Lookup(buff);
+	Tools::BoneAnimationGroup *animGroup = m_boneAvatar->Lookup(type);
 	if (NULL == animGroup)
 	{
 		return;

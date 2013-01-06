@@ -7,6 +7,7 @@
 #include "WorldManager.h"
 #include "Camera/Camera.h"
 #include "particle_nodes/CCParticleExamples.h"
+#include "Tools/AvatarData.h"
 
 namespace Game
 {
@@ -37,76 +38,53 @@ namespace Game
 					{
 					case ENActorType::enMain:
 						{
-							if (NULL == m_boneAnimation)
+							//if (NULL == m_boneAnimation)
+							//{
+							//	m_boneAnimation = new BoneAnimation;
+							//}
+							//m_boneAnimation->LoadAvatarFromFile("MainActor.bva");
+							//addChild(m_boneAnimation);
+							//setScale(m_boneAnimation->GetTransScale());
+
+							if (NULL == m_frameAnimation)
 							{
-								m_boneAnimation = new BoneAnimation;
+								m_frameAnimation = new FrameAnimation;
 							}
-							m_boneAnimation->LoadAvatarFromFile("MainActor.bva");
-							addChild(m_boneAnimation);
-							setScale(m_boneAnimation->GetTransScale());
+							m_frameAnimation->LoadAvatarFromFile("MainActor.ava");
+							setScale(m_frameAnimation->GetTransScale());
+							addChild(m_frameAnimation);
 
-							class CCParticleFireImpl
-								:public CCParticleFire
-							{
-							public:
-								static CCParticleFireImpl* create()
-								{
-									CCParticleFireImpl* pRet = new CCParticleFireImpl();
-									if (pRet && pRet->initWithTotalParticles(250))
-									{
-										pRet->autorelease();
-									}
-									else
-									{
-										CC_SAFE_DELETE(pRet);
-									}
-									return pRet;
-								}
-								//virtual CCAffineTransform nodeToWorldTransform(void)
-								//{
-								//	CCAffineTransform t = this->nodeToParentTransform();
-
-								//	for (CCNode *p = m_pParent; p != NULL; p = p->getParent())
-								//	{
-								//		t = CCAffineTransformConcat(t, p->nodeToParentTransform());
-								//	}
-								//	return t;
-								//}
-								//virtual CCPoint convertToWorldSpace(const CCPoint& nodePoint)
-								//{
-								//	return WorldManager::DesignPosToWorld(nodePoint);
-								//}
-							};
-							CCParticleSystemQuad *particle = CCParticleFireImpl::create();
-							addChild(particle);
-							particle->AttachTarget(getParent());
-							particle->setPosition(CCPointMake(-100.0f, 20.0f));
-							particle->setAngle(180.0f);
+							//CCParticleFire *particle = CCParticleFire::create();
+							//addChild(particle);
+							//particle->AttachTarget(getParent());
+							//particle->setPosition(CCPointMake(-100.0f, 20.0f));
+							//particle->setAngle(180.0f);
 						}
 						break;
 					default:
 						{
 							//性能测试
-							if (NULL == m_boneAnimation)
-							{
-								m_boneAnimation = new BoneAnimation;
-							}
-							m_boneAnimation->LoadAvatarFromFile("MainActor.bva");
-							addChild(m_boneAnimation);
-							setScale(m_boneAnimation->GetTransScale());
-							//if (NULL == m_frameAnimation)
+							//if (NULL == m_boneAnimation)
 							//{
-							//	m_frameAnimation = new FrameAnimation;
+							//	m_boneAnimation = new BoneAnimation;
 							//}
-							//m_frameAnimation->LoadAvatarFromFile("NPCActor.ava");
-							//setScale(m_frameAnimation->GetTransScale());
-							//addChild(m_frameAnimation);
-							//cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
-							//m_touchCallBack = new TouchMonster(reinterpret_cast<ActorProp*>(notify));
+							//m_boneAnimation->LoadAvatarFromFile("MainActor.bva");
+							//addChild(m_boneAnimation);
+							//setScale(m_boneAnimation->GetTransScale());
+
+							if (NULL == m_frameAnimation)
+							{
+								m_frameAnimation = new FrameAnimation;
+							}
+							m_frameAnimation->LoadAvatarFromFile("NPCActor.ava");
+							setScale(m_frameAnimation->GetTransScale());
+							addChild(m_frameAnimation);
+							cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
+							m_touchCallBack = new TouchMonster(reinterpret_cast<ActorProp*>(notify));
 						}
 						break;
 					}
-					PlayAnimation(ENAnimation::enIdle, ENDirection::enSouth);
+					PlayAnimation(ENAnimation::Idle, ENDirection::enSouth);
 				}
 				break;
 			case ENActorEvent::enRelease:
@@ -118,7 +96,7 @@ namespace Game
 				{
 					const ActorEventChangePos *actorEvent = reinterpret_cast<const ActorEventChangePos*>(event);
 					cocos2d::CCPoint newPos = actorEvent->GetLogicPos();
-					PlayAnimation(ENAnimation::enMove, CalDirection(newPos, getPosition()));
+					PlayAnimation(ENAnimation::Move, CalDirection(newPos, getPosition()));
 					setPosition(newPos);
 					if (NULL != this->getParent())
 					{
@@ -136,31 +114,36 @@ namespace Game
 				break;
 			case ENActorEvent::enStop:
 				{
-					PlayAnimation(ENAnimation::enIdle, ENDirection::enError);
+					PlayAnimation(ENAnimation::Idle, ENDirection::enError);
 				}
 				break;
 			case ENActorEvent::enAttack:
 				{
 					const ActorEventPlayAttack *actorEvent = reinterpret_cast<const ActorEventPlayAttack*>(event);
-					PlayAnimation(ENAnimation::enAttack, CalDirection(actorEvent->m_target->GetPosition(), actorEvent->m_src->GetPosition()));
+					PlayAnimation(ENAnimation::Attack, CalDirection(actorEvent->m_target->GetPosition(), actorEvent->m_src->GetPosition()));
 				}
 				break;
 			case ENActorEvent::enChangeAvatar:
 				{
-					//const ActorEventChangeAvatar *actorEvent = reinterpret_cast<const ActorEventChangeAvatar*>(event);
-					//SetAvatar(m_avatar);
-					//RePlayAnimation();
+					const ActorEventChangeAvatar *actorEvent = reinterpret_cast<const ActorEventChangeAvatar*>(event);
+					unsigned char buff[16384] = {0};
+					unsigned int size = actorEvent->m_avatar->Write(buff, 16384);
+					m_frameAnimation->LoadAvatar(buff, size);
+					RePlayAnimation();
 				}
 				break;
 			case ENActorEvent::enChangeEquip:
 				{
-					//const ActorEventChangeEquip *actorEvent = reinterpret_cast<const ActorEventChangeEquip*>(event);
-					
+					const ActorEventChangeEquip *actorEvent = reinterpret_cast<const ActorEventChangeEquip*>(event);
+					if (NULL != m_frameAnimation)
+					{
+						m_frameAnimation->ChangeEquip(actorEvent->m_type, actorEvent->m_equipFile);
+					}
 				}
 				break;
 			case ENActorEvent::enDead:
 				{
-					PlayAnimation(ENAnimation::enDead, ENDirection::enError, false);
+					PlayAnimation(ENAnimation::Dead, ENDirection::enError, false);
 				}
 				break;
 			default:
@@ -213,8 +196,9 @@ namespace Game
 	}
 	bool ActorEntity::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
 	{
-		cocos2d::CCPoint localTouch = convertTouchToNodeSpace(pTouch);
-		cocos2d::CCRect rect = cocos2d::CCRectMake(getContentSize().width / 3.0f, getContentSize().height / 3.0f, getContentSize().width / 3.0f, getContentSize().height / 3.0f);
+		cocos2d::CCPoint localTouch = m_frameAnimation->convertTouchToNodeSpace(pTouch);
+		CCSize size = m_frameAnimation->getContentSize();
+		cocos2d::CCRect rect = cocos2d::CCRectMake(size.width / 3.0f, size.height / 3.0f, size.width / 3.0f, size.height / 3.0f);
 		if (rect.containsPoint(localTouch))
 		{
 			return m_touchCallBack->OnTouch(localTouch);
@@ -225,7 +209,7 @@ namespace Game
 		}
 	}
 
-	void ActorEntity::PlayAnimation(ENAnimation::Decl type, ENDirection::Decl direction, bool isLoop /* = true; */)
+	void ActorEntity::PlayAnimation(const char *type, ENDirection::Decl direction, bool isLoop /* = true */)
 	{
 		if (NULL != m_frameAnimation)
 		{
@@ -243,7 +227,7 @@ namespace Game
 
 	void ActorEntity::RePlayAnimation( void )
 	{
-		PlayAnimation(ENAnimation::enError, ENDirection::enError);
+		PlayAnimation(ENAnimation::Error, ENDirection::enError);
 	}
 
 	ActorEntity* ActorEntity::Create( void )

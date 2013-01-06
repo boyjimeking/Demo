@@ -27,6 +27,17 @@ namespace Tools
 			Count,
 		};
 	};
+
+
+	struct ENAnimation
+	{
+		static const char *Error;
+		static const char *Idle;
+		static const char *Move;
+		static const char *Attack;
+		static const char *Attacked;
+		static const char *Dead;
+	};
 }
 
 #endif // ENDirection_h__

@@ -65,6 +65,7 @@ LOCAL_SRC_FILES :=	Actors/ActorAction.cpp \
 					../VirtualServer/ISimulateObject.cpp\
 					../VirtualServer/NPC.cpp\
 					../VirtualServer/Player.cpp\
+					../Tools/ENDirection.cpp \
 					../Tools/AnimationData.cpp \
 					../Tools/AnimationGroup.cpp \
 					../Tools/AvatarData.cpp \

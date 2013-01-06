@@ -17,7 +17,7 @@ namespace Tools
 	class AvatarData
 	{
 	public:
-		typedef std::map<int, AnimationGroup*> AnimationTable;
+		typedef std::map<std::string, AnimationGroup*> AnimationTable;
 
 		AvatarData(void);
 		virtual ~AvatarData(void);
@@ -27,7 +27,7 @@ namespace Tools
 		void Clear(void);
 
 		const char* GetPList(void) const { return m_plist.c_str(); }
-		AnimationGroup* Lookup(int animationID) const;
+		AnimationGroup* Lookup(const char *type) const;
 		const AnimationTable& GetAnimationTable(void) const { return m_animationTable; }
 		const float& GetTransScale() const { return m_transScale; }
 		void SetTransScale(const float &val) { m_transScale = val; }

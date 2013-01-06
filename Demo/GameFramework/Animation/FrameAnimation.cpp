@@ -7,11 +7,12 @@
 #include "actions/CCActionInterval.h"
 #include "Actors/EquipObject.h"
 #include "../CCFileUtils.h"
+#include "support/CCPointExtension.h"
 
 FrameAnimation::FrameAnimation(void)
 	:m_avatar(NULL)
 	,m_currentDirection(ENDirection::enError)
-	,m_currentAnimation(ENAnimation::enError)
+	,m_currentAnimation(ENAnimation::Error)
 {
 	
 }
@@ -30,13 +31,13 @@ void FrameAnimation::LoadAvatarFromFile(const char *fileName)
 	delete[] buff;
 }
 
-void FrameAnimation::PlayAnimation( ENAnimation::Decl type, ENDirection::Decl direction, bool isLoop /*= true*/ )
+void FrameAnimation::PlayAnimation(const char *type, ENDirection::Decl direction, bool isLoop /* = true */)
 {
 	if (m_currentDirection == direction && m_currentAnimation == type)
 	{
 		return;
 	}
-	if (ENAnimation::enError == type)
+	if (ENAnimation::Error == type)
 	{
 		//使用当前
 		type = m_currentAnimation;
@@ -74,7 +75,10 @@ void FrameAnimation::PlayAnimation( ENAnimation::Decl type, ENDirection::Decl di
 		frameArray->addObject(frame);
 	}
 	this->initWithSpriteFrame(reinterpret_cast<cocos2d::CCSpriteFrame*>(frameArray->lastObject()));
-	setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.3f));
+	if (this->getTag() > 0)
+	{
+		setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.3f));
+	}
 	cocos2d::CCAnimation *animation = cocos2d::CCAnimation::createWithSpriteFrames(frameArray, animData->GetDelay());
 	cocos2d::CCAnimate *animate = cocos2d::CCAnimate::create(animation);
 	cocos2d::CCAction *action = isLoop ? (cocos2d::CCAction*)cocos2d::CCRepeatForever::create(animate) : (cocos2d::CCAction*)animate;
@@ -86,8 +90,8 @@ void FrameAnimation::PlayAnimation( ENAnimation::Decl type, ENDirection::Decl di
 	CCObject* pObj = NULL;
 	CCARRAY_FOREACH(childArray,pObj)
 	{
-		Game::EquipObject* child = (Game::EquipObject*)pObj;
-		child->PlayAnimation(type, direction);
+		FrameAnimation* child = (FrameAnimation*)pObj;
+		child->PlayAnimation(type, direction, isLoop);
 	}
 }
 
@@ -101,11 +105,43 @@ void FrameAnimation::LoadAvatar( unsigned char *data, unsigned int size )
 	{
 		m_avatar = new Tools::AvatarData;
 	}
+	else
+	{
+		cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFramesFromFile(GetAvatar()->GetPList());
+	}
 	m_avatar->Read(data, size);
+	init();
 	cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(GetAvatar()->GetPList());
 }
 
 float FrameAnimation::GetTransScale( void ) const
 {
 	return m_avatar->GetTransScale();
+}
+
+void FrameAnimation::ChangeEquip( ENEquipType::Decl type, const char *equipFile )
+{
+	CCNode *equip = getChildByTag(type);
+	if (NULL == equip)
+	{
+		if (NULL == equipFile)
+		{
+			return;
+		}
+		FrameAnimation *newEquip = new FrameAnimation;
+		newEquip->LoadAvatarFromFile(equipFile);
+		newEquip->setTag(type);
+		addChild(newEquip);
+		newEquip->setPosition(cocos2d::ccpMult(cocos2d::ccpFromSize(getContentSize()), 0.5f));
+	}
+	else
+	{
+		if (NULL == equipFile)
+		{
+			removeChild(equip, true);
+			return;
+		}
+		FrameAnimation *oldEquip = (FrameAnimation*)equip;
+		oldEquip->LoadAvatarFromFile(equipFile);
+	}
 }

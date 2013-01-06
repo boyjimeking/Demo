@@ -25,8 +25,8 @@ namespace Tools
 
 		void Apply(void);
 
-		AnimationGroup* AddAnimationGroup(int type);
-		void RemoveAnimationGroup(int type);
+		AnimationGroup* AddAnimationGroup(const char* type);
+		void RemoveAnimationGroup(const char* type);
 	protected:
 
 	private:

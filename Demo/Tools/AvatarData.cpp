@@ -36,7 +36,7 @@ namespace Tools
 		stream.Read(tableSize);
 		for (unsigned int index = 0; index < tableSize ; ++index)
 		{
-			int type = 0;
+			std::string type;
 			stream.Read(type);
 			AnimationGroup *data = new AnimationGroup;
 			stream.ReadClass(data);
@@ -63,9 +63,9 @@ namespace Tools
 		return stream.Size();
 	}
 
-	AnimationGroup* AvatarData::Lookup( int animationID ) const
+	AnimationGroup* AvatarData::Lookup(const char *type) const
 	{
-		AnimationTable::const_iterator it = m_animationTable.find(animationID);
+		AnimationTable::const_iterator it = m_animationTable.find(type);
 		if (m_animationTable.end() == it)
 		{
 			return NULL;
