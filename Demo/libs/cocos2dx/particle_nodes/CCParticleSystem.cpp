@@ -716,10 +716,13 @@ void CCParticleSystem::update(float dt)
                     CCPoint diff = ccpSub( currentPosition, p->startPos );
 					if (NULL != m_targetNode)
 					{
-						CCAffineTransform trans = m_targetNode->nodeToWorldTransform();
+						CCAffineTransform trans = nodeToParentTransform();
+						for (CCNode *node = getParent(); m_targetNode != node; node = node->getParent())
+						{
+							trans = CCAffineTransformConcat(trans, node->nodeToParentTransform());
+						}
+						trans = CCAffineTransformInvert(trans);
 						CCSize size = CCSizeApplyAffineTransform(CCSizeMake(diff.x, diff.y), trans);
-						trans = worldToNodeTransform();
-						size = CCSizeApplyAffineTransform(size, trans);
 						diff = CCPointMake(size.width, size.height);
 					}
                     newPos = ccpSub(p->pos, diff);
