@@ -36,16 +36,8 @@ namespace Game
 			default:
 				break;
 		}
-	}
-	ActorEntity* ActorProp::Create(void)
-	{
-		ActorEntity *entity = new ActorEntity(this);
-		entity->autorelease();
-		AttachObserver(entity);
-
 		ActorEventCreate event(GetActorType());
 		NotifyChange(&event);
-		return entity;
 	}
 
 	void ActorProp::Release(void)

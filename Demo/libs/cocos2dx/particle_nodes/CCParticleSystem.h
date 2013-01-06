@@ -425,8 +425,11 @@ public:
     virtual void update(float dt);
     virtual void updateWithNoTime(void);
 
+	virtual void AttachTarget(CCNode *node);
 protected:
     virtual void updateBlendFunc();
+
+	CCNode *m_targetNode;
 };
 
 // end of particle_nodes group

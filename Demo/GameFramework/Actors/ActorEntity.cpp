@@ -6,10 +6,11 @@
 #include "ActorProp.h"
 #include "WorldManager.h"
 #include "Camera/Camera.h"
+#include "particle_nodes/CCParticleExamples.h"
 
 namespace Game
 {
-	ActorEntity::ActorEntity(ActorProp *prop)
+	ActorEntity::ActorEntity(void)
 	:m_touchCallBack(NULL)
 	,m_frameAnimation(NULL)
 	,m_boneAnimation(NULL)
@@ -43,6 +44,44 @@ namespace Game
 							m_boneAnimation->LoadAvatarFromFile("MainActor.bva");
 							addChild(m_boneAnimation);
 							setScale(m_boneAnimation->GetTransScale());
+
+							class CCParticleFireImpl
+								:public CCParticleFire
+							{
+							public:
+								static CCParticleFireImpl* create()
+								{
+									CCParticleFireImpl* pRet = new CCParticleFireImpl();
+									if (pRet && pRet->initWithTotalParticles(250))
+									{
+										pRet->autorelease();
+									}
+									else
+									{
+										CC_SAFE_DELETE(pRet);
+									}
+									return pRet;
+								}
+								//virtual CCAffineTransform nodeToWorldTransform(void)
+								//{
+								//	CCAffineTransform t = this->nodeToParentTransform();
+
+								//	for (CCNode *p = m_pParent; p != NULL; p = p->getParent())
+								//	{
+								//		t = CCAffineTransformConcat(t, p->nodeToParentTransform());
+								//	}
+								//	return t;
+								//}
+								//virtual CCPoint convertToWorldSpace(const CCPoint& nodePoint)
+								//{
+								//	return WorldManager::DesignPosToWorld(nodePoint);
+								//}
+							};
+							CCParticleSystemQuad *particle = CCParticleFireImpl::create();
+							addChild(particle);
+							particle->AttachTarget(getParent());
+							particle->setPosition(CCPointMake(-100.0f, 20.0f));
+							particle->setAngle(180.0f);
 						}
 						break;
 					default:
@@ -205,6 +244,22 @@ namespace Game
 	void ActorEntity::RePlayAnimation( void )
 	{
 		PlayAnimation(ENAnimation::enError, ENDirection::enError);
+	}
+
+	ActorEntity* ActorEntity::Create( void )
+	{
+		if (!INotifier::NotifyMode)
+		{
+			return NULL;
+		}
+		ActorEntity *entity = new ActorEntity();
+		if (entity/* && entity->init()*/)
+		{
+			entity->autorelease();
+			return entity;
+		}
+		CC_SAFE_DELETE(entity);
+		return NULL;
 	}
 
 }

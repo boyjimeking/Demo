@@ -116,6 +116,7 @@ CCParticleSystem::CCParticleSystem()
     ,m_uAtlasIndex(0)
     ,m_bTransformSystemDirty(false)
     ,m_uAllocatedParticles(0)
+	,m_targetNode(NULL)
 {
     modeA.gravity = CCPointZero;
     modeA.speed = 0;
@@ -515,7 +516,14 @@ void CCParticleSystem::initParticle(tCCParticle* particle)
     // position
     if( m_ePositionType == kCCPositionTypeFree )
     {
-        particle->startPos = this->convertToWorldSpace(CCPointZero);
+		if (NULL != m_targetNode)
+		{
+			particle->startPos = m_targetNode->convertToNodeSpace(convertToWorldSpace(CCPointZero));
+		}
+		else
+		{
+			particle->startPos = this->convertToWorldSpace(CCPointZero);
+		}
     }
     else if ( m_ePositionType == kCCPositionTypeRelative )
     {
@@ -620,7 +628,14 @@ void CCParticleSystem::update(float dt)
     CCPoint currentPosition = CCPointZero;
     if (m_ePositionType == kCCPositionTypeFree)
     {
-        currentPosition = this->convertToWorldSpace(CCPointZero);
+		if (NULL != m_targetNode)
+		{
+			currentPosition = m_targetNode->convertToNodeSpace(convertToWorldSpace(CCPointZero));
+		}
+		else
+		{
+			currentPosition = this->convertToWorldSpace(CCPointZero);
+		}
     }
     else if (m_ePositionType == kCCPositionTypeRelative)
     {
@@ -699,6 +714,14 @@ void CCParticleSystem::update(float dt)
                 if (m_ePositionType == kCCPositionTypeFree || m_ePositionType == kCCPositionTypeRelative) 
                 {
                     CCPoint diff = ccpSub( currentPosition, p->startPos );
+					if (NULL != m_targetNode)
+					{
+						CCAffineTransform trans = m_targetNode->nodeToWorldTransform();
+						CCSize size = CCSizeApplyAffineTransform(CCSizeMake(diff.x, diff.y), trans);
+						trans = worldToNodeTransform();
+						size = CCSizeApplyAffineTransform(size, trans);
+						diff = CCPointMake(size.width, size.height);
+					}
                     newPos = ccpSub(p->pos, diff);
                 } 
                 else
@@ -713,7 +736,6 @@ void CCParticleSystem::update(float dt)
                     newPos.x+=m_obPosition.x;
                     newPos.y+=m_obPosition.y;
                 }
-
                 updateQuadWithParticle(p, newPos);
                 //updateParticleImp(self, updateParticleSel, p, newPos);
 
@@ -1323,6 +1345,11 @@ void CCParticleSystem::setScaleY(float newScaleY)
 {
     m_bTransformSystemDirty = true;
     CCNode::setScaleY(newScaleY);
+}
+
+void CCParticleSystem::AttachTarget( CCNode *node )
+{
+	m_targetNode = node;
 }
 
 

@@ -46,7 +46,6 @@ namespace Game
 		float GetSpeed(void) const { return m_speed; }
 
 		void Init(void);
-		ActorEntity* Create(void);
 		void Release(void);
 
 		void MoveTo(const cocos2d::CCPoint &pos);

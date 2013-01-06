@@ -35,7 +35,8 @@ namespace Game
 		,public cocos2d::CCTouchDelegate
 	{
 	public:
-		ActorEntity(ActorProp *prop);
+		static ActorEntity* Create(void);
+		ActorEntity(void);
 		virtual ~ActorEntity(void);
 
 		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );

@@ -2,6 +2,7 @@
 #include "ActorProp.h"
 #include "ActorsControlEvents.h"
 #include "support/CCPointExtension.h"
+#include "ActorEntity.h"
 
 namespace Game
 {
@@ -22,22 +23,21 @@ namespace Game
 			return NULL;
 		}
 		ActorProp *actor = new ActorProp(type, actorID);
-		actor->Init();
-		ActorEntity *entity = actor->Create();
+		ActorEntity *entity = ActorEntity::Create();
 		if (NULL == entity)
 		{
 			//Create error.
 			delete actor;
 			return NULL;
 		}
-
-		actor->SetPosition(ccp(x, y));
-		actor->Stop();
-		
-		m_actorMap.insert(std::make_pair(actorID, actor));
-
 		ActorsControlEventCreateActor event(entity);
 		NotifyChange(&event);
+
+		actor->AttachObserver(entity);
+		actor->Init();
+		actor->SetPosition(ccp(x, y));
+		actor->Stop();
+		m_actorMap.insert(std::make_pair(actorID, actor));
 		return actor;
 	}
 	void ActorsControl::ReleaseActor(int actorID)
