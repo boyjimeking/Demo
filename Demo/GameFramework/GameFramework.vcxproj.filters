@@ -40,6 +40,9 @@
     <Filter Include="GameFramework\Animation">
       <UniqueIdentifier>{0198c6a8-669b-4bb6-961e-a310aacfdf02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework\tolua">
+      <UniqueIdentifier>{04f1fe4c-2bd5-4afa-bc0c-7d2b9fa047cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\CSProtocol\CSMessageDef.cpp">
@@ -230,6 +233,18 @@
     </ClCompile>
     <ClCompile Include="Animation\BoneAnimation.cpp">
       <Filter>GameFramework\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="tolua\CCLuaEngine.cpp">
+      <Filter>GameFramework\tolua</Filter>
+    </ClCompile>
+    <ClCompile Include="tolua\Cocos2dxLuaLoader.cpp">
+      <Filter>GameFramework\tolua</Filter>
+    </ClCompile>
+    <ClCompile Include="tolua\LuaCocos2d.cpp">
+      <Filter>GameFramework\tolua</Filter>
+    </ClCompile>
+    <ClCompile Include="tolua\tolua_fix.c">
+      <Filter>GameFramework\tolua</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -436,6 +451,18 @@
     </ClInclude>
     <ClInclude Include="Animation\BoneAnimation.h">
       <Filter>GameFramework\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="tolua\CCLuaEngine.h">
+      <Filter>GameFramework\tolua</Filter>
+    </ClInclude>
+    <ClInclude Include="tolua\Cocos2dxLuaLoader.h">
+      <Filter>GameFramework\tolua</Filter>
+    </ClInclude>
+    <ClInclude Include="tolua\LuaCocos2d.h">
+      <Filter>GameFramework\tolua</Filter>
+    </ClInclude>
+    <ClInclude Include="tolua\tolua_fix.h">
+      <Filter>GameFramework\tolua</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

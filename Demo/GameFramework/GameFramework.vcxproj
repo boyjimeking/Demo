@@ -61,6 +61,10 @@
     <ClCompile Include="Terrain\TerrainEvent.cpp" />
     <ClCompile Include="Terrain\TerrainLayer.cpp" />
     <ClCompile Include="Terrain\TerrainProp.cpp" />
+    <ClCompile Include="tolua\CCLuaEngine.cpp" />
+    <ClCompile Include="tolua\Cocos2dxLuaLoader.cpp" />
+    <ClCompile Include="tolua\LuaCocos2d.cpp" />
+    <ClCompile Include="tolua\tolua_fix.c" />
     <ClCompile Include="Tools\DebugLayer.cpp" />
     <ClCompile Include="Tools\EditAvatarData.cpp" />
     <ClCompile Include="Tools\EditBoneAvatarData.cpp" />
@@ -131,6 +135,10 @@
     <ClInclude Include="Terrain\TerrainEvent.h" />
     <ClInclude Include="Terrain\TerrainLayer.h" />
     <ClInclude Include="Terrain\TerrainProp.h" />
+    <ClInclude Include="tolua\CCLuaEngine.h" />
+    <ClInclude Include="tolua\Cocos2dxLuaLoader.h" />
+    <ClInclude Include="tolua\LuaCocos2d.h" />
+    <ClInclude Include="tolua\tolua_fix.h" />
     <ClInclude Include="Tools\DebugLayer.h" />
     <ClInclude Include="Tools\EditAvatarData.h" />
     <ClInclude Include="Tools\EditBoneAvatarData.h" />
@@ -189,7 +197,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions);_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS_DEBUG;COCOS2D_DEBUG=1;</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;$(ProjectDir)../libs/extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;$(ProjectDir)../libs/extensions;$(ProjectDir)../libs/lua/lua;$(ProjectDir)../libs/lua/tolua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4267;4251;4244;4065;4018;4996;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -206,7 +214,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions);_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGSNDEBUG;</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;$(ProjectDir)../libs/extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;$(ProjectDir)../libs/extensions;$(ProjectDir)../libs/lua/lua;$(ProjectDir)../libs/lua/tolua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4267;4251;4244;4065;4018;4996;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>

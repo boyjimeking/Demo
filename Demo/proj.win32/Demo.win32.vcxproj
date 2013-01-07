@@ -48,7 +48,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;$(ProjectDir)../libs/lua/lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -64,7 +64,7 @@
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libcocos2d.lib;libExtensions.lib;opengl32.lib;glew32.lib;libBox2d.lib;libCocosDenshion.lib;%(AdditionalDependencies);GameFramework.lib;Tools.lib</AdditionalDependencies>
+      <AdditionalDependencies>libcocos2d.lib;libExtensions.lib;opengl32.lib;glew32.lib;libBox2d.lib;libCocosDenshion.lib;%(AdditionalDependencies);GameFramework.lib;Tools.lib;liblua.lib</AdditionalDependencies>
     </Link>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -85,7 +85,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)../Classes;$(ProjectDir)../libs/cocos2dx;$(ProjectDir)../libs/cocos2dx\include;$(ProjectDir)../libs/cocos2dx\kazmath\include;$(ProjectDir)../libs/cocos2dx\platform\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32;$(ProjectDir)../libs/cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)../libs/external;$(ProjectDir)../libs/CocosDenshion\include;$(ProjectDir)../GameFramework;$(ProjectDir)../libs;$(ProjectDir)../;$(ProjectDir)../libs/lua/lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -98,7 +98,7 @@
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libcocos2d.lib;libExtensions.lib;opengl32.lib;glew32.lib;libBox2d.lib;libCocosDenshion.lib;%(AdditionalDependencies);GameFramework.lib;Tools.lib</AdditionalDependencies>
+      <AdditionalDependencies>libcocos2d.lib;libExtensions.lib;opengl32.lib;glew32.lib;libBox2d.lib;libCocosDenshion.lib;%(AdditionalDependencies);GameFramework.lib;Tools.lib;liblua.lib</AdditionalDependencies>
     </Link>
     <ResourceCompile>
       <Culture>0x0409</Culture>

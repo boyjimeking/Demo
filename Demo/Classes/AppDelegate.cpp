@@ -11,6 +11,7 @@
 #include "cocos2d.h"
 #include "WorldManager.h"
 #include "../CSProtocol/CSPipeline.h"
+#include "tolua/CCLuaEngine.h"
 
 USING_NS_CC;
 
@@ -74,6 +75,22 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     //模拟网络端的初始化数据
     Net::CSPipeline::Instance()->Init();
+
+//	// register lua engine
+//	CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
+//	CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
+//
+//#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+//	CCString* pstrFileContent = CCString::createWithContentsOfFile("main.lua");
+//	if (pstrFileContent)
+//	{
+//		pEngine->executeString(pstrFileContent->getCString());
+//	}
+//#else
+//	std::string path = CCFileUtils::sharedFileUtils()->fullPathFromRelativePath("main.lua");
+//	pEngine->addSearchPath(path.substr(0, path.find_last_of("/")).c_str());
+//	pEngine->executeScriptFile(path.c_str());
+//#endif 
 
     return true;
 }
