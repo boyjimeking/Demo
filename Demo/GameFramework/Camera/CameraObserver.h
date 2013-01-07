@@ -29,7 +29,18 @@ namespace Game
         void Init(void);
         virtual ~CameraObserver(void);
         virtual void OnNotifyChange(INotifier *notify, const INotifyEvent *event);
-    private:
+
+		virtual void addChild(CCNode *child, float moveScale);
+
+		virtual void removeChild(CCNode* child, bool cleanup);
+		virtual void removeAllChildrenWithCleanup(bool cleanup);
+
+		//
+		//virtual void addChild(CCNode * child, int zOrder, int tag);
+	private:
+		typedef std::map<CCNode*, float> MoveScale;
+		MoveScale m_moveScale;
+		cocos2d::CCPoint m_lastPos;
     };
 }
 

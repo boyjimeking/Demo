@@ -21,4 +21,11 @@ namespace Game
 
 	}
 
+
+	CameraReset::CameraReset( const cocos2d::CCPoint &pos )
+		:m_pos(pos)
+	{
+
+	}
+
 }

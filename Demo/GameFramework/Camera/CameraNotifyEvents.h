@@ -22,6 +22,7 @@ namespace Game
 			enPosChanged,
 			enScaleChanged,
 			enShake,
+			enReset,
 		};
 	};
 
@@ -48,6 +49,16 @@ namespace Game
 		:public INotifyEvent
 	{
 		virtual int GetNotifyEventType(void) const { return ENCameraEvent::enShake; }
+	};
+	struct CameraReset
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENCameraEvent::enReset; }
+
+		CameraReset(const cocos2d::CCPoint &pos);
+		const cocos2d::CCPoint& GetCameraPosition(void) const { return m_pos; }
+	private:
+		const cocos2d::CCPoint &m_pos;
 	};
 }
 

@@ -70,7 +70,30 @@ namespace Game
             case ENCameraEvent::enPosChanged:
                 {
                     const CameraPosChanged *posChangedEvent = reinterpret_cast<const CameraPosChanged*>(event);
-                    setPosition(cocos2d::ccpNeg(posChangedEvent->GetCameraPosition()));
+                    //setPosition(cocos2d::ccpNeg(posChangedEvent->GetCameraPosition()));
+					cocos2d::CCPoint newPos = cocos2d::ccpNeg(posChangedEvent->GetCameraPosition());
+					cocos2d::CCPoint dis = cocos2d::ccpSub(newPos, m_lastPos);
+					if ( m_pChildren && m_pChildren->count() > 0 )
+					{
+						CCObject* child;
+						CCARRAY_FOREACH(m_pChildren, child)
+						{
+							CCNode* pNode = (CCNode*)child;
+							if (pNode)
+							{
+								MoveScale::iterator it = m_moveScale.find(pNode);
+								if (m_moveScale.end() == it)
+								{
+									pNode->setPosition(newPos);
+								}
+								else
+								{
+									pNode->setPosition(ccpAdd(pNode->getPosition(), ccpMult(dis, it->second)));
+								}
+							}
+						}
+					}
+					m_lastPos = cocos2d::ccpNeg(posChangedEvent->GetCameraPosition());
                 }
                 break;
 			case ENCameraEvent::enScaleChanged:
@@ -86,8 +109,60 @@ namespace Game
 					action->autorelease();
 					getParent()->runAction(action);
 				}
+				break;
+			case ENCameraEvent::enReset:
+				{
+					const CameraReset *posChangedEvent = reinterpret_cast<const CameraReset*>(event);
+					cocos2d::CCPoint newPos = cocos2d::ccpNeg(posChangedEvent->GetCameraPosition());
+					if ( m_pChildren && m_pChildren->count() > 0 )
+					{
+						CCObject* child;
+						CCARRAY_FOREACH(m_pChildren, child)
+						{
+							CCNode* pNode = (CCNode*)child;
+							if (pNode)
+							{
+								pNode->setPosition(newPos);
+							}
+						}
+					}
+					m_lastPos = newPos;
+				}
+				break;
             default:
                 break;
         }
     }
+
+	void CameraObserver::addChild( CCNode *child, float moveScale )
+	{
+		CCAssert( child != NULL, "Argument must be non-nil");
+		m_moveScale.insert(std::make_pair(child, moveScale));
+		CCNode::addChild(child);
+	}
+
+	//void CameraObserver::addChild( CCNode * child, int zOrder, int tag )
+	//{
+	//	CC_UNUSED_PARAM(zOrder);
+	//	CC_UNUSED_PARAM(child);
+	//	CC_UNUSED_PARAM(tag);
+	//	CCAssert(0,"CameraObserver: use addChild:moveScale instead");
+	//}
+
+	void CameraObserver::removeChild( CCNode* child, bool cleanup )
+	{
+		MoveScale::iterator it = m_moveScale.find(child);
+		if (m_moveScale.end() != it)
+		{
+			m_moveScale.erase(it);
+		}
+		CCNode::removeChild(child, cleanup);
+	}
+
+	void CameraObserver::removeAllChildrenWithCleanup( bool cleanup )
+	{
+		m_moveScale.clear();
+		CCNode::removeAllChildrenWithCleanup(cleanup);
+	}
+
 }

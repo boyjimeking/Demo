@@ -83,22 +83,22 @@ namespace Game
 
     void Camera::SetPosition(const cocos2d::CCPoint &newPosition)
     {
-		if (m_position.equals(newPosition))
-		{
-			return;
-		}
 		cocos2d::CCPoint innerPos = newPosition;
-		if (newPosition.x < 4.8f || newPosition.x > WorldManager::Instance()->GetSceneInfo()->GetWidth() - 9.6f)
+		if (newPosition.x < 4.8f)
 		{
-			innerPos.x = m_position.x;
+			innerPos.x = 4.8f;
 		}
-		if (newPosition.y < 3.2f || newPosition.y > WorldManager::Instance()->GetSceneInfo()->GetHeight() - 4.8f)
+		else if (newPosition.x > WorldManager::Instance()->GetSceneInfo()->GetWidth() - 9.6f)
 		{
-			innerPos.y = m_position.y;
+			innerPos.x = WorldManager::Instance()->GetSceneInfo()->GetWidth() - 9.6f;
 		}
-		if (m_position.equals(innerPos))
+		if (newPosition.y < 3.2f)
 		{
-			return;
+			innerPos.y = 3.2f;
+		}
+		else if (newPosition.y > WorldManager::Instance()->GetSceneInfo()->GetHeight() - 4.8f)
+		{
+			innerPos.y = WorldManager::Instance()->GetSceneInfo()->GetHeight() - 4.8f;
 		}
         m_position = innerPos;
 		cocos2d::CCPoint entityPos = m_position;
@@ -124,6 +124,15 @@ namespace Game
 	void Camera::Shake( void )
 	{
 		CameraShake event;
+		NotifyChange(&event);
+	}
+
+	void Camera::Reset( void )
+	{
+		cocos2d::CCPoint entityPos = m_position;
+		entityPos.x -= m_size.width / 2;
+		entityPos.y -= m_size.height / 2;
+		CameraReset event(entityPos);
 		NotifyChange(&event);
 	}
 

@@ -92,8 +92,8 @@ namespace Game
     	CameraObserver *cameraObj = CameraObserver::Create();
 		m_root = cameraObj;
     	scaleLayer->addChild(cameraObj);
-        m_camera = new Camera;
-        m_camera->init(cameraObj);
+		m_camera = new Camera;
+		m_camera->init(cameraObj);
         
 		//地形
 		{
@@ -101,7 +101,7 @@ namespace Game
 			terrainLayer->setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
 			m_terrain = new TerrainProp;
 			m_terrain->AttachObserver(terrainLayer);
-			cameraObj->addChild(terrainLayer);
+			cameraObj->addChild(terrainLayer, 1.0f);
 		}
 		cocos2d::CCLayer *entityLayer = cocos2d::CCLayer::create();
 		entityLayer->setAnchorPoint(cocos2d::CCPointMake(0.0f, 0.0f));
@@ -117,7 +117,7 @@ namespace Game
 			m_actorsControl = new ActorsControl;
 			m_actorsControl->AttachObserver(actorsLayer);
 		}
-		cameraObj->addChild(entityLayer);
+		cameraObj->addChild(entityLayer, 1.0f);
 		//UI
 		{
 			GUI::UILayer *uiLayer = GUI::UILayer::create();
@@ -126,6 +126,7 @@ namespace Game
 			scene->addChild(uiLayer);
 			m_uiControl->Init();
 		}
+		m_camera->Reset();
 		//bone
 		//{
 		//	m_sample = new SkeletonCocos2D;
@@ -136,7 +137,7 @@ namespace Game
 		//	m_sample->setPosition(cocos2d::CCPointMake(size.width/2, 150));
 		//}
 #if COCOS2D_DEBUG
-		cameraObj->addChild(m_debugLayer);
+		cameraObj->addChild(m_debugLayer, 1.0f);
 #endif // COCOS2D_DEBUG
 
 		return scene;
