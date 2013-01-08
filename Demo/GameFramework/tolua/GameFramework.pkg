@@ -1,0 +1,171 @@
+$#include "../WorldManager.h"
+$#include "../CSProtocol/CSPipeline.h"
+$#include "../Actors/ActorProp.h"
+$#include "../Actors/ActorsControl.h"
+$#include "../Terrain/TerrainProp.h"
+$#include "../SceneInfo.h"
+$#include "../Base/GlobalDef.h"
+
+$using namespace cocos2d;
+$using namespace Tools;
+$using namespace Game;
+$using namespace Net;
+
+class WorldManager
+{
+public:
+	static WorldManager* Instance(void);
+	static void ClearUp(void);
+
+	CCScene* Init();
+
+	void InitSceneByFile(const char *sceneName);
+	void InitScene(const Scene *scene);
+	//获取当前场景信息
+	SceneInfo* GetSceneInfo(void) const { return m_sceneInfo; }
+	//获取角色控制器
+	ActorsControl * GetActorsControl(void) const { return m_actorsControl; }
+	//获取地表属性
+	TerrainProp* GetTerrainProp(void) const { return m_terrain; }
+	//获取场景物件控制
+	SceneObjectsControl* GetSceneObjectsControl(void) const { return m_sceneObjectsControl; }
+	//获取摄像机
+    Camera* GetCamera(void) const { return m_camera; }
+	//获取UI
+	GUI::UIControl* GetUIControl(void) const { return m_uiControl; }
+	//获取物理控制
+    PhysicalControl* GetPhysicalControl(void) const { return m_physicalControl; }
+	//获取逻辑根节点
+	CCNode* GetRoot(void) const { return m_root; }
+
+    static CCPoint WorldPosToDesign(const CCPoint &worldPos);
+    static CCPoint DesignPosToWorld(const CCPoint &screenPos);
+	static float LogicToPoint(float size);
+	static float PointToLogic(float size);
+	static CCPoint LogicToPoint(const CCPoint &pos);
+	static CCPoint PointToLogic(const CCPoint &pos);
+	static CCSize LogicToPoint(const CCSize &pos);
+	static CCSize PointToLogic(const CCSize &pos);
+
+    void update(float dt);
+
+	//设置碰撞是否生效
+	void SetCollidable(bool isCollide);
+
+	Net::Client* GetClient() const { return m_client; }
+};
+
+class CSPipeline
+{
+public:
+	static CSPipeline* Instance(void);
+	void Init(void);
+};
+
+class ActorProp
+	:public INotifier
+{
+public:
+	ActorProp(ENActorType::Decl type, int id);
+	virtual ~ActorProp(void);
+
+	int GetID(void) const { return m_id; }
+	ENActorType::Decl GetActorType(void) const { return m_type; }
+	const CCPoint& GetPosition(void) const { return m_position; }
+	float GetSpeed(void) const { return m_speed; }
+
+	void Init(void);
+	void Release(void);
+
+	void MoveTo(const CCPoint &pos);
+	void Stop(void);
+	void Dead(void);
+	void StartAttack(ActorProp *target);
+	void ChangeAvatar(AvatarData *avatar);
+	void ChangeEquip(ENEquipType::Decl type, const char *avatarFile);
+	void SendAttack(int targetID);
+	void BeAttacked(int hpChanged);
+
+	void AttachUI(GUI::UIProperty *uiProp);
+
+	void SetPosition(const CCPoint &pos);
+
+	void Tick(float dt);
+
+	ActorBattleInfo* GetBattleInfo(void) const { return m_battleInfo; }
+};
+
+struct ENActorType
+{
+	enum Decl
+	{
+		enNone,
+		enMain,
+		enMonster,
+		enNpc,
+	};
+};
+
+class ActorsControl
+	:public INotifier
+{
+public:
+	ActorsControl(void);
+	virtual ~ActorsControl(void);
+
+	ActorProp* CreateActor(ENActorType::Decl type, int actorID, float x, float y);
+	void ReleaseActor(int actorID);
+	void ClearActor(void);
+
+	ActorProp* GetMainActor(void) const;
+	ActorProp* LookupActor(int actorID) const;
+
+	void Tick(float dt);
+
+	static float Distance(const ActorProp *firstActor, const ActorProp *secondActor);
+};
+
+class TerrainProp
+	:public INotifier
+{
+public:
+	TerrainProp(void);
+	virtual ~TerrainProp(void);
+
+	void Init(const Scene *sceneFile);
+
+	void AddTerrainGrid(int id, const char *imageName, float x, float y, float width, float height);
+	void ChangeTerrainGrid(int id, const char *imageName, float x, float y, float width, float height);
+	void RemoveTerrainGrid(int id);
+	GridProp* LookupGrid(int id);
+
+	void Clear(void);
+};
+
+class SceneInfo
+{
+public:
+	SceneInfo(void);
+	virtual ~SceneInfo(void);
+
+	void Init(const Scene *sceneFile);
+
+	bool GetGridPass(int x, int y);
+	bool IsPointCanStanc(const CCPoint &point);
+
+	float GetWidth(void) const { return m_width; }
+	float GetHeight(void) const { return m_height; }
+	int GetColumn(void) const { return m_gridColumn; }
+	int GetRow(void) const { return m_gridRow; }
+	float GetGridSize(void) const { return m_gridSize; }
+
+	int GetGridArrayLength(void) const { return m_gridArrayLength; }
+
+	const std::string& GetSceneName() const { return m_sceneName; }
+	void SetSceneName(const std::string &val) { m_sceneName = val; }
+
+	void SetGridPass(int x, int y, bool isPass);
+
+	//设置碰撞是否生效
+	void SetCollidable(bool isCollide);
+};

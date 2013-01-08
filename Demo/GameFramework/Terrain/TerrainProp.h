@@ -15,7 +15,7 @@ namespace Tools
 {
 	class Scene;
 }
-
+using namespace Tools;
 namespace Game
 {
 	class GridProp;
@@ -30,7 +30,7 @@ namespace Game
 		TerrainProp(void);
 		virtual ~TerrainProp(void);
 
-		void Init(const Tools::Scene *sceneFile);
+		void Init(const Scene *sceneFile);
 
 		void AddTerrainGrid(int id, const char *imageName, float x, float y, float width, float height);
 		void ChangeTerrainGrid(int id, const char *imageName, float x, float y, float width, float height);

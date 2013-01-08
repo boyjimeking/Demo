@@ -17,20 +17,20 @@ namespace Game
 		Clear();
 	}
 
-	void SceneObjectsControl::Init(const Tools::Scene *sceneFile)
+	void SceneObjectsControl::Init(const Scene *sceneFile)
 	{
 		Clear();
-		typedef Tools::Scene::ImageNameList ImageList;
+		typedef Scene::ImageNameList ImageList;
 		const ImageList &imageList = sceneFile->GetImageNameList();
 		for (ImageList::const_iterator it = imageList.begin(); imageList.end() != it; ++it)
 		{
 			AddObjectImage(it->c_str());
 		}
-		typedef Tools::Scene::ObjectInfoList InfoList;
+		typedef Scene::ObjectInfoList InfoList;
         const InfoList &list = sceneFile->GetObjectInfoList();
 		for (InfoList::const_iterator it = list.begin(); list.end() != it; ++it)
 		{
-			Tools::ObjectInfo *info = *it;
+			ObjectInfo *info = *it;
 			AddSceneObject(info->m_id, info->m_imageName, info->m_x, info->m_y, info->m_width, info->m_height);
 		}
 	}

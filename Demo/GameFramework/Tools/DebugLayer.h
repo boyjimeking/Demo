@@ -9,11 +9,12 @@
 #define DebugLayer_h__
 
 #include "base_nodes/CCNode.h"
+USING_NS_CC;
 
 namespace Tools
 {
 	class DebugLayer
-		:public cocos2d::CCNode
+		:public CCNode
 	{
 	public:
 		DebugLayer(void);

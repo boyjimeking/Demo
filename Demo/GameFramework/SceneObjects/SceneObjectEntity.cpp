@@ -37,16 +37,16 @@ namespace Game
 		case ENSceneObjectEvent::enInitObject:
 			{
 				const SceneObjectEventInit *objectEvent = reinterpret_cast<const SceneObjectEventInit*>(event);
-				cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(objectEvent->m_imageName.c_str());
+				CCSpriteFrame *frame = CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(objectEvent->m_imageName.c_str());
 				if (NULL == frame)
 				{
-					cocos2d::CCLog("Frame Not Found : ", objectEvent->m_imageName.c_str());
+					CCLog("Frame Not Found : ", objectEvent->m_imageName.c_str());
 					break;
 				}
 				setDisplayFrame(frame);
 				setPosition(objectEvent->m_position);
 				setContentSize(objectEvent->m_size);
-				setAnchorPoint(cocos2d::CCPointZero);
+				setAnchorPoint(CCPointZero);
 				if (NULL != getParent())
 				{
 					getParent()->reorderChild(this, -getPosition().y * 1000);

@@ -95,6 +95,6 @@ namespace Game
 	}
 	float ActorsControl::Distance(const ActorProp *firstActor, const ActorProp *secondActor)
 	{
-		return cocos2d::ccpDistance(firstActor->GetPosition(), secondActor->GetPosition());
+		return ccpDistance(firstActor->GetPosition(), secondActor->GetPosition());
 	}
 }

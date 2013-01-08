@@ -12,7 +12,9 @@
 #include "sprite_nodes/CCSprite.h"
 #include "touch_dispatcher/CCTouchDelegateProtocol.h"
 #include "Base/GlobalDef.h"
-
+#include "Tools/ENDirection.h"
+using namespace cocos2d;
+using namespace Tools;
 namespace Tools
 {
 	class AvatarData;
@@ -30,9 +32,9 @@ namespace Game
 	 *	角色实体类，用于角色在场景当中的显示及在场景中的响应处理
 	 */
 	class ActorEntity
-		:public cocos2d::CCNode
+		:public CCNode
 		,public IObserver
-		,public cocos2d::CCTouchDelegate
+		,public CCTouchDelegate
 	{
 	public:
 		static ActorEntity* Create(void);
@@ -41,8 +43,8 @@ namespace Game
 
 		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
 
-		virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
-		virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+		virtual void ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent);
+		virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
 
 
 	protected:
@@ -50,7 +52,7 @@ namespace Game
 	protected:
 		void PlayAnimation(const char *type, ENDirection::Decl direction, bool isLoop = true);
 		void RePlayAnimation(void);
-		ENDirection::Decl CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos);
+		ENDirection::Decl CalDirection(const CCPoint &targetPos, const CCPoint &currentPos);
 
 	private:
 		ITouch *m_touchCallBack;

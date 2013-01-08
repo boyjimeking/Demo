@@ -38,15 +38,15 @@ namespace GUI
 		{
 			case ENUIControlEvent::enInit:
 				{
-					const char* filePath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath("Icon.png");
-					cocos2d::CCSprite *sprite = cocos2d::CCSprite::create(filePath);
+					const char* filePath = CCFileUtils::sharedFileUtils()->fullPathFromRelativePath("Icon.png");
+					CCSprite *sprite = CCSprite::create(filePath);
 					this->addChild(sprite);
-					sprite->setPosition(cocos2d::CCPointMake(getContentSize().width - 32.0f, 32.0f));
+					sprite->setPosition(CCPointMake(getContentSize().width - 32.0f, 32.0f));
 				}
 				break;
 			case ENUIControlEvent::enCreateWindow:
 				{
-					cocos2d::CCNode *node = reinterpret_cast<const UIControlEventCreateWindow*>(event)->m_window->GetWindow();
+					CCNode *node = reinterpret_cast<const UIControlEventCreateWindow*>(event)->m_window->GetWindow();
 					this->addChild(node);
 				}
 				break;
@@ -55,14 +55,14 @@ namespace GUI
 		}
 	}
 
-	void UILayer::ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent)
+	void UILayer::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
 	{
-		cocos2d::CCLayer::ccTouchesBegan(pTouches, pEvent);
-		cocos2d::CCTouch *touch = reinterpret_cast<cocos2d::CCTouch*>(*pTouches->begin());
-		cocos2d::CCPoint pos = touch->getLocation();
+		CCLayer::ccTouchesBegan(pTouches, pEvent);
+		CCTouch *touch = reinterpret_cast<CCTouch*>(*pTouches->begin());
+		CCPoint pos = touch->getLocation();
 	}
 	void UILayer::registerWithTouchDispatcher()
 	{
-		cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addStandardDelegate(this, -1);
+		CCDirector::sharedDirector()->getTouchDispatcher()->addStandardDelegate(this, -1);
 	}
 }

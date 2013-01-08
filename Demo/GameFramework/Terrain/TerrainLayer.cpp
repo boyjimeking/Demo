@@ -56,18 +56,18 @@ namespace Game
 			break;
 		}
 	}
-	void TerrainLayer::ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent)
+	void TerrainLayer::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
 	{
-		cocos2d::CCLayer::ccTouchesBegan(pTouches, pEvent);
-		cocos2d::CCTouch *touch = reinterpret_cast<cocos2d::CCTouch*>(*pTouches->begin());
-		cocos2d::CCPoint pos = touch->getLocation();
+		CCLayer::ccTouchesBegan(pTouches, pEvent);
+		CCTouch *touch = reinterpret_cast<CCTouch*>(*pTouches->begin());
+		CCPoint pos = touch->getLocation();
 		//什么都没点到的时候，主角移动
 		ProcessMainActorMove(pos);
 	}
-	void TerrainLayer::ProcessMainActorMove(const cocos2d::CCPoint &screenPos)
+	void TerrainLayer::ProcessMainActorMove(const CCPoint &screenPos)
 	{
 		ActorProp *mainActor = WorldManager::Instance()->GetActorsControl()->GetMainActor();
-		cocos2d::CCPoint worldPos = WorldManager::DesignPosToWorld(screenPos);
+		CCPoint worldPos = WorldManager::DesignPosToWorld(screenPos);
 		mainActor->MoveTo(worldPos);
 	}
 

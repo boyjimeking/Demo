@@ -15,14 +15,14 @@ ActorBattleInfo::~ActorBattleInfo(void)
 	
 }
 
-void ActorBattleInfo::Read( Tools::StreamHelper *stream )
+void ActorBattleInfo::Read( StreamHelper *stream )
 {
 	stream->Read(m_isAlive);
 	stream->Read(m_HP);
 	stream->Read(m_maxHP);
 }
 
-void ActorBattleInfo::Write( Tools::StreamHelper *stream )
+void ActorBattleInfo::Write( StreamHelper *stream )
 {
 	stream->Write(m_isAlive);
 	stream->Write(m_HP);

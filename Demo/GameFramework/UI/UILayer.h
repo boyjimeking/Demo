@@ -10,11 +10,11 @@
 
 #include "layers_scenes_transitions_nodes/CCLayer.h"
 #include "../Base/IObserver.h"
-
+USING_NS_CC;
 namespace GUI
 {
 	class UILayer
-		:public cocos2d::CCLayer
+		:public CCLayer
 		,public IObserver
 	{
 	public:
@@ -24,7 +24,7 @@ namespace GUI
 
 		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
 
-		virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
+		virtual void ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent);
 
     	virtual void registerWithTouchDispatcher(void);
 	protected:

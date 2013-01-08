@@ -13,11 +13,13 @@
 #include "cocoa/CCGeometry.h"
 #include "Base/GlobalDef.h"
 
+USING_NS_CC;
+
 namespace Tools
 {
 	class AvatarData;
 }
-
+using namespace Tools;
 namespace Game
 {
 	struct ENActorEvent
@@ -59,10 +61,10 @@ namespace Game
 		:public INotifyEvent
 	{
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enChangePos; }
-		ActorEventChangePos(const cocos2d::CCPoint &worldPos);
-		const cocos2d::CCPoint& GetLogicPos(void) const { return m_targetPos; };
+		ActorEventChangePos(const CCPoint &worldPos);
+		const CCPoint& GetLogicPos(void) const { return m_targetPos; };
 	private:
-		cocos2d::CCPoint m_targetPos;
+		CCPoint m_targetPos;
 	};
 
 	struct ActorEventStop
@@ -84,8 +86,8 @@ namespace Game
 		:public INotifyEvent
 	{
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enChangeAvatar; }
-		ActorEventChangeAvatar(Tools::AvatarData *avatar);
-		Tools::AvatarData *m_avatar;
+		ActorEventChangeAvatar(AvatarData *avatar);
+		AvatarData *m_avatar;
 	};
 	struct ActorEventChangeEquip
 		:public INotifyEvent

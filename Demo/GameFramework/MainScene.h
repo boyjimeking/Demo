@@ -10,11 +10,11 @@
 #define __Demo__MainScene__
 
 #include "layers_scenes_transitions_nodes/CCScene.h"
-
+using namespace cocos2d;
 namespace Game
 {
 	class MainScene
-		:public cocos2d::CCScene
+		:public CCScene
 	{
 	public:
 		static MainScene* create();

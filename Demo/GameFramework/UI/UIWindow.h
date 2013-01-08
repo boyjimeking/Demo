@@ -11,6 +11,8 @@
 #include "../Base/IObserver.h"
 #include "base_nodes/CCNode.h"
 
+USING_NS_CC;
+
 namespace GUI
 {
 	class UIWindow
@@ -21,7 +23,7 @@ namespace GUI
 		~UIWindow(void);
 
 		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
-		virtual cocos2d::CCNode* GetWindow(void) const = 0;
+		virtual CCNode* GetWindow(void) const = 0;
 	protected:
 	private:
 	};

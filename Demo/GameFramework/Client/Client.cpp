@@ -81,7 +81,7 @@ namespace Net
 		if (NULL == actor)
 		{
 			actor = Game::WorldManager::Instance()->GetActorsControl()->CreateActor(ENActorType::enMain, innerMessage->m_actorID, innerMessage->m_x, innerMessage->m_y);
-			Tools::StreamHelper stream(innerMessage->m_data, innerMessage->m_dataLength);
+			StreamHelper stream(innerMessage->m_data, innerMessage->m_dataLength);
 			actor->GetBattleInfo()->Read(&stream);
 		}
 		else
@@ -150,7 +150,7 @@ namespace Net
 		if (NULL == actor)
 		{
 			actor = Game::WorldManager::Instance()->GetActorsControl()->CreateActor(ENActorType::enMonster, innerMessage->m_actorID, innerMessage->m_x, innerMessage->m_y);
-			Tools::StreamHelper stream(innerMessage->m_data, innerMessage->m_dataLength);
+			StreamHelper stream(innerMessage->m_data, innerMessage->m_dataLength);
 			actor->GetBattleInfo()->Read(&stream);
 		}
 		else

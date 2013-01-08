@@ -39,6 +39,7 @@ extern "C" {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "Cocos2dxLuaLoader.h"
 #endif
+#include "LuaGameFramework.h"
 
 NS_CC_BEGIN
 
@@ -212,6 +213,8 @@ bool CCLuaEngine::init(void)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     addLuaLoader(loader_Android);
 #endif
+	//////////////////////////////////////////////////////////////////////////
+	tolua_GameFramework_open(m_state);
     return true;
 }
 

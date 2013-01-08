@@ -13,6 +13,9 @@
 #include <string>
 #include "UIControlEvents.h"
 #include "cocoa/CCGeometry.h"
+
+USING_NS_CC;
+
 namespace GUI
 {
 	class UIProperty;
@@ -43,12 +46,12 @@ namespace GUI
 
 		UIProperty* GetWindow(const std::string &windowName);
 
-		const cocos2d::CCSize& GetSize(void) const { return m_size; }
+		const CCSize& GetSize(void) const { return m_size; }
 	protected:
 	private:
 		typedef std::map<std::string, UIProperty*> UIMap;
 		UIMap m_uiMap;
-		cocos2d::CCSize m_size;
+		CCSize m_size;
 	};
 }
 

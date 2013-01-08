@@ -38,7 +38,7 @@ namespace Game
     }
 
 	class ShakeAction
-		:public cocos2d::CCActionInterval
+		:public CCActionInterval
 	{
 	public:
 		ShakeAction(float scale) : m_srcScale(scale) {}
@@ -47,7 +47,7 @@ namespace Game
 		{
 			//float scale = (float)rand() / (float)RAND_MAX * 0.1f * m_srcScale - 0.05f * m_srcScale + m_srcScale;
 			//this->m_pTarget->setScale(scale);
-			cocos2d::CCPoint pos = WorldManager::Instance()->GetActorsControl()->GetMainActor()->GetPosition();
+			CCPoint pos = WorldManager::Instance()->GetActorsControl()->GetMainActor()->GetPosition();
 			this->m_pTarget->setPosition(pos.x + (float)rand() / (float)RAND_MAX * 10.0f - 5.0f, pos.y + (float)rand() / (float)RAND_MAX * 10.0f - 5.0f);
 		}
 
@@ -70,9 +70,9 @@ namespace Game
             case ENCameraEvent::enPosChanged:
                 {
                     const CameraPosChanged *posChangedEvent = reinterpret_cast<const CameraPosChanged*>(event);
-                    //setPosition(cocos2d::ccpNeg(posChangedEvent->GetCameraPosition()));
-					cocos2d::CCPoint newPos = cocos2d::ccpNeg(posChangedEvent->GetCameraPosition());
-					cocos2d::CCPoint dis = cocos2d::ccpSub(newPos, m_lastPos);
+                    //setPosition(ccpNeg(posChangedEvent->GetCameraPosition()));
+					CCPoint newPos = ccpNeg(posChangedEvent->GetCameraPosition());
+					CCPoint dis = ccpSub(newPos, m_lastPos);
 					if ( m_pChildren && m_pChildren->count() > 0 )
 					{
 						CCObject* child;
@@ -93,7 +93,7 @@ namespace Game
 							}
 						}
 					}
-					m_lastPos = cocos2d::ccpNeg(posChangedEvent->GetCameraPosition());
+					m_lastPos = ccpNeg(posChangedEvent->GetCameraPosition());
                 }
                 break;
 			case ENCameraEvent::enScaleChanged:
@@ -113,7 +113,7 @@ namespace Game
 			case ENCameraEvent::enReset:
 				{
 					const CameraReset *posChangedEvent = reinterpret_cast<const CameraReset*>(event);
-					cocos2d::CCPoint newPos = cocos2d::ccpNeg(posChangedEvent->GetCameraPosition());
+					CCPoint newPos = ccpNeg(posChangedEvent->GetCameraPosition());
 					if ( m_pChildren && m_pChildren->count() > 0 )
 					{
 						CCObject* child;

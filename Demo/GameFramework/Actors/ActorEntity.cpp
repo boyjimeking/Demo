@@ -79,7 +79,7 @@ namespace Game
 							m_frameAnimation->LoadAvatarFromFile("NPCActor.ava");
 							setScale(m_frameAnimation->GetTransScale());
 							addChild(m_frameAnimation);
-							cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
+							CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
 							m_touchCallBack = new TouchMonster(reinterpret_cast<ActorProp*>(notify));
 						}
 						break;
@@ -95,7 +95,7 @@ namespace Game
 			case ENActorEvent::enChangePos:
 				{
 					const ActorEventChangePos *actorEvent = reinterpret_cast<const ActorEventChangePos*>(event);
-					cocos2d::CCPoint newPos = actorEvent->GetLogicPos();
+					CCPoint newPos = actorEvent->GetLogicPos();
 					PlayAnimation(ENAnimation::Move, CalDirection(newPos, getPosition()));
 					setPosition(newPos);
 					if (NULL != this->getParent())
@@ -150,9 +150,9 @@ namespace Game
 				break;
 		}
 	}
-	ENDirection::Decl ActorEntity::CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos)
+	ENDirection::Decl ActorEntity::CalDirection(const CCPoint &targetPos, const CCPoint &currentPos)
 	{
-		float angle = ccpToAngle(cocos2d::ccpSub(targetPos, currentPos));
+		float angle = ccpToAngle(ccpSub(targetPos, currentPos));
 
 		static const float M_PI_8 = (float)M_PI / 8.0f;
 
@@ -190,15 +190,15 @@ namespace Game
 		}
 		return ENDirection::enEast;
 	}
-	void ActorEntity::ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent)
+	void ActorEntity::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
 	{
 		
 	}
-	bool ActorEntity::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
+	bool ActorEntity::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 	{
-		cocos2d::CCPoint localTouch = m_frameAnimation->convertTouchToNodeSpace(pTouch);
+		CCPoint localTouch = m_frameAnimation->convertTouchToNodeSpace(pTouch);
 		CCSize size = m_frameAnimation->getContentSize();
-		cocos2d::CCRect rect = cocos2d::CCRectMake(size.width / 3.0f, size.height / 3.0f, size.width / 3.0f, size.height / 3.0f);
+		CCRect rect = CCRectMake(size.width / 3.0f, size.height / 3.0f, size.width / 3.0f, size.height / 3.0f);
 		if (rect.containsPoint(localTouch))
 		{
 			return m_touchCallBack->OnTouch(localTouch);

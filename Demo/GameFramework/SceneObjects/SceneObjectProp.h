@@ -17,6 +17,8 @@ namespace Tools
 	struct ObjectInfo;
 }
 
+USING_NS_CC;
+
 namespace Game
 {
 	class SceneObjectEntity;
@@ -35,13 +37,13 @@ namespace Game
 		
 		int GetID(void) const { return m_id; }
 		const std::string& GetImageName(void) const { return m_imageName; }
-		const cocos2d::CCPoint& GetPosition(void) const { return m_position; }
-		const cocos2d::CCSize& GetSize(void) const { return m_size; }
+		const CCPoint& GetPosition(void) const { return m_position; }
+		const CCSize& GetSize(void) const { return m_size; }
 
 	protected:
 	private:
-		cocos2d::CCPoint m_position;
-		cocos2d::CCSize m_size;
+		CCPoint m_position;
+		CCSize m_size;
 		std::string m_imageName;
 		int m_id;
 	};

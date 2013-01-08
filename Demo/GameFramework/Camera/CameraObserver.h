@@ -16,12 +16,12 @@ namespace cocos2d
 {
     class CCScene;
 }
-
+using namespace cocos2d;
 namespace Game
 {
     class CameraObserver
         :public IObserver
-        ,public cocos2d::CCNode
+        ,public CCNode
     {
     public:
         static CameraObserver* Create(void);
@@ -40,7 +40,7 @@ namespace Game
 	private:
 		typedef std::map<CCNode*, float> MoveScale;
 		MoveScale m_moveScale;
-		cocos2d::CCPoint m_lastPos;
+		CCPoint m_lastPos;
     };
 }
 

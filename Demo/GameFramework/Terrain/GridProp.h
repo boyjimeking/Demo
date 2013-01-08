@@ -13,6 +13,8 @@
 #include <string>
 #include "cocoa/CCGeometry.h"
 
+USING_NS_CC;
+
 namespace Game
 {
 	class GridProp
@@ -28,13 +30,13 @@ namespace Game
 
 		int GetID(void) const { return m_id; }
 		const std::string& GetImageName(void) const { return m_imageName; }
-		const cocos2d::CCPoint& GetPosition(void) const { return m_position; }
-		const cocos2d::CCSize& GetSize(void) const { return m_size; }
+		const CCPoint& GetPosition(void) const { return m_position; }
+		const CCSize& GetSize(void) const { return m_size; }
 	private:
 		int m_id;
 		std::string m_imageName;
-		cocos2d::CCPoint m_position;
-		cocos2d::CCSize m_size;
+		CCPoint m_position;
+		CCSize m_size;
 	};
 }
 

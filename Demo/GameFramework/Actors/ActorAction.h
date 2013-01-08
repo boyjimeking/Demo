@@ -12,7 +12,7 @@
 #include "cocoa/CCGeometry.h"
 #include <set>
 #include <vector>
-
+using namespace cocos2d;
 namespace Game
 {
 	class ActorProp;
@@ -79,16 +79,16 @@ namespace Game
 	public:
 		virtual ENAction::Type GetType(void) const { return ENAction::enMove; }
 
-		MoveAction(const cocos2d::CCPoint &pos);
+		MoveAction(const CCPoint &pos);
 		virtual void OnEnter(ActorProp *prop);
 		virtual void OnInterrupt(ActorProp *prop);
 		virtual void OnExit(ActorProp *prop);
 		virtual bool Tick(float dt, ActorProp *prop);
 	protected:
-		cocos2d::CCPoint m_pos;
-		cocos2d::CCPoint m_startPos;
-		cocos2d::CCPoint m_direction;
-		std::vector<cocos2d::CCPoint> m_used;
+		CCPoint m_pos;
+		CCPoint m_startPos;
+		CCPoint m_direction;
+		std::vector<CCPoint> m_used;
 	};
 
 	//攻击

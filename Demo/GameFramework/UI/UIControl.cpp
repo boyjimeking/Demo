@@ -16,7 +16,7 @@ namespace GUI
 	}
 	void UIControl::Init(void)
 	{
-		m_size = cocos2d::CCDirector::sharedDirector()->getWinSize();
+		m_size = CCDirector::sharedDirector()->getWinSize();
 		UIControlEventInit event;
 		NotifyChange(&event);
 	}

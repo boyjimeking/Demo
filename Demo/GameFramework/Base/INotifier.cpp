@@ -25,7 +25,7 @@ void INotifier::NotifyChange( const INotifyEvent *event )
 	}
 	else
 	{
-		//cocos2d::CCLog("--Notify--\n\t%s\n\t%s\n\t%s", typeid(*this).name(), typeid(*m_observer).name(), typeid(*event).name());
+		//CCLog("--Notify--\n\t%s\n\t%s\n\t%s", typeid(*this).name(), typeid(*m_observer).name(), typeid(*event).name());
 	}
 }
 

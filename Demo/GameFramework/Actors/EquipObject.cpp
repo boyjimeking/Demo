@@ -14,7 +14,7 @@ namespace Game
 
 	}
 
-	void EquipObject::SetAvatar( Tools::AvatarData *avatar )
+	void EquipObject::SetAvatar( AvatarData *avatar )
 	{
 		if (m_avatar == avatar)
 		{

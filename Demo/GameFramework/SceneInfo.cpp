@@ -24,7 +24,7 @@ namespace Game
 		}
 	}
 
-	void SceneInfo::Init( const Tools::Scene *sceneFile )
+	void SceneInfo::Init( const Scene *sceneFile )
 	{
 		m_sceneName = sceneFile->GetSceneName();
 		m_width = sceneFile->GetWidth();
@@ -55,7 +55,7 @@ namespace Game
 		int charPos = pos % 8;
 		return 0 != (m_grid[index] & (1 << charPos));
 	}
-	bool SceneInfo::IsPointCanStanc(const cocos2d::CCPoint &point)
+	bool SceneInfo::IsPointCanStanc(const CCPoint &point)
 	{
 		int x = (point.x) / GetGridSize();
 		int y = (point.y + GetGridSize() / 2) / GetGridSize();

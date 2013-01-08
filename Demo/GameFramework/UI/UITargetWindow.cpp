@@ -27,8 +27,8 @@ namespace GUI
 				m_slider = CCControlSlider::create("LifeBack.png", "LifeFront.png", "Empty.png");
 				m_slider->setTouchEnabled(false);
 				m_slider->setScaleX(5.0f);
-				const cocos2d::CCSize &size = Game::WorldManager::Instance()->GetUIControl()->GetSize();
-				m_slider->setPosition(cocos2d::CCPointMake(size.width / 2.0f, size.height - 30.0f));
+				const CCSize &size = Game::WorldManager::Instance()->GetUIControl()->GetSize();
+				m_slider->setPosition(CCPointMake(size.width / 2.0f, size.height - 30.0f));
 			}
 			break;
 		case ENUIEvent::enAttachActor:
@@ -36,14 +36,14 @@ namespace GUI
 				const UIEventAttachActor* targetEvent = reinterpret_cast<const UIEventAttachActor*>(event);
 				m_slider->setMaximumValue(targetEvent->m_maxHp);
 				m_slider->setValue(targetEvent->m_hp);
-				cocos2d::CCLog("enAttachActor");
+				CCLog("enAttachActor");
 			}
 			break;
 		case ENUIEvent::enChangeTargetHp:
 			{
 				const UIEventChangeTargetHp* targetEvent = reinterpret_cast<const UIEventChangeTargetHp*>(event);
 				m_slider->setValue(targetEvent->m_hp);
-				cocos2d::CCLog("enChangeTargetHp");
+				CCLog("enChangeTargetHp");
 			}
 			break;
 		default:
@@ -52,7 +52,7 @@ namespace GUI
 		}
 	}
 
-	cocos2d::CCNode* UITargetWindow::GetWindow( void ) const
+	CCNode* UITargetWindow::GetWindow( void ) const
 	{
 		return m_slider;
 	}

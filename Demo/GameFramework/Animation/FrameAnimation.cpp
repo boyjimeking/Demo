@@ -24,9 +24,9 @@ FrameAnimation::~FrameAnimation(void)
 
 void FrameAnimation::LoadAvatarFromFile(const char *fileName)
 {
-	const char *fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(fileName);
+	const char *fullPath = CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(fileName);
 	unsigned long size = 0;
-	unsigned char *buff = cocos2d::CCFileUtils::sharedFileUtils()->getFileData(fullPath, "rb", &size);
+	unsigned char *buff = CCFileUtils::sharedFileUtils()->getFileData(fullPath, "rb", &size);
 	LoadAvatar(buff, size);
 	delete[] buff;
 }
@@ -54,39 +54,39 @@ void FrameAnimation::PlayAnimation(const char *type, ENDirection::Decl direction
 	{
 		return;
 	}
-	Tools::AnimationGroup *animGroup = GetAvatar()->Lookup(type);
+	AnimationGroup *animGroup = GetAvatar()->Lookup(type);
 	if (NULL == animGroup)
 	{
 		return;
 	}
-	Tools::AnimationData *animData = animGroup->LookupAnimation(direction);
+	AnimationData *animData = animGroup->LookupAnimation(direction);
 	if (NULL == animData)
 	{
 		return;
 	}
-	cocos2d::CCArray *frameArray = cocos2d::CCArray::createWithCapacity(animData->GetFrameCount());
+	CCArray *frameArray = CCArray::createWithCapacity(animData->GetFrameCount());
 	for (unsigned int index = 0; index < animData->GetFrameCount(); ++index)
 	{
-		cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(animData->GetFrame(index));
+		CCSpriteFrame *frame = CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(animData->GetFrame(index));
 		if (NULL == frame)
 		{
 			continue;
 		}
 		frameArray->addObject(frame);
 	}
-	this->initWithSpriteFrame(reinterpret_cast<cocos2d::CCSpriteFrame*>(frameArray->lastObject()));
+	this->initWithSpriteFrame(reinterpret_cast<CCSpriteFrame*>(frameArray->lastObject()));
 	if (this->getTag() > 0)
 	{
-		setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.3f));
+		setAnchorPoint(CCPointMake(0.5f, 0.3f));
 	}
-	cocos2d::CCAnimation *animation = cocos2d::CCAnimation::createWithSpriteFrames(frameArray, animData->GetDelay());
-	cocos2d::CCAnimate *animate = cocos2d::CCAnimate::create(animation);
-	cocos2d::CCAction *action = isLoop ? (cocos2d::CCAction*)cocos2d::CCRepeatForever::create(animate) : (cocos2d::CCAction*)animate;
+	CCAnimation *animation = CCAnimation::createWithSpriteFrames(frameArray, animData->GetDelay());
+	CCAnimate *animate = CCAnimate::create(animation);
+	CCAction *action = isLoop ? (CCAction*)CCRepeatForever::create(animate) : (CCAction*)animate;
 	this->stopActionByTag(enActorAction_PlayAnimation);
 	action->setTag(enActorAction_PlayAnimation);
 	this->runAction(action);
 
-	cocos2d::CCArray *childArray = getChildren();
+	CCArray *childArray = getChildren();
 	CCObject* pObj = NULL;
 	CCARRAY_FOREACH(childArray,pObj)
 	{
@@ -103,15 +103,15 @@ void FrameAnimation::LoadAvatar( unsigned char *data, unsigned int size )
 	}
 	if (NULL == m_avatar)
 	{
-		m_avatar = new Tools::AvatarData;
+		m_avatar = new AvatarData;
 	}
 	else
 	{
-		cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFramesFromFile(GetAvatar()->GetPList());
+		CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFramesFromFile(GetAvatar()->GetPList());
 	}
 	m_avatar->Read(data, size);
 	init();
-	cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(GetAvatar()->GetPList());
+	CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(GetAvatar()->GetPList());
 }
 
 float FrameAnimation::GetTransScale( void ) const
@@ -132,7 +132,7 @@ void FrameAnimation::ChangeEquip( ENEquipType::Decl type, const char *equipFile 
 		newEquip->LoadAvatarFromFile(equipFile);
 		newEquip->setTag(type);
 		addChild(newEquip);
-		newEquip->setPosition(cocos2d::ccpMult(cocos2d::ccpFromSize(getContentSize()), 0.5f));
+		newEquip->setPosition(ccpMult(ccpFromSize(getContentSize()), 0.5f));
 	}
 	else
 	{

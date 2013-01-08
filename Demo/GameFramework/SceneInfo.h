@@ -15,7 +15,8 @@ namespace Tools
 {
 	class Scene;
 }
-
+using namespace cocos2d;
+using namespace Tools;
 namespace Game
 {
 	class SceneInfo
@@ -24,10 +25,10 @@ namespace Game
 		SceneInfo(void);
 		virtual ~SceneInfo(void);
 
-		void Init(const Tools::Scene *sceneFile);
+		void Init(const Scene *sceneFile);
 
 		bool GetGridPass(int x, int y);
-		bool IsPointCanStanc(const cocos2d::CCPoint &point);
+		bool IsPointCanStanc(const CCPoint &point);
 
 		float GetWidth(void) const { return m_width; }
 		float GetHeight(void) const { return m_height; }

@@ -49,7 +49,7 @@ namespace Game
 	{
 		if (m_record.find(this) == m_record.end())
 		{
-			cocos2d::CCLog("Warning!!!");
+			CCLog("Warning!!!");
 		}
 		m_record.erase(this);
 	}
@@ -164,7 +164,7 @@ namespace Game
 		}
 	}
 	//移动
-	MoveAction::MoveAction(const cocos2d::CCPoint &pos)
+	MoveAction::MoveAction(const CCPoint &pos)
 	:m_pos(pos)
 	{
 
@@ -176,7 +176,7 @@ namespace Game
 		{
 			return;
 		}
-		m_direction = cocos2d::ccpNormalize(cocos2d::ccpSub(m_pos, prop->GetPosition()));
+		m_direction = ccpNormalize(ccpSub(m_pos, prop->GetPosition()));
 	}
 	void MoveAction::OnInterrupt(ActorProp *prop)
 	{
@@ -189,25 +189,25 @@ namespace Game
 	}
 	bool MoveAction::Tick(float dt, ActorProp *prop)
 	{
-		m_direction = cocos2d::ccpNormalize(cocos2d::ccpSub(m_pos, prop->GetPosition()));
-		if (m_direction.equals(cocos2d::CCPointZero))
+		m_direction = ccpNormalize(ccpSub(m_pos, prop->GetPosition()));
+		if (m_direction.equals(CCPointZero))
 		{
 			return true;
 		}
-		cocos2d::CCPoint changed = cocos2d::ccpMult(m_direction, dt * prop->GetSpeed());
-		cocos2d::CCPoint newPos = cocos2d::ccpAdd(prop->GetPosition(), changed);
+		CCPoint changed = ccpMult(m_direction, dt * prop->GetSpeed());
+		CCPoint newPos = ccpAdd(prop->GetPosition(), changed);
 		if (!WorldManager::Instance()->GetSceneInfo()->IsPointCanStanc(newPos))
 		{
 			changed.x = dt * prop->GetSpeed();
 			changed.x *= m_direction.x > 0 ? 1 : -1;
 			changed.y = 0.0f;
-			newPos = cocos2d::ccpAdd(prop->GetPosition(), changed);
+			newPos = ccpAdd(prop->GetPosition(), changed);
 			if (!WorldManager::Instance()->GetSceneInfo()->IsPointCanStanc(newPos))
 			{
 				changed.y = m_direction.y * dt * prop->GetSpeed();
 				changed.y *= m_direction.y > 0 ? 1 : -1;
 				changed.x = 0.0f;
-				newPos = cocos2d::ccpAdd(prop->GetPosition(), changed);
+				newPos = ccpAdd(prop->GetPosition(), changed);
 				if (!WorldManager::Instance()->GetSceneInfo()->IsPointCanStanc(newPos))
 				{
 					return true;
@@ -226,12 +226,12 @@ namespace Game
 		{
 
 		}
-		if (m_used.end() != std::find_if(m_used.begin(), m_used.end(), boost::bind(&cocos2d::CCPoint::CCPointEqualToPoint, newPos, _1)))
+		if (m_used.end() != std::find_if(m_used.begin(), m_used.end(), boost::bind(&CCPoint::CCPointEqualToPoint, newPos, _1)))
 		{
 			return true;
 		}
 		m_used.push_back(newPos);
-		if (cocos2d::ccpDistanceSQ(m_pos, newPos) <= cocos2d::ccpLengthSQ(changed))
+		if (ccpDistanceSQ(m_pos, newPos) <= ccpLengthSQ(changed))
 		{
 			prop->SetPosition(m_pos);
 			return true;
@@ -286,7 +286,7 @@ namespace Game
 				{
 					prop->SendAttack(m_targetID);
 				}
-				m_direction = cocos2d::ccpNormalize(cocos2d::ccpSub(m_pos, m_startPos));
+				m_direction = ccpNormalize(ccpSub(m_pos, m_startPos));
 				m_fired = true;
 				return false;
 			}

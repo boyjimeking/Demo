@@ -18,6 +18,7 @@ namespace Tools
 {
 	class AvatarData;
 }
+using namespace Tools;
 namespace GUI
 {
 	class UIProperty;
@@ -42,30 +43,30 @@ namespace Game
 
 		int GetID(void) const { return m_id; }
 		ENActorType::Decl GetActorType(void) const { return m_type; }
-		const cocos2d::CCPoint& GetPosition(void) const { return m_position; }
+		const CCPoint& GetPosition(void) const { return m_position; }
 		float GetSpeed(void) const { return m_speed; }
 
 		void Init(void);
 		void Release(void);
 
-		void MoveTo(const cocos2d::CCPoint &pos);
+		void MoveTo(const CCPoint &pos);
 		void Stop(void);
 		void Dead(void);
 		void StartAttack(ActorProp *target);
-		void ChangeAvatar(Tools::AvatarData *avatar);
+		void ChangeAvatar(AvatarData *avatar);
 		void ChangeEquip(ENEquipType::Decl type, const char *avatarFile);
 		void SendAttack(int targetID);
 		void BeAttacked(int hpChanged);
 
 		void AttachUI(GUI::UIProperty *uiProp);
 
-		void SetPosition(const cocos2d::CCPoint &pos);
+		void SetPosition(const CCPoint &pos);
 
 		void Tick(float dt);
 
 		ActorBattleInfo* GetBattleInfo(void) const { return m_battleInfo; }
 	protected:
-		cocos2d::CCPoint m_position;
+		CCPoint m_position;
 		int m_id;
 		ENActorType::Decl m_type;
 		float m_speed;

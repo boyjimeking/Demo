@@ -9,7 +9,7 @@
 #include "CameraNotifyEvents.h"
 namespace Game
 {
-	CameraPosChanged::CameraPosChanged( const cocos2d::CCPoint &pos )
+	CameraPosChanged::CameraPosChanged( const CCPoint &pos )
 		:m_pos(pos)
 	{
 
@@ -22,7 +22,7 @@ namespace Game
 	}
 
 
-	CameraReset::CameraReset( const cocos2d::CCPoint &pos )
+	CameraReset::CameraReset( const CCPoint &pos )
 		:m_pos(pos)
 	{
 

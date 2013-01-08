@@ -12,7 +12,7 @@ namespace Tools
 {
 	class StreamHelper;
 }
-
+using namespace Tools;
 struct ENBattlePropType 
 {
 	enum Decl
@@ -30,8 +30,8 @@ public:
 	ActorBattleInfo(void);
 	virtual ~ActorBattleInfo(void);
 
-	void Read(Tools::StreamHelper *stream);
-	void Write(Tools::StreamHelper *stream);
+	void Read(StreamHelper *stream);
+	void Write(StreamHelper *stream);
 
 	//Hp
 	int GetHP(void) const { return m_HP; }

@@ -35,6 +35,9 @@ namespace Tools
 
 class SkeletonCocos2D;
 
+using namespace cocos2d;
+using namespace Tools;
+
 namespace Game
 {
 	class SceneInfo;
@@ -52,10 +55,10 @@ namespace Game
 		static WorldManager* Instance(void);
 		static void ClearUp(void);
 
-		cocos2d::CCScene* Init();
+		CCScene* Init();
 
 		void InitSceneByFile(const char *sceneName);
-		void InitScene(const Tools::Scene *scene);
+		void InitScene(const Scene *scene);
 		//获取当前场景信息
 		SceneInfo* GetSceneInfo(void) const { return m_sceneInfo; }
 		//获取角色控制器
@@ -71,16 +74,16 @@ namespace Game
 		//获取物理控制
         PhysicalControl* GetPhysicalControl(void) const { return m_physicalControl; }
 		//获取逻辑根节点
-		cocos2d::CCNode* GetRoot(void) const { return m_root; }
+		CCNode* GetRoot(void) const { return m_root; }
 
-        static cocos2d::CCPoint WorldPosToDesign(const cocos2d::CCPoint &worldPos);
-        static cocos2d::CCPoint DesignPosToWorld(const cocos2d::CCPoint &screenPos);
+        static CCPoint WorldPosToDesign(const CCPoint &worldPos);
+        static CCPoint DesignPosToWorld(const CCPoint &screenPos);
 		static float LogicToPoint(float size);
 		static float PointToLogic(float size);
-		static cocos2d::CCPoint LogicToPoint(const cocos2d::CCPoint &pos);
-		static cocos2d::CCPoint PointToLogic(const cocos2d::CCPoint &pos);
-		static cocos2d::CCSize LogicToPoint(const cocos2d::CCSize &pos);
-		static cocos2d::CCSize PointToLogic(const cocos2d::CCSize &pos);
+		static CCPoint LogicToPoint(const CCPoint &pos);
+		static CCPoint PointToLogic(const CCPoint &pos);
+		static CCSize LogicToPoint(const CCSize &pos);
+		static CCSize PointToLogic(const CCSize &pos);
 
         void update(float dt);
 
@@ -97,10 +100,10 @@ namespace Game
         Camera *m_camera;
         PhysicalControl *m_physicalControl;
         Net::Client *m_client;
-		cocos2d::CCNode *m_root;
+		CCNode *m_root;
 
 #if COCOS2D_DEBUG
-		Tools::DebugLayer *m_debugLayer;
+		DebugLayer *m_debugLayer;
 #endif
 		SkeletonCocos2D *m_sample;
 	private:

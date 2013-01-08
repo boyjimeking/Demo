@@ -35,10 +35,10 @@ namespace Game
 			{
 				setScale(WorldManager::Instance()->GetCamera()->GetObjectScale());
 				const GridEventInit *gridEvent = reinterpret_cast<const GridEventInit*>(event);
-				cocos2d::CCTexture2D *texture = cocos2d::CCTextureCache::sharedTextureCache()->addImage(gridEvent->m_imageName.c_str());
+				CCTexture2D *texture = CCTextureCache::sharedTextureCache()->addImage(gridEvent->m_imageName.c_str());
 				initWithTexture(texture);
 				setPosition(gridEvent->m_position);
-				setAnchorPoint(cocos2d::CCPointZero);
+				setAnchorPoint(CCPointZero);
 			}
 			break;
 		case ENGridEventType::enRemoveGrid:

@@ -11,7 +11,7 @@
 
 #include "Base/INotifyEvent.h"
 #include "cocoa/CCGeometry.h"
-
+using namespace cocos2d;
 namespace Game
 {
 	struct ENCameraEvent
@@ -31,10 +31,10 @@ namespace Game
 	{
 		virtual int GetNotifyEventType(void) const { return ENCameraEvent::enPosChanged; }
 
-		CameraPosChanged(const cocos2d::CCPoint &pos);
-		const cocos2d::CCPoint& GetCameraPosition(void) const { return m_pos; }
+		CameraPosChanged(const CCPoint &pos);
+		const CCPoint& GetCameraPosition(void) const { return m_pos; }
 	private:
-		const cocos2d::CCPoint &m_pos;
+		const CCPoint &m_pos;
 	};
 	struct CameraScaleChanged
 		:public INotifyEvent
@@ -55,10 +55,10 @@ namespace Game
 	{
 		virtual int GetNotifyEventType(void) const { return ENCameraEvent::enReset; }
 
-		CameraReset(const cocos2d::CCPoint &pos);
-		const cocos2d::CCPoint& GetCameraPosition(void) const { return m_pos; }
+		CameraReset(const CCPoint &pos);
+		const CCPoint& GetCameraPosition(void) const { return m_pos; }
 	private:
-		const cocos2d::CCPoint &m_pos;
+		const CCPoint &m_pos;
 	};
 }
 

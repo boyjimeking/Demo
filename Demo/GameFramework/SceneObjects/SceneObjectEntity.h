@@ -11,13 +11,15 @@
 #include "sprite_nodes/CCSprite.h"
 #include "../Base/IObserver.h"
 
+USING_NS_CC;
+
 namespace Game
 {
 	/*
 	 *	建筑实体类，用于表示场景中可创建销毁及可触发的地面物件
 	 */
 	class SceneObjectEntity
-		:public cocos2d::CCSprite
+		:public CCSprite
 		,public IObserver
 	{
 	public:

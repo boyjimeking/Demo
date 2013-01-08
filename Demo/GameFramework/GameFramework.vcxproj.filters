@@ -246,6 +246,9 @@
     <ClCompile Include="tolua\tolua_fix.c">
       <Filter>GameFramework\tolua</Filter>
     </ClCompile>
+    <ClCompile Include="tolua\LuaGameFramework.cpp">
+      <Filter>GameFramework\tolua</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CSProtocol\CSMessageDef.h">
@@ -462,6 +465,9 @@
       <Filter>GameFramework\tolua</Filter>
     </ClInclude>
     <ClInclude Include="tolua\tolua_fix.h">
+      <Filter>GameFramework\tolua</Filter>
+    </ClInclude>
+    <ClInclude Include="tolua\LuaGameFramework.h">
       <Filter>GameFramework\tolua</Filter>
     </ClInclude>
   </ItemGroup>

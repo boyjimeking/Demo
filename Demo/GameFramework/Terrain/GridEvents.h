@@ -13,6 +13,8 @@
 #include <string>
 #include "cocoa/CCGeometry.h"
 
+USING_NS_CC;
+
 namespace Game
 {
 	struct ENGridEventType
@@ -29,11 +31,11 @@ namespace Game
 		:public INotifyEvent
 	{
 		virtual int GetNotifyEventType( void ) const { return ENGridEventType::enInitGrid; }
-		GridEventInit(const std::string &imageName, const cocos2d::CCPoint &position, const cocos2d::CCSize &size);
+		GridEventInit(const std::string &imageName, const CCPoint &position, const CCSize &size);
 
 		const std::string &m_imageName;
-		const cocos2d::CCPoint &m_position;
-		const cocos2d::CCSize &m_size;
+		const CCPoint &m_position;
+		const CCSize &m_size;
 	};
 
 	struct GridEventRemove

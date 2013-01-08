@@ -34,36 +34,36 @@ namespace Game
         this->AttachObserver(observer);
 
 		SetTransScale(1.0f);
-		SetPosition(cocos2d::CCPointZero);
+		SetPosition(CCPointZero);
     }
 
-    cocos2d::CCPoint Camera::ConvertWorldPosToDesign(const cocos2d::CCPoint &worldPos)
+    CCPoint Camera::ConvertWorldPosToDesign(const CCPoint &worldPos)
     {
-		cocos2d::CCPoint newPos = cocos2d::ccpSub(worldPos, GetPosition());
+		CCPoint newPos = ccpSub(worldPos, GetPosition());
 		newPos.x += PointToLogic(m_size.width) / 2;
 		newPos.y += PointToLogic(m_size.height) / 2;
         return LogicToPoint(newPos);
     }
-    cocos2d::CCPoint Camera::ConvertDesignPosToWorld(const cocos2d::CCPoint &screenPos)
+    CCPoint Camera::ConvertDesignPosToWorld(const CCPoint &screenPos)
     {
-		cocos2d::CCPoint newPos = PointToLogic(screenPos);
+		CCPoint newPos = PointToLogic(screenPos);
 		newPos.x -= PointToLogic(m_size.width) / 2;
 		newPos.y -= PointToLogic(m_size.height) / 2;
-        return cocos2d::ccpAdd(newPos, GetPosition());
+        return ccpAdd(newPos, GetPosition());
     }
 	float Camera::LogicToPoint( float size )
 	{
 		return size * m_transScale;
 	}
 
-	cocos2d::CCPoint Camera::LogicToPoint( const cocos2d::CCPoint &pos )
+	CCPoint Camera::LogicToPoint( const CCPoint &pos )
 	{
 		return ccpMult(pos, m_transScale);
 	}
 
-	cocos2d::CCSize Camera::LogicToPoint( const cocos2d::CCSize &pos )
+	CCSize Camera::LogicToPoint( const CCSize &pos )
 	{
-		return cocos2d::CCSizeMake(pos.width * m_transScale, pos.height * m_transScale);
+		return CCSizeMake(pos.width * m_transScale, pos.height * m_transScale);
 	}
 
 	float Camera::PointToLogic( float size )
@@ -71,19 +71,19 @@ namespace Game
 		return size / m_transScale;
 	}
 
-	cocos2d::CCPoint Camera::PointToLogic( const cocos2d::CCPoint &pos )
+	CCPoint Camera::PointToLogic( const CCPoint &pos )
 	{
 		return ccpMult(pos, 1.0f / m_transScale);
 	}
 
-	cocos2d::CCSize Camera::PointToLogic( const cocos2d::CCSize &pos )
+	CCSize Camera::PointToLogic( const CCSize &pos )
 	{
-		return cocos2d::CCSizeMake(pos.width / m_transScale, pos.height / m_transScale);
+		return CCSizeMake(pos.width / m_transScale, pos.height / m_transScale);
 	}
 
-    void Camera::SetPosition(const cocos2d::CCPoint &newPosition)
+    void Camera::SetPosition(const CCPoint &newPosition)
     {
-		cocos2d::CCPoint innerPos = newPosition;
+		CCPoint innerPos = newPosition;
 		if (newPosition.x < 4.8f)
 		{
 			innerPos.x = 4.8f;
@@ -101,7 +101,7 @@ namespace Game
 			innerPos.y = WorldManager::Instance()->GetSceneInfo()->GetHeight() - 4.8f;
 		}
         m_position = innerPos;
-		cocos2d::CCPoint entityPos = m_position;
+		CCPoint entityPos = m_position;
         entityPos.x -= m_size.width / 2;
         entityPos.y -= m_size.height / 2;
         CameraPosChanged event(entityPos);
@@ -117,7 +117,7 @@ namespace Game
 	void Camera::SetTransScale( float transScale )
 	{
 		m_transScale = transScale;
-		m_size = cocos2d::CCDirector::sharedDirector()->getWinSize();
+		m_size = CCDirector::sharedDirector()->getWinSize();
 		SetRootScale(transScale);
 	}
 
@@ -129,7 +129,7 @@ namespace Game
 
 	void Camera::Reset( void )
 	{
-		cocos2d::CCPoint entityPos = m_position;
+		CCPoint entityPos = m_position;
 		entityPos.x -= m_size.width / 2;
 		entityPos.y -= m_size.height / 2;
 		CameraReset event(entityPos);

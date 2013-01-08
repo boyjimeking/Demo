@@ -18,14 +18,14 @@ namespace Game
 		Clear();
 	}
 
-	void TerrainProp::Init(const Tools::Scene *sceneFile)
+	void TerrainProp::Init(const Scene *sceneFile)
 	{
 		Clear();
-		typedef Tools::Scene::TerrainInfoList InfoList;
+		typedef Scene::TerrainInfoList InfoList;
 		const InfoList &list = sceneFile->GetTerrainList();
 		for (InfoList::const_iterator it = list.begin(); list.end() != it; ++it)
 		{
-			Tools::TerrainInfo *info = (*it);
+			TerrainInfo *info = (*it);
 			AddTerrainGrid(info->m_id, info->m_imageName, info->m_x, info->m_y, info->m_width, info->m_height);
 		}
 	}

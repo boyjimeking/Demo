@@ -15,7 +15,7 @@ namespace Tools
 {
 	class BoneAvatarData;
 }
-
+using namespace Tools;
 class BoneAnimation
 	:public SkeletonCocos2D
 {
@@ -30,7 +30,7 @@ public:
 	float GetTransScale(void) const;
 protected:
 private:
-	Tools::BoneAvatarData *m_boneAvatar;
+	BoneAvatarData *m_boneAvatar;
 	ENDirection::Decl m_currentDirection;
 	const char *m_currentAnimation;
 };

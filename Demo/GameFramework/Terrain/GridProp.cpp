@@ -26,8 +26,8 @@ namespace Game
 	{
 		m_id = id;
 		m_imageName = imageName;
-		m_position = cocos2d::CCPointMake(x, y);
-		m_size = cocos2d::CCSizeMake(width, height);
+		m_position = CCPointMake(x, y);
+		m_size = CCSizeMake(width, height);
 
 		GridEventInit event(m_imageName, m_position, m_size);
 		NotifyChange(&event);

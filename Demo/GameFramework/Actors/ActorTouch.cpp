@@ -23,7 +23,7 @@ namespace Game
 	{
 
 	}
-	bool TouchMonster::OnTouch(const cocos2d::CCPoint &pos)
+	bool TouchMonster::OnTouch(const CCPoint &pos)
 	{
 		WorldManager::Instance()->GetActorsControl()->GetMainActor()->StartAttack(m_prop);
 		GUI::UIProperty *uiProp = WorldManager::Instance()->GetUIControl()->GetWindow("Target");

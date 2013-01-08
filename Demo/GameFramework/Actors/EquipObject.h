@@ -22,7 +22,7 @@ namespace Game
 		EquipObject(void);
 		virtual ~EquipObject(void);
 
-		void SetAvatar(Tools::AvatarData *avatar);
+		void SetAvatar(AvatarData *avatar);
 
 		void SetType(ENEquipType::Decl val) { m_type = val; }
 	protected:

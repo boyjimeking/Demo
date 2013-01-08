@@ -18,7 +18,7 @@ namespace Tools
 {
 	class Scene;
 }
-
+using namespace Tools;
 namespace Game
 {
 	class SceneObjectProp;
@@ -33,7 +33,7 @@ namespace Game
 		SceneObjectsControl(void);
 		virtual ~SceneObjectsControl(void);
 
-		void Init(const Tools::Scene *sceneFile);
+		void Init(const Scene *sceneFile);
 
 		void AddObjectImage(const char *imageName);
 		void RemoveObjectImage(const char *imageName);

@@ -5,7 +5,7 @@
 
 namespace Game
 {
-	ActorsLayer::ActorsLayer(cocos2d::CCLayer *entityLayer)
+	ActorsLayer::ActorsLayer(CCLayer *entityLayer)
 		:m_entityLayer(entityLayer)
 	{
 

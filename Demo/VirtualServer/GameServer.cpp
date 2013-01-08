@@ -6,7 +6,8 @@
 #include "../Tools/Scene.h"
 #include "Player.h"
 #include "NPC.h"
-
+using namespace cocos2d;
+using namespace Tools;
 namespace Server
 {
 	float GameServer::Width = 384.0f;
@@ -42,10 +43,10 @@ namespace Server
 	{
 		srand((unsigned int)this);
 
-		const char *fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath("Demo.pkm");
+		const char *fullPath = CCFileUtils::sharedFileUtils()->fullPathFromRelativePath("Demo.pkm");
 		unsigned long size = 0;
-		unsigned char *buff = cocos2d::CCFileUtils::sharedFileUtils()->getFileData(fullPath, "rb", &size);
-		Tools::Scene scene;
+		unsigned char *buff = CCFileUtils::sharedFileUtils()->getFileData(fullPath, "rb", &size);
+		Scene scene;
 		scene.Read(buff, size);
 		delete[] buff;
 		Width = scene.GetWidth();

@@ -30,8 +30,8 @@ struct ENSceneObjectType
 	};
 };
 
-typedef Tools::ENDirection ENDirection;
-typedef Tools::ENAnimation ENAnimation;
+//typedef ENDirection ENDirection;
+//typedef ENAnimation ENAnimation;
 
 struct ENEquipType 
 {

@@ -18,9 +18,9 @@ BoneAnimation::~BoneAnimation(void)
 
 void BoneAnimation::LoadAvatarFromFile( const char *fileName )
 {
-	const char *fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(fileName);
+	const char *fullPath = CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(fileName);
 	unsigned long size = 0;
-	unsigned char *buff = cocos2d::CCFileUtils::sharedFileUtils()->getFileData(fullPath, "rb", &size);
+	unsigned char *buff = CCFileUtils::sharedFileUtils()->getFileData(fullPath, "rb", &size);
 	LoadBoneAvatar(buff, size);
 	delete[] buff;
 }
@@ -48,12 +48,12 @@ void BoneAnimation::PlayAnimation(const char *type, ENDirection::Decl direction,
 	{
 		return;
 	}
-	Tools::BoneAnimationGroup *animGroup = m_boneAvatar->Lookup(type);
+	BoneAnimationGroup *animGroup = m_boneAvatar->Lookup(type);
 	if (NULL == animGroup)
 	{
 		return;
 	}
-	Tools::BoneAnimationData *animData = animGroup->LookupAnimation(direction);
+	BoneAnimationData *animData = animGroup->LookupAnimation(direction);
 	if (NULL == animData)
 	{
 		return;
@@ -69,7 +69,7 @@ void BoneAnimation::LoadBoneAvatar( unsigned char *data, unsigned int size )
 	}
 	if (NULL == m_boneAvatar)
 	{
-		m_boneAvatar = new Tools::BoneAvatarData;
+		m_boneAvatar = new BoneAvatarData;
 	}
 	m_boneAvatar->Read(data, size);
 	Load(m_boneAvatar->GetSkelFilename().c_str(), m_boneAvatar->GetTexFilenameDesc().c_str(), m_boneAvatar->GetTexFilename().c_str(), m_boneAvatar->GetUseSkeletonName().c_str());

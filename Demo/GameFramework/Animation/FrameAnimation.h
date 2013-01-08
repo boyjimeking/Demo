@@ -15,9 +15,10 @@ namespace Tools
 {
 	class AvatarData;
 }
-
+using namespace cocos2d;
+using namespace Tools;
 class FrameAnimation
-	:public cocos2d::CCSprite
+	:public CCSprite
 {
 public:
 	FrameAnimation(void);
@@ -31,8 +32,8 @@ public:
 
 	float GetTransScale(void) const;
 protected:
-	Tools::AvatarData * GetAvatar(void) const { return m_avatar; }
-	Tools::AvatarData *m_avatar;
+	AvatarData * GetAvatar(void) const { return m_avatar; }
+	AvatarData *m_avatar;
 private:
 	enum ENCocos2dActionTag
 	{

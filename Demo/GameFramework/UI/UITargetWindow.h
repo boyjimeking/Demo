@@ -25,7 +25,7 @@ namespace GUI
 
 		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
 
-		virtual cocos2d::CCNode* GetWindow( void ) const;
+		virtual CCNode* GetWindow( void ) const;
 
 	protected:
 

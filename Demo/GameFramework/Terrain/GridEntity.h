@@ -12,10 +12,12 @@
 #include "../Base/IObserver.h"
 #include "sprite_nodes/CCSprite.h"
 
+USING_NS_CC;
+
 namespace Game
 {
 	class GridEntity
-		:public cocos2d::CCSprite
+		:public CCSprite
 		,public IObserver
 	{
 	public:

@@ -45,7 +45,7 @@ namespace Game
 		ActorEventRelease event;
 		NotifyChange(&event);
 	}
-	void ActorProp::MoveTo(const cocos2d::CCPoint &pos)
+	void ActorProp::MoveTo(const CCPoint &pos)
 	{
 		if (!GetBattleInfo()->IsAlive())
 		{
@@ -53,7 +53,7 @@ namespace Game
 		}
 		m_actionControl->AddAction(this, new MoveAction(pos));
 	}
-	void ActorProp::SetPosition(const cocos2d::CCPoint &pos)
+	void ActorProp::SetPosition(const CCPoint &pos)
 	{
 		//if (!WorldManager::Instance()->GetSceneInfo()->IsPointCanStanc(pos))
 		//{
@@ -84,7 +84,7 @@ namespace Game
 		m_actionControl->AddAction(this, new AttackAction(target));
 	}
 
-	void ActorProp::ChangeAvatar( Tools::AvatarData *avatar )
+	void ActorProp::ChangeAvatar( AvatarData *avatar )
 	{
 		ActorEventChangeAvatar event(avatar);
 		NotifyChange(&event);

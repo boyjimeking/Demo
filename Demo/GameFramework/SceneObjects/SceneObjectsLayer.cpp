@@ -8,7 +8,7 @@
 
 namespace Game
 {
-	SceneObjectsLayer::SceneObjectsLayer(cocos2d::CCLayer *entityLayer)
+	SceneObjectsLayer::SceneObjectsLayer(CCLayer *entityLayer)
 		:m_entityLayer(entityLayer)
 	{
 
@@ -31,13 +31,13 @@ namespace Game
 		case ENSceneObjectControl::enAddObjectImage:
 			{
 				const SceneObjectEventAddObjectImage *controlEvent = reinterpret_cast<const SceneObjectEventAddObjectImage*>(event);
-				cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(controlEvent->m_imageName.c_str());
+				CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(controlEvent->m_imageName.c_str());
 			}
 			break;
 		case ENSceneObjectControl::enRemoveObjectImage:
 			{
 				const SceneObjectEventRemoveObjectImage *controlEvent = reinterpret_cast<const SceneObjectEventRemoveObjectImage*>(event);
-				cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFramesFromFile(controlEvent->m_imageName.c_str());
+				CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFramesFromFile(controlEvent->m_imageName.c_str());
 			}
 			break;
 		default:

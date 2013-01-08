@@ -24,13 +24,13 @@ namespace Tools
 		//	{
 		//		if (scene->GetGrid(innerIndex, index))
 		//		{
-		//			cocos2d::ccDrawSolidRect(cocos2d::CCPointMake(innerIndex * scene->GetGridSize(), index * scene->GetGridSize())
-		//				, cocos2d::CCPointMake((innerIndex + 1) * scene->GetGridSize() - 1, (index + 1) * scene->GetGridSize() - 1), cocos2d::ccc4f(0.0f, 0.0f, 1.0f, 0.05f));
+		//			ccDrawSolidRect(CCPointMake(innerIndex * scene->GetGridSize(), index * scene->GetGridSize())
+		//				, CCPointMake((innerIndex + 1) * scene->GetGridSize() - 1, (index + 1) * scene->GetGridSize() - 1), ccc4f(0.0f, 0.0f, 1.0f, 0.05f));
 		//		}
 		//		else
 		//		{
-		//			cocos2d::ccDrawSolidRect(cocos2d::CCPointMake(innerIndex * scene->GetGridSize(), index * scene->GetGridSize())
-		//				, cocos2d::CCPointMake((innerIndex + 1) * scene->GetGridSize() - 1, (index + 1) * scene->GetGridSize() - 1), cocos2d::ccc4f(1.0f, 0.0f, 0.0f, 0.05f));
+		//			ccDrawSolidRect(CCPointMake(innerIndex * scene->GetGridSize(), index * scene->GetGridSize())
+		//				, CCPointMake((innerIndex + 1) * scene->GetGridSize() - 1, (index + 1) * scene->GetGridSize() - 1), ccc4f(1.0f, 0.0f, 0.0f, 0.05f));
 		//		}
 		//	}
 		//}

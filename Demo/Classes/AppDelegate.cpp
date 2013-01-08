@@ -67,30 +67,21 @@ bool AppDelegate::applicationDidFinishLaunching()
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
 
-    // create a scene. it's an autorelease object
-    CCScene *pScene = Game::WorldManager::Instance()->Init();
+	// register lua engine
+	CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
+	CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
 
-    // run
-    pDirector->runWithScene(pScene);
-
-    //模拟网络端的初始化数据
-    Net::CSPipeline::Instance()->Init();
-
-//	// register lua engine
-//	CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
-//	CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
-//
-//#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-//	CCString* pstrFileContent = CCString::createWithContentsOfFile("main.lua");
-//	if (pstrFileContent)
-//	{
-//		pEngine->executeString(pstrFileContent->getCString());
-//	}
-//#else
-//	std::string path = CCFileUtils::sharedFileUtils()->fullPathFromRelativePath("main.lua");
-//	pEngine->addSearchPath(path.substr(0, path.find_last_of("/")).c_str());
-//	pEngine->executeScriptFile(path.c_str());
-//#endif 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	CCString* pstrFileContent = CCString::createWithContentsOfFile("main.lua");
+	if (pstrFileContent)
+	{
+		pEngine->executeString(pstrFileContent->getCString());
+	}
+#else
+	std::string path = CCFileUtils::sharedFileUtils()->fullPathFromRelativePath("main.lua");
+	pEngine->addSearchPath(path.substr(0, path.find_last_of("/")).c_str());
+	pEngine->executeScriptFile(path.c_str());
+#endif 
 
     return true;
 }

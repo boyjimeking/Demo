@@ -18,7 +18,7 @@ namespace Game
 	}
 
 
-	ActorEventChangePos::ActorEventChangePos( const cocos2d::CCPoint &worldPos )
+	ActorEventChangePos::ActorEventChangePos( const CCPoint &worldPos )
 		: m_targetPos(worldPos)
 	{
 
@@ -26,7 +26,7 @@ namespace Game
 
 
 
-	ActorEventChangeAvatar::ActorEventChangeAvatar( Tools::AvatarData *avatar )
+	ActorEventChangeAvatar::ActorEventChangeAvatar( AvatarData *avatar )
 		: m_avatar(avatar)
 	{
 

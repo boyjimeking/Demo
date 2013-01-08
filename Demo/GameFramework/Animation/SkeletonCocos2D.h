@@ -2,8 +2,8 @@
 #ifndef _19112012_SkeletonCocos2D
 #define _19112012_SkeletonCocos2D
 
-#include "Skeleton2D.h"
 #include "cocos2d.h"
+#include "Skeleton2D.h"
 
 using namespace cocos2d;
 

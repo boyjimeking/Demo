@@ -16,7 +16,7 @@ namespace cocos2d
 {
     class CCScene;
 }
-
+using namespace cocos2d;
 namespace Game
 {
 	class CameraObserver;
@@ -31,18 +31,18 @@ namespace Game
         void init(IObserver *observer);
 		void Reset(void);
         
-        cocos2d::CCPoint ConvertWorldPosToDesign(const cocos2d::CCPoint &worldPos);
-        cocos2d::CCPoint ConvertDesignPosToWorld(const cocos2d::CCPoint &screenPos);
+        CCPoint ConvertWorldPosToDesign(const CCPoint &worldPos);
+        CCPoint ConvertDesignPosToWorld(const CCPoint &screenPos);
 
 		float LogicToPoint(float size);
 		float PointToLogic(float size);
-		cocos2d::CCPoint LogicToPoint(const cocos2d::CCPoint &pos);
-		cocos2d::CCPoint PointToLogic(const cocos2d::CCPoint &pos);
-		cocos2d::CCSize LogicToPoint(const cocos2d::CCSize &pos);
-		cocos2d::CCSize PointToLogic(const cocos2d::CCSize &pos);
+		CCPoint LogicToPoint(const CCPoint &pos);
+		CCPoint PointToLogic(const CCPoint &pos);
+		CCSize LogicToPoint(const CCSize &pos);
+		CCSize PointToLogic(const CCSize &pos);
 
-        void SetPosition(const cocos2d::CCPoint &newPosition);
-        const cocos2d::CCPoint& GetPosition(void) const { return m_position; }
+        void SetPosition(const CCPoint &newPosition);
+        const CCPoint& GetPosition(void) const { return m_position; }
 
 
 		void SetTransScale(float transScale);
@@ -53,8 +53,8 @@ namespace Game
 	protected:
 		void SetRootScale(float scale);
     private:
-        cocos2d::CCSize m_size;
-        cocos2d::CCPoint m_position;
+        CCSize m_size;
+        CCPoint m_position;
 		float m_scale;
 		float m_transScale;
     };

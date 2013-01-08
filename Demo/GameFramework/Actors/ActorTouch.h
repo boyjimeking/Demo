@@ -10,13 +10,13 @@
 #define __Demo__ActorTouch__
 
 #include "cocoa/CCGeometry.h"
-
+using namespace cocos2d;
 namespace Game
 {
 	class ITouch
 	{
 	public:
-		virtual bool OnTouch(const cocos2d::CCPoint &pos) = 0;
+		virtual bool OnTouch(const CCPoint &pos) = 0;
 		virtual ~ITouch(){}
 	
 	private:
@@ -28,7 +28,7 @@ namespace Game
 	{
 	public:
 		TouchMonster(ActorProp *prop);
-		virtual bool OnTouch(const cocos2d::CCPoint &pos);
+		virtual bool OnTouch(const CCPoint &pos);
 	private:
 		ActorProp *m_prop;
 	};

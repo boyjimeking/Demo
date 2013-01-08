@@ -38,7 +38,7 @@ namespace Server
 		message.m_actorID = GetID();
 		message.m_x = GetX();
 		message.m_y = GetY();
-		Tools::StreamHelper stream(message.m_data, CSInitPlayer_S2C::DataMaxLength);
+		StreamHelper stream(message.m_data, CSInitPlayer_S2C::DataMaxLength);
 		GetBattleInfo()->Write(&stream);
 		message.m_dataLength = stream.Size();
 		message.Build(GetMessageType(CSInitPlayer_S2C), GetID(), sizeof(CSInitPlayer_S2C));
