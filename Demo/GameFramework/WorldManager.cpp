@@ -122,8 +122,8 @@ namespace Game
 		{
 			GUI::UILayer *uiLayer = GUI::UILayer::create();
 			m_uiControl = new GUI::UIControl;
-			m_uiControl->AttachObserver(uiLayer);
 			scene->addChild(uiLayer);
+			m_uiControl->AttachObserver(uiLayer);
 			m_uiControl->Init();
 		}
 		m_camera->Reset();

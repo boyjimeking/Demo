@@ -37,6 +37,7 @@ class SkeletonCocos2D;
 
 using namespace cocos2d;
 using namespace Tools;
+using namespace GUI;
 
 namespace Game
 {
@@ -70,7 +71,9 @@ namespace Game
 		//获取摄像机
         Camera* GetCamera(void) const { return m_camera; }
 		//获取UI
-		GUI::UIControl* GetUIControl(void) const { return m_uiControl; }
+		UIControl* GetUIControl(void) const { 
+			return m_uiControl;
+		}
 		//获取物理控制
         PhysicalControl* GetPhysicalControl(void) const { return m_physicalControl; }
 		//获取逻辑根节点

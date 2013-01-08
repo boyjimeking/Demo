@@ -16,9 +16,8 @@ namespace Game
 	TerrainLayer* TerrainLayer::create( void )
 	{
 		TerrainLayer *pRet = new TerrainLayer();
-		if (pRet && pRet->init())
+		if (pRet)
 		{
-			pRet->setTouchEnabled(true);
 			pRet->autorelease();
 			return pRet;
 		}
@@ -55,20 +54,6 @@ namespace Game
 		default:
 			break;
 		}
-	}
-	void TerrainLayer::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
-	{
-		CCLayer::ccTouchesBegan(pTouches, pEvent);
-		CCTouch *touch = reinterpret_cast<CCTouch*>(*pTouches->begin());
-		CCPoint pos = touch->getLocation();
-		//什么都没点到的时候，主角移动
-		ProcessMainActorMove(pos);
-	}
-	void TerrainLayer::ProcessMainActorMove(const CCPoint &screenPos)
-	{
-		ActorProp *mainActor = WorldManager::Instance()->GetActorsControl()->GetMainActor();
-		CCPoint worldPos = WorldManager::DesignPosToWorld(screenPos);
-		mainActor->MoveTo(worldPos);
 	}
 
 }

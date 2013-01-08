@@ -4,6 +4,11 @@
 #include "UIControlEvents.h"
 #include "platform/CCFileUtils.h"
 #include "UIWindow.h"
+#include "WorldManager.h"
+#include "Actors/ActorsControl.h"
+#include "Actors/ActorProp.h"
+
+using namespace Game;
 
 namespace GUI
 {
@@ -60,6 +65,10 @@ namespace GUI
 		CCLayer::ccTouchesBegan(pTouches, pEvent);
 		CCTouch *touch = reinterpret_cast<CCTouch*>(*pTouches->begin());
 		CCPoint pos = touch->getLocation();
+
+		ActorProp *mainActor = WorldManager::Instance()->GetActorsControl()->GetMainActor();
+		CCPoint worldPos = WorldManager::DesignPosToWorld(pos);
+		mainActor->MoveTo(worldPos);
 	}
 	void UILayer::registerWithTouchDispatcher()
 	{

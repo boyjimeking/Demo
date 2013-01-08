@@ -34,4 +34,9 @@ namespace GUI
 		}
 	}
 
+	void UIControl::registerScriptTouchHandler( int nHandler, bool bIsMultiTouches /*= false*/, int nPriority /*= INT_MIN*/, bool bSwallowsTouches /*= false*/ )
+	{
+
+	}
+
 }

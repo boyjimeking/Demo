@@ -1,6 +1,6 @@
 /*
 ** Lua binding: GameFramework
-** Generated automatically by tolua++-1.0.92 on 01/08/13 14:51:42.
+** Generated automatically by tolua++-1.0.92 on 01/08/13 17:58:39.
 */
 
 #ifndef __cplusplus
@@ -20,10 +20,14 @@ TOLUA_API int  tolua_GameFramework_open (lua_State* tolua_S);
 #include "../Terrain/TerrainProp.h"
 #include "../SceneInfo.h"
 #include "../Base/GlobalDef.h"
+#include "../UI/UIControl.h"
+#include "CCLuaEngine.h"
+#include "tolua_fix.h"
 using namespace cocos2d;
 using namespace Tools;
 using namespace Game;
 using namespace Net;
+using namespace GUI;
 
 /* function to release collected object via destructor */
 #ifdef __cplusplus
@@ -38,6 +42,13 @@ static int tolua_collect_CCPoint (lua_State* tolua_S)
 static int tolua_collect_CCSize (lua_State* tolua_S)
 {
  CCSize* self = (CCSize*) tolua_tousertype(tolua_S,1,0);
+	Mtolua_delete(self);
+	return 0;
+}
+
+static int tolua_collect_UIControl (lua_State* tolua_S)
+{
+ UIControl* self = (UIControl*) tolua_tousertype(tolua_S,1,0);
 	Mtolua_delete(self);
 	return 0;
 }
@@ -88,14 +99,18 @@ static void tolua_reg_types (lua_State* tolua_S)
  Mtolua_typeid(tolua_S,CSPipeline, "CSPipeline");
  tolua_usertype(tolua_S,"CCSize");
  Mtolua_typeid(tolua_S,CCSize, "CCSize");
+ tolua_usertype(tolua_S,"GUI::UIProperty");
+ Mtolua_typeid(tolua_S,GUI::UIProperty, "GUI::UIProperty");
  tolua_usertype(tolua_S,"CCNode");
  Mtolua_typeid(tolua_S,CCNode, "CCNode");
- tolua_usertype(tolua_S,"GridProp");
- Mtolua_typeid(tolua_S,GridProp, "GridProp");
+ tolua_usertype(tolua_S,"UIProperty");
+ Mtolua_typeid(tolua_S,UIProperty, "UIProperty");
+ tolua_usertype(tolua_S,"UIControl");
+ Mtolua_typeid(tolua_S,UIControl, "UIControl");
  tolua_usertype(tolua_S,"AvatarData");
  Mtolua_typeid(tolua_S,AvatarData, "AvatarData");
- tolua_usertype(tolua_S,"ActorsControl");
- Mtolua_typeid(tolua_S,ActorsControl, "ActorsControl");
+ tolua_usertype(tolua_S,"GridProp");
+ Mtolua_typeid(tolua_S,GridProp, "GridProp");
  tolua_usertype(tolua_S,"Scene");
  Mtolua_typeid(tolua_S,Scene, "Scene");
  tolua_usertype(tolua_S,"INotifier");
@@ -108,22 +123,22 @@ static void tolua_reg_types (lua_State* tolua_S)
  Mtolua_typeid(tolua_S,CCScene, "CCScene");
  tolua_usertype(tolua_S,"ActorBattleInfo");
  Mtolua_typeid(tolua_S,ActorBattleInfo, "ActorBattleInfo");
- tolua_usertype(tolua_S,"ENActorType");
- Mtolua_typeid(tolua_S,ENActorType, "ENActorType");
- tolua_usertype(tolua_S,"Camera");
- Mtolua_typeid(tolua_S,Camera, "Camera");
- tolua_usertype(tolua_S,"WorldManager");
- Mtolua_typeid(tolua_S,WorldManager, "WorldManager");
- tolua_usertype(tolua_S,"GUI::UIProperty");
- Mtolua_typeid(tolua_S,GUI::UIProperty, "GUI::UIProperty");
+ tolua_usertype(tolua_S,"ActorsControl");
+ Mtolua_typeid(tolua_S,ActorsControl, "ActorsControl");
  tolua_usertype(tolua_S,"Net::Client");
  Mtolua_typeid(tolua_S,Net::Client, "Net::Client");
+ tolua_usertype(tolua_S,"WorldManager");
+ Mtolua_typeid(tolua_S,WorldManager, "WorldManager");
+ tolua_usertype(tolua_S,"ENActorType");
+ Mtolua_typeid(tolua_S,ENActorType, "ENActorType");
+ tolua_usertype(tolua_S,"LUA_FUNCTION");
+ Mtolua_typeid(tolua_S,LUA_FUNCTION, "LUA_FUNCTION");
  tolua_usertype(tolua_S,"SceneObjectsControl");
  Mtolua_typeid(tolua_S,SceneObjectsControl, "SceneObjectsControl");
  tolua_usertype(tolua_S,"PhysicalControl");
  Mtolua_typeid(tolua_S,PhysicalControl, "PhysicalControl");
- tolua_usertype(tolua_S,"GUI::UIControl");
- Mtolua_typeid(tolua_S,GUI::UIControl, "GUI::UIControl");
+ tolua_usertype(tolua_S,"Camera");
+ Mtolua_typeid(tolua_S,Camera, "Camera");
 }
 
 /* method: Instance of class  WorldManager */
@@ -458,8 +473,8 @@ static int tolua_GameFramework_WorldManager_GetUIControl00(lua_State* tolua_S)
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'GetUIControl'", NULL);
 #endif
   {
-   GUI::UIControl* tolua_ret = (GUI::UIControl*)  self->GetUIControl();
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"GUI::UIControl");
+   UIControl* tolua_ret = (UIControl*)  self->GetUIControl();
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"UIControl");
   }
  }
  return 1;
@@ -2790,6 +2805,229 @@ static int tolua_GameFramework_SceneInfo_SetCollidable00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: new of class  UIControl */
+#ifndef TOLUA_DISABLE_tolua_GameFramework_UIControl_new00
+static int tolua_GameFramework_UIControl_new00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"UIControl",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   UIControl* tolua_ret = (UIControl*)  Mtolua_new((UIControl)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"UIControl");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: new_local of class  UIControl */
+#ifndef TOLUA_DISABLE_tolua_GameFramework_UIControl_new00_local
+static int tolua_GameFramework_UIControl_new00_local(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertable(tolua_S,1,"UIControl",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  {
+   UIControl* tolua_ret = (UIControl*)  Mtolua_new((UIControl)());
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"UIControl");
+    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'new'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: delete of class  UIControl */
+#ifndef TOLUA_DISABLE_tolua_GameFramework_UIControl_delete00
+static int tolua_GameFramework_UIControl_delete00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"UIControl",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  UIControl* self = (UIControl*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'delete'", NULL);
+#endif
+  Mtolua_delete(self);
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'delete'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: Init of class  UIControl */
+#ifndef TOLUA_DISABLE_tolua_GameFramework_UIControl_Init00
+static int tolua_GameFramework_UIControl_Init00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"UIControl",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  UIControl* self = (UIControl*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'Init'", NULL);
+#endif
+  {
+   self->Init();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'Init'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: GetWindow of class  UIControl */
+#ifndef TOLUA_DISABLE_tolua_GameFramework_UIControl_GetWindow00
+static int tolua_GameFramework_UIControl_GetWindow00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"UIControl",0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  UIControl* self = (UIControl*)  tolua_tousertype(tolua_S,1,0);
+  const std::string windowName = ((const std::string)  tolua_tocppstring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'GetWindow'", NULL);
+#endif
+  {
+   UIProperty* tolua_ret = (UIProperty*)  self->GetWindow(windowName);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"UIProperty");
+   tolua_pushcppstring(tolua_S,(const char*)windowName);
+  }
+ }
+ return 2;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'GetWindow'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: GetSize of class  UIControl */
+#ifndef TOLUA_DISABLE_tolua_GameFramework_UIControl_GetSize00
+static int tolua_GameFramework_UIControl_GetSize00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"const UIControl",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  const UIControl* self = (const UIControl*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'GetSize'", NULL);
+#endif
+  {
+   const CCSize& tolua_ret = (const CCSize&)  self->GetSize();
+    tolua_pushusertype(tolua_S,(void*)&tolua_ret,"const CCSize");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'GetSize'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: registerScriptTouchHandler of class  UIControl */
+#ifndef TOLUA_DISABLE_tolua_GameFramework_UIControl_registerScriptTouchHandler00
+static int tolua_GameFramework_UIControl_registerScriptTouchHandler00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"UIControl",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !toluafix_isfunction(tolua_S,2,"LUA_FUNCTION",0,&tolua_err)) ||
+     !tolua_isboolean(tolua_S,3,1,&tolua_err) ||
+     !tolua_isnumber(tolua_S,4,1,&tolua_err) ||
+     !tolua_isboolean(tolua_S,5,1,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,6,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  UIControl* self = (UIControl*)  tolua_tousertype(tolua_S,1,0);
+  LUA_FUNCTION nHandler = *((LUA_FUNCTION*)  toluafix_ref_function(tolua_S,2,0));
+  bool bIsMultiTouches = ((bool)  tolua_toboolean(tolua_S,3,false));
+  int nPriority = ((int)  tolua_tonumber(tolua_S,4,0));
+  bool bSwallowsTouches = ((bool)  tolua_toboolean(tolua_S,5,false));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'registerScriptTouchHandler'", NULL);
+#endif
+  {
+   self->registerScriptTouchHandler(nHandler,bIsMultiTouches,nPriority,bSwallowsTouches);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'registerScriptTouchHandler'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* Open function */
 TOLUA_API int tolua_GameFramework_open (lua_State* tolua_S)
 {
@@ -2923,6 +3161,21 @@ TOLUA_API int tolua_GameFramework_open (lua_State* tolua_S)
    tolua_function(tolua_S,"SetSceneName",tolua_GameFramework_SceneInfo_SetSceneName00);
    tolua_function(tolua_S,"SetGridPass",tolua_GameFramework_SceneInfo_SetGridPass00);
    tolua_function(tolua_S,"SetCollidable",tolua_GameFramework_SceneInfo_SetCollidable00);
+  tolua_endmodule(tolua_S);
+  #ifdef __cplusplus
+  tolua_cclass(tolua_S,"UIControl","UIControl","INotifier",tolua_collect_UIControl);
+  #else
+  tolua_cclass(tolua_S,"UIControl","UIControl","INotifier",NULL);
+  #endif
+  tolua_beginmodule(tolua_S,"UIControl");
+   tolua_function(tolua_S,"new",tolua_GameFramework_UIControl_new00);
+   tolua_function(tolua_S,"new_local",tolua_GameFramework_UIControl_new00_local);
+   tolua_function(tolua_S,".call",tolua_GameFramework_UIControl_new00_local);
+   tolua_function(tolua_S,"delete",tolua_GameFramework_UIControl_delete00);
+   tolua_function(tolua_S,"Init",tolua_GameFramework_UIControl_Init00);
+   tolua_function(tolua_S,"GetWindow",tolua_GameFramework_UIControl_GetWindow00);
+   tolua_function(tolua_S,"GetSize",tolua_GameFramework_UIControl_GetSize00);
+   tolua_function(tolua_S,"registerScriptTouchHandler",tolua_GameFramework_UIControl_registerScriptTouchHandler00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

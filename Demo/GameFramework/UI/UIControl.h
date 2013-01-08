@@ -47,6 +47,8 @@ namespace GUI
 		UIProperty* GetWindow(const std::string &windowName);
 
 		const CCSize& GetSize(void) const { return m_size; }
+
+		virtual void registerScriptTouchHandler(int nHandler, bool bIsMultiTouches = false, int nPriority = INT_MIN, bool bSwallowsTouches = false);
 	protected:
 	private:
 		typedef std::map<std::string, UIProperty*> UIMap;
