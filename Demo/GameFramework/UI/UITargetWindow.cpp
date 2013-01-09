@@ -27,8 +27,8 @@ namespace GUI
 				m_slider = CCControlSlider::create("LifeBack.png", "LifeFront.png", "Empty.png");
 				m_slider->setTouchEnabled(false);
 				m_slider->setScaleX(5.0f);
-				const CCSize &size = Game::WorldManager::Instance()->GetUIControl()->GetSize();
-				m_slider->setPosition(CCPointMake(size.width / 2.0f, size.height - 30.0f));
+				//const CCSize &size = Game::WorldManager::Instance()->GetUIControl()->GetSize();
+				//m_slider->setPosition(CCPointMake(size.width / 2.0f, size.height - 30.0f));
 			}
 			break;
 		case ENUIEvent::enAttachActor:

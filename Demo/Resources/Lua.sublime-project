@@ -1,0 +1,9 @@
+{
+	"folders":
+	[
+		{
+			"path": "/E/Codes/Demo/Demo/Resources",
+			"file_include_patterns": ["*.lua"]
+		}
+	]
+}

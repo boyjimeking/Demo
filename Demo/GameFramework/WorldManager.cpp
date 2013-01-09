@@ -50,7 +50,7 @@ namespace Game
 		,m_terrain(NULL)
 		,m_actorsControl(NULL)
 		,m_sceneObjectsControl(NULL)
-		,m_uiControl(NULL)
+		//,m_uiControl(NULL)
         ,m_camera(NULL)
         ,m_physicalControl(NULL)
         ,m_client(new Net::Client)
@@ -66,7 +66,6 @@ namespace Game
 	{
 		delete m_physicalControl;
 		delete m_camera;
-		delete m_uiControl;
 		delete m_sceneObjectsControl;
 		delete m_actorsControl;
 		delete m_terrain;
@@ -118,14 +117,14 @@ namespace Game
 			m_actorsControl->AttachObserver(actorsLayer);
 		}
 		cameraObj->addChild(entityLayer, 1.0f);
-		//UI
-		{
-			GUI::UILayer *uiLayer = GUI::UILayer::create();
-			m_uiControl = new GUI::UIControl;
-			scene->addChild(uiLayer);
-			m_uiControl->AttachObserver(uiLayer);
-			m_uiControl->Init();
-		}
+		////UI
+		//{
+		//	GUI::UILayer *uiLayer = GUI::UILayer::create();
+		//	m_uiControl = new GUI::UIControl;
+		//	scene->addChild(uiLayer);
+		//	m_uiControl->AttachObserver(uiLayer);
+		//	m_uiControl->Init();
+		//}
 		m_camera->Reset();
 		//bone
 		//{

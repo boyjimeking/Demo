@@ -1,6 +1,6 @@
 /*
 ** Lua binding: GameFramework
-** Generated automatically by tolua++-1.0.92 on 01/09/13 13:34:01.
+** Generated automatically by tolua++-1.0.92 on 01/09/13 15:53:31.
 */
 
 #ifndef __cplusplus
@@ -452,38 +452,6 @@ static int tolua_GameFramework_WorldManager_GetCamera00(lua_State* tolua_S)
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'GetCamera'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: GetUIControl of class  WorldManager */
-#ifndef TOLUA_DISABLE_tolua_GameFramework_WorldManager_GetUIControl00
-static int tolua_GameFramework_WorldManager_GetUIControl00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"const WorldManager",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  const WorldManager* self = (const WorldManager*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'GetUIControl'", NULL);
-#endif
-  {
-   UIControl* tolua_ret = (UIControl*)  self->GetUIControl();
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"UIControl");
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'GetUIControl'.",&tolua_err);
  return 0;
 #endif
 }
@@ -3052,7 +3020,6 @@ TOLUA_API int tolua_GameFramework_open (lua_State* tolua_S)
    tolua_function(tolua_S,"GetTerrainProp",tolua_GameFramework_WorldManager_GetTerrainProp00);
    tolua_function(tolua_S,"GetSceneObjectsControl",tolua_GameFramework_WorldManager_GetSceneObjectsControl00);
    tolua_function(tolua_S,"GetCamera",tolua_GameFramework_WorldManager_GetCamera00);
-   tolua_function(tolua_S,"GetUIControl",tolua_GameFramework_WorldManager_GetUIControl00);
    tolua_function(tolua_S,"GetPhysicalControl",tolua_GameFramework_WorldManager_GetPhysicalControl00);
    tolua_function(tolua_S,"GetRoot",tolua_GameFramework_WorldManager_GetRoot00);
    tolua_function(tolua_S,"WorldPosToDesign",tolua_GameFramework_WorldManager_WorldPosToDesign00);

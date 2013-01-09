@@ -71,9 +71,9 @@ namespace Game
 		//获取摄像机
         Camera* GetCamera(void) const { return m_camera; }
 		//获取UI
-		UIControl* GetUIControl(void) const { 
-			return m_uiControl;
-		}
+		//UIControl* GetUIControl(void) const { 
+		//	return m_uiControl;
+		//}
 		//获取物理控制
         PhysicalControl* GetPhysicalControl(void) const { return m_physicalControl; }
 		//获取逻辑根节点
@@ -99,7 +99,7 @@ namespace Game
 		ActorsControl *m_actorsControl;
 		TerrainProp *m_terrain;
 		SceneObjectsControl *m_sceneObjectsControl;
-		GUI::UIControl *m_uiControl;
+		//GUI::UIControl *m_uiControl;
         Camera *m_camera;
         PhysicalControl *m_physicalControl;
         Net::Client *m_client;

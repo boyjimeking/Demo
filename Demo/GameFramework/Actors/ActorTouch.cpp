@@ -26,12 +26,12 @@ namespace Game
 	bool TouchMonster::OnTouch(const CCPoint &pos)
 	{
 		WorldManager::Instance()->GetActorsControl()->GetMainActor()->StartAttack(m_prop);
-		GUI::UIProperty *uiProp = WorldManager::Instance()->GetUIControl()->GetWindow("Target");
-		if (NULL == uiProp)
-		{
-			uiProp = WorldManager::Instance()->GetUIControl()->CreateUI<GUI::UITargetProp, GUI::UITargetWindow>("Target");
-		}
-		m_prop->AttachUI(uiProp);
+		//GUI::UIProperty *uiProp = WorldManager::Instance()->GetUIControl()->GetWindow("Target");
+		//if (NULL == uiProp)
+		//{
+		//	uiProp = WorldManager::Instance()->GetUIControl()->CreateUI<GUI::UITargetProp, GUI::UITargetWindow>("Target");
+		//}
+		//m_prop->AttachUI(uiProp);
 		return true;
 	}
 }

@@ -1,0 +1,268 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ta",
+				"targetState"
+			],
+			[
+				"Lo",
+				"loadTerrain"
+			],
+			[
+				"I",
+				"Init"
+			],
+			[
+				"In",
+				"Instance"
+			],
+			[
+				"fun",
+				"function	function"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 81.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/Codes/Demo/Demo/Resources/UIControl.lua",
+		"/E/Codes/Demo/Demo/Resources/iTunesArtwork",
+		"/E/Codes/Demo/Demo/Resources/hello2.lua",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/build.php",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/basic.lua",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/CCSprite.pkg",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/CCLayer.pkg",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/CCScene.pkg",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/Cocos2d.pkg",
+		"/E/Codes/Demo/Demo/gameframework/tolua/GameFramework.pkg",
+		"/E/Codes/Demo/tolua.bat",
+		"/E/Codes/Demo/Demo/GameFramework/tolua/basic.lua",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/README",
+		"/E/Codes/DemoLua/DemoLua/Resources/hello2.lua",
+		"/E/Codes/DemoLua/DemoLua/Resources/main.lua",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/build_macosx.xml",
+		"/E/Codes/Demo/tolua++.bat",
+		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Shell/TGELevelEditor.pkg",
+		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Shell/Box2D.pkg",
+		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Shell/Engine2D.pkg",
+		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Shell/GameCocos.pkg",
+		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Shell/EngineBind.bat",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/build.xml",
+		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Shell/wxToLuaAPI.pkg",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Lua Dev/Lua Dev.sublime-settings",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Lua Dev.sublime-settings",
+		"/E/Codes/Demo/Demo/Resources/loadTerrain.lua",
+		"/E/Codes/Demo/Demo/GameFramework/tolua/GameFramework.pkg",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/samples/HelloLua/Resources/hello.lua",
+		"/E/Codes/Demo/Demo/GameFramework/tolua/LuaGameFramework.h",
+		"/E/Codes/Demo/Demo/GameFramework/tolua/LuaGameFramework.cpp",
+		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Shell/EditorBind.bat",
+		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Src/UYXEditor/EditCore/GameCocos_Tolua.h",
+		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Shell/Box2DBind.bat",
+		"/E/Codes/Demo/Demo/pkg/GameFramework.pkg",
+		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Shell/GameFramework/ToLuaGameFactory.pkg",
+		"/E/Codes/Demo/Demo/Resources/main.lua",
+		"/E/Codes/Demo/Demo/GameFramework/tolua.bat",
+		"/E/Codes/Demo/Demo/GameFramework/GameCocos.pkg",
+		"/E/Codes/Demo/Demo/GameFramework/GameCocos_Tolua.h",
+		"/E/Codes/Demo/Demo/GameFramework/GameCocos_Tolua.cpp",
+		"/E/Codes/Demo/Demo/GameFramework/WorldManager.h",
+		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Src/UYXEditor/EditCore/GameCocos_Tolua.cpp",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/template/android/ndkgdb.sh",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/template/android/gamemk.sh",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/cxx-generator/README.md",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/cxx-generator/generator",
+		"/D/Android/android-ndk/ndk-build",
+		"/D/Android/android-ndk/build/tools/build-gcc.sh",
+		"/E/Codes/Demo/Demo/GameFramework/Android.mk",
+		"/E/Codes/Demo/Demo/Resources/MainRun.plist",
+		"/E/Codes/Demo/Demo/proj.android/jni/Android.mk",
+		"/E/Codes/Demo/Demo/proj.android/build_native.sh",
+		"/E/Codes/Demo/Demo/GameFramework/Animation/Skeleton2DResource.h",
+		"/E/Codes/Demo/.gitignore",
+		"/E/Codes/Demo/Demo/proj.android/jni/Application.mk",
+		"/E/Codes/Demo/Demo/proj.android/AndroidManifest.xml",
+		"/E/Codes/Demo/Demo/libs/cocos2dx/Android.mk",
+		"/E/Codes/Demo/Demo/libs/CocosDenshion/android/Android.mk",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/E/Codes/Demo/Demo/libs/Box2D/Android.mk",
+		"/E/Codes/Demo/Demo/GameFramework/h.txt",
+		"/E/Codes/Demo/Demo/GameFramework/cpp.txt",
+		"/D/Android/android-ndk/ndk-build.cmd",
+		"/E/Codes/Demo/Demo/libs/cocos2dx/platform/third_party/android/prebuilt/libcurl/Android.mk",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/Demo/proj.android/jni/hellocpp/main.cpp",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/Demo/Classes/HelloWorldScene.h",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/Demo/Classes/HelloWorldScene.cpp",
+		"/E/Codes/Demo/Demo/GameFramework/temp.txt",
+		"/E/Codes/Demo/Demo/libs/CocosDenshion/include/SimpleAudioEngine.h",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/cocos2dx/platform/third_party/android/prebuilt/libprofiler/Android.mk",
+		"/E/Codes/Demo/Demo/libs/CocosDenshion/include/Export.h",
+		"/D/Documents/server/Server.cpp",
+		"/D/Documents/server/ServerActor.cpp",
+		"/E/Codes/Demo/Demo/Resources/MainWeapon.ava",
+		"/D/Documents/server/MainActor.h",
+		"/D/Documents/server/MainActor.cpp",
+		"/D/Documents/server/Server.h",
+		"/D/Documents/server/ServerActor.h",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/Demo/proj.android/build_native.sh",
+		"/E/Resource/忘仙数据包/mieshi_resource/pngSlice/diaoluow_alpha.ktx",
+		"/E/Resource/忘仙数据包/mieshi_resource/pngSlice/diaoluow.ktx",
+		"/E/Codes/Demo/Demo/Resources/NPCRun.pvr.ccz",
+		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Src/Demo/GameFramework/Tools/EditScene.h",
+		"/C/Users/All Users/kuwodata/KWMUSIC/Conf/Server/config.ini",
+		"/E/Resource/忘仙数据包/mieshi_resource/pngSlice/dldouluo1.ktx",
+		"/E/Codes/Demo/Demo/Resources/NPCRun.pvr",
+		"/E/Tools/忘仙数据包/mieshi_resource/pngSlice/baoguo.ktx",
+		"/E/Tools/忘仙数据包/mieshi_resource/bin.xtl",
+		"/E/Codes/DemoLua/DemoLua/Resources/hello.lua"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"LoadUI",
+			"terrainManager.",
+			"++index",
+			"AddTerrain(",
+			"Tools::",
+			"cocos2d::",
+			"sharedDirector",
+			"$(ProjectDir)",
+			"pr",
+			"prebuilt",
+			"pre",
+			"ab4b 5458 2031 31bb 0d0a 1a0a 0102 0304",
+			"cclog"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"terrainManager:",
+			"index",
+			"AddTerrainGrid(++index, ",
+			"",
+			"$(LOCAL_PATH)/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 324.0,
+	"status_bar_visible": true
+}
