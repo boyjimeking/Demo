@@ -1,6 +1,6 @@
 /*
 ** Lua binding: GameFramework
-** Generated automatically by tolua++-1.0.92 on 01/08/13 17:58:39.
+** Generated automatically by tolua++-1.0.92 on 01/09/13 13:34:01.
 */
 
 #ifndef __cplusplus
@@ -23,6 +23,7 @@ TOLUA_API int  tolua_GameFramework_open (lua_State* tolua_S);
 #include "../UI/UIControl.h"
 #include "CCLuaEngine.h"
 #include "tolua_fix.h"
+#include "layers_scenes_transitions_nodes/CCScene.h"
 using namespace cocos2d;
 using namespace Tools;
 using namespace Game;
@@ -131,7 +132,7 @@ static void tolua_reg_types (lua_State* tolua_S)
  Mtolua_typeid(tolua_S,WorldManager, "WorldManager");
  tolua_usertype(tolua_S,"ENActorType");
  Mtolua_typeid(tolua_S,ENActorType, "ENActorType");
- tolua_usertype(tolua_S,"LUA_FUNCTION");
+ 
  Mtolua_typeid(tolua_S,LUA_FUNCTION, "LUA_FUNCTION");
  tolua_usertype(tolua_S,"SceneObjectsControl");
  Mtolua_typeid(tolua_S,SceneObjectsControl, "SceneObjectsControl");
@@ -216,7 +217,9 @@ static int tolua_GameFramework_WorldManager_Init00(lua_State* tolua_S)
 #endif
   {
    CCScene* tolua_ret = (CCScene*)  self->Init();
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCScene");
+    int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CCScene");
   }
  }
  return 1;
@@ -538,7 +541,9 @@ static int tolua_GameFramework_WorldManager_GetRoot00(lua_State* tolua_S)
 #endif
   {
    CCNode* tolua_ret = (CCNode*)  self->GetRoot();
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCNode");
+    int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CCNode");
   }
  }
  return 1;
@@ -3008,7 +3013,7 @@ static int tolua_GameFramework_UIControl_registerScriptTouchHandler00(lua_State*
 #endif
  {
   UIControl* self = (UIControl*)  tolua_tousertype(tolua_S,1,0);
-  LUA_FUNCTION nHandler = *((LUA_FUNCTION*)  toluafix_ref_function(tolua_S,2,0));
+  LUA_FUNCTION nHandler = (  toluafix_ref_function(tolua_S,2,0));
   bool bIsMultiTouches = ((bool)  tolua_toboolean(tolua_S,3,false));
   int nPriority = ((int)  tolua_tonumber(tolua_S,4,0));
   bool bSwallowsTouches = ((bool)  tolua_toboolean(tolua_S,5,false));

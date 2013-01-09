@@ -8,12 +8,14 @@ $#include "../Base/GlobalDef.h"
 $#include "../UI/UIControl.h"
 $#include "CCLuaEngine.h"
 $#include "tolua_fix.h"
+$#include "layers_scenes_transitions_nodes/CCScene.h"
 
 $using namespace cocos2d;
 $using namespace Tools;
 $using namespace Game;
 $using namespace Net;
 $using namespace GUI;
+
 
 class WorldManager
 {
