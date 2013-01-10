@@ -97,4 +97,19 @@ namespace Game
 	{
 		return ccpDistance(firstActor->GetPosition(), secondActor->GetPosition());
 	}
+
+	ActorProp* ActorsControl::LookupActorByPos( const CCPoint &pos )
+	{
+		for (ActorMap::iterator it = m_actorMap.begin(); it != m_actorMap.end(); ++it)
+		{
+			if (fabs(it->second->GetPosition().x - pos.x) > 0.2f
+				|| fabs(it->second->GetPosition().y - pos.y) > 0.7f)
+			{
+				continue;
+			}
+			return it->second;
+		}
+		return NULL;
+	}
+
 }

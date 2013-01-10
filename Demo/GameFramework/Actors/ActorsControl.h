@@ -11,6 +11,9 @@
 #include "../Base/INotifier.h"
 #include <map>
 #include "../Base/GlobalDef.h"
+#include "cocoa/CCGeometry.h"
+
+using namespace cocos2d;
 
 namespace Game
 {
@@ -32,6 +35,7 @@ namespace Game
 
 		ActorProp* GetMainActor(void) const;
 		ActorProp* LookupActor(int actorID) const;
+		ActorProp* LookupActorByPos(const CCPoint &pos);
 
 		void Tick(float dt);
 

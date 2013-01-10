@@ -1,0 +1,23 @@
+class CCControlSlider: public CCControl
+{
+    virtual void setValue(float val);
+
+    virtual void setMinimumValue(float val);
+
+    virtual void setMaximumValue(float val);
+    virtual void setEnabled(bool enabled);
+    virtual bool isTouchInside(CCTouch * touch);
+    CCPoint locationFromTouch(CCTouch* touch);
+
+public:
+    CCControlSlider();
+    virtual ~CCControlSlider();
+
+    virtual bool initWithSprites(CCSprite * backgroundSprite, CCSprite* progressSprite, CCSprite* thumbSprite);
+
+    static CCControlSlider* create(const char* bgFile, const char* progressFile, const char* thumbFile);
+
+    static CCControlSlider* create(CCSprite * backgroundSprite, CCSprite* pogressSprite, CCSprite* thumbSprite);
+
+    virtual void needsLayout();
+};

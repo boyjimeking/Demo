@@ -1,0 +1,9 @@
+$#include "CCLuaEngine.h"
+$#include "tolua_fix.h"
+$#include "GUI/CCControlExtension/CCControlExtensions.h"
+
+$using namespace cocos2d;
+$using namespace cocos2d::extension;
+
+$pfile "./Extensions/CCControl.pkg"
+$pfile "./Extensions/CCControlSlider.pkg"

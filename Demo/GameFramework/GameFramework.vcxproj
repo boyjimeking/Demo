@@ -64,6 +64,7 @@
     <ClCompile Include="tolua\CCLuaEngine.cpp" />
     <ClCompile Include="tolua\Cocos2dxLuaLoader.cpp" />
     <ClCompile Include="tolua\LuaCocos2d.cpp" />
+    <ClCompile Include="tolua\LuaCocos2dExtensions.cpp" />
     <ClCompile Include="tolua\LuaGameFramework.cpp" />
     <ClCompile Include="tolua\tolua_fix.c" />
     <ClCompile Include="Tools\DebugLayer.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="tolua\CCLuaEngine.h" />
     <ClInclude Include="tolua\Cocos2dxLuaLoader.h" />
     <ClInclude Include="tolua\LuaCocos2d.h" />
+    <ClInclude Include="tolua\LuaCocos2dExtensions.h" />
     <ClInclude Include="tolua\LuaGameFramework.h" />
     <ClInclude Include="tolua\tolua_fix.h" />
     <ClInclude Include="Tools\DebugLayer.h" />

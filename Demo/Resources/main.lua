@@ -1,10 +1,10 @@
 require "tools"
 
 function __G__TRACKBACK__(msg)
-    print("----------------------------------------")
-    print("LUA ERROR: " .. tostring(msg) .. "\n")
-    print(debug.traceback())
-    print("----------------------------------------")
+    cclog("----------------------------------------")
+    cclog("LUA ERROR: " .. tostring(msg) .. "\n")
+    cclog(debug.traceback())
+    cclog("----------------------------------------")
 end
 
 local function main()

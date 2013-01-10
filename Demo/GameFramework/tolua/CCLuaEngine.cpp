@@ -40,6 +40,7 @@ extern "C" {
 #include "Cocos2dxLuaLoader.h"
 #endif
 #include "LuaGameFramework.h"
+#include "LuaCocos2dExtensions.h"
 
 NS_CC_BEGIN
 
@@ -214,6 +215,7 @@ bool CCLuaEngine::init(void)
     addLuaLoader(loader_Android);
 #endif
 	//////////////////////////////////////////////////////////////////////////
+	tolua_Cocos2dExtensions_open(m_state);
 	tolua_GameFramework_open(m_state);
     return true;
 }

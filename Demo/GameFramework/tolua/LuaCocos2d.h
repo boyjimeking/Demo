@@ -3,7 +3,7 @@
 #define __LUACOCOS2D_H_
 
 extern "C" {
-#include "lua/tolua/tolua++.h"
+#include "tolua++.h"
 #include "tolua_fix.h"
 }
 

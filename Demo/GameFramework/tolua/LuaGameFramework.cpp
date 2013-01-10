@@ -1,17 +1,11 @@
 /*
 ** Lua binding: GameFramework
-** Generated automatically by tolua++-1.0.92 on 01/09/13 15:53:31.
+** Generated automatically by tolua++-1.0.92 on 01/10/13 15:18:32.
 */
 
-#ifndef __cplusplus
-#include "stdlib.h"
-#endif
-#include "string.h"
 
-#include "tolua++.h"
 
-/* Exported function */
-TOLUA_API int  tolua_GameFramework_open (lua_State* tolua_S);
+
 
 #include "../WorldManager.h"
 #include "../CSProtocol/CSPipeline.h"
@@ -1893,6 +1887,40 @@ static int tolua_GameFramework_ActorsControl_LookupActor00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: LookupActorByPos of class  ActorsControl */
+#ifndef TOLUA_DISABLE_tolua_GameFramework_ActorsControl_LookupActorByPos00
+static int tolua_GameFramework_ActorsControl_LookupActorByPos00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ActorsControl",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCPoint",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  ActorsControl* self = (ActorsControl*)  tolua_tousertype(tolua_S,1,0);
+  const CCPoint* pos = ((const CCPoint*)  tolua_tousertype(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'LookupActorByPos'", NULL);
+#endif
+  {
+   ActorProp* tolua_ret = (ActorProp*)  self->LookupActorByPos(*pos);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"ActorProp");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'LookupActorByPos'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: Tick of class  ActorsControl */
 #ifndef TOLUA_DISABLE_tolua_GameFramework_ActorsControl_Tick00
 static int tolua_GameFramework_ActorsControl_Tick00(lua_State* tolua_S)
@@ -3090,6 +3118,7 @@ TOLUA_API int tolua_GameFramework_open (lua_State* tolua_S)
    tolua_function(tolua_S,"ClearActor",tolua_GameFramework_ActorsControl_ClearActor00);
    tolua_function(tolua_S,"GetMainActor",tolua_GameFramework_ActorsControl_GetMainActor00);
    tolua_function(tolua_S,"LookupActor",tolua_GameFramework_ActorsControl_LookupActor00);
+   tolua_function(tolua_S,"LookupActorByPos",tolua_GameFramework_ActorsControl_LookupActorByPos00);
    tolua_function(tolua_S,"Tick",tolua_GameFramework_ActorsControl_Tick00);
    tolua_function(tolua_S,"Distance",tolua_GameFramework_ActorsControl_Distance00);
   tolua_endmodule(tolua_S);

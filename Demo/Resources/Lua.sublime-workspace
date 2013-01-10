@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"wo",
+				"worldPos"
+			],
+			[
+				"m",
+				"MoveTo"
+			],
+			[
+				"CC",
+				"CCPoint"
+			],
+			[
+				"get",
+				"GetActorsControl"
+			],
+			[
+				"c",
+				"cclog"
+			],
+			[
+				"f",
+				"for	for i=1,10"
+			],
+			[
+				"for",
+				"fori	for i,v in ipairs()"
+			],
+			[
+				"e",
+				"eventType"
+			],
+			[
+				"L",
+				"LoadUI"
+			],
+			[
 				"ta",
 				"targetState"
 			],
@@ -27,13 +63,85 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "main.lua",
+			"settings":
+			{
+				"buffer_size": 570,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "UIControl.lua",
+			"settings":
+			{
+				"buffer_size": 636,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "UITargetState.lua",
+			"settings":
+			{
+				"buffer_size": 207,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tools.lua",
+			"settings":
+			{
+				"buffer_size": 56,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "LoadTerrain.lua",
+			"settings":
+			{
+				"buffer_size": 2280,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/Codes/Demo/Demo/libs/tools/LuaCocos2dx/CCControlSlider.pkg",
+			"settings":
+			{
+				"buffer_size": 2352,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 81.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Create Package File"
+			],
+			[
+				"control",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: d",
+				"Package Control: Disable Package"
+			],
+			[
+				"lua",
+				"Set Syntax: Gmod Lua"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
 			[
 				"Package Control: ins",
 				"Package Control: Install Package"
@@ -56,6 +164,29 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Lua.sublime-package",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Administrator/Desktop/GMod Lua.sublime-package",
+		"/D/Program Files/Sublime Text 2/Pristine Packages/Java.sublime-package",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings",
+		"/D/Program Files/Sublime Text 2/Pristine Packages/Lua.sublime-package",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/Cocos2d.pkg",
+		"/E/Codes/Demo/Demo/Resources/Lua.sublime-project",
+		"/E/Codes/Demo/Demo/libs/tools/LuaCocos2dx/CCControlSlider.pkg",
+		"/E/Codes/DemoLua/DemoLua/Resources/main.lua",
+		"/E/Codes/Demo/Demo/libs/cocos2dx/platform/ios/CCEGLView.h",
+		"/E/Codes/Demo/Demo/libs/cocos2dx/platform/win32/CCEGLView.cpp",
+		"/E/Codes/Demo/Demo/libs/cocos2dx/platform/android/CCEGLView.cpp",
+		"/E/Codes/Demo/Demo/libs/cocos2dx/platform/ios/CCEGLView.mm",
+		"/E/Codes/Demo/Demo/libs/cocos2dx/platform/ios/CCApplication.mm",
+		"/E/Codes/Demo/Demo/libs/cocos2dx/platform/ios/CCAccelerometer.mm",
+		"/E/Codes/Demo/Demo/libs/cocos2dx/platform/ios/AccelerometerDelegateWrapper.mm",
+		"/E/Codes/Demo/Demo/libs/cocos2dx/platform/ios/CCGL.h",
+		"/E/Codes/Demo/Demo/libs/cocos2dx/platform/ios/EAGLView.mm",
+		"/E/Codes/Demo/Demo/GameFramework/tolua/GameFramework.pkg",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Lua Dev/Lua Dev.sublime-settings",
 		"/E/Codes/Demo/Demo/Resources/UIControl.lua",
 		"/E/Codes/Demo/Demo/Resources/iTunesArtwork",
 		"/E/Codes/Demo/Demo/Resources/hello2.lua",
@@ -64,13 +195,11 @@
 		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/CCSprite.pkg",
 		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/CCLayer.pkg",
 		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/CCScene.pkg",
-		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/Cocos2d.pkg",
 		"/E/Codes/Demo/Demo/gameframework/tolua/GameFramework.pkg",
 		"/E/Codes/Demo/tolua.bat",
 		"/E/Codes/Demo/Demo/GameFramework/tolua/basic.lua",
 		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/README",
 		"/E/Codes/DemoLua/DemoLua/Resources/hello2.lua",
-		"/E/Codes/DemoLua/DemoLua/Resources/main.lua",
 		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/build_macosx.xml",
 		"/E/Codes/Demo/tolua++.bat",
 		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Shell/TGELevelEditor.pkg",
@@ -80,10 +209,8 @@
 		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Shell/EngineBind.bat",
 		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/build.xml",
 		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Shell/wxToLuaAPI.pkg",
-		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Lua Dev/Lua Dev.sublime-settings",
 		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Lua Dev.sublime-settings",
 		"/E/Codes/Demo/Demo/Resources/loadTerrain.lua",
-		"/E/Codes/Demo/Demo/GameFramework/tolua/GameFramework.pkg",
 		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/samples/HelloLua/Resources/hello.lua",
 		"/E/Codes/Demo/Demo/GameFramework/tolua/LuaGameFramework.h",
 		"/E/Codes/Demo/Demo/GameFramework/tolua/LuaGameFramework.cpp",
@@ -198,8 +325,171 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "main.lua",
+					"settings":
+					{
+						"buffer_size": 570,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								474,
+								474
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "UIControl.lua",
+					"settings":
+					{
+						"buffer_size": 636,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								163,
+								165
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "UITargetState.lua",
+					"settings":
+					{
+						"buffer_size": 207,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								207,
+								207
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "tools.lua",
+					"settings":
+					{
+						"buffer_size": 56,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								56,
+								56
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua Dev/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "LoadTerrain.lua",
+					"settings":
+					{
+						"buffer_size": 2280,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua Dev/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/E/Codes/Demo/Demo/libs/tools/LuaCocos2dx/CCControlSlider.pkg",
+					"settings":
+					{
+						"buffer_size": 2352,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								310,
+								310
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -253,16 +543,16 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 324.0,
+	"side_bar_width": 292.0,
 	"status_bar_visible": true
 }

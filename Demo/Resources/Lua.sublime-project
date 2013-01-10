@@ -2,8 +2,18 @@
 	"folders":
 	[
 		{
-			"path": "/E/Codes/Demo/Demo/Resources",
-			"file_include_patterns": ["*.lua"]
+			"file_include_patterns":
+			[
+				"*.lua"
+			],
+			"path": "/E/Codes/Demo/Demo/Resources"
+		},
+		{
+			"file_include_patterns":
+			[
+				"*.pkg"
+			],
+			"path": "/E/Codes/Demo/Demo/GameFramework/tolua"
 		}
 	]
 }

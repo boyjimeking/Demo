@@ -123,6 +123,7 @@ public:
 
 	ActorProp* GetMainActor(void) const;
 	ActorProp* LookupActor(int actorID) const;
+	ActorProp* LookupActorByPos(const CCPoint &pos);
 
 	void Tick(float dt);
 

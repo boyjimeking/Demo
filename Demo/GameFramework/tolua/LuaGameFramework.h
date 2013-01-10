@@ -6,7 +6,7 @@
 ** Generated automatically by tolua++-1.0.92 on 01/08/13 17:52:03.
 */
 extern "C" {
-#include "lua/tolua/tolua++.h"
+#include "tolua++.h"
 #include "tolua_fix.h"
 }
 
