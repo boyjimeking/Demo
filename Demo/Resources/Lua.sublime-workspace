@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"coro",
+				"coroutine.resume"
+			],
+			[
+				"lo",
+				"local function	local function"
+			],
+			[
+				"OnTouch",
+				"OnTouchWindow"
+			],
+			[
+				"d",
+				"def	#ifndef … #define … #endif"
+			],
+			[
+				"L",
+				"LuaCocos2d"
+			],
+			[
 				"wo",
 				"worldPos"
 			],
@@ -34,10 +54,6 @@
 			[
 				"e",
 				"eventType"
-			],
-			[
-				"L",
-				"LoadUI"
 			],
 			[
 				"ta",
@@ -75,7 +91,7 @@
 			"file": "UIControl.lua",
 			"settings":
 			{
-				"buffer_size": 636,
+				"buffer_size": 1731,
 				"line_ending": "Windows"
 			}
 		},
@@ -83,41 +99,37 @@
 			"file": "UITargetState.lua",
 			"settings":
 			{
-				"buffer_size": 207,
+				"buffer_size": 425,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "tools.lua",
-			"settings":
-			{
-				"buffer_size": 56,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "LoadTerrain.lua",
-			"settings":
-			{
-				"buffer_size": 2280,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/Codes/Demo/Demo/libs/tools/LuaCocos2dx/CCControlSlider.pkg",
-			"settings":
-			{
-				"buffer_size": 2352,
-				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/User/UserLua.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 81.0,
 		"selected_items":
 		[
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"lua",
+				"SublimeREPL: Lua"
+			],
+			[
+				"gm",
+				"Set Syntax: Gmod Lua"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
 			[
 				"ins",
 				"Package Control: Install Package"
@@ -133,10 +145,6 @@
 			[
 				"Package Control: d",
 				"Package Control: Disable Package"
-			],
-			[
-				"lua",
-				"Set Syntax: Gmod Lua"
 			],
 			[
 				"Package Control: in",
@@ -164,16 +172,34 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/E/Codes/Demo/Demo/GameFramework/tolua/GameFramework.pkg",
+		"/E/Codes/Demo/Demo/Resources/UITargetState.lua",
+		"/E/Codes/Demo/Demo/Resources/tools.lua",
+		"/E/Codes/Demo/Demo/Resources/LoadTerrain.lua",
+		"/E/Codes/Demo/Demo/Resources/Lua.sublime-project",
 		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
-		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Lua.sublime-package",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Lua.sublime-settings",
 		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/UserLua.sublime-build",
+		"/D/Documents/test.lua",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/D/Program Files/LuaEditor/luaKeywords.lua",
+		"/E/Codes/Demo/tolua.bat",
+		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/build.php",
+		"/E/Codes/Demo/Demo/GameFramework/tolua/LuaCocos2dExtensions.h",
+		"/E/Codes/Demo/Demo/GameFramework/tolua/Cocos2dExtensions.pkg",
+		"/E/Codes/Demo/Demo/libs/tools/LuaCocos2dx/Cocos2d.pkg",
+		"/E/Codes/Demo/Demo/GameFramework/tolua/LuaGameFramework.h",
+		"/E/Codes/Demo/Demo/libs/tools/LuaCocos2dx/LuaCocos2d.cpp",
+		"/E/Codes/Demo/Demo/libs/tools/LuaCocos2dx/CCControl.pkg",
+		"/E/Codes/Demo/Demo/libs/tools/LuaCocos2dx/CCLayer.pkg",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Lua.sublime-package",
 		"/C/Users/Administrator/Desktop/GMod Lua.sublime-package",
 		"/D/Program Files/Sublime Text 2/Pristine Packages/Java.sublime-package",
 		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings",
 		"/D/Program Files/Sublime Text 2/Pristine Packages/Lua.sublime-package",
 		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/Cocos2d.pkg",
-		"/E/Codes/Demo/Demo/Resources/Lua.sublime-project",
 		"/E/Codes/Demo/Demo/libs/tools/LuaCocos2dx/CCControlSlider.pkg",
 		"/E/Codes/DemoLua/DemoLua/Resources/main.lua",
 		"/E/Codes/Demo/Demo/libs/cocos2dx/platform/ios/CCEGLView.h",
@@ -185,18 +211,15 @@
 		"/E/Codes/Demo/Demo/libs/cocos2dx/platform/ios/AccelerometerDelegateWrapper.mm",
 		"/E/Codes/Demo/Demo/libs/cocos2dx/platform/ios/CCGL.h",
 		"/E/Codes/Demo/Demo/libs/cocos2dx/platform/ios/EAGLView.mm",
-		"/E/Codes/Demo/Demo/GameFramework/tolua/GameFramework.pkg",
 		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Lua Dev/Lua Dev.sublime-settings",
 		"/E/Codes/Demo/Demo/Resources/UIControl.lua",
 		"/E/Codes/Demo/Demo/Resources/iTunesArtwork",
 		"/E/Codes/Demo/Demo/Resources/hello2.lua",
-		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/build.php",
 		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/basic.lua",
 		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/CCSprite.pkg",
 		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/CCLayer.pkg",
 		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/CCScene.pkg",
 		"/E/Codes/Demo/Demo/gameframework/tolua/GameFramework.pkg",
-		"/E/Codes/Demo/tolua.bat",
 		"/E/Codes/Demo/Demo/GameFramework/tolua/basic.lua",
 		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/tools/tolua++/README",
 		"/E/Codes/DemoLua/DemoLua/Resources/hello2.lua",
@@ -212,7 +235,6 @@
 		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Lua Dev.sublime-settings",
 		"/E/Codes/Demo/Demo/Resources/loadTerrain.lua",
 		"/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/samples/HelloLua/Resources/hello.lua",
-		"/E/Codes/Demo/Demo/GameFramework/tolua/LuaGameFramework.h",
 		"/E/Codes/Demo/Demo/GameFramework/tolua/LuaGameFramework.cpp",
 		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Shell/EditorBind.bat",
 		"/E/Codes/UYXGame/trunk/UYXEditor/Development/Src/UYXEditor/EditCore/GameCocos_Tolua.h",
@@ -242,7 +264,6 @@
 		"/E/Codes/Demo/Demo/proj.android/AndroidManifest.xml",
 		"/E/Codes/Demo/Demo/libs/cocos2dx/Android.mk",
 		"/E/Codes/Demo/Demo/libs/CocosDenshion/android/Android.mk",
-		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/E/Codes/Demo/Demo/libs/Box2D/Android.mk",
 		"/E/Codes/Demo/Demo/GameFramework/h.txt",
 		"/E/Codes/Demo/Demo/GameFramework/cpp.txt",
@@ -290,6 +311,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"lua",
+			"Builder",
+			"__construct",
+			"extensionName",
+			"_extensionName",
+			"EXTENSION_NAME",
+			"#ifndef __cplusplus\\n#include \\\"stdlib.h\\\"\\n#endif\\n#include \\\"string.h\\\"\\n\\n#include \\\"tolua++.h\\\"",
 			"LoadUI",
 			"terrainManager.",
 			"++index",
@@ -325,7 +353,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -340,8 +368,8 @@
 						"selection":
 						[
 							[
-								474,
-								474
+								431,
+								431
 							]
 						],
 						"settings":
@@ -361,15 +389,15 @@
 					"file": "UIControl.lua",
 					"settings":
 					{
-						"buffer_size": 636,
+						"buffer_size": 1731,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								163,
-								165
+								931,
+								931
 							]
 						],
 						"settings":
@@ -388,101 +416,20 @@
 					"file": "UITargetState.lua",
 					"settings":
 					{
-						"buffer_size": 207,
+						"buffer_size": 425,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								207,
-								207
+								425,
+								425
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/GMod Lua/Lua.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "tools.lua",
-					"settings":
-					{
-						"buffer_size": 56,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								56,
-								56
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua Dev/Lua.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "LoadTerrain.lua",
-					"settings":
-					{
-						"buffer_size": 2280,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua Dev/Lua.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/E/Codes/Demo/Demo/libs/tools/LuaCocos2dx/CCControlSlider.pkg",
-					"settings":
-					{
-						"buffer_size": 2352,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								310,
-								310
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -526,7 +473,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 100.0
+		"height": 322.0
 	},
 	"replace":
 	{
@@ -538,6 +485,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"cco",
+				"LuaCocos2dx/Cocos2d.pkg"
+			],
+			[
+				"cclay",
+				"LuaCocos2dx/CCLayer.pkg"
+			]
 		],
 		"width": 0.0
 	},

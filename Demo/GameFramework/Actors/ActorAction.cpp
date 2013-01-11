@@ -204,7 +204,7 @@ namespace Game
 			newPos = ccpAdd(prop->GetPosition(), changed);
 			if (!WorldManager::Instance()->GetSceneInfo()->IsPointCanStanc(newPos))
 			{
-				changed.y = m_direction.y * dt * prop->GetSpeed();
+				changed.y = dt * prop->GetSpeed();
 				changed.y *= m_direction.y > 0 ? 1 : -1;
 				changed.x = 0.0f;
 				newPos = ccpAdd(prop->GetPosition(), changed);

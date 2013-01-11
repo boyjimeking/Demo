@@ -17,14 +17,8 @@ local function OnTouchPlayer(x, y)
 			return false
 		end
 
-		local function ActorAttack()
-			cclog("Attack")
-			:Sleep(10000)
-		end
-		local att = coroutine.create(ActorAttack)
-		coroutine.resume(att);
-		-- mainActor:StartAttack(actor)
-		-- UITargetState.slider:setVisible(true)
+		require "ActorAttack"
+		Attack(actor)
 
 		cclog("TouchPlayer")
 		return true
@@ -43,7 +37,9 @@ local function OnTouchGround(x, y)
 	local mainActor = WorldManager:Instance():GetActorsControl():GetMainActor()
 	local pos = CCPointMake(x, y)
 	local worldPos = WorldManager:DesignPosToWorld(pos)
-	mainActor:MoveTo(worldPos)
+	require "ActorMove"
+	Move(mainActor, worldPos)
+	-- mainActor:MoveTo(worldPos)
 	return true
 end
 
