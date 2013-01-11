@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5989022169D71CD00775634 /* ActorBattleInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C598901D169D71CD00775634 /* ActorBattleInfo.cpp */; };
+		C5A3B96A1697D3A3006A3375 /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A3B9691697D3A3006A3375 /* boost.framework */; };
+		C5A3B98416980FB8006A3375 /* ClNetMng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5A3B98316980FB8006A3375 /* ClNetMng.cpp */; };
+		C5CA0A2F168EF9AA0045DF06 /* CClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5CA0A2A168EF9AA0045DF06 /* CClient.cpp */; };
 		D30D8D341666EE89000B95E1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D30D8D331666EE89000B95E1 /* QuartzCore.framework */; };
 		D30D8D361666EE89000B95E1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D30D8D351666EE89000B95E1 /* OpenGLES.framework */; };
 		D30D8D381666EE89000B95E1 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D30D8D371666EE89000B95E1 /* OpenAL.framework */; };
@@ -334,15 +338,6 @@
 		D38A6560168C492100D00227 /* Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = D38A655D168C492100D00227 /* Empty.png */; };
 		D38A6561168C492100D00227 /* LifeBack.png in Resources */ = {isa = PBXBuildFile; fileRef = D38A655E168C492100D00227 /* LifeBack.png */; };
 		D38A6562168C492100D00227 /* LifeFront.png in Resources */ = {isa = PBXBuildFile; fileRef = D38A655F168C492100D00227 /* LifeFront.png */; };
-		D3920611168BE86000CEFA69 /* AIControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920600168BE86000CEFA69 /* AIControl.cpp */; };
-		D3920612168BE86000CEFA69 /* AIState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920602168BE86000CEFA69 /* AIState.cpp */; };
-		D3920613168BE86000CEFA69 /* GameServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920604168BE86000CEFA69 /* GameServer.cpp */; };
-		D3920614168BE86000CEFA69 /* IActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920606168BE86000CEFA69 /* IActor.cpp */; };
-		D3920615168BE86000CEFA69 /* ISimulateLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920608168BE86000CEFA69 /* ISimulateLayer.cpp */; };
-		D3920616168BE86000CEFA69 /* ISimulateObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D392060A168BE86000CEFA69 /* ISimulateObject.cpp */; };
-		D3920617168BE86000CEFA69 /* NPC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D392060C168BE86000CEFA69 /* NPC.cpp */; };
-		D3920618168BE86000CEFA69 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D392060E168BE86000CEFA69 /* Player.cpp */; };
-		D392061B168BE87200CEFA69 /* ActorBattleInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920619168BE87200CEFA69 /* ActorBattleInfo.cpp */; };
 		D39207E4168BECD300CEFA69 /* CCAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D392061E168BECD300CEFA69 /* CCAction.cpp */; };
 		D39207E5168BECD300CEFA69 /* CCActionCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920620168BECD300CEFA69 /* CCActionCamera.cpp */; };
 		D39207E6168BECD300CEFA69 /* CCActionCatmullRom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3920622168BECD300CEFA69 /* CCActionCatmullRom.cpp */; };
@@ -611,13 +606,49 @@
 		D3F6D3A8168193D000BF2A87 /* MainRun.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F6D3A4168193D000BF2A87 /* MainRun.png */; };
 		D3F6D3A9168193D100BF2A87 /* NPCRun.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3F6D3A5168193D000BF2A87 /* NPCRun.plist */; };
 		D3F6D3AA168193D100BF2A87 /* NPCRun.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F6D3A6168193D000BF2A87 /* NPCRun.png */; };
-		D3FC5F5B166EE07A00BDCF3B /* CSMessageDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */; };
-		D3FC5F5F166EE0D700BDCF3B /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F5D166EE0D700BDCF3B /* Client.cpp */; };
-		D3FC5F62166EE2B700BDCF3B /* CSMessageType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F60166EE2B700BDCF3B /* CSMessageType.cpp */; };
-		D3FC5F65166EE5D700BDCF3B /* CSPipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3FC5F63166EE5D700BDCF3B /* CSPipeline.cpp */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C548EA3F169980BB005FAF3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C548EA3B169980BA005FAF3B /* CommLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C548EA34169980BA005FAF3B;
+			remoteInfo = CommLib;
+		};
+		C5CA0A1A168EF4AD0045DF06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5CA0A16168EF4AB0045DF06 /* Server.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C5CA0A09168EF4AB0045DF06;
+			remoteInfo = Server;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		C548EA3B169980BA005FAF3B /* CommLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommLib.xcodeproj; path = CommLib/CommLib.xcodeproj; sourceTree = "<group>"; };
+		C598901D169D71CD00775634 /* ActorBattleInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActorBattleInfo.cpp; sourceTree = "<group>"; };
+		C598901E169D71CD00775634 /* ActorBattleInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActorBattleInfo.h; sourceTree = "<group>"; };
+		C5A3B9691697D3A3006A3375 /* boost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = boost.framework; path = ../../../dev/ios/framework/boost.framework; sourceTree = "<group>"; };
+		C5A3B98316980FB8006A3375 /* ClNetMng.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ClNetMng.cpp; path = Client/ClNetMng.cpp; sourceTree = "<group>"; };
+		C5CA09D3168EF1140045DF06 /* CircleDeque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleDeque.h; sourceTree = "<group>"; };
+		C5CA09D4168EF1140045DF06 /* ClientMsgDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientMsgDef.h; sourceTree = "<group>"; };
+		C5CA09D5168EF1140045DF06 /* CSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSession.h; sourceTree = "<group>"; };
+		C5CA09D6168EF1140045DF06 /* MsgPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgPool.h; sourceTree = "<group>"; };
+		C5CA09D7168EF1140045DF06 /* MsgQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgQueue.h; sourceTree = "<group>"; };
+		C5CA09D8168EF1140045DF06 /* NetCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetCommand.h; sourceTree = "<group>"; };
+		C5CA09D9168EF1140045DF06 /* NetConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetConnect.h; sourceTree = "<group>"; };
+		C5CA09DA168EF1140045DF06 /* NetCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetCounter.h; sourceTree = "<group>"; };
+		C5CA09DB168EF1140045DF06 /* NetMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetMessage.h; sourceTree = "<group>"; };
+		C5CA09DC168EF1140045DF06 /* NetMsgConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetMsgConfig.h; sourceTree = "<group>"; };
+		C5CA09DD168EF1140045DF06 /* NetMsgHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetMsgHelper.h; sourceTree = "<group>"; };
+		C5CA09DE168EF1140045DF06 /* ServerMsgDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerMsgDef.h; sourceTree = "<group>"; };
+		C5CA0A16168EF4AB0045DF06 /* Server.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Server.xcodeproj; path = Server/Server.xcodeproj; sourceTree = "<group>"; };
+		C5CA0A2A168EF9AA0045DF06 /* CClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CClient.cpp; path = Client/CClient.cpp; sourceTree = "<group>"; };
+		C5CA0A2B168EF9AA0045DF06 /* CClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CClient.h; path = Client/CClient.h; sourceTree = "<group>"; };
+		C5CA0A2D168EF9AA0045DF06 /* CGameActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CGameActor.h; path = Client/CGameActor.h; sourceTree = "<group>"; };
+		C5CA0A2E168EF9AA0045DF06 /* ClNetMng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClNetMng.h; path = Client/ClNetMng.h; sourceTree = "<group>"; };
+		C5D7F9551699200700BA7B3B /* CommDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommDef.h; sourceTree = "<group>"; };
 		D30D8D2F1666EE89000B95E1 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30D8D331666EE89000B95E1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D30D8D351666EE89000B95E1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -9719,25 +9750,6 @@
 		D38A655D168C492100D00227 /* Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Empty.png; path = Resources/Empty.png; sourceTree = "<group>"; };
 		D38A655E168C492100D00227 /* LifeBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LifeBack.png; path = Resources/LifeBack.png; sourceTree = "<group>"; };
 		D38A655F168C492100D00227 /* LifeFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LifeFront.png; path = Resources/LifeFront.png; sourceTree = "<group>"; };
-		D3920600168BE86000CEFA69 /* AIControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AIControl.cpp; path = VirtualServer/AIControl.cpp; sourceTree = "<group>"; };
-		D3920601168BE86000CEFA69 /* AIControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIControl.h; path = VirtualServer/AIControl.h; sourceTree = "<group>"; };
-		D3920602168BE86000CEFA69 /* AIState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AIState.cpp; path = VirtualServer/AIState.cpp; sourceTree = "<group>"; };
-		D3920603168BE86000CEFA69 /* AIState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIState.h; path = VirtualServer/AIState.h; sourceTree = "<group>"; };
-		D3920604168BE86000CEFA69 /* GameServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameServer.cpp; path = VirtualServer/GameServer.cpp; sourceTree = "<group>"; };
-		D3920605168BE86000CEFA69 /* GameServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameServer.h; path = VirtualServer/GameServer.h; sourceTree = "<group>"; };
-		D3920606168BE86000CEFA69 /* IActor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IActor.cpp; path = VirtualServer/IActor.cpp; sourceTree = "<group>"; };
-		D3920607168BE86000CEFA69 /* IActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IActor.h; path = VirtualServer/IActor.h; sourceTree = "<group>"; };
-		D3920608168BE86000CEFA69 /* ISimulateLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ISimulateLayer.cpp; path = VirtualServer/ISimulateLayer.cpp; sourceTree = "<group>"; };
-		D3920609168BE86000CEFA69 /* ISimulateLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISimulateLayer.h; path = VirtualServer/ISimulateLayer.h; sourceTree = "<group>"; };
-		D392060A168BE86000CEFA69 /* ISimulateObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ISimulateObject.cpp; path = VirtualServer/ISimulateObject.cpp; sourceTree = "<group>"; };
-		D392060B168BE86000CEFA69 /* ISimulateObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISimulateObject.h; path = VirtualServer/ISimulateObject.h; sourceTree = "<group>"; };
-		D392060C168BE86000CEFA69 /* NPC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NPC.cpp; path = VirtualServer/NPC.cpp; sourceTree = "<group>"; };
-		D392060D168BE86000CEFA69 /* NPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NPC.h; path = VirtualServer/NPC.h; sourceTree = "<group>"; };
-		D392060E168BE86000CEFA69 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = VirtualServer/Player.cpp; sourceTree = "<group>"; };
-		D392060F168BE86000CEFA69 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = VirtualServer/Player.h; sourceTree = "<group>"; };
-		D3920610168BE86000CEFA69 /* SimulateType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimulateType.h; path = VirtualServer/SimulateType.h; sourceTree = "<group>"; };
-		D3920619168BE87200CEFA69 /* ActorBattleInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ActorBattleInfo.cpp; path = CSProtocol/ActorBattleInfo.cpp; sourceTree = "<group>"; };
-		D392061A168BE87200CEFA69 /* ActorBattleInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActorBattleInfo.h; path = CSProtocol/ActorBattleInfo.h; sourceTree = "<group>"; };
 		D392061E168BECD300CEFA69 /* CCAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCAction.cpp; sourceTree = "<group>"; };
 		D392061F168BECD300CEFA69 /* CCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAction.h; sourceTree = "<group>"; };
 		D3920620168BECD300CEFA69 /* CCActionCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCActionCamera.cpp; sourceTree = "<group>"; };
@@ -10305,14 +10317,6 @@
 		D3F6D3A4168193D000BF2A87 /* MainRun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MainRun.png; path = Resources/MainRun.png; sourceTree = "<group>"; };
 		D3F6D3A5168193D000BF2A87 /* NPCRun.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NPCRun.plist; path = Resources/NPCRun.plist; sourceTree = "<group>"; };
 		D3F6D3A6168193D000BF2A87 /* NPCRun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NPCRun.png; path = Resources/NPCRun.png; sourceTree = "<group>"; };
-		D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSMessageDef.cpp; path = CSProtocol/CSMessageDef.cpp; sourceTree = "<group>"; };
-		D3FC5F5A166EE07A00BDCF3B /* CSMessageDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMessageDef.h; path = CSProtocol/CSMessageDef.h; sourceTree = "<group>"; };
-		D3FC5F5D166EE0D700BDCF3B /* Client.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Client.cpp; path = Client/Client.cpp; sourceTree = "<group>"; };
-		D3FC5F5E166EE0D700BDCF3B /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Client.h; path = Client/Client.h; sourceTree = "<group>"; };
-		D3FC5F60166EE2B700BDCF3B /* CSMessageType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSMessageType.cpp; path = CSProtocol/CSMessageType.cpp; sourceTree = "<group>"; };
-		D3FC5F61166EE2B700BDCF3B /* CSMessageType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMessageType.h; path = CSProtocol/CSMessageType.h; sourceTree = "<group>"; };
-		D3FC5F63166EE5D700BDCF3B /* CSPipeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSPipeline.cpp; path = CSProtocol/CSPipeline.cpp; sourceTree = "<group>"; };
-		D3FC5F64166EE5D700BDCF3B /* CSPipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSPipeline.h; path = CSProtocol/CSPipeline.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -10320,6 +10324,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A3B96A1697D3A3006A3375 /* boost.framework in Frameworks */,
 				D30D8D341666EE89000B95E1 /* QuartzCore.framework in Frameworks */,
 				D30D8D361666EE89000B95E1 /* OpenGLES.framework in Frameworks */,
 				D30D8D381666EE89000B95E1 /* OpenAL.framework in Frameworks */,
@@ -10335,9 +10340,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C548EA3C169980BA005FAF3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C548EA40169980BB005FAF3B /* libCommLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C598901C169D71CC00775634 /* CSProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				C598901D169D71CD00775634 /* ActorBattleInfo.cpp */,
+				C598901E169D71CD00775634 /* ActorBattleInfo.h */,
+			);
+			path = CSProtocol;
+			sourceTree = "<group>";
+		};
+		C5CA09D2168EF1140045DF06 /* Comm */ = {
+			isa = PBXGroup;
+			children = (
+				C5CA09D3168EF1140045DF06 /* CircleDeque.h */,
+				C5CA09D4168EF1140045DF06 /* ClientMsgDef.h */,
+				C5CA09D5168EF1140045DF06 /* CSession.h */,
+				C5CA09D6168EF1140045DF06 /* MsgPool.h */,
+				C5CA09D7168EF1140045DF06 /* MsgQueue.h */,
+				C5CA09D8168EF1140045DF06 /* NetCommand.h */,
+				C5CA09D9168EF1140045DF06 /* NetConnect.h */,
+				C5CA09DA168EF1140045DF06 /* NetCounter.h */,
+				C5CA09DB168EF1140045DF06 /* NetMessage.h */,
+				C5CA09DC168EF1140045DF06 /* NetMsgConfig.h */,
+				C5CA09DD168EF1140045DF06 /* NetMsgHelper.h */,
+				C5CA09DE168EF1140045DF06 /* ServerMsgDef.h */,
+				C5D7F9551699200700BA7B3B /* CommDef.h */,
+			);
+			path = Comm;
+			sourceTree = "<group>";
+		};
+		C5CA0A17168EF4AB0045DF06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5CA0A1B168EF4AD0045DF06 /* Server */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D30D8D241666EE89000B95E1 = {
 			isa = PBXGroup;
 			children = (
+				C548EA3B169980BA005FAF3B /* CommLib.xcodeproj */,
+				C5CA0A16168EF4AB0045DF06 /* Server.xcodeproj */,
 				D30D8D431666EE89000B95E1 /* Demo */,
 				D30D8D321666EE89000B95E1 /* Frameworks */,
 				D30D8D301666EE89000B95E1 /* Products */,
@@ -10355,6 +10407,7 @@
 		D30D8D321666EE89000B95E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C5A3B9691697D3A3006A3375 /* boost.framework */,
 				D30D8D331666EE89000B95E1 /* QuartzCore.framework */,
 				D30D8D351666EE89000B95E1 /* OpenGLES.framework */,
 				D30D8D371666EE89000B95E1 /* OpenAL.framework */,
@@ -10370,9 +10423,9 @@
 		D30D8D431666EE89000B95E1 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				C598901C169D71CC00775634 /* CSProtocol */,
+				C5CA09D2168EF1140045DF06 /* Comm */,
 				D3EA3959168A975100B71B82 /* Tools */,
-				D3FC5F58166EE03400BDCF3B /* CSProtocol */,
-				D3FC5F53166EDFE200BDCF3B /* VirtualServer */,
 				D30D8FF81666F3A9000B95E1 /* GameFramework */,
 				D30D8D441666EE89000B95E1 /* Resources */,
 				D30D8D5C1666EE89000B95E1 /* ios */,
@@ -26682,50 +26735,14 @@
 			name = Tools;
 			sourceTree = "<group>";
 		};
-		D3FC5F53166EDFE200BDCF3B /* VirtualServer */ = {
-			isa = PBXGroup;
-			children = (
-				D3920600168BE86000CEFA69 /* AIControl.cpp */,
-				D3920601168BE86000CEFA69 /* AIControl.h */,
-				D3920602168BE86000CEFA69 /* AIState.cpp */,
-				D3920603168BE86000CEFA69 /* AIState.h */,
-				D3920604168BE86000CEFA69 /* GameServer.cpp */,
-				D3920605168BE86000CEFA69 /* GameServer.h */,
-				D3920606168BE86000CEFA69 /* IActor.cpp */,
-				D3920607168BE86000CEFA69 /* IActor.h */,
-				D3920608168BE86000CEFA69 /* ISimulateLayer.cpp */,
-				D3920609168BE86000CEFA69 /* ISimulateLayer.h */,
-				D392060A168BE86000CEFA69 /* ISimulateObject.cpp */,
-				D392060B168BE86000CEFA69 /* ISimulateObject.h */,
-				D392060C168BE86000CEFA69 /* NPC.cpp */,
-				D392060D168BE86000CEFA69 /* NPC.h */,
-				D392060E168BE86000CEFA69 /* Player.cpp */,
-				D392060F168BE86000CEFA69 /* Player.h */,
-				D3920610168BE86000CEFA69 /* SimulateType.h */,
-			);
-			name = VirtualServer;
-			sourceTree = "<group>";
-		};
-		D3FC5F58166EE03400BDCF3B /* CSProtocol */ = {
-			isa = PBXGroup;
-			children = (
-				D3920619168BE87200CEFA69 /* ActorBattleInfo.cpp */,
-				D392061A168BE87200CEFA69 /* ActorBattleInfo.h */,
-				D3FC5F59166EE07A00BDCF3B /* CSMessageDef.cpp */,
-				D3FC5F5A166EE07A00BDCF3B /* CSMessageDef.h */,
-				D3FC5F60166EE2B700BDCF3B /* CSMessageType.cpp */,
-				D3FC5F61166EE2B700BDCF3B /* CSMessageType.h */,
-				D3FC5F63166EE5D700BDCF3B /* CSPipeline.cpp */,
-				D3FC5F64166EE5D700BDCF3B /* CSPipeline.h */,
-			);
-			name = CSProtocol;
-			sourceTree = "<group>";
-		};
 		D3FC5F5C166EE09900BDCF3B /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				D3FC5F5D166EE0D700BDCF3B /* Client.cpp */,
-				D3FC5F5E166EE0D700BDCF3B /* Client.h */,
+				C5A3B98316980FB8006A3375 /* ClNetMng.cpp */,
+				C5CA0A2A168EF9AA0045DF06 /* CClient.cpp */,
+				C5CA0A2B168EF9AA0045DF06 /* CClient.h */,
+				C5CA0A2D168EF9AA0045DF06 /* CGameActor.h */,
+				C5CA0A2E168EF9AA0045DF06 /* ClNetMng.h */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -26768,12 +26785,39 @@
 			mainGroup = D30D8D241666EE89000B95E1;
 			productRefGroup = D30D8D301666EE89000B95E1 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C548EA3C169980BA005FAF3B /* Products */;
+					ProjectRef = C548EA3B169980BA005FAF3B /* CommLib.xcodeproj */;
+				},
+				{
+					ProductGroup = C5CA0A17168EF4AB0045DF06 /* Products */;
+					ProjectRef = C5CA0A16168EF4AB0045DF06 /* Server.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D30D8D2E1666EE89000B95E1 /* Demo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C548EA40169980BB005FAF3B /* libCommLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCommLib.a;
+			remoteRef = C548EA3F169980BB005FAF3B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C5CA0A1B168EF4AD0045DF06 /* Server */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Server;
+			remoteRef = C5CA0A1A168EF4AD0045DF06 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D30D8D2D1666EE89000B95E1 /* Resources */ = {
@@ -27181,10 +27225,6 @@
 				D3939DD7166C911A00DA4F56 /* MainScene.cpp in Sources */,
 				D3146145166D8EA30011EDC7 /* PhysicalControl.cpp in Sources */,
 				D3146148166D8EB80011EDC7 /* PhysicalObj.cpp in Sources */,
-				D3FC5F5B166EE07A00BDCF3B /* CSMessageDef.cpp in Sources */,
-				D3FC5F5F166EE0D700BDCF3B /* Client.cpp in Sources */,
-				D3FC5F62166EE2B700BDCF3B /* CSMessageType.cpp in Sources */,
-				D3FC5F65166EE5D700BDCF3B /* CSPipeline.cpp in Sources */,
 				D320472A16703B210037C1E2 /* ActorTouch.cpp in Sources */,
 				D320472F16704C670037C1E2 /* ActorAction.cpp in Sources */,
 				D31EA19716782270002519CF /* UIControlEvents.cpp in Sources */,
@@ -27204,15 +27244,6 @@
 				D3EA3967168A976E00B71B82 /* AvatarData.cpp in Sources */,
 				D3EA3968168A976E00B71B82 /* Scene.cpp in Sources */,
 				D3EA3969168A976E00B71B82 /* StreamHelper.cpp in Sources */,
-				D3920611168BE86000CEFA69 /* AIControl.cpp in Sources */,
-				D3920612168BE86000CEFA69 /* AIState.cpp in Sources */,
-				D3920613168BE86000CEFA69 /* GameServer.cpp in Sources */,
-				D3920614168BE86000CEFA69 /* IActor.cpp in Sources */,
-				D3920615168BE86000CEFA69 /* ISimulateLayer.cpp in Sources */,
-				D3920616168BE86000CEFA69 /* ISimulateObject.cpp in Sources */,
-				D3920617168BE86000CEFA69 /* NPC.cpp in Sources */,
-				D3920618168BE86000CEFA69 /* Player.cpp in Sources */,
-				D392061B168BE87200CEFA69 /* ActorBattleInfo.cpp in Sources */,
 				D39207E4168BECD300CEFA69 /* CCAction.cpp in Sources */,
 				D39207E5168BECD300CEFA69 /* CCActionCamera.cpp in Sources */,
 				D39207E6168BECD300CEFA69 /* CCActionCatmullRom.cpp in Sources */,
@@ -27389,6 +27420,9 @@
 				D38A6559168C490500D00227 /* UIEvents.cpp in Sources */,
 				D38A655A168C490500D00227 /* UITargetProp.cpp in Sources */,
 				D38A655B168C490500D00227 /* UITargetWindow.cpp in Sources */,
+				C5CA0A2F168EF9AA0045DF06 /* CClient.cpp in Sources */,
+				C5A3B98416980FB8006A3375 /* ClNetMng.cpp in Sources */,
+				C5989022169D71CD00775634 /* ActorBattleInfo.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -27424,6 +27458,7 @@
 					"\"$(PROJECT_NAME)/GameFramework\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				"OTHER_CFLAGS[arch=*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -27463,9 +27498,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../dev/ios/framework\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Demo/Prefix.pch;
@@ -27476,6 +27516,7 @@
 					CC_TARGET_OS_IPHONE,
 				);
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"\"$(PROJECT_NAME)/libs/cocos2dx/kazmath/include\"",
 					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
@@ -27487,16 +27528,18 @@
 					"\"$(PROJECT_NAME)/GameFramework\"",
 				);
 				INFOPLIST_FILE = Demo/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Demo/libs/cocos2dx/platform/third_party/ios/libraries\"",
 				);
+				"OTHER_CFLAGS[arch=*]" = "";
 				OTHER_LDFLAGS = (
 					"-lxml2",
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"Demo/libs\"";
 				VALIDATE_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
@@ -27507,9 +27550,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../dev/ios/framework\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Demo/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -27518,6 +27566,7 @@
 					CC_TARGET_OS_IPHONE,
 				);
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"\"$(PROJECT_NAME)/libs/cocos2dx/kazmath/include\"",
 					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
@@ -27529,7 +27578,7 @@
 					"\"$(PROJECT_NAME)/GameFramework\"",
 				);
 				INFOPLIST_FILE = Demo/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Demo/libs/cocos2dx/platform/third_party/ios/libraries\"",
@@ -27539,6 +27588,7 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"Demo/libs\"";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

@@ -47,14 +47,4 @@ struct ENAnimation
 	};
 };
 
-struct ENEquipType 
-{
-	enum Decl
-	{
-		enError = -1,
-		enWeapon,
-
-		Count,
-	};
-};
 #endif

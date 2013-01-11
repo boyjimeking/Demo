@@ -10,6 +10,8 @@
 
 #include "cocoa/CCGeometry.h"
 
+class CClient;
+
 namespace cocos2d
 {
 	class CCScene;
@@ -85,7 +87,7 @@ namespace Game
 		//设置碰撞是否生效
 		void SetCollidable(bool isCollide);
 
-		Net::Client* GetClient() const { return m_client; }
+        CClient* GetClient() const { return m_client; }
 	protected:
 		SceneInfo *m_sceneInfo;
 		ActorsControl *m_actorsControl;
@@ -94,7 +96,7 @@ namespace Game
 		GUI::UIControl *m_uiControl;
         Camera *m_camera;
         PhysicalControl *m_physicalControl;
-        Net::Client *m_client;
+        CClient *m_client;
 		cocos2d::CCNode *m_root;
 
 #if COCOS2D_DEBUG

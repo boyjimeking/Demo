@@ -10,7 +10,8 @@
 #include "AppMacros.h"
 #include "cocos2d.h"
 #include "WorldManager.h"
-#include "../CSProtocol/CSPipeline.h"
+#include "../GameFramework/Client/CClient.h"
+#include "../GameFramework/Client/ClNetMng.h"
 
 USING_NS_CC;
 
@@ -73,8 +74,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     pDirector->runWithScene(pScene);
 
     //模拟网络端的初始化数据
-    Net::CSPipeline::Instance()->Init();
-
+    //Net::CSPipeline::Instance()->Init();
+    CClNetMng::Instance()->Init();
+    Game::WorldManager::Instance()->GetClient()->Login("111", "111");
+    
     return true;
 }
 
