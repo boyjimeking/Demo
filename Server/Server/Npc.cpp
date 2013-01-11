@@ -17,7 +17,9 @@
 u32 CNpc::m_nIdGenerator = 1;
 CNpc::TNpcMap CNpc::m_npcMap;
 
-CNpc::CNpc(u32 id):IUnit(id)
+CNpc::CNpc(u32 id):
+IUnit(id),
+m_control(new AIControl)
 {
     ++m_nIdGenerator;
     m_battleInfo.m_HP = 5;
