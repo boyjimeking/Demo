@@ -15,6 +15,7 @@
 #include "../../Demo/Comm/NetMessage.h"
 
 class AIControl;
+class CPlayer;
 
 class CNpc: public IUnit{
 public:
@@ -25,20 +26,11 @@ public:
     static CNpc* CreateObj(u32 id);
     static CNpc* FindNpc(u32 id);
     static void InitAll();
-    
-    static void SysAll(void)//xxxxxx
-    {
-        TNpcMap::iterator it = m_npcMap.begin();
-        while(it != m_npcMap.end())
-        {
-            it->second->SycInfo();
-            ++it;
-        }
-    }
+    static void SycAll(CPlayer *player);
     
     bool Init(void);
     virtual bool IsNpc(void) const { return true; }
-    void SycInfo( void );
+    void SycInfo( CPlayer *player );
     static void UpdateAll(u32 elps);
     void Update(u32 elps);
     

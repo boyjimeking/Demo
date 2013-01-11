@@ -34,9 +34,6 @@ public:
     bool Login(NetMessage* pMsg);
     bool AttackTarget_C2S(NetMessage* pMsg);
     
-    //create an account
-    bool Login(std::string username, std::string password);
-    
     void SendToClient(NetMessage& msg)
     {
         assert(m_pConn);

@@ -57,9 +57,6 @@ bool CPlayer::Init(void)
     m_battleInfo.m_isAlive = true;
     m_observers.insert(m_nId);
     
-    //syc npc
-    CNpc::SysAll();
-    
     return true;
 }
 

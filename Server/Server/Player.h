@@ -24,7 +24,7 @@ public:
     
     static CPlayer * CreateObj(u32 id, CGameAccount* pAccount);
     static CPlayer * FindPlayer(u32 id);
-
+    
     bool Init(void);
     virtual bool IsPlayer(void) const { return true; }
     void SendToClient(NetMessage& msg) { m_pAccount->SendToClient(msg);}

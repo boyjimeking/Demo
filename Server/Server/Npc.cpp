@@ -8,9 +8,11 @@
 
 #include <assert.h>
 #include "Npc.h"
+#include "Player.h"
 #include "../../Demo/Comm/NetMessage.h"
 #include "AIControl.h"
 #include "Tools.h"
+#include "GameServer.h"
 
 u32 CNpc::m_nIdGenerator = 1;
 CNpc::TNpcMap CNpc::m_npcMap;
@@ -57,7 +59,7 @@ bool CNpc::Init(void)
     return true;
 }
 
-void CNpc::SycInfo( void )
+void CNpc::SycInfo( CPlayer *player )
 {
     TMsgInitNPC_S2C msg;
     msg.m_actorID = GetID();
@@ -65,9 +67,18 @@ void CNpc::SycInfo( void )
     msg.m_x = GetX();
     msg.m_y = GetY();
     msg.m_battleInfo.Set(m_battleInfo);
-    BoardcastMsg(msg);
+    player->SendToClient(msg);
 }
 
+void CNpc::SycAll(CPlayer *player)
+{
+    TNpcMap::iterator it = m_npcMap.begin();
+    while(it != m_npcMap.end())
+    {
+        it->second->SycInfo(player);
+        ++it;
+    }
+}
 
 void CNpc::UpdateAll(u32 elps)
 {
@@ -114,7 +125,7 @@ void CNpc::InitAll()
     for (int index = 0; index < 50; ++index)
     {
         CNpc* p = CNpc::CreateObj(CNpc::m_nIdGenerator);
-        p->SetX(21.8f);
-        p->SetY(10.9f);
+        p->SetX(CGameServer::RandX());
+        p->SetY(CGameServer::RandY());
     }
 }

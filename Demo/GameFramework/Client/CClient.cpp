@@ -73,6 +73,7 @@ bool CClient::InitPlayer_S2C(NetMessage* pMsg)
 bool CClient::InitNPC_S2C(NetMessage* pMsg)
 {
     MSG_PTR_CVT(p, TMsgInitNPC_S2C, pMsg);
+    printf("InitNPC_S2C::%d,id:%d\n",pMsg->GetType(), p->m_actorID);
     Game::ActorProp *actor = Game::WorldManager::Instance()->GetActorsControl()->LookupActor(p->m_actorID);
     if (NULL == actor)
     {

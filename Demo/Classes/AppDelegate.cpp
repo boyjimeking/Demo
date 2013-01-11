@@ -73,8 +73,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     // run
     pDirector->runWithScene(pScene);
 
-    //模拟网络端的初始化数据
-    //Net::CSPipeline::Instance()->Init();
+    //网络端的初始化
     CClNetMng::Instance()->Init();
     Game::WorldManager::Instance()->GetClient()->Login("111", "111");
     

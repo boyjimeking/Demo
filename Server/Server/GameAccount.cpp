@@ -9,44 +9,11 @@
 #include <string.h>
 #include "GameAccount.h"
 #include "Player.h"
+#include "Npc.h"
 #include "Tools.h"
 
 CGameAccount::TAccountMap CGameAccount::m_accounts;
 int CGameAccount::m_nIdGenerator = 0;
-
-bool CGameAccount::Login(std::string username, std::string password)
-{
-    if(username != "111" && password != "111")
-    {
-        dprint(Lg_Debug, "User(%s) Login failed!\n", username.c_str());
-        return false;
-    }
-    m_username = username;
-    m_password = password;
-    
-    //create an actor
-    CPlayer *p = CPlayer::CreateObj(CPlayer::m_nIdGenerator, this);
-    if(!p)
-    {
-        dprint(Lg_Debug, "Create a player (%d) failed!\n", CPlayer::m_nIdGenerator);
-        return false;
-    }
-    //initialize the client
-    TMsgInitScene_S2C msg;
-    msg.m_sceneID = 1;
-    strcpy(msg.m_sceneName, "Demo.pkm");
-    SendToClient(msg);
-    
-    //actor initialize   
-    p->SetX(12.54f);
-    p->SetY(6.66f);
-    p->SycInfo();
-    p->ChangeEquip();
-     
-    m_pPlayer = p;
-    
-    return true;
-}
 
 bool CGameAccount::Login(NetMessage* pMsg)
 {
@@ -79,9 +46,12 @@ bool CGameAccount::Login(NetMessage* pMsg)
     player->SetY(6.66f);
     player->SycInfo();
     player->ChangeEquip();
+   
+    //syc npc
+    CNpc::SycAll(player);
     
     m_pPlayer = player;
-
+    
     return true;
 }
 
