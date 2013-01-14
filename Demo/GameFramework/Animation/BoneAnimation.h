@@ -16,6 +16,8 @@ namespace Tools
 	class BoneAvatarData;
 }
 
+using namespace Tools;
+
 class BoneAnimation
 	:public SkeletonCocos2D
 {

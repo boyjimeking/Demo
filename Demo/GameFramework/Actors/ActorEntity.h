@@ -21,6 +21,8 @@ namespace Tools
 class SkeletonCocos2D;
 class FrameAnimation;
 class BoneAnimation;
+
+using namespace Tools;
 namespace Game
 {
 	class ActorProp;

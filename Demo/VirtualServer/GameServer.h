@@ -21,8 +21,8 @@ namespace Server
 		static float GridSize;
 		static float TranScale;//一米多少点
 
-		static int RandX(void);
-		static int RandY(void);
+		static float RandX(void);
+		static float RandY(void);
 
 		GameServer(void);
 		virtual ~GameServer(void);

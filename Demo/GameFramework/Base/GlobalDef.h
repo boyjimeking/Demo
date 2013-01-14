@@ -30,9 +30,6 @@ struct ENSceneObjectType
 	};
 };
 
-typedef Tools::ENDirection ENDirection;
-typedef Tools::ENAnimation ENAnimation;
-
 struct ENEquipType 
 {
 	enum Decl

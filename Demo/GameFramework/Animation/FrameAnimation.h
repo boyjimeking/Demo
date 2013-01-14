@@ -14,7 +14,9 @@
 namespace Tools
 {
 	class AvatarData;
+	class AnimationData;
 }
+using namespace Tools;
 
 class FrameAnimation
 	:public cocos2d::CCSprite
@@ -30,6 +32,8 @@ public:
 	void ChangeEquip(ENEquipType::Decl type, const char *equipFile);
 
 	float GetTransScale(void) const;
+
+	virtual void update( float fDelta );
 protected:
 	Tools::AvatarData * GetAvatar(void) const { return m_avatar; }
 	Tools::AvatarData *m_avatar;
@@ -42,6 +46,15 @@ private:
 	};
 	ENDirection::Decl m_currentDirection;
 	const char *m_currentAnimation;
+private:
+	AnimationData *m_animationData;
+	bool m_isLoop;
+
+	int m_animationIndex;
+	float m_frameTime;
+	float m_soundTime;
+	bool m_isPlaySound;
+	bool m_isPlayOver;
 };
 
 #endif // FrameAnimation_h__

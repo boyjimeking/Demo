@@ -5,6 +5,7 @@ namespace Tools
 {
 	AnimationData::AnimationData(void)
 		:m_delay(0.0f)
+		,m_soundDelay(0.0f)
 	{
 
 	}
@@ -30,6 +31,8 @@ namespace Tools
 		{
 			stream->Read(m_frame[index]);
 		}
+		stream->Read(m_soundEffect);
+		stream->Read(m_soundDelay);
 	}
 
 	void AnimationData::Write(StreamHelper *stream)
@@ -41,12 +44,16 @@ namespace Tools
 		{
 			stream->Write(m_frame[index]);
 		}
+		stream->Write(m_soundEffect);
+		stream->Write(m_soundDelay);
 	}
 
 	void AnimationData::Clear( void )
 	{
 		m_delay = 0.0f;
 		m_frame.clear();
+		m_soundEffect.clear();
+		m_soundDelay = 0.0f;
 	}
 
 }

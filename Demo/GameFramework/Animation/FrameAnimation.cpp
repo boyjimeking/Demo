@@ -8,11 +8,21 @@
 #include "Actors/EquipObject.h"
 #include "../CCFileUtils.h"
 #include "support/CCPointExtension.h"
+#include "SimpleAudioEngine.h"
+#include "../CCCommon.h"
+
+using namespace CocosDenshion;
 
 FrameAnimation::FrameAnimation(void)
 	:m_avatar(NULL)
 	,m_currentDirection(ENDirection::enError)
 	,m_currentAnimation(ENAnimation::Error)
+	,m_animationData(NULL)
+	,m_animationIndex(0)
+	,m_frameTime(0.0f)
+	,m_soundTime(0.0f)
+	,m_isLoop(false)
+	,m_isPlayOver(false)
 {
 	
 }
@@ -64,27 +74,17 @@ void FrameAnimation::PlayAnimation(const char *type, ENDirection::Decl direction
 	{
 		return;
 	}
-	cocos2d::CCArray *frameArray = cocos2d::CCArray::createWithCapacity(animData->GetFrameCount());
-	for (unsigned int index = 0; index < animData->GetFrameCount(); ++index)
-	{
-		cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(animData->GetFrame(index));
-		if (NULL == frame)
-		{
-			continue;
-		}
-		frameArray->addObject(frame);
-	}
-	this->initWithSpriteFrame(reinterpret_cast<cocos2d::CCSpriteFrame*>(frameArray->lastObject()));
-	if (this->getTag() > 0)
-	{
-		setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.3f));
-	}
-	cocos2d::CCAnimation *animation = cocos2d::CCAnimation::createWithSpriteFrames(frameArray, animData->GetDelay());
-	cocos2d::CCAnimate *animate = cocos2d::CCAnimate::create(animation);
-	cocos2d::CCAction *action = isLoop ? (cocos2d::CCAction*)cocos2d::CCRepeatForever::create(animate) : (cocos2d::CCAction*)animate;
-	this->stopActionByTag(enActorAction_PlayAnimation);
-	action->setTag(enActorAction_PlayAnimation);
-	this->runAction(action);
+	cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(animData->GetFrame(0));
+
+	setDisplayFrame(frame);
+	m_animationData = animData;
+	m_isLoop = isLoop;
+	m_isPlayOver = false;
+
+	m_animationIndex = 0;
+	m_frameTime = 0.0f;
+	m_soundTime = 0.0f;
+	m_isPlaySound = false;
 
 	cocos2d::CCArray *childArray = getChildren();
 	CCObject* pObj = NULL;
@@ -145,3 +145,66 @@ void FrameAnimation::ChangeEquip( ENEquipType::Decl type, const char *equipFile 
 		oldEquip->LoadAvatarFromFile(equipFile);
 	}
 }
+
+void FrameAnimation::update( float fDelta )
+{
+	cocos2d::CCArray *childArray = getChildren();
+	CCObject* pObj = NULL;
+	CCARRAY_FOREACH(childArray,pObj)
+	{
+		FrameAnimation* child = (FrameAnimation*)pObj;
+		child->update(fDelta);
+	}
+	if (m_isPlayOver)
+	{
+		return;
+	}
+	if (NULL != m_animationData)
+	{
+		//////////////////////////////////////////////////////////////////////////
+		//播放动画帧
+		m_frameTime += fDelta;
+		if (m_frameTime >= m_animationData->GetDelay())
+		{
+			m_frameTime = 0.0f;
+			++m_animationIndex;
+			if (m_animationIndex >= m_animationData->GetFrameCount())
+			{
+				if (m_isLoop)
+				{
+					m_isPlaySound = false;
+					m_animationIndex = 0;
+				}
+				else
+				{
+					m_isPlayOver = true;
+				}
+			}
+			if (!m_isPlayOver)
+			{
+				const char *frameName = m_animationData->GetFrame(m_animationIndex);
+				cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(frameName);
+				if (NULL != frame)
+				{
+					setDisplayFrame(frame);
+				}
+			}
+		}
+
+		//////////////////////////////////////////////////////////////////////////
+		//播放声音
+		if (!m_isPlaySound)
+		{
+			m_soundTime += fDelta;
+			if (m_soundTime >= m_animationData->GetSoundDelay())
+			{
+				m_isPlaySound = true;
+				if (!m_animationData->GetSoundEffect().empty())
+				{
+					SimpleAudioEngine::sharedEngine()->playEffect(m_animationData->GetSoundEffect().c_str());
+				}
+			}
+		}
+	}
+}
+

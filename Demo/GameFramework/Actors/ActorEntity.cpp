@@ -49,6 +49,7 @@ namespace Game
 							if (NULL == m_frameAnimation)
 							{
 								m_frameAnimation = new FrameAnimation;
+								m_frameAnimation->scheduleUpdate();
 							}
 							m_frameAnimation->LoadAvatarFromFile("MainActor.ava");
 							setScale(m_frameAnimation->GetTransScale());
@@ -75,6 +76,7 @@ namespace Game
 							if (NULL == m_frameAnimation)
 							{
 								m_frameAnimation = new FrameAnimation;
+								m_frameAnimation->scheduleUpdate();
 							}
 							m_frameAnimation->LoadAvatarFromFile("NPCActor.ava");
 							setScale(m_frameAnimation->GetTransScale());
