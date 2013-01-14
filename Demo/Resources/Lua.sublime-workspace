@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"foreach",
+				"table.foreach"
+			],
+			[
+				"tos",
+				"tostring"
+			],
+			[
+				"loc",
+				"local function	local function"
+			],
+			[
+				"re",
+				"require"
+			],
+			[
+				"corou",
+				"coroutine.resume"
+			],
+			[
+				"co",
+				"coroutine.yield"
+			],
+			[
 				"coro",
 				"coroutine.resume"
 			],
@@ -91,7 +115,23 @@
 			"file": "UIControl.lua",
 			"settings":
 			{
-				"buffer_size": 1731,
+				"buffer_size": 1603,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/samples/HelloLua/Resources/hello.lua",
+			"settings":
+			{
+				"buffer_size": 7093,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ActorAttack.lua",
+			"settings":
+			{
+				"buffer_size": 71,
 				"line_ending": "Windows"
 			}
 		},
@@ -100,6 +140,22 @@
 			"settings":
 			{
 				"buffer_size": 425,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tools.lua",
+			"settings":
+			{
+				"buffer_size": 57,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ActorMove.lua",
+			"settings":
+			{
+				"buffer_size": 2025,
 				"line_ending": "Windows"
 			}
 		}
@@ -172,6 +228,10 @@
 	},
 	"file_history":
 	[
+		"/E/Codes/Demo/Demo/Resources/[Finished in 0.0s with exit code 1]lua",
+		"/E/Codes/Demo/Demo/Resources/lua",
+		"/E/Codes/Demo/Demo/Resources/ActorMove",
+		"/D/Documents/test.lua",
 		"/E/Codes/Demo/Demo/GameFramework/tolua/GameFramework.pkg",
 		"/E/Codes/Demo/Demo/Resources/UITargetState.lua",
 		"/E/Codes/Demo/Demo/Resources/tools.lua",
@@ -181,7 +241,6 @@
 		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Lua.sublime-settings",
 		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/UserLua.sublime-build",
-		"/D/Documents/test.lua",
 		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/D/Program Files/LuaEditor/luaKeywords.lua",
 		"/E/Codes/Demo/tolua.bat",
@@ -311,6 +370,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"CCPointZero",
 			"lua",
 			"Builder",
 			"__construct",
@@ -353,7 +413,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -389,15 +449,15 @@
 					"file": "UIControl.lua",
 					"settings":
 					{
-						"buffer_size": 1731,
+						"buffer_size": 1603,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								931,
-								931
+								974,
+								974
 							]
 						],
 						"settings":
@@ -413,6 +473,60 @@
 				},
 				{
 					"buffer": 2,
+					"file": "/E/Codes/cocos2d-2.1beta3-x-2.1.0/cocos2d-2.1beta3-x-2.1.0/samples/HelloLua/Resources/hello.lua",
+					"settings":
+					{
+						"buffer_size": 7093,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2248,
+								2248
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 450.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ActorAttack.lua",
+					"settings":
+					{
+						"buffer_size": 71,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								67,
+								67
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "UITargetState.lua",
 					"settings":
 					{
@@ -423,8 +537,8 @@
 						"selection":
 						[
 							[
-								425,
-								425
+								309,
+								309
 							]
 						],
 						"settings":
@@ -433,6 +547,58 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "tools.lua",
+					"settings":
+					{
+						"buffer_size": 57,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								57,
+								57
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "ActorMove.lua",
+					"settings":
+					{
+						"buffer_size": 2025,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								945,
+								945
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 54.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -446,7 +612,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
