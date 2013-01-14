@@ -33,14 +33,4 @@ struct ENSceneObjectType
 typedef Tools::ENDirection ENDirection;
 typedef Tools::ENAnimation ENAnimation;
 
-struct ENEquipType 
-{
-	enum Decl
-	{
-		enError = -1,
-		enWeapon,
-
-		Count,
-	};
-};
 #endif

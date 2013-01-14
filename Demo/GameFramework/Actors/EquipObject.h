@@ -9,6 +9,14 @@
 #define EquipObject_h__
 
 #include "Animation/FrameAnimation.h"
+#include "sprite_nodes/CCSprite.h"
+#include "Base/GlobalDef.h"
+#include "../../Demo/Comm/CommDef.h"
+
+namespace Tools
+{
+	class AvatarData;
+}
 
 namespace Game
 {

@@ -3,7 +3,7 @@
 #include "ActorEntity.h"
 #include "WorldManager.h"
 #include "SceneInfo.h"
-#include "Client/Client.h"
+#include "Client/CClient.h"
 #include "../CSProtocol/ActorBattleInfo.h"
 #include "UI/UIProperty.h"
 

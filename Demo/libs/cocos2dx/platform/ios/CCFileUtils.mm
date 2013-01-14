@@ -269,12 +269,12 @@ unsigned char* CCFileUtils::getFileData(const char* pszFileName, const char* psz
     unsigned char * pBuffer = NULL;
     CCAssert(pszFileName != NULL && pSize != NULL && pszMode != NULL, "Invalid parameters.");
     *pSize = 0;
-    do 
+    do
     {
         // read the file from hardware
         FILE *fp = fopen(pszFileName, pszMode);
         CC_BREAK_IF(!fp);
-
+        
         fseek(fp,0,SEEK_END);
         *pSize = ftell(fp);
         fseek(fp,0,SEEK_SET);
@@ -282,13 +282,13 @@ unsigned char* CCFileUtils::getFileData(const char* pszFileName, const char* psz
         *pSize = fread(pBuffer,sizeof(unsigned char), *pSize,fp);
         fclose(fp);
     } while (0);
-
-    if (! pBuffer && isPopupNotify()) 
+    
+    if (! pBuffer && isPopupNotify())
     {
         std::string title = "Notification";
         std::string msg = "Get data from file(";
         msg.append(pszFileName).append(") failed!");
-
+        
         CCMessageBox(msg.c_str(), title.c_str());
     }
     return pBuffer;

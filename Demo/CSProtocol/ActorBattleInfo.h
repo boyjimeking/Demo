@@ -8,6 +8,8 @@
 #ifndef ActorBattleInfo_h__
 #define ActorBattleInfo_h__
 
+class PlayerBattleInfo;
+
 namespace Tools
 {
 	class StreamHelper;
@@ -31,6 +33,7 @@ public:
 	virtual ~ActorBattleInfo(void);
 
 	void Read(Tools::StreamHelper *stream);
+    void Read(const PlayerBattleInfo& info);
 	void Write(Tools::StreamHelper *stream);
 
 	//Hp

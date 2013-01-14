@@ -71,7 +71,7 @@ enum {
 
  Supported PVR formats:
     - RGBA8888
-    - BGRA8888
+    - BGRA8888
     - RGBA4444
     - RGBA5551
     - RGB565
