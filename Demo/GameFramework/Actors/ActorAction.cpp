@@ -19,6 +19,7 @@
 #include "SceneInfo.h"
 #include <algorithm>
 #include "boost/bind.hpp"
+#include "tolua/CCLuaEngine.h"
 
 namespace Game
 {
@@ -164,8 +165,9 @@ namespace Game
 		}
 	}
 	//移动
-	MoveAction::MoveAction(const CCPoint &pos)
+	MoveAction::MoveAction(const CCPoint &pos, int handle)
 	:m_pos(pos)
+	,m_handle(handle)
 	{
 
 	}
@@ -186,6 +188,10 @@ namespace Game
 	{
 		ActorEventStop event;
 		prop->NotifyChange(&event);
+		if (0 != m_handle)
+		{
+			CCLuaEngine::defaultEngine()->executeFunctionByHandler(m_handle, 0);
+		}
 	}
 	bool MoveAction::Tick(float dt, ActorProp *prop)
 	{
@@ -245,7 +251,7 @@ namespace Game
 
 	//攻击
 	AttackAction::AttackAction(ActorProp *prop)
-	:MoveAction(prop->GetPosition())
+	:MoveAction(prop->GetPosition(), 0)
 	,m_targetID(prop->GetID())
 	,m_fired(false)
 	,m_fireTime(0.0f)

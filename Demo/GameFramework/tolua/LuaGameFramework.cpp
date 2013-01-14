@@ -1,6 +1,6 @@
 /*
 ** Lua binding: GameFramework
-** Generated automatically by tolua++-1.0.92 on 01/10/13 15:18:32.
+** Generated automatically by tolua++-1.0.92 on 01/14/13 16:31:53.
 */
 
 
@@ -94,18 +94,18 @@ static void tolua_reg_types (lua_State* tolua_S)
  Mtolua_typeid(tolua_S,CSPipeline, "CSPipeline");
  tolua_usertype(tolua_S,"CCSize");
  Mtolua_typeid(tolua_S,CCSize, "CCSize");
- tolua_usertype(tolua_S,"GUI::UIProperty");
- Mtolua_typeid(tolua_S,GUI::UIProperty, "GUI::UIProperty");
- tolua_usertype(tolua_S,"CCNode");
- Mtolua_typeid(tolua_S,CCNode, "CCNode");
  tolua_usertype(tolua_S,"UIProperty");
  Mtolua_typeid(tolua_S,UIProperty, "UIProperty");
+ tolua_usertype(tolua_S,"CCNode");
+ Mtolua_typeid(tolua_S,CCNode, "CCNode");
+ tolua_usertype(tolua_S,"GridProp");
+ Mtolua_typeid(tolua_S,GridProp, "GridProp");
  tolua_usertype(tolua_S,"UIControl");
  Mtolua_typeid(tolua_S,UIControl, "UIControl");
  tolua_usertype(tolua_S,"AvatarData");
  Mtolua_typeid(tolua_S,AvatarData, "AvatarData");
- tolua_usertype(tolua_S,"GridProp");
- Mtolua_typeid(tolua_S,GridProp, "GridProp");
+ tolua_usertype(tolua_S,"ActorsControl");
+ Mtolua_typeid(tolua_S,ActorsControl, "ActorsControl");
  tolua_usertype(tolua_S,"Scene");
  Mtolua_typeid(tolua_S,Scene, "Scene");
  tolua_usertype(tolua_S,"INotifier");
@@ -118,14 +118,14 @@ static void tolua_reg_types (lua_State* tolua_S)
  Mtolua_typeid(tolua_S,CCScene, "CCScene");
  tolua_usertype(tolua_S,"ActorBattleInfo");
  Mtolua_typeid(tolua_S,ActorBattleInfo, "ActorBattleInfo");
- tolua_usertype(tolua_S,"ActorsControl");
- Mtolua_typeid(tolua_S,ActorsControl, "ActorsControl");
+ tolua_usertype(tolua_S,"ENActorType");
+ Mtolua_typeid(tolua_S,ENActorType, "ENActorType");
  tolua_usertype(tolua_S,"Net::Client");
  Mtolua_typeid(tolua_S,Net::Client, "Net::Client");
  tolua_usertype(tolua_S,"WorldManager");
  Mtolua_typeid(tolua_S,WorldManager, "WorldManager");
- tolua_usertype(tolua_S,"ENActorType");
- Mtolua_typeid(tolua_S,ENActorType, "ENActorType");
+ tolua_usertype(tolua_S,"GUI::UIProperty");
+ Mtolua_typeid(tolua_S,GUI::UIProperty, "GUI::UIProperty");
  
  Mtolua_typeid(tolua_S,LUA_FUNCTION, "LUA_FUNCTION");
  tolua_usertype(tolua_S,"SceneObjectsControl");
@@ -1268,6 +1268,36 @@ static int tolua_GameFramework_ActorProp_MoveTo00(lua_State* tolua_S)
  tolua_error(tolua_S,"#ferror in function 'MoveTo'.",&tolua_err);
  return 0;
 #endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: MoveTo of class  ActorProp */
+#ifndef TOLUA_DISABLE_tolua_GameFramework_ActorProp_MoveTo01
+static int tolua_GameFramework_ActorProp_MoveTo01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"ActorProp",0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"const CCPoint",0,&tolua_err)) ||
+     (tolua_isvaluenil(tolua_S,3,&tolua_err) || !toluafix_isfunction(tolua_S,3,"LUA_FUNCTION",0,&tolua_err)) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  ActorProp* self = (ActorProp*)  tolua_tousertype(tolua_S,1,0);
+  const CCPoint* pos = ((const CCPoint*)  tolua_tousertype(tolua_S,2,0));
+  LUA_FUNCTION handle = (  toluafix_ref_function(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'MoveTo'", NULL);
+#endif
+  {
+   self->MoveTo(*pos,handle);
+  }
+ }
+ return 0;
+tolua_lerror:
+ return tolua_GameFramework_ActorProp_MoveTo00(tolua_S);
 }
 #endif //#ifndef TOLUA_DISABLE
 
@@ -3084,6 +3114,7 @@ TOLUA_API int tolua_GameFramework_open (lua_State* tolua_S)
    tolua_function(tolua_S,"Init",tolua_GameFramework_ActorProp_Init00);
    tolua_function(tolua_S,"Release",tolua_GameFramework_ActorProp_Release00);
    tolua_function(tolua_S,"MoveTo",tolua_GameFramework_ActorProp_MoveTo00);
+   tolua_function(tolua_S,"MoveTo",tolua_GameFramework_ActorProp_MoveTo01);
    tolua_function(tolua_S,"Stop",tolua_GameFramework_ActorProp_Stop00);
    tolua_function(tolua_S,"Dead",tolua_GameFramework_ActorProp_Dead00);
    tolua_function(tolua_S,"StartAttack",tolua_GameFramework_ActorProp_StartAttack00);

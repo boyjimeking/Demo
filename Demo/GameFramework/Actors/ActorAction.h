@@ -79,7 +79,7 @@ namespace Game
 	public:
 		virtual ENAction::Type GetType(void) const { return ENAction::enMove; }
 
-		MoveAction(const CCPoint &pos);
+		MoveAction(const CCPoint &pos, int handle);
 		virtual void OnEnter(ActorProp *prop);
 		virtual void OnInterrupt(ActorProp *prop);
 		virtual void OnExit(ActorProp *prop);
@@ -89,6 +89,7 @@ namespace Game
 		CCPoint m_startPos;
 		CCPoint m_direction;
 		std::vector<CCPoint> m_used;
+		int m_handle;
 	};
 
 	//攻击

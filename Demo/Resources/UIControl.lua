@@ -18,7 +18,7 @@ local function OnTouchPlayer(x, y)
 		end
 
 		require "ActorAttack"
-		Attack(actor)
+		Attack(mainActor, actor)
 
 		cclog("TouchPlayer")
 		return true

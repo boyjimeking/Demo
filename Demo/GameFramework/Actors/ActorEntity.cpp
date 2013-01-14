@@ -79,8 +79,8 @@ namespace Game
 							m_frameAnimation->LoadAvatarFromFile("NPCActor.ava");
 							setScale(m_frameAnimation->GetTransScale());
 							addChild(m_frameAnimation);
-							CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
-							m_touchCallBack = new TouchMonster(reinterpret_cast<ActorProp*>(notify));
+							//CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
+							//m_touchCallBack = new TouchMonster(reinterpret_cast<ActorProp*>(notify));
 						}
 						break;
 					}

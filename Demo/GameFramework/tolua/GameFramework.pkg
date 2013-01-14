@@ -82,6 +82,7 @@ public:
 	void Release(void);
 
 	void MoveTo(const CCPoint &pos);
+	void MoveTo(const CCPoint &pos, LUA_FUNCTION handle);
 	void Stop(void);
 	void Dead(void);
 	void StartAttack(ActorProp *target);

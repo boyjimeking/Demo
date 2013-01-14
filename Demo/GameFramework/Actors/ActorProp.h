@@ -50,6 +50,7 @@ namespace Game
 		void Release(void);
 
 		void MoveTo(const CCPoint &pos);
+		void MoveTo(const CCPoint &pos, int handle);
 		void Stop(void);
 		void Dead(void);
 		void StartAttack(ActorProp *target);
@@ -73,6 +74,7 @@ namespace Game
 		ActorBattleInfo *m_battleInfo;
 		ActionControl *m_actionControl;
 	private:
+		int m_handle;
 	};
 }
 

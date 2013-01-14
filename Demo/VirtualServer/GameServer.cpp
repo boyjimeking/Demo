@@ -71,7 +71,7 @@ namespace Server
 			actor->SycInfo();
 			actor->ChangeEquip();
 		}
-		for (int index = 0; index < 30; ++index)
+		for (int index = 0; index < 10; ++index)
 		{
 			IActor::Ptr actor = NPC::CreateObject();
 			PushObject(actor);

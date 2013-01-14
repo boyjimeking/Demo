@@ -6,6 +6,7 @@
 #include "Client/Client.h"
 #include "../CSProtocol/ActorBattleInfo.h"
 #include "UI/UIProperty.h"
+#include "tolua/CCLuaEngine.h"
 
 namespace Game
 {
@@ -51,8 +52,18 @@ namespace Game
 		{
 			return;
 		}
-		m_actionControl->AddAction(this, new MoveAction(pos));
+		m_actionControl->AddAction(this, new MoveAction(pos, 0));
 	}
+
+	void ActorProp::MoveTo( const CCPoint &pos, int handle )
+	{
+		if (!GetBattleInfo()->IsAlive())
+		{
+			return;
+		}
+		m_actionControl->AddAction(this, new MoveAction(pos, handle));
+	}
+
 	void ActorProp::SetPosition(const CCPoint &pos)
 	{
 		//if (!WorldManager::Instance()->GetSceneInfo()->IsPointCanStanc(pos))
