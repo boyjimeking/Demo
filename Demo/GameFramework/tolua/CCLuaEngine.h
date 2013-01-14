@@ -25,6 +25,7 @@
 #ifndef __CC_LUA_ENGINE_H__
 #define __CC_LUA_ENGINE_H__
 
+#include <map>
 extern "C" {
 #include "lua.h"
 }
