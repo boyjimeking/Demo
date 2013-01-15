@@ -7,7 +7,7 @@
 #include "WorldManager.h"
 #include "Camera/Camera.h"
 #include "particle_nodes/CCParticleExamples.h"
-#include "Tools/AvatarData.h"
+#include "../Tools/AvatarData.h"
 
 namespace Game
 {
