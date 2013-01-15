@@ -40,9 +40,9 @@ TEST_F(TestAnimationData, Data)
 	Tools::StreamHelper readStream(buff, 4096);
 
 	m_data->SetDelay(0.2f);
-	m_data->AddFrame("frame1");
-	m_data->AddFrame("frame2");
-	m_data->AddFrame("frame3");
+	m_data->AddFrame(0, "frame1");
+	m_data->AddFrame(1, "frame2");
+	m_data->AddFrame(2, "frame3");
 	m_data->Write(&stream);
 
 	m_readData->Read(&readStream);

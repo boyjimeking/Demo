@@ -17,7 +17,8 @@ namespace Tools
 	class AnimationData
 	{
 	public:
-		typedef std::vector<std::string> FrameList;
+		typedef std::vector<std::string> FrameInfo;
+		typedef std::vector<FrameInfo> FrameList;
 
 		AnimationData(void);
 		virtual ~AnimationData(void);
@@ -27,12 +28,12 @@ namespace Tools
 		void SetDelay(float delay) { m_delay = delay; }
 
 		//添加帧
-		void AddFrame(const char *frame);
+		void AddFrame(int index, const char *frame);
 		//获取帧数
 		unsigned int GetFrameCount(void) const { return m_frame.size(); }
 		//获取全部帧
 		const FrameList& GetFrames(void) const { return m_frame; }
-		const char* GetFrame(int index) const { return m_frame[index].c_str(); }
+		const FrameInfo& GetFrame(int index) const { return m_frame[index]; }
 
 		void Read(StreamHelper *stream);
 		void Write(StreamHelper *stream);

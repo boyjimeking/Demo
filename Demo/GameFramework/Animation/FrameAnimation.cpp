@@ -73,7 +73,7 @@ void FrameAnimation::PlayAnimation(const char *type, ENDirection::Decl direction
 	{
 		return;
 	}
-	cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(animData->GetFrame(0));
+	cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(animData->GetFrame(0).back().c_str());
 
 	setDisplayFrame(frame);
 	m_isLoop = isLoop;
@@ -88,8 +88,15 @@ void FrameAnimation::PlayAnimation(const char *type, ENDirection::Decl direction
 	CCObject* pObj = NULL;
 	CCARRAY_FOREACH(childArray,pObj)
 	{
-		FrameAnimation* child = (FrameAnimation*)pObj;
-		child->PlayAnimation(type, direction, isLoop);
+		if (typeid(FrameAnimation) == typeid(*pObj))
+		{
+			FrameAnimation* child = (FrameAnimation*)pObj;
+			child->PlayAnimation(type, direction, isLoop);
+		}
+		else
+		{
+
+		}
 	}
 }
 
@@ -186,7 +193,7 @@ void FrameAnimation::update( float fDelta )
 			}
 			if (!m_isPlayOver)
 			{
-				const char *frameName = animData->GetFrame(m_animationIndex);
+				const char *frameName = animData->GetFrame(m_animationIndex).back().c_str();
 				cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(frameName);
 				if (NULL != frame)
 				{
@@ -208,6 +215,20 @@ void FrameAnimation::update( float fDelta )
 					SimpleAudioEngine::sharedEngine()->playEffect(animGroup->GetSoundEffect().c_str());
 				}
 			}
+		}
+	}
+}
+
+cocos2d::CCSpriteBatchNode* FrameAnimation::CreateSprite( AnimationData *animData )
+{
+	cocos2d::CCSpriteBatchNode *batchNode = NULL;
+	cocos2d::CCArray *childArray = getChildren();
+	CCObject* pObj = NULL;
+	CCARRAY_FOREACH(childArray,pObj)
+	{
+		if (typeid(cocos2d::CCSpriteBatchNode) == typeid(*pObj))
+		{
+			batchNode = reinterpret_cast<cocos2d::CCSpriteBatchNode*>(pObj);
 		}
 	}
 }

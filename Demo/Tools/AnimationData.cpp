@@ -14,9 +14,16 @@ namespace Tools
 		Clear();
 	}
 
-	void AnimationData::AddFrame( const char *frame )
+	void AnimationData::AddFrame(int index, const char *frame)
 	{
-		m_frame.push_back(frame);
+		if (index < m_frame.size())
+		{
+		}
+		else
+		{
+			m_frame.resize(index + 1);
+		}
+		m_frame[index].push_back(frame);
 	}
 
 	void AnimationData::Read(StreamHelper *stream)
@@ -28,7 +35,13 @@ namespace Tools
 		m_frame.resize(frameSize);
 		for (int index = 0; index < frameSize ; ++index)
 		{
-			stream->Read(m_frame[index]);
+			unsigned int innerSize = 0;
+			stream->Read(innerSize);
+			m_frame[index].resize(innerSize);
+			for (int innerIndex = 0; innerIndex < innerSize ; ++innerIndex)
+			{
+				stream->Read(m_frame[index][innerIndex]);
+			}
 		}
 	}
 
@@ -39,7 +52,12 @@ namespace Tools
 		stream->Write(frameSize);
 		for (int index = 0; index < frameSize ; ++index)
 		{
-			stream->Write(m_frame[index]);
+			unsigned int innerSize = m_frame[index].size();
+			stream->Write(innerSize);
+			for (int innerIndex = 0; innerIndex < innerSize ; ++innerIndex)
+			{
+				stream->Write(m_frame[index][innerIndex]);
+			}
 		}
 	}
 

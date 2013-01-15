@@ -37,6 +37,8 @@ public:
 protected:
 	Tools::AvatarData * GetAvatar(void) const { return m_avatar; }
 	Tools::AvatarData *m_avatar;
+
+	cocos2d::CCSpriteBatchNode* CreateSprite(AnimationData *animData);
 private:
 	enum ENCocos2dActionTag
 	{
