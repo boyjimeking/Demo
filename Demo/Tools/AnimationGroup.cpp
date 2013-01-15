@@ -6,6 +6,7 @@
 namespace Tools
 {
 	AnimationGroup::AnimationGroup(void)
+		:m_soundDelay(0.0f)
 	{
 		memset(m_animationGroup, 0, sizeof(m_animationGroup));
 	}
@@ -32,6 +33,8 @@ namespace Tools
 				m_animationGroup[index]->Read(stream);
 			}
 		}
+		stream->Read(m_soundEffect);
+		stream->Read(m_soundDelay);
 	}
 
 	void AnimationGroup::Write( StreamHelper *stream )
@@ -52,6 +55,8 @@ namespace Tools
 				m_animationGroup[index]->Write(stream);
 			}
 		}
+		stream->Write(m_soundEffect);
+		stream->Write(m_soundDelay);
 	}
 
 	void AnimationGroup::Clear( void )
@@ -64,6 +69,8 @@ namespace Tools
 				m_animationGroup[index] = NULL;
 			}
 		}
+		m_soundEffect.clear();
+		m_soundDelay = 0.0f;
 	}
 
 	AnimationData* AnimationGroup::LookupAnimation( ENDirection::Decl direction ) const

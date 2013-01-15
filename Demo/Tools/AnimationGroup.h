@@ -9,6 +9,7 @@
 #define AnimationGroup_h__
 
 #include "ENDirection.h"
+#include <string>
 
 namespace Tools
 {
@@ -28,8 +29,15 @@ namespace Tools
 		AnimationData* CreateAnimation(ENDirection::Decl direction);
 		AnimationData* ResetAnimation(ENDirection::Decl direction);
 		void RemoveAnimation(ENDirection::Decl direction);
+
+		void SetSoundEffect(const std::string &soundEffect) { m_soundEffect = soundEffect; }
+		const std::string& GetSoundEffect(void) const { return m_soundEffect; }
+		void SetSoundDelay(float delay) { m_soundDelay = delay; }
+		float GetSoundDelay(void) const { return m_soundDelay; }
 	protected:
 		AnimationData* m_animationGroup[ENDirection::Count];
+		std::string m_soundEffect;
+		float m_soundDelay;
 	private:
 	};
 }

@@ -47,7 +47,6 @@ private:
 	ENDirection::Decl m_currentDirection;
 	const char *m_currentAnimation;
 private:
-	AnimationData *m_animationData;
 	bool m_isLoop;
 
 	int m_animationIndex;

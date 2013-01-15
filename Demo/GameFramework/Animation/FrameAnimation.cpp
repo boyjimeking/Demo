@@ -17,7 +17,6 @@ FrameAnimation::FrameAnimation(void)
 	:m_avatar(NULL)
 	,m_currentDirection(ENDirection::enError)
 	,m_currentAnimation(ENAnimation::Error)
-	,m_animationData(NULL)
 	,m_animationIndex(0)
 	,m_frameTime(0.0f)
 	,m_soundTime(0.0f)
@@ -77,7 +76,6 @@ void FrameAnimation::PlayAnimation(const char *type, ENDirection::Decl direction
 	cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(animData->GetFrame(0));
 
 	setDisplayFrame(frame);
-	m_animationData = animData;
 	m_isLoop = isLoop;
 	m_isPlayOver = false;
 
@@ -159,16 +157,22 @@ void FrameAnimation::update( float fDelta )
 	{
 		return;
 	}
-	if (NULL != m_animationData)
+	Tools::AnimationGroup *animGroup = GetAvatar()->Lookup(m_currentAnimation);
+	if (NULL == animGroup)
+	{
+		return;
+	}
+	Tools::AnimationData *animData = animGroup->LookupAnimation(m_currentDirection);
+	if (NULL != animData)
 	{
 		//////////////////////////////////////////////////////////////////////////
 		//播放动画帧
 		m_frameTime += fDelta;
-		if (m_frameTime >= m_animationData->GetDelay())
+		if (m_frameTime >= animData->GetDelay())
 		{
 			m_frameTime = 0.0f;
 			++m_animationIndex;
-			if (m_animationIndex >= m_animationData->GetFrameCount())
+			if (m_animationIndex >= animData->GetFrameCount())
 			{
 				if (m_isLoop)
 				{
@@ -182,7 +186,7 @@ void FrameAnimation::update( float fDelta )
 			}
 			if (!m_isPlayOver)
 			{
-				const char *frameName = m_animationData->GetFrame(m_animationIndex);
+				const char *frameName = animData->GetFrame(m_animationIndex);
 				cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(frameName);
 				if (NULL != frame)
 				{
@@ -196,12 +200,12 @@ void FrameAnimation::update( float fDelta )
 		if (!m_isPlaySound)
 		{
 			m_soundTime += fDelta;
-			if (m_soundTime >= m_animationData->GetSoundDelay())
+			if (m_soundTime >= animGroup->GetSoundDelay())
 			{
 				m_isPlaySound = true;
-				if (!m_animationData->GetSoundEffect().empty())
+				if (!animGroup->GetSoundEffect().empty())
 				{
-					SimpleAudioEngine::sharedEngine()->playEffect(m_animationData->GetSoundEffect().c_str());
+					SimpleAudioEngine::sharedEngine()->playEffect(animGroup->GetSoundEffect().c_str());
 				}
 			}
 		}

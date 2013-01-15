@@ -38,16 +38,10 @@ namespace Tools
 		void Write(StreamHelper *stream);
 		void Clear(void);
 
-		void SetSoundEffect(const std::string &soundEffect) { m_soundEffect = soundEffect; }
-		const std::string& GetSoundEffect(void) const { return m_soundEffect; }
-		void SetSoundDelay(float delay) { m_soundDelay = delay; }
-		float GetSoundDelay(void) const { return m_soundDelay; }
 	protected:
 
 		float m_delay;
 		FrameList m_frame;
-		std::string m_soundEffect;
-		float m_soundDelay;
 	};
 }
 
