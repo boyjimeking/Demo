@@ -39,9 +39,14 @@ namespace Tools
 		void Clear(void);
 
 	protected:
-
 		float m_delay;
 		FrameList m_frame;
+
+		enum ENVersion
+		{
+			enBase,
+		};
+		unsigned int m_version;
 	};
 }
 

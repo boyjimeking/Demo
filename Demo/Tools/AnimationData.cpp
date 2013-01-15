@@ -5,6 +5,7 @@ namespace Tools
 {
 	AnimationData::AnimationData(void)
 		:m_delay(0.0f)
+		,m_version(enBase)
 	{
 
 	}
@@ -22,6 +23,9 @@ namespace Tools
 	void AnimationData::Read(StreamHelper *stream)
 	{
 		Clear();
+		unsigned int version = 0;
+		stream->Read(version);
+
 		stream->Read(m_delay);
 		unsigned int frameSize = 0;
 		stream->Read(frameSize);
@@ -34,6 +38,7 @@ namespace Tools
 
 	void AnimationData::Write(StreamHelper *stream)
 	{
+		stream->Write(m_version);
 		stream->Write(m_delay);
 		unsigned int frameSize = m_frame.size();
 		stream->Write(frameSize);

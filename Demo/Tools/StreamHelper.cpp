@@ -51,6 +51,10 @@ namespace Tools
 		}
 		unsigned int size = value.size();
 		Write(size);
+		if (0 == size)
+		{
+			return;
+		}
 		if (m_index + size > m_size)
 		{
 			return;
@@ -67,6 +71,10 @@ namespace Tools
 		}
 		unsigned int size = 0;
 		Read(size);
+		if (0 == size)
+		{
+			return;
+		}
 		if (m_index + size > m_size)
 		{
 			return;

@@ -6,6 +6,7 @@ namespace Tools
 {
 	AvatarData::AvatarData(void)
 		:m_transScale(1.0f)
+		,m_version(enBase)
 	{
 
 	}
@@ -30,6 +31,9 @@ namespace Tools
 	{
 		Clear();
 		StreamHelper stream(buff, size);
+		unsigned int version = 0;
+		stream.Read(version);
+
 		stream.Read(m_transScale);
 		stream.Read(m_plist);
 		unsigned int tableSize = 0;
@@ -47,6 +51,8 @@ namespace Tools
 	unsigned int AvatarData::Write( unsigned char *buff, unsigned int size )
 	{
 		StreamHelper stream(buff, size);
+		stream.Write(m_version);
+
 		stream.Write(m_transScale);
 		stream.Write(m_plist);
 		unsigned int tableSize = m_animationTable.size();
