@@ -39,6 +39,11 @@ namespace Tools
 		//缩放比率
 		float m_transScale;
 	private:
+		enum ENVersion
+		{
+			enBase,
+		};
+		unsigned int m_version;
 	};
 }
 

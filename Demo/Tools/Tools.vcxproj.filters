@@ -57,6 +57,9 @@
     <ClCompile Include="ENDirection.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="FrameInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -93,6 +96,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="BoneAnimationGroup.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameInfo.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

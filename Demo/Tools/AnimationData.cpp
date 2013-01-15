@@ -5,6 +5,7 @@ namespace Tools
 {
 	AnimationData::AnimationData(void)
 		:m_delay(0.0f)
+		,m_version(enSeprateFrame)
 	{
 
 	}
@@ -14,7 +15,7 @@ namespace Tools
 		Clear();
 	}
 
-	void AnimationData::AddFrame(int index, const char *frame)
+	void AnimationData::AddFrame(unsigned int index, const char *frame)
 	{
 		if (index < m_frame.size())
 		{
@@ -23,41 +24,45 @@ namespace Tools
 		{
 			m_frame.resize(index + 1);
 		}
-		m_frame[index].push_back(frame);
+		m_frame[index].m_frame.push_back(frame);
 	}
 
 	void AnimationData::Read(StreamHelper *stream)
 	{
 		Clear();
+		unsigned int version = 0;
+		stream->Read(version);
+
 		stream->Read(m_delay);
 		unsigned int frameSize = 0;
 		stream->Read(frameSize);
 		m_frame.resize(frameSize);
-		for (int index = 0; index < frameSize ; ++index)
+		for (unsigned int index = 0; index < frameSize ; ++index)
 		{
-			unsigned int innerSize = 0;
-			stream->Read(innerSize);
-			m_frame[index].resize(innerSize);
-			for (int innerIndex = 0; innerIndex < innerSize ; ++innerIndex)
+			if (version >= enSeprateFrame)
 			{
-				stream->Read(m_frame[index][innerIndex]);
+				stream->ReadClass(&m_frame[index]);
+			}
+			else
+			{
+				std::string temp;
+				stream->Read(temp);
+				m_frame[index].width = 225.0f;
+				m_frame[index].height = 225.0f;
+				m_frame[index].m_frame.push_back(temp);
 			}
 		}
 	}
 
 	void AnimationData::Write(StreamHelper *stream)
 	{
+		stream->Write(m_version);
 		stream->Write(m_delay);
 		unsigned int frameSize = m_frame.size();
 		stream->Write(frameSize);
-		for (int index = 0; index < frameSize ; ++index)
+		for (unsigned int index = 0; index < frameSize ; ++index)
 		{
-			unsigned int innerSize = m_frame[index].size();
-			stream->Write(innerSize);
-			for (int innerIndex = 0; innerIndex < innerSize ; ++innerIndex)
-			{
-				stream->Write(m_frame[index][innerIndex]);
-			}
+			stream->WriteClass(&m_frame[index]);
 		}
 	}
 

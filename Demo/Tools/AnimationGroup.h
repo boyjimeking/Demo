@@ -39,6 +39,12 @@ namespace Tools
 		std::string m_soundEffect;
 		float m_soundDelay;
 	private:
+		enum ENVersion
+		{
+			enBaseVersion,
+			enSoundVersion,
+		};
+		unsigned int m_version;
 	};
 }
 

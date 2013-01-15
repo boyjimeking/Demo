@@ -7,6 +7,7 @@ namespace Tools
 {
 	AnimationGroup::AnimationGroup(void)
 		:m_soundDelay(0.0f)
+		,m_version(enSoundVersion)
 	{
 		memset(m_animationGroup, 0, sizeof(m_animationGroup));
 	}
@@ -19,6 +20,10 @@ namespace Tools
 	void AnimationGroup::Read( StreamHelper *stream )
 	{
 		Clear();
+		//版本号
+		unsigned int version = 0;
+		stream->Read(version);
+
 		unsigned int mark = 0;
 		stream->Read(mark);
 		for (int index = 0; index < ENDirection::Count ; ++index)
@@ -33,12 +38,16 @@ namespace Tools
 				m_animationGroup[index]->Read(stream);
 			}
 		}
-		stream->Read(m_soundEffect);
-		stream->Read(m_soundDelay);
+		if (version >= enSoundVersion)
+		{
+			stream->Read(m_soundEffect);
+			stream->Read(m_soundDelay);
+		}
 	}
 
 	void AnimationGroup::Write( StreamHelper *stream )
 	{
+		stream->Write(m_version);
 		unsigned int mark = 0;
 		for (int index = 0; index < ENDirection::Count ; ++index)
 		{

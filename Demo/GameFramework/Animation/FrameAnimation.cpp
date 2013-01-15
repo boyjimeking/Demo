@@ -5,11 +5,12 @@
 #include "sprite_nodes/CCSpriteFrameCache.h"
 #include "sprite_nodes/CCAnimation.h"
 #include "actions/CCActionInterval.h"
-#include "Actors/EquipObject.h"
 #include "../CCFileUtils.h"
 #include "support/CCPointExtension.h"
 #include "SimpleAudioEngine.h"
 #include "../CCCommon.h"
+#include "sprite_nodes/CCSpriteBatchNode.h"
+#include "Tools/FrameTools.h"
 
 using namespace CocosDenshion;
 
@@ -22,6 +23,7 @@ FrameAnimation::FrameAnimation(void)
 	,m_soundTime(0.0f)
 	,m_isLoop(false)
 	,m_isPlayOver(false)
+	,m_batchNode(NULL)
 {
 	
 }
@@ -49,7 +51,7 @@ void FrameAnimation::PlayAnimation(const char *type, ENDirection::Decl direction
 	if (ENAnimation::Error == type)
 	{
 		//使用当前
-		type = m_currentAnimation;
+		type = m_currentAnimation.c_str();
 	}
 	if (ENDirection::enError == direction)
 	{
@@ -73,9 +75,7 @@ void FrameAnimation::PlayAnimation(const char *type, ENDirection::Decl direction
 	{
 		return;
 	}
-	cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(animData->GetFrame(0).back().c_str());
 
-	setDisplayFrame(frame);
 	m_isLoop = isLoop;
 	m_isPlayOver = false;
 
@@ -84,18 +84,16 @@ void FrameAnimation::PlayAnimation(const char *type, ENDirection::Decl direction
 	m_soundTime = 0.0f;
 	m_isPlaySound = false;
 
+	CreateFrame(animData, m_animationIndex);
+
 	cocos2d::CCArray *childArray = getChildren();
 	CCObject* pObj = NULL;
 	CCARRAY_FOREACH(childArray,pObj)
 	{
-		if (typeid(FrameAnimation) == typeid(*pObj))
+		if (pObj != m_batchNode)
 		{
 			FrameAnimation* child = (FrameAnimation*)pObj;
 			child->PlayAnimation(type, direction, isLoop);
-		}
-		else
-		{
-
 		}
 	}
 }
@@ -115,7 +113,9 @@ void FrameAnimation::LoadAvatar( unsigned char *data, unsigned int size )
 		cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFramesFromFile(GetAvatar()->GetPList());
 	}
 	m_avatar->Read(data, size);
+#ifndef __BatchNode_Frame_
 	init();
+#endif
 	cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(GetAvatar()->GetPList());
 }
 
@@ -157,14 +157,17 @@ void FrameAnimation::update( float fDelta )
 	CCObject* pObj = NULL;
 	CCARRAY_FOREACH(childArray,pObj)
 	{
-		FrameAnimation* child = (FrameAnimation*)pObj;
-		child->update(fDelta);
+		if (pObj != m_batchNode)
+		{
+			FrameAnimation* child = (FrameAnimation*)pObj;
+			child->update(fDelta);
+		}
 	}
 	if (m_isPlayOver)
 	{
 		return;
 	}
-	Tools::AnimationGroup *animGroup = GetAvatar()->Lookup(m_currentAnimation);
+	Tools::AnimationGroup *animGroup = GetAvatar()->Lookup(m_currentAnimation.c_str());
 	if (NULL == animGroup)
 	{
 		return;
@@ -193,12 +196,7 @@ void FrameAnimation::update( float fDelta )
 			}
 			if (!m_isPlayOver)
 			{
-				const char *frameName = animData->GetFrame(m_animationIndex).back().c_str();
-				cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(frameName);
-				if (NULL != frame)
-				{
-					setDisplayFrame(frame);
-				}
+				CreateFrame(animData, m_animationIndex);
 			}
 		}
 
@@ -219,17 +217,20 @@ void FrameAnimation::update( float fDelta )
 	}
 }
 
-cocos2d::CCSpriteBatchNode* FrameAnimation::CreateSprite( AnimationData *animData )
+void FrameAnimation::CreateFrame(AnimationData *animData, int index)
 {
-	cocos2d::CCSpriteBatchNode *batchNode = NULL;
-	cocos2d::CCArray *childArray = getChildren();
-	CCObject* pObj = NULL;
-	CCARRAY_FOREACH(childArray,pObj)
+	const FrameInfo& frameInfo = animData->GetFrame(index);
+	setContentSize(cocos2d::CCSizeMake(frameInfo.width, frameInfo.height));
+	setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.5f));
+
+	if (NULL == m_batchNode)
 	{
-		if (typeid(cocos2d::CCSpriteBatchNode) == typeid(*pObj))
-		{
-			batchNode = reinterpret_cast<cocos2d::CCSpriteBatchNode*>(pObj);
-		}
+		m_batchNode = Tools::FrameTools::CreateBatchNode(frameInfo);
+		addChild(m_batchNode);
+	}
+	else
+	{
+		Tools::FrameTools::RefreshBatchNode(m_batchNode, frameInfo);
 	}
 }
 

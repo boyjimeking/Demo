@@ -10,14 +10,15 @@
 
 #include <vector>
 #include <string>
+#include "FrameInfo.h"
 
 namespace Tools
 {
 	class StreamHelper;
+
 	class AnimationData
 	{
 	public:
-		typedef std::vector<std::string> FrameInfo;
 		typedef std::vector<FrameInfo> FrameList;
 
 		AnimationData(void);
@@ -28,7 +29,7 @@ namespace Tools
 		void SetDelay(float delay) { m_delay = delay; }
 
 		//添加帧
-		void AddFrame(int index, const char *frame);
+		void AddFrame(unsigned int index, const char *frame);
 		//获取帧数
 		unsigned int GetFrameCount(void) const { return m_frame.size(); }
 		//获取全部帧
@@ -40,9 +41,15 @@ namespace Tools
 		void Clear(void);
 
 	protected:
-
 		float m_delay;
 		FrameList m_frame;
+
+		enum ENVersion
+		{
+			enBase,
+			enSeprateFrame,
+		};
+		unsigned int m_version;
 	};
 }
 

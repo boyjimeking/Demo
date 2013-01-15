@@ -31,7 +31,6 @@
     <ClCompile Include="Actors\ActorsControlEvents.cpp" />
     <ClCompile Include="Actors\ActorsLayer.cpp" />
     <ClCompile Include="Actors\ActorTouch.cpp" />
-    <ClCompile Include="Actors\EquipObject.cpp" />
     <ClCompile Include="Animation\BoneAnimation.cpp" />
     <ClCompile Include="Animation\FrameAnimation.cpp" />
     <ClCompile Include="Animation\Skeleton2D.cpp" />
@@ -69,6 +68,7 @@
     <ClCompile Include="Tools\EditAvatarData.cpp" />
     <ClCompile Include="Tools\EditBoneAvatarData.cpp" />
     <ClCompile Include="Tools\EditScene.cpp" />
+    <ClCompile Include="Tools\FrameTools.cpp" />
     <ClCompile Include="UI\UIControl.cpp" />
     <ClCompile Include="UI\UIControlEvents.cpp" />
     <ClCompile Include="UI\UIEvents.cpp" />
@@ -101,7 +101,6 @@
     <ClInclude Include="Actors\ActorsControlEvents.h" />
     <ClInclude Include="Actors\ActorsLayer.h" />
     <ClInclude Include="Actors\ActorTouch.h" />
-    <ClInclude Include="Actors\EquipObject.h" />
     <ClInclude Include="Animation\BoneAnimation.h" />
     <ClInclude Include="Animation\FrameAnimation.h" />
     <ClInclude Include="Animation\Skeleton2D.h" />
@@ -143,6 +142,7 @@
     <ClInclude Include="Tools\EditAvatarData.h" />
     <ClInclude Include="Tools\EditBoneAvatarData.h" />
     <ClInclude Include="Tools\EditScene.h" />
+    <ClInclude Include="Tools\FrameTools.h" />
     <ClInclude Include="UI\UIControl.h" />
     <ClInclude Include="UI\UIControlEvents.h" />
     <ClInclude Include="UI\UIEvents.h" />

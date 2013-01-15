@@ -174,9 +174,6 @@
     <ClCompile Include="Tools\EditAvatarData.cpp">
       <Filter>GameFramework\Tools</Filter>
     </ClCompile>
-    <ClCompile Include="Actors\EquipObject.cpp">
-      <Filter>GameFramework\Actors</Filter>
-    </ClCompile>
     <ClCompile Include="..\VirtualServer\ISimulateObject.cpp">
       <Filter>VirtualServer</Filter>
     </ClCompile>
@@ -245,6 +242,9 @@
     </ClCompile>
     <ClCompile Include="tolua\tolua_fix.c">
       <Filter>GameFramework\tolua</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\FrameTools.cpp">
+      <Filter>GameFramework\Tools</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -380,9 +380,6 @@
     <ClInclude Include="Tools\EditAvatarData.h">
       <Filter>GameFramework\Tools</Filter>
     </ClInclude>
-    <ClInclude Include="Actors\EquipObject.h">
-      <Filter>GameFramework\Actors</Filter>
-    </ClInclude>
     <ClInclude Include="..\VirtualServer\ISimulateObject.h">
       <Filter>VirtualServer</Filter>
     </ClInclude>
@@ -463,6 +460,9 @@
     </ClInclude>
     <ClInclude Include="tolua\tolua_fix.h">
       <Filter>GameFramework\tolua</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\FrameTools.h">
+      <Filter>GameFramework\Tools</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

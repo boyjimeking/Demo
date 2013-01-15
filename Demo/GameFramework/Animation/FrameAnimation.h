@@ -10,6 +10,7 @@
 
 #include "sprite_nodes/CCSprite.h"
 #include "Base/GlobalDef.h"
+#include <string>
 
 namespace Tools
 {
@@ -18,8 +19,16 @@ namespace Tools
 }
 using namespace Tools;
 
+#ifndef __BatchNode_Frame_
+#define __BatchNode_Frame_
+#endif
+
 class FrameAnimation
+#ifdef __BatchNode_Frame_
+	:public cocos2d::CCNode
+#else
 	:public cocos2d::CCSprite
+#endif
 {
 public:
 	FrameAnimation(void);
@@ -38,7 +47,7 @@ protected:
 	Tools::AvatarData * GetAvatar(void) const { return m_avatar; }
 	Tools::AvatarData *m_avatar;
 
-	cocos2d::CCSpriteBatchNode* CreateSprite(AnimationData *animData);
+	void CreateFrame(AnimationData *animData, int index);
 private:
 	enum ENCocos2dActionTag
 	{
@@ -47,7 +56,7 @@ private:
 		enActorAction_MoveTo,
 	};
 	ENDirection::Decl m_currentDirection;
-	const char *m_currentAnimation;
+	std::string m_currentAnimation;
 private:
 	bool m_isLoop;
 
@@ -56,6 +65,8 @@ private:
 	float m_soundTime;
 	bool m_isPlaySound;
 	bool m_isPlayOver;
+
+	cocos2d::CCSpriteBatchNode* m_batchNode;
 };
 
 #endif // FrameAnimation_h__
