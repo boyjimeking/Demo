@@ -45,6 +45,21 @@
 		D30D90341666F3A9000B95E1 /* UIProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D901E1666F3A9000B95E1 /* UIProperty.cpp */; };
 		D30D90351666F3A9000B95E1 /* UIWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90201666F3A9000B95E1 /* UIWindow.cpp */; };
 		D30D90361666F3A9000B95E1 /* WorldManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30D90221666F3A9000B95E1 /* WorldManager.cpp */; };
+		D30FF01B16A55C1A004930A2 /* EditBoneAvatarData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30FF01716A55C1A004930A2 /* EditBoneAvatarData.cpp */; };
+		D30FF01C16A55C1A004930A2 /* FrameTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30FF01916A55C1A004930A2 /* FrameTools.cpp */; };
+		D30FF02116A55C37004930A2 /* ENDirection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30FF01E16A55C37004930A2 /* ENDirection.cpp */; };
+		D30FF02216A55C37004930A2 /* FrameInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D30FF01F16A55C37004930A2 /* FrameInfo.cpp */; };
+		D30FF02E16A55CBB004930A2 /* 1134.wav in Resources */ = {isa = PBXBuildFile; fileRef = D30FF02316A55CBB004930A2 /* 1134.wav */; };
+		D30FF02F16A55CBB004930A2 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D30FF02416A55CBB004930A2 /* background.mp3 */; };
+		D30FF03016A55CBB004930A2 /* crop.png in Resources */ = {isa = PBXBuildFile; fileRef = D30FF02516A55CBB004930A2 /* crop.png */; };
+		D30FF03116A55CBB004930A2 /* dog.png in Resources */ = {isa = PBXBuildFile; fileRef = D30FF02616A55CBB004930A2 /* dog.png */; };
+		D30FF03216A55CBB004930A2 /* effect1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D30FF02716A55CBB004930A2 /* effect1.wav */; };
+		D30FF03316A55CBB004930A2 /* farm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D30FF02816A55CBB004930A2 /* farm.jpg */; };
+		D30FF03416A55CBB004930A2 /* hello2.lua in Resources */ = {isa = PBXBuildFile; fileRef = D30FF02916A55CBB004930A2 /* hello2.lua */; };
+		D30FF03516A55CBB004930A2 /* land.png in Resources */ = {isa = PBXBuildFile; fileRef = D30FF02A16A55CBB004930A2 /* land.png */; };
+		D30FF03616A55CBB004930A2 /* main.lua in Resources */ = {isa = PBXBuildFile; fileRef = D30FF02B16A55CBB004930A2 /* main.lua */; };
+		D30FF03716A55CBB004930A2 /* menu1.png in Resources */ = {isa = PBXBuildFile; fileRef = D30FF02C16A55CBB004930A2 /* menu1.png */; };
+		D30FF03816A55CBB004930A2 /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = D30FF02D16A55CBB004930A2 /* menu2.png */; };
 		D3146145166D8EA30011EDC7 /* PhysicalControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3146143166D8EA30011EDC7 /* PhysicalControl.cpp */; };
 		D3146148166D8EB80011EDC7 /* PhysicalObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3146146166D8EB80011EDC7 /* PhysicalObj.cpp */; };
 		D3148774166DBD5C0011EDC7 /* archive_serializer_map.ipp in Resources */ = {isa = PBXBuildFile; fileRef = D314622B166DBD550011EDC7 /* archive_serializer_map.ipp */; };
@@ -617,7 +632,6 @@
 		D3E54D4B16805E8C00FD52C2 /* DebugLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3E54D4916805E8C00FD52C2 /* DebugLayer.cpp */; };
 		D3EA3954168A954000B71B82 /* EditAvatarData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EA3950168A954000B71B82 /* EditAvatarData.cpp */; };
 		D3EA3955168A954000B71B82 /* EditScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EA3952168A954000B71B82 /* EditScene.cpp */; };
-		D3EA3958168A955D00B71B82 /* EquipObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EA3956168A955D00B71B82 /* EquipObject.cpp */; };
 		D3EA3965168A976E00B71B82 /* AnimationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EA395A168A976E00B71B82 /* AnimationData.cpp */; };
 		D3EA3966168A976E00B71B82 /* AnimationGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EA395C168A976E00B71B82 /* AnimationGroup.cpp */; };
 		D3EA3967168A976E00B71B82 /* AvatarData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EA395E168A976E00B71B82 /* AvatarData.cpp */; };
@@ -708,6 +722,24 @@
 		D30D90211666F3A9000B95E1 /* UIWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWindow.h; sourceTree = "<group>"; };
 		D30D90221666F3A9000B95E1 /* WorldManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldManager.cpp; sourceTree = "<group>"; };
 		D30D90231666F3A9000B95E1 /* WorldManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldManager.h; sourceTree = "<group>"; };
+		D30FF01716A55C1A004930A2 /* EditBoneAvatarData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EditBoneAvatarData.cpp; sourceTree = "<group>"; };
+		D30FF01816A55C1A004930A2 /* EditBoneAvatarData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditBoneAvatarData.h; sourceTree = "<group>"; };
+		D30FF01916A55C1A004930A2 /* FrameTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FrameTools.cpp; sourceTree = "<group>"; };
+		D30FF01A16A55C1A004930A2 /* FrameTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameTools.h; sourceTree = "<group>"; };
+		D30FF01E16A55C37004930A2 /* ENDirection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ENDirection.cpp; path = Tools/ENDirection.cpp; sourceTree = "<group>"; };
+		D30FF01F16A55C37004930A2 /* FrameInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FrameInfo.cpp; path = Tools/FrameInfo.cpp; sourceTree = "<group>"; };
+		D30FF02016A55C37004930A2 /* FrameInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FrameInfo.h; path = Tools/FrameInfo.h; sourceTree = "<group>"; };
+		D30FF02316A55CBB004930A2 /* 1134.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = 1134.wav; path = Resources/1134.wav; sourceTree = "<group>"; };
+		D30FF02416A55CBB004930A2 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = background.mp3; path = Resources/background.mp3; sourceTree = "<group>"; };
+		D30FF02516A55CBB004930A2 /* crop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = crop.png; path = Resources/crop.png; sourceTree = "<group>"; };
+		D30FF02616A55CBB004930A2 /* dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dog.png; path = Resources/dog.png; sourceTree = "<group>"; };
+		D30FF02716A55CBB004930A2 /* effect1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = effect1.wav; path = Resources/effect1.wav; sourceTree = "<group>"; };
+		D30FF02816A55CBB004930A2 /* farm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = farm.jpg; path = Resources/farm.jpg; sourceTree = "<group>"; };
+		D30FF02916A55CBB004930A2 /* hello2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hello2.lua; path = Resources/hello2.lua; sourceTree = "<group>"; };
+		D30FF02A16A55CBB004930A2 /* land.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = land.png; path = Resources/land.png; sourceTree = "<group>"; };
+		D30FF02B16A55CBB004930A2 /* main.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.lua; path = Resources/main.lua; sourceTree = "<group>"; };
+		D30FF02C16A55CBB004930A2 /* menu1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu1.png; path = Resources/menu1.png; sourceTree = "<group>"; };
+		D30FF02D16A55CBB004930A2 /* menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu2.png; path = Resources/menu2.png; sourceTree = "<group>"; };
 		D3146143166D8EA30011EDC7 /* PhysicalControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhysicalControl.cpp; path = Physical/PhysicalControl.cpp; sourceTree = "<group>"; };
 		D3146144166D8EA30011EDC7 /* PhysicalControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicalControl.h; path = Physical/PhysicalControl.h; sourceTree = "<group>"; };
 		D3146146166D8EB80011EDC7 /* PhysicalObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhysicalObj.cpp; path = Physical/PhysicalObj.cpp; sourceTree = "<group>"; };
@@ -10349,8 +10381,6 @@
 		D3EA3951168A954000B71B82 /* EditAvatarData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAvatarData.h; sourceTree = "<group>"; };
 		D3EA3952168A954000B71B82 /* EditScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EditScene.cpp; sourceTree = "<group>"; };
 		D3EA3953168A954000B71B82 /* EditScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditScene.h; sourceTree = "<group>"; };
-		D3EA3956168A955D00B71B82 /* EquipObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EquipObject.cpp; sourceTree = "<group>"; };
-		D3EA3957168A955D00B71B82 /* EquipObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EquipObject.h; sourceTree = "<group>"; };
 		D3EA395A168A976E00B71B82 /* AnimationData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimationData.cpp; path = Tools/AnimationData.cpp; sourceTree = "<group>"; };
 		D3EA395B168A976E00B71B82 /* AnimationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimationData.h; path = Tools/AnimationData.h; sourceTree = "<group>"; };
 		D3EA395C168A976E00B71B82 /* AnimationGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimationGroup.cpp; path = Tools/AnimationGroup.cpp; sourceTree = "<group>"; };
@@ -10462,6 +10492,17 @@
 		D30D8D441666EE89000B95E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D30FF02316A55CBB004930A2 /* 1134.wav */,
+				D30FF02416A55CBB004930A2 /* background.mp3 */,
+				D30FF02516A55CBB004930A2 /* crop.png */,
+				D30FF02616A55CBB004930A2 /* dog.png */,
+				D30FF02716A55CBB004930A2 /* effect1.wav */,
+				D30FF02816A55CBB004930A2 /* farm.jpg */,
+				D30FF02916A55CBB004930A2 /* hello2.lua */,
+				D30FF02A16A55CBB004930A2 /* land.png */,
+				D30FF02B16A55CBB004930A2 /* main.lua */,
+				D30FF02C16A55CBB004930A2 /* menu1.png */,
+				D30FF02D16A55CBB004930A2 /* menu2.png */,
 				D31C957016980DCE00B7C441 /* ExportTool_skeleton.xml */,
 				D31C957116980DCE00B7C441 /* fps_images-hd.png */,
 				D31C957216980DCE00B7C441 /* fps_images-ipadhd.png */,
@@ -10593,8 +10634,6 @@
 		D30D8FF91666F3A9000B95E1 /* Actors */ = {
 			isa = PBXGroup;
 			children = (
-				D3EA3956168A955D00B71B82 /* EquipObject.cpp */,
-				D3EA3957168A955D00B71B82 /* EquipObject.h */,
 				D30D8FFA1666F3A9000B95E1 /* ActorEntity.cpp */,
 				D30D8FFB1666F3A9000B95E1 /* ActorEntity.h */,
 				D320472816703B210037C1E2 /* ActorTouch.cpp */,
@@ -25810,6 +25849,10 @@
 		D327F9301671F1E400B52EA1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D30FF01716A55C1A004930A2 /* EditBoneAvatarData.cpp */,
+				D30FF01816A55C1A004930A2 /* EditBoneAvatarData.h */,
+				D30FF01916A55C1A004930A2 /* FrameTools.cpp */,
+				D30FF01A16A55C1A004930A2 /* FrameTools.h */,
 				D3EA3950168A954000B71B82 /* EditAvatarData.cpp */,
 				D3EA3951168A954000B71B82 /* EditAvatarData.h */,
 				D3EA3952168A954000B71B82 /* EditScene.cpp */,
@@ -26783,6 +26826,9 @@
 		D3EA3959168A975100B71B82 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D30FF01E16A55C37004930A2 /* ENDirection.cpp */,
+				D30FF01F16A55C37004930A2 /* FrameInfo.cpp */,
+				D30FF02016A55C37004930A2 /* FrameInfo.h */,
 				D31C952A1698040D00B7C441 /* BoneAnimationData.cpp */,
 				D31C952B1698040D00B7C441 /* BoneAnimationData.h */,
 				D31C952C1698040D00B7C441 /* BoneAnimationGroup.cpp */,
@@ -27243,6 +27289,17 @@
 				D31C957516980DCE00B7C441 /* fps_images-hd.png in Resources */,
 				D31C957616980DCE00B7C441 /* fps_images-ipadhd.png in Resources */,
 				D31C957716980DCE00B7C441 /* fps_images.png in Resources */,
+				D30FF02E16A55CBB004930A2 /* 1134.wav in Resources */,
+				D30FF02F16A55CBB004930A2 /* background.mp3 in Resources */,
+				D30FF03016A55CBB004930A2 /* crop.png in Resources */,
+				D30FF03116A55CBB004930A2 /* dog.png in Resources */,
+				D30FF03216A55CBB004930A2 /* effect1.wav in Resources */,
+				D30FF03316A55CBB004930A2 /* farm.jpg in Resources */,
+				D30FF03416A55CBB004930A2 /* hello2.lua in Resources */,
+				D30FF03516A55CBB004930A2 /* land.png in Resources */,
+				D30FF03616A55CBB004930A2 /* main.lua in Resources */,
+				D30FF03716A55CBB004930A2 /* menu1.png in Resources */,
+				D30FF03816A55CBB004930A2 /* menu2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -27345,7 +27402,6 @@
 				D3E54D4B16805E8C00FD52C2 /* DebugLayer.cpp in Sources */,
 				D3EA3954168A954000B71B82 /* EditAvatarData.cpp in Sources */,
 				D3EA3955168A954000B71B82 /* EditScene.cpp in Sources */,
-				D3EA3958168A955D00B71B82 /* EquipObject.cpp in Sources */,
 				D3EA3965168A976E00B71B82 /* AnimationData.cpp in Sources */,
 				D3EA3966168A976E00B71B82 /* AnimationGroup.cpp in Sources */,
 				D3EA3967168A976E00B71B82 /* AvatarData.cpp in Sources */,
@@ -27549,6 +27605,10 @@
 				D31C95511698045600B7C441 /* Skeleton2DResource.cpp in Sources */,
 				D31C95521698045600B7C441 /* SkeletonAnimation2DRes.cpp in Sources */,
 				D31C95531698045600B7C441 /* SkeletonCocos2D.cpp in Sources */,
+				D30FF01B16A55C1A004930A2 /* EditBoneAvatarData.cpp in Sources */,
+				D30FF01C16A55C1A004930A2 /* FrameTools.cpp in Sources */,
+				D30FF02116A55C37004930A2 /* ENDirection.cpp in Sources */,
+				D30FF02216A55C37004930A2 /* FrameInfo.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 #ifndef EditBoneAvatarData_h__
 #define EditBoneAvatarData_h__
 
-#include "Tools/BoneAvatarData.h"
+#include "../Tools/BoneAvatarData.h"
 
 namespace Tools
 {

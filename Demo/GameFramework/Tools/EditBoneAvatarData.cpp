@@ -1,5 +1,5 @@
 #include "EditBoneAvatarData.h"
-#include "Tools/BoneAnimationGroup.h"
+#include "../Tools/BoneAnimationGroup.h"
 
 namespace Tools
 {
@@ -54,7 +54,7 @@ namespace Tools
 
 	void EditBoneAvatarData::RemoveAnimationGroup(const std::string &type)
 	{
-		AnimationTable::const_iterator it = m_animationTable.find(type);
+		AnimationTable::iterator it = m_animationTable.find(type);
 		if (m_animationTable.end() == it)
 		{
 			return;

@@ -8,7 +8,7 @@
 #ifndef FrameTools_h__
 #define FrameTools_h__
 
-#include "Tools/AnimationData.h"
+#include "../Tools/AnimationData.h"
 #include "sprite_nodes/CCSpriteBatchNode.h"
 
 namespace Tools
