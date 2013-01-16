@@ -13,36 +13,26 @@ namespace Tools
 {
 	void ObjectInfo::Read(StreamHelper *stream)
 	{
-		stream->Read(this->m_id);
-		stream->Read(this->m_x);
-		stream->Read(this->m_y);
-		stream->Read(this->m_width);
-		stream->Read(this->m_height);
-        int length = 0;
-        stream->Read(length);
-		stream->Read(this->m_imageName, length);
+		FrameInfo::Read(stream);
+		stream->Read(m_id);
+		stream->Read(m_x);
+		stream->Read(m_y);
 	}
 
 	void ObjectInfo::Write(StreamHelper *stream)
 	{
-		stream->Write(this->m_id);
-		stream->Write(this->m_x);
-		stream->Write(this->m_y);
-		stream->Write(this->m_width);
-		stream->Write(this->m_height);
-        int length = strlen(this->m_imageName) + 1;
-        stream->Write(length);
-		stream->Write(this->m_imageName, length);
+		FrameInfo::Write(stream);
+		stream->Write(m_id);
+		stream->Write(m_x);
+		stream->Write(m_y);
 	}
 
 	ObjectInfo::ObjectInfo( void )
 		:m_x(0)
 		,m_y(0)
 		,m_id(0)
-		,m_width(0)
-		,m_height(0)
 	{
-		memset(m_imageName, 0, sizeof(m_imageName));
+		
 	}
 
 	Scene::Scene(void)

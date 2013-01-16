@@ -31,7 +31,7 @@ namespace Game
 		for (InfoList::const_iterator it = list.begin(); list.end() != it; ++it)
 		{
 			Tools::ObjectInfo *info = *it;
-			AddSceneObject(info->m_id, info->m_imageName, info->m_x, info->m_y, info->m_width, info->m_height);
+			AddSceneObject(info->m_id, info->m_frame.back().c_str(), info->m_x, info->m_y, info->width, info->height);
 		}
 	}
 

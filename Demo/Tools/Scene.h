@@ -11,18 +11,17 @@
 
 #include <string>
 #include <vector>
+#include "FrameInfo.h"
 
 namespace Tools
 {
 	class StreamHelper;
 	struct ObjectInfo
+		:public FrameInfo
 	{
 		int m_id;
 		float m_x;
 		float m_y;
-		float m_width;
-		float m_height;
-		char m_imageName[128];
 
 		void Read(StreamHelper *stream);
 		void Write(StreamHelper *stream);

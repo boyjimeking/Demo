@@ -134,11 +134,11 @@ namespace Tools
 	{
 		ObjectInfo *info = new ObjectInfo;
 		info->m_id = ++m_objectCount;
-		strcpy(info->m_imageName, image);
+		info->m_frame.push_back(image);
 		info->m_x = x;
 		info->m_y = y;
-		info->m_width = width;
-		info->m_height = height;
+		info->width = width;
+		info->height = height;
 		m_objectInfoList.push_back(info);
 
 		Game::WorldManager::Instance()->GetSceneObjectsControl()->AddSceneObject(info->m_id, image, x, y, width, height);
@@ -153,11 +153,11 @@ namespace Tools
 			if ((*it)->m_id == id)
 			{
 				ObjectInfo *info = (*it);
-				strcpy(info->m_imageName, image);
+				info->m_frame.back() = image;
 				info->m_x = x;
 				info->m_y = y;
-				info->m_width = width;
-				info->m_height = height;
+				info->width = width;
+				info->height = height;
 				Game::WorldManager::Instance()->GetSceneObjectsControl()->ChangeSceneObject(info->m_id, image, x, y, width, height);
 				break;
 			}
@@ -183,11 +183,11 @@ namespace Tools
 	{
 		TerrainInfo *info = new TerrainInfo;
 		info->m_id = ++m_terrainCount;
-		strcpy(info->m_imageName, image);
+		info->m_frame.push_back(image);
 		info->m_x = x;
 		info->m_y = y;
-		info->m_width = width;
-		info->m_height = height;
+		info->width = width;
+		info->height = height;
 		m_terrainInfoList.push_back(info);
 		Game::WorldManager::Instance()->GetTerrainProp()->AddTerrainGrid(info->m_id, image, x, y, width, height);
 		return info->m_id;
@@ -200,11 +200,11 @@ namespace Tools
 			if ((*it)->m_id == id)
 			{
 				TerrainInfo *info = (*it);
-				strcpy(info->m_imageName, image);
+				info->m_frame.back() = image;
 				info->m_x = x;
 				info->m_y = y;
-				info->m_width = width;
-				info->m_height = height;
+				info->width = width;
+				info->height = height;
 
 				Game::WorldManager::Instance()->GetTerrainProp()->ChangeTerrainGrid(info->m_id, image, x, y, width, height);
 				break;
