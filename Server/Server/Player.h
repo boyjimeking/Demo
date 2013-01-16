@@ -19,10 +19,11 @@ class CPlayer: public IUnit{
 public:
     typedef std::map<u32, CPlayer*> TPlayerMap;
     
-    CPlayer(u32 id, CGameAccount* pAccount);
+    virtual ENObjectType GetType() const { return ENObjectType::enCPlayer; }
+    virtual bool IsKindof(ENObjectType type) const { return ENObjectType::enCPlayer == type; }
+    CPlayer(CGameAccount* pAccount);
     virtual ~CPlayer(void);
     
-    static CPlayer * CreateObj(u32 id, CGameAccount* pAccount);
     static CPlayer * FindPlayer(u32 id);
     
     bool Init(void);
@@ -33,15 +34,15 @@ public:
     virtual void SycInfo( void );
     //更换装备
     void ChangeEquip(void);
-    void AttackTarget_C2S(NetMessage *pMsg);
     
-    static u32 m_nIdGenerator;
+    //handle message
+    bool Login(NetMessage* pMsg);
+    bool AttackTarget_C2S(NetMessage* pMsg);
     
 protected:
     
     
 private:
-
     static TPlayerMap m_playerMap;
     CGameAccount* m_pAccount;
     PlayerBattleInfo m_battleInfo;

@@ -12,6 +12,8 @@
 		C548E9F8169968A8005FAF3B /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C548E9F6169968A7005FAF3B /* Player.cpp */; };
 		C5989018169D580100775634 /* AIControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5989016169D580000775634 /* AIControl.cpp */; };
 		C598901B169D596A00775634 /* AIState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5989019169D596900775634 /* AIState.cpp */; };
+		C59CEA7516A5270000B45192 /* IObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59CEA7316A5270000B45192 /* IObject.cpp */; };
+		C59CEA7916A5271000B45192 /* ILayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59CEA7716A5271000B45192 /* ILayer.cpp */; };
 		C5A536D6169A6B0A00FBF328 /* libCommLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A536D5169A6B0900FBF328 /* libCommLib.a */; };
 		C5A536E2169AB81700FBF328 /* Npc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5A536E0169AB81600FBF328 /* Npc.cpp */; };
 		C5CA0A10168EF4AB0045DF06 /* Server.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C5CA0A0F168EF4AB0045DF06 /* Server.1 */; };
@@ -46,6 +48,11 @@
 		C5989017169D580100775634 /* AIControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIControl.h; sourceTree = "<group>"; };
 		C5989019169D596900775634 /* AIState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AIState.cpp; sourceTree = "<group>"; };
 		C598901A169D596A00775634 /* AIState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIState.h; sourceTree = "<group>"; };
+		C59CEA7316A5270000B45192 /* IObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IObject.cpp; sourceTree = "<group>"; };
+		C59CEA7416A5270000B45192 /* IObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IObject.h; sourceTree = "<group>"; };
+		C59CEA7716A5271000B45192 /* ILayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILayer.cpp; sourceTree = "<group>"; };
+		C59CEA7816A5271000B45192 /* ILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILayer.h; sourceTree = "<group>"; };
+		C59CEA7A16A5287200B45192 /* ObjectType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectType.h; sourceTree = "<group>"; };
 		C5A536D5169A6B0900FBF328 /* libCommLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCommLib.a; path = "../../../../Library/Developer/Xcode/DerivedData/Demo-fakypattsvstmobebxwxgxkecbdd/Build/Products/Debug/libCommLib.a"; sourceTree = "<group>"; };
 		C5A536E0169AB81600FBF328 /* Npc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Npc.cpp; sourceTree = "<group>"; };
 		C5A536E1169AB81600FBF328 /* Npc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Npc.h; sourceTree = "<group>"; };
@@ -115,6 +122,11 @@
 				C5989017169D580100775634 /* AIControl.h */,
 				C5989019169D596900775634 /* AIState.cpp */,
 				C598901A169D596A00775634 /* AIState.h */,
+				C59CEA7316A5270000B45192 /* IObject.cpp */,
+				C59CEA7416A5270000B45192 /* IObject.h */,
+				C59CEA7716A5271000B45192 /* ILayer.cpp */,
+				C59CEA7816A5271000B45192 /* ILayer.h */,
+				C59CEA7A16A5287200B45192 /* ObjectType.h */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -180,6 +192,8 @@
 				C5A536E2169AB81700FBF328 /* Npc.cpp in Sources */,
 				C5989018169D580100775634 /* AIControl.cpp in Sources */,
 				C598901B169D596A00775634 /* AIState.cpp in Sources */,
+				C59CEA7516A5270000B45192 /* IObject.cpp in Sources */,
+				C59CEA7916A5271000B45192 /* ILayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

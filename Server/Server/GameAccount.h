@@ -22,17 +22,10 @@ typedef Net::NetConnect<TSSession::_Sender, TSSession::_FastMutex>	SessionConnec
 class CGameAccount{
 public:
     typedef std::map<int, CGameAccount*> TAccountMap;
-    CGameAccount(SessionConnect* pConn):
-    m_pPlayer(0)
-    {
-        m_pConn = pConn;
-        m_accounts[m_nIdGenerator++] = this;
-        
-    }
+    CGameAccount(SessionConnect* pConn);
+    ~CGameAccount();
     
-    //handle message
-    bool Login(NetMessage* pMsg);
-    bool AttackTarget_C2S(NetMessage* pMsg);
+
     
     void SendToClient(NetMessage& msg)
     {
@@ -43,12 +36,12 @@ public:
     CPlayer* GetPlayer(void) { return m_pPlayer;}
     //
     static int      m_nIdGenerator;
+    std::string     m_username;
+    std::string     m_password;
     
 private:
     int             m_nAccountId;
     CPlayer*        m_pPlayer;
-    std::string     m_username;
-    std::string     m_password;
     SessionConnect* m_pConn;
     static TAccountMap m_accounts;
 };

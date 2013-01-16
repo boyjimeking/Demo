@@ -13,6 +13,7 @@
 #include "../../Demo/Comm/CommDef.h"
 #include "IUnit.h"
 #include "../../Demo/Comm/NetMessage.h"
+#include "ObjectType.h"
 
 class AIControl;
 class CPlayer;
@@ -20,12 +21,12 @@ class CPlayer;
 class CNpc: public IUnit{
 public:
     typedef std::map<u32, CNpc*> TNpcMap;
-    CNpc(u32 id);
+    CNpc();
     virtual ~CNpc();
     
-    static CNpc* CreateObj(u32 id);
+    virtual ENObjectType GetType() const { return ENObjectType::enCNpc; }
+    virtual bool IsKindof(ENObjectType type) const { return ENObjectType::enCNpc == type; }
     static CNpc* FindNpc(u32 id);
-    static void InitAll();
     static void SycAll(CPlayer *player);
     
     bool Init(void);
@@ -42,9 +43,10 @@ public:
     int GetTarget(void) const { return m_target; }
     void SetTarget(int val) { m_target = val; }
     AIControl * GetControl(void) const { return m_control; }
+    void AddObservers() { m_observers.insert(GetID());}
+    void AddNpcMap() { m_npcMap[GetID()] = this;}
     
 public:
-    static u32 m_nIdGenerator;
     AIControl *m_control;
 private:
     static TNpcMap m_npcMap;

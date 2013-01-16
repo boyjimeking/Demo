@@ -14,13 +14,15 @@
 #include "../../Demo/Comm/CommDef.h"
 #include "../../Demo/Comm/NetMessage.h"
 #include "GameAccount.h"
+#include "Player.h"
+#include "ILayer.h"
 
-class CGameServer{
+class CGameServer:public ILayer{
 public:
     //message handlers
     #define _SE_En_Decl_V_(name,value,check1,check2,check3) \
     bool name(CGameAccount* pAccount, NetMessage* pMsg){\
-    return pAccount->name(pMsg);\
+    return pAccount->GetPlayer()->name(pMsg);\
     }
 #include "../../Demo/Comm/ClientMsgDef.h"
 
@@ -36,6 +38,7 @@ public:
     }
     bool Init(void);
     void Update(u32 elps);
+    bool InitNpc(void);
     
     static float Width;
     static float Height;

@@ -13,14 +13,13 @@
 #include <set>
 #include "../../Demo/Comm/NetMessage.h"
 #include "../../Demo/Comm/CommDef.h"
+#include "IObject.h"
 
-
-class IUnit{
+class IUnit: public IObject{
 public:
-    typedef std::map<u32, IUnit*> TUnitMap;
     typedef std::set<uint> TObserversSet;
     
-    IUnit(u32 id);
+    IUnit();
     virtual ~IUnit();
     
     //unit type
@@ -43,11 +42,6 @@ public:
     //死亡
     virtual void Dead(void);
     
-    static IUnit* FindUnit(u32 id);
-    //
-    int GetID(void) const { return m_nId; }
-    void SetID(int val) { m_nId = val; }
-    
     float GetX(void) const { return m_x; }
     float GetY(void) const { return m_y; }
     
@@ -55,10 +49,8 @@ public:
     void SetY(float y) { m_y = y; }
 
 protected:
-    u32 m_nId;
     //observers
     TObserversSet m_observers;
-    static TUnitMap m_unitMap;
     PlayerBattleInfo m_battleInfo;
     
 private:

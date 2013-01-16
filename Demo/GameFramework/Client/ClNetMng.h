@@ -136,7 +136,7 @@ public:
             m_pMsgHelper = new CClNetMsgHelper();
         m_pMsgHelper->InitAllCheck(m_pClient);
         _ins->SetNetMsgHelper(m_pMsgHelper);
-        _ins->Start("192.168.2.1","20051");
+        _ins->Start("localhost","20051");
     }
 
     void SendMsgToServer(NetMessage& msg)

@@ -9,8 +9,8 @@
 #ifndef Demo_CommDef_h
 #define Demo_CommDef_h
 
-#define INVALID_ID      0
 #define MSG_PTR_CVT(p, class, pMsg) class* p = (class *)pMsg
+
 
 typedef unsigned char   u8;
 typedef unsigned short  u16;

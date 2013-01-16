@@ -9,20 +9,17 @@
 #include "IUnit.h"
 #include "Player.h"
 #include "Tools.h"
+#include "ILayer.h"
 
-IUnit::TUnitMap IUnit::m_unitMap;
 
-IUnit::IUnit(u32 id)
+IUnit::IUnit()
 {
-    m_nId = id;
-    m_unitMap[id] = this;
-    dprint(Lg_Debug,"initialize a unit:%d\n",m_nId);
+
 }
 
 IUnit::~IUnit()
 {
-    m_observers.erase(m_nId);
-    m_unitMap.erase(m_nId);
+    m_observers.erase(GetID());
 }
 
 void IUnit::SycPosition(void)
@@ -38,10 +35,15 @@ void IUnit::BoardcastMsg(NetMessage &msg, u32 ownerid)
 {
     for(TObserversSet::iterator it = m_observers.begin(); it != m_observers.end(); ++it)
     {
-        CPlayer* player = CPlayer::FindPlayer(*it);
-        if(player && ownerid != player->m_nId)
+        IObject* obj = GetLayer()->LookupObject(*it);
+        OBJ_PTR_CVT(unit, IUnit, obj);
+        if(unit->IsPlayer())
         {
-            player->SendToClient(msg);
+            OBJ_PTR_CVT(player, CPlayer, unit);
+            if(ownerid != player->GetID())
+            {
+                player->SendToClient(msg);
+            }
         }
     }
 }
@@ -78,20 +80,6 @@ void IUnit::BeAttacked( int targetID )
     {
         Dead();
     }
-}
-
-IUnit* IUnit::FindUnit(u32 id)
-{
-    if(id == INVALID_ID)
-        return 0;
-    
-    TUnitMap::iterator it = m_unitMap.find(id);
-    if(it == m_unitMap.end())
-    {
-        return 0;
-    }
-
-    return it->second;
 }
 
 

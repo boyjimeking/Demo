@@ -11,6 +11,10 @@
 
 #include "../../Demo/Comm/CommDef.h"
 
+#define OBJ_PTR_CVT(p, class, base)\
+assert(base && base->IsKindof(base->GetType()));\
+class* p = (class *)base;
+
 enum EN_Debug_Level{
     Lg_Trace,
     Lg_Debug,
@@ -20,6 +24,7 @@ enum EN_Debug_Level{
     Lg_Error,
     Lg_Critical
 };
+
 
 void dprint(EN_Debug_Level level, const char *fmt, ...);
 unsigned char* GetFileData(const char* pszFileName, const char* pszMode, unsigned int * pSize);

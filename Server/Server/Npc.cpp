@@ -13,15 +13,13 @@
 #include "AIControl.h"
 #include "Tools.h"
 #include "GameServer.h"
+#include "ILayer.h"
 
-u32 CNpc::m_nIdGenerator = 1;
 CNpc::TNpcMap CNpc::m_npcMap;
 
-CNpc::CNpc(u32 id):
-IUnit(id),
+CNpc::CNpc():
 m_control(new AIControl)
 {
-    ++m_nIdGenerator;
     m_battleInfo.m_HP = 5;
     m_battleInfo.m_maxHP = 5;
     m_battleInfo.m_isAlive = true;
@@ -29,34 +27,19 @@ m_control(new AIControl)
 
 CNpc::~CNpc()
 {
-    TNpcMap::iterator it = m_npcMap.find(m_nId);
-    assert(it != m_npcMap.end());
-    delete it->second;
-    m_npcMap.erase(it);
 }
 
-CNpc* CNpc::CreateObj(u32 id)
-{
-    if(m_npcMap.find(id) != m_npcMap.end())
-    {
-        return 0;
-    }
-    
-    CNpc* p = new CNpc(id);
-    if(!p->Init())
-        return 0;
-    m_npcMap[id] = p;
-    
-    return p;
-}
 
 bool CNpc::Init(void)
 {
-    //
+    SetID(GetLayer()->GeneratorId(enCNpc));
+    SetX(CGameServer::RandX());
+    SetY(CGameServer::RandY());
+    
+    //initialize battle info
     m_battleInfo.m_HP = 5;
     m_battleInfo.m_maxHP = 5;
     m_battleInfo.m_isAlive = true;
-    m_observers.insert(m_nId);
     
     return true;
 }
@@ -120,14 +103,4 @@ void CNpc::Dead( void )
 {
     m_battleInfo.m_isAlive = false;
     GetControl()->ChangeState(*this, ENNPCAIState::enDead);
-}
-
-void CNpc::InitAll()
-{
-    for (int index = 0; index < 50; ++index)
-    {
-        CNpc* p = CNpc::CreateObj(CNpc::m_nIdGenerator);
-        p->SetX(CGameServer::RandX());
-        p->SetY(CGameServer::RandY());
-    }
 }

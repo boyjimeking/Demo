@@ -54,7 +54,25 @@ bool CGameServer::Init(void)
     TranScale = scene.GetTransScale();
     
     //NPC initialize
-    CNpc::InitAll();
-
+    if(InitNpc() == false)
+    {
+        dprint(Lg_Info, "Fail to initialize NPCs!\n");
+        return false;
+    }
     return true;
+}
+
+bool CGameServer::InitNpc(void )
+{
+    for (int index = 0; index < 50; ++index)
+    {
+        CNpc* p = new CNpc;
+        p->OnPush(this);
+        if(p->Init() == true)
+        {
+            PushObject(p);
+            p->AddObservers();
+            p->AddNpcMap();
+        }
+    }
 }
