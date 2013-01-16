@@ -6,7 +6,7 @@ namespace Tools
 {
 	AvatarData::AvatarData(void)
 		:m_transScale(1.0f)
-		,m_version(enBase)
+		,m_version(enFrameList)
 	{
 
 	}
@@ -36,6 +36,10 @@ namespace Tools
 
 		stream.Read(m_transScale);
 		stream.Read(m_plist);
+		if (version >= enFrameList)
+		{
+			stream.Read(m_frameList);
+		}
 		unsigned int tableSize = 0;
 		stream.Read(tableSize);
 		for (unsigned int index = 0; index < tableSize ; ++index)
@@ -55,6 +59,7 @@ namespace Tools
 
 		stream.Write(m_transScale);
 		stream.Write(m_plist);
+		stream.Write(m_frameList);
 		unsigned int tableSize = m_animationTable.size();
 		stream.Write(tableSize);
 		for (AnimationTable::iterator it = m_animationTable.begin(); m_animationTable.end() != it; ++it)

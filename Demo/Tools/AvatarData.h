@@ -27,6 +27,7 @@ namespace Tools
 		void Clear(void);
 
 		const char* GetPList(void) const { return m_plist.c_str(); }
+		const char* GetFrameList(void) const { return m_frameList.c_str(); }
 		AnimationGroup* Lookup(const char *type) const;
 		const AnimationTable& GetAnimationTable(void) const { return m_animationTable; }
 		const float& GetTransScale() const { return m_transScale; }
@@ -34,6 +35,7 @@ namespace Tools
 	protected:
 		//plist
 		std::string m_plist;
+		std::string m_frameList;
 		//动画列表
 		AnimationTable m_animationTable;
 		//缩放比率
@@ -42,6 +44,7 @@ namespace Tools
 		enum ENVersion
 		{
 			enBase,
+			enFrameList,
 		};
 		unsigned int m_version;
 	};

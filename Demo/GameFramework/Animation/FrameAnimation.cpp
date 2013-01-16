@@ -117,6 +117,7 @@ void FrameAnimation::LoadAvatar( unsigned char *data, unsigned int size )
 	init();
 #endif
 	cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(GetAvatar()->GetPList());
+	FrameInfoCache::getSingleton()->AddFrameInfoByFile(GetAvatar()->GetFrameList());
 }
 
 float FrameAnimation::GetTransScale( void ) const
@@ -219,18 +220,24 @@ void FrameAnimation::update( float fDelta )
 
 void FrameAnimation::CreateFrame(AnimationData *animData, int index)
 {
-	const FrameInfo& frameInfo = animData->GetFrame(index);
-	setContentSize(cocos2d::CCSizeMake(frameInfo.width, frameInfo.height));
+	const std::string &frameName = animData->GetFrame(index);
+	FrameInfo *info = FrameInfoCache::getSingleton()->Lookup(frameName);
+	if (NULL == info)
+	{
+		return;
+	}
+
+	setContentSize(cocos2d::CCSizeMake(info->width, info->height));
 	setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.5f));
 
 	if (NULL == m_batchNode)
 	{
-		m_batchNode = Tools::FrameTools::CreateBatchNode(frameInfo);
+		m_batchNode = Tools::FrameTools::CreateBatchNode(*info);
 		addChild(m_batchNode);
 	}
 	else
 	{
-		Tools::FrameTools::RefreshBatchNode(m_batchNode, frameInfo);
+		Tools::FrameTools::RefreshBatchNode(m_batchNode, *info);
 	}
 }
 

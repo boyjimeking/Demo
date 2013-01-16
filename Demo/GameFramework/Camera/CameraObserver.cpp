@@ -136,7 +136,6 @@ namespace Game
 
 	void CameraObserver::addChild( CCNode *child, float moveScale )
 	{
-		CCAssert( child != NULL, "Argument must be non-nil");
 		m_moveScale.insert(std::make_pair(child, moveScale));
 		CCNode::addChild(child);
 	}

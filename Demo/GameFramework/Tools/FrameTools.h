@@ -10,6 +10,8 @@
 
 #include "../Tools/AnimationData.h"
 #include "sprite_nodes/CCSpriteBatchNode.h"
+#include "Tools/Singleton.h"
+#include <vector>
 
 namespace Tools
 {
@@ -17,6 +19,25 @@ namespace Tools
 	{
 		static cocos2d::CCSpriteBatchNode* CreateBatchNode(const FrameInfo &info);
 		static void RefreshBatchNode(cocos2d::CCSpriteBatchNode *batchNode, const FrameInfo &info);
+	};
+
+	class FrameInfoCache
+		:public Singleton<FrameInfoCache>
+	{
+	public:
+		void AddFrameInfoByFile(const char *fileName);
+		void RemoveFrameInfoByFile(const char *fileName);
+		FrameInfo* Lookup(const std::string &key);
+	private:
+		struct CacheInfo 
+		{
+			std::string m_fileName;
+			int m_ref;
+			FramePList *m_frameList;
+			CacheInfo(void):m_ref(0){}
+		};
+		typedef std::vector<CacheInfo> FrameFileList;
+		FrameFileList m_list;
 	};
 }
 

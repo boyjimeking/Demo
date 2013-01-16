@@ -45,4 +45,87 @@ namespace Tools
 			stream->Write(m_frame[index]);
 		}
 	}
+
+
+
+	FramePList::FramePList( void )
+		:m_version(enBase)
+	{
+
+	}
+
+	FramePList::~FramePList( void )
+	{
+
+	}
+
+	void FramePList::Read( unsigned char *buff, unsigned long size )
+	{
+		StreamHelper stream(buff, size);
+		stream.Read(m_version);
+		unsigned int mapSize = 0;
+		stream.Read(mapSize);
+		for (unsigned int index = 0; index < mapSize ; ++index)
+		{
+			std::string temp;
+			FrameInfo info;
+			stream.Read(temp);
+			stream.ReadClass(&info);
+			m_frameMap.insert(std::make_pair(temp, info));
+		}
+	}
+
+	void FramePList::Write( unsigned char *buff, unsigned long size )
+	{
+		StreamHelper stream(buff, size);
+		stream.Write(m_version);
+		unsigned int mapSize = m_frameMap.size();
+		stream.Write(mapSize);
+		for (FrameMap::iterator it = m_frameMap.begin(); m_frameMap.end() != it; ++it)
+		{
+			stream.Write(it->first);
+			stream.WriteClass(&it->second);
+		}
+	}
+
+	void FramePList::AddFrameInfo( const std::string &key, const FrameInfo &frameInfo )
+	{
+		FrameMap::iterator it = m_frameMap.find(key);
+		if (m_frameMap.end() != it)
+		{
+			it->second = frameInfo;
+		}
+		else
+		{
+			m_frameMap.insert(std::make_pair(key, frameInfo));
+		}
+	}
+
+	void FramePList::RemoveFrameInfo( const std::string &key )
+	{
+		FrameMap::iterator it = m_frameMap.find(key);
+		if (m_frameMap.end() != it)
+		{
+			m_frameMap.erase(it);
+		}
+	}
+
+	FrameInfo* FramePList::Lookup( const std::string &key )
+	{
+		FrameMap::iterator it = m_frameMap.find(key);
+		if (m_frameMap.end() != it)
+		{
+			return &(it->second);
+		}
+		else
+		{
+			return NULL;
+		}
+	}
+
+	void FramePList::Clear( void )
+	{
+		m_frameMap.clear();
+	}
+
 }

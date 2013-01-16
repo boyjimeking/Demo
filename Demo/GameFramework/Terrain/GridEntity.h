@@ -25,6 +25,7 @@ namespace Game
 		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
 	
 	protected:
+		void OnImageLoaded(cocos2d::CCObject *obj);
 	};
 }
 

@@ -19,7 +19,7 @@ namespace Tools
 	class AnimationData
 	{
 	public:
-		typedef std::vector<FrameInfo> FrameList;
+		typedef std::vector<std::string> FrameList;
 
 		AnimationData(void);
 		virtual ~AnimationData(void);
@@ -34,7 +34,7 @@ namespace Tools
 		unsigned int GetFrameCount(void) const { return m_frame.size(); }
 		//获取全部帧
 		const FrameList& GetFrames(void) const { return m_frame; }
-		const FrameInfo& GetFrame(int index) const { return m_frame[index]; }
+		const std::string& GetFrame(int index) const { return m_frame[index]; }
 
 		void Read(StreamHelper *stream);
 		void Write(StreamHelper *stream);
@@ -48,6 +48,7 @@ namespace Tools
 		{
 			enBase,
 			enSeprateFrame,
+			enLookupByString,
 		};
 		unsigned int m_version;
 	};

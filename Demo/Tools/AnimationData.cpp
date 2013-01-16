@@ -5,7 +5,7 @@ namespace Tools
 {
 	AnimationData::AnimationData(void)
 		:m_delay(0.0f)
-		,m_version(enSeprateFrame)
+		,m_version(enLookupByString)
 	{
 
 	}
@@ -24,7 +24,7 @@ namespace Tools
 		{
 			m_frame.resize(index + 1);
 		}
-		m_frame[index].m_frame.push_back(frame);
+		m_frame[index] = frame;
 	}
 
 	void AnimationData::Read(StreamHelper *stream)
@@ -39,17 +39,15 @@ namespace Tools
 		m_frame.resize(frameSize);
 		for (unsigned int index = 0; index < frameSize ; ++index)
 		{
-			if (version >= enSeprateFrame)
+			if (version == enSeprateFrame)
 			{
-				stream->ReadClass(&m_frame[index]);
+				FrameInfo info;
+				stream->ReadClass(&info);
+				m_frame[index] = info.m_frame.back();
 			}
 			else
 			{
-				std::string temp;
-				stream->Read(temp);
-				m_frame[index].width = 225.0f;
-				m_frame[index].height = 225.0f;
-				m_frame[index].m_frame.push_back(temp);
+				stream->Read(m_frame[index]);
 			}
 		}
 	}
@@ -62,7 +60,7 @@ namespace Tools
 		stream->Write(frameSize);
 		for (unsigned int index = 0; index < frameSize ; ++index)
 		{
-			stream->WriteClass(&m_frame[index]);
+			stream->Write(&m_frame[index]);
 		}
 	}
 

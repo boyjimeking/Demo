@@ -11,7 +11,9 @@
 #include "textures/CCTextureCache.h"
 #include "WorldManager.h"
 #include "Camera/Camera.h"
+#include "cocoa/CCObject.h"
 
+USING_NS_CC;
 namespace Game
 {
 	GridEntity::GridEntity(void)
@@ -35,10 +37,9 @@ namespace Game
 			{
 				setScale(WorldManager::Instance()->GetCamera()->GetObjectScale());
 				const GridEventInit *gridEvent = reinterpret_cast<const GridEventInit*>(event);
-				cocos2d::CCTexture2D *texture = cocos2d::CCTextureCache::sharedTextureCache()->addImage(gridEvent->m_imageName.c_str());
-				initWithTexture(texture);
+				init();
 				setPosition(gridEvent->m_position);
-				setAnchorPoint(cocos2d::CCPointZero);
+				cocos2d::CCTextureCache::sharedTextureCache()->addImageAsync(gridEvent->m_imageName.c_str(), this, callfuncO_selector(GridEntity::OnImageLoaded));
 			}
 			break;
 		case ENGridEventType::enRemoveGrid:
@@ -49,6 +50,12 @@ namespace Game
 		default:
 			break;
 		}
+	}
+
+	void GridEntity::OnImageLoaded( cocos2d::CCObject *obj )
+	{
+		initWithTexture(reinterpret_cast<cocos2d::CCTexture2D*>(obj));
+		setAnchorPoint(cocos2d::CCPointZero);
 	}
 
 }
