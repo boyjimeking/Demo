@@ -31,11 +31,11 @@ namespace Game
 		for (InfoList::const_iterator it = list.begin(); list.end() != it; ++it)
 		{
 			Tools::ObjectInfo *info = *it;
-			AddSceneObject(info->m_id, info->m_frame.back().c_str(), info->m_x, info->m_y, info->width, info->height);
+			AddSceneObject(info);
 		}
 	}
 
-	void SceneObjectsControl::AddSceneObject( int id, const char *imageName, float x, float y, float width, float height )
+	void SceneObjectsControl::AddSceneObject( Tools::ObjectInfo *objInfo )
 	{
 		SceneObjectProp *prop = new SceneObjectProp;
 		SceneObjectEntity *entity = SceneObjectEntity::Create();
@@ -44,14 +44,16 @@ namespace Game
 		NotifyChange(&event);
 
 		prop->AttachObserver(entity);
-		prop->Init(id, imageName, x, y, width, height);
+		prop->Init(objInfo);
 		m_sceneObjects.push_back(prop);
 	}
-	void SceneObjectsControl::ChangeSceneObject( int id, const char *imageName, float x, float y, float width, float height )
+
+	void SceneObjectsControl::ChangeSceneObject( Tools::ObjectInfo *objInfo )
 	{
-		SceneObjectProp *prop = LookupSceneObject(id);
-		prop->Init(id, imageName, x, y, width, height);
+		SceneObjectProp *prop = LookupSceneObject(objInfo->m_id);
+		prop->Init(objInfo);
 	}
+
 	void SceneObjectsControl::RemoveSceneObject( int id )
 	{
 		for (SceneObjectList::iterator it = m_sceneObjects.begin(); m_sceneObjects.end() != it; ++it)

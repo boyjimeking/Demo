@@ -32,12 +32,9 @@ namespace Game
 		:public INotifyEvent
 	{
 		virtual int GetNotifyEventType(void) const { return ENSceneObjectEvent::enInitObject; }
+		SceneObjectEventInit(Tools::ObjectInfo *objInfo);
 
-		SceneObjectEventInit(const std::string &imageName, const cocos2d::CCPoint &position, const cocos2d::CCSize &size);
-
-		const std::string &m_imageName;
-		const cocos2d::CCPoint &m_position;
-		const cocos2d::CCSize &m_size;
+		Tools::ObjectInfo *m_objInfo;
 	};
 
 	struct SceneObjectEventRemove

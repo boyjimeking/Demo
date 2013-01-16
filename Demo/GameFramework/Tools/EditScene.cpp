@@ -141,7 +141,7 @@ namespace Tools
 		info->height = height;
 		m_objectInfoList.push_back(info);
 
-		Game::WorldManager::Instance()->GetSceneObjectsControl()->AddSceneObject(info->m_id, image, x, y, width, height);
+		Game::WorldManager::Instance()->GetSceneObjectsControl()->AddSceneObject(info);
 
 		return info->m_id;
 	}
@@ -158,7 +158,7 @@ namespace Tools
 				info->m_y = y;
 				info->width = width;
 				info->height = height;
-				Game::WorldManager::Instance()->GetSceneObjectsControl()->ChangeSceneObject(info->m_id, image, x, y, width, height);
+				Game::WorldManager::Instance()->GetSceneObjectsControl()->ChangeSceneObject(info);
 				break;
 			}
 		}

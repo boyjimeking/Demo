@@ -17,6 +17,7 @@
 namespace Tools
 {
 	class Scene;
+	struct ObjectInfo;
 }
 
 namespace Game
@@ -40,8 +41,8 @@ namespace Game
 		typedef std::list<std::string> ImageList;
 		const ImageList& GetImageList(void) const { return m_imageList; }
 
-		void AddSceneObject(int id, const char *imageName, float x, float y, float width, float height);
-		void ChangeSceneObject(int id, const char *imageName, float x, float y, float width, float height);
+		void AddSceneObject(Tools::ObjectInfo *objInfo);
+		void ChangeSceneObject(Tools::ObjectInfo *objInfo);
 		void RemoveSceneObject(int id);
 		SceneObjectProp* LookupSceneObject(int id);
 

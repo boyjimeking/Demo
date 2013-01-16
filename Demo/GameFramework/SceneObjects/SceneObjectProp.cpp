@@ -14,13 +14,12 @@ namespace Game
 
 	}
 
-	void SceneObjectProp::Init( int id, const char *imageName, float x, float y, float width, float height )
+	void SceneObjectProp::Init( Tools::ObjectInfo *objInfo )
 	{
-		m_id = id;
-		m_imageName = imageName;
-		m_position = cocos2d::CCPointMake(x, y);
-		m_size = cocos2d::CCSizeMake(width, height);
-		SceneObjectEventInit event(m_imageName, m_position, m_size);
+		m_id = objInfo->m_id;
+		m_position = cocos2d::CCPointMake(objInfo->m_x, objInfo->m_y);
+		m_size = cocos2d::CCSizeMake(objInfo->width, objInfo->height);
+		SceneObjectEventInit event(objInfo);
 		NotifyChange(&event);
 	}
 

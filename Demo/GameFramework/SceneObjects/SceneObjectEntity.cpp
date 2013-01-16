@@ -1,9 +1,10 @@
 #include "SceneObjectEntity.h"
 #include "SceneObjectEvents.h"
-#include "sprite_nodes/CCSpriteFrameCache.h"
 #include "Base/INotifier.h"
 #include "WorldManager.h"
 #include "Camera/Camera.h"
+#include "Tools/FrameTools.h"
+#include "Tools/Scene.h"
 
 namespace Game
 {
@@ -14,7 +15,7 @@ namespace Game
 			return NULL;
 		}
 		SceneObjectEntity *entity = new SceneObjectEntity();
-	    if (entity && entity->init())
+	    if (entity/* && entity->init()*/)
 	    {
 	        entity->autorelease();
 	        return entity;
@@ -23,6 +24,7 @@ namespace Game
 	    return NULL;
 	}
 	SceneObjectEntity::SceneObjectEntity(void)
+		:m_batchNode(NULL)
 	{
 
 	}
@@ -37,15 +39,19 @@ namespace Game
 		case ENSceneObjectEvent::enInitObject:
 			{
 				const SceneObjectEventInit *objectEvent = reinterpret_cast<const SceneObjectEventInit*>(event);
-				cocos2d::CCSpriteFrame *frame = cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(objectEvent->m_imageName.c_str());
-				if (NULL == frame)
+				Tools::ObjectInfo *objInfo = objectEvent->m_objInfo;
+				if (NULL != m_batchNode)
 				{
-					cocos2d::CCLog("Frame Not Found : ", objectEvent->m_imageName.c_str());
-					break;
+					Tools::FrameTools::RefreshBatchNode(m_batchNode, *objInfo);
 				}
-				setDisplayFrame(frame);
-				setPosition(objectEvent->m_position);
-				setContentSize(objectEvent->m_size);
+				else
+				{
+					m_batchNode = Tools::FrameTools::CreateBatchNode(*objInfo);
+					addChild(m_batchNode);
+				}
+
+				setPosition(cocos2d::CCPointMake(objInfo->m_x, objInfo->m_y));
+				setContentSize(cocos2d::CCSizeMake(objInfo->width, objInfo->height));
 				setAnchorPoint(cocos2d::CCPointZero);
 				if (NULL != getParent())
 				{
