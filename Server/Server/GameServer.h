@@ -14,10 +14,10 @@
 #include "../../Demo/Comm/CommDef.h"
 #include "../../Demo/Comm/NetMessage.h"
 #include "GameAccount.h"
-#include "Player.h"
-#include "ILayer.h"
+#include "SOBPlayer.h"
+#include "ISimulateLayer.h"
 
-class CGameServer:public ILayer{
+class CGameServer:public ISimulateLayer{
 public:
     //message handlers
     #define _SE_En_Decl_V_(name,value,check1,check2,check3) \

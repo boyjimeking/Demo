@@ -7,13 +7,13 @@
 //
 
 #include <assert.h>
-#include "Npc.h"
-#include "Player.h"
+#include "SOBNpc.h"
+#include "SOBPlayer.h"
 #include "../../Demo/Comm/NetMessage.h"
 #include "AIControl.h"
 #include "Tools.h"
 #include "GameServer.h"
-#include "ILayer.h"
+#include "ISimulateLayer.h"
 
 CNpc::TNpcMap CNpc::m_npcMap;
 
@@ -30,7 +30,6 @@ CNpc::~CNpc()
     m_npcMap.erase(GetID());
     m_observers.erase(GetID());
 }
-
 
 bool CNpc::Init(void)
 {

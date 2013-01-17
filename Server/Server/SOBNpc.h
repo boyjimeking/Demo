@@ -11,7 +11,7 @@
 
 #include <map>
 #include "../../Demo/Comm/CommDef.h"
-#include "IUnit.h"
+#include "SOBIUnit.h"
 #include "../../Demo/Comm/NetMessage.h"
 #include "ObjectType.h"
 

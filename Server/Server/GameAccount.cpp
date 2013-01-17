@@ -8,8 +8,8 @@
 
 #include <string.h>
 #include "GameAccount.h"
-#include "Player.h"
-#include "Npc.h"
+#include "SOBPlayer.h"
+#include "SOBNpc.h"
 #include "Tools.h"
 
 CGameAccount::TAccountMap CGameAccount::m_accounts;

@@ -9,7 +9,7 @@
 #ifndef __Server__AIControl__
 #define __Server__AIControl__
 
-#include "Npc.h"
+#include "SOBNpc.h"
 
 struct ENNPCAIState
 {

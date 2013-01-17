@@ -10,7 +10,7 @@
 #define __Server__Player__
 
 #include <map>
-#include "IUnit.h"
+#include "SOBIUnit.h"
 #include "../../Demo/Comm/CommDef.h"
 #include "../../Demo/Comm/NetMessage.h"
 #include "GameAccount.h"

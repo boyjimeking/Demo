@@ -13,8 +13,8 @@
 #include "../../Demo/Comm/CommDef.h"
 #include "Tools.h"
 #include "../../Demo/Tools/Scene.h"
-#include "Player.h"
-#include "Npc.h"
+#include "SOBPlayer.h"
+#include "SOBNpc.h"
 #include "Tools.h"
 
 float CGameServer::Width = 384.0f;

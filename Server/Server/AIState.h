@@ -9,7 +9,7 @@
 #ifndef __Server__AIState__
 #define __Server__AIState__
 
-#include "Npc.h"
+#include "SOBNpc.h"
 
 class AIState
 {
