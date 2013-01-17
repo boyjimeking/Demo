@@ -30,6 +30,7 @@ namespace Tools
 
 		//添加帧
 		void AddFrame(unsigned int index, const char *frame);
+		void RemoveFrame(unsigned int index);
 		//获取帧数
 		unsigned int GetFrameCount(void) const { return m_frame.size(); }
 		//获取全部帧

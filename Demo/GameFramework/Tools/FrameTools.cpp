@@ -56,7 +56,7 @@ namespace Tools
 		for (unsigned int index = 0; index < m_list.size() ; ++index)
 		{
 			CacheInfo &info = m_list[index];
-			if (info.m_fileName.compare(fileName))
+			if (0 == info.m_fileName.compare(fileName))
 			{
 				++info.m_ref;
 				return;

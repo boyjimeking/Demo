@@ -41,7 +41,7 @@ namespace Tools
 		~FramePList(void);
 
 		void Read(unsigned char *buff, unsigned long size);
-		void Write(unsigned char *buff, unsigned long size);
+		unsigned int Write(unsigned char *buff, unsigned long size);
 
 		void AddFrameInfo(const std::string &key, const FrameInfo &frameInfo);
 		void RemoveFrameInfo(const std::string &key);

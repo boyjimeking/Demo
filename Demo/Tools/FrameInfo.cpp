@@ -75,7 +75,7 @@ namespace Tools
 		}
 	}
 
-	void FramePList::Write( unsigned char *buff, unsigned long size )
+	unsigned int FramePList::Write( unsigned char *buff, unsigned long size )
 	{
 		StreamHelper stream(buff, size);
 		stream.Write(m_version);
@@ -86,6 +86,7 @@ namespace Tools
 			stream.Write(it->first);
 			stream.WriteClass(&it->second);
 		}
+		return stream.Size();
 	}
 
 	void FramePList::AddFrameInfo( const std::string &key, const FrameInfo &frameInfo )

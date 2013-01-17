@@ -67,5 +67,9 @@ namespace Tools
 			m_animationTable.erase(it);
 		}
 	}
+	void EditAvatarData::SetFrameList( const char *frameList )
+	{
+		m_frameList = frameList;
+	}
 
 }

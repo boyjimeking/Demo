@@ -20,6 +20,7 @@ namespace Tools
 		virtual ~EditAvatarData(void);
 
 		void Create(const char *plistFile);
+		void SetFrameList(const char *frameList);
 		void Load(unsigned char *data, int dataLength);
 		int Save(unsigned char *data, int dataLength);
 

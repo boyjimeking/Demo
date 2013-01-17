@@ -60,7 +60,7 @@ namespace Tools
 		stream->Write(frameSize);
 		for (unsigned int index = 0; index < frameSize ; ++index)
 		{
-			stream->Write(&m_frame[index]);
+			stream->Write(m_frame[index]);
 		}
 	}
 
@@ -68,6 +68,14 @@ namespace Tools
 	{
 		m_delay = 0.0f;
 		m_frame.clear();
+	}
+
+	void AnimationData::RemoveFrame( unsigned int index )
+	{
+		if (index < m_frame.size())
+		{
+			m_frame.erase(m_frame.begin() + index);
+		}
 	}
 
 }
