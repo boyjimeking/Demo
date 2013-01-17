@@ -8,10 +8,11 @@
 
 #include "Schedule.h"
 #include "Tools.h"
+#include "tinyxml/tinyxml.h"
 
 void CSchedule::Run(void)
 {
-    if(!LoadConfig("GameSetting.ini"))
+    if(!LoadConfig("GameSetting.xml"))
     {
         dprint(Lg_Info,"Fail to load configure file!\n");
         return ;
@@ -32,9 +33,18 @@ void CSchedule::Run(void)
 
 bool CSchedule::LoadConfig(std::string filename)
 {
-    m_config.port = 20051;
-    m_config.speedLimit = 200*1024;
-    m_config.threadCount = 3;
+    TiXmlDocument setting_file;
+    if(!setting_file.LoadFile(filename.c_str()))
+    {
+        dprint(Lg_Info, "Can't find the file %s!\n", filename.c_str());
+        return false;
+    }
+    TiXmlElement* root = setting_file.FirstChildElement("GameServer");
+    assert(root);
+    
+    m_config.port = atoi(root->Attribute("port"));
+    m_config.speedLimit = atoi(root->Attribute("speedLimit"))*1024;
+    m_config.threadCount = atoi(root->Attribute("threadCount"));;
     
     return true;
 }

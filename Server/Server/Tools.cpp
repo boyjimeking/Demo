@@ -43,12 +43,20 @@ void dprint(EN_Debug_Level level, const char *fmt, ...)
     switch(level)
     {
         case Lg_Debug:
+        {
             va_list arg;
             va_start(arg, fmt);
             vprintf(fmt, arg);
             va_end(arg);
+        }
             break;
         default:
+        {
+            va_list arg;
+            va_start(arg, fmt);
+            vprintf(fmt, arg);
+            va_end(arg);
+        }
             break;
     }
 
