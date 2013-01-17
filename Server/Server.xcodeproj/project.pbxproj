@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5068F5E16A6A40A00F0D9B0 /* Schedule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5068F5C16A6A40A00F0D9B0 /* Schedule.cpp */; };
 		C548E9F216995444005FAF3B /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C548E9F016995444005FAF3B /* Tools.cpp */; };
 		C548E9F516996617005FAF3B /* IUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C548E9F316996617005FAF3B /* IUnit.cpp */; };
 		C548E9F8169968A8005FAF3B /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C548E9F6169968A7005FAF3B /* Player.cpp */; };
+		C581EBA216A6B5D00028DBC0 /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C581EB9C16A6B5D00028DBC0 /* tinystr.cpp */; };
+		C581EBA316A6B5D00028DBC0 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C581EB9E16A6B5D00028DBC0 /* tinyxml.cpp */; };
+		C581EBA416A6B5D00028DBC0 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C581EBA016A6B5D00028DBC0 /* tinyxmlerror.cpp */; };
+		C581EBA516A6B5D00028DBC0 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C581EBA116A6B5D00028DBC0 /* tinyxmlparser.cpp */; };
 		C5989018169D580100775634 /* AIControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5989016169D580000775634 /* AIControl.cpp */; };
 		C598901B169D596A00775634 /* AIState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5989019169D596900775634 /* AIState.cpp */; };
 		C59CEA7516A5270000B45192 /* IObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59CEA7316A5270000B45192 /* IObject.cpp */; };
@@ -38,12 +43,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C5068F5C16A6A40A00F0D9B0 /* Schedule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Schedule.cpp; sourceTree = "<group>"; };
+		C5068F5D16A6A40A00F0D9B0 /* Schedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schedule.h; sourceTree = "<group>"; };
 		C548E9F016995444005FAF3B /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tools.cpp; sourceTree = "<group>"; };
 		C548E9F116995444005FAF3B /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		C548E9F316996617005FAF3B /* IUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IUnit.cpp; sourceTree = "<group>"; };
 		C548E9F416996617005FAF3B /* IUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUnit.h; sourceTree = "<group>"; };
 		C548E9F6169968A7005FAF3B /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		C548E9F7169968A7005FAF3B /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		C581EB9C16A6B5D00028DBC0 /* tinystr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinystr.cpp; sourceTree = "<group>"; };
+		C581EB9D16A6B5D00028DBC0 /* tinystr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinystr.h; sourceTree = "<group>"; };
+		C581EB9E16A6B5D00028DBC0 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		C581EB9F16A6B5D00028DBC0 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		C581EBA016A6B5D00028DBC0 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		C581EBA116A6B5D00028DBC0 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		C5989016169D580000775634 /* AIControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AIControl.cpp; sourceTree = "<group>"; };
 		C5989017169D580100775634 /* AIControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIControl.h; sourceTree = "<group>"; };
 		C5989019169D596900775634 /* AIState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AIState.cpp; sourceTree = "<group>"; };
@@ -81,6 +94,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C581EB9B16A6B5D00028DBC0 /* tinyxml */ = {
+			isa = PBXGroup;
+			children = (
+				C581EB9C16A6B5D00028DBC0 /* tinystr.cpp */,
+				C581EB9D16A6B5D00028DBC0 /* tinystr.h */,
+				C581EB9E16A6B5D00028DBC0 /* tinyxml.cpp */,
+				C581EB9F16A6B5D00028DBC0 /* tinyxml.h */,
+				C581EBA016A6B5D00028DBC0 /* tinyxmlerror.cpp */,
+				C581EBA116A6B5D00028DBC0 /* tinyxmlparser.cpp */,
+			);
+			path = tinyxml;
+			sourceTree = "<group>";
+		};
 		C5CA09FE168EF4AB0045DF06 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +128,7 @@
 		C5CA0A0C168EF4AB0045DF06 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				C581EB9B16A6B5D00028DBC0 /* tinyxml */,
 				C5CA0A1C168EF5000045DF06 /* GameAccount.cpp */,
 				C5CA0A1D168EF5000045DF06 /* GameAccount.h */,
 				C5CA0A1E168EF5000045DF06 /* main.cpp */,
@@ -127,6 +154,8 @@
 				C59CEA7716A5271000B45192 /* ILayer.cpp */,
 				C59CEA7816A5271000B45192 /* ILayer.h */,
 				C59CEA7A16A5287200B45192 /* ObjectType.h */,
+				C5068F5C16A6A40A00F0D9B0 /* Schedule.cpp */,
+				C5068F5D16A6A40A00F0D9B0 /* Schedule.h */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -194,6 +223,11 @@
 				C598901B169D596A00775634 /* AIState.cpp in Sources */,
 				C59CEA7516A5270000B45192 /* IObject.cpp in Sources */,
 				C59CEA7916A5271000B45192 /* ILayer.cpp in Sources */,
+				C5068F5E16A6A40A00F0D9B0 /* Schedule.cpp in Sources */,
+				C581EBA216A6B5D00028DBC0 /* tinystr.cpp in Sources */,
+				C581EBA316A6B5D00028DBC0 /* tinyxml.cpp in Sources */,
+				C581EBA416A6B5D00028DBC0 /* tinyxmlerror.cpp in Sources */,
+				C581EBA516A6B5D00028DBC0 /* tinyxmlparser.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

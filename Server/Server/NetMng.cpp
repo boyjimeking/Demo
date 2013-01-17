@@ -9,15 +9,7 @@
 #include "NetMng.h"
 #include "Tools.h"
 
-CSNetMng* CSNetMng::Instance(void)
-{
-    static CSNetMng* inst= 0;
-    if(!inst)
-    {
-        inst=new CSNetMng;
-    }
-    return inst;
-}
+
 
 void CSSessionManager::run(void)
 {
@@ -71,7 +63,8 @@ void CSSessionManager::run(void)
 
 void CSNetMng::Start(int port,int threadCount,int sendLimit)
 {
-    m_netMsgHelper.InitAllCheck(CGameServer::Instance());
+    assert(m_pGameServer);
+    m_netMsgHelper.InitAllCheck(m_pGameServer);
     printf("Start Server On %d. Thread:%d ,SpeedLimit:%g\r\n",port,threadCount,sendLimit/1024.0f);
     m_sendRateKeeped=sendLimit;
     
@@ -89,9 +82,10 @@ void CSNetMng::Start(int port,int threadCount,int sendLimit)
 
 void CSNetMng::start_accept()
 {
+    assert(m_pGameServer);
     TSSession* new_session = new TSSession(io_service_);
     CGameAccount* pAccount = new CGameAccount(new_session->m_conn);
-    pAccount->GetPlayer()->OnPush(CGameServer::Instance());
+    pAccount->GetPlayer()->OnPush(m_pGameServer);
     new_session->m_pAccount = pAccount;
     acceptor_->async_accept(new_session->socket(),
                             boost::bind(&CSNetMng::handle_accept, this, new_session,

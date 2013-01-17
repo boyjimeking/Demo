@@ -53,14 +53,15 @@ class CSNetMng
 :public CSSessionManager
 {
 public:
-    static CSNetMng* Instance(void);
-	CSNetMng()
+
+	CSNetMng():
+    m_pGameServer(0)
 	{
  		this->m_sendRateKeeped=220*1024;
 	}
 	void Start(int port,int threadCount,int sendLimit);
-
-
+    void SetGameServer(CGameServer* pGameServer) { m_pGameServer = pGameServer;}
+    
 private:
 	void start_accept();
 	void handle_accept(TSSession* new_session,
@@ -69,7 +70,6 @@ private:
 	boost::asio::io_service io_service_;
 	tcp::acceptor* acceptor_;
     std::vector<boost::thread*> ts;
-    
-    
+    CGameServer* m_pGameServer;
 };
 #endif

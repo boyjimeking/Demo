@@ -26,16 +26,7 @@ public:
     }
 #include "../../Demo/Comm/ClientMsgDef.h"
 
-    
-    static CGameServer* Instance(void)
-    {
-        static CGameServer* inst= 0;
-        if(!inst)
-        {
-            inst=new CGameServer;
-        }
-        return inst;
-    }
+
     bool Init(void);
     void Update(u32 elps);
     bool InitNpc(void);
