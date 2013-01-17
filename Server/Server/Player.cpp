@@ -26,6 +26,8 @@ m_pAccount(pAccount)
 
 CPlayer::~CPlayer(void)
 {
+    m_playerMap.erase(GetID());
+    m_observers.erase(GetID());
 }
 
 bool CPlayer::Init(void)

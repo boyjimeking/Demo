@@ -27,6 +27,8 @@ m_control(new AIControl)
 
 CNpc::~CNpc()
 {
+    m_npcMap.erase(GetID());
+    m_observers.erase(GetID());
 }
 
 

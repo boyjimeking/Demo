@@ -38,6 +38,7 @@ public:
     //handle message
     bool Login(NetMessage* pMsg);
     bool AttackTarget_C2S(NetMessage* pMsg);
+    bool Logout(NetMessage* pMsg);
     
 protected:
     
