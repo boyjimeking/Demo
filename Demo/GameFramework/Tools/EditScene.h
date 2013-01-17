@@ -44,6 +44,8 @@ namespace Tools
 		unsigned int GetTerrainCount(void) const { return m_terrainInfoList.size(); }
 		TerrainInfo* GetTerrain(int index) const { return m_terrainInfoList[index]; }
 
+		void SetBackgroundMusic(const char *fileName) { m_backgroundMusic = fileName; }
+
 		void Clear(void);
 	protected:
 

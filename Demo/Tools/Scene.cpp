@@ -43,7 +43,6 @@ namespace Tools
 	,m_gridRow(0)
 	,m_grid(NULL)
 	,m_gridArrayLength(0)
-	,m_readVersion(0)
 	,m_currentVersion(enCurrentVersion)
 	,m_transScale(0.0f)
 	{
@@ -122,6 +121,7 @@ namespace Tools
 		{
 			stream.WriteClass(*it);
 		}
+		stream.Write(m_backgroundMusic);
 		return stream.Size();
 	}
 
@@ -133,9 +133,9 @@ namespace Tools
 		}
 		StreamHelper stream(buff, size);
 
-		m_readVersion = 0;
-		stream.Read(&m_readVersion);
-		if (m_readVersion >= enBaseVersion)
+		int version = 0;
+		stream.Read(&version);
+		if (version >= enBaseVersion)
 		{
 			//读取场景名
 			int sceneNameLength = 0;
@@ -182,6 +182,10 @@ namespace Tools
 				TerrainInfo *info = new TerrainInfo;
 				stream.ReadClass(info);
 				m_terrainInfoList.push_back(info);
+			}
+			if (version >= enBackgroundMusic)
+			{
+				stream.Read(m_backgroundMusic);
 			}
 		}
 	}

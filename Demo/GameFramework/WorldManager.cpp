@@ -23,7 +23,9 @@
 #endif // COCOS2D_DEBUG
 #include "SceneInfo.h"
 #include "Animation/SkeletonCocos2D.h"
+#include "SimpleAudioEngine.h"
 
+using namespace CocosDenshion;
 
 namespace Game
 {
@@ -199,6 +201,10 @@ namespace Game
 
 	void WorldManager::InitScene( const Tools::Scene *scene )
 	{
+		if (NULL != scene->GetBackgroundMusic())
+		{
+			SimpleAudioEngine::sharedEngine()->playBackgroundMusic(scene->GetBackgroundMusic(), true);
+		}
 		GetSceneInfo()->Init(scene);
 		GetCamera()->SetTransScale(scene->GetTransScale());
 		GetTerrainProp()->Init(scene);

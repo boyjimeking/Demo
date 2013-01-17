@@ -65,6 +65,8 @@ namespace Tools
 
 		ObjectInfo* LookupObject(int id) const;
 		TerrainInfo* LookupTerrain(int id) const;
+
+		const char* GetBackgroundMusic(void) const { return m_backgroundMusic.c_str(); }
 	protected:
 		char m_sceneName[128];
 		ImageNameList m_imageName;
@@ -78,13 +80,14 @@ namespace Tools
 		int m_gridArrayLength;
 		ObjectInfoList m_objectInfoList;
         TerrainInfoList m_terrainInfoList;
+		std::string m_backgroundMusic;
 
-		int m_readVersion;
 		int m_currentVersion;
 		enum
 		{
 			enBaseVersion,
-			enCurrentVersion = enBaseVersion,
+			enBackgroundMusic,
+			enCurrentVersion = enBackgroundMusic,
 		};
 
 	};
