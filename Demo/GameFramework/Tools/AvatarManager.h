@@ -8,7 +8,7 @@
 #ifndef AvatarManager_h__
 #define AvatarManager_h__
 
-#include "Tools/Singleton.h"
+#include "../Tools/Singleton.h"
 #include <map>
 #include <string>
 #include <vector>

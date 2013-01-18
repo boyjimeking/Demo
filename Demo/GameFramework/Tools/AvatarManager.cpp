@@ -1,5 +1,5 @@
 #include "AvatarManager.h"
-#include "Tools/AvatarData.h"
+#include "../Tools/AvatarData.h"
 #include "../CCFileUtils.h"
 #include "sprite_nodes/CCSpriteFrameCache.h"
 #include "FrameTools.h"

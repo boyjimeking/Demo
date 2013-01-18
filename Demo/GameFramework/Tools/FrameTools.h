@@ -10,7 +10,7 @@
 
 #include "../Tools/AnimationData.h"
 #include "sprite_nodes/CCSpriteBatchNode.h"
-#include "Tools/Singleton.h"
+#include "../Tools/Singleton.h"
 #include <vector>
 
 using namespace cocos2d;
