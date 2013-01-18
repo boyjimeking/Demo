@@ -33,6 +33,9 @@ namespace Tools
 		typedef std::vector<AvatarData*> AvatarList;
 		AvatarList m_deleteList;
 
+		typedef std::vector<std::string> ImageLoadedRecord;
+		ImageLoadedRecord m_recordList;
+
 		friend struct ManagedAvatarData;
 	};
 }

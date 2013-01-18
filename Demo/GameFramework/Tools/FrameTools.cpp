@@ -9,43 +9,6 @@ using namespace cocos2d;
 
 namespace Tools
 {
-	class LoadImage
-		:public CCObject
-	{
-	public:
-		LoadImage(const char *path)
-			:m_path(path)
-		{
-
-		}
-		~LoadImage()
-		{
-			CCLog("~LoadImage");
-		}
-		CCSpriteFrame* Init(void)
-		{
-			this->autorelease();
-			this->retain();
-			m_frame = CCSpriteFrame::create("", CCRectZero);
-			cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFrame(m_frame, m_path.c_str());
-			cocos2d::CCTextureCache::sharedTextureCache()->addImageAsync(m_path.c_str(), this, callfuncO_selector(LoadImage::CallBack));
-			return m_frame;
-		}
-		void CallBack(CCObject *obj)
-		{
-			if (NULL != obj)
-			{
-				CCTexture2D *texture = reinterpret_cast<CCTexture2D*>(obj);
-				m_frame->initWithTexture(reinterpret_cast<CCTexture2D*>(obj), CCRectMake(0.0f, 0.0f, texture->getPixelsWide(), texture->getPixelsHigh()));
-				//cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFrame(m_frame, m_path.c_str());
-			}
-			this->release();
-		}
-	private:
-		const std::string m_path;
-		CCSpriteFrame *m_frame;
-	};
-
 	cocos2d::CCSpriteBatchNode* FrameTools::CreateBatchNode( const FrameInfo &info )
 	{
 		//const char *frameName = NULL;

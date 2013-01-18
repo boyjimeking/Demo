@@ -139,6 +139,7 @@ void FrameAnimation::ChangeEquip( ENEquipType::Decl type, const char *equipFile 
 		newEquip->setTag(type);
 		addChild(newEquip);
 		newEquip->setPosition(cocos2d::ccpMult(cocos2d::ccpFromSize(getContentSize()), 0.5f));
+		newEquip->setZOrder(1);
 	}
 	else
 	{
@@ -230,7 +231,10 @@ void FrameAnimation::CreateFrame(AnimationData *animData, int index)
 	if (NULL == m_batchNode)
 	{
 		m_batchNode = Tools::FrameTools::CreateBatchNode(*info);
-		addChild(m_batchNode);
+		if (NULL != m_batchNode)
+		{
+			addChild(m_batchNode);
+		}
 	}
 	else
 	{
@@ -240,7 +244,7 @@ void FrameAnimation::CreateFrame(AnimationData *animData, int index)
 
 cocos2d::CCSize FrameAnimation::getTouchSize( void )
 {
-	return m_batchNode->getContentSize();
+	return NULL == m_batchNode ? CCSizeZero: m_batchNode->getContentSize();
 }
 
 
