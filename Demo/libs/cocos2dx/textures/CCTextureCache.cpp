@@ -261,7 +261,7 @@ void CCTextureCache::addImageAsync(const char *path, CCObject *target, SEL_CallF
     pathKey = CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(pathKey.c_str());
     texture = (CCTexture2D*)m_pTextures->objectForKey(pathKey.c_str());
 
-    std::string fullpath = pathKey;
+    std::string &fullpath = pathKey;
     if (texture != NULL)
     {
         if (target && selector)
@@ -316,7 +316,7 @@ void CCTextureCache::addImageAsync(const char *path, CCObject *target, SEL_CallF
 
     // generate async struct
     AsyncStruct *data = new AsyncStruct();
-    data->filename = fullpath.c_str();
+    data->filename = fullpath;
     data->target = target;
     data->selector = selector;
 

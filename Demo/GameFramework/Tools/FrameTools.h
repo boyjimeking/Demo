@@ -13,9 +13,11 @@
 #include "Tools/Singleton.h"
 #include <vector>
 
+using namespace cocos2d;
+
 namespace Tools
 {
-	struct FrameTools 
+	struct FrameTools
 	{
 		static cocos2d::CCSpriteBatchNode* CreateBatchNode(const FrameInfo &info);
 		static void RefreshBatchNode(cocos2d::CCSpriteBatchNode *batchNode, const FrameInfo &info);

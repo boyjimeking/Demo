@@ -11,6 +11,7 @@
 #include "../CCCommon.h"
 #include "sprite_nodes/CCSpriteBatchNode.h"
 #include "Tools/FrameTools.h"
+#include "Tools/AvatarManager.h"
 
 using namespace CocosDenshion;
 
@@ -35,11 +36,10 @@ FrameAnimation::~FrameAnimation(void)
 
 void FrameAnimation::LoadAvatarFromFile(const char *fileName)
 {
-	const char *fullPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(fileName);
-	unsigned long size = 0;
-	unsigned char *buff = cocos2d::CCFileUtils::sharedFileUtils()->getFileData(fullPath, "rb", &size);
-	LoadAvatar(buff, size);
-	delete[] buff;
+	m_avatar = Tools::AvatarManager::getSingleton()->AddAvatarData(fileName);
+#ifndef __BatchNode_Frame_
+	init();
+#endif
 }
 
 void FrameAnimation::PlayAnimation(const char *type, ENDirection::Decl direction, bool isLoop /* = true */)
@@ -98,27 +98,27 @@ void FrameAnimation::PlayAnimation(const char *type, ENDirection::Decl direction
 	}
 }
 
-void FrameAnimation::LoadAvatar( unsigned char *data, unsigned int size )
-{
-	if (0 == size)
-	{
-		return;
-	}
-	if (NULL == m_avatar)
-	{
-		m_avatar = new Tools::AvatarData;
-	}
-	else
-	{
-		cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFramesFromFile(GetAvatar()->GetPList());
-	}
-	m_avatar->Read(data, size);
-#ifndef __BatchNode_Frame_
-	init();
-#endif
-	cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(GetAvatar()->GetPList());
-	FrameInfoCache::getSingleton()->AddFrameInfoByFile(GetAvatar()->GetFrameList());
-}
+//void FrameAnimation::LoadAvatar( unsigned char *data, unsigned int size )
+//{
+//	if (0 == size)
+//	{
+//		return;
+//	}
+//	if (NULL == m_avatar)
+//	{
+//		m_avatar = new Tools::AvatarData;
+//	}
+//	else
+//	{
+//		cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->removeSpriteFramesFromFile(GetAvatar()->GetPList());
+//	}
+//	m_avatar->Read(data, size);
+//#ifndef __BatchNode_Frame_
+//	init();
+//#endif
+//	cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile(GetAvatar()->GetPList());
+//	FrameInfoCache::getSingleton()->AddFrameInfoByFile(GetAvatar()->GetFrameList());
+//}
 
 float FrameAnimation::GetTransScale( void ) const
 {
@@ -227,9 +227,6 @@ void FrameAnimation::CreateFrame(AnimationData *animData, int index)
 		return;
 	}
 
-	setContentSize(cocos2d::CCSizeMake(info->width, info->height));
-	setAnchorPoint(cocos2d::CCPointMake(0.5f, 0.5f));
-
 	if (NULL == m_batchNode)
 	{
 		m_batchNode = Tools::FrameTools::CreateBatchNode(*info);
@@ -240,4 +237,10 @@ void FrameAnimation::CreateFrame(AnimationData *animData, int index)
 		Tools::FrameTools::RefreshBatchNode(m_batchNode, *info);
 	}
 }
+
+cocos2d::CCSize FrameAnimation::getTouchSize( void )
+{
+	return m_batchNode->getContentSize();
+}
+
 

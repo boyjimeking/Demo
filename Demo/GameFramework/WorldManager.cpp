@@ -24,6 +24,7 @@
 #include "SceneInfo.h"
 #include "Animation/SkeletonCocos2D.h"
 #include "SimpleAudioEngine.h"
+#include "Tools/AvatarManager.h"
 
 using namespace CocosDenshion;
 
@@ -186,6 +187,7 @@ namespace Game
     {
     	GetActorsControl()->Tick(dt);
     	GetPhysicalControl()->Update(dt);
+		Tools::AvatarManager::getSingleton()->Tick();
     }
     void WorldManager::InitSceneByFile(const char *sceneName)
     {

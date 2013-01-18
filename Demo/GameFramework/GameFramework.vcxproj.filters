@@ -246,6 +246,9 @@
     <ClCompile Include="Tools\FrameTools.cpp">
       <Filter>GameFramework\Tools</Filter>
     </ClCompile>
+    <ClCompile Include="Tools\AvatarManager.cpp">
+      <Filter>GameFramework\Tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CSProtocol\CSMessageDef.h">
@@ -462,6 +465,9 @@
       <Filter>GameFramework\tolua</Filter>
     </ClInclude>
     <ClInclude Include="Tools\FrameTools.h">
+      <Filter>GameFramework\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\AvatarManager.h">
       <Filter>GameFramework\Tools</Filter>
     </ClInclude>
   </ItemGroup>

@@ -17,6 +17,8 @@ namespace Tools
 	class StreamHelper;
 	struct FrameInfo
 	{
+		float anchorPointX;
+		float anchorPointY;
 		float width;
 		float height;
 		std::vector<std::string> m_frame;
@@ -30,6 +32,7 @@ namespace Tools
 		enum ENVersion
 		{
 			enBase,
+			enAnchorPoint,
 		};
 		unsigned int m_version;
 	};

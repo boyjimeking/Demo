@@ -35,7 +35,7 @@ public:
 	virtual ~FrameAnimation(void);
 
 	void LoadAvatarFromFile(const char *fileName);
-	void LoadAvatar(unsigned char *data, unsigned int size);
+	//void LoadAvatar(unsigned char *data, unsigned int size);
 	void PlayAnimation(const char *type, ENDirection::Decl direction, bool isLoop = true);
 
 	void ChangeEquip(ENEquipType::Decl type, const char *equipFile);
@@ -43,6 +43,8 @@ public:
 	float GetTransScale(void) const;
 
 	virtual void update( float fDelta );
+
+	virtual cocos2d::CCSize getTouchSize(void);
 protected:
 	Tools::AvatarData * GetAvatar(void) const { return m_avatar; }
 	Tools::AvatarData *m_avatar;

@@ -6,13 +6,17 @@ namespace Tools
 	FrameInfo::FrameInfo( void )
 		:width(0.0f)
 		,height(0.0f)
-		,m_version(enBase)
+		,m_version(enAnchorPoint)
+		,anchorPointX(0.0f)
+		,anchorPointY(0.0f)
 	{
 
 	}
 
 	void FrameInfo::Clear( void )
 	{
+		anchorPointX = 0.0f;
+		anchorPointY = 0.0f;
 		width = 0.0f;
 		height = 0.0f;
 		m_frame.clear();
@@ -24,6 +28,11 @@ namespace Tools
 		stream->Read(version);
 		stream->Read(width);
 		stream->Read(height);
+		if (version >= enAnchorPoint)
+		{
+			stream->Read(anchorPointX);
+			stream->Read(anchorPointY);
+		}
 		unsigned int size = 0;
 		stream->Read(size);
 		m_frame.resize(size);
@@ -38,6 +47,8 @@ namespace Tools
 		stream->Write(m_version);
 		stream->Write(width);
 		stream->Write(height);
+		stream->Write(anchorPointX);
+		stream->Write(anchorPointY);
 		unsigned int size = m_frame.size();
 		stream->Write(size);
 		for (unsigned int index = 0; index < size; ++index)

@@ -87,4 +87,14 @@ namespace Tools
 		}
 	}
 
+	void AvatarData::Retain( void )
+	{
+		++m_ref;
+	}
+
+	void AvatarData::Release( void )
+	{
+		--m_ref;
+	}
+
 }

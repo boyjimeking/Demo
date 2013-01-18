@@ -18,8 +18,6 @@ namespace Tools
 	{
 	public:
 		typedef std::map<std::string, AnimationGroup*> AnimationTable;
-
-		AvatarData(void);
 		virtual ~AvatarData(void);
 
 		void Read(unsigned char *buff, unsigned int size);
@@ -32,6 +30,11 @@ namespace Tools
 		const AnimationTable& GetAnimationTable(void) const { return m_animationTable; }
 		const float& GetTransScale() const { return m_transScale; }
 		void SetTransScale(const float &val) { m_transScale = val; }
+
+		virtual void Retain(void);
+		virtual void Release(void);
+	protected:
+		AvatarData(void);
 	protected:
 		//plist
 		std::string m_plist;
@@ -40,6 +43,8 @@ namespace Tools
 		AnimationTable m_animationTable;
 		//缩放比率
 		float m_transScale;
+
+		int m_ref;
 	private:
 		enum ENVersion
 		{

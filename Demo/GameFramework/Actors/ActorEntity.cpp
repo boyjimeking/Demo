@@ -127,11 +127,11 @@ namespace Game
 				break;
 			case ENActorEvent::enChangeAvatar:
 				{
-					const ActorEventChangeAvatar *actorEvent = reinterpret_cast<const ActorEventChangeAvatar*>(event);
-					unsigned char buff[16384] = {0};
-					unsigned int size = actorEvent->m_avatar->Write(buff, 16384);
-					m_frameAnimation->LoadAvatar(buff, size);
-					RePlayAnimation();
+					//const ActorEventChangeAvatar *actorEvent = reinterpret_cast<const ActorEventChangeAvatar*>(event);
+					//unsigned char buff[16384] = {0};
+					//unsigned int size = actorEvent->m_avatar->Write(buff, 16384);
+					//m_frameAnimation->LoadAvatar(buff, size);
+					//RePlayAnimation();
 				}
 				break;
 			case ENActorEvent::enChangeEquip:
@@ -199,7 +199,7 @@ namespace Game
 	bool ActorEntity::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
 	{
 		cocos2d::CCPoint localTouch = m_frameAnimation->convertTouchToNodeSpace(pTouch);
-		CCSize size = m_frameAnimation->getContentSize();
+		CCSize size = m_frameAnimation->getTouchSize();
 		cocos2d::CCRect rect = cocos2d::CCRectMake(size.width / 3.0f, size.height / 3.0f, size.width / 3.0f, size.height / 3.0f);
 		if (rect.containsPoint(localTouch))
 		{
