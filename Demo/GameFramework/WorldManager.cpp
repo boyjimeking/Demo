@@ -130,15 +130,6 @@ namespace Game
 			m_uiControl->Init();
 		}
 		m_camera->Reset();
-		//bone
-		//{
-		//	m_sample = new SkeletonCocos2D;
-		//	m_sample->Load("skeletonbone.xml","texture.xml","texture.png","RobotBiped");
-		//	scene->addChild(m_sample);
-		//	m_sample->m_skeleton->PlayAnimation("run",1.0f,-1,2);
-		//	CCSize size = CCDirector::sharedDirector()->getWinSize();
-		//	m_sample->setPosition(cocos2d::CCPointMake(size.width/2, 150));
-		//}
 #if COCOS2D_DEBUG
 		cameraObj->addChild(m_debugLayer, 1.0f);
 #endif // COCOS2D_DEBUG
@@ -211,6 +202,7 @@ namespace Game
 		GetCamera()->SetTransScale(scene->GetTransScale());
 		GetTerrainProp()->Init(scene);
 		GetSceneObjectsControl()->Init(scene);
+		GetCamera()->Reset(cocos2d::CCPointMake(GetSceneInfo()->GetWidth() / 2.0f, GetSceneInfo()->GetHeight() / 2.0f));
 	}
 
 	void WorldManager::SetCollidable( bool isCollide )

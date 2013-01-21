@@ -45,6 +45,10 @@ namespace Tools
 	,m_gridArrayLength(0)
 	,m_currentVersion(enCurrentVersion)
 	,m_transScale(0.0f)
+	,m_cameraMinX(0.0f)
+	,m_cameraMinY(0.0f)
+	,m_cameraMaxX(0.0f)
+	,m_cameraMaxY(0.0f)
 	{
 		memset(m_sceneName, 0, sizeof(m_sceneName));
 	}
@@ -106,6 +110,10 @@ namespace Tools
 		stream.Write(&m_gridColumn);
 		stream.Write(&m_gridRow);
 		stream.Write(&m_transScale);
+		stream.Write(m_cameraMinX);
+		stream.Write(m_cameraMinY);
+		stream.Write(m_cameraMaxX);
+		stream.Write(m_cameraMaxY);
 		//写入碰撞信息
 		stream.Write(&m_gridArrayLength);
 		stream.Write(m_grid, m_gridArrayLength);
@@ -159,6 +167,20 @@ namespace Tools
 			stream.Read(&m_gridColumn);
 			stream.Read(&m_gridRow);
 			stream.Read(&m_transScale);
+			if (version >= enCameraArea)
+			{
+				stream.Read(m_cameraMinX);
+				stream.Read(m_cameraMinY);
+				stream.Read(m_cameraMaxX);
+				stream.Read(m_cameraMaxY);
+			}
+			else
+			{
+				m_cameraMinX = 0.0f;
+				m_cameraMinY = 0.0f;
+				m_cameraMaxX = m_width;
+				m_cameraMaxY = m_height;
+			}
 			//读取碰撞信息
 			stream.Read(&m_gridArrayLength);
 			if (NULL != m_grid)

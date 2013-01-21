@@ -84,21 +84,21 @@ namespace Game
     void Camera::SetPosition(const cocos2d::CCPoint &newPosition)
     {
 		cocos2d::CCPoint innerPos = newPosition;
-		if (newPosition.x < 4.8f)
+		if (newPosition.x < WorldManager::Instance()->GetSceneInfo()->GetCameraMinX())
 		{
-			innerPos.x = 4.8f;
+			innerPos.x = WorldManager::Instance()->GetSceneInfo()->GetCameraMinX();
 		}
-		else if (newPosition.x > WorldManager::Instance()->GetSceneInfo()->GetWidth() - 9.6f)
+		else if (newPosition.x > WorldManager::Instance()->GetSceneInfo()->GetCameraMaxX())
 		{
-			innerPos.x = WorldManager::Instance()->GetSceneInfo()->GetWidth() - 9.6f;
+			innerPos.x = WorldManager::Instance()->GetSceneInfo()->GetCameraMaxX();
 		}
-		if (newPosition.y < 3.2f)
+		if (newPosition.y < WorldManager::Instance()->GetSceneInfo()->GetCameraMinY())
 		{
-			innerPos.y = 3.2f;
+			innerPos.y = WorldManager::Instance()->GetSceneInfo()->GetCameraMinY();
 		}
-		else if (newPosition.y > WorldManager::Instance()->GetSceneInfo()->GetHeight() - 4.8f)
+		else if (newPosition.y > WorldManager::Instance()->GetSceneInfo()->GetCameraMaxY())
 		{
-			innerPos.y = WorldManager::Instance()->GetSceneInfo()->GetHeight() - 4.8f;
+			innerPos.y = WorldManager::Instance()->GetSceneInfo()->GetCameraMaxY();
 		}
         m_position = innerPos;
 		cocos2d::CCPoint entityPos = m_position;
@@ -129,6 +129,16 @@ namespace Game
 
 	void Camera::Reset( void )
 	{
+		cocos2d::CCPoint entityPos = m_position;
+		entityPos.x -= m_size.width / 2;
+		entityPos.y -= m_size.height / 2;
+		CameraReset event(entityPos);
+		NotifyChange(&event);
+	}
+
+	void Camera::Reset( const cocos2d::CCPoint &pos )
+	{
+		SetPosition(pos);
 		cocos2d::CCPoint entityPos = m_position;
 		entityPos.x -= m_size.width / 2;
 		entityPos.y -= m_size.height / 2;

@@ -12,6 +12,10 @@ namespace Game
 		,m_grid(NULL)
 		,m_gridArrayLength(0)
 		,m_isCollidable(true)
+		,m_cameraMinX(0.0f)
+		,m_cameraMinY(0.0f)
+		,m_cameraMaxX(0.0f)
+		,m_cameraMaxY(0.0f)
 	{
 
 	}
@@ -32,6 +36,10 @@ namespace Game
 		m_gridSize = sceneFile->GetGridSize();
 		m_gridColumn = sceneFile->GetColumn();
 		m_gridRow = sceneFile->GetRow();
+		m_cameraMinX = sceneFile->GetCameraMinX();
+		m_cameraMinY = sceneFile->GetCameraMinY();
+		m_cameraMaxX = sceneFile->GetCameraMaxX();
+		m_cameraMaxY = sceneFile->GetCameraMaxY();
 		m_gridArrayLength = sceneFile->GetGridArrayLength();
 		if (NULL != m_grid)
 		{

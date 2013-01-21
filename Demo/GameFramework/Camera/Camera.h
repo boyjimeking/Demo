@@ -30,6 +30,7 @@ namespace Game
 
         void init(IObserver *observer);
 		void Reset(void);
+		void Reset(const cocos2d::CCPoint &pos);
         
         cocos2d::CCPoint ConvertWorldPosToDesign(const cocos2d::CCPoint &worldPos);
         cocos2d::CCPoint ConvertDesignPosToWorld(const cocos2d::CCPoint &screenPos);

@@ -35,6 +35,11 @@ namespace Game
 		int GetRow(void) const { return m_gridRow; }
 		float GetGridSize(void) const { return m_gridSize; }
 
+		float GetCameraMinX(void) const { return m_cameraMinX; }
+		float GetCameraMinY(void) const { return m_cameraMinY; }
+		float GetCameraMaxX(void) const { return m_cameraMaxX; }
+		float GetCameraMaxY(void) const { return m_cameraMaxY; }
+
 		int GetGridArrayLength(void) const { return m_gridArrayLength; }
 
 		const std::string& GetSceneName() const { return m_sceneName; }
@@ -53,6 +58,11 @@ namespace Game
 		int m_gridRow;
 		char *m_grid;
 		int m_gridArrayLength;
+
+		float m_cameraMinX;
+		float m_cameraMinY;
+		float m_cameraMaxX;
+		float m_cameraMaxY;
 	private:
 		bool m_isCollidable;
 	};

@@ -56,6 +56,11 @@ namespace Tools
 		//逻辑坐标与像素坐标的转换，point per meter
 		float GetTransScale(void) const { return m_transScale; }
 
+		float GetCameraMinX(void) const { return m_cameraMinX; }
+		float GetCameraMinY(void) const { return m_cameraMinY; }
+		float GetCameraMaxX(void) const { return m_cameraMaxX; }
+		float GetCameraMaxY(void) const { return m_cameraMaxY; }
+
 		bool GetGridPass(int x, int y);
 
 		const char* GetGrids(void) const { return m_grid; }
@@ -75,6 +80,12 @@ namespace Tools
 		float m_gridSize;
 		int m_gridColumn;
 		int m_gridRow;
+
+		float m_cameraMinX;
+		float m_cameraMinY;
+		float m_cameraMaxX;
+		float m_cameraMaxY;
+
 		float m_transScale;
 		char *m_grid;
 		int m_gridArrayLength;
@@ -87,7 +98,8 @@ namespace Tools
 		{
 			enBaseVersion,
 			enBackgroundMusic,
-			enCurrentVersion = enBackgroundMusic,
+			enCameraArea,	//添加摄像机限制范围数据
+			enCurrentVersion = enCameraArea,
 		};
 
 	};
