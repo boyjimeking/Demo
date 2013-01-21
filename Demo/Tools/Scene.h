@@ -22,11 +22,30 @@ namespace Tools
 		int m_id;
 		float m_x;
 		float m_y;
+		std::string m_layerName;
 
 		void Read(StreamHelper *stream);
 		void Write(StreamHelper *stream);
 
 		ObjectInfo(void);
+	};
+
+	struct LayerInfo 
+	{
+		std::string m_layerName;
+		int m_zOrder;
+		float m_moveScale;
+
+		void Read(StreamHelper *stream);
+		void Write(StreamHelper *stream);
+		LayerInfo(void);
+	protected:
+		enum ENVersion
+		{
+			enBase,
+			enCurrentVersion = enBase,
+		};
+		unsigned int m_version;
 	};
     
     typedef ObjectInfo TerrainInfo;
@@ -37,6 +56,7 @@ namespace Tools
 		typedef std::vector<ObjectInfo*> ObjectInfoList;
 		typedef std::vector<TerrainInfo*> TerrainInfoList;
 		typedef std::vector<std::string> ImageNameList;
+		typedef std::vector<LayerInfo> LayerInfoList;
 
 		Scene(void);
 		virtual ~Scene(void);
@@ -67,6 +87,7 @@ namespace Tools
 		int GetGridArrayLength(void) const { return m_gridArrayLength; }
 		const ObjectInfoList& GetObjectInfoList(void) const { return m_objectInfoList; }
 		const TerrainInfoList& GetTerrainList(void) const { return m_terrainInfoList; }
+		const LayerInfoList& GetLayerList(void) const { return m_layerList; }
 
 		ObjectInfo* LookupObject(int id) const;
 		TerrainInfo* LookupTerrain(int id) const;
@@ -91,6 +112,7 @@ namespace Tools
 		int m_gridArrayLength;
 		ObjectInfoList m_objectInfoList;
         TerrainInfoList m_terrainInfoList;
+		LayerInfoList m_layerList;
 		std::string m_backgroundMusic;
 
 		int m_currentVersion;
@@ -99,7 +121,8 @@ namespace Tools
 			enBaseVersion,
 			enBackgroundMusic,
 			enCameraArea,	//添加摄像机限制范围数据
-			enCurrentVersion = enCameraArea,
+			enLayerInfo,
+			enCurrentVersion = enLayerInfo,
 		};
 
 	};

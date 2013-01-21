@@ -12,8 +12,7 @@
 namespace Game
 {
 	ActorEntity::ActorEntity(void)
-	:m_touchCallBack(NULL)
-	,m_frameAnimation(NULL)
+	:m_frameAnimation(NULL)
 	,m_boneAnimation(NULL)
 	{
 
@@ -81,8 +80,6 @@ namespace Game
 							m_frameAnimation->LoadAvatarFromFile("NPCActor.ava");
 							setScale(m_frameAnimation->GetTransScale());
 							addChild(m_frameAnimation);
-							cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
-							m_touchCallBack = new TouchMonster(reinterpret_cast<ActorProp*>(notify));
 						}
 						break;
 					}
@@ -148,6 +145,12 @@ namespace Game
 					PlayAnimation(ENAnimation::Dead, ENDirection::enError, false);
 				}
 				break;
+			case ENActorEvent::enSetVisible:
+				{
+					const ActorEventSetVisible *actorEvent = reinterpret_cast<const ActorEventSetVisible*>(event);
+					setVisible(actorEvent->m_isVisible);
+				}
+				break;
 			default:
 				break;
 		}
@@ -191,24 +194,6 @@ namespace Game
 			return ENDirection::enSouthEast;
 		}
 		return ENDirection::enEast;
-	}
-	void ActorEntity::ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent)
-	{
-		
-	}
-	bool ActorEntity::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
-	{
-		cocos2d::CCPoint localTouch = m_frameAnimation->convertTouchToNodeSpace(pTouch);
-		CCSize size = m_frameAnimation->getTouchSize();
-		cocos2d::CCRect rect = cocos2d::CCRectMake(size.width / 3.0f, size.height / 3.0f, size.width / 3.0f, size.height / 3.0f);
-		if (rect.containsPoint(localTouch))
-		{
-			return m_touchCallBack->OnTouch(localTouch);
-		}
-		else
-		{
-			return false;
-		}
 	}
 
 	void ActorEntity::PlayAnimation(const char *type, ENDirection::Decl direction, bool isLoop /* = true */)

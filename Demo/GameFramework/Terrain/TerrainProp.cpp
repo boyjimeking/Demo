@@ -26,16 +26,16 @@ namespace Game
 		for (InfoList::const_iterator it = list.begin(); list.end() != it; ++it)
 		{
 			Tools::TerrainInfo *info = (*it);
-			AddTerrainGrid(info->m_id, info->m_frame.back().c_str(), info->m_x, info->m_y, info->width, info->height);
+			AddTerrainGrid(info->m_id, info->m_layerName.c_str(), info->m_frame.back().c_str(), info->m_x, info->m_y, info->width, info->height);
 		}
 	}
 
-	void TerrainProp::AddTerrainGrid( int id, const char *imageName, float x, float y, float width, float height )
+	void TerrainProp::AddTerrainGrid(int id, const char *layerName, const char *imageName, float x, float y, float width, float height)
 	{
 		GridProp *prop = new GridProp;
 		GridEntity *entity = new GridEntity;
 
-		TerrainEvent_AddTerrain event(entity);
+		TerrainEvent_AddTerrain event(entity, layerName);
 		NotifyChange(&event);
 
 		prop->AttachObserver(entity);
@@ -43,7 +43,7 @@ namespace Game
 		m_gridList.push_back(prop);
 	}
 
-	void TerrainProp::ChangeTerrainGrid( int id, const char *imageName, float x, float y, float width, float height )
+	void TerrainProp::ChangeTerrainGrid(int id, const char *layerName, const char *imageName, float x, float y, float width, float height)
 	{
 		GridProp *prop = LookupGrid(id);
 		prop->Init(id, imageName, x, y, width, height);

@@ -29,12 +29,14 @@ namespace Game
 	struct ActorsControlEventCreateActor
 		:public INotifyEvent
 	{
-		ActorsControlEventCreateActor(ActorEntity *entity);
+		ActorsControlEventCreateActor(ActorEntity *entity, const char *layerName);
 		/* data */
 		virtual int GetNotifyEventType(void) const { return ENActorsControlEvents::enCreateActor; }
 		ActorEntity* GetActorEntity(void) const { return m_entity; }
+		const char* GetLayerName(void) const { return m_layerName; }
 	private:
 		ActorEntity *m_entity;
+		const char *m_layerName;
 	};
 
 	struct ActorsControlEventReleaseActor

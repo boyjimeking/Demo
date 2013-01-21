@@ -2,11 +2,11 @@
 #include "layers_scenes_transitions_nodes/CCLayer.h"
 #include "ActorsControlEvents.h"
 #include "ActorEntity.h"
+#include "WorldManager.h"
 
 namespace Game
 {
-	ActorsLayer::ActorsLayer(cocos2d::CCLayer *entityLayer)
-		:m_entityLayer(entityLayer)
+	ActorsLayer::ActorsLayer(void)
 	{
 
 	}
@@ -27,7 +27,11 @@ namespace Game
 				{
 					const ActorsControlEventCreateActor *createEvent = reinterpret_cast<const ActorsControlEventCreateActor*>(event);
 					ActorEntity *entity = createEvent->GetActorEntity();
-					m_entityLayer->addChild(entity);
+					cocos2d::CCLayer *layer = WorldManager::Instance()->LookupLayer(createEvent->GetLayerName());
+					if (NULL != layer)
+					{
+						layer->addChild(entity);
+					}
 				}
 				break;
 			default:

@@ -71,6 +71,9 @@ namespace Game
 		float m_speed;
 		ActorBattleInfo *m_battleInfo;
 		ActionControl *m_actionControl;
+
+		void SetVisible(bool isVisible);
+		bool m_isVisible;
 	private:
 	};
 }

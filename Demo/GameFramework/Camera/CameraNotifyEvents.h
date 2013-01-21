@@ -12,6 +12,11 @@
 #include "Base/INotifyEvent.h"
 #include "cocoa/CCGeometry.h"
 
+namespace cocos2d
+{
+	class CCLayer;
+}
+
 namespace Game
 {
 	struct ENCameraEvent
@@ -23,6 +28,7 @@ namespace Game
 			enScaleChanged,
 			enShake,
 			enReset,
+			enChangeMoveScale,
 		};
 	};
 
@@ -59,6 +65,16 @@ namespace Game
 		const cocos2d::CCPoint& GetCameraPosition(void) const { return m_pos; }
 	private:
 		const cocos2d::CCPoint &m_pos;
+	};
+	struct CameraChangeLayerMoveScale
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENCameraEvent::enChangeMoveScale; }
+
+		CameraChangeLayerMoveScale(cocos2d::CCLayer *layer, float moveScale) : m_layer(layer), m_moveScale(moveScale) {}
+
+		cocos2d::CCLayer *m_layer;
+		float m_moveScale;
 	};
 }
 

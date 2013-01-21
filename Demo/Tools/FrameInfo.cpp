@@ -6,7 +6,7 @@ namespace Tools
 	FrameInfo::FrameInfo( void )
 		:width(0.0f)
 		,height(0.0f)
-		,m_version(enAnchorPoint)
+		,m_version(enLayerName)
 		,anchorPointX(0.0f)
 		,anchorPointY(0.0f)
 	{
@@ -22,7 +22,7 @@ namespace Tools
 		m_frame.clear();
 	}
 
-	void FrameInfo::Read( StreamHelper *stream )
+	unsigned int FrameInfo::Read( StreamHelper *stream )
 	{
 		unsigned int version = 0;
 		stream->Read(version);
@@ -40,6 +40,7 @@ namespace Tools
 		{
 			stream->Read(m_frame[index]);
 		}
+		return version;
 	}
 
 	void FrameInfo::Write( StreamHelper *stream )

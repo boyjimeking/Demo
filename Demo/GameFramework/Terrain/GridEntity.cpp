@@ -38,7 +38,17 @@ namespace Game
 				setScale(WorldManager::Instance()->GetCamera()->GetObjectScale());
 				const GridEventInit *gridEvent = reinterpret_cast<const GridEventInit*>(event);
 				init();
+				setTag(gridEvent->m_id);
 				setPosition(gridEvent->m_position);
+				setAnchorPoint(cocos2d::CCPointZero);
+				if (NULL != getParent())
+				{
+					getParent()->reorderChild(this, INT_MIN);
+				}
+				else
+				{
+					_setZOrder(INT_MIN);
+				}
 				cocos2d::CCTextureCache::sharedTextureCache()->addImageAsync(gridEvent->m_imageName.c_str(), this, callfuncO_selector(GridEntity::OnImageLoaded));
 			}
 			break;

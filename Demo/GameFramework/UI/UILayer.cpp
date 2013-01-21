@@ -4,6 +4,9 @@
 #include "UIControlEvents.h"
 #include "platform/CCFileUtils.h"
 #include "UIWindow.h"
+#include "Actors/ActorProp.h"
+#include "WorldManager.h"
+#include "Actors/ActorsControl.h"
 
 namespace GUI
 {
@@ -60,9 +63,18 @@ namespace GUI
 		cocos2d::CCLayer::ccTouchesBegan(pTouches, pEvent);
 		cocos2d::CCTouch *touch = reinterpret_cast<cocos2d::CCTouch*>(*pTouches->begin());
 		cocos2d::CCPoint pos = touch->getLocation();
+		ProcessMainActorMove(pos);
 	}
 	void UILayer::registerWithTouchDispatcher()
 	{
 		cocos2d::CCDirector::sharedDirector()->getTouchDispatcher()->addStandardDelegate(this, -1);
 	}
+
+	void UILayer::ProcessMainActorMove( const cocos2d::CCPoint &screenPos )
+	{
+		Game::ActorProp *mainActor = Game::WorldManager::Instance()->GetActorsControl()->GetMainActor();
+		cocos2d::CCPoint worldPos = Game::WorldManager::DesignPosToWorld(screenPos);
+		mainActor->MoveTo(worldPos);
+	}
+
 }

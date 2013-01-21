@@ -35,6 +35,7 @@ namespace Game
 			enDead,
 			enBeAttacked,
 			enAttachUI,
+			enSetVisible,
 		};
 	};
 
@@ -113,6 +114,13 @@ namespace Game
 		virtual int GetNotifyEventType(void) const { return ENActorEvent::enAttachUI; }
 		ActorEventAttachUI(ActorProp *prop) : m_prop(prop) {}
 		ActorProp* m_prop;
+	};
+	struct ActorEventSetVisible
+		:public INotifyEvent
+	{
+		virtual int GetNotifyEventType(void) const { return ENActorEvent::enSetVisible; }
+		ActorEventSetVisible(bool isVisible) : m_isVisible(isVisible) {}
+		bool m_isVisible;
 	};
 }
 

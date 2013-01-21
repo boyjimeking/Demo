@@ -40,7 +40,7 @@ namespace Game
 		SceneObjectProp *prop = new SceneObjectProp;
 		SceneObjectEntity *entity = SceneObjectEntity::Create();
 
-		SceneObjectControlEventAddObject event(entity);
+		SceneObjectControlEventAddObject event(entity, objInfo->m_layerName.c_str());
 		NotifyChange(&event);
 
 		prop->AttachObserver(entity);

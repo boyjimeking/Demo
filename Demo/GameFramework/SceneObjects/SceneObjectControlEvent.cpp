@@ -3,8 +3,9 @@
 namespace Game
 {
 
-	SceneObjectControlEventAddObject::SceneObjectControlEventAddObject( SceneObjectEntity *entity )
+	SceneObjectControlEventAddObject::SceneObjectControlEventAddObject(SceneObjectEntity *entity, const char *layerName)
 		:m_entity(entity)
+		,m_layerName(layerName)
 	{
 
 	}

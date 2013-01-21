@@ -9,10 +9,12 @@
 #define WorldManager_h__
 
 #include "cocoa/CCGeometry.h"
+#include <map>
 
 namespace cocos2d
 {
 	class CCScene;
+	class CCLayer;
 }
 
 namespace GUI
@@ -27,9 +29,6 @@ namespace Net
 
 namespace Tools
 {
-#if COCOS2D_DEBUG
-	class DebugLayer;
-#endif
 	class Scene;
 }
 
@@ -43,6 +42,7 @@ namespace Game
 	class SceneObjectsControl;
     class Camera;
     class PhysicalControl;
+	class CameraObserver;
 	/*
 	 *	世界主控
 	 */
@@ -69,9 +69,12 @@ namespace Game
 		//获取UI
 		GUI::UIControl* GetUIControl(void) const { return m_uiControl; }
 		//获取物理控制
-        PhysicalControl* GetPhysicalControl(void) const { return m_physicalControl; }
+        //PhysicalControl* GetPhysicalControl(void) const { return m_physicalControl; }
 		//获取逻辑根节点
-		cocos2d::CCNode* GetRoot(void) const { return m_root; }
+		cocos2d::CCNode* GetRoot(void) const;
+
+		cocos2d::CCLayer* LookupLayer(const char *layerName);
+		cocos2d::CCLayer* CreateLayer(const char *layerName, int zOrder, float moveScale);
 
         static cocos2d::CCPoint WorldPosToDesign(const cocos2d::CCPoint &worldPos);
         static cocos2d::CCPoint DesignPosToWorld(const cocos2d::CCPoint &screenPos);
@@ -95,14 +98,12 @@ namespace Game
 		SceneObjectsControl *m_sceneObjectsControl;
 		GUI::UIControl *m_uiControl;
         Camera *m_camera;
-        PhysicalControl *m_physicalControl;
+        //PhysicalControl *m_physicalControl;
         Net::Client *m_client;
-		cocos2d::CCNode *m_root;
+		CameraObserver *m_root;
 
-#if COCOS2D_DEBUG
-		Tools::DebugLayer *m_debugLayer;
-#endif
-		SkeletonCocos2D *m_sample;
+		typedef std::map<std::string, cocos2d::CCLayer*> LayerMap;
+		LayerMap m_layerMap;
 	private:
 		WorldManager(void);
 		~WorldManager(void);

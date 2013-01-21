@@ -130,10 +130,12 @@ namespace Game
 	void Camera::Reset( void )
 	{
 		cocos2d::CCPoint entityPos = m_position;
+		SetPosition(cocos2d::CCPointMake(WorldManager::Instance()->GetSceneInfo()->GetWidth() / 2.0f, WorldManager::Instance()->GetSceneInfo()->GetHeight() / 2.0f));
 		entityPos.x -= m_size.width / 2;
 		entityPos.y -= m_size.height / 2;
 		CameraReset event(entityPos);
 		NotifyChange(&event);
+		SetPosition(entityPos);
 	}
 
 	void Camera::Reset( const cocos2d::CCPoint &pos )
@@ -144,6 +146,19 @@ namespace Game
 		entityPos.y -= m_size.height / 2;
 		CameraReset event(entityPos);
 		NotifyChange(&event);
+	}
+
+	bool Camera::IsInCameraArea( const cocos2d::CCPoint &worldPos )
+	{
+		cocos2d::CCPoint screenPos = ConvertWorldPosToDesign(worldPos);
+		if (screenPos.x < -m_size.width * 0.1f || screenPos.y < -m_size.height * 0.1f || screenPos.x > m_size.width * (1.1f) || screenPos.y > m_size.height * (1.1f))
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
 	}
 
 }

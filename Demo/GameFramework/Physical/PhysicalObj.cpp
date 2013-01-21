@@ -21,7 +21,7 @@ namespace Game
 		b2BodyDef bodyDef;
 		bodyDef.position.Set(0.0f, 0.0f);
 		bodyDef.type = b2_dynamicBody;
-		m_body = WorldManager::Instance()->GetPhysicalControl()->GetBox2DWorld()->CreateBody(&bodyDef);
+		//m_body = WorldManager::Instance()->GetPhysicalControl()->GetBox2DWorld()->CreateBody(&bodyDef);
 
 		b2PolygonShape dynamicBox;
 		dynamicBox.SetAsBox(1.0f, 2.0f);

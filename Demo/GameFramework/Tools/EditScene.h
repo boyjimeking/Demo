@@ -31,18 +31,22 @@ namespace Tools
 		unsigned int GetImageCount(void) const { return m_imageName.size(); }
 		const char* GetImage(int index) const { return m_imageName[index].c_str(); }
 
-		int AddObject(const char *image, float x, float y, float width, float height);
-		void ChangeObject(int id, const char *image, float x, float y, float width, float height);
+		int AddObject(const char *image, const char *layerName, float x, float y, float width, float height);
+		void ChangeObject(int id, const char *layerName, const char *image, float x, float y, float width, float height);
 		void RemoveObject(int id);
 		unsigned int GetObjectCount(void) const { return m_objectInfoList.size(); }
 		ObjectInfo* GetObject(int index) const { return m_objectInfoList[index]; }
 
 
-		int AddTerrain(const char *image, float x, float y, float width, float height);
-		void ChangeTerrain(int id, const char *image, float x, float y, float width, float height);
+		int AddTerrain(const char *image, const char *layerName, float x, float y, float width, float height);
+		void ChangeTerrain(int id, const char *layerName, const char *image, float x, float y, float width, float height);
 		void RemoveTerrain(int id);
 		unsigned int GetTerrainCount(void) const { return m_terrainInfoList.size(); }
 		TerrainInfo* GetTerrain(int index) const { return m_terrainInfoList[index]; }
+
+		void AddLayer(const char *layerName, int zOrder, float moveScale);
+		void ChangeLayer(const char *layerName, int zOrder, float moveScale);
+		void RemoveLayer(const char *layerName);
 
 		void SetBackgroundMusic(const char *fileName) { m_backgroundMusic = fileName; }
 

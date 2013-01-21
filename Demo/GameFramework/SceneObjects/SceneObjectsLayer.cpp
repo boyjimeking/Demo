@@ -5,11 +5,11 @@
 #include "SceneObjectProp.h"
 #include "sprite_nodes/CCSpriteFrameCache.h"
 #include "SceneObjectControlEvent.h"
+#include "WorldManager.h"
 
 namespace Game
 {
-	SceneObjectsLayer::SceneObjectsLayer(cocos2d::CCLayer *entityLayer)
-		:m_entityLayer(entityLayer)
+	SceneObjectsLayer::SceneObjectsLayer(void)
 	{
 
 	}
@@ -25,7 +25,11 @@ namespace Game
 		case ENSceneObjectControl::enAddObject:
 			{
 				const SceneObjectControlEventAddObject *controlEvent = reinterpret_cast<const SceneObjectControlEventAddObject*>(event);
-				m_entityLayer->addChild(controlEvent->m_entity);
+				cocos2d::CCLayer *layer = WorldManager::Instance()->LookupLayer(controlEvent->m_layerName);
+				if (NULL != layer)
+				{
+					layer->addChild(controlEvent->m_entity);
+				}
 			}
 			break;
 		case ENSceneObjectControl::enAddObjectImage:

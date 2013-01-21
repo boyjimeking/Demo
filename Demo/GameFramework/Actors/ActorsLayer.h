@@ -24,14 +24,13 @@ namespace Game
 		:public IObserver
 	{
 	public:
-		ActorsLayer(cocos2d::CCLayer *entityLayer);
+		ActorsLayer(void);
 		virtual ~ActorsLayer(void);
 
 		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
 
 	protected:
 	private:
-		cocos2d::CCLayer *m_entityLayer;
 	};
 }
 

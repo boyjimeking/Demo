@@ -26,8 +26,9 @@ namespace Game
 		:public INotifyEvent
 	{
 		virtual int GetNotifyEventType(void) const { return ENTerrainEventType::enAddTerrain; }
-		TerrainEvent_AddTerrain(GridEntity *entity) : m_eneity(entity){}
+		TerrainEvent_AddTerrain(GridEntity *entity, const char *layerName) : m_eneity(entity), m_layerName(layerName) {}
 		GridEntity *m_eneity;
+		const char *m_layerName;
 	};
 }
 

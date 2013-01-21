@@ -34,7 +34,6 @@ namespace Game
 	class ActorEntity
 		:public cocos2d::CCNode
 		,public IObserver
-		,public cocos2d::CCTouchDelegate
 	{
 	public:
 		static ActorEntity* Create(void);
@@ -42,20 +41,12 @@ namespace Game
 		virtual ~ActorEntity(void);
 
 		virtual void OnNotifyChange( INotifier *notify, const INotifyEvent *event );
-
-		virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
-		virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-
-
-	protected:
-
 	protected:
 		void PlayAnimation(const char *type, ENDirection::Decl direction, bool isLoop = true);
 		void RePlayAnimation(void);
 		ENDirection::Decl CalDirection(const cocos2d::CCPoint &targetPos, const cocos2d::CCPoint &currentPos);
 
 	private:
-		ITouch *m_touchCallBack;
 		FrameAnimation *m_frameAnimation;
 		BoneAnimation *m_boneAnimation;
 	};

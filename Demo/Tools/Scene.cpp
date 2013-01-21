@@ -13,10 +13,18 @@ namespace Tools
 {
 	void ObjectInfo::Read(StreamHelper *stream)
 	{
-		FrameInfo::Read(stream);
+		unsigned int version = FrameInfo::Read(stream);
 		stream->Read(m_id);
 		stream->Read(m_x);
 		stream->Read(m_y);
+		if (version >= enLayerName)
+		{
+			stream->Read(m_layerName);
+		}
+		else
+		{
+			m_layerName = "default";
+		}
 	}
 
 	void ObjectInfo::Write(StreamHelper *stream)
@@ -25,6 +33,7 @@ namespace Tools
 		stream->Write(m_id);
 		stream->Write(m_x);
 		stream->Write(m_y);
+		stream->Write(m_layerName);
 	}
 
 	ObjectInfo::ObjectInfo( void )
@@ -130,6 +139,14 @@ namespace Tools
 			stream.WriteClass(*it);
 		}
 		stream.Write(m_backgroundMusic);
+		{
+			unsigned int size = m_layerList.size();
+			stream.Write(size);
+			for (int index = 0; index < m_layerList.size() ; ++index)
+			{
+				stream.WriteClass(&m_layerList[index]);
+			}
+		}
 		return stream.Size();
 	}
 
@@ -209,6 +226,21 @@ namespace Tools
 			{
 				stream.Read(m_backgroundMusic);
 			}
+			if (version >= enLayerInfo)
+			{
+				unsigned int size = 0;
+				stream.Read(size);
+				m_layerList.resize(size);
+				for (int index = 0; index < m_layerList.size() ; ++index)
+				{
+					stream.ReadClass(&m_layerList[index]);
+				}
+			}
+			else
+			{
+				m_layerList.resize(1);
+				m_layerList.back().m_layerName = "default";
+			}
 		}
 	}
 
@@ -234,6 +266,32 @@ namespace Tools
 			}
 		}
 		return NULL;
+	}
+
+
+	LayerInfo::LayerInfo( void )
+		:m_version(enCurrentVersion)
+		,m_zOrder(0)
+		,m_moveScale(1.0f)
+	{
+
+	}
+
+	void LayerInfo::Read( StreamHelper *stream )
+	{
+		unsigned int version = 0;
+		stream->Read(version);
+		stream->Read(m_layerName);
+		stream->Read(m_zOrder);
+		stream->Read(m_moveScale);
+	}
+
+	void LayerInfo::Write( StreamHelper *stream )
+	{
+		stream->Write(m_version);
+		stream->Write(m_layerName);
+		stream->Write(m_zOrder);
+		stream->Write(m_moveScale);
 	}
 
 }

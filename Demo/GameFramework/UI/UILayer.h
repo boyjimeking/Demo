@@ -28,6 +28,7 @@ namespace GUI
 
     	virtual void registerWithTouchDispatcher(void);
 	protected:
+		void ProcessMainActorMove(const cocos2d::CCPoint &screenPos);
 	private:
 	};
 }

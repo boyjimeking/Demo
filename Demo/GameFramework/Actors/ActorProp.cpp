@@ -6,6 +6,7 @@
 #include "Client/Client.h"
 #include "../CSProtocol/ActorBattleInfo.h"
 #include "UI/UIProperty.h"
+#include "Camera/Camera.h"
 
 namespace Game
 {
@@ -15,6 +16,7 @@ namespace Game
 	,m_speed(3.0f)
 	,m_battleInfo(new ActorBattleInfo)
 	,m_actionControl(new ActionControl)
+	,m_isVisible(false)
 	{
 
 	}
@@ -26,6 +28,7 @@ namespace Game
 
 	void ActorProp::Init(void)
 	{
+		m_isVisible = true;
 		switch (GetActorType())
 		{
 			case ENActorType::enMain:
@@ -99,6 +102,8 @@ namespace Game
 	void ActorProp::Tick( float dt )
 	{
 		m_actionControl->Tick(this, dt);
+
+		SetVisible(WorldManager::Instance()->GetCamera()->IsInCameraArea(m_position));
 	}
 
 	void ActorProp::SendAttack( int targetID )
@@ -124,6 +129,17 @@ namespace Game
 		uiProp->Detach();
 		AttachObserver(uiProp);
 		ActorEventAttachUI event(this);
+		NotifyChange(&event);
+	}
+
+	void ActorProp::SetVisible( bool isVisible )
+	{
+		if (isVisible == m_isVisible)
+		{
+			return;
+		}
+		m_isVisible = isVisible;
+		ActorEventSetVisible event(isVisible);
 		NotifyChange(&event);
 	}
 

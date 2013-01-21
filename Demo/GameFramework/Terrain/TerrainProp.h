@@ -32,8 +32,8 @@ namespace Game
 
 		void Init(const Tools::Scene *sceneFile);
 
-		void AddTerrainGrid(int id, const char *imageName, float x, float y, float width, float height);
-		void ChangeTerrainGrid(int id, const char *imageName, float x, float y, float width, float height);
+		void AddTerrainGrid(int id, const char *layerName, const char *imageName, float x, float y, float width, float height);
+		void ChangeTerrainGrid(int id, const char *layerName, const char *imageName, float x, float y, float width, float height);
 		void RemoveTerrainGrid(int id);
 		GridProp* LookupGrid(int id);
 

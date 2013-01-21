@@ -25,14 +25,16 @@ namespace Tools
 
 		FrameInfo(void);
 
-		void Read(StreamHelper *stream);
+		//返回读取版本号
+		unsigned int Read(StreamHelper *stream);
 		void Write(StreamHelper *stream);
 		void Clear(void);
-	private:
+	protected:
 		enum ENVersion
 		{
 			enBase,
 			enAnchorPoint,
+			enLayerName,
 		};
 		unsigned int m_version;
 	};

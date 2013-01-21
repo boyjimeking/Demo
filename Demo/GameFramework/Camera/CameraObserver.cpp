@@ -129,6 +129,11 @@ namespace Game
 					m_lastPos = newPos;
 				}
 				break;
+			case ENCameraEvent::enChangeMoveScale:
+				{
+
+				}
+				break;
             default:
                 break;
         }

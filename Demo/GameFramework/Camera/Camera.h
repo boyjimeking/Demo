@@ -42,6 +42,8 @@ namespace Game
 		cocos2d::CCSize LogicToPoint(const cocos2d::CCSize &pos);
 		cocos2d::CCSize PointToLogic(const cocos2d::CCSize &pos);
 
+		bool IsInCameraArea(const cocos2d::CCPoint &worldPos);
+
         void SetPosition(const cocos2d::CCPoint &newPosition);
         const cocos2d::CCPoint& GetPosition(void) const { return m_position; }
 

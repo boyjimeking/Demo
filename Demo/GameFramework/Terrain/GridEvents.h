@@ -29,8 +29,9 @@ namespace Game
 		:public INotifyEvent
 	{
 		virtual int GetNotifyEventType( void ) const { return ENGridEventType::enInitGrid; }
-		GridEventInit(const std::string &imageName, const cocos2d::CCPoint &position, const cocos2d::CCSize &size);
+		GridEventInit(int id, const std::string &imageName, const cocos2d::CCPoint &position, const cocos2d::CCSize &size);
 
+		const int m_id;
 		const std::string &m_imageName;
 		const cocos2d::CCPoint &m_position;
 		const cocos2d::CCSize &m_size;

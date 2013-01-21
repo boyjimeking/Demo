@@ -11,6 +11,7 @@
 #include "../Base/INotifier.h"
 #include <map>
 #include "../Base/GlobalDef.h"
+#include "cocoa/CCGeometry.h"
 
 namespace Game
 {
@@ -36,9 +37,12 @@ namespace Game
 		void Tick(float dt);
 
 		static float Distance(const ActorProp *firstActor, const ActorProp *secondActor);
+
+		void PickupActor(const cocos2d::CCPoint &worldPos);
 	protected:
 	private:
-		typedef std::map<int, ActorProp*> ActorMap;
+		typedef std::pair<int, ActorProp*> ActorPair;
+		typedef std::vector<ActorPair> ActorMap;
 		ActorMap m_actorMap;
 	};
 }

@@ -10,8 +10,9 @@
 
 namespace Game
 {
-	ActorsControlEventCreateActor::ActorsControlEventCreateActor(ActorEntity *entity)
+	ActorsControlEventCreateActor::ActorsControlEventCreateActor(ActorEntity *entity, const char *layerName)
 		:m_entity(entity)
+		,m_layerName(layerName)
 	{
 
 	}

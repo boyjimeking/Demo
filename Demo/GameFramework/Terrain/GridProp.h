@@ -24,7 +24,7 @@ namespace Game
 		virtual ~GridProp(void);
 
 		void Init(int id, const char *imageName, float x, float y, float width, float height);
-		void Remove(void);;
+		void Remove(void);
 
 		int GetID(void) const { return m_id; }
 		const std::string& GetImageName(void) const { return m_imageName; }

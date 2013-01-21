@@ -12,10 +12,11 @@ namespace Game
 {
 
 
-	GridEventInit::GridEventInit( const std::string &imageName, const cocos2d::CCPoint &position, const cocos2d::CCSize &size )
+	GridEventInit::GridEventInit(int id, const std::string &imageName, const cocos2d::CCPoint &position, const cocos2d::CCSize &size)
 		:m_imageName(imageName)
 		,m_position(position)
 		,m_size(size)
+		,m_id(id)
 	{
 
 	}

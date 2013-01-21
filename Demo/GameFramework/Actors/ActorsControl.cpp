@@ -16,11 +16,10 @@ namespace Game
 	}
 	ActorProp* ActorsControl::CreateActor(ENActorType::Decl type, int actorID, float x, float y)
 	{
-		ActorMap::iterator it = m_actorMap.find(actorID);
-		if (m_actorMap.end() != it)
+		ActorProp *prop = LookupActor(actorID);
+		if (NULL != prop)
 		{
-			//Already have.
-			return NULL;
+			return prop;
 		}
 		ActorProp *actor = new ActorProp(type, actorID);
 		ActorEntity *entity = ActorEntity::Create();
@@ -30,40 +29,39 @@ namespace Game
 			delete actor;
 			return NULL;
 		}
-		ActorsControlEventCreateActor event(entity);
+		ActorsControlEventCreateActor event(entity, "default");
 		NotifyChange(&event);
 
 		actor->AttachObserver(entity);
 		actor->Init();
 		actor->SetPosition(ccp(x, y));
 		actor->Stop();
-		m_actorMap.insert(std::make_pair(actorID, actor));
+		m_actorMap.push_back(std::make_pair(actorID, actor));
 		return actor;
 	}
 	void ActorsControl::ReleaseActor(int actorID)
 	{
-		ActorMap::iterator it = m_actorMap.find(actorID);
-		if (m_actorMap.end() != it)
+		for (int index = 0; index < m_actorMap.size(); ++index)
 		{
-			/* code */
-			it->second->Release();
-			delete it->second;
-			m_actorMap.erase(it);
+			if (m_actorMap[index].first == actorID)
+			{
+				ActorProp *prop = m_actorMap[index].second;
+				prop->Release();
+				delete prop;
 
-			ActorsControlEventReleaseActor event;
-			NotifyChange(&event);
-		}
-		else
-		{
-			//Can not find actor.
+				ActorsControlEventReleaseActor event;
+				NotifyChange(&event);
+				break;
+			}
 		}
 	}
 	void ActorsControl::ClearActor(void)
 	{
-		for (ActorMap::iterator it = m_actorMap.begin(); m_actorMap.end() != it; ++it)
+		for (int index = 0; index < m_actorMap.size(); ++index)
 		{
-			it->second->Release();
-			delete it->second;
+			ActorProp *prop = m_actorMap[index].second;
+			prop->Release();
+			delete prop;
 		}
 		m_actorMap.clear();
 
@@ -76,25 +74,30 @@ namespace Game
 	}
 	ActorProp* ActorsControl::LookupActor(int actorID) const
 	{
-		ActorMap::const_iterator it = m_actorMap.find(actorID);
-		if (m_actorMap.end() != it)
+		for (int index = 0; index < m_actorMap.size(); ++index)
 		{
-			return it->second;
+			if (m_actorMap[index].first == actorID)
+			{
+				return m_actorMap[index].second;
+			}
 		}
-		else
-		{
-			return NULL;
-		}
+		return NULL;
 	}
 	void ActorsControl::Tick(float dt)
 	{
-		for (ActorMap::iterator it = m_actorMap.begin(); it != m_actorMap.end(); ++it)
+		for (int index = 0; index < m_actorMap.size(); ++index)
 		{
-			it->second->Tick(dt);
+			m_actorMap[index].second->Tick(dt);
 		}
 	}
 	float ActorsControl::Distance(const ActorProp *firstActor, const ActorProp *secondActor)
 	{
 		return cocos2d::ccpDistance(firstActor->GetPosition(), secondActor->GetPosition());
 	}
+
+	void ActorsControl::PickupActor( const cocos2d::CCPoint &worldPos )
+	{
+
+	}
+
 }

@@ -29,9 +29,10 @@ namespace Game
 	{
 		virtual int GetNotifyEventType( void ) const { return ENSceneObjectControl::enAddObject; }
 
-		SceneObjectControlEventAddObject(SceneObjectEntity *entity);
+		SceneObjectControlEventAddObject(SceneObjectEntity *entity, const char *layerName);
 
 		SceneObjectEntity *m_entity;
+		const char *m_layerName;
 	};
 
 	struct SceneObjectEventAddObjectImage
