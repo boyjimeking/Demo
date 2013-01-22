@@ -13,6 +13,7 @@
 #include "../Base/GlobalDef.h"
 #include <list>
 #include "ActorAction.h"
+#include "../../Demo/Comm/CommDef.h"
 
 namespace Tools
 {

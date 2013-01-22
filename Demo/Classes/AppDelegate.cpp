@@ -10,8 +10,9 @@
 #include "AppMacros.h"
 #include "cocos2d.h"
 #include "WorldManager.h"
-#include "../CSProtocol/CSPipeline.h"
 #include "tolua/CCLuaEngine.h"
+#include "../GameFramework/Client/CClient.h"
+#include "../GameFramework/Client/ClNetMng.h"
 
 USING_NS_CC;
 
@@ -73,8 +74,6 @@ bool AppDelegate::applicationDidFinishLaunching()
     // run
     pDirector->runWithScene(pScene);
 
-    //模拟网络端的初始化数据
-    Net::CSPipeline::Instance()->Init();
 
 //	// register lua engine
 //	CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
@@ -91,6 +90,10 @@ bool AppDelegate::applicationDidFinishLaunching()
 //	pEngine->addSearchPath(path.substr(0, path.find_last_of("/")).c_str());
 //	pEngine->executeScriptFile(path.c_str());
 //#endif 
+
+  //网络端的初始化
+    CClNetMng::Instance()->Init();
+    Game::WorldManager::Instance()->GetClient()->Login("111", "111");
 
     return true;
 }

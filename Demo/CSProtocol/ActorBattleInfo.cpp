@@ -1,5 +1,6 @@
 #include "ActorBattleInfo.h"
 #include "../Tools/StreamHelper.h"
+#include "../../Demo/Comm/NetMessage.h"
 
 ActorBattleInfo::ActorBattleInfo(void)
 	:m_dirtyMark(0)
@@ -20,6 +21,13 @@ void ActorBattleInfo::Read( Tools::StreamHelper *stream )
 	stream->Read(m_isAlive);
 	stream->Read(m_HP);
 	stream->Read(m_maxHP);
+}
+
+void ActorBattleInfo::Read(const PlayerBattleInfo& info)
+{
+	m_isAlive = info.m_isAlive;
+	m_HP = info.m_HP;
+	m_maxHP = info.m_maxHP;
 }
 
 void ActorBattleInfo::Write( Tools::StreamHelper *stream )

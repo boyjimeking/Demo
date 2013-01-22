@@ -10,6 +10,7 @@
 
 #include "sprite_nodes/CCSprite.h"
 #include "Base/GlobalDef.h"
+#include "../../Demo/Comm/CommDef.h"
 #include <string>
 
 namespace Tools

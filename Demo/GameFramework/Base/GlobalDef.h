@@ -30,14 +30,4 @@ struct ENSceneObjectType
 	};
 };
 
-struct ENEquipType 
-{
-	enum Decl
-	{
-		enError = -1,
-		enWeapon,
-
-		Count,
-	};
-};
 #endif

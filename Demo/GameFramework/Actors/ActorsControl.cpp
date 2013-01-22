@@ -6,7 +6,8 @@
 
 namespace Game
 {
-	ActorsControl::ActorsControl(void)
+	ActorsControl::ActorsControl(void):
+    m_nMainActorId(0)
 	{
 
 	}
@@ -70,7 +71,7 @@ namespace Game
 	}
 	ActorProp* ActorsControl::GetMainActor(void) const
 	{
-		return LookupActor(1);
+		return LookupActor(m_nMainActorId);
 	}
 	ActorProp* ActorsControl::LookupActor(int actorID) const
 	{

@@ -12,6 +12,7 @@
 #include "Base/INotifyEvent.h"
 #include "cocoa/CCGeometry.h"
 #include "Base/GlobalDef.h"
+#include "../../Demo/Comm/CommDef.h"
 
 namespace Tools
 {

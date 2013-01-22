@@ -15,7 +15,6 @@
 #include "support/CCPointExtension.h"
 #include "Physical/PhysicalObj.h"
 #include "Physical/PhysicalControl.h"
-#include "Client/Client.h"
 #include "platform/CCFileUtils.h"
 #include "../Tools/Scene.h"
 #if COCOS2D_DEBUG
@@ -23,6 +22,7 @@
 #endif // COCOS2D_DEBUG
 #include "SceneInfo.h"
 #include "Animation/SkeletonCocos2D.h"
+#include "Client/CClient.h"
 #include "SimpleAudioEngine.h"
 #include "Tools/AvatarManager.h"
 
@@ -56,7 +56,7 @@ namespace Game
 		,m_uiControl(NULL)
         ,m_camera(NULL)
         //,m_physicalControl(NULL)
-        ,m_client(new Net::Client)
+        ,m_client(new CClient)
 		,m_root(NULL)
 	{
 

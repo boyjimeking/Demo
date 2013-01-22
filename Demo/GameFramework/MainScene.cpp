@@ -8,7 +8,8 @@
 
 #include "MainScene.h"
 #include "WorldManager.h"
-#include "../CSProtocol/CSPipeline.h"
+#include "ClNetMng.h"
+
 namespace Game
 {
 	MainScene* MainScene::create(void)
@@ -30,7 +31,8 @@ namespace Game
 	void MainScene::update(float dt)
 	{
 		WorldManager::Instance()->update(dt);
-		//网络模拟部分
-		Net::CSPipeline::Instance()->Tick(dt);
+		//handle messages
+        CClNetMng::Instance()->HandleMsgs();
+ 
 	}
 }

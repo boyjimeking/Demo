@@ -33,6 +33,8 @@ namespace Game
 
 		ActorProp* GetMainActor(void) const;
 		ActorProp* LookupActor(int actorID) const;
+        void SetMainActorId(int id) { m_nMainActorId = id;}
+        int GetMainActorId(void) { return m_nMainActorId;}
 
 		void Tick(float dt);
 
@@ -44,6 +46,7 @@ namespace Game
 		typedef std::pair<int, ActorProp*> ActorPair;
 		typedef std::vector<ActorPair> ActorMap;
 		ActorMap m_actorMap;
+        int m_nMainActorId;
 	};
 }
 

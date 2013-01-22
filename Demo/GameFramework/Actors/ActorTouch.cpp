@@ -11,7 +11,6 @@
 #include "ActorsControl.h"
 #include "ActorProp.h"
 #include "ActorAction.h"
-#include "Client/Client.h"
 #include "UI/UIControl.h"
 #include "UI/UITargetProp.h"
 #include "UI/UITargetWindow.h"
